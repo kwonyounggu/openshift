@@ -27,17 +27,17 @@ public abstract class BaseServlet extends HttpServlet
 	private String jndiName;
 	private String sqlStatement;
 	
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-	public BaseServlet(String jndiName, String sqlStatment) 
+    public BaseServlet(String jndiName, String sqlStatment) 
 	{
 		this.jndiName = jndiName;
 		this.sqlStatement = sqlStatment;
+		
+		System.out.println("Debug: BaseServlet(String jndiName, String sqlStatment) is called now");
 	}
 	
 	public void init(ServletConfig config) throws ServletException
 	{
+		System.out.println("Debug: init(ServletConfig config) of BaseServlet.java is called now");
 	}
 	
 	private List<String> showTables() throws Exception
