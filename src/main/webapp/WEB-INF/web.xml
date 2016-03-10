@@ -3,7 +3,7 @@
   <display-name>WebMonster</display-name>
   
    <listener>
-    <listener-class>com.service.MainContextListenerr</listener-class>
+    <listener-class>com.service.MainContextListener</listener-class>
   </listener>
 
   <servlet>
@@ -14,7 +14,6 @@
   <servlet>
     <servlet-name>PostgresServlet</servlet-name>
     <servlet-class>com.servlets.PostgresServlet</servlet-class>
-    <load-on-startup>1</load-on-startup>
   </servlet>
 
   <servlet-mapping>
