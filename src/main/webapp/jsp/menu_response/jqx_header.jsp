@@ -5,13 +5,13 @@
 <%@ page import="java.util.*" %>
 
 <script type="text/javascript">
-    $(document).ready(function () {
+/*     $(document).ready(function () {
 
         $("#jqxMenu").jqxMenu({ width: '100%', height: '30px', autoOpen: false, autoCloseOnMouseLeave: false, showTopLevelArrows: true, 
         						theme: 'fresh'
         					  });
         $("#jqxMenu").css('visibility', 'visible');               
-    });
+    }); */
 </script>
 <div style="position:absolute; z-index:1;width:100%;">
 	<div>
@@ -43,10 +43,10 @@
 			
 		</script>
 	</div>
-	<!-- <div id="myContent"> 
+	<div id="myContent"> 
 		<h1>Alternative content</h1> 
 		<p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a></p> 
-	</div> 	 -->		
+	</div> 			
 </div>
 <div style="position:relative; z-index:2;width:100%;">
 	<div id="header">
