@@ -48,7 +48,7 @@
 		<p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a></p> 
 	</div> 			
 </div>
-<div style="position:relative; z-index:2;width:100%;">
+<div style="position:relative; z-index:2;width:1024;">
 	<div id="header">
 		<font size="6" color="#ffda48">Freelance App Developer</font><br/>
 		<font size="4" color="#bad5fe">
