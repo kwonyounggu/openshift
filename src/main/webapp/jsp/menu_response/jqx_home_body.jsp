@@ -4,7 +4,7 @@
 
 <%@ page import="java.util.*" %>
 <%@ page isELIgnored ="false" %>
-<div style="padding:5px 20px 5px 20px;text-align:left"><!-- Resume -->
+<div style="padding:5px 0px 5px 0px;text-align:left"><!-- Resume -->
 	 
 	 	<div ><!-- Objective and Profile in depth 1 -->
 	 		<div style="float:left;">
