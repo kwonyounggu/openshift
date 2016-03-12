@@ -13,7 +13,7 @@
         $("#jqxMenu").css('visibility', 'visible');               
     }); */
 </script>
-<div style="position:absolute; z-index:1;width:100%;">
+<div style="position:absolute; z-index:1; width:100%;">
 	<div>
 		<script type="text/javascript"> 
 			var params={allowfullscreen : "true"};						
@@ -48,14 +48,14 @@
 		<p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a></p> 
 	</div> 			
 </div>
-<div style="position:relative; z-index:2;width:1024;">
+<!-- <div style="position:relative; z-index:2;width:100%;">
 	<div id="header">
 		<font size="6" color="#ffda48">Freelance App Developer</font><br/>
 		<font size="4" color="#bad5fe">
 			<a href="mailto:kwon.younggu@gmail.com?Subject=Hello Younggu KWON" style="color:inherit;text-decoration: none" target="_top">Younggu KWON</a>
 		</font>
 	</div>
-</div>
+</div> -->
 <!--
 <div id='jqxMenu' style='visibility: hidden; margin-left: 0px;'>
 <ul>
