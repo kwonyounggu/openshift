@@ -39,7 +39,7 @@
 					passiveParticipantId5:"${curriculum_bean.courseNumber}_ONEWAY_VIEWER5_${curriculum_bean.onewaySiteViewer5Id}",
 					passiveParticipantId6:"${curriculum_bean.courseNumber}_ONEWAY_VIEWER6_${curriculum_bean.onewaySiteViewer6Id}"
 			};
-			swfobject.embedSWF("/swf/header.swf", "myContent", "1024", "80", "10.0.0", "playerProductInstall.swf", flashvars, params);
+			swfobject.embedSWF("/swf/header.swf", "myContent", "1000", "80", "10.0.0", "playerProductInstall.swf", flashvars, params);
 			
 		</script>
 	</div>
