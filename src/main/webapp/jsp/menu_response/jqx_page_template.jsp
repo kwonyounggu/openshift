@@ -102,10 +102,10 @@
 		<div style="width:100%;height:80px;position:relative;">
 			<%@ include file="/jsp/menu_response/jqx_header.jsp" %>
 		</div>		
-		<div id="mid_contents" style="width:100%;"><!-- contents -->
+		<div id="mid_contents" style="width:1024px;"><!-- contents -->
 			<jsp:include page='${body_panel}' flush='true'/>			
 		</div><!-- contents -->
-		<div id="footer" style="width:100%;">
+		<div id="footer" style="width:1024px;">
 			<div>555 University Avenue, Toronto, Ontario, Canada M1S5C2</div>
 			<div>Copyright &copy; 2016 WebMonster Technology Ltd. All Rights Reserved</div>
 			<div>Registered in Toronto, Ontario, Canada</div>
