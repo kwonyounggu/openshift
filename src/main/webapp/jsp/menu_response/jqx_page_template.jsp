@@ -96,8 +96,8 @@
 </head>
 
 <body bgcolor="#818493" leftmargin="0" topmargin="0"  marginheight="0" marginwidth="0" >
-<div align="center">
-	<div style="width:1024px;margin-top:5px">
+
+	<div align="center" style="width:1024px;margin-top:5px">
 		
 		<div style="width:100%;height:80px;position:relative;">
 			<%@ include file="/jsp/menu_response/jqx_header.jsp" %>
@@ -111,7 +111,6 @@
 			<div>Registered in Toronto, Ontario, Canada</div>
 		</div>
 	</div>
-</div>	
 </body>
 
 </html>
