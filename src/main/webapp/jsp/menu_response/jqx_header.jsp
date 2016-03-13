@@ -15,17 +15,16 @@
 </script>
 <div style="position:absolute; z-index:1; width:100%;">
 	<div style="position:absolute; z-index:1;width:100%;">
-				<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0" width="1024" height="80">
-				<param name="movie" value="header.swf" />
-				<param name="quality" value="high" />
-				<param name="wmode" value="transparent">
-				<embed src="/swf/header.swf" quality="high" type="application/x-shockwave-flash" width="100%" height="80" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" />
-				</object>
-			</div>
-	<div id="myContent"> 
-		<h1>Alternative content</h1> 
-		<p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a></p> 
-	</div> 			
+		<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0" width="1024" height="80">
+		<param name="movie" value="header.swf" />
+		<param name="quality" value="high" />
+		<param name="wmode" value="transparent">
+		<embed src="/swf/header.swf" quality="high" type="application/x-shockwave-flash" width="100%" height="80" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+		</object>
+	</div>		
+	<div style="position:relative; z-index:2;width:100%;">
+		<div id="header"><font size="6" color="#ffda48">Freelance App Developer</font><br/><font size="4" color="#bad5fe"><a href="mailto:kwon.younggu@gmail.com?Subject=Hello Younggu KWON" style="color:inherit;text-decoration: none" target="_top">Younggu KWON</a></font></div>
+	</div>
 </div>
 <!-- <div style="position:relative; z-index:2;width:100%;">
 	<div id="header">
