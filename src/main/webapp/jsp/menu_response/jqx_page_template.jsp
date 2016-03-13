@@ -61,26 +61,11 @@
 	    text-align:center;
 	    padding-top:8px;
 	}
-	#nav 
-	{
-	    line-height:30px;
-	    background-color:#eeeeee;
-	    height:300px;
-	    width:100px;
-	    float:left;
-	    padding:5px; 
-	}
-	#section 
-	{
-	    width:350px;
-	    float:left;
-	    padding:10px; 
-	}
 	#mid_contents
 	{
 		background-color:#ffffff;
 		border: 1px solid #e9e9ea;
-		width: 98.6%;
+		
 		height: 100%;
 		margin-top: 5px;
 		
@@ -96,7 +81,7 @@
 	    border:1px solid #000000;
 	    box-shadow: 10px 10px 5px #888888;
 		background:#353743;
-		width:100%;
+		
 		height:100%;
 		border-radius:0 0 15px 15px;
 	}
@@ -120,7 +105,7 @@
 		<div id="mid_contents"><!-- contents -->
 			<jsp:include page='${body_panel}' flush='true'/>			
 		</div><!-- contents -->
-		<div id="footer">
+		<div id="footer" style="width:100%;">
 			<div>555 University Avenue, Toronto, Ontario, Canada M1S5C2</div>
 			<div>Copyright &copy; 2016 WebMonster Technology Ltd. All Rights Reserved</div>
 			<div>Registered in Toronto, Ontario, Canada</div>
