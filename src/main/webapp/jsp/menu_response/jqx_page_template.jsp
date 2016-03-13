@@ -102,7 +102,7 @@
 		<div style="width:100%;height:80px;position:relative;">
 			<%@ include file="/jsp/menu_response/jqx_header.jsp" %>
 		</div>		
-		<div id="mid_contents"><!-- contents -->
+		<div id="mid_contents" style="width:100%;"><!-- contents -->
 			<jsp:include page='${body_panel}' flush='true'/>			
 		</div><!-- contents -->
 		<div id="footer" style="width:100%;">

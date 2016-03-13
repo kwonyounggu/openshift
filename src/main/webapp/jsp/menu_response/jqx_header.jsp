@@ -28,20 +28,13 @@
 </div>
 
 
-<div id='jqxMenu' style='visibility: hidden; margin-left: 0px;'>
+<div id="jqxMenu" style="width:100%; visibility: hidden; margin-left: 0px;">
 <ul>
     <li><a href="<%= MenuLink.home %>" onfocus="this.blur()">Home</a></li>				
 		
-		<li style='list-style: none; width: 85%; '  ignoretheme='true'>
+		<li style='list-style: none; width: 100%; '  ignoretheme='true'>
 
-	        <table width='100%' height='100%'>
-				<tr>
-					<td align='right' width='80%'  height='100%' valign='top'>
-						
-						&nbsp;&nbsp;<img src='images/common/carm_logo_small.png' width='52' height='24'/>
-					</td>	
-				</tr>		
-			</table>
+	        
 
 	    </li>	
     </ul>
