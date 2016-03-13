@@ -92,11 +92,11 @@
 	    color:#8a8a8a;
 	    clear:both;
 	    text-align:center;
-	    padding:5px 0px 0px 0px; 
+	    padding:5px 5px 5px 5px; 
 	    border:1px solid #000000;
 	    box-shadow: 10px 10px 5px #888888;
 		background:#353743;
-		width:97.8%;
+		width:100%;
 		height:100%;
 		border-radius:0 0 15px 15px;
 	}

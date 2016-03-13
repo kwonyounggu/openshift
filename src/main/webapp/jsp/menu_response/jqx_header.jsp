@@ -5,13 +5,13 @@
 <%@ page import="java.util.*" %>
 
 <script type="text/javascript">
-/*     $(document).ready(function () {
+     $(document).ready(function () {
 
         $("#jqxMenu").jqxMenu({ width: '100%', height: '30px', autoOpen: false, autoCloseOnMouseLeave: false, showTopLevelArrows: true, 
         						theme: 'fresh'
         					  });
         $("#jqxMenu").css('visibility', 'visible');               
-    }); */
+    }); 
 </script>
 <div style="position:absolute; z-index:1; width:100%;">
 	<div style="position:absolute; z-index:1;width:100%;">
@@ -26,15 +26,8 @@
 		<div id="header"><font size="6" color="#ffda48">Freelance App Developer</font><br/><font size="4" color="#bad5fe"><a href="mailto:kwon.younggu@gmail.com?Subject=Hello Younggu KWON" style="color:inherit;text-decoration: none" target="_top">Younggu KWON</a></font></div>
 	</div>
 </div>
-<!-- <div style="position:relative; z-index:2;width:100%;">
-	<div id="header">
-		<font size="6" color="#ffda48">Freelance App Developer</font><br/>
-		<font size="4" color="#bad5fe">
-			<a href="mailto:kwon.younggu@gmail.com?Subject=Hello Younggu KWON" style="color:inherit;text-decoration: none" target="_top">Younggu KWON</a>
-		</font>
-	</div>
-</div> -->
-<!--
+
+
 <div id='jqxMenu' style='visibility: hidden; margin-left: 0px;'>
 <ul>
     <li><a href="<%= MenuLink.home %>" onfocus="this.blur()">Home</a></li>				
@@ -54,4 +47,4 @@
     </ul>
 	
 </div>
-  -->
+ 
