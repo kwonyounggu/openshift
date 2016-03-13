@@ -60,7 +60,6 @@
 	    color:white;
 	    text-align:center;
 	    padding-top:8px;
-	    display:inline-block;
 	}
 	#mid_contents
 	{
@@ -69,7 +68,6 @@
 		
 		height: 100%;
 		margin-top: 5px;
-		display:inline-block;
 		
 	}
 	#footer 
@@ -86,7 +84,7 @@
 		
 		height:100%;
 		border-radius:0 0 15px 15px;
-		display:inline-block;
+
 	}
 	ul li
 	{
@@ -101,7 +99,7 @@
 <body bgcolor="#818493" leftmargin="0" topmargin="0"  marginheight="0" marginwidth="0" >
 <div align="center">
 
-	<div style="width:1024px;margin-top:5px">
+	<div style="width:1024px;margin-top:5px;display: inline-block;">
 		
 		<div style="height:80px;position:relative;">
 			<%@ include file="/jsp/menu_response/jqx_header.jsp" %>
