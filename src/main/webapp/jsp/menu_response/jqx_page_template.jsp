@@ -57,6 +57,7 @@
 <style>
 	#header 
 	{
+		width: 100%;
 	    color:white;
 	    text-align:center;
 	    padding-top:8px;
@@ -65,7 +66,7 @@
 	{
 		background-color:#ffffff;
 		border: 1px solid #e9e9ea;
-		
+		width: 100%;
 		height: 100%;
 		margin-top: 5px;
 		
@@ -81,7 +82,7 @@
 	    border:1px solid #000000;
 	    box-shadow: 10px 10px 5px #888888;
 		background:#353743;
-		
+		width: 100%;
 		height:100%;
 		border-radius:0 0 15px 15px;
 
