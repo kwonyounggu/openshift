@@ -65,15 +65,18 @@
 	}
 	.wrapper
 	{
-		width:1024px;
+		
 		/*margin-top:5px;*/
 		
 
 	}
 	.header 
 	{
+		width:1024px;
 	    height:80px;
-	    position:relative;
+	    text-align:center;
+	    background:#353743;
+	    border:1px solid #000000;
 	}
 	
 	.contents
