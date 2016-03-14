@@ -14,7 +14,7 @@
     }); 
 </script>
 <div style="position: absolute;">
-	<img src="/images/webmonster_logo.png" style="width: 77px; height: 61px;"/>
+	<img src="/images/webmonster_logo.png" style="width: 296px; height: 62px;"/>
 	<font size="6" color="#ffda48">Freelance App Developer</font><br/>
 	<font size="4" color="#bad5fe"><a href="mailto:kwon.younggu@gmail.com?Subject=Hello Younggu KWON" style="color:inherit;text-decoration: none" target="_top">Younggu KWON</a></font>
 </div>
