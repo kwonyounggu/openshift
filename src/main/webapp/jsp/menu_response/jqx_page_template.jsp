@@ -59,7 +59,7 @@
 	{
 		width:1024px;
 		margin-top:5px;
-		display: table;
+
 	}
 	#header 
 	{
