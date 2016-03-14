@@ -55,12 +55,17 @@
 </script>
 
 <style>
+	#main_frame
+	{
+		width:1024px;
+		margin-top:5px;
+		display: table;
+	}
 	#header 
 	{
 		width: 100%;
-	    color:white;
-	    text-align:center;
-	    padding-top:8px;
+	    height:80px;
+	    position:relative;
 	}
 	#mid_contents
 	{
@@ -100,9 +105,9 @@
 <body bgcolor="#818493" leftmargin="0" topmargin="0"  marginheight="0" marginwidth="0" >
 <div align="center">
 
-	<div style="width:1024px;margin-top:5px;display: table;">
+	<div id="main_frame">
 		
-		<div style="height:80px;position:relative;">
+		<div id="header">
 			<%@ include file="/jsp/menu_response/jqx_header.jsp" %>
 		</div>		
 		<div id="mid_contents" ><!-- contents -->
