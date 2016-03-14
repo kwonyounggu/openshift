@@ -66,7 +66,6 @@
 	.wrapper
 	{
 		width:1024px;
-		position: fixed;
 		/*margin-top:5px;*/
 		
 
