@@ -55,6 +55,14 @@
 </script>
 
 <style>
+	body
+	{
+		bgcolor: "#818493";
+		leftmargin: "0";
+		topmargin: "0";
+		marginheight: "0";
+		marginwidth: "0";
+	}
 	.wrapper
 	{
 		width:1024px;
@@ -70,12 +78,12 @@
 		
 
 	}
-	header 
+	.header 
 	{
 	    height:80px;
 	    position:relative;
 	}
-	main
+	.mid_frame
 	{
 		background-color:#ffffff;
 		border: 1px solid #e9e9ea;
@@ -84,7 +92,7 @@
 		margin-top: 5px;
 		flex: 1;
 	}
-	footer 
+	.footer 
 	{
 		margin-top: 5px;
 		margin-bottom: 5px;
@@ -110,22 +118,22 @@
 </style>
 </head>
 
-<body bgcolor="#818493" leftmargin="0" topmargin="0"  marginheight="0" marginwidth="0" >
+<body>
 <div align="center">
 
 	<div class="wrapper">
 		
-		<header>
+		<div class="header">
 			<%@ include file="/jsp/menu_response/jqx_header.jsp" %>
-		</header>	
-		<main><!-- contents -->
+		</div>	
+		<div class="mid_frame"><!-- contents -->
 			<jsp:include page='${body_panel}' flush='true'/>			
-		</main><!-- contents -->
-		<footer>
+		</div><!-- contents -->
+		<div class="footer">
 			<div>555 University Avenue, Toronto, Ontario, Canada M1S5C2</div>
 			<div>Copyright &copy; 2016 WebMonster Technology Ltd. All Rights Reserved</div>
 			<div>Registered in Toronto, Ontario, Canada</div>
-		</footer>
+		</div>
 	</div>
 </div>	
 </body>
