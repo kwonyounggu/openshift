@@ -66,14 +66,7 @@
 	.wrapper
 	{
 		width:1024px;
-		height: 100vh; /* 100% */
-		/*
-			the following 'display: flex'will cause all children of this wrapper which has the appropriate flex-properties (for example flex:1;) 
-		    to be controlled with the flexbox-magic.
-		*/
-		display: flex; 
-		/* Direction of the items, can be row or column */
-		flex-direction: column;
+		position: fixed;
 		/*margin-top:5px;*/
 		
 
@@ -83,14 +76,14 @@
 	    height:80px;
 	    position:relative;
 	}
-	.mid_frame
+	
+	.contents
 	{
 		background-color:#ffffff;
 		border: 1px solid #e9e9ea;
 		width: 100%;
 		height: 100%;
 		margin-top: 5px;
-		flex: 1;
 	}
 	.footer 
 	{
@@ -126,9 +119,9 @@
 		<div class="header">
 			<%@ include file="/jsp/menu_response/jqx_header.jsp" %>
 		</div>	
-		<div class="mid_frame"><!-- contents -->
+		<div class="contents">
 			<jsp:include page='${body_panel}' flush='true'/>			
-		</div><!-- contents -->
+		</div>
 		<div class="footer">
 			<div>555 University Avenue, Toronto, Ontario, Canada M1S5C2</div>
 			<div>Copyright &copy; 2016 WebMonster Technology Ltd. All Rights Reserved</div>
