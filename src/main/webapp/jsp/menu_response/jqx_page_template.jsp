@@ -99,7 +99,7 @@
 <body bgcolor="#818493" leftmargin="0" topmargin="0"  marginheight="0" marginwidth="0" >
 <div align="center">
 
-	<div style="width:1024px;margin-top:5px;display: inline-block;">
+	<div style="width:1024px;margin-top:5px;table-layout:fixed;">
 		
 		<div style="height:80px;position:relative;">
 			<%@ include file="/jsp/menu_response/jqx_header.jsp" %>
