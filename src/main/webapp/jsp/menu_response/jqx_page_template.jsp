@@ -57,11 +57,11 @@
 <style>
 	body
 	{
-		background-color: "#818493";
-		leftmargin: "0";
-		topmargin: "0";
-		marginheight: "0";
-		marginwidth: "0";
+		background-color: #818493;
+		leftmargin: 0;
+		topmargin: 0;
+		marginheight: 0;
+		marginwidth: 0;
 	}
 	.wrapper
 	{
