@@ -67,12 +67,13 @@
 	{
 		
 		margin-top:5px;
-		width:1024px;
+		width:1000px;
 
 	}
 	.header 
 	{
-		
+		width: 100%;
+		height: 100%;
 	}
 	
 	.contents
