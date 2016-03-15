@@ -7,25 +7,17 @@
 <head>
 <title>${app_symbol}</title>
 <META name=author content="Younggu Kwon">
-<META name=department content="CCM at the Hospital for Sick Children in Toronto">
-<META name=email content="younggu.kwon@sickkids.ca">
+<META name=email content="kwon.younggu@gmail.com">
 
 <link rel="SHORTCUT ICON" href="ico/favicon.ico" />
 
-
-<link rel="stylesheet" type="text/css" href="css/menu/ddsmoothmenu.css" /> 
-<link rel="stylesheet" href="css/dhtmlwindow.css" type="text/css" />
-
 <link rel="stylesheet" type="text/css" href="css/csr.css" />
 
-<!-- about calendar program -->
-<link rel="stylesheet" type="text/css" href="js/epoch_v202_en/epoch_styles.css" /> 
-<script type="text/javascript" src="js/epoch_v202_en/epoch_classes.js"></script> 
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="https://jqwidgets.com/jquery-widgets-demo/jqwidgets/jqx-all.js"></script>
 <link rel="stylesheet" type="text/css" href="https://jqwidgets.com/jquery-widgets-demo/jqwidgets/styles/jqx.base.css" />    
-<link rel="stylesheet" type="text/css" href="https://jqwidgets.com/jquery-widgets-demo/jqwidgets/styles/jqx.fresh.css" />    
+<link rel="stylesheet" type="text/css" href="https://jqwidgets.com/jquery-widgets-demo/jqwidgets/styles/jqx.metro.css" />    
 <link rel="stylesheet" type="text/css" href="https://jqwidgets.com/jquery-widgets-demo/jqwidgets/styles/jqx.energyblue.css" />    
 
 <script type="text/javascript" src="js/swfobject.js"></script>
@@ -115,9 +107,10 @@
 	<div class="wrapper">
 		
 		<div class="header">
-			<%@ include file="/jsp/menu_response/jqx_header.jsp" %>
+			<%@ include file="/jsp/menu_response/header.jsp" %>
 		</div>	
 		<div class="contents">
+			<%@ include file="/jsp/menu_response/jqx_menu.jsp" %>
 			<jsp:include page='${body_panel}' flush='true'/>			
 		</div>
 		<div class="footer">
