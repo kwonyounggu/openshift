@@ -20,6 +20,7 @@
 				</p>
 		 	</div>
 		 </div>
+		 <br/>
  		<div >
  			<h3>PROFILE:</h3>
  			<ul>
