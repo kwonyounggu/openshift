@@ -57,7 +57,7 @@
 <style>
 	body
 	{
-		bgcolor: "#818493";
+		background-color: "#818493";
 		leftmargin: "0";
 		topmargin: "0";
 		marginheight: "0";
@@ -80,7 +80,6 @@
 	{
 		background-color:#ffffff;
 		border: 1px solid #e9e9ea;
-		width: 100%;
 		height: 100%;
 		margin-top: 5px;
 	}
@@ -95,7 +94,6 @@
 	    border:1px solid #000000;
 	    box-shadow: 10px 10px 5px #888888;
 		background:#353743;
-		width: 100%;
 		height:100%;
 		border-radius:0 0 15px 15px;
 
