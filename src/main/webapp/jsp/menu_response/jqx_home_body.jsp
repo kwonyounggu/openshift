@@ -13,20 +13,20 @@
 	 				<li>Seeking a freelance developer position for PC-based, Web-based and or Mobile phone-based applications</li>
 	 			</ul>
 	 		</div>
-	 		<div style="float:right;">
+	 		<div style="float:right; width: 135px">
 		 		<a href="mailto:kwon.younggu@gmail.com?Subject=Hello Younggu KWON" target="_top"><img src="images/YoungguKwon.png" width="135" height="146" alt="Younggu KWON" border="0"/></a>
 		 		<p style="padding-top:0px; text-align:center">
 					<a href="mailto:kwon.younggu@gmail.com?Subject=Hello Younggu KWON" target="_top">Send E-Mail</a>
 				</p>
 		 	</div>
 		 </div>
-		 <br/>
+
  		<div >
  			<h3>PROFILE:</h3>
  			<ul>
  				<li style="padding-right:200px;">20 years' software development experience in developing web and desktop applications on clinical research management, accounting management, online shopping mall, network management and CIM areas.</li>
- 				<li style="padding-right:200px;">Over 5 year experience in Flex 2.x/3.x/4.x and Action Script 3.0 including Caurina Tweener, Cairngorm/Robotlegs, fds/lcds/BlazeDs, red5/fms</li>
- 				<li style="padding-right:200px;">Extensive experiences in Java (Servlets, Filters, Java Beans, JavaMail, etc), JSP (EL, JSTL, etc), Ajax/HTML/JavaScript/XML/JSON/CSS using MVC (Model 2) and in C/C++.</li>
+ 				<li">Over 5 year experience in Flex 2.x/3.x/4.x and Action Script 3.0 including Caurina Tweener, Cairngorm/Robotlegs, fds/lcds/BlazeDs, red5/fms</li>
+ 				<li">Extensive experiences in Java (Servlets, Filters, Java Beans, JavaMail, etc), JSP (EL, JSTL, etc), Ajax/HTML/JavaScript/XML/JSON/CSS using MVC (Model 2) and in C/C++.</li>
  				<li>Windows for over 10 years, UNIX family: HP/SUN/CentOS/Ubuntu for over 10 years.</li>
  				<li>MySQL/PostGreSQL/Oracle for 6 years,  MsSQL/MsAccess for 5 years,  DB2 for 2 year.</li>
  				<li>Good analytical/problem-solving capabilities, self-motivated and quick/steady learner.</li>
