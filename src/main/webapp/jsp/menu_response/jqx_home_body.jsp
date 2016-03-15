@@ -13,7 +13,7 @@
 	 				<li>Seeking a freelance developer position for PC-based, Web-based and or Mobile phone-based applications</li>
 	 			</ul>
 	 		</div>
-	 		<div style="float:right; width: 135px">
+	 		<div style="float:right;">
 		 		<a href="mailto:kwon.younggu@gmail.com?Subject=Hello Younggu KWON" target="_top"><img src="images/YoungguKwon.png" width="135" height="146" alt="Younggu KWON" border="0"/></a>
 		 		<p style="padding-top:0px; text-align:center">
 					<a href="mailto:kwon.younggu@gmail.com?Subject=Hello Younggu KWON" target="_top">Send E-Mail</a>
@@ -21,7 +21,7 @@
 		 	</div>
 		 </div>
 
- 		<div >
+ 		<div style="width: 70%">
  			<h3>PROFILE:</h3>
  			<ul>
  				<li style="padding-right:200px;">20 years' software development experience in developing web and desktop applications on clinical research management, accounting management, online shopping mall, network management and CIM areas.</li>
