@@ -66,23 +66,13 @@
 	.wrapper
 	{
 		
-		/*margin-top:5px;*/
+		margin-top:5px;
 		width:1024px;
 
 	}
 	.header 
 	{
-		margin-top: 5px;
-		margin-bottom: 5px;	    
-	    clear:both;
-	    text-align:center;
-	    padding:5px; 
-	    border:1px solid #000000;
-	    box-shadow: 10px 10px 5px #888888;
-		background:#353743;
-
-		height:70px;
-		border-radius:15px 15px 0 0;
+		
 	}
 	
 	.contents
