@@ -6,7 +6,7 @@
 <%@ page isELIgnored ="false" %>
 <div style="width:100%; padding:5px 20px 5px 20px;text-align:left;"><!-- Resume -->
 	 
-	 	<div ><!-- Objective and Profile in depth 1 -->
+	 	<div style="width:100%;"><!-- Objective and Profile in depth 1 -->
 	 		<div style="float:left;">
 	 			<h3>OBJECTIVE:</h3>
 	 			<ul style="list-style-position:inside">
@@ -24,9 +24,9 @@
  		<div style="width: 70%">
  			<h3>PROFILE:</h3>
  			<ul>
- 				<li style="padding-right:200px;">20 years' software development experience in developing web and desktop applications on clinical research management, accounting management, online shopping mall, network management and CIM areas.</li>
- 				<li">Over 5 year experience in Flex 2.x/3.x/4.x and Action Script 3.0 including Caurina Tweener, Cairngorm/Robotlegs, fds/lcds/BlazeDs, red5/fms</li>
- 				<li">Extensive experiences in Java (Servlets, Filters, Java Beans, JavaMail, etc), JSP (EL, JSTL, etc), Ajax/HTML/JavaScript/XML/JSON/CSS using MVC (Model 2) and in C/C++.</li>
+ 				<li>20 years' software development experience in developing web and desktop applications on clinical research management, accounting management, online shopping mall, network management and CIM areas.</li>
+ 				<li>Over 5 year experience in Flex 2.x/3.x/4.x and Action Script 3.0 including Caurina Tweener, Cairngorm/Robotlegs, fds/lcds/BlazeDs, red5/fms</li>
+ 				<li>Extensive experiences in Java (Servlets, Filters, Java Beans, JavaMail, etc), JSP (EL, JSTL, etc), Ajax/HTML/JavaScript/XML/JSON/CSS using MVC (Model 2) and in C/C++.</li>
  				<li>Windows for over 10 years, UNIX family: HP/SUN/CentOS/Ubuntu for over 10 years.</li>
  				<li>MySQL/PostGreSQL/Oracle for 6 years,  MsSQL/MsAccess for 5 years,  DB2 for 2 year.</li>
  				<li>Good analytical/problem-solving capabilities, self-motivated and quick/steady learner.</li>
