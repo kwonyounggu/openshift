@@ -14,7 +14,7 @@
     }); 
 </script>
 
-<div id="jqxMenu" style="width:100%; visibility: hidden; margin-left: 0px;">
+<div id="jqxMenu" style="visibility: hidden; margin-left: 0px;">
 	<ul>
 	    <li><a href="<%= MenuLink.home %>" onfocus="this.blur()">Home</a></li>				
 			
