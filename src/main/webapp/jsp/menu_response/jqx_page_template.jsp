@@ -58,7 +58,7 @@
 	.wrapper
 	{
 		
-		margin-top:5px;
+		margin-top:2px;
 		width:1000px;
 
 	}
@@ -73,11 +73,11 @@
 		background-color:#ffffff;
 		border: 1px solid #e9e9ea;
 		height: 100%;
-		margin-top: 5px;
+		margin-top: 2px;
 	}
 	.footer 
 	{
-		margin-top: 5px;
+		margin-top: 2px;
 		margin-bottom: 5px;
 	    color:#8a8a8a;
 	    clear:both;
@@ -90,6 +90,7 @@
 		border-radius:0 0 15px 15px;
 
 	}
+	/*for Resume*/
 	ul li
 	{
 	    list-style-type: disc;
