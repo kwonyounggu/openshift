@@ -37,10 +37,19 @@ public class SmartPhoneFilter implements Filter
 		     * Includes iPad, Android (e.g., Xoom), BB Playbook, WebOS, etc.
 		     * */
 		    if(detector.detectTierTablet())  
+		    {
 		    	((RequestDispatcher)request.getRequestDispatcher("/tabletController")).forward(request,response);
+		    	return;
+		    }
 		    else if(detector.detectTierIphone())
+		    {
 		    	((RequestDispatcher)request.getRequestDispatcher("/smartphoneController")).forward(request,response);
-		    else chain.doFilter(request, response);//going to the normal servlets		
+		    	return;
+		    }
+		    else 
+		    {
+		    	chain.doFilter(request, response);//going to the normal servlets		
+		    }
 								
 		}
 		catch(Exception e)
