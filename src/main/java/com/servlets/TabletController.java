@@ -16,12 +16,12 @@ import javax.servlet.http.HttpSession;
 import com.common.Message;
 import com.common.Utils;
 
-public class ActionController extends HttpServlet 
+public class TabletController extends HttpServlet 
 {
 	private static final long serialVersionUID = 1L;
 	private Logger log = Logger.getLogger(this.getClass().getName());
 	
-    public ActionController() 
+    public TabletController() 
     {
         super();
     }
@@ -29,7 +29,7 @@ public class ActionController extends HttpServlet
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
-		log.info("doGet() is called in ActionController.java");
+		log.info("doGet() is called in TabletController.java");
 
 		request.setCharacterEncoding("UTF-8");//put this otherwise UNI-Code characters will be broken.
 		
@@ -39,7 +39,7 @@ public class ActionController extends HttpServlet
 		HttpSession session = request.getSession(true);//if(session.isNew())
 		
 		String op=(String)request.getParameter("op");
-		log.info("op="+op+" in ActionController.java");
+		log.info("op="+op+" in TabletController.java");
 		
 		try
 		{
@@ -49,8 +49,8 @@ public class ActionController extends HttpServlet
 			{
 				if(op==null || op.equals("") || op.equals("home"))
 				{
-					request.setAttribute("body_panel", "/jsp/menu_response/jqx_home_body.jsp");
-					((RequestDispatcher)request.getRequestDispatcher("jsp/menu_response/jqx_page_template.jsp")).forward(request,response);
+					request.setAttribute("body_panel", "/jsp/menu_response_tablet/jqx_home_body.jsp");
+					((RequestDispatcher)request.getRequestDispatcher("jsp/menu_response_tablet/jqx_page_template.jsp")).forward(request,response);
 		
 				}
 			}
@@ -66,7 +66,7 @@ public class ActionController extends HttpServlet
 		    	String value = ((String[]) params.get( key ))[ 0 ];
 		    	all_params+=key+"="+value+"<br>";
 	        }
-			log.severe("(op="+op+"): msg="+e+",\nCustomer IP: "+request.getRemoteAddr()+",\n"+all_params+"from ActionController.java");
+			log.severe("(op="+op+"): msg="+e+",\nCustomer IP: "+request.getRemoteAddr()+",\n"+all_params+"from TabletController.java");
 			/*emailList.clear();
 			nameList.clear();
 			emailList.add(Utils.csr_email_address);
