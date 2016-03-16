@@ -6,6 +6,7 @@ import java.util.logging.Logger;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -28,20 +29,17 @@ public class SmartPhoneFilter implements Filter
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException
 	{
-		HttpServletRequest hr=(HttpServletRequest)request;
-		HttpServletResponse res = (HttpServletResponse)response;
 		try
 		{	
-			String userAgent = hr.getHeader("User-Agent");
-		    String httpAccept = hr.getHeader("Accept");
-		    
-		    UAgentInfo detector = new UAgentInfo(userAgent, httpAccept);
+			UAgentInfo detector = new UAgentInfo(((HttpServletRequest)request).getHeader("User-Agent"), ((HttpServletRequest)request).getHeader("Accept"));
 		    /*
 		     * The quick way to detect for a tier of devices. This method detects for the new generation of HTML 5 capable, larger screen tablets. 
 		     * Includes iPad, Android (e.g., Xoom), BB Playbook, WebOS, etc.
 		     * */
-		    if(detector.detectTierTablet())  res.sendRedirect("/tabletController");	   
-		    else if(detector.detectTierIphone()) res.sendRedirect("/smartphoneController");
+		    if(detector.detectTierTablet())  
+		    	((RequestDispatcher)request.getRequestDispatcher("/tabletController")).forward(request,response);
+		    else if(detector.detectTierIphone())
+		    	((RequestDispatcher)request.getRequestDispatcher("/smartphoneController")).forward(request,response);
 		    else chain.doFilter(request, response);//going to the normal servlets		
 								
 		}
