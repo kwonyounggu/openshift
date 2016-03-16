@@ -40,16 +40,9 @@ public class SmartPhoneFilter implements Filter
 		     * The quick way to detect for a tier of devices. This method detects for the new generation of HTML 5 capable, larger screen tablets. 
 		     * Includes iPad, Android (e.g., Xoom), BB Playbook, WebOS, etc.
 		     * */
-		    if(detector.detectTierTablet())
-		    {
-		    	res.sendRedirect("/tabletController");
-		    }
-		    else if(detector.detectTierIphone())
-		    {
-		    	res.sendRedirect("/smartphoneController");
-		    }
-	
-			chain.doFilter(request, response);//going to the normal servlets		
+		    if(detector.detectTierTablet())  res.sendRedirect("/tabletController");	   
+		    else if(detector.detectTierIphone()) res.sendRedirect("/smartphoneController");
+		    else chain.doFilter(request, response);//going to the normal servlets		
 								
 		}
 		catch(Exception e)
