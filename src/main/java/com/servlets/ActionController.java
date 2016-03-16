@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.common.Message;
+import com.common.UAgentInfo;
 import com.common.Utils;
 
 public class ActionController extends HttpServlet 
@@ -31,6 +32,20 @@ public class ActionController extends HttpServlet
 	{
 		log.info("doGet() is called in ActionController.java");
 
+		UAgentInfo detector = new UAgentInfo(request.getHeader("User-Agent"), request.getHeader("Accept"));
+	   
+	    if(detector.detectTierTablet())  
+	    {
+	    	((RequestDispatcher)request.getRequestDispatcher("/tabletController")).forward(request,response);
+	    	return;
+	    }
+	    else if(detector.detectTierIphone())
+	    {
+	    	((RequestDispatcher)request.getRequestDispatcher("/smartphoneController")).forward(request,response);
+	    	return;
+	    }
+	    
+		
 		request.setCharacterEncoding("UTF-8");//put this otherwise UNI-Code characters will be broken.
 		
 		response.setContentType("text/html; charset=UTF-8");
@@ -40,6 +55,7 @@ public class ActionController extends HttpServlet
 		
 		String op=(String)request.getParameter("op");
 		log.info("op="+op+" in ActionController.java");
+		
 		
 		try
 		{

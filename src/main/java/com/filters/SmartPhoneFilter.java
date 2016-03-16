@@ -39,12 +39,10 @@ public class SmartPhoneFilter implements Filter
 		    if(detector.detectTierTablet())  
 		    {
 		    	((RequestDispatcher)request.getRequestDispatcher("/tabletController")).forward(request,response);
-		    	return;
 		    }
 		    else if(detector.detectTierIphone())
 		    {
 		    	((RequestDispatcher)request.getRequestDispatcher("/smartphoneController")).forward(request,response);
-		    	return;
 		    }
 		    else 
 		    {
