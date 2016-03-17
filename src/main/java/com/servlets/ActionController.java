@@ -105,7 +105,7 @@ public class ActionController extends HttpServlet
 	{
 		request.setAttribute("warning_msg", msg+" at "+Utils.currentTimestamp()+"!!!");
 		request.setAttribute("body_panel", "error/servlet_warning_page.jsp");
-		//((RequestDispatcher)request.getRequestDispatcher("jsp/login_page_template.jsp")).forward(request,response);
+		((RequestDispatcher)request.getRequestDispatcher("jsp/menu_response/jqx_page_template.jsp")).forward(request,response);
 	}
 	public void forwardErrorPage(HttpServletRequest request,HttpServletResponse response,String msg)throws ServletException, IOException
 	{
@@ -113,7 +113,7 @@ public class ActionController extends HttpServlet
 							 "<br><br>"+Message.inform_to_admin_about_exception+"&nbsp;&nbsp;<a href='mailto:"+System.getenv("OPENSHIFT_LOGIN")+"?subject=("+System.getenv("OPENSHIFT_APP_NAME")+") ERROR NOTIFICATION' style='color: #FE5734;text-decoration: underline;'>E-MAIL</a>"+
 							 "<br><br>Your IP Address: "+request.getRemoteAddr());
 		request.setAttribute("body_panel", "error/servlet_error_page.jsp");
-		//((RequestDispatcher)request.getRequestDispatcher("jsp/login_page_template.jsp")).forward(request,response);
+		((RequestDispatcher)request.getRequestDispatcher("jsp/menu_response/jqx_page_template.jsp")).forward(request,response);
 	}
 
 }
