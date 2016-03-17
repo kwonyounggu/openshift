@@ -5,11 +5,10 @@
 <%@ page import="java.util.*" %>
 
 <script type="text/javascript">
-     $(document).ready(function () {
+     $(document).ready(function () 
+     {
 
-        $("#jqxMenu").jqxMenu({ width: 'auto', height: '30px', autoOpen: false, autoCloseOnMouseLeave: false, showTopLevelArrows: true, 
-        						theme: 'metro'
-        					  });
+        $("#jqxMenu").jqxMenu({ width: 'auto', height: '30px', autoOpen: false, autoCloseOnMouseLeave: false, showTopLevelArrows: true, theme: 'metro'});
         $("#jqxMenu").css('visibility', 'visible');               
     }); 
 </script>

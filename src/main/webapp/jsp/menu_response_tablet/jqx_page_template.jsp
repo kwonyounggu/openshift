@@ -64,7 +64,16 @@
 	}
 	.header 
 	{
-		width: 100%;
+		clear:both;
+	    text-align:center;
+	    padding:5px; 
+	    border:1px solid #000000;
+	    box-shadow: 10px 10px 5px #888888;
+		background:#353743;
+		width:97.8%;
+		height:70px;
+		border-radius:15px 15px 0 0;
+
 		height: 100%;
 	}
 	
@@ -108,10 +117,10 @@
 	<div class="wrapper">
 		
 		<div class="header">
-			<%@ include file="/jsp/menu_response/header.jsp" %>
+			<%@ include file="/jsp/menu_response_tablet/header.jsp" %>
 		</div>	
 		<div class="contents">
-			<%@ include file="/jsp/menu_response/jqx_menu.jsp" %>
+			<%@ include file="/jsp/menu_response_tablet/jqx_menu.jsp" %>
 			<jsp:include page='${body_panel}' flush='true'/>			
 		</div>
 		<div class="footer">
