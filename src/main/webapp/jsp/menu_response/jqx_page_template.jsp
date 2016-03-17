@@ -113,6 +113,9 @@
 		</div>	
 		<div class="contents">
 			<%@ include file="/jsp/menu_response/jqx_menu.jsp" %>
+			<%
+				System.out.println("body_panel="+request.getAttribute("body_panel"));
+			%>
 			<jsp:include page='${body_panel}' flush='true'/>			
 		</div>
 		<div class="footer">
