@@ -42,7 +42,7 @@ public class TabletController extends HttpServlet
 		log.info("op="+op+" in TabletController.java");
 		
 		try
-		{
+		{if(true) throw new Exception("ERROR TESTING ...............................................");
 			//Here, first check if the person is logged-in, otherwise go back to the public home
 			Object webmonsterBean=(Object)session.getAttribute("webmonsterBean");
 			if(webmonsterBean==null)
@@ -86,16 +86,16 @@ public class TabletController extends HttpServlet
 	public void forwardWarningPage(HttpServletRequest request,HttpServletResponse response,String msg)throws ServletException, IOException
 	{
 		request.setAttribute("warning_msg", msg+" at "+Utils.currentTimestamp()+"!!!");
-		request.setAttribute("body_panel", "error/servlet_warning_page.jsp");
-		//((RequestDispatcher)request.getRequestDispatcher("jsp/login_page_template.jsp")).forward(request,response);
+		request.setAttribute("body_panel", "/jsp/error/servlet_warning_page.jsp");
+		((RequestDispatcher)request.getRequestDispatcher("jsp/menu_response/jqx_page_template.jsp")).forward(request,response);
 	}
 	public void forwardErrorPage(HttpServletRequest request,HttpServletResponse response,String msg)throws ServletException, IOException
 	{
-		request.setAttribute("error_msg", msg+" false: at "+Utils.currentTimestamp()+"!!!"+
-							 "<br><br>"+Message.inform_to_admin_about_exception+"&nbsp;&nbsp;<a href='mailto:"+System.getenv("OPENSHIFT_LOGIN")+"?subject=("+System.getenv("OPENSHIFT_APP_NAME")+") ERROR NOTIFICATION' style='color: #FE5734;text-decoration: underline;'>E-MAIL</a>"+
+		request.setAttribute("error_msg", msg+" at "+Utils.currentTimestamp()+"!!!"+
+							 "<br><br>"+Message.inform_to_admin_about_exception+"&nbsp;&nbsp;<a href='mailto:"+"webmonster.ca@gmail.com"+"?subject=("+System.getenv("OPENSHIFT_APP_NAME")+") ERROR NOTIFICATION&body="+msg+"' style='color: #FE5734;text-decoration: underline;'>E-MAIL by Click and Click</a>"+
 							 "<br><br>Your IP Address: "+request.getRemoteAddr());
-		request.setAttribute("body_panel", "error/servlet_error_page.jsp");
-		//((RequestDispatcher)request.getRequestDispatcher("jsp/login_page_template.jsp")).forward(request,response);
+		request.setAttribute("body_panel", "/jsp/error/servlet_error_page.jsp");
+		((RequestDispatcher)request.getRequestDispatcher("jsp/menu_response/jqx_page_template.jsp")).forward(request,response);
 	}
 
 }

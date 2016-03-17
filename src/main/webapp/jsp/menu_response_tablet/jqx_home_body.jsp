@@ -1,7 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ page errorPage="/jsp/error/jsp_error_page.jsp" %>
-
-
 <%@ page import="java.util.*" %>
 <%@ page isELIgnored ="false" %>
 <div style="width:100%; padding:5px 20px 5px 20px;text-align:left;"><!-- Resume -->

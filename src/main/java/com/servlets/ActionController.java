@@ -58,7 +58,7 @@ public class ActionController extends HttpServlet
 		
 		
 		try
-		{if(true) throw new Exception("testing dkdkd dkdkd testing dkdkd dkdkd testing dkdkd dkdkd testing dkdkd dkdkd 123");
+		{
 			//Here, first check if the person is logged-in, otherwise go back to the public home
 			Object webmonsterBean=(Object)session.getAttribute("webmonsterBean");
 			if(webmonsterBean==null)
@@ -91,8 +91,7 @@ public class ActionController extends HttpServlet
 			nameList.add("ADMIN");
 			new MailInfo(Utils.csr_email_address,emailList, nameList,Utils.smtp,Message.error_report_subject, "(op="+op+"): "+e+"<br><br>"+all_params+" Generated at "+Utils.currentTimestamp()+".");
 			*/
-			//forwardErrorPage(request,response,e.toString());
-			forwardWarningPage(request,response,e.toString());
+			forwardErrorPage(request,response,e.toString());
 		}
 	}
 	

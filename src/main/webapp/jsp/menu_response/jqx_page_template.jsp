@@ -6,7 +6,7 @@
 <!doctype html>
 <html>
 <head>
-<title>${app_symbol}</title>
+<title>WebMonster</title>
 <META name=author content="Younggu Kwon">
 <META name=email content="kwon.younggu@gmail.com">
 
