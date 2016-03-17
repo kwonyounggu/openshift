@@ -12,7 +12,7 @@
 
 <link rel="SHORTCUT ICON" href="ico/favicon.ico" />
 
-<link rel="stylesheet" type="text/css" href="css/csr.css" />
+<link rel="stylesheet" type="text/css" href="css/main.css" />
 
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
