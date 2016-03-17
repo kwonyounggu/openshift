@@ -4,9 +4,9 @@
 
 <%@ page import="java.util.*" %>
 
-<div>
+<div style="padding-top: 6px;">
 	<font size="6" color="#ffda48">Freelance App Developer (tablet)</font><br/>
-	<font size="4" color="#bad5fe">
+	<font size="4" color="#bad5fe" style="padding-top: 3px;">
 		<a href="mailto:kwon.younggu@gmail.com?Subject=Hello Younggu KWON" style="color:inherit;text-decoration: none" target="_top">Younggu KWON</a>
 	</font>
 </div>
