@@ -58,7 +58,7 @@ public class ActionController extends HttpServlet
 		
 		
 		try
-		{
+		{if(true) throw new Exception("testing dkdkd dkdkd testing dkdkd dkdkd testing dkdkd dkdkd testing dkdkd dkdkd 123");
 			//Here, first check if the person is logged-in, otherwise go back to the public home
 			Object webmonsterBean=(Object)session.getAttribute("webmonsterBean");
 			if(webmonsterBean==null)
@@ -71,7 +71,7 @@ public class ActionController extends HttpServlet
 				}
 			}
 			
-			throw new Exception("testing dkdkd dkdkd testing dkdkd dkdkd testing dkdkd dkdkd testing dkdkd dkdkd 123");
+			
 		}
 		catch(Exception e)
 		{
