@@ -109,6 +109,7 @@ public class ActionController extends HttpServlet
 	}
 	public void forwardErrorPage(HttpServletRequest request,HttpServletResponse response,String msg)throws ServletException, IOException
 	{
+		log.info("------------------------------ HERE 0------------------------------------------");
 		request.setAttribute("error_msg", msg+" false: at "+Utils.currentTimestamp()+"!!!"+
 							 "<br><br>"+Message.inform_to_admin_about_exception+"&nbsp;&nbsp;<a href='mailto:"+System.getenv("OPENSHIFT_ENV_VAR")+"?subject=("+System.getenv("OPENSHIFT_APP_NAME")+") ERROR NOTIFICATION' style='color: #FE5734;text-decoration: underline;'>E-MAIL</a>"+
 							 "<br><br>Your IP Address: "+request.getRemoteAddr());

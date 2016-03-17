@@ -5,7 +5,7 @@
 <%@ page import="java.util.Iterator" %>
 <%@page import="com.common.Utils"%>
 <%@page import="com.common.Message"%>
-<table width='1000' align='center' border='0' cellpadding='0' cellspacing='0'>
+<table width='100%' align='center' border='0' cellpadding='0' cellspacing='0'>
 	<tr height='10'>
 		<td>
 			<%
@@ -44,7 +44,7 @@
 	<tr height='28'><th >ERROR REPORT</th></tr>
 	<tr><td align='left'><p>ERROR CONTENTS:</p><p><ul><li><%= exception.toString() %>
 										 <%
-										 out.print(" at "+Utils.currentTimestamp()+"!!!<br><br>"+Message.inform_to_admin_about_exception+"&nbsp;&nbsp;<a href='mailto:"+System.getenv("OPENSHIFT_LOGIN")+"?subject=("+System.getenv("OPENSHIFT_APP_NAME")+") ERROR NOTIFICATION' style='color: #FE5734;text-decoration: underline;''>EMAIL</a>"+"<br><br>CUSTOMER IP ADDRESS: "+request.getRemoteAddr());
+										 out.print(" at "+Utils.currentTimestamp()+"!!!<br><br>"+Message.inform_to_admin_about_exception+"&nbsp;&nbsp;<a href='mailto:"+System.getenv("OPENSHIFT_ENV_VAR")+"?subject=("+System.getenv("OPENSHIFT_APP_NAME")+") ERROR NOTIFICATION' style='color: #FE5734;text-decoration: underline;''>EMAIL</a>"+"<br><br>CUSTOMER IP ADDRESS: "+request.getRemoteAddr());
 										 %></li></ul></p></td></tr>
 
 	<tr><td><span class='small_text'>from jsp_error_page.jsp</span></td></tr>
