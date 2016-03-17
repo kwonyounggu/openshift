@@ -110,7 +110,7 @@ public class ActionController extends HttpServlet
 	public void forwardErrorPage(HttpServletRequest request,HttpServletResponse response,String msg)throws ServletException, IOException
 	{
 		request.setAttribute("error_msg", msg+" at "+Utils.currentTimestamp()+"!!!"+
-							 "<br><br>"+Message.inform_to_admin_about_exception+"&nbsp;&nbsp;<a href='mailto:"+System.getenv("OPENSHIFT_ENV_VAR")+"?subject=("+System.getenv("OPENSHIFT_APP_NAME")+") ERROR NOTIFICATION' style='color: #FE5734;text-decoration: underline;'>E-MAIL</a>"+
+							 "<br><br>"+Message.inform_to_admin_about_exception+"&nbsp;&nbsp;<a href='mailto:"+"webmonster.ca@gmail.com"+"?subject=("+System.getenv("OPENSHIFT_APP_NAME")+") ERROR NOTIFICATION&body="+msg+"' style='color: #FE5734;text-decoration: underline;'>E-MAIL by Click and Click</a>"+
 							 "<br><br>Your IP Address: "+request.getRemoteAddr());
 		request.setAttribute("body_panel", "/jsp/error/servlet_error_page.jsp");
 		((RequestDispatcher)request.getRequestDispatcher("jsp/menu_response/jqx_page_template.jsp")).forward(request,response);
