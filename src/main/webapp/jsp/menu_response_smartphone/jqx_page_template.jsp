@@ -70,11 +70,9 @@
 	    border:1px solid #000000;
 	    box-shadow: 10px 10px 5px #888888;
 		background:#353743;
-		width:97.8%;
+
 		height:70px;
 		border-radius:15px 15px 0 0;
-
-		height: 100%;
 	}
 	
 	.contents
