@@ -91,7 +91,8 @@ public class ActionController extends HttpServlet
 			nameList.add("ADMIN");
 			new MailInfo(Utils.csr_email_address,emailList, nameList,Utils.smtp,Message.error_report_subject, "(op="+op+"): "+e+"<br><br>"+all_params+" Generated at "+Utils.currentTimestamp()+".");
 			*/
-			forwardErrorPage(request,response,e.toString());
+			//forwardErrorPage(request,response,e.toString());
+			forwardWarningPage(request,response,e.toString());
 		}
 	}
 	
