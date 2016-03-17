@@ -87,7 +87,7 @@ public class TabletController extends HttpServlet
 	{
 		request.setAttribute("warning_msg", msg+" at "+Utils.currentTimestamp()+"!!!");
 		request.setAttribute("body_panel", "/jsp/error/servlet_warning_page.jsp");
-		((RequestDispatcher)request.getRequestDispatcher("jsp/menu_response/jqx_page_template.jsp")).forward(request,response);
+		((RequestDispatcher)request.getRequestDispatcher("jsp/menu_response_tablet/jqx_page_template.jsp")).forward(request,response);
 	}
 	public void forwardErrorPage(HttpServletRequest request,HttpServletResponse response,String msg)throws ServletException, IOException
 	{
@@ -95,7 +95,7 @@ public class TabletController extends HttpServlet
 							 "<br><br>"+Message.inform_to_admin_about_exception+"&nbsp;&nbsp;<a href='mailto:"+"webmonster.ca@gmail.com"+"?subject=("+System.getenv("OPENSHIFT_APP_NAME")+") ERROR NOTIFICATION&body="+msg+"' style='color: #FE5734;text-decoration: underline;'>E-MAIL by Click and Click</a>"+
 							 "<br><br>Your IP Address: "+request.getRemoteAddr());
 		request.setAttribute("body_panel", "/jsp/error/servlet_error_page.jsp");
-		((RequestDispatcher)request.getRequestDispatcher("jsp/menu_response/jqx_page_template.jsp")).forward(request,response);
+		((RequestDispatcher)request.getRequestDispatcher("jsp/menu_response_tablet/jqx_page_template.jsp")).forward(request,response);
 	}
 
 }
