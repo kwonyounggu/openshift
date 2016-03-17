@@ -5,9 +5,10 @@
 <!doctype html>
 <html>
 <head>
-<title>WebMonster</title>
+<title>WebMonster-S</title>
 <META name=author content="Younggu Kwon">
 <META name=email content="kwon.younggu@gmail.com">
+<META name=description content="for Smartphone">
 
 <link rel="SHORTCUT ICON" href="ico/favicon.ico" />
 
