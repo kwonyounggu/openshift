@@ -42,7 +42,7 @@ public class TabletController extends HttpServlet
 		log.info("op="+op+" in TabletController.java");
 		
 		try
-		{if(true) throw new Exception("ERROR TESTING ...............................................");
+		{
 			//Here, first check if the person is logged-in, otherwise go back to the public home
 			Object webmonsterBean=(Object)session.getAttribute("webmonsterBean");
 			if(webmonsterBean==null)
