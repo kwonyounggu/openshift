@@ -2,12 +2,12 @@
 
 <%@ page import="java.util.*" %>
 <%@ page isELIgnored ="false" %>
-<script type="text/javascript" src="../../jqwidgets/jqxdockpanel.js"></script>
+
 <script type="text/javascript">
         $(document).ready(function () 
         {
             // Create jqxDockPanel
-            $("#jqxDockPanel").jqxDockPanel({ width: '100%', height: '100%'});
+            $("#jqxDockPanel").jqxDockPanel({ width: 900, height: 900});
         });
     </script>
 
