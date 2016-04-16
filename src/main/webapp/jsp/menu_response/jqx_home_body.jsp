@@ -7,7 +7,7 @@
         $(document).ready(function () 
         {
             // Create jqxDockPanel
-            $("#jqxDockPanel").jqxDockPanel({ width: 900, height: 900});
+            $("#jqxDockPanel").jqxDockPanel({ width: 900, height: 'auto'});
         });
     </script>
 
