@@ -2,6 +2,28 @@
 
 <%@ page import="java.util.*" %>
 <%@ page isELIgnored ="false" %>
+<script type="text/javascript" src="../../jqwidgets/jqxdockpanel.js"></script>
+<script type="text/javascript">
+        $(document).ready(function () 
+        {
+            // Create jqxDockPanel
+            $("#jqxDockPanel").jqxDockPanel({ width: 300, height: 210});
+            $("#jqxDockPanel div").css('color', '#fff');
+        });
+    </script>
+<div id='jqxWidget' style="width: 300px; height: 600px; font-size: 13px; font-family: Verdana;">
+        <div id='jqxDockPanel'>
+            <div id='first' dock='left' style='background: #486974;'>
+                First Div</div>
+            <div id='second' dock='top' style='height: 100px; background: #368ba7;'>
+                Second Div</div>
+            <div id='third' dock='right' style='background: #df7169;'>
+                Third Div</div>
+            <div id='fourth' style='background: #a73654;'>
+                Fourth Div</div>
+        </div>
+</div>
+
 <div style="width:100%; padding:5px 20px 5px 20px;text-align:left;"><!-- Resume -->
 
 	 	<div style="width:100%;"><!-- Objective and Profile in depth 1 -->
