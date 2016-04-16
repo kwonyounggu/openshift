@@ -8,7 +8,7 @@
 	 		<div style="float:left; width:80%">
 	 			<h3>OBJECTIVE:</h3>
 	 			<ul>
-	 				<li>Seeking a freelance developer position for PC-based, Web-based and or Mobile phone-based applications</li>
+	 				<li>Seeking freelance works developing for PC-based, Web-based and or Mobile phone-based applications</li>
 	 			</ul>
 	 		</div>
 	 		<div style="float:right;width:20%">
@@ -118,7 +118,7 @@
 	 			</ul>
 	 		</div>
 	 		<div style="padding-left: 20px">
-		 		<p><b>Bachelor of Computer Science, University of Newcastle, Australia&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1991 - 1994</b></p>
+		 		<p><b>M & B of Computer Science, University of Newcastle, Australia&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1991 - 1994</b></p>
 	 		</div>
 
 	 	</div>
