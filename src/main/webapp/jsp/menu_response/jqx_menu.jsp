@@ -19,7 +19,8 @@
 	    <li><a href="<%= MenuLink.home %>" onfocus="this.blur()">Home</a></li>							
 		<li><a href="#">Showcase</a></li>
 		<li><a href="#">Contact</a></li>
-		<li style='list-style: none; width: 61.666%;' ignoretheme='true'></li>
+		<li style='list-style: none; width: 51.666%;' ignoretheme='true'></li>
+		<li><a href="#">Stock-Charts</a></li>
 		<li><a href="#">냉난방</a></li>
 		<li><a href="#">색소폰</a></li>
 	</ul>
