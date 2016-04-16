@@ -7,17 +7,16 @@
         $(document).ready(function () 
         {
             // Create jqxDockPanel
-            $("#jqxDockPanel").jqxDockPanel({ width: '100%'});
+            $("#jqxDockPanel").jqxDockPanel({ width: '100%', height: '100%'});
         });
     </script>
 
-       <div id='jqxDockPanel'>
-    <div id='fourth' dock='bottom' style='background: #a73654; width: 100%; height: auto'>Fourth Div<br/>Fourth Div<br/>Fourth Div<br/>Fourth Div<br/>Fourth Div<br/>Fourth Div<br/></div>
-        <div id='first' dock='left' style='background: #486974; width: 50%;'>First Div</div>
-       <div id='first' dock='left' style='background: #a73654; width: 10px;'>First Div</div>
-        <div id='third' dock='left' style='background: #df7169; width: 50%;'>Third Div</div>
-        
-    </div>
+<div id='jqxDockPanel'>
+	<div id='fourth' dock='bottom' style='background: #a73654; width: 100%; height: auto'>Fourth Div<br/>Fourth Div<br/>Fourth Div<br/>Fourth Div<br/>Fourth Div<br/>Fourth Div<br/></div>
+	<div id='first' dock='left' style='background: #486974; width: 50%;'>First Div</div>
+	<div id='first' dock='left' style='background: #a73654; width: 10px;'>First Div</div>
+	<div id='third' dock='left' style='background: #df7169; width: 50%;'>Third Div</div> 
+</div>
 
 
 <div style="width:100%; padding:5px 20px 5px 20px;text-align:left;"><!-- Resume -->
