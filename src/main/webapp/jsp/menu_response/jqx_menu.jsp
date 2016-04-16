@@ -16,9 +16,12 @@
 
 <div id="jqxMenu" style="visibility: hidden; margin-left: 0px;">
 	<ul>
-	    <li><a href="<%= MenuLink.home %>" onfocus="this.blur()">Home</a></li>				
-			
-			<li style='list-style: none; width: 100%; '  ignoretheme='true'></li>	
+	    <li><a href="<%= MenuLink.home %>" onfocus="this.blur()">Home</a></li>							
+		<li><a href="#">Showcase</a></li>
+		<li><a href="#">Contact</a></li>
+		<li style='list-style: none; width: 16.666%; '  ignoretheme='true'></li>
+		<li><a href="#">HVAC</a></li>
+		<li><a href="#">Saxophone</a></li>
 	</ul>
 	
 </div>
