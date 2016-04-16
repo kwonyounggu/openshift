@@ -12,16 +12,13 @@
         });
     </script>
 <div id='jqxWidget' style="width: 300px; height: 600px; font-size: 13px; font-family: Verdana;">
-        <div id='jqxDockPanel'>
-            <div id='first' dock='left' style='background: #486974;'>
-                First Div</div>
-            <div id='second' dock='top' style='height: 100px; background: #368ba7;'>
-                Second Div</div>
-            <div id='third' dock='right' style='background: #df7169;'>
-                Third Div</div>
-            <div id='fourth' style='background: #a73654;'>
-                Fourth Div</div>
-        </div>
+       <div id='jqxDockPanel'>
+    <div id='fourth' dock='bottom' style='background: #a73654; width: 100%; height: auto'>Fourth Div<br/>Fourth Div<br/>Fourth Div<br/>Fourth Div<br/>Fourth Div<br/>Fourth Div<br/></div>
+        <div id='first' dock='left' style='background: #486974; width: 50%;'>First Div</div>
+       <div id='first' dock='left' style='background: #a73654; width: 10px;'>First Div</div>
+        <div id='third' dock='left' style='background: #df7169; width: 50%;'>Third Div</div>
+        
+    </div>
 </div>
 
 <div style="width:100%; padding:5px 20px 5px 20px;text-align:left;"><!-- Resume -->
