@@ -3,20 +3,19 @@
 <%@ page import="java.util.*" %>
 <%@ page isELIgnored ="false" %>
 
-<script type="text/javascript">
-        $(document).ready(function () 
-        {
-            // Create jqxDockPanel
-            $("#jqxDockPanel").jqxDockPanel({ width: 900, height: 'auto'});
-        });
-    </script>
+<table style='width: 100%'>
+  <tr>
+    <td style='border: 1px solid black; width: 45%'>Row 1: Col 1</td>
+    <td></td>
+    <td style='border: 1px solid black; width: 45%'>Row 1: Col 2</td>
+  </tr>
+  <tr style='height: 20px'><td colspan='3'></td></tr>
+  <tr>
+  	<td colspan='3'>
+  	</td>
+  </tr>
+</table>
 
-<div id='jqxDockPanel'>
-	<div id='fourth' dock='bottom' style='background: #a73654; width: 100%; height: auto'>Fourth Div<br/>Fourth Div<br/>Fourth Div<br/>Fourth Div<br/>Fourth Div<br/>Fourth Div<br/></div>
-	<div id='first' dock='left' style='background: #486974; width: 50%;'>First Div</div>
-	<div id='first' dock='left' style='background: #a73654; width: 10px;'>First Div</div>
-	<div id='third' dock='left' style='background: #df7169; width: 50%;'>Third Div</div> 
-</div>
 
 
 <div style="width:100%; padding:5px 20px 5px 20px;text-align:left;"><!-- Resume -->
