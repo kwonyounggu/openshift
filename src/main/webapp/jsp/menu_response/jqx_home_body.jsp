@@ -6,7 +6,7 @@
 <table style='width: 100%'>
   <tr>
     <td style='border: 1px solid black; width: 45%'>Row 1: Col 1</td>
-    <td></td>
+    <td style='border: none; width: 20px'></td>
     <td style='border: 1px solid black; width: 45%'>Row 1: Col 2</td>
   </tr>
   <tr style='height: 20px'><td colspan='3'></td></tr>
