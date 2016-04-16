@@ -19,9 +19,9 @@
 	    <li><a href="<%= MenuLink.home %>" onfocus="this.blur()">Home</a></li>							
 		<li><a href="#">Showcase</a></li>
 		<li><a href="#">Contact</a></li>
-		<li style='list-style: none; width: 16.666%; '  ignoretheme='true'></li>
-		<li><a href="#">HVAC</a></li>
-		<li><a href="#">Saxophone</a></li>
+		<li style='list-style: none; width: 56.666%; '  ignoretheme='true'></li>
+		<li><a href="#">냉난방</a></li>
+		<li><a href="#">색소폰</a></li>
 	</ul>
 	
 </div>
