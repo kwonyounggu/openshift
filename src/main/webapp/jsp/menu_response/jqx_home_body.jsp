@@ -50,9 +50,6 @@ ul li
 		 		</div>
 		 		<div style="float:right;width:20%">
 			 		<a href="mailto:kwon.younggu@gmail.com?Subject=Hello Younggu KWON" target="_top"><img src="images/YoungguKwon.png" width="135" height="146" alt="Younggu KWON" border="0"/></a>
-			 		<span style="padding-top:0px; text-align:center; color: #bad5fe">
-						<a href="mailto:kwon.younggu@gmail.com?Subject=Hello Younggu KWON" target="_top">Welcome EMail</a>
-					</span>
 			 	</div>
 			 </div>
 	
