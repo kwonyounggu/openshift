@@ -6,8 +6,8 @@
 
 <table style='width: 90%; padding-top: 20px; table-layout: fixed'>
   <tr>
-    <td style='border: 0px solid black; background-color: #555762; width: 50%'>
-    	<ul><h3>What to do</h3>
+    <td style='border: 0px solid black; background-color: #555762; color: #ffffff; width: 50%'>
+    	<ul><h3 style='color: #f9d548;'>What to do</h3>
     		<li>Web Application Development (eg: e-learning, e-commerce, etc)</li>
     		<li>PC-based Application Development (eg: stock-charts, etc)</li>
     		<li>Smart Phone Application Development (eg: stock-charts, etc)</li>
@@ -16,8 +16,8 @@
     	</ul>
     </td>	
     <td style='width: 20px'></td>
-    <td style='border: 0px solid black; background-color: #555762; width: 50%'>
-    	<ul><h3>Developement Technologies</h3>
+    <td style='border: 0px solid black; background-color: #555762; color: #ffffff; width: 50%'>
+    	<ul><h3 style='color: #f9d548;'>Developement Technologies</h3>
     		<li>Java, C/C++</li>
     		<li>Actionscript 3.0 including Starling, Feathers UI</li>
     		<li>HTML/CSS/Javascript including JQuery</li>
