@@ -36,7 +36,7 @@ ul li
     	</ul>
     </td>
   </tr>
-  <tr style='height: 2px; background-color: #555762;'><td colspan='3'></td></tr>
+  <tr style='height: 2px; background-color: #555762; padding: 20px 0 20px 0'><td colspan='3'></td></tr>
   <tr>
 	<td colspan='3' style='border: 1px solid gray'>
 		<div style="width:100%; padding:5px 20px 5px 20px;text-align:left;"><!-- Resume -->	
