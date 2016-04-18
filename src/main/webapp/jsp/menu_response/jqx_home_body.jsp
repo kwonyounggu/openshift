@@ -18,7 +18,7 @@ ul li
   <tr>
     <td style='background-color: #555762; color: #ffffff; width: 50%'>
     	<ul style='font-size: 14px'><h3 style='color: #f9d548;'>What to provide</h3>
-    		<li>Web Application Development<br/>(eg: stock-charts, knowledge-exchange, e-learning, e-commerce, etc)</li>
+    		<li>Web Application Development<br/>(eg: stock-charts, e-learning, e-commerce, etc)</li>
     		<li>PC-based Application Development (eg: stock-charts, etc)</li>
     		<li>Smart Phone Application Development (eg: stock-charts, etc)</li>
     		<li>Tablet Application Development (eg: stock-charts, etc)</li>
@@ -36,9 +36,9 @@ ul li
     	</ul>
     </td>
   </tr>
-  <tr style='height: 20px; background-color: #555762;'><td colspan='3'></td></tr>
+  <tr style='height: 2px; background-color: #555762;'><td colspan='3'></td></tr>
   <tr>
-	<td colspan='3' style='border: 1px solid black'>
+	<td colspan='3' style='border: 1px solid gray'>
 		<div style="width:100%; padding:5px 20px 5px 20px;text-align:left;"><!-- Resume -->	
 		 	<div style="width:100%;"><!-- Objective and Profile in depth 1 -->
 		 		<div style="float:left; width:80%">
