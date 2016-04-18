@@ -49,8 +49,8 @@ ul li
 		 		</div>
 		 		<div style="float:right;width:20%">
 			 		<a href="mailto:kwon.younggu@gmail.com?Subject=Hello Younggu KWON" target="_top"><img src="images/YoungguKwon.png" width="135" height="146" alt="Younggu KWON" border="0"/></a>
-			 		<p style="padding-top:0px; text-align:left">
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="mailto:kwon.younggu@gmail.com?Subject=Hello Younggu KWON" target="_top">Send E-Mail</a>
+			 		<p style="padding-top:0px; text-align:center">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="mailto:kwon.younggu@gmail.com?Subject=Hello Younggu KWON" target="_top">Welcome EMail</a>
 					</p>
 			 	</div>
 			 </div>
