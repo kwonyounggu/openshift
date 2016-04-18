@@ -6,23 +6,23 @@
 <center>
 <table style='width: 90%; table-layout: fixed'>
   <tr>
-    <td style='border: 1px solid black; width: 50%'></td>
-    	<ul>What to do
-    		<li>Web Application Development including e-learning, e-commerce, research apps, etc</li>
-    		<li>PC-based Application Development including stock-charts, custom-oriented apps, etc</li>
-    		<li>Smart Phone Application Development including stock-charts, custom-oriented apps, etc</li>
-    		<li>Tablet Application Development including stock-charts, custom-oriented apps, etc</li>
+    <td style='border: 1px solid black; width: 50%'>
+    	<ul><h3>What to do</h3>
+    		<li>Web Application Development (eg: e-learning, e-commerce, etc)</li>
+    		<li>PC-based Application Development (eg: stock-charts, etc)</li>
+    		<li>Smart Phone Application Development (eg: stock-charts, etc)</li>
+    		<li>Tablet Application Development (eg: stock-charts, etc)</li>
     		<li>Web Site Support and Maintenance</li>
     	</ul>
-    	
+    </td>	
     <td style='width: 20px'></td>
     <td style='border: 1px solid black; width: 50%'>
-    	<ul>What to do
-    		<li>Web Application Development including e-learning, e-commerce, research apps, etc</li>
-    		<li>PC-based Application Development including stock-charts, custom-oriented apps, etc</li>
-    		<li>Smart Phone Application Development including stock-charts, custom-oriented apps, etc</li>
-    		<li>Tablet Application Development including stock-charts, custom-oriented apps, etc</li>
-    		<li>Web Site Support and Maintenance</li>
+    	<ul><h3>Developement Technologies</h3>
+    		<li>Java, C/C++</li>
+    		<li>Actionscript 3.0 including Starling, Feathers UI</li>
+    		<li>HTML/CSS/Javascript including JQuery</li>
+    		<li>Oracle, PostgreSQL, MySql, Ms Access</li>
+    		<li>Tomcat 5.x, 6.x, 7.x, 8.x and JBoss</li>
     	</ul>
     </td>
   </tr>
