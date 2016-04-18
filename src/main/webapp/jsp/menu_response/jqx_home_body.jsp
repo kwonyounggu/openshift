@@ -3,18 +3,36 @@
 <%@ page import="java.util.*" %>
 <%@ page isELIgnored ="false" %>
 
-<table style='width: 100%'>
+<center>
+<table style='width: 90%; table-layout: fixed'>
   <tr>
-    <td style='border: 1px solid black; width: 45%'>Row 1: Col 1</td>
-    <td style='border: none; width: 20px'></td>
-    <td style='border: 1px solid black; width: 45%'>Row 1: Col 2</td>
+    <td style='border: 1px solid black; width: 50%'></td>
+    	<ul>What to do
+    		<li>Web Application Development including e-learning, e-commerce, research apps, etc</li>
+    		<li>PC-based Application Development including stock-charts, custom-oriented apps, etc</li>
+    		<li>Smart Phone Application Development including stock-charts, custom-oriented apps, etc</li>
+    		<li>Tablet Application Development including stock-charts, custom-oriented apps, etc</li>
+    		<li>Web Site Support and Maintenance</li>
+    	</ul>
+    	
+    <td style='width: 20px'></td>
+    <td style='border: 1px solid black; width: 50%'>
+    	<ul>What to do
+    		<li>Web Application Development including e-learning, e-commerce, research apps, etc</li>
+    		<li>PC-based Application Development including stock-charts, custom-oriented apps, etc</li>
+    		<li>Smart Phone Application Development including stock-charts, custom-oriented apps, etc</li>
+    		<li>Tablet Application Development including stock-charts, custom-oriented apps, etc</li>
+    		<li>Web Site Support and Maintenance</li>
+    	</ul>
+    </td>
   </tr>
   <tr style='height: 20px'><td colspan='3'></td></tr>
   <tr>
-  	<td colspan='3'>
-  	</td>
-  </tr>
+	<td colspan='3' style='border: 1px solid black'>
+	</td>
+  <tr>
 </table>
+</center>
 
 
 
@@ -24,7 +42,7 @@
 	 		<div style="float:left; width:80%">
 	 			<h3>OBJECTIVE:</h3>
 	 			<ul>
-	 				<li>Seeking freelance works developing for PC-based, Web-based and or Mobile phone-based applications</li>
+	 				<li>Seeking freelance works to develop for PC-based, Web-based and or Mobile phone-based applications</li>
 	 			</ul>
 	 		</div>
 	 		<div style="float:right;width:20%">
