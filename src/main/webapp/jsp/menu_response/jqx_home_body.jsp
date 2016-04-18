@@ -13,6 +13,7 @@ ul li
     text-indent: -1em;
 }
 </style>
+
 <table style='width: 90%; padding-top: 20px; table-layout: fixed'>
   <tr>
     <td style='border: 0px solid black; background-color: #555762; color: #ffffff; width: 50%'>
@@ -41,9 +42,6 @@ ul li
 	</td>
   <tr>
 </table>
-</div>
-
-
 
 
 <div style="width:100%; padding:5px 20px 5px 20px;text-align:left;"><!-- Resume -->
