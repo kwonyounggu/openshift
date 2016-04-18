@@ -55,6 +55,8 @@
 		topmargin: 0;
 		marginheight: 0;
 		marginwidth: 0;
+		
+		font-family: verdana;
 	}
 	.wrapper
 	{
