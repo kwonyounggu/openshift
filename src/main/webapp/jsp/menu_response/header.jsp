@@ -22,7 +22,7 @@
 		</object>
 	</div>
 	<div style="position:relative; z-index:2;width:100%; padding-top: 8px;">
-		<div><font size="6" color="#ffda48">Freelance App Developer</font><br/><font size="4" color="#bad5fe"><a href="mailto:kwon.younggu@gmail.com?Subject=Hello Younggu KWON" style="color:inherit;text-decoration: none" target="_top">Younggu KWON</a></font></div>
+		<div><font size="4" color="#ffda48">Freelance App Developer</font><br/><font size="2" color="#bad5fe"><a href="mailto:kwon.younggu@gmail.com?Subject=Hello Younggu KWON" style="color:inherit;text-decoration: none" target="_top">Younggu KWON</a></font></div>
 	</div>
 </div>		
 

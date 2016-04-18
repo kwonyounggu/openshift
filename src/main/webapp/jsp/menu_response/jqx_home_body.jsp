@@ -19,9 +19,9 @@ ul li
     <td style='background-color: #555762; color: #ffffff; width: 50%'>
     	<ul style='font-size: 14px'><h3 style='color: #f9d548;'>What to provide</h3>
     		<li>Web Application Development<br/>(eg: stock-charts, e-learning, e-commerce, etc)</li>
-    		<li>PC-based Application Development (eg: stock-charts, etc)</li>
-    		<li>Smart Phone Application Development (eg: stock-charts, etc)</li>
-    		<li>Tablet Application Development (eg: stock-charts, etc)</li>
+    		<li>PC-based Application Development<br/>(eg: stock-charts, etc)</li>
+    		<li>Smart Phone Application Development<br/>(eg: stock-charts, etc)</li>
+    		<li>Tablet Application Development<br/>(eg: stock-charts, etc)</li>
     		<li>Web Site Support and Maintenance</li>
     	</ul>
     </td>	
@@ -33,6 +33,8 @@ ul li
     		<li>HTML/CSS/Javascript including JQuery</li>
     		<li>Oracle, PostgreSQL, MySql, Ms Access</li>
     		<li>Tomcat 5.x, 6.x, 7.x, 8.x and JBoss</li>
+    		<li style='list-style-type: none' />
+    		<li style='list-style-type: none' />
     		<li style='list-style-type: none' />
     	</ul>
     </td>
