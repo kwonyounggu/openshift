@@ -3,7 +3,13 @@
 <%@ page import="java.util.*" %>
 <%@ page isELIgnored ="false" %>
 
-
+<style>
+li
+{
+	font-size: 15px;
+	
+}
+</style>
 <table style='width: 90%; padding-top: 20px; table-layout: fixed'>
   <tr>
     <td style='border: 0px solid black; background-color: #555762; color: #ffffff; width: 50%'>
@@ -32,6 +38,7 @@
 	</td>
   <tr>
 </table>
+</div>
 
 
 
