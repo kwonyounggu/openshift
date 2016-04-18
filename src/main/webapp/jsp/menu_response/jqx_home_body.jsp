@@ -18,10 +18,10 @@ ul li
   <tr>
     <td style='background-color: #555762; color: #ffffff; width: 50%'>
     	<ul style='font-size: 14px'><h3 style='color: #f9d548;'>What to provide</h3>
-    		<li>Web Application Development<br/>(eg: stock-charts, e-learning, e-commerce, etc)</li>
-    		<li>PC-based Application Development<br/>(eg: stock-charts, research, etc)</li>
-    		<li>Smart Phone Application Development<br/>(eg: stock-charts, research, etc)</li>
-    		<li>Tablet Application Development<br/>(eg: stock-charts, education, etc)</li>
+    		<li>Web Applications<br/>(eg: stock-charts, e-learning, e-commerce, etc)</li>
+    		<li>PC-based Applications<br/>(eg: stock-charts, research, etc)</li>
+    		<li>Smart Phone Applications<br/>(eg: stock-charts, research, etc)</li>
+    		<li>Tablet Applications<br/>(eg: stock-charts, education, etc)</li>
     		<li>Web Site Support and Maintenance</li>
     	</ul>
     </td>	
