@@ -89,7 +89,10 @@ public class ActionController extends HttpServlet
 				{
 					request.setAttribute("body_panel", "/jsp/menu_response/jqx_public_saxophone.jsp");
 				}
-				
+				else //unknown, so display the home page
+				{
+					request.setAttribute("body_panel", "/jsp/menu_response/jqx_home_body.jsp");
+				}
 				//common to all the menu listed above, such as menu_public ...
 				((RequestDispatcher)request.getRequestDispatcher("jsp/menu_response/jqx_page_template.jsp")).forward(request,response);
 			}
