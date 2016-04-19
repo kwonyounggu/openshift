@@ -44,15 +44,41 @@ public class SmartPhoneController extends HttpServlet
 		try
 		{
 			//Here, first check if the person is logged-in, otherwise go back to the public home
-			Object webmonsterBean=(Object)session.getAttribute("webmonsterBean");
-			if(webmonsterBean==null)
+			Object webmonsterBean=(Object)session.getAttribute("webmonsterBean"); //check this for the user if logged in or not, with 'if(webmonsterBean==null)'
+			if(op==null || op.equals("") || op.equals("home"))
 			{
-				if(op==null || op.equals("") || op.equals("home"))
+				request.setAttribute("body_panel", "/jsp/menu_response_smartphone_tablet/jqx_home_body.jsp");
+				((RequestDispatcher)request.getRequestDispatcher("jsp/menu_response_smartphone_tablet/jqx_page_template.jsp")).forward(request,response);
+	
+			}
+			else if(op.indexOf("menu")!=-1)
+			{
+				if(op.equals("menu_public_showcase"))
 				{
-					request.setAttribute("body_panel", "/jsp/menu_response_smartphone/jqx_home_body.jsp");
-					((RequestDispatcher)request.getRequestDispatcher("jsp/menu_response_smartphone/jqx_page_template.jsp")).forward(request,response);
-		
+					request.setAttribute("body_panel", "/jsp/menu_response_smartphone_tablet/jqx_public_showcase.jsp");
 				}
+				else if(op.equals("menu_public_contact"))
+				{
+					request.setAttribute("body_panel", "/jsp/menu_response_smartphone_tablet/jqx_public_contact.jsp");
+				}
+				else if(op.equals("menu_public_stockcharts"))
+				{
+					request.setAttribute("body_panel", "/jsp/menu_response_smartphone_tablet/jqx_public_stockcharts.jsp");
+				}
+				else if(op.equals("menu_public_hvac"))
+				{
+					request.setAttribute("body_panel", "/jsp/menu_response_smartphone_tablet/jqx_public_hvac.jsp");
+				}
+				else if(op.equals("menu_public_saxophone"))
+				{
+					request.setAttribute("body_panel", "/jsp/menu_response_smartphone_tablet/jqx_public_saxophone.jsp");
+				}
+				else //unknown, so display the home page
+				{
+					request.setAttribute("body_panel", "/jsp/menu_response_smartphone_tablet/jqx_home_body.jsp");
+				}
+				//common to all the menu listed above, such as menu_public ...
+				((RequestDispatcher)request.getRequestDispatcher("jsp/menu_response_smartphone_tablet/jqx_page_template.jsp")).forward(request,response);
 			}
 		}
 		catch(Exception e)
