@@ -47,7 +47,7 @@ ul li
 		 		<div style="float:left; width:80%">
 		 			<h3>OBJECTIVE:</h3>
 		 			<ul>
-		 				<li>Seeking freelance works to develop for PC-based, Web-based and or Mobile phone-based applications</li>
+		 				<li>Seeking freelance works to provide PC-based, Web-based and or Mobile phone-based applications</li>
 		 			</ul>
 		 		</div>
 		 		<div style="float:right;width:20%">

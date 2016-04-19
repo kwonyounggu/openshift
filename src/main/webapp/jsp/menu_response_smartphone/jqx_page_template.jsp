@@ -55,6 +55,8 @@
 		topmargin: 0;
 		marginheight: 0;
 		marginwidth: 0;
+		
+		font-family: verdana;
 	}
 	.wrapper
 	{
@@ -96,7 +98,7 @@
 		background:#353743;
 		height:100%;
 		border-radius:0 0 15px 15px;
-
+		font-size: 11px;
 	}
 	/*for Resume*/
 	ul li

@@ -91,8 +91,7 @@
 		background:#353743;
 		height:100%;
 		border-radius:0 0 15px 15px;
-		font-size: 10px;
-
+		font-size: 11px;
 	}
 </style>
 </head>
