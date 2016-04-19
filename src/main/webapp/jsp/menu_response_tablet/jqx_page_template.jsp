@@ -121,7 +121,7 @@
 			<%@ include file="/jsp/menu_response_tablet/header.jsp" %>
 		</div>	
 		<div class="contents">
-			<%@ include file="/jsp/menu_response_tablet/jqx_menu.jsp" %>
+			<%@ include file="/jsp/menu_response_tablet/jqx_public_menu.jsp" %>
 			<jsp:include page='${body_panel}' flush='true'/>			
 		</div>
 		<div class="footer">
