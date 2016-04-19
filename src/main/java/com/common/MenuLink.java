@@ -7,7 +7,7 @@ public class MenuLink
 	public static final String PUBLIC_CONTEXT=""; //www.webmonster.ca ->this is calling http://www.webmonster.ca/controller
 	
 	//Home
-	public static final String home="";
+	public static final String home="/";
 	
 	//Showcase
 	public static final String menu_public_showcase=PUBLIC_CONTEXT+"?op=menu_public_showcase";
