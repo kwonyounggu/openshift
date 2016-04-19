@@ -21,7 +21,7 @@
 		<embed src="/swf/header.swf" quality="high" type="application/x-shockwave-flash" width="100%" height="80" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" />
 		</object>
 	</div>
-	<div style="position:relative; z-index:2;width:100%; padding-top: 8px;">
+	<div style="position:relative; z-index:2;width:100%; padding-top: 12px;">
 		<div><font size="4" color="#ffda48">Freelance App Developer</font><br/><font size="2" color="#bad5fe"><a href="mailto:kwon.younggu@gmail.com?Subject=Hello Younggu KWON" style="color:inherit;text-decoration: none" target="_top">Younggu KWON</a></font></div>
 	</div>
 </div>		
