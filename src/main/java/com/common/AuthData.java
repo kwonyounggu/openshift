@@ -29,13 +29,13 @@ public class AuthData
     {
         try 
         {
-            ResourceBundle bundle = ResourceBundle.getBundle("resources/database");
+            ResourceBundle bundle = ResourceBundle.getBundle("database");
             database_name=bundle.getString("database_name");
             user_name=bundle.getString("user_name");  
             password=bundle.getString("password");
             host_name=bundle.getString("host_name");
             
-            bundle = ResourceBundle.getBundle("resources/general_information");            
+            bundle = ResourceBundle.getBundle("general_information");            
             email_id=bundle.getString("smtp_email_id");
             email_password=bundle.getString("smtp_email_password");
             smtp=bundle.getString("smtp");
