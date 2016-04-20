@@ -48,7 +48,7 @@ public class AuthData
             my_home_page=bundle.getString("my_home_page");
             
             company_name=bundle.getString("company_name");
-            company_phone=bundle.getString("company_phone");
+            //company_phone=bundle.getString("company_phone");
             //company_address=bundle.getString("company_address");
             //skype_id=bundle.getString("skype_id");
         } 
