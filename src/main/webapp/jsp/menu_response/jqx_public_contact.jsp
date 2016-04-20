@@ -6,12 +6,20 @@
 <table style='width: 90%; padding-top: 20px; padding-bottom: 20px; table-layout: fixed'>
    <tr>
     <td style='background-color: #555762; color: #ffffff; width: 50%'>
-    	<ul style='font-size: 14px'><h3 style='color: #f9d548;'>Contact</h3><br/> 
+    	<ul style='font-size: 14px'>
+    		<h3 style='color: #f9d548;'>Contact</h3>
+    		<br/>
     		If you are interested in growing your business and building a positive brand expirience for your customers/patients, then we should talk:
-    		<li>By Phone: <%=AuthData.company_phone %> between 9:00 am and 5:00 pm (EST)</li>
+    		<br/><br/>
+    		<li>By Phone: <%=AuthData.company_phone %> from 9:00am to 5:00pm (EST)</li>
     		<li>By Skype: <%=AuthData.skype_id %> (appointment required)</li>
-    		<li>By Visiting (primary place): <%=AuthData.company_address %> (appointment required)<br/>
-    				(seconday place): TBD - (appointment required)
+    		<li>By Visiting (primary place): 
+    			<br/>
+    			<%=AuthData.company_address %>
+    			<br/>
+    			(appointment required)
+    			<br/>
+    			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(seconday place): TBD - (appointment required)
     		</li>
     		<li>By Email: <%=AuthData.mycompany_email_address %></li>
     	</ul>
