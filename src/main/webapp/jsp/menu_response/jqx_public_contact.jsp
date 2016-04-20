@@ -3,17 +3,6 @@
 <%@ page import="java.util.*" %>
 <%@ page isELIgnored ="false" %>
 
-<style>
-/*for Resume*/
-ul li
-{
-    list-style-type: disc;
-    list-style-position: inside;
-    padding: 10px 20px 5px 20px;
-    text-indent: -1em;
-}
-</style>
-
 <table style='width: 90%; padding-top: 20px; padding-bottom: 20px; table-layout: fixed'>
    <tr>
     <td style='background-color: #555762; color: #ffffff; width: 50%'>
@@ -29,13 +18,13 @@ ul li
     		<li>By Skype: <%=AuthData.skype_id %> (appointment required)</li>
     		<li>By Visiting primary place: 
     			<br/>
-    			- <%=AuthData.company_address %>
+    			- <%=AuthData.company_address %>			
     			<br/>
-    			(appointment required)
+    			- TBD for the seconday place
     			<br/>
-    			- TBD for the seconday place (appointment required)
+    			- appointment required
     		</li>
-    		<li>By Email: <a href="mailto:<%=AuthData.mycompany_email_address%>?Subject=Hello Younggu KWON" style="color:inherit;text-decoration: none" target="_top"><%=AuthData.mycompany_email_address%></a></li>
+    		<li>By Email: <a href="mailto:<%=AuthData.mycompany_email_address%>?Subject=Hello WebMonster.CA" style="color:inherit;text-decoration: none" target="_top"><%=AuthData.mycompany_email_address%></a></li>
     	</ul>
     </td>	
     <td style='width: 20px'></td>

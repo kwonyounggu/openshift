@@ -94,6 +94,14 @@
 		border-radius:0 0 15px 15px;
 		font-size: 11px;
 	}
+	/*This will affect the menu indentation*/
+	ul li
+	{
+	    list-style-type: disc;
+	    list-style-position: inside;
+	    padding: 10px 20px 5px 20px;
+	    text-indent: -1em;
+	}
 </style>
 </head>
 
