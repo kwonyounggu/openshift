@@ -33,7 +33,7 @@
     	<h3 style='color: #f9d548;'>Estimate</h3>
     		
   			Your payment is not required until you are satisfied.
-  			<div id='estimate_body'>
+  			<div id='estimate_body'> (under construction)
 			   	<table  id='login_table' style='width: 100%; border-spacing: 4px;' style="padding: 20px 0px 20px 60px;"> 	
 					<tr><td colspan=4>LoginID <span style="font-size: .95em;">(eg: jennifer.pinto.00)</span></td></tr> 		
 																
