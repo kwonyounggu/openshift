@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+<%@ page import="com.common.*" %>
 <%@ page import="java.util.*" %>
 <%@ page import="java.text.*" %>
 <%@ page isELIgnored ="false" %>
@@ -8,7 +9,7 @@
 <head>
 <title>WebMonster</title>
 <META name=author content="Younggu Kwon">
-<META name=email content="kwon.younggu@gmail.com">
+<META name=email content="<%=AuthData.mycompany_email_address%>">
 
 <link rel="SHORTCUT ICON" href="ico/favicon.ico" />
 

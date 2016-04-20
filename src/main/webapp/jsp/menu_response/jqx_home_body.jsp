@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-
+<%@ page import="com.common.*" %>
 <%@ page import="java.util.*" %>
 <%@ page isELIgnored ="false" %>
 
@@ -51,7 +51,7 @@ ul li
 		 			</ul>
 		 		</div>
 		 		<div style="float:right;width:20%">
-			 		<a href="mailto:kwon.younggu@gmail.com?Subject=Hello Younggu KWON" target="_top"><img src="images/YoungguKwon.png" width="135" height="146" alt="Younggu KWON" border="0"/></a>
+			 		<a href="mailto:<%=AuthData.mycompany_email_address%>?Subject=Hello Younggu KWON" target="_top"><img src="images/YoungguKwon.png" width="135" height="146" alt="Younggu KWON" border="0"/></a>
 			 	</div>
 			 </div>
 	

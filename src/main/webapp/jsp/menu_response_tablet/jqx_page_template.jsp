@@ -2,12 +2,14 @@
 <%@ page import="java.util.*" %>
 <%@ page import="java.text.*" %>
 <%@ page isELIgnored ="false" %>
+<%@ page import="com.common.*" %>
+
 <!doctype html>
 <html>
 <head>
 <title>WebMonster-T</title>
 <META name=author content="Younggu Kwon">
-<META name=email content="kwon.younggu@gmail.com">
+<META name=email content="<%=AuthData.mycompany_email_address%>">
 <META name=description content="for Tablet">
 
 <link rel="SHORTCUT ICON" href="ico/favicon.ico" />
