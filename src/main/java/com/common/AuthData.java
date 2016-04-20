@@ -49,8 +49,8 @@ public class AuthData
             
             company_name=bundle.getString("company_name");
             company_phone=bundle.getString("company_phone");
-            company_address=bundle.getString("company_address");
-            skype_id=bundle.getString("skype_id");
+            //company_address=bundle.getString("company_address");
+            //skype_id=bundle.getString("skype_id");
         } 
         catch (Exception e) 
         {
