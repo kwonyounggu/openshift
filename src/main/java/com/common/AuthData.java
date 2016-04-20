@@ -29,13 +29,13 @@ public class AuthData
     {
         try 
         {
-            ResourceBundle bundle = ResourceBundle.getBundle("database");
+            ResourceBundle bundle = ResourceBundle.getBundle("resources/database");
             database_name=bundle.getString("database_name");
             user_name=bundle.getString("user_name");  
             password=bundle.getString("password");
             host_name=bundle.getString("host_name");
             
-            bundle = ResourceBundle.getBundle("general_information");            
+            bundle = ResourceBundle.getBundle("resources/general_information");            
             email_id=bundle.getString("smtp_email_id");
             email_password=bundle.getString("smtp_email_password");
             smtp=bundle.getString("smtp");
@@ -48,11 +48,9 @@ public class AuthData
             my_home_page=bundle.getString("my_home_page");
             
             company_name=bundle.getString("company_name");
-            //company_phone=bundle.getString("company_phone");
-            //company_address=bundle.getString("company_address");
-            //skype_id=bundle.getString("skype_id");
-            
-            System.out.println("AuthData.java, "+email_id);
+            company_phone=bundle.getString("company_phone");
+            company_address=bundle.getString("company_address");
+            skype_id=bundle.getString("skype_id");
         } 
         catch (Exception e) 
         {
