@@ -28,7 +28,8 @@
     	</ul>
     </td>	
     <td style='width: 20px'></td>
-    <td style='background-color: #555762; color: #ffffff; width: 50%'>
+    <td style='background-color: #555762; color: #ffffff; width: 50%; padding: 5px 20px 5px 20px;'>
+
     	<h3 style='color: #f9d548;'>Estimate</h3>
     		
   			Your payment is not required until you are satisfied.
