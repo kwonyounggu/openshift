@@ -29,7 +29,7 @@
     </td>	
     <td style='width: 20px'></td>
     <td style='background-color: #555762; color: #ffffff; width: 50%'>
-    	<p><h3 style='color: #f9d548;'>Estimate</h3><br/>
+    	<p><h3 style='color: #f9d548;'>Estimate</h3>
     		
     			Your payment is not required until you are satisfied on the application.
     	</p>
