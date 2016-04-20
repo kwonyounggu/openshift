@@ -4,26 +4,26 @@ import java.util.ResourceBundle;
 
 public class AuthData
 {
-	public static String database_name;
-	public static String user_name;
-	public static String password;
-	public static String host_name;
+	public static String database_name="";
+	public static String user_name="";
+	public static String password="";
+	public static String host_name="";
 	
-	public static String email_id;
-	public static String email_password;
-	public static String smtp;
-	public static String smtp_debug;
-	public static String error_email_address;
-	public static String log_dir_file;
-	public static String log_file;
-	public static String my_home_page;
-	public static String mycompany_email_address;
-	public static String mycompany_owner_email_address;
+	public static String email_id="";
+	public static String email_password="";
+	public static String smtp="";
+	public static String smtp_debug="";
+	public static String error_email_address="";
+	public static String log_dir_file="";
+	public static String log_file="";
+	public static String my_home_page="";
+	public static String mycompany_email_address="";
+	public static String mycompany_owner_email_address="";
 	
-	public static String company_name;
-	public static String company_phone;
-	public static String company_address;
-	public static String skype_id;
+	public static String company_name="";
+	public static String company_phone="";
+	public static String company_address="";
+	public static String skype_id="";
 	
 	static 
     {
@@ -51,6 +51,8 @@ public class AuthData
             //company_phone=bundle.getString("company_phone");
             //company_address=bundle.getString("company_address");
             //skype_id=bundle.getString("skype_id");
+            
+            System.out.println("AuthData.java, "+email_id);
         } 
         catch (Exception e) 
         {
