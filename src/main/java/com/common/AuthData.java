@@ -20,6 +20,11 @@ public class AuthData
 	public static String mycompany_email_address;
 	public static String mycompany_owner_email_address;
 	
+	public static String company_name;
+	public static String company_phone;
+	public static String company_address;
+	public static String skype_id;
+	
 	static 
     {
         try 
@@ -41,6 +46,11 @@ public class AuthData
             log_dir_file=bundle.getString("log_dir_file");
             log_file=bundle.getString("log_file");
             my_home_page=bundle.getString("my_home_page");
+            
+            company_name=bundle.getString("company_name");
+            company_phone=bundle.getString("company_phone");
+            company_address=bundle.getString("company_address");
+            skype_id=bundle.getString("skype_id");
         } 
         catch (Exception e) 
         {
