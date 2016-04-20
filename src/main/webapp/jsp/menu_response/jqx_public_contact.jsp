@@ -29,16 +29,10 @@
     </td>	
     <td style='width: 20px'></td>
     <td style='background-color: #555762; color: #ffffff; width: 50%'>
-    	<ul style='font-size: 14px'><h3 style='color: #f9d548;'>Developement Technologies</h3>
-    		<li>Java, C/C++</li>
-    		<li>Actionscript 3.0 including Starling, Feathers UI</li>
-    		<li>HTML/CSS/Javascript including JQuery</li>
-    		<li>Oracle, PostgreSQL, MySql, Ms Access</li>
-    		<li>Tomcat 5.x, 6.x, 7.x, 8.x and JBoss</li>
-    		<li style='list-style-type: none' />
-    		<li style='list-style-type: none' />
-    		<li style='list-style-type: none' />
-    	</ul>
+    	<p><h3 style='color: #f9d548;'>Estimate</h3><br/>
+    		
+    			Your payment is not required until you are satisfied on the application.
+    	</p>
     </td>
   </tr>
   <tr>
