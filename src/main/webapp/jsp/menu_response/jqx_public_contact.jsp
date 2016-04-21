@@ -34,33 +34,36 @@
     	<h3 style='color: #f9d548;'>Estimate(under construction)</h3>
     		
   			Your payment is not required until you are satisfied.
-  			<div id='estimate_body'> 
-			   	<table  id='login_table' style='width: 100%; border-spacing: 4px;' style="padding: 20px 0px 20px 60px;"> 	
-					<tr><td colspan=4>LoginID <span style="font-size: .95em;">(eg: jennifer.pinto.00)</span></td></tr> 		
-																
-						<tr> 
-						<td colspan=4 align="left"> 
-			 				<input type=text id="login_id" size=38 value='' maxlength="80" class=input_text style='imemode:inactive' onKeyDown="if(event.keyCode==13) loginConfirm();"/> 						
+  			<form id='estimate_form' action='./'>
+			   	<table  id='estimate_table' style='width: 100%; border-spacing: 4px;' style="padding: 20px 0px 20px 60px;"> 	
+			   		<tr>
+			   			<td>Name<span style="font-size: .95em;">*</span>&nbsp;:&nbsp;</td>
+			   			<td> 
+			 				<input type='text' id='jqx_submitter_name' value='' maxlength="80" style='padding-left: 4px;'/>					
 						</td> 
-					</tr> 
-				
-					<tr><td colspan=4>Password</td></tr> 													
-						<tr> 
-						<td colspan=4 align="left"> 
-			 				<input type='password' id="login_password" size=38 value='' maxlength="20" class=input_text style='imemode:inactive' onKeyDown="if(event.keyCode==13) loginConfirm();"/> 						
+			   		</tr> 		
+					<tr>
+			   			<td>E-Mail<span style="font-size: .95em;">*</span>&nbsp;:&nbsp;</td>
+			   			<td> 
+			 				<input type='text' id='jqx_submitter_email' value='' maxlength="255" style='padding-left: 4px;'/>					
 						</td> 
-					</tr> 					
-										 
-					<tr> 
-						<td colspan=4 align="left"><br/> 
-							<input type=button style='cursor:pointer;' value='Login' onclick="loginConfirm();" />	
-							<br/><br/>
-							<p ><a onfocus='this.blur()' href="#" onclick="get_forgot_pwd_page(); return false;" >Did you forget your password?</a></p>
-							<p ><a onfocus='this.blur()' href="#" onclick="get_forgot_pwd_page(); return false;" >Did you forget your loginID?</a></p>
+			   		</tr> 	
+					<tr>
+			   			<td>Note<span style="font-size: .95em;">*</span>&nbsp;:&nbsp;</td>
+			   			<td> 
+			 				<input type='text' id='jqx_submitter_email' value='' maxlength="255" style='padding-left: 4px;'/>					
 						</td> 
-					</tr> 
+			   		</tr> 
+			   		
+			   		
+					<tr>
+			   			<td>A file to upload if you have in pdf, jpg or zip file type:<span style="font-size: .95em;">*</span>&nbsp;:&nbsp;</td>
+			   			<td> 
+			 				<input type='text' id='jqx_submitter_email' value='' maxlength="255" style='padding-left: 4px;'/>					
+						</td> 
+			   		</tr> 	
 			 </table>
-		 </div>				
+		 </form>			
     </td>
   </tr>
   <tr>
