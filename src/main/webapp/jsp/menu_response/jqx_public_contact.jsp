@@ -37,29 +37,29 @@
   			<form id='estimate_form' action='./'>
 			   	<table  id='estimate_table' style='width: 100%; border-spacing: 4px; padding: 20px 0px 20px 0px;'> 	
 			   		<tr>
-			   			<td>Name<span style="font-size: .95em;">*</span>&nbsp;:&nbsp;</td>
+			   			<td>Name<span style='font-size: .95em;'>*</span>&nbsp;:&nbsp;</td>
 			   			<td> 
-			 				<input type='text' id='jqx_submitter_name' value='' maxlength="80" style='padding-left: 4px;'/>					
+			 				<input type='text' id='jqx_submitter_name' value='' maxlength='80' style='padding-left: 4px;'/>					
 						</td> 
 			   		</tr> 		
 					<tr>
-			   			<td>E-Mail<span style="font-size: .95em;">*</span>&nbsp;:&nbsp;</td>
+			   			<td>E-Mail<span style='font-size: .95em;'>*</span>&nbsp;:&nbsp;</td>
 			   			<td> 
-			 				<input type='text' id='jqx_submitter_email' value='' maxlength="255" style='padding-left: 4px;'/>					
+			 				<input type='text' id='jqx_submitter_email' value='' maxlength='255' style='padding-left: 4px;'/>					
 						</td> 
 			   		</tr> 	
 					<tr>
-			   			<td>Note<span style="font-size: .95em;">*</span>&nbsp;:&nbsp;</td>
+			   			<td>Note<span style='font-size: .95em;'>*</span>&nbsp;:&nbsp;</td>
 			   			<td> 
-			 				<input type='text' id='jqx_submitter_email' value='' maxlength="255" style='padding-left: 4px;'/>					
+			 				<input type='text' id='jqx_submitter_email' value='' maxlength='255' style='padding-left: 4px;'/>					
 						</td> 
 			   		</tr> 
 			   		
 			   		
 					<tr>
-			   			<td>A file to upload if you have in pdf, jpg or zip file type:<span style="font-size: .95em;">*</span>&nbsp;:&nbsp;</td>
+			   			<td>A file to upload if you have in pdf, jpg or zip file type:&nbsp;:&nbsp;</td>
 			   			<td> 
-			 				<input type='text' id='jqx_submitter_email' value='' maxlength="255" style='padding-left: 4px;'/>					
+			 				<input type='text' id='jqx_submitter_email' value='' maxlength='255' style='padding-left: 4px;'/>					
 						</td> 
 			   		</tr> 	
 			 </table>
