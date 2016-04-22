@@ -90,7 +90,7 @@
 <table style='width: 90%; padding-top: 20px; padding-bottom: 20px; table-layout: fixed'>
    <tr>
     <td style='background-color: #555762; color: #ffffff; width: 50%; vertical-align: top;'>
-    	<ul style='font-size: 14px'>
+    	<ul style='font-size: 12px'>
     		<h3 style='color: #f9d548;'>Contact</h3>
     		<br/>
     		If you are interested in growing your business and building a positive brand expirience for your customers/patients, then we should talk:
