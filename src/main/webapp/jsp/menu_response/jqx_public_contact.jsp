@@ -33,9 +33,9 @@
 
     	<h3 style='color: #f9d548;'>Estimate(under construction)</h3>
     		
-  			Your payment is not required until you are satisfied.
+  			Your payment is not required until you are satisfied in contract later.
   			<form id='estimate_form' action='./'>
-			   	<table  id='estimate_table' style='width: 100%; border-spacing: 4px;' style="padding: 20px 0px 20px 60px;"> 	
+			   	<table  id='estimate_table' style='width: 100%; border-spacing: 4px; padding: 20px 0px 20px 0px;'> 	
 			   		<tr>
 			   			<td>Name<span style="font-size: .95em;">*</span>&nbsp;:&nbsp;</td>
 			   			<td> 
