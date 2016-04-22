@@ -114,11 +114,13 @@
     </td>	
     <td style='width: 20px'></td>
     <td style='background-color: #555762; color: #ffffff; width: 50%; padding: 5px 20px 5px 20px;'>
-    	<h3 style='color: #f9d548;'>Estimate</h3>(<span style='font-size: .95em; color: #8fc161;'>* Required Fields</span>)
+    	
   			<form id='estimate_form' action='./'>
 			   	<table  id='estimate_table' style='width: 100%; border-spacing: 4px; padding: 20px 0px 20px 0px;'> 	
 			   		<tr>
 			   			<td colspan='2' style='text-align: right;'>
+			   			<h3 style='color: #f9d548;'>Estimate</h3>
+			   			(<span style='font-size: .95em; color: #8fc161;'>*: must</span>)
 			   				<span style='font-size: 11px; color: #bad5fe;'>Your payment is not required unless you are satisfied.</span>
 			   			</td>
 			   		</tr>
