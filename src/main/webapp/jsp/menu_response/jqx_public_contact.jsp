@@ -36,7 +36,7 @@
     </td>	
     <td style='width: 20px'></td>
     <td style='background-color: #555762; color: #ffffff; width: 50%; padding: 5px 20px 5px 20px;'>
-    	<h3 style='color: #f9d548;'>Estimate (<span style='font-size: .95em; color: #8fc161;'>* Required Fields</span>)</h3>
+    	<h3 style='color: #f9d548;'>Estimate</h3>(<span style='font-size: .95em; color: #8fc161;'>* Required Fields</span>)
   			<form id='estimate_form' action='./'>
 			   	<table  id='estimate_table' style='width: 100%; border-spacing: 4px; padding: 20px 0px 20px 0px;'> 	
 			   		<tr>
@@ -47,19 +47,19 @@
 			   		<tr>
 			   			<td class='estimate_form_td' width='20%'>Name <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;</td>
 			   			<td> 
-			 				<input type='text' id='jqx_submitter_name' value='' maxlength='80' style='padding-left: 4px;'/>					
+			 				<input type='text' id='jqx_submitter_name' value='' maxlength='80' style='padding-left: 0px;'/>					
 						</td> 
 			   		</tr> 		
 					<tr>
 			   			<td class='estimate_form_td' width='20%'>E-Mail <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;</td>
 			   			<td> 
-			 				<input type='text' id='jqx_submitter_email' value='' maxlength='255' style='padding-left: 4px;'/>					
+			 				<input type='text' id='jqx_submitter_email' value='' maxlength='255' style='padding-left: 0px;'/>					
 						</td> 
 			   		</tr> 	
 					<tr>
 			   			<td class='estimate_form_td' width='20%'>Note <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;</td>
 			   			<td> 
-			 				<input type='text' id='jqx_submitter_email' value='' maxlength='255' style='padding-left: 4px;'/>					
+			 				<textarea id="estimateNoteEditor"></textarea>						
 						</td> 
 			   		</tr> 
 			   		
@@ -72,6 +72,19 @@
 			 				<input type='text' id='jqx_submitter_email' value='' maxlength='255' style='padding-left: 4px;'/>					
 						</td> 
 			   		</tr> 	
+			   		
+			   		<tr>
+			   			<td class='estimate_form_td' colspan='2'>Please select the elephant before submitting <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;
+			   			<p>
+			   				<input type='radio'/>
+			   			</p>
+			   			<p>
+			   				<input type='radio'/>
+			   			</p>
+			   			<p>
+			   				<input type='radio'/>
+			   			</p>
+			   		</tr> 
 			 </table>
 		 </form>			
     </td>
