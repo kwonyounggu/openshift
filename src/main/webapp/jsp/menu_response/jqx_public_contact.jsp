@@ -133,17 +133,15 @@
 			   			</td>
 			   		</tr>
 			   		<tr>
-			   			<td class='estimate_form_td' width='13%'>Name <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;</td>
-			   			<td style='text-align: left; margin: 0px' align='left'> 
+			   			<td class='estimate_form_td'  colspan='2'>Name <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;
 			 				<input type='text' id='jqx_submitter_name' value='' maxlength='80' style='padding-left: 0px; width: 100%'/>					
 						</td> 
-			   		</tr> 		
-					<tr>
-			   			<td class='estimate_form_td' width='13%'>E-Mail <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;</td>
-			   			<td style='text-align: left; margin: 0px'> 
-			 				<input type='text' id='jqx_submitter_email' value='' maxlength='255' style='padding-left: 0px; width: 100%'/>					
+			   		</tr> 
+			   		<tr>
+			   			<td class='estimate_form_td'  colspan='2'>E-Mail <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;
+			 				<input type='text' id=jqx_submitter_email value='' maxlength='80' style='padding-left: 0px; width: 100%'/>					
 						</td> 
-			   		</tr> 	
+			   		</tr>		
 					<tr>
 			   			<td class='estimate_form_td' colspan='2'>Note about your requirements <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;
 			   				<br/> 
