@@ -18,9 +18,9 @@
         $("#estimateNoteEditor").jqxEditor
         (
             {
-                height: '100px', width: '100%', 
+                height: '200px', width: '100%', 
                 //theme: 'energyblue',
-                tools: "bold italic underline | format font size | color background | left center right | outdent indent | ul ol | image | link | clean | html"
+                tools: "outdent indent | ul ol | image | link | clean | html"
                 
         	}
         );
@@ -135,8 +135,8 @@
 						</td> 
 			   		</tr> 	
 					<tr>
-			   			<td class='estimate_form_td' width='20%'>Note <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;</td>
-			   			<td> 
+			   			<td class='estimate_form_td' colspan='2'>Note about your requirements<span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;
+			   				<br/> 
 			 				<textarea id="estimateNoteEditor" width='100%'></textarea>						
 						</td> 
 			   		</tr> 
