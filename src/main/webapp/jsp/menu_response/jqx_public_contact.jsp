@@ -101,7 +101,7 @@
     		</li>
     		<li>By Skype: <%=AuthData.skype_id %>
     			<br />
-    			- appointment required)
+    			- appointment required
     		</li>
     		<li>By Visiting primary place: 
     			<br/>
@@ -134,7 +134,7 @@
 			   		</tr>
 			   		<tr>
 			   			<td class='estimate_form_td' width='13%'>Name <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;</td>
-			   			<td style='text-align: left;'> 
+			   			<td style='text-align: left; margin: 0px'> 
 			 				<input type='text' id='jqx_submitter_name' value='' maxlength='80' style='padding-left: 0px; width: 100%'/>					
 						</td> 
 			   		</tr> 		
