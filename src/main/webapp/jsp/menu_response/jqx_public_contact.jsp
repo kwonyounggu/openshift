@@ -39,7 +39,7 @@
 
     	<h3 style='color: #f9d548;'>Estimate (<span style='font-size: .95em; color: #8fc161;'>* Required Fields</span>)</h3>
     		
-  			<span style='font-size: 9;'>Your payment is not required until you are satisfied in contract later.</span>
+  			<span style='font-size: 9px;'>Your payment is not required until you are satisfied in contract later.</span>
   			<form id='estimate_form' action='./'>
 			   	<table  id='estimate_table' style='width: 100%; border-spacing: 4px; padding: 20px 0px 20px 0px;'> 	
 			   		<tr>
