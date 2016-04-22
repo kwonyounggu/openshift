@@ -6,7 +6,7 @@
 	td.estimate_form_td
 	{
 		color: #ffffff;
-		
+		vertical-align: top;
 	}
 </style>
 <table style='width: 90%; padding-top: 20px; padding-bottom: 20px; table-layout: fixed'>
@@ -59,7 +59,7 @@
 					<tr>
 			   			<td class='estimate_form_td' width='20%'>Note <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;</td>
 			   			<td> 
-			 				<textarea id="estimateNoteEditor"></textarea>						
+			 				<textarea id="estimateNoteEditor" width='100%'></textarea>						
 						</td> 
 			   		</tr> 
 			   		
@@ -75,15 +75,12 @@
 			   		
 			   		<tr>
 			   			<td class='estimate_form_td' colspan='2'>Please select the elephant before submitting <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;
-			   			<p>
+			   				<br />
 			   				<input type='radio'/>
-			   			</p>
-			   			<p>
 			   				<input type='radio'/>
-			   			</p>
-			   			<p>
 			   				<input type='radio'/>
-			   			</p>
+			   				<img src="three_animals.png" width="362" height="86" alt="Three Animals" border="0"/>
+						</td>
 			   		</tr> 
 			 </table>
 		 </form>			
