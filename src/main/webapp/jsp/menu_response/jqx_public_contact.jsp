@@ -89,7 +89,7 @@
 </script>
 <table style='width: 90%; padding-top: 20px; padding-bottom: 20px; table-layout: fixed'>
    <tr>
-    <td style='background-color: #555762; color: #ffffff; width: 50%; vertical-align: top'>
+    <td style='background-color: #555762; color: #ffffff; width: 50%; vertical-align: top;'>
     	<ul style='font-size: 14px'>
     		<h3 style='color: #f9d548;'>Contact</h3>
     		<br/>
@@ -110,6 +110,7 @@
     		</li>
     		<li>By Email: <a href="mailto:<%=AuthData.mycompany_email_address%>?Subject=Hello WebMonster.CA" style="color:inherit;text-decoration: none" target="_top"><%=AuthData.mycompany_email_address%></a></li>
     		<li>What did you have in mind? Suggestions to include: competitor's websites, designs that you like, some initial ideas for your brand, what kind of niches you'd like to explore, and anything to get the conversation going!</li>
+    		<li style='list-style-type: none; height: 30%' />
     	</ul>
     </td>	
     <td style='width: 20px'></td>
