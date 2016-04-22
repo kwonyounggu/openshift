@@ -76,10 +76,10 @@
 			   		<tr>
 			   			<td class='estimate_form_td' colspan='2'>Please select the elephant before submitting <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;
 			   				<br />
+			   				<input type='radio' style='margin: 20px;'/>
 			   				<input type='radio'/>
 			   				<input type='radio'/>
-			   				<input type='radio'/>
-			   				<img src="three_animals.png" width="362" height="86" alt="Three Animals" border="0"/>
+			   				<img src="images/three_animals.png" width="362" height="86" alt="Three Animals" border="0"/>
 						</td>
 			   		</tr> 
 			 </table>
