@@ -134,12 +134,12 @@
 			   		</tr>
 			   		<tr>
 			   			<td class='estimate_form_td'  colspan='2'>Name <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;
-			 				<input type='text' id='jqx_submitter_name' value='' maxlength='80' style='padding-left: 0px; width: 100%'/>					
+			 				<input type='text' id='jqx_submitter_name' value='' maxlength='80' style='padding-left: 0px; width: 80%'/>					
 						</td> 
 			   		</tr> 
 			   		<tr>
 			   			<td class='estimate_form_td'  colspan='2'>E-Mail <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;
-			 				<input type='text' id=jqx_submitter_email value='' maxlength='80' style='padding-left: 0px; width: 100%'/>					
+			 				<input type='text' id=jqx_submitter_email value='' maxlength='80' style='padding-left: 0px; width: 80%'/>					
 						</td> 
 			   		</tr>		
 					<tr>
