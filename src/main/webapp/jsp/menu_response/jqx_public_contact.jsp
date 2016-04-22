@@ -123,13 +123,13 @@
 			   			</td>
 			   		</tr>
 			   		<tr>
-			   			<td class='estimate_form_td' width='16%'>Name <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;</td>
+			   			<td class='estimate_form_td' width='13%'>Name <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;</td>
 			   			<td> 
 			 				<input type='text' id='jqx_submitter_name' value='' maxlength='80' style='padding-left: 0px; width: 100%'/>					
 						</td> 
 			   		</tr> 		
 					<tr>
-			   			<td class='estimate_form_td' width='16%'>E-Mail <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;</td>
+			   			<td class='estimate_form_td' width='13%'>E-Mail <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;</td>
 			   			<td> 
 			 				<input type='text' id='jqx_submitter_email' value='' maxlength='255' style='padding-left: 0px; width: 100%'/>					
 						</td> 
