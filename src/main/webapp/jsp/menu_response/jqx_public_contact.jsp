@@ -28,9 +28,9 @@
         {
         	//if($('#jqxgrid').jqxGrid('getselectedrowindex')>=0) editorChanged=true;
         });
-        $("#jqxSaveButton").jqxButton({ width: '100', theme: 'energyblue', disabled: false});
+        $("#jqxSubmitButton").jqxButton({ width: '100', theme: 'energyblue', disabled: false});
 
-        $("#jqxSaveButton").on('click', function () 
+        $("#jqxSubmitButton").on('click', function () 
         {
             if(editorChanged)
             {
