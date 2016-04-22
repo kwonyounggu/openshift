@@ -15,7 +15,7 @@
     	</ul>
     </td>	
     <td style='width: 20px'></td>
-    <td style='background-color: #555762; color: #ffffff; width: 50%'>
+    <td style='background-color: #555762; color: #ffffff; width: 50%; vertical-align: top;'>
     	<ul style='font-size: 14px'><h3 style='color: #f9d548;'>Developement Technologies</h3>
     		<li>Java, C/C++</li>
     		<li>Actionscript 3.0 including Starling, Feathers UI</li>
