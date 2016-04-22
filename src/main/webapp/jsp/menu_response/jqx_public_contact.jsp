@@ -99,7 +99,10 @@
     			<br/>
     			from 9:00am to 5:00pm (EST)
     		</li>
-    		<li>By Skype: <%=AuthData.skype_id %> (appointment required)</li>
+    		<li>By Skype: <%=AuthData.skype_id %>
+    			<br />
+    			- appointment required)
+    		</li>
     		<li>By Visiting primary place: 
     			<br/>
     			- <%=AuthData.company_address %>			
@@ -121,7 +124,7 @@
     <td style='background-color: #555762; color: #ffffff; width: 50%; padding: 5px 20px 5px 20px;'>
     	
   			<form id='estimate_form' action='./'>
-			   	<table  id='estimate_table' style='width: 100%; border-spacing: 4px; padding: 0px 0px 0px 0px;'> 	
+			   	<table  id='estimate_table' style='width: 100%; border-spacing: 4px; padding: 0px 0px 10px 0px;'> 	
 			   		<tr>
 			   			<td colspan='2' style='text-align: left;'>
 			   				<h3 style='color: #f9d548;'>Estimate</h3>
