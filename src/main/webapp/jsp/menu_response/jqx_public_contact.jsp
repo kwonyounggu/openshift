@@ -20,7 +20,7 @@
             {
                 height: '200px', width: '100%', 
                 //theme: 'energyblue',
-                tools: "outdent indent | ul ol | image | link | clean | html"
+                tools: "outdent indent | ul ol | image | link"
                 
         	}
         );
@@ -123,19 +123,19 @@
 			   			</td>
 			   		</tr>
 			   		<tr>
-			   			<td class='estimate_form_td' width='20%'>Name <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;</td>
+			   			<td class='estimate_form_td' width='16%'>Name <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;</td>
 			   			<td> 
-			 				<input type='text' id='jqx_submitter_name' value='' maxlength='80' style='padding-left: 0px;'/>					
+			 				<input type='text' id='jqx_submitter_name' value='' maxlength='80' style='padding-left: 0px; width: 100%'/>					
 						</td> 
 			   		</tr> 		
 					<tr>
-			   			<td class='estimate_form_td' width='20%'>E-Mail <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;</td>
+			   			<td class='estimate_form_td' width='16%'>E-Mail <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;</td>
 			   			<td> 
-			 				<input type='text' id='jqx_submitter_email' value='' maxlength='255' style='padding-left: 0px;'/>					
+			 				<input type='text' id='jqx_submitter_email' value='' maxlength='255' style='padding-left: 0px; width: 100%'/>					
 						</td> 
 			   		</tr> 	
 					<tr>
-			   			<td class='estimate_form_td' colspan='2'>Note about your requirements<span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;
+			   			<td class='estimate_form_td' colspan='2'>Note about your requirements <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;
 			   				<br/> 
 			 				<textarea id="estimateNoteEditor" width='100%'></textarea>						
 						</td> 
