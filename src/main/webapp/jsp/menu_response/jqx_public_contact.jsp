@@ -9,6 +9,84 @@
 		vertical-align: top;
 	}
 </style>
+<script language="Javascript" type="text/javascript">
+	var editorChanged=false;
+	$(document).ready(function () 
+	{
+
+        //Clinical Summary Editor
+        $("#estimateNoteEditor").jqxEditor
+        (
+            {
+                height: '100px', width: '100%', 
+                //theme: 'energyblue',
+                tools: "bold italic underline | format font size | color background | left center right | outdent indent | ul ol | image | link | clean | html"
+                
+        	}
+        );
+        $("#estimateNoteEditor").on('change', function (event) 
+        {
+        	//if($('#jqxgrid').jqxGrid('getselectedrowindex')>=0) editorChanged=true;
+        });
+        $("#jqxSaveButton").jqxButton({ width: '100', theme: 'energyblue', disabled: false});
+
+        $("#jqxSaveButton").on('click', function () 
+        {
+            if(editorChanged)
+            {
+                 //alert("submit now with\n"+$("#clinicalSummaryEditor").jqxEditor('val'));
+                 saveClinicalSummary();
+            }
+            else alert("No content change detected yet!");
+        });
+        
+	});
+	function saveClinicalSummary()
+	{
+		var login_level=parseInt("${crb.login_level}");
+		var seniority=parseInt("${crb.seniority}");
+	
+		if(!(login_level==1 || login_level==2 ))		
+		{
+			alert("You are not allowed to edit this summary!!!.");
+			return;
+		}
+		
+		var saveString=$("#clinicalSummaryEditor").jqxEditor('val');
+		if(saveString.length<=1)
+			alert("Not a right clinical summary to save!");
+		else
+		{
+			var selected_row_index=$('#jqxgrid').jqxGrid('getselectedrowindex');			
+			httpRequestPost("<%= MenuLink.PUBLIC_CONTEXT %>","op=ajax_carm_central_save_clinical_summary&new_clinical_summary="+escape(saveString)+"&selected_carm_id="+$("#jqxgrid").jqxGrid('getcellvalue', selected_row_index, 'carm_id'), "saveClinicalSummaryResponse");
+		}
+	}
+	function saveClinicalSummaryResponse(strResponse)
+	{
+		if(strResponse.indexOf('session_timeout')==0) 
+		{
+			alert("Your session is expired. Please login again.");
+			location.reload();
+		}
+		else if(strResponse.indexOf('false:')==-1)//not found, means true
+		{
+			//location.reload();
+			//update checked, edited_date, editor_id in the selected row
+			var selected_row_index=$('#jqxgrid').jqxGrid('getselectedrowindex');
+			$('#jqxgrid').jqxGrid('setcellvalue',selected_row_index, 'new_clinical_summary', $("#clinicalSummaryEditor").jqxEditor('val'));//set new clincal summary
+			$('#jqxgrid').jqxGrid('setcellvalue',selected_row_index, 'edited', true);
+			$('#jqxgrid').jqxGrid('setcellvalue',selected_row_index, 'edit_date', new Date());
+			$('#jqxgrid').jqxGrid('setcellvalue',selected_row_index, 'editor_id', '${carm_login_id}');
+
+			alert("Successfully save!");
+		}
+		else 
+		{
+			alert(strResponse.substring(6));//false, then display
+			//location.reload();
+		}
+	}
+</script>
 <table style='width: 90%; padding-top: 20px; padding-bottom: 20px; table-layout: fixed'>
    <tr>
     <td style='background-color: #555762; color: #ffffff; width: 50%'>
@@ -82,6 +160,12 @@
 			   				<img src="images/three_animals.png" width="362" height="86" alt="Three Animals" border="0"/>
 						</td>
 			   		</tr> 
+			   		<tr><td colspan='2' height="10" ></td></tr>
+					<tr>
+					    <td colspan='2' >	
+							<input type='button' value=Submit id='jqxSubmitButton' />		
+						</td>
+					</tr>
 			 </table>
 		 </form>			
     </td>
