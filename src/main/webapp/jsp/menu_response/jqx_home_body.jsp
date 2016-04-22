@@ -22,9 +22,7 @@
     		<li>HTML/CSS/Javascript including JQuery</li>
     		<li>Oracle, PostgreSQL, MySql, Ms Access</li>
     		<li>Tomcat 5.x, 6.x, 7.x, 8.x and JBoss</li>
-    		<li style='list-style-type: none' />
-    		<li style='list-style-type: none' />
-    		<li style='list-style-type: none' />
+    		<li style='list-style-type: none; height: 30%' />
     	</ul>
     </td>
   </tr>
