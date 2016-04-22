@@ -116,17 +116,17 @@
     <td style='background-color: #555762; color: #ffffff; width: 50%; padding: 5px 20px 5px 20px;'>
     	
   			<form id='estimate_form' action='./'>
-			   	<table  id='estimate_table' style='width: 100%; border-spacing: 4px; padding: 20px 0px 20px 0px;'> 	
+			   	<table  id='estimate_table' style='width: 100%; border-spacing: 4px; padding: 0px 0px 0px 0px;'> 	
 			   		<tr>
-			   			<td colspan='2' style='text-align: right;'>
-			   			<h3 style='color: #f9d548;'>Estimate</h3>
-			   			(<span style='font-size: .95em; color: #8fc161;'>*: must</span>)
+			   			<td colspan='2' style='text-align: left;'>
+			   				<h3 style='color: #f9d548;'>Estimate</h3>
+			   				<span style='font-size: .95em; color: #8fc161;'>(*: must)</span>
 			   				<span style='font-size: 11px; color: #bad5fe;'>Your payment is not required unless you are satisfied.</span>
 			   			</td>
 			   		</tr>
 			   		<tr>
 			   			<td class='estimate_form_td' width='13%'>Name <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;</td>
-			   			<td> 
+			   			<td style='text-align: left;'> 
 			 				<input type='text' id='jqx_submitter_name' value='' maxlength='80' style='padding-left: 0px; width: 100%'/>					
 						</td> 
 			   		</tr> 		
