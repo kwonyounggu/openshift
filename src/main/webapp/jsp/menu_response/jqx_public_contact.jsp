@@ -104,7 +104,11 @@
     			<br/>
     			- <%=AuthData.company_address %>			
     			<br/>
-    			- TBD for the seconday place
+    			- appointment required
+    		</li>
+    		<li>By Visiting secondary place: 		
+    			<br/>
+    			- TBD
     			<br/>
     			- appointment required
     		</li>
