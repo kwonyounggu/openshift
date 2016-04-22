@@ -31,25 +31,25 @@
     <td style='width: 20px'></td>
     <td style='background-color: #555762; color: #ffffff; width: 50%; padding: 5px 20px 5px 20px;'>
 
-    	<h3 style='color: #f9d548;'>Estimate(under construction)</h3>
+    	<h3 style='color: #f9d548;'>Estimate(<span style='font-size: .95em; color: #8fc161;'>* Required Fields</span>)</h3>
     		
   			Your payment is not required until you are satisfied in contract later.
   			<form id='estimate_form' action='./'>
-			   	<table  id='estimate_table' style='width: 100%; border-spacing: 4px; padding: 20px 0px 20px 0px;'> 	
+			   	<table  id='estimate_table' style='width: 100%; border-spacing: 4px; padding: 20px 0px 20px 0px; color: #ffffff;'> 	
 			   		<tr>
-			   			<td>Name<span style='font-size: .95em;'>*</span>&nbsp;:&nbsp;</td>
+			   			<td>Name<span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;</td>
 			   			<td> 
 			 				<input type='text' id='jqx_submitter_name' value='' maxlength='80' style='padding-left: 4px;'/>					
 						</td> 
 			   		</tr> 		
 					<tr>
-			   			<td>E-Mail<span style='font-size: .95em;'>*</span>&nbsp;:&nbsp;</td>
+			   			<td>E-Mail<span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;</td>
 			   			<td> 
 			 				<input type='text' id='jqx_submitter_email' value='' maxlength='255' style='padding-left: 4px;'/>					
 						</td> 
 			   		</tr> 	
 					<tr>
-			   			<td>Note<span style='font-size: .95em;'>*</span>&nbsp;:&nbsp;</td>
+			   			<td>Note<span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;</td>
 			   			<td> 
 			 				<input type='text' id='jqx_submitter_email' value='' maxlength='255' style='padding-left: 4px;'/>					
 						</td> 
