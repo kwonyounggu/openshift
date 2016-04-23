@@ -145,7 +145,7 @@
 					<tr>
 			   			<td class='estimate_form_td' colspan='2'>Note about your requirements <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;
 			   				<br/> 
-			 				<textarea id="estimateNoteEditor" width='100%'></textarea>						
+			 				<textarea id="estimateNoteEditor" maxlength='100'></textarea>						
 						</td> 
 			   		</tr> 
 			   		
