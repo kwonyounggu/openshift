@@ -96,10 +96,9 @@
 					 {
 							 input: '#jqx_submitter_name',
 							 message: 'Sorry only Korean or English is accepted!',
-							 action: 'keyup',
 							 rule: function(input, commit)
 							 {
-								 //document.getElementById('jqx_submitter_name').value=trim(document.getElementById('jqx_submitter_name').value);
+								 document.getElementById('jqx_submitter_name').value=trim(document.getElementById('jqx_submitter_name').value);
 								 return (isKoreanName(document.getElementById('jqx_submitter_name')) || checkNameUsingRegEx(document.getElementById('jqx_submitter_name').value));
 							 }
 					  },
