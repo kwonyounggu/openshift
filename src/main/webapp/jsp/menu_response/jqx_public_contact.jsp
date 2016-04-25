@@ -78,7 +78,7 @@
         });     
         
         $("#jqx_submitter_name").jqxInput({placeHolder: "Bob Clinton", minLength: 2, width: '230px'});
-        $("#jqx_submitter_phone").jqxMaskedInput({mask: '(###)###-####', placeHolder: "416-123-1234", width: '230px'});
+        $("#jqx_submitter_phone").jqxMaskedInput({mask: '(###)###-####', width: '230px'});
         
         $("#jqx_submitter_email").jqxInput({placeHolder: "<%=AuthData.mycompany_email_address%>"});
         $("#jqx_submitter_name, #jqx_submitter_phone, #jqx_submitter_email").removeClass("jqx-rc-all");
