@@ -162,3 +162,6 @@ table.error td
 	font-family: Verdana, Helvetica, sans-serif;
 	font-size: 9px;
 }
+
+.spinner_hidden { display: none; }
+.spinner_unhidden { display: block; }

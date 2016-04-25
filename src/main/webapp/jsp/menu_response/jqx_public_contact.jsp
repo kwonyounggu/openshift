@@ -40,7 +40,113 @@
             else alert("No content change detected yet!");
         });
         
-	});
+        //Add, Edit, Delete
+        $("#jqxSubmitButton").click(function () 
+        {
+        	var onsuccess=$("#estimate_form").jqxValidator('validate');
+			if(!onsuccess) return;
+						
+			document.getElementById("spinner_img").className="spinner_unhidden"; 
+			/*
+			$.ajax
+		     ({
+		         type: "post",
+		         dataType: "",
+		         url: "/carm/admin?op=ajax_form_estimate",
+		         data: 
+		         {
+		    	 		action: 		action_command,
+		    	 		app_id:  		appId,
+		    	 		app_purpose:		document.getElementById("app_purpose").value,
+		    	 		app_symbol:		document.getElementById("app_symbol").value,
+		    	 		number_of_groups:	document.getElementById("number_of_groups").value,
+		    	 		reviewers_per_item:	document.getElementById("reviewers_per_item").value,
+		    	 		assignment_type:	document.getElementById("assignment_type").value,
+		    	 		confirmatory:		getRadioValue('confirmatoryRadio'),
+		    	 		toMediator:		getRadioValue('toMediatorRadio')		    	 		
+		     	 },
+		         success: getAdminActionResponse,
+		         error: function(response) //called for 404 error, etc
+		         {
+		        	 alert(response.responseText);	
+		             
+		         }
+		      }); 
+			  */  	
+        });     
+        
+        $("#jqx_submitter_name").jqxInput({placeHolder: "The purpose of the application", minLength: 3, width: '230px', height: '20px'});
+        $("#jqx_submitter_phone").jqxInput({placeHolder: "Symbolic word", minLength: 2, width: '130px', height: '20px'});
+
+		$("#application_form").jqxValidator
+		(
+			{
+				onError: function()
+				{
+					log("You have not filled the form correctly!");
+				},
+				rules:
+				[	
+					 {
+							 input: '#app_purpose',
+							 message: 'The purpose of the application with [a-zA-Z0-9] and space!',
+							 rule: function(input, commit)
+							 {
+								 document.getElementById('app_purpose').value=trim(document.getElementById('app_purpose').value);
+								 if(document.getElementById('app_purpose').value.length<3) return false;
+								 return checkAlphanumericSpace(document.getElementById('app_purpose').value);
+							 }
+					  },
+					  
+					  {
+						 input: '#app_symbol',
+						 message: 'The symbolic name with [a-zA-Z0-9]!',
+						 rule: function(input, commit)
+						 {
+						 	document.getElementById('app_symbol').value=trim(document.getElementById('app_symbol').value);
+						 	if(document.getElementById('app_symbol').value.length<2) return false;
+						 	return check_alphanumeric(document.getElementById('app_symbol').value);
+						 }
+					 },
+					 
+					 {
+						 input: '#number_of_groups',
+						 message: 'The number should be >= the current value',
+						 rule: function(input, commit)
+						 {
+							 if(action_command=="edit")
+							 {
+								 if($("#number_of_groups").val()<Number(selectedDataRecord.number_of_groups)) return false
+								 else return true;
+							 }
+							 else
+							 {
+								 return true;
+							 }						 	
+						 }
+					 },	
+					 
+					 {
+						 input: '#reviewers_per_item',
+						 message: 'The number should be >= the current value',
+						 rule: function(input, commit)
+						 {
+							 if(action_command=="edit")
+							 {
+								 if($("#reviewers_per_item").val()<Number(selectedDataRecord.reviewers_per_item_int)) return false
+								 else return true;
+							 }
+							 else
+							 {
+								 return true;
+							 }						 	
+						 }
+					 }
+				]
+			}
+		);		
+	});//$(document).ready
+
 	function saveClinicalSummary()
 	{
 		var login_level=parseInt("${crb.login_level}");
@@ -134,7 +240,9 @@
 			   		</tr>
 			   		<tr>
 			   			<td class='estimate_form_td'  colspan='2'>Name <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;
-			 				<input type='text' id='jqx_submitter_name' value='' maxlength='80' style='padding-left: 0px; width: 80%'/>					
+			 				<input type='text' id='jqx_submitter_name' value='' maxlength='80' style='padding-left: 0px; width: 40%'/>	
+			 				&nbsp;:&nbsp;Phone&nbsp;:&nbsp;
+			 				<input type='text' id='jqx_submitter_phone' value='' maxlength='80' style='padding-left: 0px; width: 40%'/>				
 						</td> 
 			   		</tr> 
 			   		<tr>
@@ -168,7 +276,7 @@
 			   				<img src="images/three_animals.png" width="362" height="86" alt="Three Animals" border="0"/>
 						</td>
 			   		</tr> 
-			   		<tr><td colspan='2' height="10" ></td></tr>
+			   		<tr><td colspan='2' align='center'><img id='spinner_img' src='images/common/spinner.gif' width=32 height=32  class="spinner_hidden"/></td></tr>
 					<tr>
 					    <td colspan='2' >	
 							<input type='button' value=Submit id='jqxSubmitButton' />		
