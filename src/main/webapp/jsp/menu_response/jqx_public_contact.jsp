@@ -235,7 +235,7 @@
 						</td> 
 			   		</tr> 
 			   		<tr>
-			   			<td class='estimate_form_td'  colspan='2'>Phone <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;&nbsp;:&nbsp;
+			   			<td class='estimate_form_td'  colspan='2'>Phone <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;
 			 				<input type='text' id='jqx_submitter_phone' class='text-input'/>				
 						</td> 
 			   		</tr> 
