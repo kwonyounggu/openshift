@@ -77,7 +77,7 @@
         
         $("#jqx_submitter_name").jqxInput({placeHolder: "Bob Clinton", minLength: 3, width: '230px'});
         $("#jqx_submitter_phone").jqxInput({placeHolder: "416-123-1234", minLength: 10, width: '230px'});
-        $("#jqx_submitter_name").removeClass("jqx-rc-all");
+        $("#jqx_submitter_name, #jqx_submitter_phone, #jqx_submitter_email").removeClass("jqx-rc-all");
 		$("#application_form").jqxValidator
 		(
 			{
