@@ -75,9 +75,9 @@
 			  */  	
         });     
         
-        $("#jqx_submitter_name").jqxInput({placeHolder: "Bob Clinton", minLength: 3, width: '230px', height: '20px'});
-        $("#jqx_submitter_phone").jqxInput({placeHolder: "416-123-1234", minLength: 2, width: '230px', height: '20px'});
-
+        $("#jqx_submitter_name").jqxInput({placeHolder: "Bob Clinton", minLength: 3, width: '230px'});
+        $("#jqx_submitter_phone").jqxInput({placeHolder: "416-123-1234", minLength: 10, width: '230px'});
+        $("#jqx_submitter_name").removeClass("jqx-rc-all");
 		$("#application_form").jqxValidator
 		(
 			{
@@ -145,7 +145,7 @@
 				]
 			}
 		);	
-		 $("#jqx_submitter_name").removeClass("jqx-rc-all");
+		 
 	});//$(document).ready
 
 	function saveClinicalSummary()
