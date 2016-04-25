@@ -281,7 +281,9 @@
 			   				<img src="images/three_animals.png" width="362" height="86" alt="Three Animals" border="0"/>
 						</td>
 			   		</tr> 
+			   		<!--  
 			   		<tr><td colspan='2' align='center'><img id='spinner_img' src='images/common/spinner.gif' width=32 height=32  class="spinner_unhidden"/></td></tr>
+			   		-->
 					<tr>
 					    <td colspan='2' >	
 							<input type='button' value=Submit id='jqxSubmitButton' />		
