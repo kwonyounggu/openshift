@@ -26,7 +26,7 @@
         {
         	//if($('#jqxgrid').jqxGrid('getselectedrowindex')>=0) editorChanged=true;
         });
-        $("#jqxSubmitButton").jqxButton({ width: '100', theme: 'energyblue', disabled: false});
+        $("#jqxSubmitButton").jqxButton({ width: '100', disabled: false});
 
         /*
         $("#jqxSubmitButton").on('click', function () 
@@ -77,10 +77,10 @@
 			  */  	
         });     
         
-        $("#jqx_submitter_name").jqxInput({placeHolder: "Bob Clinton", minLength: 2, width: '230px', height: 22,});
-        $("#jqx_submitter_phone").jqxMaskedInput({mask: '(###)###-####', width: '200px', height: 22,});
+        $("#jqx_submitter_name").jqxInput({placeHolder: "Bob Clinton", minLength: 2, width: '200px', height: 22,});
+        $("#jqx_submitter_phone").jqxMaskedInput({mask: '(###)###-####', width: '220px', height: 22,});
         
-        $("#jqx_submitter_email").jqxInput({placeHolder: "<%=AuthData.mycompany_email_address%>", width: '230px', height: 22,});
+        $("#jqx_submitter_email").jqxInput({placeHolder: "<%=AuthData.mycompany_email_address%>", width: '240px', height: 22,});
         $("#jqx_submitter_name, #jqx_submitter_phone, #jqx_submitter_email").removeClass("jqx-rc-all");
         
 		$("#estimate_form").jqxValidator
@@ -92,7 +92,7 @@
 				},
 				rules:
 				[	
-					 { input: '#jqx_submitter_name', message: 'Name is required!', action: 'keyup, blur', rule: 'required' },
+					 //{ input: '#jqx_submitter_name', message: 'Name is required!', action: 'keyup, blur', rule: 'required' },
 					 {
 							 input: '#jqx_submitter_name',
 							 message: 'Sorry only Korean or English is accepted!',
