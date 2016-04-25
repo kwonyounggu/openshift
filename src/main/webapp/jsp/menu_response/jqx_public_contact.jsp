@@ -41,12 +41,12 @@
         });
         */
         
-        //Add, Edit, Delete
+        //$("#jqxSubmitButton").on('click', function () 
         $("#jqxSubmitButton").click(function () 
         {
         	//var onsuccess=$("#estimate_form").jqxValidator('validate');
 			//if(!onsuccess) return;
-						
+			console.log("jqxSubmitButton.on ...");			
 			run_waitMe("roundBounce");
 			/*
 			$.ajax
@@ -151,8 +151,8 @@
 		 
 	});//$(document).ready
 
-	function wun_waitMe(effect)
-	{
+	function run_waitMe(effect)
+	{ 	console.log("run_waitMe ...");
 		$("#estimate_form").waitMe
 		({
 			effect: effect,
