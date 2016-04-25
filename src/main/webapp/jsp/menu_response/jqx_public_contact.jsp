@@ -234,7 +234,7 @@
 			   	<table  id='estimate_table' style='width: 100%; border-spacing: 4px; padding: 0px 0px 10px 0px;'> 	
 			   		<tr>
 			   			<td colspan='2' style='text-align: left;'>
-			   				<h3 style='color: #f9d548;'>Estimate</h3> (Under construction now)
+			   				<h3 style='color: #f9d548;'>Estimate(Under construction now)</h3>
 			   				<span style='font-size: .95em; color: #8fc161;'>(*: must)</span>
 			   				<span style='font-size: 11px; color: #bad5fe;'>Your payment is not required unless you are satisfied.</span>
 			   			</td>
@@ -245,7 +245,7 @@
 						</td> 
 			   		</tr> 
 			   		<tr>
-			   			<td class='estimate_form_td'  colspan='2'>Phone&nbsp;:&nbsp;
+			   			<td class='estimate_form_td'  colspan='2'>Phone&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;
 			 				<input type='text' id='jqx_submitter_phone' value='' maxlength='80' style='padding-left: 0px;'/>				
 						</td> 
 			   		</tr> 
