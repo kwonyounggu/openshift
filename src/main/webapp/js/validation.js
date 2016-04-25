@@ -398,7 +398,11 @@ function checkName(name)
 	}	
 	return is_ok;
 }
-
+function checkNameUsingRegEx(name)
+{
+	var ck_name = /^[A-Za-z ]{3,20}$/;
+	return ck_name.test(name);
+}
 function isEmail(obj) 
 {
 	var str = obj.value;

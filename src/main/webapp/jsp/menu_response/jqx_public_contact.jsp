@@ -77,7 +77,7 @@
 			  */  	
         });     
         
-        $("#jqx_submitter_name").jqxInput({placeHolder: "Bob Clinton", minLength: 2, width: '200px', height: 22,});
+        $("#jqx_submitter_name").jqxInput({placeHolder: "홍길동", minLength: 2, width: '200px', height: 22,});
         $("#jqx_submitter_phone").jqxMaskedInput({mask: '(###)###-####', width: '220px', height: 22,});
         
         $("#jqx_submitter_email").jqxInput({placeHolder: "<%=AuthData.mycompany_email_address%>", width: '240px', height: 22,});
@@ -92,15 +92,15 @@
 				},
 				rules:
 				[	
-					 //{ input: '#jqx_submitter_name', message: 'Name is required!', action: 'keyup, blur', rule: 'required' },
+					 { input: '#jqx_submitter_name', message: 'Name is required!', action: 'keyup, blur', rule: 'required' },
 					 {
 							 input: '#jqx_submitter_name',
 							 message: 'Sorry only Korean or English is accepted!',
 							 action: 'keyup',
 							 rule: function(input, commit)
 							 {
-								 document.getElementById('jqx_submitter_name').value=trim(document.getElementById('jqx_submitter_name').value);
-								 return (isKoreanName(document.getElementById('jqx_submitter_name')) || isEnglishName(document.getElementById('jqx_submitter_name')));
+								 //document.getElementById('jqx_submitter_name').value=trim(document.getElementById('jqx_submitter_name').value);
+								 return (isKoreanName(document.getElementById('jqx_submitter_name')) || checkNameUsingRegEx(document.getElementById('jqx_submitter_name').value));
 							 }
 					  },
 					  /*{ input: '#jqx_submitter_phone', message: 'Phone number is required!', action: 'keyup, blur', rule: 'required' },*/
