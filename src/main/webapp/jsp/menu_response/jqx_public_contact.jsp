@@ -75,8 +75,8 @@
 			  */  	
         });     
         
-        $("#jqx_submitter_name").jqxInput({placeHolder: "eg: Bob Clinton", minLength: 3, width: '230px', height: '20px'});
-        $("#jqx_submitter_phone").jqxInput({placeHolder: "Optional", minLength: 2, width: '230px', height: '20px'});
+        $("#jqx_submitter_name").jqxInput({placeHolder: "Bob Clinton", minLength: 3, width: '230px', height: '20px'});
+        $("#jqx_submitter_phone").jqxInput({placeHolder: "416-123-1234", minLength: 2, width: '230px', height: '20px'});
 
 		$("#application_form").jqxValidator
 		(
@@ -144,7 +144,8 @@
 					 }
 				]
 			}
-		);		
+		);	
+		 $("#jqx_submitter_name,#jqx_submitter_phone,#jqx_submitter_email").removeClass("jqx-rc-all");
 	});//$(document).ready
 
 	function saveClinicalSummary()
@@ -233,7 +234,7 @@
 			   	<table  id='estimate_table' style='width: 100%; border-spacing: 4px; padding: 0px 0px 10px 0px;'> 	
 			   		<tr>
 			   			<td colspan='2' style='text-align: left;'>
-			   				<h3 style='color: #f9d548;'>Estimate</h3>
+			   				<h3 style='color: #f9d548;'>Estimate</h3> (Under construction now)
 			   				<span style='font-size: .95em; color: #8fc161;'>(*: must)</span>
 			   				<span style='font-size: 11px; color: #bad5fe;'>Your payment is not required unless you are satisfied.</span>
 			   			</td>
