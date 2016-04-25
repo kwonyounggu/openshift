@@ -230,7 +230,7 @@
 			   			</td>
 			   		</tr>
 			   		<tr>
-			   			<td class='estimate_form_td'  colspan='2'>Name <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;&nbsp;:&nbsp;
+			   			<td class='estimate_form_td'  colspan='2'>Name <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp; :&nbsp;
 			 				<input type='text' id='jqx_submitter_name' value='' maxlength='80' class='text-input'/>			
 						</td> 
 			   		</tr> 
@@ -253,7 +253,7 @@
 			   		
 			   		
 					<tr>
-			   			<td class='estimate_form_td' colspan='2'>A file about your app design in pdf, jpg or zip file type to upload :&nbsp;</td>
+			   			<td class='estimate_form_td' colspan='2'>A file about your application design to upload :&nbsp;</td>
 			   		</tr>
 			   		<tr>
 			   			<td colspan='2'> 
