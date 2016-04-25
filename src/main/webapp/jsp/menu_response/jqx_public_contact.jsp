@@ -77,10 +77,10 @@
 			  */  	
         });     
         
-        $("#jqx_submitter_name").jqxInput({placeHolder: "Bob Clinton", minLength: 2, width: '230px'});
-        $("#jqx_submitter_phone").jqxMaskedInput({mask: '(###)###-####', width: '230px'});
+        $("#jqx_submitter_name").jqxInput({placeHolder: "Bob Clinton", minLength: 2, width: '230px', height: 22,});
+        $("#jqx_submitter_phone").jqxMaskedInput({mask: '(###)###-####', width: '200px', height: 22,});
         
-        $("#jqx_submitter_email").jqxInput({placeHolder: "<%=AuthData.mycompany_email_address%>"});
+        $("#jqx_submitter_email").jqxInput({placeHolder: "<%=AuthData.mycompany_email_address%>", width: '230px', height: 22,});
         $("#jqx_submitter_name, #jqx_submitter_phone, #jqx_submitter_email").removeClass("jqx-rc-all");
         
 		$("#estimate_form").jqxValidator
@@ -103,7 +103,7 @@
 								 return (isKoreanName(document.getElementById('jqx_submitter_name')) || isEnglishName(document.getElementById('jqx_submitter_name')));
 							 }
 					  },
-					  
+					  /*{ input: '#jqx_submitter_phone', message: 'Phone number is required!', action: 'keyup, blur', rule: 'required' },*/
 					  {
 						 input: '#jqx_submitter_phone',
 						 message: 'Invalid phone number!',
@@ -235,8 +235,8 @@
 						</td> 
 			   		</tr> 
 			   		<tr>
-			   			<td class='estimate_form_td'  colspan='2'>Phone&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;
-			 				<input type='text' id='jqx_submitter_phone' value='' maxlength='80'  class='text-input'/>				
+			   			<td class='estimate_form_td'  colspan='2'>Phone <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;&nbsp;:&nbsp;
+			 				<input type='text' id='jqx_submitter_phone' class='text-input'/>				
 						</td> 
 			   		</tr> 
 			   		<tr>
@@ -253,7 +253,7 @@
 			   		
 			   		
 					<tr>
-			   			<td class='estimate_form_td' colspan='2'>A file to upload if you have in pdf, jpg or zip file type:&nbsp;</td>
+			   			<td class='estimate_form_td' colspan='2'>A file about your app design in pdf, jpg or zip file type to upload :&nbsp;</td>
 			   		</tr>
 			   		<tr>
 			   			<td colspan='2'> 
