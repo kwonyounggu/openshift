@@ -75,8 +75,9 @@
 			  */  	
         });     
         
-        $("#jqx_submitter_name").jqxInput({placeHolder: "Bob Clinton", minLength: 3, width: '230px'});
-        $("#jqx_submitter_phone").jqxInput({placeHolder: "416-123-1234", minLength: 10, width: '230px'});
+        $("#jqx_submitter_name").jqxInput({placeHolder: "Bob Clinton", minLength: 2, width: '230px'});
+        $("#jqx_submitter_phone").jqxInput({placeHolder: "416-123-1234", width: '230px'});
+        $("#jqx_submitter_phone").jqxInput({placeHolder: "<%=AuthData.mycompany_email_address%>"});
         $("#jqx_submitter_name, #jqx_submitter_phone, #jqx_submitter_email").removeClass("jqx-rc-all");
 		$("#application_form").jqxValidator
 		(
@@ -240,12 +241,12 @@
 			   			</td>
 			   		</tr>
 			   		<tr>
-			   			<td class='estimate_form_td'  colspan='2'>Name <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;
+			   			<td class='estimate_form_td'  colspan='2'>Name <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;&nbsp;:&nbsp;
 			 				<input type='text' id='jqx_submitter_name' value='' maxlength='80' style='padding-left: 0px;'/>			
 						</td> 
 			   		</tr> 
 			   		<tr>
-			   			<td class='estimate_form_td'  colspan='2'>Phone&nbsp;&nbsp;&nbsp;:&nbsp;
+			   			<td class='estimate_form_td'  colspan='2'>Phone&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;
 			 				<input type='text' id='jqx_submitter_phone' value='' maxlength='80' style='padding-left: 0px;'/>				
 						</td> 
 			   		</tr> 
