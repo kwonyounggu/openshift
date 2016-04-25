@@ -145,7 +145,7 @@
 				]
 			}
 		);	
-		 $("#jqx_submitter_name,#jqx_submitter_phone,#jqx_submitter_email").removeClass("jqx-rc-all");
+		 $("#jqx_submitter_name").removeClass("jqx-rc-all");
 	});//$(document).ready
 
 	function saveClinicalSummary()
@@ -245,7 +245,7 @@
 						</td> 
 			   		</tr> 
 			   		<tr>
-			   			<td class='estimate_form_td'  colspan='2'>Phone&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;
+			   			<td class='estimate_form_td'  colspan='2'>Phone&nbsp;&nbsp;&nbsp;:&nbsp;
 			 				<input type='text' id='jqx_submitter_phone' value='' maxlength='80' style='padding-left: 0px;'/>				
 						</td> 
 			   		</tr> 
