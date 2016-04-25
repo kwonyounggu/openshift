@@ -160,7 +160,7 @@ function isKoreanName(name)
 	 return i<6 ? true: false;//up to 5 chars it's ok
 }
 //check english name including numbers unless the 1st char is a digit
-function isEngName(obj) 
+function isEnglishName(obj) 
 {
 	var str = obj.value;
 	if(str.length == 0) return false;
@@ -168,7 +168,8 @@ function isEngName(obj)
 	str = str.toUpperCase();
 	if(!('A' <= str.charAt(0) && str.charAt(0) <= 'Z')) return false;
 
-	for(var i=1; i < str.length; i++) {
+	for(var i=1; i < str.length; i++) 
+	{
 		if(!(('A' <= str.charAt(i) && str.charAt(i) <= 'Z') ||
 			('0' <= str.charAt(i) && str.charAt(i) <= '9')))
 			return false;

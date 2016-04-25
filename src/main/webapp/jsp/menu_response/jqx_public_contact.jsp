@@ -44,9 +44,10 @@
         //$("#jqxSubmitButton").on('click', function () 
         $("#jqxSubmitButton").click(function () 
         {
-        	//var onsuccess=$("#estimate_form").jqxValidator('validate');
-			//if(!onsuccess) return;
-			console.log("jqxSubmitButton.on ...");			
+        	var onsuccess=$("#estimate_form").jqxValidator('validate');			
+			log("$(\"#jqxSubmitButton\").click() is called in jqx_public_contact.jsp, validataion="+onsuccess+" !");	
+			if(!onsuccess) return;
+			
 			run_waitMe("roundBounce");
 			/*
 			$.ajax
@@ -77,77 +78,50 @@
         });     
         
         $("#jqx_submitter_name").jqxInput({placeHolder: "Bob Clinton", minLength: 2, width: '230px'});
-        $("#jqx_submitter_phone").jqxInput({placeHolder: "416-123-1234", width: '230px'});
+        $("#jqx_submitter_phone").jqxMaskedInput({mask: '(###)###-####', placeHolder: "416-123-1234", width: '230px'});
+        
         $("#jqx_submitter_email").jqxInput({placeHolder: "<%=AuthData.mycompany_email_address%>"});
         $("#jqx_submitter_name, #jqx_submitter_phone, #jqx_submitter_email").removeClass("jqx-rc-all");
-        /*
-		$("#application_form").jqxValidator
+        
+		$("#estimate_form").jqxValidator
 		(
 			{
 				onError: function()
 				{
-					log("You have not filled the form correctly!");
+					log("You have not filled the estimate form correctly!");
 				},
 				rules:
 				[	
+					 { input: '#jqx_submitter_name', message: 'Name is required!', action: 'keyup, blur', rule: 'required' },
 					 {
-							 input: '#app_purpose',
-							 message: 'The purpose of the application with [a-zA-Z0-9] and space!',
+							 input: '#jqx_submitter_name',
+							 message: 'Sorry only Korean or English is accepted!',
+							 action: 'keyup',
 							 rule: function(input, commit)
 							 {
-								 document.getElementById('app_purpose').value=trim(document.getElementById('app_purpose').value);
-								 if(document.getElementById('app_purpose').value.length<3) return false;
-								 return checkAlphanumericSpace(document.getElementById('app_purpose').value);
+								 document.getElementById('jqx_submitter_name').value=trim(document.getElementById('jqx_submitter_name').value);
+								 return (isKoreanName(document.getElementById('jqx_submitter_name')) || isEnglishName(document.getElementById('jqx_submitter_name')));
 							 }
 					  },
 					  
 					  {
-						 input: '#app_symbol',
-						 message: 'The symbolic name with [a-zA-Z0-9]!',
+						 input: '#jqx_submitter_phone',
+						 message: 'Invalid phone number!',
+						 action: 'valuechanged, blur', rule: 'phone'
+						 /*
 						 rule: function(input, commit)
 						 {
 						 	document.getElementById('app_symbol').value=trim(document.getElementById('app_symbol').value);
 						 	if(document.getElementById('app_symbol').value.length<2) return false;
 						 	return check_alphanumeric(document.getElementById('app_symbol').value);
 						 }
+					  */
 					 },
-					 
-					 {
-						 input: '#number_of_groups',
-						 message: 'The number should be >= the current value',
-						 rule: function(input, commit)
-						 {
-							 if(action_command=="edit")
-							 {
-								 if($("#number_of_groups").val()<Number(selectedDataRecord.number_of_groups)) return false
-								 else return true;
-							 }
-							 else
-							 {
-								 return true;
-							 }						 	
-						 }
-					 },	
-					 
-					 {
-						 input: '#reviewers_per_item',
-						 message: 'The number should be >= the current value',
-						 rule: function(input, commit)
-						 {
-							 if(action_command=="edit")
-							 {
-								 if($("#reviewers_per_item").val()<Number(selectedDataRecord.reviewers_per_item_int)) return false
-								 else return true;
-							 }
-							 else
-							 {
-								 return true;
-							 }						 	
-						 }
-					 }
+					 { input: '#jqx_submitter_email', message: 'E-mail is required!', action: 'keyup, blur', rule: 'required' },
+					 { input: '#jqx_submitter_email', message: 'Invalid e-mail!', action: 'keyup', rule: 'email' }
 				]
 			}
-		);	*/
+		);
 		 
 	});//$(document).ready
 
@@ -157,7 +131,7 @@
 		({
 			effect: effect,
 			text: 'Please wait...',
-			bg: 'rgba(255,255,255,0.7)',
+			bg: 'rgba(255,255,255,0.5)',
 			color: '#000',
 			maxSize: '',
 			source: 'img.svg',
@@ -257,23 +231,23 @@
 			   		</tr>
 			   		<tr>
 			   			<td class='estimate_form_td'  colspan='2'>Name <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;&nbsp;:&nbsp;
-			 				<input type='text' id='jqx_submitter_name' value='' maxlength='80' style='padding-left: 0px;'/>			
+			 				<input type='text' id='jqx_submitter_name' value='' maxlength='80' class='text-input'/>			
 						</td> 
 			   		</tr> 
 			   		<tr>
 			   			<td class='estimate_form_td'  colspan='2'>Phone&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;
-			 				<input type='text' id='jqx_submitter_phone' value='' maxlength='80' style='padding-left: 0px;'/>				
+			 				<input type='text' id='jqx_submitter_phone' value='' maxlength='80'  class='text-input'/>				
 						</td> 
 			   		</tr> 
 			   		<tr>
 			   			<td class='estimate_form_td'  colspan='2'>E-Mail <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;
-			 				<input type='text' id=jqx_submitter_email value='' maxlength='80' style='padding-left: 0px; width: 80%'/>					
+			 				<input type='text' id=jqx_submitter_email value='' maxlength='80'  class='text-input'/>					
 						</td> 
 			   		</tr>		
 					<tr>
 			   			<td class='estimate_form_td' colspan='2'>Note about your requirements <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;
 			   				<br/> 
-			 				<textarea id="estimateNoteEditor" maxlength='100'></textarea>						
+			 				<textarea id='estimateNoteEditor'></textarea>						
 						</td> 
 			   		</tr> 
 			   		
@@ -283,7 +257,7 @@
 			   		</tr>
 			   		<tr>
 			   			<td colspan='2'> 
-			 				<input type='text' id='jqx_submitter_email' value='' maxlength='255' style='padding-left: 4px;'/>					
+			 				<input type='text' id='jqx_submitter_mmm' value='' maxlength='255'  class='text-input'/>					
 						</td> 
 			   		</tr> 	
 			   		

@@ -25,10 +25,10 @@
 <script type="text/javascript" src="js/waitMe.js" ></script>
 <script type="text/javascript" src="js/swfobject.js"></script>
 <script type="text/javascript" src="js/validation.js" ></script>
-<script type="text/javascript" src="js/httpRequest.js" ></script>
+<!-- <script type="text/javascript" src="js/httpRequest.js" ></script> -->
 <script type="text/javascript" src="js/common.js" ></script>
 
-<script type="text/javascript" src="js/menu/ddsmoothmenu.js"></script>
+<!-- <script type="text/javascript" src="js/menu/ddsmoothmenu.js"></script> -->
 
 <script type="text/javascript" src="js/utils.js"></script>
 
