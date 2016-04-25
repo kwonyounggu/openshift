@@ -13,8 +13,6 @@
 	var editorChanged=false;
 	$(document).ready(function () 
 	{
-
-        //Clinical Summary Editor
         $("#estimateNoteEditor").jqxEditor
         (
             {
@@ -30,6 +28,7 @@
         });
         $("#jqxSubmitButton").jqxButton({ width: '100', theme: 'energyblue', disabled: false});
 
+        /*
         $("#jqxSubmitButton").on('click', function () 
         {
             if(editorChanged)
@@ -38,15 +37,17 @@
                  saveClinicalSummary();
             }
             else alert("No content change detected yet!");
+            
         });
+        */
         
         //Add, Edit, Delete
         $("#jqxSubmitButton").click(function () 
         {
-        	var onsuccess=$("#estimate_form").jqxValidator('validate');
-			if(!onsuccess) return;
+        	//var onsuccess=$("#estimate_form").jqxValidator('validate');
+			//if(!onsuccess) return;
 						
-			document.getElementById("spinner_img").className="spinner_unhidden"; 
+			run_waitMe("roundBounce");
 			/*
 			$.ajax
 		     ({
@@ -79,6 +80,7 @@
         $("#jqx_submitter_phone").jqxInput({placeHolder: "416-123-1234", width: '230px'});
         $("#jqx_submitter_email").jqxInput({placeHolder: "<%=AuthData.mycompany_email_address%>"});
         $("#jqx_submitter_name, #jqx_submitter_phone, #jqx_submitter_email").removeClass("jqx-rc-all");
+        /*
 		$("#application_form").jqxValidator
 		(
 			{
@@ -145,10 +147,23 @@
 					 }
 				]
 			}
-		);	
+		);	*/
 		 
 	});//$(document).ready
 
+	function wun_waitMe(effect)
+	{
+		$("#estimate_form").waitMe
+		({
+			effect: effect,
+			text: 'Please wait...',
+			bg: 'rgba(255,255,255,0.7)',
+			color: '#000',
+			maxSize: '',
+			source: 'img.svg',
+			onClose: function() {}
+		});
+	}
 	function saveClinicalSummary()
 	{
 		var login_level=parseInt("${crb.login_level}");

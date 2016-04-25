@@ -14,7 +14,7 @@
 <link rel="SHORTCUT ICON" href="ico/favicon.ico" />
 
 <link rel="stylesheet" type="text/css" href="css/main.css" />
-
+<link rel="stylesheet" type="text/css" href="css/waitMe.css" />
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="https://jqwidgets.com/jquery-widgets-demo/jqwidgets/jqx-all.js"></script>
@@ -22,6 +22,7 @@
 <link rel="stylesheet" type="text/css" href="https://jqwidgets.com/jquery-widgets-demo/jqwidgets/styles/jqx.metro.css" />    
 <link rel="stylesheet" type="text/css" href="https://jqwidgets.com/jquery-widgets-demo/jqwidgets/styles/jqx.energyblue.css" />    
 
+<script type="text/javascript" src="js/waitMe.js" ></script>
 <script type="text/javascript" src="js/swfobject.js"></script>
 <script type="text/javascript" src="js/validation.js" ></script>
 <script type="text/javascript" src="js/httpRequest.js" ></script>
