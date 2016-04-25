@@ -75,8 +75,8 @@
 			  */  	
         });     
         
-        $("#jqx_submitter_name").jqxInput({placeHolder: "The purpose of the application", minLength: 3, width: '230px', height: '20px'});
-        $("#jqx_submitter_phone").jqxInput({placeHolder: "Symbolic word", minLength: 2, width: '130px', height: '20px'});
+        $("#jqx_submitter_name").jqxInput({placeHolder: "eg: Bob Clinton", minLength: 3, width: '230px', height: '20px'});
+        $("#jqx_submitter_phone").jqxInput({placeHolder: "Optional", minLength: 2, width: '230px', height: '20px'});
 
 		$("#application_form").jqxValidator
 		(
@@ -240,9 +240,12 @@
 			   		</tr>
 			   		<tr>
 			   			<td class='estimate_form_td'  colspan='2'>Name <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;
-			 				<input type='text' id='jqx_submitter_name' value='' maxlength='80' style='padding-left: 0px; width: 40%'/>	
-			 				&nbsp;:&nbsp;Phone&nbsp;:&nbsp;
-			 				<input type='text' id='jqx_submitter_phone' value='' maxlength='80' style='padding-left: 0px; width: 40%'/>				
+			 				<input type='text' id='jqx_submitter_name' value='' maxlength='80' style='padding-left: 0px;'/>			
+						</td> 
+			   		</tr> 
+			   		<tr>
+			   			<td class='estimate_form_td'  colspan='2'>Phone&nbsp;:&nbsp;
+			 				<input type='text' id='jqx_submitter_phone' value='' maxlength='80' style='padding-left: 0px;'/>				
 						</td> 
 			   		</tr> 
 			   		<tr>
@@ -276,7 +279,7 @@
 			   				<img src="images/three_animals.png" width="362" height="86" alt="Three Animals" border="0"/>
 						</td>
 			   		</tr> 
-			   		<tr><td colspan='2' align='center'><img id='spinner_img' src='images/common/spinner.gif' width=32 height=32  class="spinner_hidden"/></td></tr>
+			   		<tr><td colspan='2' align='center'><img id='spinner_img' src='images/common/spinner.gif' width=32 height=32  class="spinner_unhidden"/></td></tr>
 					<tr>
 					    <td colspan='2' >	
 							<input type='button' value=Submit id='jqxSubmitButton' />		
