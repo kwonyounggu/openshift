@@ -117,8 +117,8 @@
 	                     {
 	                    	 
 	                        var editorValue = trim(document.getElementById('jqx_estimateNoteEditor').value);
-	                        log("-----"+editorValue);
-	                        if (editorValue === "" || editorValue === '') 
+	                        log("-----"+editorValue==undefined);
+	                        if (editorValue == undefined || editorValue === "" || editorValue === '') 
 	                        {
 	                            return false;
 	                        } 
