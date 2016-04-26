@@ -30,6 +30,8 @@
             	var editorValue = document.getElementById('jqx_estimateNoteEditor').value==undefined ? '' : $("#jqx_estimateNoteEditor").val().trim();
             	if(editorValue=='' || editorValue=="") editorValid=false;
             	else editorValid=true;
+            	
+            	log(editorValue);
             }
             catch(e)
            	{
