@@ -10,7 +10,7 @@
 	}
 </style>
 <script language="Javascript" type="text/javascript">
-	var editorValid=false;
+	//var editorValid=false;
 	$(document).ready(function () 
 	{
         $("#jqx_estimateNoteEditor").jqxEditor
@@ -24,6 +24,7 @@
         );
         $("#jqx_estimateNoteEditor").on('change', function (event) 
         {
+        	/*
         	log("-- on change of noteEditor --");
         	try
             {
@@ -38,6 +39,7 @@
             	log("ERROR: "+e.message+" in jqx_public_contact.jsp");
             	editorValid=false;
            	}
+            */
         });
         $("#jqxSubmitButton").jqxButton({ width: '100', disabled: false});
 
@@ -128,8 +130,8 @@
 						 message: 'Please put your requirements!',
 	                     rule: function(input, commit) 
 	                     {                    	 
-	                        
-	                        return editorValid;
+	                        //undefined means no typing at all. Using document.getElementById('jqx_submitter_name') or $('#jqx_estimateNoteEditor') doesn't work
+	                        return !($('#jqx_estimateNoteEditor').val()==undefined);
 	                     }
 				  	 }
 				]
