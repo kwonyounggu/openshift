@@ -24,9 +24,10 @@
         );
         $("#jqx_estimateNoteEditor").on('change', function (event) 
         {
+        	log("-- on change of noteEditor --");
         	try
             {
-            	var editorValue = trim(document.getElementById('jqx_estimateNoteEditor').value);
+            	var editorValue = document.getElementById('jqx_estimateNoteEditor').value==undefined ? '' : $("#jqx_estimateNoteEditor").val().trim();
             	if(editorValue=='' || editorValue=="") editorValid=false;
             	else editorValid=true;
             }
