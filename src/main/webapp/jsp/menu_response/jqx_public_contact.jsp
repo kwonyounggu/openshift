@@ -113,7 +113,11 @@
 					 {
 						 input: '#estimateNoteEditor',
 						 message: 'Please put your requirements!',
-						 rule: 'required'
+						 rule: function(input, commit)
+						 {
+							 var noteString=trim($("#clinicalSummaryEditor").jqxEditor('val'));
+							 return noteString.length>0;
+						 }
 				  	 }
 				]
 			}
