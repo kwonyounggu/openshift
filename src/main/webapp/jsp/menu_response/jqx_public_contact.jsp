@@ -115,10 +115,22 @@
 						 message: 'Please put your requirements!',
 	                     rule: function(input, commit) 
 	                     {                    	 
-	                        var editorValue = document.getElementById('jqx_estimateNoteEditor').value;
-	                        if (editorValue == "" || editorValue == '') return false;
-	                        else if((editorValue=trim(editorValue)) == "" || editorValue == '') return false;
-	                        else return true;   
+	                        
+	                        var validText=false;
+	                        try
+	                        {
+	                        	var editorValue = trim(document.getElementById('jqx_estimateNoteEditor').value);
+	                        	if(editorValue=='' || editorValue=="");
+	                        	else validText=true;
+	                        }
+	                        catch(e)
+	                       	{
+	                        	log("ERROR: "+e.message+" in jqx_public_contact.jsp");
+	                       	}
+	                        finally
+	                        {
+	                        	return validText;
+	                        }
 	                     }
 				  	 }
 				]
