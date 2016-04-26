@@ -113,7 +113,7 @@
 					 {
 						 input: '#jqx_estimateNoteEditor',
 						 message: 'Please put your requirements!',
-						 action: 'keyup',
+						 action: 'keyup, blur',
 	                     rule: function(input, commit) 
 	                     {
 	                        var editorValue = $.trim($(input.val()).text());
