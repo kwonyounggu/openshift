@@ -13,7 +13,7 @@
 	var editorChanged=false;
 	$(document).ready(function () 
 	{
-        $("#estimateNoteEditor").jqxEditor
+        $("#jqx_estimateNoteEditor").jqxEditor
         (
             {
                 height: '200px', width: '100%', 
@@ -22,7 +22,7 @@
                 
         	}
         );
-        $("#estimateNoteEditor").on('change', function (event) 
+        $("#jqx_estimateNoteEditor").on('change', function (event) 
         {
         	//if($('#jqxgrid').jqxGrid('getselectedrowindex')>=0) editorChanged=true;
         });
@@ -111,12 +111,12 @@
 					 { input: '#jqx_submitter_email', message: 'E-mail is required!', action: 'keyup, blur', rule: 'required' },
 					 { input: '#jqx_submitter_email', message: 'Invalid e-mail!', action: 'keyup', rule: 'email' },
 					 {
-						 input: '#estimateNoteEditor',
+						 input: '#jqx_estimateNoteEditor',
 						 message: 'Please put your requirements!',
 						 rule: function(input, commit)
 						 {
-							 var noteString=trim($("#estimateNoteEditor").jqxEditor('val'));
-							 return noteString.length>0;
+							 var noteString=trim(document.getElementById('jqx_estimateNoteEditor').value);
+							 return (noteString.length>0);
 						 }
 				  	 }
 				]
@@ -247,7 +247,7 @@
 					<tr>
 			   			<td class='estimate_form_td' colspan='2'>Note about your requirements <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;
 			   				<br/> 
-			 				<textarea id='estimateNoteEditor'></textarea>						
+			 				<textarea id='jqx_estimateNoteEditor'></textarea>						
 						</td> 
 			   		</tr> 
 			   		
