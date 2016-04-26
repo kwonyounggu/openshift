@@ -27,7 +27,7 @@
         	log("-- on change of noteEditor --");
         	try
             {
-            	var editorValue = document.getElementById('jqx_estimateNoteEditor').value==undefined ? '' : $("#jqx_estimateNoteEditor").val().trim();
+            	var editorValue = $("#clinicalSummaryEditor").jqxEditor('val')==undefined ? '' : trim($("#clinicalSummaryEditor").jqxEditor('val'));
             	if(editorValue=='' || editorValue=="") editorValid=false;
             	else editorValid=true;
             	
