@@ -113,11 +113,19 @@
 					 {
 						 input: '#jqx_estimateNoteEditor',
 						 message: 'Please put your requirements!',
-						 rule: function(input, commit)
-						 {
-							 var noteString=trim(document.getElementById('jqx_estimateNoteEditor').value);
-							 return (noteString.length>0);
-						 }
+						 action: 'keyup',
+	                     rule: function(input, commit) 
+	                     {
+	                        var editorValue = $.trim($(input.val()).text());
+	                        if (editorValue === "" || editorValue === '') 
+	                        {
+	                            return false;
+	                        } 
+	                        else 
+	                        {
+	                            return true;
+	                        }
+	                     }
 				  	 }
 				]
 			}
