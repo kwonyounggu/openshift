@@ -77,7 +77,7 @@
 			  */  	
         });     
         
-        $("#jqx_submitter_name").jqxInput({placeHolder: "홍길동", minLength: 2, width: '200px', height: 22,});
+        $("#jqx_submitter_name").jqxInput({placeHolder: "홍길동", width: '200px', height: 22, minLength: 2, maxLength: 80});
         $("#jqx_submitter_phone").jqxMaskedInput({mask: '(###)###-####', width: '220px', height: 22,});
         
         $("#jqx_submitter_email").jqxInput({placeHolder: "<%=AuthData.mycompany_email_address%>", width: '240px', height: 22,});
@@ -95,29 +95,26 @@
 					 { input: '#jqx_submitter_name', message: 'Name is required!', action: 'keyup, blur', rule: 'required' },
 					 {
 							 input: '#jqx_submitter_name',
-							 message: 'Sorry only Korean or English is accepted!',
+							 message: 'Korean or English [A-Za-z ]!',
 							 rule: function(input, commit)
 							 {
 								 document.getElementById('jqx_submitter_name').value=trim(document.getElementById('jqx_submitter_name').value);
 								 return (isKoreanName(document.getElementById('jqx_submitter_name')) || checkNameUsingRegEx(document.getElementById('jqx_submitter_name').value));
 							 }
 					  },
-					  /*{ input: '#jqx_submitter_phone', message: 'Phone number is required!', action: 'keyup, blur', rule: 'required' },*/
 					  {
 						 input: '#jqx_submitter_phone',
 						 message: 'Invalid phone number!',
-						 action: 'valuechanged, blur', rule: 'phone'
-						 /*
-						 rule: function(input, commit)
-						 {
-						 	document.getElementById('app_symbol').value=trim(document.getElementById('app_symbol').value);
-						 	if(document.getElementById('app_symbol').value.length<2) return false;
-						 	return check_alphanumeric(document.getElementById('app_symbol').value);
-						 }
-					  */
+						 action: 'valuechanged, blur', 
+						 rule: 'phone'
 					 },
 					 { input: '#jqx_submitter_email', message: 'E-mail is required!', action: 'keyup, blur', rule: 'required' },
-					 { input: '#jqx_submitter_email', message: 'Invalid e-mail!', action: 'keyup', rule: 'email' }
+					 { input: '#jqx_submitter_email', message: 'Invalid e-mail!', action: 'keyup', rule: 'email' },
+					 {
+						 input: '#estimateNoteEditor',
+						 message: 'Please put your requirements!',
+						 rule: 'required'
+				  	 }
 				]
 			}
 		);
@@ -240,7 +237,7 @@
 			   		</tr> 
 			   		<tr>
 			   			<td class='estimate_form_td'  colspan='2'>E-Mail <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;
-			 				<input type='text' id=jqx_submitter_email value='' maxlength='80'  class='text-input'/>					
+			 				<input type='text' id='jqx_submitter_email' class='text-input'/>					
 						</td> 
 			   		</tr>		
 					<tr>
@@ -256,7 +253,7 @@
 			   		</tr>
 			   		<tr>
 			   			<td colspan='2'> 
-			 				<input type='text' id='jqx_submitter_mmm' value='' maxlength='255'  class='text-input'/>					
+			 				<input type='text' id='jqx_submitter_mmm' value='' class='text-input'/>					
 						</td> 
 			   		</tr> 	
 			   		
