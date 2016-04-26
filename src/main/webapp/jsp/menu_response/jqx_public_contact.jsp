@@ -140,7 +140,7 @@
 	                        	strText=$.trim($(strText).text());//remove html tags using $(strText).text()
 	                        	
 	                        	log(strText +" --- 3");
-	                        	if(strText.length<1) return false;
+	                        	if(strText=='' || strText=="") return false;
 	                        	else return true;
 	                        }
 	                        //log($('#jqx_estimateNoteEditor').val().text()+" is defined with <div></div> in default");
