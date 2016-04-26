@@ -126,7 +126,8 @@
 	                            return true;
 	                        }
 	                        */
-	                        log("-----"+$.trim($(input.val()).text()));
+	                        log("-----"+document.getElementById('jqx_estimateNoteEditor').value.length);
+	                        return false;
 	                     }
 				  	 }
 				]
