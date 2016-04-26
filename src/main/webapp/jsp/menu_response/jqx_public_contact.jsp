@@ -10,7 +10,7 @@
 	}
 </style>
 <script language="Javascript" type="text/javascript">
-	//var editorValid=false;
+	var editorValid=false;
 	$(document).ready(function () 
 	{
         $("#jqx_estimateNoteEditor").jqxEditor
@@ -24,22 +24,16 @@
         );
         $("#jqx_estimateNoteEditor").on('change', function (event) 
         {
-        	/*
-        	log("-- on change of noteEditor --");
-        	try
+        	var strText=$('#jqx_estimateNoteEditor').jqxEditor('val');
+            if(strText!=undefined)
             {
-            	var editorValue = $("#jqx_estimateNoteEditor").jqxEditor('val')==undefined ? '' : trim($("#jqx_estimateNoteEditor").jqxEditor('val'));
-            	if(editorValue=='' || editorValue=="") editorValid=false;
-            	else editorValid=true;
+            	log(strText +" --- 1");
+            	log($(strText).text() +" --- 2");
+            	strText=$.trim($(strText).text());//remove html tags using $(strText).text()
             	
-            	log(editorValue);
+            	log(strText +" --- 3"+strText.length);
+            	if(strText.length>0) editorValid=true;
             }
-            catch(e)
-           	{
-            	log("ERROR: "+e.message+" in jqx_public_contact.jsp");
-            	editorValid=false;
-           	}
-            */
         });
         $("#jqxSubmitButton").jqxButton({ width: '100', disabled: false});
 
@@ -130,21 +124,7 @@
 						 message: 'Please put your requirements!',
 	                     rule: function(input, commit) 
 	                     {                    	 
-	                        //undefined means no typing at all. Using document.getElementById('jqx_submitter_name') or $('#jqx_estimateNoteEditor') doesn't work
-	                        var strText=$('#jqx_estimateNoteEditor').jqxEditor('val');
-	                        if(strText==undefined) return false;
-	                        else 
-	                        {
-	                        	log(strText +" --- 1");
-	                        	log($(strText).text() +" --- 2");
-	                        	strText=$.trim($(strText).text());//remove html tags using $(strText).text()
-	                        	
-	                        	log(strText +" --- 3"+strText.length);
-	                        	if(strText==='' || strText==="") return false;
-	                        	else return true;
-	                        }
-	                        //log($('#jqx_estimateNoteEditor').val().text()+" is defined with <div></div> in default");
-	                        //return !($('#jqx_estimateNoteEditor').jqxEditor('val')==undefined);
+	                        return editorValid;
 	                     }
 				  	 }
 				]
