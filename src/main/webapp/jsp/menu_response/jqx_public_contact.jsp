@@ -24,17 +24,21 @@
         );
         $("#jqx_estimateNoteEditor").on('change', function (event) 
         {
-        	editorValid=false;
-        	var strText=$('#jqx_estimateNoteEditor').jqxEditor('val');
-            if(strText!=undefined)
-            {
-            	log(strText +" --- 1");
-            	log($(strText).text() +" --- 2");
-            	strText=$.trim($(strText).text());//remove html tags using $(strText).text()
-            	
-            	log(strText +" --- 3"+strText.length);
-            	if(strText.length>1) editorValid=true;
-            }
+        	try
+        	{
+	        	editorValid=false;
+	        	var strText=$('#jqx_estimateNoteEditor').jqxEditor('val');
+	            if(strText!=undefined)
+	            {
+	            	strText=$.trim($(strText).text());//remove html tags using $(strText).text()
+	            	if(strText.length>1) editorValid=true;
+	            }
+        	}
+        	catch(e)
+        	{
+        		log("ERROR: "+e.message);
+        		editorValid=true; //because mostly its errors are from Syntax error, unrecognized expression: &nbsp; &nbsp; &nbsp;abc &nbsp; &nbsp;
+        	}
         });
         $("#jqxSubmitButton").jqxButton({ width: '100', disabled: false});
 
