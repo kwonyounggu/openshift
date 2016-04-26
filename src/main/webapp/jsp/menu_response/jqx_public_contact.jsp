@@ -10,7 +10,7 @@
 	}
 </style>
 <script language="Javascript" type="text/javascript">
-	var editorChanged=false;
+	var editorValid=false;
 	$(document).ready(function () 
 	{
         $("#jqx_estimateNoteEditor").jqxEditor
@@ -24,7 +24,17 @@
         );
         $("#jqx_estimateNoteEditor").on('change', function (event) 
         {
-        	//if($('#jqxgrid').jqxGrid('getselectedrowindex')>=0) editorChanged=true;
+        	try
+            {
+            	var editorValue = trim(document.getElementById('jqx_estimateNoteEditor').value);
+            	if(editorValue=='' || editorValue=="") editorValid=false;
+            	else editorValid=true;
+            }
+            catch(e)
+           	{
+            	log("ERROR: "+e.message+" in jqx_public_contact.jsp");
+            	editorValid=false;
+           	}
         });
         $("#jqxSubmitButton").jqxButton({ width: '100', disabled: false});
 
@@ -116,21 +126,7 @@
 	                     rule: function(input, commit) 
 	                     {                    	 
 	                        
-	                        var validText=false;
-	                        try
-	                        {
-	                        	var editorValue = trim(document.getElementById('jqx_estimateNoteEditor').value);
-	                        	if(editorValue=='' || editorValue=="");
-	                        	else validText=true;
-	                        }
-	                        catch(e)
-	                       	{
-	                        	log("ERROR: "+e.message+" in jqx_public_contact.jsp");
-	                       	}
-	                        finally
-	                        {
-	                        	return validText;
-	                        }
+	                        return editorValid;
 	                     }
 				  	 }
 				]
