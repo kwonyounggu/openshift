@@ -131,7 +131,7 @@
 	                     rule: function(input, commit) 
 	                     {                    	 
 	                        //undefined means no typing at all. Using document.getElementById('jqx_submitter_name') or $('#jqx_estimateNoteEditor') doesn't work
-	                        log("--- "+$('#jqx_estimateNoteEditor').jqxEditor('val')+" ---");
+	                        log($('#jqx_estimateNoteEditor').jqxEditor('val').text()+" is defined with <div></div> in default");
 	                        return !($('#jqx_estimateNoteEditor').jqxEditor('val')==undefined);
 	                     }
 				  	 }
