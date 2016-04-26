@@ -113,9 +113,9 @@
 					 {
 						 input: '#jqx_estimateNoteEditor',
 						 message: 'Please put your requirements!',
-						 action: 'keyup, blur',
 	                     rule: function(input, commit) 
 	                     {
+	                    	 /*
 	                        var editorValue = $.trim($(input.val()).text());
 	                        if (editorValue === "" || editorValue === '') 
 	                        {
@@ -125,6 +125,8 @@
 	                        {
 	                            return true;
 	                        }
+	                        */
+	                        log("-----"+$.trim($(input.val()).text()));
 	                     }
 				  	 }
 				]
