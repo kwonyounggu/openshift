@@ -116,8 +116,8 @@
 	                     rule: function(input, commit) 
 	                     {                    	 
 	                        var editorValue = document.getElementById('jqx_estimateNoteEditor').value;
-	                        if (editorValue == undefined || editorValue === "" || editorValue === '') return false;
-	                        else if(editorValue=trim(editorValue) == undefined || editorValue === "" || editorValue === '') return false;
+	                        if (editorValue === "" || editorValue === '') return false;
+	                        else if((editorValue=trim(editorValue)) === "" || editorValue === '') return false;
 	                        else return true;   
 	                     }
 				  	 }
