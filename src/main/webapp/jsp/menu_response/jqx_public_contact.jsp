@@ -33,7 +33,7 @@
             	strText=$.trim($(strText).text());//remove html tags using $(strText).text()
             	
             	log(strText +" --- 3"+strText.length);
-            	if(strText.length>0) editorValid=true;
+            	if(strText.length>1) editorValid=true;
             }
         });
         $("#jqxSubmitButton").jqxButton({ width: '100', disabled: false});
