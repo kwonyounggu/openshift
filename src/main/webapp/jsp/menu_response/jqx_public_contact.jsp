@@ -126,7 +126,7 @@
 	                            return true;
 	                        }
 	                        */
-	                        log("-----"+document.getElementById('jqx_estimateNoteEditor').value.length);
+	                        log("-----"+document.getElementById('jqx_estimateNoteEditor').value);
 	                        return false;
 	                     }
 				  	 }
