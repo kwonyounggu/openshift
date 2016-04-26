@@ -24,6 +24,7 @@
         );
         $("#jqx_estimateNoteEditor").on('change', function (event) 
         {
+        	editorValid=false;
         	var strText=$('#jqx_estimateNoteEditor').jqxEditor('val');
             if(strText!=undefined)
             {
