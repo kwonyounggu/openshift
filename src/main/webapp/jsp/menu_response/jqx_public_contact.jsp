@@ -115,8 +115,9 @@
 						 message: 'Please put your requirements!',
 	                     rule: function(input, commit) 
 	                     {
-	                    	 /*
-	                        var editorValue = $.trim($(input.val()).text());
+	                    	 
+	                        var editorValue = trim(document.getElementById('jqx_estimateNoteEditor').value);
+	                        log("-----"+editorValue);
 	                        if (editorValue === "" || editorValue === '') 
 	                        {
 	                            return false;
@@ -125,9 +126,8 @@
 	                        {
 	                            return true;
 	                        }
-	                        */
-	                        log("-----"+document.getElementById('jqx_estimateNoteEditor').value);
-	                        return false;
+	                        
+	                        
 	                     }
 				  	 }
 				]

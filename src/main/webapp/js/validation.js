@@ -330,7 +330,8 @@ function check_drug_name(cid)
 	return pass;
 }
 // Removes leading whitespaces
-function LTrim( value ) {
+function LTrim( value ) 
+{
 	
 	var re = /\s*((\S+\s*)*)/;
 	return value.replace(re, "$1");
@@ -338,7 +339,8 @@ function LTrim( value ) {
 }
 
 // Removes ending whitespaces
-function RTrim( value ) {
+function RTrim( value ) 
+{
 	
 	var re = /((\s*\S+)*)\s*/;
 	return value.replace(re, "$1");
@@ -346,7 +348,8 @@ function RTrim( value ) {
 }
 
 // Removes leading and ending whitespaces
-function trim( value ) {
+function trim( value ) 
+{
 	
 	return LTrim(RTrim(value));
 	
