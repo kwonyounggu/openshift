@@ -135,7 +135,11 @@
 	                        if(strText==undefined) return false;
 	                        else 
 	                        {
+	                        	log(strText +" --- 1");
+	                        	log($(strText).text() +" --- 2");
 	                        	strText=$.trim($(strText).text());//remove html tags using $(strText).text()
+	                        	
+	                        	log(strText +" --- 3");
 	                        	if(strText.length<1) return false;
 	                        	else return true;
 	                        }
