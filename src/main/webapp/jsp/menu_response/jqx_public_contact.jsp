@@ -115,7 +115,7 @@
 						 message: 'Please put your requirements!',
 						 rule: function(input, commit)
 						 {
-							 var noteString=trim($("#clinicalSummaryEditor").jqxEditor('val'));
+							 var noteString=trim($("#estimateNoteEditor").jqxEditor('val'));
 							 return noteString.length>0;
 						 }
 				  	 }
