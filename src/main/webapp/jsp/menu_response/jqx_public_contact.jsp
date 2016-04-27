@@ -26,6 +26,8 @@
         {
         	try
         	{
+        		log("text area="+document.getElementById('jqx_estimateNoteEditor').value);
+        		
 	        	editorValid=false;
 	        	var strText=$('#jqx_estimateNoteEditor').jqxEditor('val');
 	            if(strText!=undefined)
