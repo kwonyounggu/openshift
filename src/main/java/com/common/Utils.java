@@ -11,6 +11,7 @@ import java.util.Date;
 public class Utils
 {
 	public static final String DATE_FORMAT_NOW = "yyyy-MM-dd HH:mm:ss";
+	public static final long MAX_FILE_SIZE=2000000;
 	
 	public static void delay(int sec)
 	{

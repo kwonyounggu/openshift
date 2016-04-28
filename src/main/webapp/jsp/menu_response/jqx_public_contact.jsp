@@ -11,7 +11,7 @@
 </style>
 <script src="js/ckeditor/ckeditor.js"></script>
 <script language="Javascript" type="text/javascript">
-	var notification;
+	var fileSize;
 	$(document).ready(function () 
 	{
 		CKEDITOR.replace( 'estimateNoteEditor', 
@@ -172,10 +172,27 @@
 				  	 },
 				  	 {
 				  		 input: '#check_robot_span',
-				  		 message: 'Please answer correctly',
+				  		 message: 'Please answer correctly!',
 				  		 rule: function(input, commit)
 						 {
 							 return $("#animal_3").is(":checked");
+						 }
+				  	 },
+				  	 {
+				  		 input: '#file_to_upload',
+				  		 message: 'Please limit the file size upto 2MB!',
+				  		 rule: function(input, commit)
+						 {
+				  			if( document.getElementById("file_to_upload").files.length == 0 )
+				  			{
+				  			    log("No files selected");
+				  			    return true;
+				  			}
+				  			else
+				  			{
+				  				return (document.getElementById("file_to_upload").files[0].size <= <%=Utils.MAX_FILE_SIZE%>);
+				  				
+				  			}
 						 }
 				  	 }
 				]
@@ -316,7 +333,7 @@
 			   		</tr>
 			   		<tr>
 			   			<td class='estimate_form_td' colspan='2'> 
-			 				<input type='file' id='jqx_submitter_file' class='text-input'/>					
+			 				<input type='file' id='file_to_upload' class='text-input'/>					
 						</td> 
 			   		</tr> 	
 			   		
