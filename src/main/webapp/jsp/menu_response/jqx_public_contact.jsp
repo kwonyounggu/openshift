@@ -180,7 +180,7 @@
 				  	 },
 				  	 {
 				  		 input: '#file_to_upload',
-				  		 message: 'Please limit the file size upto 1MB!',
+				  		 message: 'Please limit the file size upto 5MB!',
 				  		 rule: function(input, commit)
 						 {
 				  			if( document.getElementById("file_to_upload").files.length == 0 )
