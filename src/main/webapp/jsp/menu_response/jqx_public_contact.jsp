@@ -149,7 +149,7 @@
 						 message: 'Please put your requirements!',
 	                     rule: function(input, commit) 
 	                     {                    	 
-	                    	 var estimateEditorText=$.trim($(CKEDITOR.instances.editor1.getData()).text());
+	                    	 var estimateEditorText=$.trim($(CKEDITOR.instances.estimateNoteEditor.getData()).text());
 	         				console.log("estimateEditorText: "+estimateEditorText);
 	         				if(estimateEditorText==='' || estimateEditorText==="") return false;
 	         				else return true;
