@@ -158,9 +158,7 @@
          					}
 	         				
 	         				if(estimateEditorText.length<1) 
-	         				{
-	         					
-	         					
+	         				{        					
 	         					notification=CKEDITOR.instances.estimateNoteEditor.showNotification( 'Please put your requirements!', 'warning');
 	         					return false;
 	         				}
@@ -169,6 +167,14 @@
 	         					return true; //return true/false doesn't work
 	         				}
 	                     }
+				  	 },
+				  	 {
+				  		 input: '#animal_3',
+				  		 message: 'Please answer the question',
+				  		 rule: function(input, commit)
+						 {
+							 return $("#animal_3").is(":checked");
+						 }
 				  	 }
 				]
 			}
@@ -315,9 +321,9 @@
 			   		<tr>
 			   			<td class='estimate_form_td' colspan='2'>Please select the elephant before submitting <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;
 			   				<br />
-			   				<input type='radio' style='margin-right: 100px; margin-left: 50px;'/>
-			   				<input type='radio' style='margin-right: 100px;'/>
-			   				<input type='radio'/>
+			   				<input type='radio' style='margin-right: 100px; margin-left: 50px;' name='animalGroup' id='animal_1' value='1'/>
+			   				<input type='radio' style='margin-right: 100px;' name='animalGroup' id='animal_2' value='2'/>
+			   				<input type='radio' name='animalGroup' id='animal_3' value='3'/>
 			   				<img src="images/three_animals.png" width="362" height="86" alt="Three Animals" border="0"/>
 						</td>
 			   		</tr> 
