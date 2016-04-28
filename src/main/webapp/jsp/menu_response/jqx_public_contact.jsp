@@ -145,13 +145,13 @@
 					 { input: '#jqx_submitter_email', message: 'E-mail is required!', action: 'keyup, blur', rule: 'required' },
 					 { input: '#jqx_submitter_email', message: 'Invalid e-mail!', action: 'keyup', rule: 'email' },
 					 {
-						 input: '#estimateNoteEditor',
+						 input: '#note_span',
 						 message: 'Please put your requirements!',
 	                     rule: function(input, commit) 
 	                     {                    	 
 	                    	 var estimateEditorText=$.trim($(CKEDITOR.instances.estimateNoteEditor.getData()).text());
 	         				//console.log("estimateEditorText: "+estimateEditorText+", "+estimateEditorText.length);
-	         				if(notification) 
+	         				/*if(notification) 
          					{
          						notification.hide();
          						log("Notification ID="+notification.id);
@@ -166,6 +166,8 @@
 	         				{
 	         					return true; //return true/false doesn't work
 	         				}
+	         				*/
+	         				return estimateEditorText.length>0;
 	                     }
 				  	 },
 				  	 {
@@ -302,7 +304,7 @@
 						</td> 
 			   		</tr>		
 					<tr>
-			   			<td class='estimate_form_td' colspan='2'>Note about your requirements <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;
+			   			<td class='estimate_form_td' colspan='2'>Note about your requirements <span style='font-size: .95em; color: #8fc161;' id='note_span'>*</span>&nbsp;:&nbsp;
 			   				<br/> 
 			 				<textarea id='estimateNoteEditor' cols='80' rows='10'></textarea>						
 						</td> 
