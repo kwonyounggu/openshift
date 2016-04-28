@@ -297,7 +297,7 @@
 			   		</tr>
 			   		<tr>
 			   			<td colspan='2'> 
-			 				<input type='text' id='jqx_submitter_mmm' value='' class='text-input'/>					
+			 				<input type='file' id='jqx_submitter_file' class='text-input'/>					
 						</td> 
 			   		</tr> 	
 			   		
