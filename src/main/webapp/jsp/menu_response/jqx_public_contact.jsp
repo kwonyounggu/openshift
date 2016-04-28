@@ -153,6 +153,7 @@
 	         				console.log("estimateEditorText: "+estimateEditorText+", "+estimateEditorText.length);
 	         				//if(estimateEditorText.length<1) return false;
 	         				//else return true;
+	         				CKEDITOR.instances.estimateNoteEditor.showNotification( 'Foo' );
 	         				return true;
 	                     }
 				  	 }
