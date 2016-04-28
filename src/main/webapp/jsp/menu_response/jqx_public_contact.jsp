@@ -151,18 +151,23 @@
 	                     {                    	 
 	                    	 var estimateEditorText=$.trim($(CKEDITOR.instances.estimateNoteEditor.getData()).text());
 	         				//console.log("estimateEditorText: "+estimateEditorText+", "+estimateEditorText.length);
+	         				if(notification) 
+         					{
+         						notification.hide();
+         						log("Notification ID="+notification.id);
+         					}
+	         				
 	         				if(estimateEditorText.length<1) 
 	         				{
-	         					if(notification) 
-	         					{
-	         						notification.hide();
-	         						log("Notification ID="+notification.id);
-	         					}
 	         					
-	         					CKEDITOR.instances.estimateNoteEditor.showNotification( 'Please put your requirements!', 'warning');
+	         					
+	         					notification=CKEDITOR.instances.estimateNoteEditor.showNotification( 'Please put your requirements!', 'warning');
 	         					return false;
 	         				}
-	         				else return true; //return true/false doesn't work
+	         				else 
+	         				{
+	         					return true; //return true/false doesn't work
+	         				}
 	                     }
 				  	 }
 				]
