@@ -8,6 +8,7 @@
 <html>
 <head>
 <title>WebMonster</title>
+<meta charset="utf-8">
 <META name=author content="Younggu Kwon">
 <META name=email content="<%=AuthData.mycompany_email_address%>">
 

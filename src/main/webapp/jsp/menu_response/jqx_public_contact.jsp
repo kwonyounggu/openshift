@@ -9,11 +9,30 @@
 		vertical-align: top;
 	}
 </style>
+<script src="js/ckeditor/ckeditor.js"></script>
 <script language="Javascript" type="text/javascript">
 	var editorValid=false;
 	$(document).ready(function () 
 	{
-        $("#jqx_estimateNoteEditor").jqxEditor
+		CKEDITOR.replace( 'estimateNoteEditor', 
+		{
+			// Define the toolbar groups as it is a more accessible solution.
+			toolbarGroups: [
+				{"name":"basicstyles","groups":["basicstyles"]},
+				{"name":"links","groups":["links"]},
+				{"name":"paragraph","groups":["list","blocks"]},
+				{"name":"document","groups":["mode"]},
+				{"name":"insert","groups":["insert"]},
+				{"name":"styles","groups":["styles"]},
+				{"name":"about","groups":["about"]}
+			],
+			// Remove the redundant buttons from toolbar groups defined above.
+			removeButtons: 'Underline,Strike,Subscript,Superscript,Anchor,Styles,Specialchar',
+			resize_enabled: false
+		});
+
+		/*
+        $("#estimateNoteEditor").jqxEditor
         (
             {
                 height: '200px', width: '100%', 
@@ -22,14 +41,14 @@
                 
         	}
         );
-        $("#jqx_estimateNoteEditor").on('change', function (event) 
+        $("#estimateNoteEditor").on('change', function (event) 
         {
         	try
         	{
-        		log("text area="+document.getElementById('jqx_estimateNoteEditor').value);
+        		log("text area="+document.getElementById('estimateNoteEditor').value);
         		
 	        	editorValid=false;
-	        	var strText=$('#jqx_estimateNoteEditor').jqxEditor('val');
+	        	var strText=$('#estimateNoteEditor').jqxEditor('val');
 	            if(strText!=undefined)
 	            {
 	            	strText=$.trim($(strText).text());//remove html tags using $(strText).text()
@@ -41,7 +60,7 @@
         		log("ERROR: "+e.message);
         		editorValid=true; //because mostly its errors are from Syntax error, unrecognized expression: &nbsp; &nbsp; &nbsp;abc &nbsp; &nbsp;
         	}
-        });
+        });*/
         $("#jqxSubmitButton").jqxButton({ width: '100', disabled: false});
 
         /*
@@ -127,7 +146,7 @@
 					 { input: '#jqx_submitter_email', message: 'E-mail is required!', action: 'keyup, blur', rule: 'required' },
 					 { input: '#jqx_submitter_email', message: 'Invalid e-mail!', action: 'keyup', rule: 'email' },
 					 {
-						 input: '#jqx_estimateNoteEditor',
+						 input: '#estimateNoteEditor',
 						 message: 'Please put your requirements!',
 	                     rule: function(input, commit) 
 	                     {                    	 
@@ -262,7 +281,7 @@
 					<tr>
 			   			<td class='estimate_form_td' colspan='2'>Note about your requirements <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;
 			   				<br/> 
-			 				<textarea id='jqx_estimateNoteEditor'></textarea>						
+			 				<textarea id='estimateNoteEditor' cols='80' rows='10'></textarea>						
 						</td> 
 			   		</tr> 
 			   		
