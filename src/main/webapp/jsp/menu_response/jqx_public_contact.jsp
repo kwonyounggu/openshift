@@ -150,11 +150,13 @@
 	                     rule: function(input, commit) 
 	                     {                    	 
 	                    	 var estimateEditorText=$.trim($(CKEDITOR.instances.estimateNoteEditor.getData()).text());
-	         				console.log("estimateEditorText: "+estimateEditorText+", "+estimateEditorText.length);
-	         				//if(estimateEditorText.length<1) return false;
-	         				//else return true;
-	         				CKEDITOR.instances.estimateNoteEditor.showNotification( 'Foo' );
-	         				return true;
+	         				//console.log("estimateEditorText: "+estimateEditorText+", "+estimateEditorText.length);
+	         				if(estimateEditorText.length<1) 
+	         				{
+	         					CKEDITOR.instances.estimateNoteEditor.showNotification( 'Please put your requirements!', 'warning');
+	         					return false;
+	         				}
+	         				else return true; //return true/false doesn't work
 	                     }
 				  	 }
 				]
