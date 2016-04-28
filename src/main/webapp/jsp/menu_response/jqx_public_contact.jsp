@@ -296,7 +296,7 @@
 			   			<td class='estimate_form_td' colspan='2'>A file about your application design to upload :&nbsp;</td>
 			   		</tr>
 			   		<tr>
-			   			<td colspan='2'> 
+			   			<td class='estimate_form_td' colspan='2'> 
 			 				<input type='file' id='jqx_submitter_file' class='text-input'/>					
 						</td> 
 			   		</tr> 	
