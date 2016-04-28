@@ -153,7 +153,11 @@
 	         				//console.log("estimateEditorText: "+estimateEditorText+", "+estimateEditorText.length);
 	         				if(estimateEditorText.length<1) 
 	         				{
-	         					if(notification) notification.hide();
+	         					if(notification) 
+	         					{
+	         						notification.hide();
+	         						log("Notification ID="+notification.id);
+	         					}
 	         					
 	         					CKEDITOR.instances.estimateNoteEditor.showNotification( 'Please put your requirements!', 'warning');
 	         					return false;
