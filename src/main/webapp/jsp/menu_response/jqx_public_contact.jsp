@@ -26,7 +26,8 @@
 			],
 			// Remove the redundant buttons from toolbar groups defined above.
 			removeButtons: 'Underline,Strike,Subscript,Superscript,Anchor,Styles,Specialchar',
-			resize_enabled: false
+			resize_enabled: false,
+			height: 150
 		});
 
 		/*
@@ -148,7 +149,10 @@
 						 message: 'Please put your requirements!',
 	                     rule: function(input, commit) 
 	                     {                    	 
-	                        return editorValid;
+	                    	 var estimateEditorText=$.trim($(CKEDITOR.instances.editor1.getData()).text());
+	         				console.log("estimateEditorText: "+estimateEditorText);
+	         				if(estimateEditorText==='' || estimateEditorText==="") return false;
+	         				else return true;
 	                     }
 				  	 }
 				]
