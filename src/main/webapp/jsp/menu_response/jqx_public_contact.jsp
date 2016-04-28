@@ -169,8 +169,8 @@
 	                     }
 				  	 },
 				  	 {
-				  		 input: '#animal_3',
-				  		 message: 'Please answer the question',
+				  		 input: '#check_robot_span',
+				  		 message: 'Please answer correctly',
 				  		 rule: function(input, commit)
 						 {
 							 return $("#animal_3").is(":checked");
@@ -319,7 +319,7 @@
 			   		</tr> 	
 			   		
 			   		<tr>
-			   			<td class='estimate_form_td' colspan='2'>Please select the elephant before submitting <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;
+			   			<td class='estimate_form_td' colspan='2'>Please select the elephant before submitting <span style='font-size: .95em; color: #8fc161;' id='check_robot_span'>*</span>&nbsp;:&nbsp;
 			   				<br />
 			   				<input type='radio' style='margin-right: 100px; margin-left: 50px;' name='animalGroup' id='animal_1' value='1'/>
 			   				<input type='radio' style='margin-right: 100px;' name='animalGroup' id='animal_2' value='2'/>
