@@ -3,13 +3,15 @@
  * For licensing, see LICENSE.md or http://ckeditor.com/license
  */
 
-CKEDITOR.editorConfig = function( config ) {
+CKEDITOR.editorConfig = function( config ) 
+{
 	// Define changes to default configuration here.
 	// For complete reference see:
 	// http://docs.ckeditor.com/#!/api/CKEDITOR.config
 
 	// The toolbar groups arrangement, optimized for two toolbar rows.
-	config.toolbarGroups = [
+	config.toolbarGroups = 
+	[
 		{ name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
 		{ name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
 		{ name: 'links' },
@@ -35,4 +37,45 @@ CKEDITOR.editorConfig = function( config ) {
 
 	// Simplify the dialog windows.
 	config.removeDialogTabs = 'image:advanced;link:advanced';
+	
+	config.extraPlugins = 'wordcount,notification';
+	config.wordcount = 
+	{
+	
+	    	// Whether or not you want to show the Paragraphs Count
+	        showParagraphs: true,
+	    
+		// Whether or not you want to show the Word Count
+		showWordCount: true,
+
+		// Whether or not you want to show the Char Count
+		showCharCount: false,
+
+		// Whether or not you want to count Spaces as Chars
+		countSpacesAsChars: false,
+
+		// Whether or not to include Html chars in the Char Count
+		countHTML: false,
+
+		// Maximum allowed Word Count, -1 is default for unlimited
+		maxWordCount: 4000,
+
+		// Maximum allowed Char Count, -1 is default for unlimited
+		maxCharCount: -1,
+
+		// Add filter to add or remove element before counting (see CKEDITOR.htmlParser.filter), Default value : null (no filter)
+		filter: new CKEDITOR.htmlParser.filter
+		({
+		    elements: 
+		    {
+			div: function( element ) 
+			{
+			    if(element.attributes.class == 'mediaembed') 
+			    {
+				return false;
+			    }
+			}
+		    }
+		})
+	};
 };
