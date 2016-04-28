@@ -11,7 +11,7 @@
 </style>
 <script src="js/ckeditor/ckeditor.js"></script>
 <script language="Javascript" type="text/javascript">
-	var editorValid=false;
+	var notification;
 	$(document).ready(function () 
 	{
 		CKEDITOR.replace( 'estimateNoteEditor', 
@@ -153,6 +153,8 @@
 	         				//console.log("estimateEditorText: "+estimateEditorText+", "+estimateEditorText.length);
 	         				if(estimateEditorText.length<1) 
 	         				{
+	         					if(notification!=undefined) notification.remove();
+	         					
 	         					CKEDITOR.instances.estimateNoteEditor.showNotification( 'Please put your requirements!', 'warning');
 	         					return false;
 	         				}
