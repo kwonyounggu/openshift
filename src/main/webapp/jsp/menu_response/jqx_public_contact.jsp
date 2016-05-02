@@ -94,10 +94,9 @@
         */
         
         
-        //$("#submitButton").on('click', function () 
-        $("#submitButton").click(function () 
-        {
-        	return;
+        //$("#submitButton").click(function () 
+        //{
+        	
         	//var onsuccess=$("#estimate_form").jqxValidator('validate');			
 			//log("$(\"#submitButton\").click() is called in jqx_public_contact.jsp, validataion="+onsuccess+" !");	
 			//if(!onsuccess) return;
@@ -129,14 +128,14 @@
 		         }
 		      }); 
 			  */  	
-        });     
+        //});     
         
         //$("#jqx_submitter_name").jqxInput({placeHolder: "홍길동", width: '200px', height: 22, minLength: 2, maxLength: 80});
-        $("#jqx_submitter_phone").jqxMaskedInput({mask: '(###)###-####', width: '220px', height: 22,});
+       // $("#jqx_submitter_phone").jqxMaskedInput({mask: '(###)###-####', width: '220px', height: 22,});
         
-        $("#jqx_submitter_email").jqxInput({placeHolder: "<%=AuthData.mycompany_email_address%>", width: '240px', height: 22,});
-        $("#jqx_submitter_name, #jqx_submitter_phone, #jqx_submitter_email").removeClass("jqx-rc-all");
-        
+        //$("#jqx_submitter_email").jqxInput({placeHolder: "<%=AuthData.mycompany_email_address%>", width: '240px', height: 22,});
+        //$("#jqx_submitter_name, #jqx_submitter_phone, #jqx_submitter_email").removeClass("jqx-rc-all");
+        /*
 		$("#estimate_form").jqxValidator
 		(
 			{
@@ -146,16 +145,7 @@
 				},
 				rules:
 				[	
-					 //{ input: '#jqx_submitter_name', message: 'Name is required!', action: 'keyup, blur', rule: 'required' },
-					 {
-							// input: '#jqx_submitter_name',
-							// message: 'Korean or English [A-Za-z ]!',
-							 //rule: function(input, commit)
-							 //{
-							//	 document.getElementById('jqx_submitter_name').value=trim(document.getElementById('jqx_submitter_name').value);
-							//	 return (isKoreanName(document.getElementById('jqx_submitter_name')) || checkNameUsingRegEx(document.getElementById('jqx_submitter_name').value));
-							// }
-					  },
+					
 					  {
 						 input: '#jqx_submitter_phone',
 						 message: 'Invalid phone number!',
@@ -170,23 +160,7 @@
 	                     rule: function(input, commit) 
 	                     {                    	 
 	                    	 var estimateEditorText=$.trim($(CKEDITOR.instances.estimateNoteEditor.getData()).text());
-	         				//console.log("estimateEditorText: "+estimateEditorText+", "+estimateEditorText.length);
-	         				/*if(notification) 
-         					{
-         						notification.hide();
-         						log("Notification ID="+notification.id);
-         					}
 	         				
-	         				if(estimateEditorText.length<1) 
-	         				{        					
-	         					notification=CKEDITOR.instances.estimateNoteEditor.showNotification( 'Please put your requirements!', 'warning');
-	         					return false;
-	         				}
-	         				else 
-	         				{
-	         					return true; //return true/false doesn't work
-	         				}
-	         				*/
 	         				return estimateEditorText.length>0;
 	                     }
 				  	 },
@@ -218,7 +192,7 @@
 				  	 }
 				]
 			}
-		);
+		);*/
 		 
 	});//$(document).ready
 
