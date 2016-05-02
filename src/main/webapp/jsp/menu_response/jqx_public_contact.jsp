@@ -13,7 +13,12 @@
 <script language="Javascript" type="text/javascript">
 	var fileSize;
 	$(document).ready(function () 
-	{
+	{//alert("ERROR: your browser does not support HTML5!!!\n\nPlease upgrade your browser with the latest version.\n\nOtherwise it won't work properly!!!");
+
+		//change the following on top of the contact, just below the menu
+		if(typeof FormData == 'undefined')
+			jAlert("<p>Your browser does not support HTML5. Please upgrade your browser with the latest version. Otherwise it won't work properly!</p>", "Warning Message");
+
 		CKEDITOR.replace( 'estimateNoteEditor', 
 		{
 			// Define the toolbar groups as it is a more accessible solution.
@@ -30,59 +35,74 @@
 			height: 150
 		});
 
-		/*
-        $("#estimateNoteEditor").jqxEditor
-        (
-            {
-                height: '200px', width: '100%', 
-                //theme: 'energyblue',
-                tools: "outdent indent | ul ol | image | link"
-                
-        	}
-        );
-        $("#estimateNoteEditor").on('change', function (event) 
-        {
-        	try
-        	{
-        		log("text area="+document.getElementById('estimateNoteEditor').value);
-        		
-	        	editorValid=false;
-	        	var strText=$('#estimateNoteEditor').jqxEditor('val');
-	            if(strText!=undefined)
-	            {
-	            	strText=$.trim($(strText).text());//remove html tags using $(strText).text()
-	            	if(strText.length>1) editorValid=true;
-	            }
-        	}
-        	catch(e)
-        	{
-        		log("ERROR: "+e.message);
-        		editorValid=true; //because mostly its errors are from Syntax error, unrecognized expression: &nbsp; &nbsp; &nbsp;abc &nbsp; &nbsp;
-        	}
-        });*/
-        $("#jqxSubmitButton").jqxButton({ width: '100', disabled: false});
+		//Initialize the tooltips
+		$('#estimate_form :input').each(function()
+		{
+		  var tipelement = this;
+		 
+		  $(tipelement).tooltipster
+		  ({
+		     trigger: 'custom', 
+		     onlyOne: false, 
+		     position: 'right',
+		     multiple:false,
+		     autoClose:false
+		   });
+		 
+		});
+	
+		$('#estimate_form').validate
+		({
+			errorPlacement: function(error, element) 
+	        {
+	          var $element = $(element), tipelement=element, errtxt=$(error).text(), last_error='';
+	           
+	          last_error = $(tipelement).data('last_error');
+	          $(tipelement).data('last_error',errtxt);
+	          if(errtxt !=='' && errtxt != last_error)
+	          {
+	              $(tipelement).tooltipster('content', errtxt);
+	              $(tipelement).tooltipster('show');
+	          }
+	        },
+	        success: function (label, element) 
+	        {
+	            $(element).tooltipster('hide');
+	        },
+			rules:
+			{
+				submitter_name: {required: true, minlength: 2, maxlength: 80}
+			},
+			messages:
+			{
+				required: "Please put your name!"
+			},
+			submitHandler: function (form) 
+			{ // for demo
+	            alert('valid form');
+	            return false;
+	        }
+		});
+        //$("#submitButton").jqxButton({ width: '100', disabled: false});
 
         /*
-        $("#jqxSubmitButton").on('click', function () 
+        $("#submitButton").on('click', function () 
         {
-            if(editorChanged)
-            {
-                 //alert("submit now with\n"+$("#clinicalSummaryEditor").jqxEditor('val'));
-                 saveClinicalSummary();
-            }
-            else alert("No content change detected yet!");
+           log("submit button is clicked ...");
             
         });
         */
         
-        //$("#jqxSubmitButton").on('click', function () 
-        $("#jqxSubmitButton").click(function () 
+        
+        //$("#submitButton").on('click', function () 
+        $("#submitButton").click(function () 
         {
-        	var onsuccess=$("#estimate_form").jqxValidator('validate');			
-			log("$(\"#jqxSubmitButton\").click() is called in jqx_public_contact.jsp, validataion="+onsuccess+" !");	
-			if(!onsuccess) return;
+        	return;
+        	//var onsuccess=$("#estimate_form").jqxValidator('validate');			
+			//log("$(\"#submitButton\").click() is called in jqx_public_contact.jsp, validataion="+onsuccess+" !");	
+			//if(!onsuccess) return;
 			
-			run_waitMe("roundBounce");
+			//run_waitMe("roundBounce");
 			/*
 			$.ajax
 		     ({
@@ -111,7 +131,7 @@
 			  */  	
         });     
         
-        $("#jqx_submitter_name").jqxInput({placeHolder: "홍길동", width: '200px', height: 22, minLength: 2, maxLength: 80});
+        //$("#jqx_submitter_name").jqxInput({placeHolder: "홍길동", width: '200px', height: 22, minLength: 2, maxLength: 80});
         $("#jqx_submitter_phone").jqxMaskedInput({mask: '(###)###-####', width: '220px', height: 22,});
         
         $("#jqx_submitter_email").jqxInput({placeHolder: "<%=AuthData.mycompany_email_address%>", width: '240px', height: 22,});
@@ -126,15 +146,15 @@
 				},
 				rules:
 				[	
-					 { input: '#jqx_submitter_name', message: 'Name is required!', action: 'keyup, blur', rule: 'required' },
+					 //{ input: '#jqx_submitter_name', message: 'Name is required!', action: 'keyup, blur', rule: 'required' },
 					 {
-							 input: '#jqx_submitter_name',
-							 message: 'Korean or English [A-Za-z ]!',
-							 rule: function(input, commit)
-							 {
-								 document.getElementById('jqx_submitter_name').value=trim(document.getElementById('jqx_submitter_name').value);
-								 return (isKoreanName(document.getElementById('jqx_submitter_name')) || checkNameUsingRegEx(document.getElementById('jqx_submitter_name').value));
-							 }
+							// input: '#jqx_submitter_name',
+							// message: 'Korean or English [A-Za-z ]!',
+							 //rule: function(input, commit)
+							 //{
+							//	 document.getElementById('jqx_submitter_name').value=trim(document.getElementById('jqx_submitter_name').value);
+							//	 return (isKoreanName(document.getElementById('jqx_submitter_name')) || checkNameUsingRegEx(document.getElementById('jqx_submitter_name').value));
+							// }
 					  },
 					  {
 						 input: '#jqx_submitter_phone',
@@ -308,7 +328,7 @@
 			   		</tr>
 			   		<tr>
 			   			<td class='estimate_form_td'  colspan='2'>Name <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp; :&nbsp;
-			 				<input type='text' id='jqx_submitter_name' value='' maxlength='80' class='text-input'/>			
+			 				<input type='text' id='submitter_name' name='submitter_name' class='text-input' placeholder='Bob Smith' style='width: 200px; height: 22px'/>			
 						</td> 
 			   		</tr> 
 			   		<tr>
@@ -352,7 +372,7 @@
 			   		-->
 					<tr>
 					    <td colspan='2' >	
-							<input type='button' value=Submit id='jqxSubmitButton' />		
+							<input type='button' value=Submit id='submitButton' />		
 						</td>
 					</tr>
 			 </table>
