@@ -8,20 +8,38 @@
 		color: #ffffff;
 		vertical-align: top;
 	}
+	input
+	{
+		color: #000000;
+	}
+	table
+	{
+		border-collapse: separate;
+		border-spacing: 5px;
+	}
+	.tooltipster-default
+	{
+		border-radius: 1px;
+		border: 1px solid #eee;
+
+		background: #942724;
+		color: #e4f1ff;
+	}
 </style>
 <script src="js/ckeditor/ckeditor.js"></script>
 <script language="Javascript" type="text/javascript">
-	var fileSize;
-	$(document).ready(function () 
-	{//alert("ERROR: your browser does not support HTML5!!!\n\nPlease upgrade your browser with the latest version.\n\nOtherwise it won't work properly!!!");
 
+	$(document).ready(function ()
+	{//alert("ERROR: your browser does not support HTML5!!!\n\nPlease upgrade your browser with the latest version.\n\nOtherwise it won't work properly!!!");
+	
+		//change the following on top of the contact, just below the menu
 		if(typeof FormData == 'undefined')
 			jAlert("<p>Your browser does not support HTML5. Please upgrade your browser with the latest version. Otherwise it won't work properly!</p>", "Warning Message");
-
-		CKEDITOR.replace( 'estimateNoteEditor', 
+	
+		CKEDITOR.replace( 'estimateNoteEditor',
 		{
 			// Define the toolbar groups as it is a more accessible solution.
-			toolbarGroups: 
+			toolbarGroups:
 			[
 				{"name":"basicstyles","groups":["basicstyles"]},
 				{"name":"links","groups":["links"]},
@@ -33,60 +51,140 @@
 			resize_enabled: false,
 			height: 150
 		});
+	
+		//Initialize the tooltips
+		 $('form input').tooltipster
+		 ({
+				     trigger: 'custom',
+				     onlyOne: false,
+				     position: 'right',
+				     multiple:false,
+				     autoClose:false
+		   });
+	
+		//$(".phone").mask("(999) 999-9999");
+		$('#estimate_form').validate
+		({
+			//ignore: ".ignore :hidden",
+			//ignore: [],
+			rules:
+			{
+				submitter_name:
+				{	required: true,
+					minlength: 2,
+					maxlength: 80,
+					isNameValid: true
+				},
+				submitter_phone:
+				{
+					required: true,
+					isPhoneValid: true
+				},
+				submitter_email:
+				{
+					required: true,
+					email: true
+				},
+				note_msg:
+				{
+					required: true,
+					isTextValid: true
+				},
+				file_to_upload:
+				{
+					required: false,
+					isFileValid: true
+				},
+				animalGroup:
+				{
+					required: true,
+					isAnimalValid: true
+				}
+			},
+			messages:
+			{
+				submitter_name:
+				{
+					required: "Your name is required!"
+				},
+				submitter_phone:
+				{
+					required: "Phone number is required!"
+				},
+				submitter_email:
+				{
+					required: "E-Mail is required!"
+				}
+			},
+			submitHandler: function (form)
+			{ // for demo
+	            alert('valid form');
+	            //$('#note_msg').tooltipster('content', "not yet");
+				//$('#note_msg').tooltipster('show');
+	            return false;
+	        },
+	        errorPlacement: function (error, element)
+	        {
+				var lastError = $(element).data('lastError'),
+					newError = $(error).text();
+	
+				$(element).data('lastError', newError);
+	
+				if (newError !== '' && newError !== lastError)
+				{
+					$(element).tooltipster('content', newError);
+					$(element).tooltipster('show');
+				}
+			},
+			success: function (label, element)
+			{
+				$(element).tooltipster('hide');
+			}
+		});
+		$.validator.addMethod("isNameValid", function(value, element)
+		{
+		    return (isKoreanName(element) || checkNameUsingRegEx(value));
+		}, "Your name is not valid!");
+		$.validator.addMethod("isPhoneValid", function(value, element)
+		{
+			var regPhone=/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/;
+			return regPhone.test(value);
+		}, "Phone number is not valid!");
+		$.validator.addMethod("isTextValid", function(value, element)
+		{
+			var estimateEditorText=$.trim($(CKEDITOR.instances.estimateNoteEditor.getData()).text());
+			return estimateEditorText.length>3;
+		}, "Please put a note!");
+		$.validator.addMethod("isFileValid", function(value, element)
+		{
+			if( document.getElementById("file_to_upload").files.length == 0 )
+			{
+				log("No files selected");
+				return true;
+			}
+			else
+			{
+				log("file size: "+document.getElementById("file_to_upload").files[0].size);
+				return (document.getElementById("file_to_upload").files[0].size <= <%=Utils.MAX_FILE_SIZE%>);
+	
+			}
+		}, "Please limit the file size upto 5MB!");
+		$.validator.addMethod("isAnimalValid", function(value, element)
+		{
+			return $("#animal_3").is(":checked");
+		}, "Please answer correctly");
+	
+	});//$(document).ready
 
-		/*
-        $("#estimateNoteEditor").jqxEditor
-        (
-            {
-                height: '200px', width: '100%', 
-                //theme: 'energyblue',
-                tools: "outdent indent | ul ol | image | link"
-                
-        	}
-        );
-        $("#estimateNoteEditor").on('change', function (event) 
+        //$("#submitButton").on('click', function () 
+        $("#submitButton").click(function () 
         {
-        	try
-        	{
-        		log("text area="+document.getElementById('estimateNoteEditor').value);
-        		
-	        	editorValid=false;
-	        	var strText=$('#estimateNoteEditor').jqxEditor('val');
-	            if(strText!=undefined)
-	            {
-	            	strText=$.trim($(strText).text());//remove html tags using $(strText).text()
-	            	if(strText.length>1) editorValid=true;
-	            }
-        	}
-        	catch(e)
-        	{
-        		log("ERROR: "+e.message);
-        		editorValid=true; //because mostly its errors are from Syntax error, unrecognized expression: &nbsp; &nbsp; &nbsp;abc &nbsp; &nbsp;
-        	}
-        });*/
-        $("#jqxSubmitButton").jqxButton({ width: '100', disabled: false});
-
-        /*
-        $("#jqxSubmitButton").on('click', function () 
-        {
-            if(editorChanged)
-            {
-                 //alert("submit now with\n"+$("#clinicalSummaryEditor").jqxEditor('val'));
-                 saveClinicalSummary();
-            }
-            else alert("No content change detected yet!");
-            
-        });
-        */
-        
-        //$("#jqxSubmitButton").on('click', function () 
-        $("#jqxSubmitButton").click(function () 
-        {
-        	var onsuccess=$("#estimate_form").jqxValidator('validate');			
-			log("$(\"#jqxSubmitButton\").click() is called in jqx_public_contact.jsp, validataion="+onsuccess+" !");	
-			if(!onsuccess) return;
+        	return;
+        	//var onsuccess=$("#estimate_form").jqxValidator('validate');			
+			//log("$(\"#submitButton\").click() is called in jqx_public_contact.jsp, validataion="+onsuccess+" !");	
+			//if(!onsuccess) return;
 			
-			run_waitMe("roundBounce");
+			//run_waitMe("roundBounce");
 			/*
 			$.ajax
 		     ({
@@ -115,96 +213,7 @@
 			  */  	
         });     
         
-        $("#jqx_submitter_name").jqxInput({placeHolder: "홍길동", width: '200px', height: 22, minLength: 2, maxLength: 80});
-        $("#jqx_submitter_phone").jqxMaskedInput({mask: '(###)###-####', width: '220px', height: 22,});
-        
-        $("#jqx_submitter_email").jqxInput({placeHolder: "<%=AuthData.mycompany_email_address%>", width: '240px', height: 22,});
-        $("#jqx_submitter_name, #jqx_submitter_phone, #jqx_submitter_email").removeClass("jqx-rc-all");
-        
-		$("#estimate_form").jqxValidator
-		(
-			{
-				onError: function()
-				{
-					log("You have not filled the estimate form correctly!");
-				},
-				rules:
-				[	
-					 { input: '#jqx_submitter_name', message: 'Name is required!', action: 'keyup, blur', rule: 'required' },
-					 {
-							 input: '#jqx_submitter_name',
-							 message: 'Korean or English [A-Za-z ]!',
-							 rule: function(input, commit)
-							 {
-								 document.getElementById('jqx_submitter_name').value=trim(document.getElementById('jqx_submitter_name').value);
-								 return (isKoreanName(document.getElementById('jqx_submitter_name')) || checkNameUsingRegEx(document.getElementById('jqx_submitter_name').value));
-							 }
-					  },
-					  {
-						 input: '#jqx_submitter_phone',
-						 message: 'Invalid phone number!',
-						 action: 'valuechanged, blur', 
-						 rule: 'phone'
-					 },
-					 { input: '#jqx_submitter_email', message: 'E-mail is required!', action: 'keyup, blur', rule: 'required' },
-					 { input: '#jqx_submitter_email', message: 'Invalid e-mail!', action: 'keyup', rule: 'email' },
-					 {
-						 input: '#note_span',
-						 message: 'Please put your requirements!',
-	                     rule: function(input, commit) 
-	                     {                    	 
-	                    	 var estimateEditorText=$.trim($(CKEDITOR.instances.estimateNoteEditor.getData()).text());
-	         				//console.log("estimateEditorText: "+estimateEditorText+", "+estimateEditorText.length);
-	         				/*if(notification) 
-         					{
-         						notification.hide();
-         						log("Notification ID="+notification.id);
-         					}
-	         				
-	         				if(estimateEditorText.length<1) 
-	         				{        					
-	         					notification=CKEDITOR.instances.estimateNoteEditor.showNotification( 'Please put your requirements!', 'warning');
-	         					return false;
-	         				}
-	         				else 
-	         				{
-	         					return true; //return true/false doesn't work
-	         				}
-	         				*/
-	         				return estimateEditorText.length>0;
-	                     }
-				  	 },
-				  	 {
-				  		 input: '#check_robot_span',
-				  		 message: 'Please answer correctly!',
-				  		 rule: function(input, commit)
-						 {
-							 return $("#animal_3").is(":checked");
-						 }
-				  	 },
-				  	 {
-				  		 input: '#file_to_upload',
-				  		 message: 'Please limit the file size upto 5MB!',
-				  		 rule: function(input, commit)
-						 {
-				  			if( document.getElementById("file_to_upload").files.length == 0 )
-				  			{
-				  			    log("No files selected");
-				  			    return true;
-				  			}
-				  			else
-				  			{
-				  				log("file size: "+document.getElementById("file_to_upload").files[0].size);
-				  				return (document.getElementById("file_to_upload").files[0].size <= <%=Utils.MAX_FILE_SIZE%>);
-				  				
-				  			}
-						 }
-				  	 }
-				]
-			}
-		);
-		 
-	});//$(document).ready
+ 
 
 	function run_waitMe(effect)
 	{ 	console.log("run_waitMe ...");
@@ -299,49 +308,59 @@
     	</ul>
     </td>	
     <td style='width: 20px'></td>
-    <td style='background-color: #555762; color: #ffffff; width: 50%; padding: 5px 20px 5px 20px;'>
-    	
+        <td style='background-color: #555762; color: #ffffff; width: 50%; padding: 5px 20px 5px 20px;'>
+
   			<form id='estimate_form' action='./'>
-			   	<table  id='estimate_table' style='width: 100%; border-spacing: 4px; padding: 0px 0px 10px 0px;'> 	
+			   	<table  id='estimate_table' style='width: 100%; border-spacing: 4px; padding: 0px 0px 10px 0px;'>
 			   		<tr>
 			   			<td colspan='2' style='text-align: left;'>
 			   				<h3 style='color: #f9d548;'>Estimate(Under construction now)</h3>
-			   				<span style='font-size: .95em; color: #8fc161;'>(*: must)</span>
-			   				<span style='font-size: 11px; color: #bad5fe;'>Your payment is not required unless you are satisfied.</span>
+			   				<span style='font-size: .95em; color: #8fc161;'>(*: required)</span>
+			   				<span style='font-size: 11px; color: #bad5fe;'>Payment is not required unless you are satisfied.</span>
 			   			</td>
 			   		</tr>
 			   		<tr>
-			   			<td class='estimate_form_td'  colspan='2'>Name <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp; :&nbsp;
-			 				<input type='text' id='jqx_submitter_name' value='' maxlength='80' class='text-input'/>			
-						</td> 
-			   		</tr> 
+			   			<td class='estimate_form_td'  style='width: 20%'>Name: <span style='font-size: .95em; color: #8fc161;'>*</span>
+			   			</td>
+			   			<td>
+			 				<input type='text' name='submitter_name'  placeholder='Bob Smith' style='width: 250px; height: 22px'/>
+						</td>
+			   		</tr>
 			   		<tr>
-			   			<td class='estimate_form_td'  colspan='2'>Phone <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;
-			 				<input type='text' id='jqx_submitter_phone' class='text-input'/>				
-						</td> 
-			   		</tr> 
+			   			<td class='estimate_form_td'   style='width: 20%'>Phone: <span style='font-size: .95em; color: #8fc161;'>*</span>
+			   			</td>
+			   			<td>
+			 				<input type='text' name='submitter_phone' placeholder='(123)-123-1234' style='width: 250px; height: 22px'/>
+						</td>
+			   		</tr>
 			   		<tr>
-			   			<td class='estimate_form_td'  colspan='2'>E-Mail <span style='font-size: .95em; color: #8fc161;'>*</span>&nbsp;:&nbsp;
-			 				<input type='text' id='jqx_submitter_email' class='text-input'/>					
-						</td> 
-			   		</tr>		
+			   			<td class='estimate_form_td'   style='width: 20%'>E-Mail: <span style='font-size: .95em; color: #8fc161;'>*</span>
+			   			</td>
+			   			<td>
+			 				<input type='text' name='submitter_email' placeholder='webmosnter.ca@gmail.com' style='width: 250px; height: 22px'/>
+						</td>
+			   		</tr>
 					<tr>
-			   			<td class='estimate_form_td' colspan='2'>Note about your requirements <span style='font-size: .95em; color: #8fc161;' id='note_span'>*</span>&nbsp;:&nbsp;
-			   				<br/> 
-			 				<textarea id='estimateNoteEditor' cols='80' rows='10'></textarea>						
-						</td> 
-			   		</tr> 
-			   		
-			   		
+			   			<td class='estimate_form_td' colspan='2'>Note about your requirements:
+			   				<span style='font-size: .95em; color: #8fc161;' id='note_span'>*
+			   					<!-- To hide the input but only to display the error message -->
+			   					<input type='text' style='width: 0px; height: 0px; border: none; background-color: #555762' name='note_msg' id='note_msg' value='1'/>
+			   				</span>
+			   				<br/>
+			 				<textarea id='estimateNoteEditor' name='submitter_note' cols='80' rows='10'></textarea>
+						</td>
+			   		</tr>
+
+
 					<tr>
 			   			<td class='estimate_form_td' colspan='2'>A file about your application design to upload :&nbsp;</td>
 			   		</tr>
 			   		<tr>
-			   			<td class='estimate_form_td' colspan='2'> 
-			 				<input type='file' id='file_to_upload' class='text-input'/>					
-						</td> 
-			   		</tr> 	
-			   		
+			   			<td class='estimate_form_td' colspan='2'>
+			 				<input type='file' id='file_to_upload' name='file_to_upload' style='color: #ffffff; width: 300px'/>
+						</td>
+			   		</tr>
+
 			   		<tr>
 			   			<td class='estimate_form_td' colspan='2'>Please select the elephant before submitting <span style='font-size: .95em; color: #8fc161;' id='check_robot_span'>*</span>&nbsp;:&nbsp;
 			   				<br />
@@ -350,17 +369,17 @@
 			   				<input type='radio' name='animalGroup' id='animal_3' value='3'/>
 			   				<img src="images/three_animals.png" width="362" height="86" alt="Three Animals" border="0"/>
 						</td>
-			   		</tr> 
-			   		<!--  
+			   		</tr>
+			   		<!--
 			   		<tr><td colspan='2' align='center'><img id='spinner_img' src='images/common/spinner.gif' width=32 height=32  class="spinner_unhidden"/></td></tr>
 			   		-->
 					<tr>
-					    <td colspan='2' >	
-							<input type='button' value=Submit id='jqxSubmitButton' />		
+					    <td colspan='2' >
+							<input type='submit' value='Submit' id='submitButton' />
 						</td>
 					</tr>
 			 </table>
-		 </form>			
+		 </form>
     </td>
   </tr>
   <tr>

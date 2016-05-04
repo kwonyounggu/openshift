@@ -403,7 +403,7 @@ function checkName(name)
 }
 function checkNameUsingRegEx(name)
 {
-	var ck_name = /^[A-Za-z ]{3,80}$/;
+	var ck_name = /^[A-Za-z ]{2,80}$/;
 	return ck_name.test(name);
 }
 function isEmail(obj) 
