@@ -117,7 +117,7 @@
 			},
 			submitHandler: function (form)
 			{ 
-				submitForm(); 
+				submitForm();
 	            return false;
 	        },
 	        errorPlacement: function (error, element)
