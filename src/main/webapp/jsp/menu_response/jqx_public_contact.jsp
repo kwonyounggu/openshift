@@ -117,10 +117,8 @@
 				}
 			},
 			submitHandler: function (form)
-			{ // for demo
-	            alert('valid form');
-	            //$('#note_msg').tooltipster('content', "not yet");
-				//$('#note_msg').tooltipster('show');
+			{ 
+				submitForm();
 	            return false;
 	        },
 	        errorPlacement: function (error, element)
@@ -176,45 +174,40 @@
 	
 	});//$(document).ready
 
-        //$("#submitButton").on('click', function () 
-        $("#submitButton").click(function () 
-        {
-        	return;
-        	//var onsuccess=$("#estimate_form").jqxValidator('validate');			
-			//log("$(\"#submitButton\").click() is called in jqx_public_contact.jsp, validataion="+onsuccess+" !");	
-			//if(!onsuccess) return;
-			
-			//run_waitMe("roundBounce");
-			/*
-			$.ajax
-		     ({
-		         type: "post",
-		         dataType: "",
-		         url: "/carm/admin?op=ajax_form_estimate",
-		         data: 
-		         {
-		    	 		action: 		action_command,
-		    	 		app_id:  		appId,
-		    	 		app_purpose:		document.getElementById("app_purpose").value,
-		    	 		app_symbol:		document.getElementById("app_symbol").value,
-		    	 		number_of_groups:	document.getElementById("number_of_groups").value,
-		    	 		reviewers_per_item:	document.getElementById("reviewers_per_item").value,
-		    	 		assignment_type:	document.getElementById("assignment_type").value,
-		    	 		confirmatory:		getRadioValue('confirmatoryRadio'),
-		    	 		toMediator:		getRadioValue('toMediatorRadio')		    	 		
-		     	 },
-		         success: getAdminActionResponse,
-		         error: function(response) //called for 404 error, etc
-		         {
-		        	 alert(response.responseText);	
-		             
-		         }
-		      }); 
-			  */  	
-        });     
+	function submitForm()
+	{
+		run_waitMe("roundBounce");
+		var formData=new FormData(document.getElementById("estimate_form"));
+		$.ajax
+	     ({
+	         type: "post",
+	         dataType: "",
+	         url: "/file_upload",
+	         data: formData,
+	         /*data: 
+	         {
+	    	 		action: 		action_command,
+	    	 		app_id:  		appId,
+	    	 		app_purpose:		document.getElementById("app_purpose").value,
+	    	 		app_symbol:		document.getElementById("app_symbol").value,
+	    	 		number_of_groups:	document.getElementById("number_of_groups").value,
+	    	 		reviewers_per_item:	document.getElementById("reviewers_per_item").value,
+	    	 		assignment_type:	document.getElementById("assignment_type").value,
+	    	 		confirmatory:		getRadioValue('confirmatoryRadio'),
+	    	 		toMediator:		getRadioValue('toMediatorRadio')		    	 		
+	     	 },*/
+	     	 processData: false, // Don't process the files
+	         contentType: false, // Set content type to false as jQuery will tell the server its a query string request
+	         success: fileUploadResponse,
+	         error: function(response) //called for 404 error, etc
+	         {
+	        	 alert(response.responseText);	
+	             
+	         }
+	      }); 
+		  
+	}
         
- 
-
 	function run_waitMe(effect)
 	{ 	console.log("run_waitMe ...");
 		$("#estimate_form").waitMe
@@ -248,9 +241,10 @@
 			httpRequestPost("<%= MenuLink.PUBLIC_CONTEXT %>","op=ajax_carm_central_save_clinical_summary&new_clinical_summary="+escape(saveString)+"&selected_carm_id="+$("#jqxgrid").jqxGrid('getcellvalue', selected_row_index, 'carm_id'), "saveClinicalSummaryResponse");
 		}
 	}
-	function saveClinicalSummaryResponse(strResponse)
+	function fileUploadResponse(strResponse)
 	{
-		if(strResponse.indexOf('session_timeout')==0) 
+		log(strResponse+" from fileUploadResponse")
+		/*if(strResponse.indexOf('session_timeout')==0) 
 		{
 			alert("Your session is expired. Please login again.");
 			location.reload();
@@ -272,6 +266,7 @@
 			alert(strResponse.substring(6));//false, then display
 			//location.reload();
 		}
+		*/
 	}
 </script>
 <table style='width: 90%; padding-top: 20px; padding-bottom: 20px; table-layout: fixed'>
