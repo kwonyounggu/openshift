@@ -30,8 +30,7 @@
 <script type="text/javascript">
 
 	$(document).ready(function ()
-	{//alert("ERROR: your browser does not support HTML5!!!\n\nPlease upgrade your browser with the latest version.\n\nOtherwise it won't work properly!!!");
-	
+	{
 		//change the following on top of the contact, just below the menu
 		if(typeof FormData == 'undefined')
 			jAlert("<p>Your browser does not support HTML5. Please upgrade your browser with the latest version. Otherwise it won't work properly!</p>", "Warning Message");
