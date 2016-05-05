@@ -27,7 +27,7 @@
 	}
 </style>
 <script src="js/ckeditor/ckeditor.js"></script>
-<script language="Javascript" type="text/javascript">
+<script type="text/javascript">
 
 	$(document).ready(function ()
 	{//alert("ERROR: your browser does not support HTML5!!!\n\nPlease upgrade your browser with the latest version.\n\nOtherwise it won't work properly!!!");
