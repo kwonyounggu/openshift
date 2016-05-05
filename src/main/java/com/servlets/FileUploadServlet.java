@@ -58,7 +58,7 @@ public class FileUploadServlet extends HttpServlet implements Servlet
 	@SuppressWarnings("unchecked")
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
-
+		System.out.println("doPost() in FileUploadServlet.java");
 		String ajaxUpdateResult = "from Server";
 		File uploadFile=null;
 		
