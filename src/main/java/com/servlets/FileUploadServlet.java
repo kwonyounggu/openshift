@@ -18,7 +18,7 @@ import org.apache.commons.fileupload.*;
 import javax.servlet.ServletException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
-import org.apache.commons.lang.StringEscapeUtils;
+//import org.apache.commons.lang.StringEscapeUtils;
 
 //import com.sickkids.caliper.common.MenuLink;
 //import com.sickkids.caliper.common.Message;
