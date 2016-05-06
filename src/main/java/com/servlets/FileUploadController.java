@@ -2,14 +2,18 @@ package com.servlets;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Collection;
 import java.util.List;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
@@ -20,6 +24,7 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
  * Servlet implementation class FileUploadController
  */
 @WebServlet(name = "fileupload", urlPatterns = { "/fileupload" })
+@MultipartConfig(location = "/var/lib/openshift/56ddb9c10c1e66c9db000081/app-root/data")
 public class FileUploadController extends HttpServlet 
 {
 	private static final long serialVersionUID = 1L;
@@ -48,42 +53,18 @@ public class FileUploadController extends HttpServlet
 		
 		try 
 		{
-			boolean isFileUpload=ServletFileUpload.isMultipartContent(request);
-			if(isFileUpload)
-				System.out.println("Yes, a file upload is requested ...");
-			else
-				System.out.println("No, a file upload is not requested ...");
-			
-			// Create a factory for disk-based file items
-			DiskFileItemFactory factory = new DiskFileItemFactory();
-
-			// Configure a repository (to ensure a secure temp location is used)
-			ServletContext servletContext = this.getServletConfig().getServletContext();
-			File repository = (File) servletContext.getAttribute("javax.servlet.context.tempdir");
-			factory.setRepository(repository);
-
-			// Create a new file upload handler
-			ServletFileUpload upload = new ServletFileUpload(factory);
-
-			// Parse the request
-			List<FileItem> items = upload.parseRequest(request);
-			
-			for (FileItem item : items) 
-			{
-				System.out.println("item="+item.getFieldName());
+			PrintWriter out = response.getWriter();
+			 
+	        Collection<Part> parts = request.getParts();
+	 
+	        out.write("<h2> Total parts : " + parts.size() + "</h2>");
+	 
+	        for (Part part : parts) 
+	        {
+	            printEachPart(part, out);
+	            part.write(getFileName(part));
+	        }
 				
-				if (item.isFormField()) 
-				{
-					callResponse += "Field " + item.getFieldName() + " with value: " + item.getString() + " is successfully read\n\r";
-					//if(item.getFieldName().equals("studyId")) studyId=item.getString();
-				} 
-				else 
-				{
-					System.out.println("non form field="+item.getFieldName()+" "+ item.getName());
-					callResponse+=item.getFieldName()+" "+item.getName()+"\n\r";
-				}
-			}
-			
 			/*
 			List<FileItem> items = new ServletFileUpload(new DiskFileItemFactory()).parseRequest(request);
 			System.out.println("doGet() is called in FileUploadController, items.size()="+items.size());
@@ -155,7 +136,7 @@ public class FileUploadController extends HttpServlet
 			*/
 		}
 		
-		response.getWriter().print(callResponse);
+		//response.getWriter().print(callResponse);
 	}
 
 	/**
@@ -166,5 +147,36 @@ public class FileUploadController extends HttpServlet
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
+	private void printEachPart(Part part, PrintWriter pw) 
+	{
+        StringBuffer sb = new StringBuffer();
+        sb.append("<p>");
+        sb.append("Name : " + part.getName());
+        sb.append("<br>");
+        sb.append("Content Type : " + part.getContentType());
+        sb.append("<br>");
+        sb.append("Size : " + part.getSize());
+        sb.append("<br>");
+        for (String header : part.getHeaderNames()) 
+        {
+            sb.append(header + " : " + part.getHeader(header));
+            sb.append("<br>");
+        }
+        sb.append("</p>");
+        pw.write(sb.toString());
+ 
+    }
+ 
+    private String getFileName(Part part) 
+    {
+        String partHeader = part.getHeader("content-disposition");
+        for (String cd : partHeader.split(";")) 
+        {
+            if (cd.trim().startsWith("filename")) 
+            {
+                return cd.substring(cd.indexOf('=') + 1).trim().replace("\"", "");
+            }
+        }
+        return null;
+    }
 }
