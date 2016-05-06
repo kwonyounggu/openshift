@@ -25,6 +25,7 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 /**
  * Servlet implementation class FileUploadController
  * see https://blog.openshift.com/multipart-forms-and-file-uploads-with-tomcat-7/
+ * see http://docs.oracle.com/javaee/6/tutorial/doc/glraq.html
  */
 @WebServlet(name = "fileupload", urlPatterns = { "/fileupload" })
 @MultipartConfig(location = "/var/lib/openshift/56ddb9c10c1e66c9db000081/app-root/data")
@@ -65,14 +66,16 @@ public class FileUploadController extends HttpServlet
 				String value=request.getParameter(param);
 				System.out.println("Parameter Name is '"+param+"' and Parameter Value is '"+value+"'");
 			}		
-			PrintWriter out = response.getWriter();
+			//PrintWriter out = response.getWriter();
 			 
-	        Collection<Part> parts = request.getParts();
-	 
-	        out.write("<h2> Total parts : " + parts.size() + "</h2>");
-	 
+	        //Collection<Part> parts = request.getParts();
+	        Part filePart=request.getPart("file_to_upload");
+	        if(filePart.getSize()>0) filePart.write(getFileName(filePart));
+	        //out.write("<h2> Total parts : " + parts.size() + "</h2>");
+	 /*
 	        for (Part part : parts) 
 	        {
+	        	
 	            printEachPart(part, out);
 	            System.out.println("part.getHeaderNames()"+part.getHeaderNames());
 	            for (String header : part.getHeaderNames()) 
@@ -81,9 +84,10 @@ public class FileUploadController extends HttpServlet
 	            }
 	            System.out.println("part.getName()"+part.getName());
 	            System.out.println("part.getSize()"+part.getSize());
-	            //part.write(getFileName(part));
+	            
+	            if(part.getName().equals("file_to_upload") && part.getSize()>0) part.write(getFileName(part));
 	        }
-				
+				*/
 			/*
 			List<FileItem> items = new ServletFileUpload(new DiskFileItemFactory()).parseRequest(request);
 			System.out.println("doGet() is called in FileUploadController, items.size()="+items.size());
@@ -155,7 +159,7 @@ public class FileUploadController extends HttpServlet
 			*/
 		}
 		
-		//response.getWriter().print(callResponse);
+		response.getWriter().print(callResponse);
 	}
 
 	/**
