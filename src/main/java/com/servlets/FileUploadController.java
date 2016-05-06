@@ -4,7 +4,9 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Collection;
+import java.util.Enumeration;
 import java.util.List;
+import java.util.Map.Entry;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -54,6 +56,15 @@ public class FileUploadController extends HttpServlet
 		
 		try 
 		{
+			Enumeration<String> params=request.getParameterNames();
+			 
+			while(params.hasMoreElements())
+			{
+				Object o=params.nextElement();
+				String param=(String)o;
+				String value=request.getParameter(param);
+				System.out.println("Parameter Name is '"+param+"' and Parameter Value is '"+value+"'");
+			}		
 			PrintWriter out = response.getWriter();
 			 
 	        Collection<Part> parts = request.getParts();
