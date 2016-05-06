@@ -177,6 +177,7 @@
 	{
 		run_waitMe("roundBounce");
 		var formData=new FormData(document.getElementById("estimate_form"));
+		formData.set('submitter_note', CKEDITOR.instances.estimateNoteEditor.getData());
 		$.ajax
 	     ({
 	         type: "post",
