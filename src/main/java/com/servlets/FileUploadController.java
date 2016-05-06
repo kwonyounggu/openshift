@@ -22,6 +22,7 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 /**
  * Servlet implementation class FileUploadController
+ * see https://blog.openshift.com/multipart-forms-and-file-uploads-with-tomcat-7/
  */
 @WebServlet(name = "fileupload", urlPatterns = { "/fileupload" })
 @MultipartConfig(location = "/var/lib/openshift/56ddb9c10c1e66c9db000081/app-root/data")
@@ -62,7 +63,10 @@ public class FileUploadController extends HttpServlet
 	        for (Part part : parts) 
 	        {
 	            printEachPart(part, out);
-	            part.write(getFileName(part));
+	            System.out.println("part.getHeaderNames()"+part.getHeaderNames());
+	            System.out.println("part.getName()"+part.getName());
+	            System.out.println("part.getSize()"+part.getSize());
+	            //part.write(getFileName(part));
 	        }
 				
 			/*
@@ -169,6 +173,7 @@ public class FileUploadController extends HttpServlet
  
     private String getFileName(Part part) 
     {
+    	
         String partHeader = part.getHeader("content-disposition");
         for (String cd : partHeader.split(";")) 
         {
