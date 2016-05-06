@@ -64,6 +64,10 @@ public class FileUploadController extends HttpServlet
 	        {
 	            printEachPart(part, out);
 	            System.out.println("part.getHeaderNames()"+part.getHeaderNames());
+	            for (String header : part.getHeaderNames()) 
+	            {
+	            	System.out.println(header+ " : "+ part.getHeader(header));
+	            }
 	            System.out.println("part.getName()"+part.getName());
 	            System.out.println("part.getSize()"+part.getSize());
 	            //part.write(getFileName(part));
