@@ -272,7 +272,7 @@
    <tr>
     <td style='background-color: #555762; color: #ffffff; width: 50%; vertical-align: top;'>
     	<ul style='font-size: 12px'>
-    		<h3 style='color: #f9d540'>Contact</h3>
+    		<h3 style='color: #f9d540'>Contact[Under construction]</h3>
     		<br/>
     		If you are interested in growing your business and building a positive brand expirience for your customers/patients, then we should talk:
     		<br/><br/>
