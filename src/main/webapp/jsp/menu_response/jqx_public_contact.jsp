@@ -181,7 +181,7 @@
 	     ({
 	         type: "post",
 	         dataType: "",
-	         url: "/file_upload",
+	         url: "/fileupload",
 	         data: formData,
 	         /*data: 
 	         {
@@ -267,6 +267,8 @@
 		}
 		*/
 	}
+	
+	//see, http://abandon.ie/notebook/simple-file-uploads-using-jquery-ajax
 </script>
 <table style='width: 90%; padding-top: 20px; padding-bottom: 20px; table-layout: fixed'>
    <tr>
