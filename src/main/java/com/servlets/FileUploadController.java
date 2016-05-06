@@ -43,11 +43,17 @@ public class FileUploadController extends HttpServlet
 		
 		
 		String callResponse = "from Server";
-		File uploadFile=null;
+		//File uploadFile=null;
 		
 		try 
 		{
-			@SuppressWarnings("unchecked")
+			boolean isFileUpload=ServletFileUpload.isMultipartContent(request);
+			if(isFileUpload)
+				System.out.println("Yes, a file upload is requested ...");
+			else
+				System.out.println("No, a file upload is not requested ...");
+			
+			/*
 			List<FileItem> items = new ServletFileUpload(new DiskFileItemFactory()).parseRequest(request);
 			System.out.println("doGet() is called in FileUploadController, items.size()="+items.size());
 			//String studyId="000000";
@@ -64,7 +70,7 @@ public class FileUploadController extends HttpServlet
 				{
 					System.out.println("non form field="+item.getFieldName()+" "+ item.getName());
 					callResponse+=item.getFieldName()+" "+item.getName()+"\n\r";
-					/*
+					
 					String doc_file_link="/";//from the root of the context such as 8080/exemplar/uploaded_files/ms_doc
 					String loc=app.getRealPath(doc_file_link);
 					
@@ -75,15 +81,16 @@ public class FileUploadController extends HttpServlet
 					item.write(uploadFile);//write the coming file with the given name
 		
 					doc_file_link="uploaded_files/ms_doc/"+uploadFile.getName();
-					*/
+					
 					//callResponse += "File " + item.getName() + " is successfully uploaded to "+uploadFile.getPath()+"\n\r";
 				}
 			}
+			*/
 			//mssqlDao.updateInsertGenericSqlCmd(StringEscapeUtils.escapeJava("update ex_study set full_text_pdf1='"+uploadFile.getPath()+"' where study_id="+studyId));
 		} 
-		catch (FileUploadException e) 
+		/*catch (FileUploadException e) 
 		{
-			/*
+			
 			if(uploadFile!=null && uploadFile.exists()) 
 			{
 				uploadFile.delete();
@@ -97,8 +104,8 @@ public class FileUploadController extends HttpServlet
 			//new MailInfo(Utils.csr_email_address, emailList, nameList, Utils.smtp,"FileUpload Failed", "(op=exemplar/file_upload): "+e+"<br><br> Generated at "+Utils.currentTimestamp()+".");
 			forwardErrorPage(request,response,e.toString());
 			
-			*/
-		} 
+			
+		} */
 		catch(Exception e)
 		{	
 			/*

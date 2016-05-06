@@ -201,7 +201,7 @@
 	         error: function(response) //called for 404 error, etc
 	         {
 	        	 alert(response.responseText);	
-	             
+	             //call error.jsp because the response.responseText containing the full stack trace
 	         }
 	      }); 
 		  
