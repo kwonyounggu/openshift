@@ -232,6 +232,7 @@ public class FileUploadController extends HttpServlet
 
         try 
         {
+        	System.out.println("uploadToDropbox is called ...");
             dbxClient.uploadFile(fileName, DbxWriteMode.add(), part.getSize(), part.getInputStream());
         } 
 
