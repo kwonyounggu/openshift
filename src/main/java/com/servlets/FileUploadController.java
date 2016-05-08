@@ -3,13 +3,16 @@ package com.servlets;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import java.util.Collection;
+import java.util.Date;
 import java.util.Enumeration;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map.Entry;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -28,6 +31,10 @@ import com.dropbox.core.DbxException;
 import com.dropbox.core.DbxRequestConfig;
 import com.dropbox.core.v1.DbxClientV1;
 import com.dropbox.core.v1.DbxWriteMode;
+import com.dropbox.core.v2.DbxClientV2;
+import com.dropbox.core.v2.files.FileMetadata;
+import com.dropbox.core.v2.files.UploadErrorException;
+import com.dropbox.core.v2.files.WriteMode;
 
 /**
  * Servlet implementation class FileUploadController
@@ -47,7 +54,7 @@ public class FileUploadController extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
 	private static final String ACCESS_TOKEN="b3c4WiWzNgAAAAAAAAAAB7OVomREroFuSCcV-xJWdvLJrJ8271YWPv3W7w8OLALb";
-	private DbxClientV1 _dbxClient=null;
+	private DbxClientV2 _dbxClient=null;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -58,9 +65,14 @@ public class FileUploadController extends HttpServlet
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+    public void init(ServletConfig config) 
+	{
+        _dbxClient = new DbxClientV2(new DbxRequestConfig("webmonster.ca->estimates", Locale.getDefault().toString()), ACCESS_TOKEN);
+	    //this.config = config;
+	    //app = config.getServletContext();
+	    //cp=(ConnectionPool)app.getAttribute("connectionPool");
+	    //mssqlDao=(MedicationSafetySQLDao)app.getAttribute("mssqlDao");
+	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
 		// TODO Auto-generated method stub
@@ -88,10 +100,8 @@ public class FileUploadController extends HttpServlet
 	        Part filePart=request.getPart("file_to_upload");
 	        if(filePart.getSize()>0)
 	        {
-	        	filePart.write(getFileName(filePart));
-	        	DbxRequestConfig requestConfig = new DbxRequestConfig("dropbox/webmonster", Locale.getDefault().toString());
-		        _dbxClient = new DbxClientV1(requestConfig, ACCESS_TOKEN);
-	        	uploadToDropbox(filePart, getFileName(filePart), _dbxClient);
+	        	//filePart.write(getFileName(filePart));//this is to write the file into the local repository, that is, data
+	        	uploadToDropbox(_dbxClient, filePart);
 	        }
       
 	        //out.write("<h2> Total parts : " + parts.size() + "</h2>");
@@ -226,7 +236,38 @@ public class FileUploadController extends HttpServlet
         }
         return null;
     }
-    
+    private void uploadToDropbox(DbxClientV2 dbxClient, Part part) 
+    {
+        try
+        {
+        	System.out.println("uploadToDropbox is called ...");
+        	
+        	String clientFileName=getFileName(part);
+        	String dropboxPath="/estimates/"+clientFileName;
+            FileMetadata metadata = dbxClient.files().uploadBuilder(dropboxPath)
+                .withMode(WriteMode.ADD)
+                .withClientModified(new Date())
+                .uploadAndFinish(part.getInputStream());
+
+            System.out.println(metadata.toStringMultiline());
+        } 
+        catch (UploadErrorException ex) 
+        {
+            System.err.println("Error uploading to Dropbox: " + ex.getMessage());
+            //System.exit(1);
+        } 
+        catch (DbxException ex) 
+        {
+            System.err.println("Error uploading to Dropbox: " + ex.getMessage());
+            //System.exit(1);
+        } 
+        catch (IOException ex) 
+        {
+            System.err.println("Error reading from file \"" + getFileName(part) + "\": " + ex.getMessage());
+            //System.exit(1);
+        }
+    }
+    /*
     public void uploadToDropbox (Part part, String fileName, DbxClientV1 dbxClient) throws IOException 
     {
 
@@ -245,4 +286,5 @@ public class FileUploadController extends HttpServlet
             //return;         
         }
     }
+    */
 }
