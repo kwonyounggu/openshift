@@ -185,18 +185,6 @@
 	         dataType: "",
 	         url: "/fileupload",
 	         data: formData,
-	         /*data: 
-	         {
-	    	 		action: 		action_command,
-	    	 		app_id:  		appId,
-	    	 		app_purpose:		document.getElementById("app_purpose").value,
-	    	 		app_symbol:		document.getElementById("app_symbol").value,
-	    	 		number_of_groups:	document.getElementById("number_of_groups").value,
-	    	 		reviewers_per_item:	document.getElementById("reviewers_per_item").value,
-	    	 		assignment_type:	document.getElementById("assignment_type").value,
-	    	 		confirmatory:		getRadioValue('confirmatoryRadio'),
-	    	 		toMediator:		getRadioValue('toMediatorRadio')		    	 		
-	     	 },*/
 	     	 processData: false, // Don't process the files
 	         contentType: false, // Set content type to false as jQuery will tell the server its a query string request
 	         success: fileUploadResponse,
@@ -215,7 +203,7 @@
 		({
 			effect: effect,
 			text: 'Please wait...',
-			bg: 'rgba(255,255,255,0.5)',
+			bg: 'rgba(255,255,255,0.1)',
 			color: '#000',
 			maxSize: '',
 			source: 'img.svg',

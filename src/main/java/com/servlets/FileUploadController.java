@@ -1,11 +1,13 @@
 package com.servlets;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Collection;
 import java.util.Enumeration;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map.Entry;
 
 import javax.servlet.ServletContext;
@@ -22,16 +24,30 @@ import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
+import com.dropbox.core.DbxException;
+import com.dropbox.core.DbxRequestConfig;
+import com.dropbox.core.v1.DbxClientV1;
+import com.dropbox.core.v1.DbxWriteMode;
+
 /**
  * Servlet implementation class FileUploadController
  * see https://blog.openshift.com/multipart-forms-and-file-uploads-with-tomcat-7/
  * see http://docs.oracle.com/javaee/6/tutorial/doc/glraq.html
+ * see for google dirve, http://www.coderanch.com/t/643263/Servlets/java/upload-file-Google-drive-java
+ * see for free cloud like openshift, http://i-pholta.rhcloud.com/?p=168
+ * dropbox info
+ * App key 9l70upjz1cjocwc
+ * App secret 2j7mrali5k07ykf
+ * App folder name: webmonster
+ * Access token: b3c4WiWzNgAAAAAAAAAAB7OVomREroFuSCcV-xJWdvLJrJ8271YWPv3W7w8OLALb
  */
 @WebServlet(name = "fileupload", urlPatterns = { "/fileupload" })
 @MultipartConfig(location = "/var/lib/openshift/56ddb9c10c1e66c9db000081/app-root/data")
 public class FileUploadController extends HttpServlet 
 {
 	private static final long serialVersionUID = 1L;
+	private static final String ACCESS_TOKEN="b3c4WiWzNgAAAAAAAAAAB7OVomREroFuSCcV-xJWdvLJrJ8271YWPv3W7w8OLALb";
+	private DbxClientV1 _dbxClient=null;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -70,7 +86,14 @@ public class FileUploadController extends HttpServlet
 			 
 	        //Collection<Part> parts = request.getParts();
 	        Part filePart=request.getPart("file_to_upload");
-	        if(filePart.getSize()>0) filePart.write(getFileName(filePart));
+	        if(filePart.getSize()>0)
+	        {
+	        	filePart.write(getFileName(filePart));
+	        	DbxRequestConfig requestConfig = new DbxRequestConfig("dropbox/webmonster", Locale.getDefault().toString());
+		        _dbxClient = new DbxClientV1(requestConfig, ACCESS_TOKEN);
+	        	uploadToDropbox(filePart, getFileName(filePart), _dbxClient);
+	        }
+      
 	        //out.write("<h2> Total parts : " + parts.size() + "</h2>");
 	 /*
 	        for (Part part : parts) 
@@ -124,7 +147,7 @@ public class FileUploadController extends HttpServlet
 			//mssqlDao.updateInsertGenericSqlCmd(StringEscapeUtils.escapeJava("update ex_study set full_text_pdf1='"+uploadFile.getPath()+"' where study_id="+studyId));
 		} 
 		/*catch (FileUploadException e) 
-		{
+		{	//error handling, see, http://docs.oracle.com/javaee/6/tutorial/doc/glraq.html
 			
 			if(uploadFile!=null && uploadFile.exists()) 
 			{
@@ -202,5 +225,23 @@ public class FileUploadController extends HttpServlet
             }
         }
         return null;
+    }
+    
+    public void uploadToDropbox (Part part, String fileName, DbxClientV1 dbxClient) throws IOException 
+    {
+
+        try 
+        {
+            dbxClient.uploadFile(fileName, DbxWriteMode.add(), part.getSize(), part.getInputStream());
+        } 
+
+        catch (DbxException e) 
+        {
+            e.printStackTrace();
+            //uploadFIS.close();
+            System.err.println("Error in upload(): " + e.getMessage());
+            //System.exit(1);
+            //return;         
+        }
     }
 }
