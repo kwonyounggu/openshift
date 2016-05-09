@@ -97,13 +97,13 @@ public class FileUploadController extends HttpServlet
 
 			 
 			//This is to get all items including the form field and file
-	        /* Collection<Part> parts = request.getParts(); */
+	        // Collection<Part> parts = request.getParts(); 
 	        Part filePart=request.getPart("file_to_upload");
 	        
 	        if(filePart.getSize()>0)
 	        {
 	        	//this is to write the file into the local repository, that is, app-root/data/client_file.pdf
-	        	/* filePart.write(getFileName(filePart)); */
+	        	// filePart.write(getFileName(filePart)); 
 	        	
 	        	FileMetadata metaData=null;
 	        	uploadToDropbox(_dbxClient, filePart, metaData, request.getParameter("note_msg"), request.getParameter("submitter_name")); //note_msg contains a dropbox path like estimates
@@ -123,20 +123,7 @@ public class FileUploadController extends HttpServlet
 			callResponse="ERROR: "+e.getMessage();
 			
 			//email to me for notification
-			/*
-			if(uploadFile!=null && uploadFile.exists()) 
-			{
-				uploadFile.delete();
-			}
-
-			//Utils.logger.severe("(op=exemplar/file_upload): msg="+e+",\nCustomer IP: "+request.getRemoteAddr()+",\nfrom FileUploadServlet.java");
-			emailList.clear();
-			nameList.clear();
-			//emailList.add(Utils.csr_email_address);
-			nameList.add("CSR-ADMIN");
-			//new MailInfo(Utils.csr_email_address, emailList, nameList,Utils.smtp,"FileUpload Failed", "(op=exemplar/file_upload): "+e+"<br><br> Generated at "+Utils.currentTimestamp()+".");
-			forwardErrorPage(request,response,e.toString());
-			*/
+			
 		}
 		//finally
 		//{
