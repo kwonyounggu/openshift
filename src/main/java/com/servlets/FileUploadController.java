@@ -92,7 +92,7 @@ public class FileUploadController extends HttpServlet
 				Object o=params.nextElement();
 				String param=(String)o;
 				String value=request.getParameter(param);
-				log(request.getContextPath()+" Parameter Name is '"+param+"' and Parameter Value is '"+value+"'");
+				log.info(request.getContextPath()+" Parameter Name is '"+param+"' and Parameter Value is '"+value+"'");
 			}		
 
 			 
@@ -119,7 +119,7 @@ public class FileUploadController extends HttpServlet
 		}
 		catch(Exception e)
 		{	
-			log.log(Level.SEVERE, e.getMessage());
+			log.severe(e.getMessage());
 			callResponse="ERROR: "+e.getMessage();
 			
 			//email to me for notification
@@ -154,7 +154,7 @@ public class FileUploadController extends HttpServlet
     {
         try
         {
-        	log("uploadToDropbox is called ...");
+        	log.info("uploadToDropbox is called ...");
 
         	String dropboxPath="/"+dropboxDir+"/"+renameFileName(getFileName(part), submitterName);//Submitter_File_name_2016_02_13_hh_mm_ss.ext
             metaData = dbxClient.files().uploadBuilder(dropboxPath)
@@ -162,21 +162,21 @@ public class FileUploadController extends HttpServlet
 									                 .withClientModified(new Date())
 									                 .uploadAndFinish(part.getInputStream());
 
-             log(metaData.toStringMultiline());
+             log.info(metaData.toStringMultiline());
         } 
         catch (UploadErrorException e) 
         {
-            log.log(Level.SEVERE, e.toString());
+        	log.severe(e.toString());
             throw new Exception(e.getMessage());
         } 
         catch (DbxException e) 
         {
-        	log.log(Level.SEVERE, e.toString());
+        	log.severe(e.toString());
             throw new Exception(e.getMessage());
         } 
         catch (IOException e) 
         {
-        	log.log(Level.SEVERE, e.toString());
+        	log.severe(e.toString());
             throw new Exception(e.getMessage());
         }
     }
