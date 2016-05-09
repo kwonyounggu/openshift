@@ -11,6 +11,9 @@ import java.util.Enumeration;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map.Entry;
+import java.util.function.Supplier;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
@@ -27,6 +30,8 @@ import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
+import com.common.Message;
+import com.common.Utils;
 import com.dropbox.core.DbxException;
 import com.dropbox.core.DbxRequestConfig;
 import com.dropbox.core.v1.DbxClientV1;
@@ -54,8 +59,9 @@ public class FileUploadController extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
 	private static final String ACCESS_TOKEN="b3c4WiWzNgAAAAAAAAAAB7OVomREroFuSCcV-xJWdvLJrJ8271YWPv3W7w8OLALb";
+	//private static String DROPBOX_PATH="";//it can be either /estimates/filename.pdf or /anything/filename.pdf
 	private DbxClientV2 _dbxClient=null;
-       
+	private Logger log = Logger.getLogger(this.getClass().getName());   
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -75,13 +81,7 @@ public class FileUploadController extends HttpServlet
 	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
-		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		
-		
-		
-		String callResponse = "from Server";
-		//File uploadFile=null;
+		String callResponse=Message.CONTACT_SUCCESS;
 		
 		try 
 		{
@@ -92,90 +92,37 @@ public class FileUploadController extends HttpServlet
 				Object o=params.nextElement();
 				String param=(String)o;
 				String value=request.getParameter(param);
-				System.out.println("Parameter Name is '"+param+"' and Parameter Value is '"+value+"'");
+				log(request.getContextPath()+" Parameter Name is '"+param+"' and Parameter Value is '"+value+"'");
 			}		
-			//PrintWriter out = response.getWriter();
+
 			 
-	        //Collection<Part> parts = request.getParts();
+			//This is to get all items including the form field and file
+	        /* Collection<Part> parts = request.getParts(); */
 	        Part filePart=request.getPart("file_to_upload");
+	        
 	        if(filePart.getSize()>0)
 	        {
-	        	//filePart.write(getFileName(filePart));//this is to write the file into the local repository, that is, data
-	        	uploadToDropbox(_dbxClient, filePart);
-	        }
-      
-	        //out.write("<h2> Total parts : " + parts.size() + "</h2>");
-	 /*
-	        for (Part part : parts) 
-	        {
+	        	//this is to write the file into the local repository, that is, app-root/data/client_file.pdf
+	        	/* filePart.write(getFileName(filePart)); */
 	        	
-	            printEachPart(part, out);
-	            System.out.println("part.getHeaderNames()"+part.getHeaderNames());
-	            for (String header : part.getHeaderNames()) 
-	            {
-	            	System.out.println(header+ " : "+ part.getHeader(header));
-	            }
-	            System.out.println("part.getName()"+part.getName());
-	            System.out.println("part.getSize()"+part.getSize());
-	            
-	            if(part.getName().equals("file_to_upload") && part.getSize()>0) part.write(getFileName(part));
+	        	FileMetadata metaData=null;
+	        	uploadToDropbox(_dbxClient, filePart, metaData, request.getParameter("note_msg"), request.getParameter("submitter_name")); //note_msg contains a dropbox path like estimates
+	        	if(metaData!=null)
+	        	{
+	        		//update database using json tag
+	        	}
 	        }
-				*/
-			/*
-			List<FileItem> items = new ServletFileUpload(new DiskFileItemFactory()).parseRequest(request);
-			System.out.println("doGet() is called in FileUploadController, items.size()="+items.size());
-			//String studyId="000000";
-			for (FileItem item : items) 
-			{
-				System.out.println("item="+item.getFieldName());
-				
-				if (item.isFormField()) 
-				{
-					callResponse += "Field " + item.getFieldName() + " with value: " + item.getString() + " is successfully read\n\r";
-					//if(item.getFieldName().equals("studyId")) studyId=item.getString();
-				} 
-				else 
-				{
-					System.out.println("non form field="+item.getFieldName()+" "+ item.getName());
-					callResponse+=item.getFieldName()+" "+item.getName()+"\n\r";
-					
-					String doc_file_link="/";//from the root of the context such as 8080/exemplar/uploaded_files/ms_doc
-					String loc=app.getRealPath(doc_file_link);
-					
-					File path=new File(System.getProperty("catalina.home")+"/uploaded_files/ms_doc");
-
-					if(!path.exists()||!path.isDirectory()) path.mkdirs();
-					uploadFile=rename(new File(path+"/"+item.getName()),"sid_"+studyId);
-					item.write(uploadFile);//write the coming file with the given name
-		
-					doc_file_link="uploaded_files/ms_doc/"+uploadFile.getName();
-					
-					//callResponse += "File " + item.getName() + " is successfully uploaded to "+uploadFile.getPath()+"\n\r";
-				}
-			}
-			*/
-			//mssqlDao.updateInsertGenericSqlCmd(StringEscapeUtils.escapeJava("update ex_study set full_text_pdf1='"+uploadFile.getPath()+"' where study_id="+studyId));
-		} 
-		/*catch (FileUploadException e) 
-		{	//error handling, see, http://docs.oracle.com/javaee/6/tutorial/doc/glraq.html
-			
-			if(uploadFile!=null && uploadFile.exists()) 
-			{
-				uploadFile.delete();
-			}
-
-			//Utils.logger.severe("(op=exemplar/file_upload): msg="+e+",\nCustomer IP: "+request.getRemoteAddr()+",\nfrom FileUploadServlet.java");
-			emailList.clear();
-			nameList.clear();
-			//emailList.add(Utils.csr_email_address);
-			nameList.add("CSR-ADMIN");
-			//new MailInfo(Utils.csr_email_address, emailList, nameList, Utils.smtp,"FileUpload Failed", "(op=exemplar/file_upload): "+e+"<br><br> Generated at "+Utils.currentTimestamp()+".");
-			forwardErrorPage(request,response,e.toString());
-			
-			
-		} */
+	        else
+	        {
+	        	//update database
+	        }
+		}
 		catch(Exception e)
 		{	
+			log.log(Level.SEVERE, e.getMessage());
+			callResponse="ERROR: "+e.getMessage();
+			
+			//email to me for notification
 			/*
 			if(uploadFile!=null && uploadFile.exists()) 
 			{
@@ -191,37 +138,17 @@ public class FileUploadController extends HttpServlet
 			forwardErrorPage(request,response,e.toString());
 			*/
 		}
-		
-		response.getWriter().print(callResponse);
+		finally
+		{
+			response.getWriter().print(callResponse);
+		}
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-	private void printEachPart(Part part, PrintWriter pw) 
-	{
-        StringBuffer sb = new StringBuffer();
-        sb.append("<p>");
-        sb.append("Name : " + part.getName());
-        sb.append("<br>");
-        sb.append("Content Type : " + part.getContentType());
-        sb.append("<br>");
-        sb.append("Size : " + part.getSize());
-        sb.append("<br>");
-        for (String header : part.getHeaderNames()) 
-        {
-            sb.append(header + " : " + part.getHeader(header));
-            sb.append("<br>");
-        }
-        sb.append("</p>");
-        pw.write(sb.toString());
- 
-    }
  
     private String getFileName(Part part) 
     {
@@ -236,55 +163,51 @@ public class FileUploadController extends HttpServlet
         }
         return null;
     }
-    private void uploadToDropbox(DbxClientV2 dbxClient, Part part) 
+
+    private void uploadToDropbox(DbxClientV2 dbxClient, Part part, FileMetadata metaData, String dropboxDir, String submitterName) throws Exception
     {
         try
         {
-        	System.out.println("uploadToDropbox is called ...");
-        	
-        	String clientFileName=getFileName(part);
-        	String dropboxPath="/estimates/"+clientFileName;
-            FileMetadata metadata = dbxClient.files().uploadBuilder(dropboxPath)
-                .withMode(WriteMode.ADD)
-                .withClientModified(new Date())
-                .uploadAndFinish(part.getInputStream());
+        	log("uploadToDropbox is called ...");
 
-            System.out.println(metadata.toStringMultiline());
-        } 
-        catch (UploadErrorException ex) 
-        {
-            System.err.println("Error uploading to Dropbox: " + ex.getMessage());
-            //System.exit(1);
-        } 
-        catch (DbxException ex) 
-        {
-            System.err.println("Error uploading to Dropbox: " + ex.getMessage());
-            //System.exit(1);
-        } 
-        catch (IOException ex) 
-        {
-            System.err.println("Error reading from file \"" + getFileName(part) + "\": " + ex.getMessage());
-            //System.exit(1);
-        }
-    }
-    /*
-    public void uploadToDropbox (Part part, String fileName, DbxClientV1 dbxClient) throws IOException 
-    {
+        	String dropboxPath="/"+dropboxDir+"/"+renameFileName(getFileName(part), submitterName);//Submitter_File_name_2016_02_13_hh_mm_ss.ext
+            metaData = dbxClient.files().uploadBuilder(dropboxPath)
+            										 .withMode(WriteMode.ADD)
+									                 .withClientModified(new Date())
+									                 .uploadAndFinish(part.getInputStream());
 
-        try 
-        {
-        	System.out.println("uploadToDropbox is called ...");
-            dbxClient.uploadFile(fileName, DbxWriteMode.add(), part.getSize(), part.getInputStream());
+             metaData.toStringMultiline();
         } 
-
+        catch (UploadErrorException e) 
+        {
+            log.log(Level.SEVERE, e.toString());
+            throw new Exception(e.getMessage());
+        } 
         catch (DbxException e) 
         {
-            e.printStackTrace();
-            //uploadFIS.close();
-            System.err.println("Error in upload(): " + e.getMessage());
-            //System.exit(1);
-            //return;         
+        	log.log(Level.SEVERE, e.toString());
+            throw new Exception(e.getMessage());
+        } 
+        catch (IOException e) 
+        {
+        	log.log(Level.SEVERE, e.toString());
+            throw new Exception(e.getMessage());
         }
     }
-    */
+	private String renameFileName(String initialFileName, String submitterName)
+	{
+		// Get the extension if the file has one
+		initialFileName=initialFileName.replaceAll("\\s+", "_");
+		submitterName=submitterName.replaceAll("\\s+", "_");
+		String fileExt = "";
+		int i = -1;
+		if ((i = initialFileName.indexOf(".")) != -1)
+		{
+			fileExt = initialFileName.substring(i);
+			initialFileName = initialFileName.substring(0, i);
+		}
+
+		return Utils.getFirstCapitalString(submitterName)+"_"+Utils.getFirstCapitalString(initialFileName) + "_"+Utils.getDateTimeForFileName()+fileExt;
+	}
+
 }

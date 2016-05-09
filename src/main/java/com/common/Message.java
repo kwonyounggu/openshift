@@ -2,6 +2,13 @@ package com.common;
 
 public class Message 
 {
+	//webmonster.ca
+	public static final String CONTACT_SUCCESS="Thank you for contacting me - I will get back to you soon!";
+	
+	
+	
+	
+	//csr
 	public static final String check_usage_agreement="You must check up on the agreement.";
 	
 	public static final String login_false="Either your email or password is wrong.";
@@ -42,5 +49,7 @@ public class Message
 	public static final String inform_to_admin_about_exception="Please email to the admin of this web site.";
 	public static final String inform_to_admin_about_exception_en="Please let us know about this error.";
 	public static final String inform_to_admin_about_exception2="We will try to fix the problem as soon as possible.";
+	
+	
 	
 }

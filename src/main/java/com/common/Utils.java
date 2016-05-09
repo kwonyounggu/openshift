@@ -67,7 +67,7 @@ public class Utils
     }
 	public static synchronized String getDateTimeForFileName()
 	{
-        DateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
+        DateFormat dateFormat = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
         Date date = new Date();
         return dateFormat.format(date);
     }
