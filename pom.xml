@@ -6,7 +6,6 @@
 	<packaging>war</packaging>
 	<version>1.0</version>
 	<name>webmonster</name>
-	
 	<repositories>
 		<repository>
 			<id>eap</id>
