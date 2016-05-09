@@ -107,10 +107,10 @@ public class FileUploadController extends HttpServlet
 	        	
 	        	FileMetadata metaData=null;
 	        	uploadToDropbox(_dbxClient, filePart, metaData, request.getParameter("note_msg"), request.getParameter("submitter_name")); //note_msg contains a dropbox path like estimates
-	        	if(metaData!=null)
-	        	{
+	        	//if(metaData!=null)
+	        	//{
 	        		//update database using json tag
-	        	}
+	        	//}
 	        }
 	        else
 	        {
@@ -146,7 +146,6 @@ public class FileUploadController extends HttpServlet
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
  
