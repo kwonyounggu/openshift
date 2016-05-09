@@ -176,7 +176,7 @@ public class FileUploadController extends HttpServlet
 									                 .withClientModified(new Date())
 									                 .uploadAndFinish(part.getInputStream());
 
-             metaData.toStringMultiline();
+             log(metaData.toStringMultiline());
         } 
         catch (UploadErrorException e) 
         {
