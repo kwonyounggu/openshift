@@ -138,10 +138,10 @@ public class FileUploadController extends HttpServlet
 			forwardErrorPage(request,response,e.toString());
 			*/
 		}
-		finally
-		{
+		//finally
+		//{
 			response.getWriter().print(callResponse);
-		}
+		//}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
