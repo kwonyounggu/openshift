@@ -41,7 +41,7 @@ public class EstimateRequestsDao
 		try
 		{
 			c = _ds.getConnection();
-			String sQuery="insert into estimate_requests values(default,?,?,?,?,?,?,?,?,?)";
+			String sQuery="insert into estimate_requests values(default,?,?,?,?,?::bit,?,?::bit,?,?)";
 			ps = c.prepareStatement(sQuery);
 			
 			ps.setString(1, eb.getSubmitterName());
