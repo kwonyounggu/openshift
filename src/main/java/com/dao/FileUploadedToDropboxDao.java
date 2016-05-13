@@ -108,7 +108,7 @@ public class FileUploadedToDropboxDao
 		return fb;
 
 	}
-	public void closeResultSet(ResultSet rs)
+	private void closeResultSet(ResultSet rs)
 	{
 		try
 		{
@@ -120,7 +120,7 @@ public class FileUploadedToDropboxDao
 			log.severe(e.getMessage());
 		}
 	}
-	public void closeConnection(Connection con)
+	private void closeConnection(Connection con)
 	{
 		try
 		{
@@ -132,7 +132,7 @@ public class FileUploadedToDropboxDao
 			log.severe(e.getMessage());
 		}
 	}
-	public void closeStatement(Statement stmt)
+	private void closeStatement(Statement stmt)
 	{
 		try
 		{

@@ -28,6 +28,7 @@ import com.beans.FileUploadedToDropboxBean;
 import com.common.Message;
 import com.common.UAgentInfo;
 import com.common.Utils;
+import com.dao.EstimateRequestsDao;
 import com.dao.FileUploadedToDropboxDao;
 import com.dropbox.core.DbxException;
 import com.dropbox.core.DbxRequestConfig;
@@ -129,6 +130,9 @@ public class FileUploadController extends HttpServlet
 				eb.setOs(os);
 				eb.setRemotePlace(request.getParameter("location"));
 				eb.setSubmittedTime(Utils.currentTimestamp());
+				
+				EstimateRequestsDao eDao=new EstimateRequestsDao(_ds);
+				eDao.create(eb);
 			}
 
 		}
