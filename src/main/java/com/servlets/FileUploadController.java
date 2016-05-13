@@ -117,7 +117,12 @@ public class FileUploadController extends HttpServlet
 			{
 				EstimateRequestsBean eb=new EstimateRequestsBean();
 				//eb.setEstimateSeqId(-1);
-				eb.setSubmitterName(request.getParameter("submitter_name"));//Capital for the 1st and 2nd
+				String names[]=request.getParameter("submitter_name").split("\\s+");
+				for(String name: names) //Capital for the 1st and 2nd
+				{
+					eb.setSubmitterName(eb.getSubmitterName()+" "+Utils.getFirstCapitalString(name));
+				}
+				eb.setSubmitterName(eb.getSubmitterName().trim());//trim left and right
 				eb.setSubmitterPhone(request.getParameter("submitter_phone"));
 				eb.setSubmitterEmail(request.getParameter("submitter_email"));
 				eb.setSubmitterNote(request.getParameter("submitter_note"));

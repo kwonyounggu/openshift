@@ -140,7 +140,8 @@
 		});
 		$.validator.addMethod("isNameValid", function(value, element)
 		{
-		    return (isKoreanName(element) || checkNameUsingRegEx(value));
+			var tName=$.trim(value);
+		    return (isKoreanName(element) || checkNameUsingRegEx(tName));
 		}, "Your name is not valid!");
 		$.validator.addMethod("isPhoneValid", function(value, element)
 		{
@@ -181,9 +182,9 @@
 		formData.set('note_msg', 'estimates');//it will be /estimates/filename.pdf in dropbox
 		
 		var location_info="not allocated";
-		$.getJSON("http://freegeoip.net/json/", function(data) 
+		$.getJSON("http://freegeoip.net/json/", function(location, textStatus, jqXHR) 
 		{
-			location_info=data.city+" "+data.region_name+" "+data.country_name;
+			location_info=location.city+" "+location.region_name+" "+location.country_name;
 		});
 		formData.append("location", location_info);
 		$.ajax

@@ -55,6 +55,7 @@ public class EstimateRequestsDao
 			ps.setTimestamp(9, eb.getSubmittedTime());
 								
 			log.info(ps.toString());
+			//The following ps statement does not work with bit operation
 			//ps.executeUpdate();
 			c.createStatement().execute(ps.toString());
 		}
