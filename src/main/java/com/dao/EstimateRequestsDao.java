@@ -41,7 +41,7 @@ public class EstimateRequestsDao
 		try
 		{
 			c = _ds.getConnection();
-			String sQuery="insert into estimate_requests values(default,?,?,?,?,?::bit,?,?::bit,?,?)";
+			String sQuery="insert into estimate_requests values(default,?,?,?,?,?,?,?,?,?)";
 			ps = c.prepareStatement(sQuery);
 			
 			ps.setString(1, eb.getSubmitterName());
@@ -55,7 +55,8 @@ public class EstimateRequestsDao
 			ps.setTimestamp(9, eb.getSubmittedTime());
 								
 			log.info(ps.toString());
-			ps.executeUpdate();
+			//ps.executeUpdate();
+			c.createStatement().execute(ps.toString());
 		}
 		catch (SQLException e)
 		{
