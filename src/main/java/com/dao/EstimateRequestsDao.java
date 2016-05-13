@@ -48,9 +48,9 @@ public class EstimateRequestsDao
 			ps.setString(2, eb.getSubmitterPhone());
 			ps.setString(3, eb.getSubmitterEmail());
 			ps.setString(4, eb.getSubmitterNote()); 
-			ps.setObject(5, "B"+Integer.toBinaryString(0xFF & eb.getSelectAnimal()), java.sql.Types.BIT);
+			ps.setObject(5, "B"+Integer.toBinaryString(0xFF & eb.getSelectAnimal()), java.sql.Types.BINARY);
 			ps.setInt(6, eb.getFileSeqId());
-			ps.setObject(7, "B"+Integer.toBinaryString(0xFF & eb.getOs()), java.sql.Types.BIT);
+			ps.setObject(7, "B"+Integer.toBinaryString(0xFF & eb.getOs()), java.sql.Types.BINARY);
 			ps.setString(8, eb.getRemotePlace());
 			ps.setTimestamp(9, eb.getSubmittedTime());
 								
