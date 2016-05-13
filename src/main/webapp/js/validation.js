@@ -354,7 +354,10 @@ function trim( value )
 	return LTrim(RTrim(value));
 	
 }
-
+function trimLR(value) 
+{
+	return value.replace(/^\s*|\s*$/g, "");
+}
 function checkAddress(cid) 
 {	cid=trim(cid);
 	if(cid==""||cid.length<1) return false;

@@ -180,6 +180,7 @@
 		var formData=new FormData(document.getElementById("estimate_form"));
 		formData.set('submitter_note', CKEDITOR.instances.estimateNoteEditor.getData());
 		formData.set('note_msg', 'estimates');//it will be /estimates/filename.pdf in dropbox
+		formData.set('',$.trim($('submitter_name').val()));
 		
 		var location_info="not allocated";
 		$.getJSON("http://freegeoip.net/json/", function(location, textStatus, jqXHR) 
@@ -317,7 +318,7 @@
 			   			<td class='estimate_form_td'  style='width: 20%'>Name: <span style='font-size: .95em; color: #8fc161;'>*</span>
 			   			</td>
 			   			<td>
-			 				<input type='text' name='submitter_name'  placeholder='Bob Smith' style='width: 250px; height: 22px'/>
+			 				<input type='text' id='submitter_name' name='submitter_name'  placeholder='Bob Smith' style='width: 250px; height: 22px'/>
 						</td>
 			   		</tr>
 			   		<tr>
