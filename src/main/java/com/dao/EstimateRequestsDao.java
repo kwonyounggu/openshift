@@ -47,21 +47,15 @@ public class EstimateRequestsDao
 			ps.setString(1, eb.getSubmitterName());
 			ps.setString(2, eb.getSubmitterPhone());
 			ps.setString(3, eb.getSubmitterEmail());
-			ps.setString(4, eb.getSubmitterNote());
-			ps.setObject(5, eb.getSelectAnimal(), java.sql.Types.BIT);
+			ps.setString(4, eb.getSubmitterNote()); 
+			ps.setObject(5, Integer.toBinaryString(0xFFFF & eb.getSelectAnimal()), java.sql.Types.BIT);
 			ps.setInt(6, eb.getFileSeqId());
-			ps.setObject(7, eb.getOs(), java.sql.Types.BIT);
+			ps.setObject(7, Integer.toBinaryString(0xFFFF & eb.getOs()), java.sql.Types.BIT);
 			ps.setString(8, eb.getRemotePlace());
 			ps.setTimestamp(9, eb.getSubmittedTime());
 								
+			log.info(ps.toString());
 			ps.executeUpdate();
-			//Statement s = c.createStatement();
-			//ResultSet rs = s.executeQuery("SELECT CURRVAL('all_login_hist_index_seq');");
-			//rs.next();
-			// Update the id in the returned object. This is important as this
-			// value must get returned to the client.
-			//lb.setLogin_hist_index(rs.getLong(1));
-			//if(Utils.debug) System.err.println("INFO: last inserted id for the table of all_login_hist="+lb.getLogin_hist_index());
 		}
 		catch (SQLException e)
 		{
