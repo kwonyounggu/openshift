@@ -179,6 +179,13 @@
 		var formData=new FormData(document.getElementById("estimate_form"));
 		formData.set('submitter_note', CKEDITOR.instances.estimateNoteEditor.getData());
 		formData.set('note_msg', 'estimates');//it will be /estimates/filename.pdf in dropbox
+		
+		var location_info="not allocated";
+		$.getJSON("http://freegeoip.net/json/", function(data) 
+		{
+			location_info=data.city+" "+data.region_name+" "+data.country_name;
+		});
+		formData.append("location", location_info);
 		$.ajax
 	     ({
 	         type: "post",

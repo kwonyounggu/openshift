@@ -2,8 +2,7 @@ package com.exceptions;
 
 public class DAOException extends RuntimeException
 {
-
-	static final long serialVersionUID = -1881205326938716446L;
+	private static final long serialVersionUID = 3694738639233219060L;
 
 	public DAOException(String message)
 	{

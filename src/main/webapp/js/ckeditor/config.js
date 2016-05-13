@@ -58,10 +58,10 @@ CKEDITOR.editorConfig = function( config )
 		countHTML: false,
 
 		// Maximum allowed Word Count, -1 is default for unlimited
-		maxWordCount: 4000,
+		maxWordCount: 1500,
 
-		// Maximum allowed Char Count, -1 is default for unlimited
-		maxCharCount: -1,
+		// Maximum allowed Char Count, -1 is default for unlimited. 7897=fb limit
+		maxCharCount: 4567,
 
 		// Add filter to add or remove element before counting (see CKEDITOR.htmlParser.filter), Default value : null (no filter)
 		filter: new CKEDITOR.htmlParser.filter
