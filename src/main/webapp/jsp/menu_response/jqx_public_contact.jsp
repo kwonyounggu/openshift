@@ -180,7 +180,7 @@
 		var formData=new FormData(document.getElementById("estimate_form"));
 		formData.set('submitter_note', CKEDITOR.instances.estimateNoteEditor.getData());
 		formData.set('note_msg', 'estimates');//it will be /estimates/filename.pdf in dropbox
-		formData.set('',$.trim($('submitter_name').val()));
+		formData.set('submitter_name',$.trim($('submitter_name').val()));
 		
 		var location_info="not allocated";
 		$.getJSON("http://freegeoip.net/json/", function(location, textStatus, jqXHR) 
