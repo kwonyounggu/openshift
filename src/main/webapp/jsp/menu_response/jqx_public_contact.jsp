@@ -244,7 +244,10 @@
 	function fileUploadResponse(strResponse)
 	{
 		log(strResponse+" from fileUploadResponse");
+		
+		//display green result 'thank you ...'
 		$("#estimate_form").waitMe('hide');
+		$("#estimate_form").reset();
 		/*if(strResponse.indexOf('session_timeout')==0) 
 		{
 			alert("Your session is expired. Please login again.");
