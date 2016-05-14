@@ -182,11 +182,11 @@
 		var formData=new FormData(document.getElementById("estimate_form"));
 		formData.set('submitter_note', CKEDITOR.instances.estimateNoteEditor.getData());
 		formData.set('note_msg', 'estimates');//it will be /estimates/filename.pdf in dropbox
-		//formData.set('submitter_name',$.trim($('submitter_name').val()));
-		log($('submitter_name').val());
+
 		var location_info="not allocated";
 		$.getJSON("http://freegeoip.net/json/", function(location, textStatus, jqXHR) 
 		{
+			log("location: "+location+", textStatus: "+textStatus);
 			location_info=location.city+" "+location.region_name+" "+location.country_name;
 		});
 		formData.append("location", location_info);
@@ -201,6 +201,7 @@
 	         success: fileUploadResponse,
 	         error: function(response) //called for 404 error, etc
 	         {
+	        	 $("#estimate_form").waitMe('hide');
 	        	 alert(response.responseText);	
 	             //call error.jsp because the response.responseText containing the full stack trace
 	         }
@@ -209,7 +210,7 @@
 	}
         
 	function run_waitMe(effect)
-	{ 	console.log("run_waitMe ...");
+	{ 	console.log("run_waitMe: "+effect);
 		$("#estimate_form").waitMe
 		({
 			effect: effect,
@@ -243,7 +244,8 @@
 	}
 	function fileUploadResponse(strResponse)
 	{
-		log(strResponse+" from fileUploadResponse")
+		log(strResponse+" from fileUploadResponse");
+		$("#estimate_form").waitMe('hide');
 		/*if(strResponse.indexOf('session_timeout')==0) 
 		{
 			alert("Your session is expired. Please login again.");
