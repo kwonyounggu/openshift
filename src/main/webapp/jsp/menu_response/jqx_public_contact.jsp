@@ -140,8 +140,6 @@
 		});
 		$.validator.addMethod("isNameValid", function(value, element)
 		{
-			element.value=value.trim();
-			value=element.value;
 			//var tName=$.trim(value);
 		    return (isKoreanName(element) || checkNameUsingRegEx(value));
 		}, "Your name is not valid!");
@@ -182,6 +180,7 @@
 		var formData=new FormData(document.getElementById("estimate_form"));
 		formData.set('submitter_note', CKEDITOR.instances.estimateNoteEditor.getData());
 		formData.set('note_msg', 'estimates');//it will be /estimates/filename.pdf in dropbox
+		formData.set('submitter_name', document.getElementById("submitter_name").value.trim());
 
 		var location_info="not allocated";
 		$.getJSON("http://freegeoip.net/json/", function(location, textStatus, jqXHR) 

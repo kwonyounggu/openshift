@@ -151,10 +151,11 @@ function isAlphaNumeric(obj)
 	return true;
 }
 //check korean name without any space in the middle
-function isKoreanName(name)
+function isKoreanName(element)
 {
-	 if(name.value.length==0 || name.value.length==1) return false;
-	 for (var i=0; i<name.value.length; i++)
+	var name=element.value.trim();
+	 if(name.length<2) return false;
+	 for (var i=0; i<name.length; i++)
 		 if ((name.value.charAt(i) >= "가") && (name.value.charAt(i) <= "힣")) continue; 
 		 else return false;
 	 return i<6 ? true: false;//up to 5 chars it's ok
