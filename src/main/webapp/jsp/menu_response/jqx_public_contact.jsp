@@ -217,7 +217,7 @@
 		formData.set('submitter_name', document.getElementById("submitter_name").value.trim());
 
 		//var location_info="not appended";
-		$.getJSON("http://freegeoip.net/json/", function(data) 
+		/*$.getJSON("http://freegeoip.net/json/", function(data) 
 		{
 			log("client_place: "+data+", textStatus: "+textStatus+", city="+data.city);
 			//location_info=loc.city+" "+loc.region_name+" "+loc.country_name;
@@ -229,7 +229,22 @@
 			
 			formData.set('client_place', ip+" "+country_name+" "+city_name);
 		});
-		
+		*/
+		$.ajax({
+
+			url: 'http://freegeoip.net/json/',
+			type: 'POST',
+			dataType: 'jsonp',
+			success: function (data) 
+			{
+
+			var ip = data["ip"];
+			var country_name = data["country_name"];
+			var city_name = data["city"];
+			formData.set('client_place', ip+" "+country_name+" "+city_name);
+			}
+
+			});
 		
 		$.ajax
 	     ({
