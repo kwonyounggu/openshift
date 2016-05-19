@@ -236,8 +236,8 @@
 	         success: fileUploadResponse,
 	         error: function(jqXHR, textStatus, errorThrown) //called for 404 error, etc
 	         {
-	        	 log("HTTP Error: "+textStatus+"\n\n"+errorThrown.error);
-	             fileUploadResponse(textStatus+" from ajax error!");
+	        	 log("HTTP Error: "+textStatus+"\n\n"+errorThrown);
+	             fileUploadResponse(textStatus+" from ajax calling!");
 	         }
 	      }); 
 		  
