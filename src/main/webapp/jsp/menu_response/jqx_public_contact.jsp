@@ -219,7 +219,7 @@
 		$.getJSON("http://freegeoip.net/json/", function(loc, textStatus, jqXHR) 
 		{
 			log("place: "+loc+", textStatus: "+textStatus+", city="+loc.city);
-			formData.append("place", loc.city+" "+loc.region_name+" "+loc.country_name);
+			formData.set("place", loc.city+" "+loc.region_name+" "+loc.country_name);
 		});
 		
 		$.ajax
@@ -377,6 +377,7 @@
 					<tr>
 					    <td colspan='2' >
 							<input type='submit' value='Submit' id='submitButton' />
+							<input type='hidden' id='place'/>
 						</td>
 					</tr>
 					
