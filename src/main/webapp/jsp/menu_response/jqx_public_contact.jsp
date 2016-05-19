@@ -24,6 +24,40 @@
 
 		background: #942724;
 		color: #e4f1ff;
+	}	
+	.hide-bt-alert
+	{
+		display: none;
+	}
+	.alert-success
+	{
+		border-radius:0;
+		padding: 2px 5px;
+	}
+	.alert-danger
+	{
+			border-radius:0;
+			padding: 2px 5px;
+	}
+	.alert-danger a:link 
+	{
+	    color: red;
+	}
+	.alert-danger a
+	{
+	    text-decoration: none;
+	}
+	.alert-danger a:visited 
+	{
+	    color: red;
+	}
+	.alert-danger a:hover 
+	{
+	    color: red;
+	}
+	.alert-danger a:active 
+	{
+	    color: red;
 	}
 </style>
 <script src="js/ckeditor/ckeditor.js"></script>
@@ -244,7 +278,19 @@
 	function fileUploadResponse(strResponse)
 	{
 		log(strResponse+" from fileUploadResponse");
-		
+		//if(strResponse.indexOf('Thank you')==-1)
+		if(strResponse==="<%= Message.CONTACT_SUCCESS %>")
+		{
+			$('#submit_success_alert').css('visibility','visible').fadeIn();
+			$('#submit_error_alert').css('visibility','hidden');
+		}
+		else
+		{
+			$('#submit_success_alert').css('visibility','hidden').fadeIn();
+			
+			$('#submit_error_alert').prop('title', "'"+strResponse.replace(/error|:/gi, "")+"'");
+			$('#submit_error_alert').css('visibility','hidden');
+		}
 		//display green result 'thank you ...'
 		$("#estimate_form").waitMe('hide');
 		$("#estimate_form").reset();
@@ -371,12 +417,24 @@
 			   				<img src="images/three_animals.png" width="362" height="86" alt="Three Animals" border="0"/>
 						</td>
 			   		</tr>
-			   		<!--
-			   		<tr><td colspan='2' align='center'><img id='spinner_img' src='images/common/spinner.gif' width=32 height=32  class="spinner_unhidden"/></td></tr>
-			   		-->
 					<tr>
 					    <td colspan='2' >
 							<input type='submit' value='Submit' id='submitButton' />
+						</td>
+					</tr>
+					
+					<tr>
+						<td colspan='2'>
+							<div id="submit_success_alert" class="alert alert-success hide-bt-alert">
+							    <a href='#' id='submit_success_alert_anchor'><%=Message.CONTACT_SUCCESS %></a>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td colspan='2'>
+							<div id="submit_error_alert" class="alert alert-danger  hide-bt-alert">
+								<a href='#' id='submit_error_alert_anchor'>Error: please check your input data and try again!</a>
+							</div>
 						</td>
 					</tr>
 			 </table>
