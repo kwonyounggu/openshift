@@ -265,7 +265,7 @@
 	             {
 	                 msg = 'Uncaught Error.\n' + jqXHR.responseText;
 	             }
-	        	 log("HTTP Error: "+msg);
+	        	 log("HTTP Error: "+jqXHR);
 	             fileUploadResponse(msg+" from ajax calling!");
 	         }
 	      }); 
@@ -294,7 +294,7 @@
 		{
 			$('#submit_success_alert').css('visibility','visible').fadeIn();
 			$('#submit_error_alert').css('visibility','hidden');
-			
+			CKEDITOR.instances.estimateNoteEditor.setData("");
 			$('#estimate_form')[0].reset();
 		}
 		else
