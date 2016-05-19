@@ -133,7 +133,7 @@ public class FileUploadController extends HttpServlet
 				}
 				
 				eb.setOs(os);
-				eb.setRemotePlace(request.getParameter("place"));
+				eb.setRemotePlace(request.getParameter("client_place"));
 				eb.setSubmittedTime(Utils.currentTimestamp());
 				
 				EstimateRequestsDao eDao=new EstimateRequestsDao(_ds);
