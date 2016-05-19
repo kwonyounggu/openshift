@@ -234,10 +234,10 @@
 	     	 processData: false, // Don't process the files
 	         contentType: false, // Set content type to false as jQuery will tell the server its a query string request
 	         success: fileUploadResponse,
-	         error: function(response) //called for 404 error, etc
+	         error: function(jqXHR, textStatus, errorThrown) //called for 404 error, etc
 	         {
-	        	 log("HTTP Error: "+response.error);
-	             fileUploadResponse(response.error);
+	        	 log("HTTP Error: "+textStatus);
+	             fileUploadResponse(textStatus);
 	         }
 	      }); 
 		  
