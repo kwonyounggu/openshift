@@ -234,10 +234,39 @@
 	     	 processData: false, // Don't process the files
 	         contentType: false, // Set content type to false as jQuery will tell the server its a query string request
 	         success: fileUploadResponse,
-	         error: function(jqXHR, textStatus, errorThrown) //called for 404 error, etc
+	         error: function(jqXHR, exception) //called for 404 error, etc
 	         {
-	        	 log("HTTP Error: "+textStatus+"\n\n"+errorThrown);
-	             fileUploadResponse(textStatus+" from ajax calling!");
+	        	 var msg = '';
+	             if (jqXHR.status === 0) 
+	             {
+	                 msg = 'Not connect.\n Verify Network.';
+	             } 
+	             else if (jqXHR.status == 404) 
+	             {
+	                 msg = 'Requested page not found. [404]';
+	             } 
+	             else if (jqXHR.status == 500) 
+	             {
+	                 msg = 'Internal Server Error [500].';
+	             } 
+	             else if (exception === 'parsererror') 
+	             {
+	                 msg = 'Requested JSON parse failed.';
+	             } 
+	             else if (exception === 'timeout') 
+	             {
+	                 msg = 'Time out error.';
+	             } 
+	             else if (exception === 'abort') 
+	             {
+	                 msg = 'Ajax request aborted.';
+	             } 
+	             else 
+	             {
+	                 msg = 'Uncaught Error.\n' + jqXHR.responseText;
+	             }
+	        	 log("HTTP Error: "+msg);
+	             fileUploadResponse(msg+" from ajax calling!");
 	         }
 	      }); 
 		  
