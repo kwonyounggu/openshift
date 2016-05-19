@@ -228,7 +228,7 @@
 		$.ajax
 	     ({
 	         type: "post",
-	         dataType: "jsonp", //see https://rochcass.wordpress.com/tag/freegeoip-net-post/
+	         dataType: "json", //see https://rochcass.wordpress.com/tag/freegeoip-net-post/
 	         url: "/fileupload",
 	         data: formData,
 	     	 processData: false, // Don't process the files
@@ -265,7 +265,7 @@
 	             {
 	                 msg = 'Uncaught Error.\n' + jqXHR.responseText;
 	             }
-	        	 log("HTTP Error: "+jqXHR);
+	        	 log("HTTP Error: "+msg);
 	             fileUploadResponse(msg+" from ajax calling!");
 	         }
 	      }); 
