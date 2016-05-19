@@ -217,18 +217,24 @@
 		formData.set('submitter_name', document.getElementById("submitter_name").value.trim());
 
 		//var location_info="not appended";
-		$.getJSON("http://freegeoip.net/json/", function(loc, textStatus, jqXHR) 
+		$.getJSON("http://freegeoip.net/json/", function(data) 
 		{
-			log("client_place: "+loc+", textStatus: "+textStatus+", city="+loc.city);
+			log("client_place: "+data+", textStatus: "+textStatus+", city="+data.city);
 			//location_info=loc.city+" "+loc.region_name+" "+loc.country_name;
-			formData.set('client_place', loc.city+" "+loc.region_name+" "+loc.country_name);
+			//formData.set('client_place', data.city+" "+data.region_name+" "+data.country_name);
+			
+			var ip = data["ip"];
+			var country_name = data["country_name"];
+			var city_name = data["city"];
+			
+			formData.set('client_place', ip+" "+country_name+" "+city_name);
 		});
 		
 		
 		$.ajax
 	     ({
 	         type: "post",
-	         dataType: "json", //see https://rochcass.wordpress.com/tag/freegeoip-net-post/
+	         dataType: "", //see https://rochcass.wordpress.com/tag/freegeoip-net-post/
 	         url: "/fileupload",
 	         data: formData,
 	     	 processData: false, // Don't process the files
