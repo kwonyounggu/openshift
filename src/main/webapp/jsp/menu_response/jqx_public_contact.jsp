@@ -216,19 +216,19 @@
 		formData.set('note_msg', 'estimates');//it will be /estimates/filename.pdf in dropbox
 		formData.set('submitter_name', document.getElementById("submitter_name").value.trim());
 
-		var location_info="not appended";
+		//var location_info="not appended";
 		$.getJSON("http://freegeoip.net/json/", function(loc, textStatus, jqXHR) 
 		{
 			log("client_place: "+loc+", textStatus: "+textStatus+", city="+loc.city);
-			location_info=loc.city+" "+loc.region_name+" "+loc.country_name;
-			formData.set('client_place', location_info);
+			//location_info=loc.city+" "+loc.region_name+" "+loc.country_name;
+			formData.set('client_place', loc.city+" "+loc.region_name+" "+loc.country_name);
 		});
 		
 		
 		$.ajax
 	     ({
 	         type: "post",
-	         dataType: "",
+	         dataType: "jsonp", //see https://rochcass.wordpress.com/tag/freegeoip-net-post/
 	         url: "/fileupload",
 	         data: formData,
 	     	 processData: false, // Don't process the files
