@@ -236,8 +236,8 @@
 	         success: fileUploadResponse,
 	         error: function(response) //called for 404 error, etc
 	         {
-	        	 log("HTTP Error: "+response);
-	             fileUploadResponse(response);
+	        	 log("HTTP Error: "+response.error);
+	             fileUploadResponse(response.error);
 	         }
 	      }); 
 		  
