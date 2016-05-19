@@ -218,8 +218,8 @@
 
 		$.getJSON("http://freegeoip.net/json/", function(loc, textStatus, jqXHR) 
 		{
-			log("location: "+loc+", textStatus: "+textStatus+", city="+loc.city);
-			formData.append("location", loc.city+" "+loc.region_name+" "+loc.country_name);
+			log("place: "+loc+", textStatus: "+textStatus+", city="+loc.city);
+			formData.append("place", loc.city+" "+loc.region_name+" "+loc.country_name);
 		});
 		
 		$.ajax
