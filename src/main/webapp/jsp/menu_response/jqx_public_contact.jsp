@@ -216,13 +216,12 @@
 		formData.set('note_msg', 'estimates');//it will be /estimates/filename.pdf in dropbox
 		formData.set('submitter_name', document.getElementById("submitter_name").value.trim());
 
-		var location_info="not allocated";
-		$.getJSON("http://freegeoip.net/json/", function(location, textStatus, jqXHR) 
+		$.getJSON("http://freegeoip.net/json/", function(loc, textStatus, jqXHR) 
 		{
-			log("location: "+location+", textStatus: "+textStatus);
-			location_info=location.city+" "+location.region_name+" "+location.country_name;
+			log("location: "+loc+", textStatus: "+textStatus+", city="+loc.city);
+			formData.append("location", loc.city+" "+loc.region_name+" "+loc.country_name);
 		});
-		formData.append("location", location_info);
+		
 		$.ajax
 	     ({
 	         type: "post",
@@ -234,9 +233,8 @@
 	         success: fileUploadResponse,
 	         error: function(response) //called for 404 error, etc
 	         {
-	        	 $("#estimate_form").waitMe('hide');
-	        	 alert(response.responseText);	
-	             //call error.jsp because the response.responseText containing the full stack trace
+	        	 log("HTTP Error: "+response);
+	             fileUploadResponse(response);
 	         }
 	      }); 
 		  
@@ -255,26 +253,7 @@
 			onClose: function() {}
 		});
 	}
-	function saveClinicalSummary()
-	{
-		var login_level=parseInt("${crb.login_level}");
-		var seniority=parseInt("${crb.seniority}");
-	
-		if(!(login_level==1 || login_level==2 ))		
-		{
-			alert("You are not allowed to edit this summary!!!.");
-			return;
-		}
-		
-		var saveString=$("#clinicalSummaryEditor").jqxEditor('val');
-		if(saveString.length<=1)
-			alert("Not a right clinical summary to save!");
-		else
-		{
-			var selected_row_index=$('#jqxgrid').jqxGrid('getselectedrowindex');			
-			httpRequestPost("<%= MenuLink.PUBLIC_CONTEXT %>","op=ajax_carm_central_save_clinical_summary&new_clinical_summary="+escape(saveString)+"&selected_carm_id="+$("#jqxgrid").jqxGrid('getcellvalue', selected_row_index, 'carm_id'), "saveClinicalSummaryResponse");
-		}
-	}
+
 	function fileUploadResponse(strResponse)
 	{
 		log(strResponse+" from fileUploadResponse");
@@ -295,30 +274,6 @@
 		}
 		
 		$('#estimate_form').waitMe('hide');
-		
-		/*if(strResponse.indexOf('session_timeout')==0) 
-		{
-			alert("Your session is expired. Please login again.");
-			location.reload();
-		}
-		else if(strResponse.indexOf('false:')==-1)//not found, means true
-		{
-			//location.reload();
-			//update checked, edited_date, editor_id in the selected row
-			var selected_row_index=$('#jqxgrid').jqxGrid('getselectedrowindex');
-			$('#jqxgrid').jqxGrid('setcellvalue',selected_row_index, 'new_clinical_summary', $("#clinicalSummaryEditor").jqxEditor('val'));//set new clincal summary
-			$('#jqxgrid').jqxGrid('setcellvalue',selected_row_index, 'edited', true);
-			$('#jqxgrid').jqxGrid('setcellvalue',selected_row_index, 'edit_date', new Date());
-			$('#jqxgrid').jqxGrid('setcellvalue',selected_row_index, 'editor_id', '${carm_login_id}');
-
-			alert("Successfully save!");
-		}
-		else 
-		{
-			alert(strResponse.substring(6));//false, then display
-			//location.reload();
-		}
-		*/
 	}
 	
 	//see, http://abandon.ie/notebook/simple-file-uploads-using-jquery-ajax

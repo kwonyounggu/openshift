@@ -56,8 +56,8 @@ public class EstimateRequestsDao
 								
 			log.info(ps.toString());
 			//The following ps statement does not work with bit operation
-			ps.executeUpdate();
-			//c.createStatement().execute(ps.toString());
+			//ps.executeUpdate();
+			c.createStatement().execute(ps.toString());
 		}
 		catch (SQLException e)
 		{
