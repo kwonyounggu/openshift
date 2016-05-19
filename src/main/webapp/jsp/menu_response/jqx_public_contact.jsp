@@ -221,8 +221,9 @@
 		{
 			log("client_place: "+loc+", textStatus: "+textStatus+", city="+loc.city);
 			location_info=loc.city+" "+loc.region_name+" "+loc.country_name;
+			formData.set('client_place', location_info);
 		});
-		formData.set('client_place', location_info);
+		
 		
 		$.ajax
 	     ({
