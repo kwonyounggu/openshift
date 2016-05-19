@@ -283,17 +283,19 @@
 		{
 			$('#submit_success_alert').css('visibility','visible').fadeIn();
 			$('#submit_error_alert').css('visibility','hidden');
+			
+			$('#estimate_form')[0].reset();
 		}
 		else
 		{
 			$('#submit_success_alert').css('visibility','hidden').fadeIn();
 			
 			$('#submit_error_alert').prop('title', "'"+strResponse.replace(/error|:/gi, "")+"'");
-			$('#submit_error_alert').css('visibility','hidden');
+			$('#submit_error_alert').css('visibility','visible');
 		}
 		//display green result 'thank you ...'
-		$("#estimate_form").waitMe('hide');
-		$("#estimate_form").reset();
+		$('#estimate_form').waitMe('hide');
+		
 		/*if(strResponse.indexOf('session_timeout')==0) 
 		{
 			alert("Your session is expired. Please login again.");
