@@ -278,7 +278,7 @@
 	function fileUploadResponse(strResponse)
 	{
 		log(strResponse+" from fileUploadResponse");
-		//if(strResponse.indexOf('Thank you')==-1)
+
 		if(strResponse==="<%= Message.CONTACT_SUCCESS %>")
 		{
 			$('#submit_success_alert').css('visibility','visible').fadeIn();
@@ -288,12 +288,12 @@
 		}
 		else
 		{
-			$('#submit_success_alert').css('visibility','hidden').fadeIn();
+			$('#submit_success_alert').css('visibility','hidden');
 			
 			$('#submit_error_alert').prop('title', "'"+strResponse.replace(/error|:/gi, "")+"'");
-			$('#submit_error_alert').css('visibility','visible');
+			$('#submit_error_alert').css('visibility','visible').fadeIn();
 		}
-		//display green result 'thank you ...'
+		
 		$('#estimate_form').waitMe('hide');
 		
 		/*if(strResponse.indexOf('session_timeout')==0) 
