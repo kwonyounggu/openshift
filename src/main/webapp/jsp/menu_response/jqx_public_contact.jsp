@@ -69,6 +69,18 @@
 		if(typeof FormData == 'undefined')
 			jAlert("<p>Your browser does not support HTML5. Please upgrade your browser with the latest version. Otherwise it won't work properly!</p>", "Warning Message");
 	
+		$.ajax
+		({
+			url: 'http://freegeoip.net/json/',
+			type: 'POST',
+			dataType: 'jsonp',
+			success: function (data) 
+			{
+				log("clinet_place from freegeoip: -"+data.city+" "+data.region_name+" "+data.country_name);
+				$('#client_place').val(data.city+" "+data.region_name+" "+data.country_name);
+				log("clinet_place from input: -"+$('#client_place').val());
+			}
+		});
 		CKEDITOR.replace( 'estimateNoteEditor',
 		{
 			// Define the toolbar groups as it is a more accessible solution.
@@ -230,19 +242,7 @@
 			formData.set('client_place', ip+" "+country_name+" "+city_name);
 		});
 		*/
-		$.ajax({
-
-			url: 'http://freegeoip.net/json/',
-			type: 'POST',
-			dataType: 'jsonp',
-			success: function (data) 
-			{
-				log("clinet_place from freegeoip: "+data.city+" "+data.region_name+" "+data.country_name);
-				$('#client_place').val(data.city+" "+data.region_name+" "+data.country_name);
-				log("clinet_place from input: "+$('#client_place').val());
-			}
-
-			});
+		
 		
 		$.ajax
 	     ({
