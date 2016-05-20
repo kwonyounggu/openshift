@@ -69,6 +69,13 @@
 		if(typeof FormData == 'undefined')
 			jAlert("<p>Your browser does not support HTML5. Please upgrade your browser with the latest version. Otherwise it won't work properly!</p>", "Warning Message");
 	
+		//The following does not work from Google Chrome
+		/*$.getJSON("http://freegeoip.net/json/", function(data) 
+		{
+			var location_info=data.city+" "+data.region_name+" "+data.country_name;
+		});
+		*/
+		//see https://rochcass.wordpress.com/tag/freegeoip-net-post/
 		$.ajax
 		({
 			url: 'http://freegeoip.net/json/',
@@ -76,9 +83,8 @@
 			dataType: 'jsonp',
 			success: function (data) 
 			{
-				log("clinet_place from freegeoip: -"+data.city+" "+data.region_name+" "+data.country_name);
+				//put the client location in a hidden input field
 				$('#client_place').val(data.city+" "+data.region_name+" "+data.country_name);
-				log("clinet_place from input: -"+$('#client_place').val());
 			}
 		});
 		CKEDITOR.replace( 'estimateNoteEditor',
@@ -229,19 +235,7 @@
 		formData.set('submitter_name', document.getElementById("submitter_name").value.trim());
 
 		//var location_info="not appended";
-		/*$.getJSON("http://freegeoip.net/json/", function(data) 
-		{
-			log("client_place: "+data+", textStatus: "+textStatus+", city="+data.city);
-			//location_info=loc.city+" "+loc.region_name+" "+loc.country_name;
-			//formData.set('client_place', data.city+" "+data.region_name+" "+data.country_name);
-			
-			var ip = data["ip"];
-			var country_name = data["country_name"];
-			var city_name = data["city"];
-			
-			formData.set('client_place', ip+" "+country_name+" "+city_name);
-		});
-		*/
+		
 		
 		
 		$.ajax
@@ -333,18 +327,22 @@
    <tr>
     <td style='background-color: #555762; color: #ffffff; width: 50%; vertical-align: top;'>
     	<ul style='font-size: 12px'>
-    		<h3 style='color: #f9d540'>Contact[Under construction]</h3>
+    		<h3 style='color: #f9d540'>Contact</h3>
     		<br/>
     		If you are interested in growing your business and building a positive brand expirience for your customers/patients, then we should talk:
     		<br/><br/>
-    		<li>By Phone: <%=AuthData.company_phone %>
-    			<br/>
-    			- from 9:00am to 5:00pm (EST)
-    		</li>
+    		<li>By Email: <a href="mailto:<%=AuthData.mycompany_email_address%>?Subject=Hello WebMonster.CA" style="color:inherit;text-decoration: none" target="_top"><%=AuthData.mycompany_email_address%></a></li>
+    		
     		<li>By Skype: <%=AuthData.skype_id %>
     			<br />
     			- appointment required
     		</li>
+    		
+    		<li>By Phone: <%=AuthData.company_phone %>
+    			<br/>
+    			- from 9:00am to 5:00pm (EST)
+    		</li>
+    		
     		<li>By Visiting primary place: 
     			<br/>
     			- <%=AuthData.company_address %>			
@@ -357,7 +355,7 @@
     			<br/>
     			- appointment required
     		</li>
-    		<li>By Email: <a href="mailto:<%=AuthData.mycompany_email_address%>?Subject=Hello WebMonster.CA" style="color:inherit;text-decoration: none" target="_top"><%=AuthData.mycompany_email_address%></a></li>
+    		
     		<li>What did you have in mind? Suggestions to include: competitor's websites, designs that you like, some initial ideas for your brand, what kind of niches you'd like to explore, and anything to get the conversation going!</li>
     		<li style='list-style-type: none; height: 30%' />
     	</ul>
@@ -369,7 +367,7 @@
 			   	<table  id='estimate_table' style='width: 100%; border-spacing: 4px; padding: 0px 0px 10px 0px;'>
 			   		<tr>
 			   			<td colspan='2' style='text-align: left;'>
-			   				<h3 style='color: #f9d548;'>Estimate(Under construction now)</h3>
+			   				<h3 style='color: #f9d548;'>Estimate</h3>
 			   				<span style='font-size: .95em; color: #8fc161;'>(*: required)</span>
 			   				<span style='font-size: 11px; color: #bad5fe;'>Payment is not required unless you are satisfied.</span>
 			   			</td>
