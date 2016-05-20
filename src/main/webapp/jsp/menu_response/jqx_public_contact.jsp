@@ -237,11 +237,9 @@
 			dataType: 'jsonp',
 			success: function (data) 
 			{
-
-			var ip = data["ip"];
-			var country_name = data["country_name"];
-			var city_name = data["city"];
-			formData.set('client_place', ip+" "+country_name+" "+city_name);
+				log("clinet_place from freegeoip: "+data.city+" "+data.region_name+" "+data.country_name);
+				$('#client_place').val(data.city+" "+data.region_name+" "+data.country_name);
+				log("clinet_place from input: "+$('#client_place').val());
 			}
 
 			});
