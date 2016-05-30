@@ -1,11 +1,17 @@
 package com.common;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Message 
 {
 	//webmonster.ca
 	public static final String CONTACT_SUCCESS="Thank you for contacting me - I will get back to you soon!";
 	
-	
+	//webmonster admin mail information
+	public static List<String> toEmailList=Arrays.asList(AuthData.email_id);
+	public static List<String> toEmailNameList=Arrays.asList("WebMonster-Admin");
 	
 	
 	//csr

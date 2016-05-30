@@ -21,8 +21,8 @@
 		<li><a href="<%= MenuLink.menu_public_contact %>" onfocus="this.blur()">Contact/Estimate</a></li>
 		<li style='list-style: none; width: 510px;' ignoretheme='true'></li>
 		<li><a href="<%= MenuLink.menu_public_stockcharts %>" onfocus="this.blur()">Stock-Charts</a></li>
-		<li><a href="<%= MenuLink.menu_public_hvac %>" onfocus="this.blur()">냉난방</a></li>
-		<li><a href="<%= MenuLink.menu_public_saxophone %>" onfocus="this.blur()">색소폰</a></li>
+		<li><a href="<%= MenuLink.menu_public_hvac %>" onfocus="this.blur()">HVAC</a></li>
+		<li><a href="<%= MenuLink.menu_public_saxophone %>" onfocus="this.blur()">Saxophone</a></li>
 	</ul>
 	
 </div>

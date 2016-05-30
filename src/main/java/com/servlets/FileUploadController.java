@@ -3,7 +3,7 @@ package com.servlets;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Enumeration;
 
@@ -25,6 +25,7 @@ import javax.sql.DataSource;
 
 import com.beans.EstimateRequestsBean;
 import com.beans.FileUploadedToDropboxBean;
+import com.common.AuthData;
 import com.common.Message;
 import com.common.UAgentInfo;
 import com.common.Utils;
@@ -37,6 +38,7 @@ import com.dropbox.core.v2.DbxClientV2;
 import com.dropbox.core.v2.files.FileMetadata;
 import com.dropbox.core.v2.files.UploadErrorException;
 import com.dropbox.core.v2.files.WriteMode;
+import com.service.MailService;
 
 /**
  * Servlet implementation class FileUploadController
@@ -130,6 +132,7 @@ public class FileUploadController extends HttpServlet
 				if(filePart.getSize()>0)
 				{
 					eb.setFileSeqId(fb.getFileSeqId());
+					eb.setFb(fb); //just for an additional information
 				}
 				
 				eb.setOs(os);
@@ -138,6 +141,8 @@ public class FileUploadController extends HttpServlet
 				
 				EstimateRequestsDao eDao=new EstimateRequestsDao(_ds);
 				eDao.create(eb);
+				
+				new MailService(AuthData.email_id, Message.toEmailList, Message.toEmailNameList, AuthData.smtp, "Contact/Estimate - Success", eb.toString()+"\n\n"+callResponse,"");
 			}
 
 		}
@@ -146,11 +151,12 @@ public class FileUploadController extends HttpServlet
 			log.severe(e.getMessage());
 			callResponse="ERROR: "+e.getMessage();
 			
-			//email to me for notification
+			new MailService(AuthData.email_id, Message.toEmailList, Message.toEmailNameList, AuthData.smtp, "Contact/Estimate - Failure", callResponse,"");
 			
 		}
 		finally //always return with either ERROR or SUCCESS
 		{
+			
 			response.getWriter().print(callResponse);
 		}
 	}

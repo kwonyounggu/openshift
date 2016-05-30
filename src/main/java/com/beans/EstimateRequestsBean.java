@@ -20,6 +20,17 @@ public class EstimateRequestsBean implements Serializable
 	private String remotePlace="";
 	private Timestamp submittedTime=null;
 	
+	//just for the extra information
+	private FileUploadedToDropboxBean fb=null;
+	
+	public FileUploadedToDropboxBean getFb()
+	{
+		return fb;
+	}
+	public void setFb(FileUploadedToDropboxBean fb)
+	{
+		this.fb = fb;
+	}
 	public int getEstimateSeqId()
 	{
 		return estimateSeqId;
@@ -99,5 +110,18 @@ public class EstimateRequestsBean implements Serializable
 	public void setSubmittedTime(Timestamp submittedTime)
 	{
 		this.submittedTime = submittedTime;
+	}
+	public String toString()
+	{
+
+		return  "Submitter Name: " + submitterName +"\n"+
+				"Submitter Phone: " + submitterPhone +"\n"+
+				"Submitter E-Mail: " + submitterEmail +"\n"+
+				"Submitter Note: \n" + submitterNote +"\n"+
+				"Selected Animal: " + selectAnimal +"\n"+
+				"File Path: "+ fb.toString()+"\n"+
+				"OS: " + (os==0? "PC" : (os==1? "TABLET" : "MOBILE")) +"\n"+
+				"Remote Place: " + remotePlace +"\n"+
+				"Submitter Time: " +submittedTime;
 	}
 }

@@ -49,4 +49,12 @@ public class FileUploadedToDropboxBean implements Serializable
 	{
 		return serialVersionUID;
 	}
+	public String toString()
+	{		
+		return "File SeqID: "+fileSeqId+"\n"+
+		  	   "DropBox File Path: "+dropboxFilePath+"\n"+
+		  	   "File Name Submitted: "+fileNameSubmitted+"\n"+
+		  	   "File Size (Kb): "+fileSize;
+	}
 }
+	

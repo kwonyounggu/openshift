@@ -1,5 +1,5 @@
 package com.servlets;
-
+//Note: this servlet is not used for this app, May 24,, 2016
 import javax.servlet.RequestDispatcher;
 import javax.servlet.Servlet;
 import javax.servlet.ServletConfig;
