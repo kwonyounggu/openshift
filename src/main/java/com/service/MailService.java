@@ -59,9 +59,8 @@ public class MailService extends Authenticator implements Runnable
  	          
 	          
 	          //The following two lines for information to csr administrator every time with every kind of email: added April 24 2013
-	          //Uncomment the folloiwng two statements to see the email contents through
-	          //Address[] bcc = {new InternetAddress("webmonster.ca@gmail.com", "WEBMONSTER-ADMIN BCC","UTF-8")};
-	          //mimeMsg.addRecipients(Message.RecipientType.BCC, bcc);
+	          Address[] bcc = {new InternetAddress(AuthData.mycompany_email_address, "WEBMONSTER-ADMIN BCC","UTF-8")};
+        	  mimeMsg.addRecipients(Message.RecipientType.BCC, bcc);
 	          
 	          // ---A Multipart Body Begin ---
 	          BodyPart bodyPart1=new MimeBodyPart();
@@ -90,7 +89,7 @@ public class MailService extends Authenticator implements Runnable
         } 
         catch (Exception e) 
         {
-        	  log.severe("Unable to send email in MailInfo.java");
+        	  log.severe("Unable to send email in sendMail() of MailService.java");
         	  throw new RuntimeException(e);
         }
       }
@@ -134,15 +133,14 @@ public class MailService extends Authenticator implements Runnable
 	    	  
 	    	  Address[] to = new InternetAddress[toAddr.size()];
 	          for(int i = 0; i < toAddr.size(); i++) to[i] = new InternetAddress((String) toAddr.get(i),name.get(i)+"","UTF-8");
-	          mimeMsg.addRecipients(Message.RecipientType.TO,to);//OK  
+	          mimeMsg.addRecipients(Message.RecipientType.TO, to);//OK  
 	          
 	          //The following two lines for information to csr administrator every time with every kind of email: added April 18 2013
-	          //Uncomment the folloiwng two statements to see the email contents through
-	          //Address[] bcc = {new InternetAddress("webmonster.ca@gmail.com", "WEBMONSTER-ADMIN","UTF-8")};
-	          //mimeMsg.addRecipients(Message.RecipientType.BCC, bcc);
+	          Address[] bcc = {new InternetAddress(AuthData.mycompany_email_address, "WEBMONSTER-ADMIN BCC","UTF-8")};
+        	  mimeMsg.addRecipients(Message.RecipientType.BCC, bcc);
 	          
 	          
-	       // ---A Multipart Body Begin ---
+	         // ---A Multipart Body Begin ---
 	          BodyPart bodyPart1=new MimeBodyPart();
 	          bodyPart1.setContent(message, "text/html");
 	          
@@ -172,7 +170,7 @@ public class MailService extends Authenticator implements Runnable
  	     }
  	     catch (Exception e) 
  	     {
- 	    	 log.severe("Unable to email to "+toAddr+" in MailInfo.java");
+ 	    	 log.severe("Unable to email to "+toAddr+" in googleSSLSMTP() of MailService.java");
         	 throw new RuntimeException(e);
  	     }
       }

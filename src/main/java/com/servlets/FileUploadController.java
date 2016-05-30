@@ -142,7 +142,8 @@ public class FileUploadController extends HttpServlet
 				EstimateRequestsDao eDao=new EstimateRequestsDao(_ds);
 				eDao.create(eb);
 				
-				new MailService(AuthData.email_id, Message.toEmailList, Message.toEmailNameList, AuthData.smtp, "Contact/Estimate - Success", eb.toString()+"\n\n"+callResponse,"");
+				email("", "", "Contact/Estimate - Success", eb.toString()+"\n\n"+callResponse);
+				//email("", "", "Contact/Estimate - Success", eb.toString()+"\n\n"+callResponse);
 			}
 
 		}
@@ -151,8 +152,7 @@ public class FileUploadController extends HttpServlet
 			log.severe(e.getMessage());
 			callResponse="ERROR: "+e.getMessage();
 			
-			new MailService(AuthData.email_id, Message.toEmailList, Message.toEmailNameList, AuthData.smtp, "Contact/Estimate - Failure", callResponse,"");
-			
+			email("", "", "Contact/Estimate - Failure", callResponse);		
 		}
 		finally //always return with either ERROR or SUCCESS
 		{
@@ -229,5 +229,17 @@ public class FileUploadController extends HttpServlet
 
 		return Utils.getFirstCapitalString(submitterName)+"_"+Utils.getFirstCapitalString(initialFileName) + "_"+Utils.getDateTimeForFileName()+fileExt;
 	}
+	private String email(String recipientEmail, String recipientName, String subject, String msgBody)
+	{
+		Message.toEmailList.clear();
+		Message.toEmailNameList.clear();
+		if(!recipientEmail.equals(""))
+		{
+			Message.toEmailList.add(recipientEmail);
+			Message.toEmailNameList.add(recipientName);
+		}
+		new MailService(AuthData.email_id, Message.toEmailList, Message.toEmailNameList, AuthData.smtp, subject, msgBody,"");
 
+		return "";
+	}
 }
