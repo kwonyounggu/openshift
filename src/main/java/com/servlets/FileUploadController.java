@@ -241,8 +241,8 @@ public class FileUploadController extends HttpServlet
 		try
 		{
 			log.info("email(String recipientEmail, String recipientName, String subject, String msgBody) is called!");
-			Message.toEmailList.clear();
-			Message.toEmailNameList.clear();
+			//Message.toEmailList.clear();
+			//Message.toEmailNameList.clear();
 			if(recipientEmail!=null)
 			{
 				Message.toEmailList.add(recipientEmail);

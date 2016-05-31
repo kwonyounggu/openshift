@@ -98,7 +98,7 @@ public class MailService extends Authenticator implements Runnable
       {
     	  try
     	  {
-    		  log.info("Entry point before sending");
+    		  log.info("Entry point before sending email");
 	    	  Security.addProvider(new com.sun.net.ssl.internal.ssl.Provider());  
 	    	   
 	    	  Properties props = new Properties();  
