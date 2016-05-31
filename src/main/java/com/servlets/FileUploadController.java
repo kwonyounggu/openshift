@@ -149,7 +149,7 @@ public class FileUploadController extends HttpServlet
 		}
 		catch(Exception e)
 		{	
-			log.severe(e.getMessage());
+			log.severe(e.getMessage()+", written in the catch block (Exception e)");
 			callResponse="ERROR: "+e.getMessage();
 			
 			email("", "", "Contact/Estimate - Failure", callResponse);		
@@ -231,6 +231,7 @@ public class FileUploadController extends HttpServlet
 	}
 	private String email(String recipientEmail, String recipientName, String subject, String msgBody)
 	{
+		log.info("email(String recipientEmail, String recipientName, String subject, String msgBody) is called!");
 		Message.toEmailList.clear();
 		Message.toEmailNameList.clear();
 		if(!recipientEmail.equals(""))
