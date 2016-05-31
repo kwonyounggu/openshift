@@ -142,7 +142,7 @@ public class FileUploadController extends HttpServlet
 				EstimateRequestsDao eDao=new EstimateRequestsDao(_ds);
 				eDao.create(eb);
 				
-				email("", "", "Contact/Estimate - Success", eb.toString()+"\n\n"+callResponse);
+				email(null, null, "Contact/Estimate - Success", eb.toString()+"\n\n"+callResponse);
 				//email("", "", "Contact/Estimate - Success", eb.toString()+"\n\n"+callResponse);
 			}
 
@@ -154,7 +154,7 @@ public class FileUploadController extends HttpServlet
 			
 			try
 			{
-				email("", "", "Contact/Estimate - Failure", callResponse);	
+				email(null, null, "Contact/Estimate - Failure", callResponse);	
 			}
 			catch(Exception e2)
 			{
@@ -243,7 +243,7 @@ public class FileUploadController extends HttpServlet
 			log.info("email(String recipientEmail, String recipientName, String subject, String msgBody) is called!");
 			Message.toEmailList.clear();
 			Message.toEmailNameList.clear();
-			if(recipientEmail.length()!=0)
+			if(recipientEmail!=null)
 			{
 				Message.toEmailList.add(recipientEmail);
 				Message.toEmailNameList.add(recipientName);
