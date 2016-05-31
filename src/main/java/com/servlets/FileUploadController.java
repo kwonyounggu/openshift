@@ -142,17 +142,24 @@ public class FileUploadController extends HttpServlet
 				EstimateRequestsDao eDao=new EstimateRequestsDao(_ds);
 				eDao.create(eb);
 				
-				//email("", "", "Contact/Estimate - Success", eb.toString()+"\n\n"+callResponse);
+				email("", "", "Contact/Estimate - Success", eb.toString()+"\n\n"+callResponse);
 				//email("", "", "Contact/Estimate - Success", eb.toString()+"\n\n"+callResponse);
 			}
 
 		}
 		catch(Exception e)
 		{	
-			log.severe(e.getMessage()+", written in the catch block (Exception e)");
+			log.severe(e.getMessage()+", written in the catch block (Exception e) - 1st level");
 			callResponse="ERROR: "+e.getMessage();
 			
-			email("", "", "Contact/Estimate - Failure", callResponse);		
+			try
+			{
+				email("", "", "Contact/Estimate - Failure", callResponse);	
+			}
+			catch(Exception e2)
+			{
+				log.severe(e2.getMessage()+", written in the catch block (Exception e) - 2nd level");
+			}
 		}
 		finally //always return with either ERROR or SUCCESS
 		{
@@ -229,18 +236,25 @@ public class FileUploadController extends HttpServlet
 
 		return Utils.getFirstCapitalString(submitterName)+"_"+Utils.getFirstCapitalString(initialFileName) + "_"+Utils.getDateTimeForFileName()+fileExt;
 	}
-	private String email(String recipientEmail, String recipientName, String subject, String msgBody)
+	private String email(String recipientEmail, String recipientName, String subject, String msgBody) throws Exception
 	{
-		log.info("email(String recipientEmail, String recipientName, String subject, String msgBody) is called!");
-		Message.toEmailList.clear();
-		Message.toEmailNameList.clear();
-		if(!recipientEmail.equals(""))
+		try
 		{
-			Message.toEmailList.add(recipientEmail);
-			Message.toEmailNameList.add(recipientName);
+			log.info("email(String recipientEmail, String recipientName, String subject, String msgBody) is called!");
+			Message.toEmailList.clear();
+			Message.toEmailNameList.clear();
+			if(recipientEmail.length()!=0)
+			{
+				Message.toEmailList.add(recipientEmail);
+				Message.toEmailNameList.add(recipientName);
+			}
+			new MailService(AuthData.email_id, Message.toEmailList, Message.toEmailNameList, AuthData.smtp, subject, msgBody,"");
 		}
-		new MailService(AuthData.email_id, Message.toEmailList, Message.toEmailNameList, AuthData.smtp, subject, msgBody,"");
-
-		return "";
+		catch(Exception e)
+		{
+			log.severe(e.getMessage());
+			throw new Exception(e);
+		}
+		return "E-Mail SUCCESS";
 	}
 }
