@@ -120,7 +120,7 @@ public class EstimateRequestsBean implements Serializable
 					"<strong>Submitter E-Mail</strong>: " + submitterEmail +"<br/>"+
 					"<strong>Submitter Note</strong>: <p>" + submitterNote +"</p>"+
 					"<strong>Selected Animal</strong>: "+ selectAnimal +"<br/>"+
-					"<strong>File Path</strong>: <a href='https://www.dropbox.com/home/Apps/webmonster"+ fb.toString()+"'>"+fb.toString()+"</a><br/>"+
+					"<strong>File Path</strong>: <a href='https://www.dropbox.com/home/Apps/webmonster"+ fb.getDropboxFilePath()+"'>"+fb.getDropboxFilePath()+"</a><br/>"+
 					"<strong>OS</strong>: " + (os==0? "PC" : (os==1? "TABLET" : "MOBILE")) +"<br/>"+
 					"<strong>Remote Place</strong>: " + remotePlace +"<br/>"+
 					"<strong>Submitter Time</strong>: " +submittedTime+

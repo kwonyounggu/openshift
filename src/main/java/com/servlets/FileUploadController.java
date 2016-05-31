@@ -240,7 +240,7 @@ public class FileUploadController extends HttpServlet
 	{
 		try
 		{
-			log.info("email(String recipientEmail, String recipientName, String subject, String msgBody) is called!");
+			
 			Message.toEmailList.clear();
 			Message.toEmailNameList.clear();
 			if(recipientEmail!=null)
@@ -248,6 +248,7 @@ public class FileUploadController extends HttpServlet
 				Message.toEmailList.add(recipientEmail);
 				Message.toEmailNameList.add(recipientName);
 			}
+			log.info("Message.toEmailList.size()="+Message.toEmailList.size());
 			new MailService(AuthData.email_id, Message.toEmailList, Message.toEmailNameList, AuthData.smtp, subject, msgBody,"");
 		}
 		catch(Exception e)
