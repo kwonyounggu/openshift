@@ -142,7 +142,7 @@ public class FileUploadController extends HttpServlet
 				EstimateRequestsDao eDao=new EstimateRequestsDao(_ds);
 				eDao.create(eb);
 				
-				email("", "", "Contact/Estimate - Success", eb.toString()+"\n\n"+callResponse);
+				//email("", "", "Contact/Estimate - Success", eb.toString()+"\n\n"+callResponse);
 				//email("", "", "Contact/Estimate - Success", eb.toString()+"\n\n"+callResponse);
 			}
 
