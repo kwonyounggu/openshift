@@ -114,14 +114,21 @@ public class EstimateRequestsBean implements Serializable
 	public String toString()
 	{
 
-		return  "Submitter Name: " + submitterName +"\n"+
-				"Submitter Phone: " + submitterPhone +"\n"+
-				"Submitter E-Mail: " + submitterEmail +"\n"+
-				"Submitter Note: \n" + submitterNote +"\n"+
-				"Selected Animal: " + selectAnimal +"\n"+
-				"File Path: "+ fb.toString()+"\n"+
-				"OS: " + (os==0? "PC" : (os==1? "TABLET" : "MOBILE")) +"\n"+
-				"Remote Place: " + remotePlace +"\n"+
-				"Submitter Time: " +submittedTime;
+		return  "<p>"+
+					"<strong>Submitter Name</strong>: " + submitterName +"<br/>"+
+					"<strong>Submitter Phone</strong>: " + submitterPhone +"<br/>"+
+					"<strong>Submitter E-Mail</strong>: " + submitterEmail +"<br/>"+
+					"<strong>Submitter Note</strong>: <p>" + submitterNote +"</p>"+
+					"<strong>Selected Animal</strong>: "+ selectAnimal +"<br/>"+
+					"<strong>File Path</strong>: <a href='https://www.dropbox.com/home/Apps/webmonster"+ fb.toString()+"'>"+fb.toString()+"</a><br/>"+
+					"<strong>OS</strong>: " + (os==0? "PC" : (os==1? "TABLET" : "MOBILE")) +"<br/>"+
+					"<strong>Remote Place</strong>: " + remotePlace +"<br/>"+
+					"<strong>Submitter Time</strong>: " +submittedTime+
+				"</p>";
+	}
+	public String toClient()
+	{
+
+		return  "<p>Thank you for contacting me - I will get back to you soon!<br/><br/>Sincerily,<br/>John in www.webmonster.ca</p>";
 	}
 }

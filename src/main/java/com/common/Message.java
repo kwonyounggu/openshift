@@ -10,8 +10,8 @@ public class Message
 	public static final String CONTACT_SUCCESS="Thank you for contacting me - I will get back to you soon!";
 	
 	//webmonster admin mail information in default
-	public static List<String> toEmailList=Arrays.asList(AuthData.mycompany_email_address);
-	public static List<String> toEmailNameList=Arrays.asList("WebMonster-Admin");
+	public static List<String> toEmailList=new ArrayList<String>();
+	public static List<String> toEmailNameList=new ArrayList<String>();
 	
 	
 	//csr
