@@ -4,6 +4,7 @@
 <%@ page isELIgnored ="false" %>
 
 <table style='width: 90%; padding-bottom: 20px; table-layout: fixed'>
+<tbody>
   <tr>
     <td style='background-color: #555762; color: #ffffff; width: 50%'>
     	<ul style='font-size: 14px'><h3 style='color: #f9d548;'>What to provide</h3>
@@ -38,7 +39,7 @@
 		 			</ul>
 		 		</div>
 		 		<div style="float:right;width:20%">
-			 		<a href="mailto:<%=AuthData.mycompany_email_address%>?Subject=Hello Younggu KWON" target="_top"><img src="images/YoungguKwon.png" width="135" height="146" alt="Younggu KWON" border="0"/></a>
+			 		<a href="mailto:<%=AuthData.mycompany_email_address%>?Subject=Hello John KWON" target="_top"><img src="images/JohnKwon.png" width="135" height="146" alt="John KWON" border="0"/></a>
 			 	</div>
 			 </div>
 	
@@ -148,6 +149,7 @@
 	</div><!-- Resume -->	
 	</td>
   <tr>
+  </tbody>
 </table>
 
 
