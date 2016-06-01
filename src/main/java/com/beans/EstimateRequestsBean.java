@@ -129,6 +129,6 @@ public class EstimateRequestsBean implements Serializable
 	public String toClient()
 	{
 
-		return  "<p>Thank you for contacting me - I will get back to you soon!<br/><br/>Sincerily,<br/>John in www.webmonster.ca</p>";
+		return  "<p>Thank you for contacting me - I will get back to you soon!<br/><br/>Sincerily,<br/>John KWON, Freelance App Developer in www.webmonster.ca</p>";
 	}
 }
