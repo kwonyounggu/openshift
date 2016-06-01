@@ -149,6 +149,9 @@
 	</div><!-- Resume -->	
 	</td>
   <tr>
+  <tr>
+	<td colspan='3'></td>
+  <tr>
   </tbody>
 </table>
 
