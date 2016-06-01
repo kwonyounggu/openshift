@@ -4,7 +4,6 @@
 <%@ page isELIgnored ="false" %>
 
 <table style='width: 90%; padding-bottom: 20px; table-layout: fixed'>
-<tbody>
   <tr>
     <td style='background-color: #555762; color: #ffffff; width: 50%'>
     	<ul style='font-size: 14px'><h3 style='color: #f9d548;'>What to provide</h3>
@@ -27,9 +26,11 @@
     	</ul>
     </td>
   </tr>
-  <tr style='height: 20px'><td colspan='3'></td></tr>
-  <tr>
-	<td colspan='3' style='border: 1px solid gray'>
+  <tr style="height: 20px"><td colspan="3"></td></tr>
+</table>
+<table style="width: 90%; padding-bottom: 20px; table-layout: fixed">
+<tr>
+	<td style="border: 1px solid gray">
 		<div style="width:100%; padding:5px 20px 5px 20px;text-align:left;"><!-- Resume -->	
 		 	<div style="width:100%;"><!-- Objective and Profile in depth 1 -->
 		 		<div style="float:left; width:80%">
@@ -149,10 +150,6 @@
 	</div><!-- Resume -->	
 	</td>
   <tr>
-  <tr>
-	<td colspan='3'></td>
-  <tr>
-  </tbody>
 </table>
 
 
