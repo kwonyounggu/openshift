@@ -25,14 +25,4 @@
 		<div><font size="4" color="#ffda48">Freelance App Developer</font><br/><font size="2" color="#bad5fe"><a href="mailto:<%=AuthData.mycompany_email_address%>?Subject=Hello John KWON" style="color:inherit;text-decoration: none" target="_top">John KWON</a></font></div>
 	</div>
 </div>		
-
-
-<%-- <div id="jqxMenu" style="width:100%; visibility: hidden; margin-left: 0px;">
-	<ul>
-	    <li><a href="<%= MenuLink.home %>" onfocus="this.blur()">Home</a></li>				
-			
-			<li style='list-style: none; width: 100%; '  ignoretheme='true'></li>	
-	</ul>
-	
-</div> --%>
  
