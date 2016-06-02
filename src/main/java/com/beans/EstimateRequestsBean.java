@@ -128,7 +128,14 @@ public class EstimateRequestsBean implements Serializable
 	}
 	public String toClient()
 	{
-
-		return  "<p>Thank you for contacting me - I will get back to you soon!<br/><br/>Sincerily,<br/>John KWON, Freelance App Developer in www.webmonster.ca</p>";
+		return
+				"<p>"+
+				"Hi "+submitterName+",<br/><br/>"+
+				"Thank you for stopping by the WebMonster Freelance App Developer website and submitting your estimate information.<br/><br/>"+
+				"I will get back to you as soon as possible!<br/><br/>"+
+				"Sincerely,<br/>John KWON,<br/>"+
+				"Freelance App Developer,<br/>"+
+				"<a href='http://www.webmonster.ca'>www.webmonster.ca</a>"+
+				"</p>";
 	}
 }
