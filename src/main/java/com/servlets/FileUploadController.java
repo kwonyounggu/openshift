@@ -202,13 +202,14 @@ public class FileUploadController extends HttpServlet
 									                 .uploadAndFinish(part.getInputStream());
 
              log.info(metaData.toStringMultiline());
-             //fb.setDropboxFilePath(dropboxPath);
+             fb.setDropboxFilePath("https://www.dropbox.com/home/Apps/webmonster/estimates?preview="+metaData.getName());
              fb.setFileSize(Math.round(part.getSize()/1000));
              
-             
-             SharedLinkMetadata sharedData=dbxClient.sharing().createSharedLinkWithSettings(metaData.getPathLower());
-             fb.setDropboxFilePath(sharedData.getUrl());
-             log.info(sharedData.toStringMultiline());
+             //Uncomment if you need. June 2nd, 2016
+             //The followings such as setting to share and its link are working when you want to send a shared link to people
+             //SharedLinkMetadata sharedData=dbxClient.sharing().createSharedLinkWithSettings(metaData.getPathLower());
+             //fb.setDropboxFilePath(sharedData.getUrl());
+             //log.info(sharedData.toStringMultiline());
              return fb;
         } 
         catch (UploadErrorException e) 

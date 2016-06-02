@@ -113,14 +113,14 @@ public class EstimateRequestsBean implements Serializable
 	}
 	public String toString()
 	{
-
+		//https://www.dropbox.com/home/Apps/webmonster/estimates?preview=Younggu_kwon_Unchained_melody___%EC%82%AC%EB%9E%91%EA%B3%BC%EC%98%81%ED%98%BCost_(alto)_2016_06_02_11_27_44.enc
 		return  "<p>"+
 					"<strong>Submitter Name</strong>: " + submitterName +"<br/>"+
 					"<strong>Submitter Phone</strong>: " + submitterPhone +"<br/>"+
 					"<strong>Submitter E-Mail</strong>: " + submitterEmail +"<br/>"+
 					"<strong>Submitter Note</strong>: <p>" + submitterNote +"</p>"+
 					"<strong>Selected Animal</strong>: "+ selectAnimal +"<br/>"+
-					"<strong>File Path</strong>: <a href='https://www.dropbox.com/home/Apps/webmonster"+ fb.getDropboxFilePath()+"'>"+fb.getDropboxFilePath()+"</a><br/>"+
+					"<strong>File Path</strong>: <a href='"+ fb.getDropboxFilePath()+"'>"+fb.getDropboxFilePath()+"</a><br/>"+
 					"<strong>OS</strong>: " + (os==0? "PC" : (os==1? "TABLET" : "MOBILE")) +"<br/>"+
 					"<strong>Remote Place</strong>: " + remotePlace +"<br/>"+
 					"<strong>Submitter Time</strong>: " +submittedTime+
