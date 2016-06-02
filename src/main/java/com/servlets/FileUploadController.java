@@ -38,6 +38,7 @@ import com.dropbox.core.v2.DbxClientV2;
 import com.dropbox.core.v2.files.FileMetadata;
 import com.dropbox.core.v2.files.UploadErrorException;
 import com.dropbox.core.v2.files.WriteMode;
+import com.dropbox.core.v2.sharing.SharedLinkMetadata;
 import com.service.MailService;
 
 /**
@@ -201,11 +202,13 @@ public class FileUploadController extends HttpServlet
 									                 .uploadAndFinish(part.getInputStream());
 
              log.info(metaData.toStringMultiline());
-             fb.setDropboxFilePath(dropboxPath);
+             //fb.setDropboxFilePath(dropboxPath);
              fb.setFileSize(Math.round(part.getSize()/1000));
              
              
-             dbxClient.sharing().createSharedLinkWithSettings(metaData.getPathLower());
+             SharedLinkMetadata sharedData=dbxClient.sharing().createSharedLinkWithSettings(metaData.getPathLower());
+             fb.setDropboxFilePath(sharedData.getUrl());
+             log.info(sharedData.toStringMultiline());
              return fb;
         } 
         catch (UploadErrorException e) 
