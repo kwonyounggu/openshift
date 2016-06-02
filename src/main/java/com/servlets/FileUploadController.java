@@ -203,6 +203,9 @@ public class FileUploadController extends HttpServlet
              log.info(metaData.toStringMultiline());
              fb.setDropboxFilePath(dropboxPath);
              fb.setFileSize(Math.round(part.getSize()/1000));
+             
+             
+             dbxClient.sharing().createSharedLinkWithSettings(metaData.getPathLower());
              return fb;
         } 
         catch (UploadErrorException e) 
