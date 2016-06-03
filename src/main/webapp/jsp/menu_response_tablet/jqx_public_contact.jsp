@@ -221,6 +221,11 @@
 		{
 			return $("#animal_3").is(":checked");
 		}, "Please answer correctly");
+		//For tablet
+		$("#submitButton").click(function()
+		{
+	        $("#estimate_form").valid();
+	    });
 	
 	});//$(document).ready
 
@@ -429,7 +434,8 @@
 			   		</tr>
 					<tr>
 					    <td colspan='2' >
-							<input type='submit' value='Submit' id='submitButton' />
+<!-- 							<input type='submit' value='Submit' id='submitButton' /> -->
+							<input type='text' value='' id='submitButton' />
 							<input type='hidden' id='client_place' name='client_place' value='toronto'/>
 						</td>
 					</tr>
