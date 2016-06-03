@@ -3,15 +3,6 @@
 
 <%@ page import="java.util.*" %>
 
-<script type="text/javascript">
-     $(document).ready(function () {
-
-        $("#jqxMenu").jqxMenu({ width: 'auto', height: '30px', autoOpen: false, autoCloseOnMouseLeave: false, showTopLevelArrows: true, 
-        						theme: 'fresh'
-        					  });
-        $("#jqxMenu").css('visibility', 'visible');               
-    }); 
-</script>
 <div style="width:100%;height:80px;position:relative;">
 	<div style="position:absolute; z-index:1;width:100%;">
 		<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0" width="1024" height="80">

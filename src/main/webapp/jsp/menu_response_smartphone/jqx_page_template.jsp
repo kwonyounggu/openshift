@@ -1,36 +1,44 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<%@ page import="com.common.*" %>
 <%@ page import="java.util.*" %>
 <%@ page import="java.text.*" %>
 <%@ page isELIgnored ="false" %>
-<%@ page import="com.common.*" %>
-
 <!doctype html>
 <html>
 <head>
-<title>WebMonster-S</title>
+<title>WebMonster</title>
+<meta charset="utf-8">
 <META name=author content="Younggu Kwon">
 <META name=email content="<%=AuthData.mycompany_email_address%>">
-<META name=description content="for Smartphone">
 
 <link rel="SHORTCUT ICON" href="ico/favicon.ico" />
 
 <link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/waitMe.css" />
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="https://jqwidgets.com/jquery-widgets-demo/jqwidgets/styles/jqx.base.css" />
+<link rel="stylesheet" type="text/css" href="https://jqwidgets.com/jquery-widgets-demo/jqwidgets/styles/jqx.metro.css" />
+<link rel="stylesheet" type="text/css" href="https://jqwidgets.com/jquery-widgets-demo/jqwidgets/styles/jqx.energyblue.css" />
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/css/tooltipster.min.css" />
 
 
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://jqwidgets.com/jquery-widgets-demo/jqwidgets/jqx-all.js"></script>
-<link rel="stylesheet" type="text/css" href="https://jqwidgets.com/jquery-widgets-demo/jqwidgets/styles/jqx.base.css" />    
-<link rel="stylesheet" type="text/css" href="https://jqwidgets.com/jquery-widgets-demo/jqwidgets/styles/jqx.metro.css" />    
-<link rel="stylesheet" type="text/css" href="https://jqwidgets.com/jquery-widgets-demo/jqwidgets/styles/jqx.energyblue.css" />    
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/js/jquery.tooltipster.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
 
+
+<script type="text/javascript" src="js/waitMe.js" ></script>
 <script type="text/javascript" src="js/swfobject.js"></script>
 <script type="text/javascript" src="js/validation.js" ></script>
-<script type="text/javascript" src="js/httpRequest.js" ></script>
+
 <script type="text/javascript" src="js/common.js" ></script>
 
-<script type="text/javascript" src="js/menu/ddsmoothmenu.js"></script>
-
 <script type="text/javascript" src="js/utils.js"></script>
+
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -45,7 +53,7 @@
 <script language="Javascript" type="text/javascript">
 	if (!isCanvasSupported())
 	{
-		alert("ERROR: your browser is not supporting HTML5!!!\n\nPlease upgrade your browser with recent version.\n\nOtherwise it won't work properly!!!");
+		//alert("ERROR: your browser does not support HTML5!!!\n\nPlease upgrade your browser with the latest version.\n\nOtherwise it won't work properly!!!");
 	}
 </script>
 
@@ -69,15 +77,8 @@
 	}
 	.header 
 	{
-		clear:both;
-	    text-align:center;
-	    padding:5px; 
-	    border:1px solid #000000;
-	    box-shadow: 10px 10px 5px #888888;
-		background:#353743;
-
-		height:70px;
-		border-radius:15px 15px 0 0;
+		width: 100%;
+		height: 100%;
 	}
 	
 	.contents
@@ -102,7 +103,7 @@
 		border-radius:0 0 15px 15px;
 		font-size: 11px;
 	}
-	/*for Resume*/
+	/*This will affect the menu indentation*/
 	ul li
 	{
 	    list-style-type: disc;
@@ -124,7 +125,9 @@
 		</div>	
 		<div class="contents">
 			<%@ include file="/jsp/menu_response_smartphone/jqx_public_menu.jsp" %>
-			<jsp:include page='${body_panel}' flush='true'/>			
+			<div style="margin-top: .5cm; padding-bottom: 20px">
+				<jsp:include page='${body_panel}' flush='true'/>	
+			</div>		
 		</div>
 		<div class="footer">
 			<div>555 University Avenue, Toronto, Ontario, Canada M1S5C2</div>

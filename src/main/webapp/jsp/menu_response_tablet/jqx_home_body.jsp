@@ -3,18 +3,7 @@
 <%@ page import="java.util.*" %>
 <%@ page isELIgnored ="false" %>
 
-<style>
-
-ul li
-{
-    list-style-type: disc;
-    list-style-position: inside;
-    padding: 10px 20px 5px 20px;
-    text-indent: -1em;
-}
-</style>
-
-<table style='width: 90%; padding-top: 20px; padding-bottom: 20px; table-layout: fixed'>
+<table style='width: 90%; padding-bottom: 20px; table-layout: fixed'>
   <tr>
     <td style='background-color: #555762; color: #ffffff; width: 50%'>
     	<ul style='font-size: 14px'><h3 style='color: #f9d548;'>What to provide</h3>
@@ -26,22 +15,22 @@ ul li
     	</ul>
     </td>	
     <td style='width: 20px'></td>
-    <td style='background-color: #555762; color: #ffffff; width: 50%'>
+    <td style='background-color: #555762; color: #ffffff; width: 50%; vertical-align: top;'>
     	<ul style='font-size: 14px'><h3 style='color: #f9d548;'>Developement Technologies</h3>
     		<li>Java, C/C++</li>
     		<li>Actionscript 3.0 including Starling, Feathers UI</li>
     		<li>HTML/CSS/Javascript including JQuery</li>
     		<li>Oracle, PostgreSQL, MySql, Ms Access</li>
     		<li>Tomcat 5.x, 6.x, 7.x, 8.x and JBoss</li>
-    		<li style='list-style-type: none' />
-    		<li style='list-style-type: none' />
-    		<li style='list-style-type: none' />
+    		<li style='list-style-type: none; height: 30%' />
     	</ul>
     </td>
   </tr>
-  <tr style='height: 20px'><td colspan='3'></td></tr>
-  <tr>
-	<td colspan='3' style='border: 1px solid gray'>
+  <tr style="height: 20px"><td colspan="3"></td></tr>
+</table>
+<table style="width: 90%; padding-bottom: 20px; table-layout: fixed">
+<tr>
+	<td style="border: 1px solid gray">
 		<div style="width:100%; padding:5px 20px 5px 20px;text-align:left;"><!-- Resume -->	
 		 	<div style="width:100%;"><!-- Objective and Profile in depth 1 -->
 		 		<div style="float:left; width:80%">
@@ -51,7 +40,7 @@ ul li
 		 			</ul>
 		 		</div>
 		 		<div style="float:right;width:20%">
-			 		<a href="mailto:<%=AuthData.mycompany_email_address%>?Subject=Hello Younggu KWON" target="_top"><img src="images/YoungguKwon.png" width="135" height="146" alt="Younggu KWON" border="0"/></a>
+			 		<a href="mailto:<%=AuthData.mycompany_email_address%>?Subject=Hello John KWON" target="_top"><img src="images/JohnKwon.png" width="135" height="146" alt="John KWON" border="0"/></a>
 			 	</div>
 			 </div>
 	

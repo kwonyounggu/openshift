@@ -296,7 +296,9 @@
 	function fileUploadResponse(strResponse)
 	{
 		log(strResponse+" from fileUploadResponse");
-
+		
+		$('#estimate_form').waitMe('hide');
+		
 		if(strResponse==="<%= Message.CONTACT_SUCCESS %>")
 		{
 			$('#submit_success_alert').css('visibility','visible').fadeIn();
@@ -304,6 +306,7 @@
 			CKEDITOR.instances.estimateNoteEditor.setData("");
 			$('#estimate_form')[0].reset();
 			
+			//in 5 sec, remove the success sign and reload
 			window.setTimeout(function() 
 			{
 				$('#submit_success_alert').fadeTo(500, 0).slideUp(500, function()
@@ -319,9 +322,7 @@
 			
 			$('#submit_error_alert').prop('title', "'"+strResponse.replace(/error|:/gi, "")+"'");
 			$('#submit_error_alert').css('visibility','visible').fadeIn();
-		}
-		
-		$('#estimate_form').waitMe('hide');
+		}		
 	}
 	
 	//see, http://abandon.ie/notebook/simple-file-uploads-using-jquery-ajax
@@ -450,7 +451,4 @@
 		 </form>
     </td>
   </tr>
-  <!-- <tr>
-	<td colspan='3' style='border: 0px solid gray'></td>
-  <tr> -->
 </table>
