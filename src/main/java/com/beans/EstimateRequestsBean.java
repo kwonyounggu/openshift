@@ -134,7 +134,7 @@ public class EstimateRequestsBean implements Serializable
 				"Thank you for stopping by the WebMonster Freelance App Developer website and submitting your estimate information.<br/><br/>"+
 				"I will get back to you as soon as possible!<br/><br/>"+
 				"Sincerely,<br/>John KWON,<br/>"+
-				"Freelance App Developer,<br/>"+
+				"Freelance App Developer<br/>"+
 				"<a href='http://www.webmonster.ca'>www.webmonster.ca</a>"+
 				"</p>";
 	}

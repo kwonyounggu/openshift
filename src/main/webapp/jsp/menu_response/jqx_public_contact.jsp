@@ -116,8 +116,6 @@
 		//$(".phone").mask("(999) 999-9999");
 		$('#estimate_form').validate
 		({
-			//ignore: ".ignore :hidden",
-			//ignore: [],
 			rules:
 			{
 				submitter_name:
@@ -234,10 +232,6 @@
 		formData.set('note_msg', 'estimates');//it will be /estimates/filename.pdf in dropbox
 		formData.set('submitter_name', document.getElementById("submitter_name").value.trim());
 
-		//var location_info="not appended";
-		
-		
-		
 		$.ajax
 	     ({
 	         type: "post",
@@ -309,6 +303,15 @@
 			$('#submit_error_alert').css('visibility','hidden');
 			CKEDITOR.instances.estimateNoteEditor.setData("");
 			$('#estimate_form')[0].reset();
+			
+			window.setTimeout(function() 
+			{
+				$('#submit_success_alert').fadeTo(500, 0).slideUp(500, function()
+			    {
+			        $(this).remove(); 
+			        location.reload();
+			    });
+			}, 5000);
 		}
 		else
 		{
@@ -432,8 +435,7 @@
 					
 					<tr>
 						<td colspan='2'>
-							<div id="submit_success_alert" class="alert alert-success hide-bt-alert">
-							    <a href='#' id='submit_success_alert_anchor'><%=Message.CONTACT_SUCCESS %></a>
+							<div id="submit_success_alert" class="alert alert-success hide-bt-alert"><%=Message.CONTACT_SUCCESS %>
 							</div>
 						</td>
 					</tr>
@@ -448,10 +450,7 @@
 		 </form>
     </td>
   </tr>
-  <tr>
-	<td colspan='3' style='border: 0px solid gray'>
-		
-		
-	</td>
-  <tr>
+  <!-- <tr>
+	<td colspan='3' style='border: 0px solid gray'></td>
+  <tr> -->
 </table>
