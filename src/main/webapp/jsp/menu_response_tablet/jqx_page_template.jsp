@@ -116,7 +116,7 @@
 
 <body>
 
-<!-- <div align="center"> -->
+<div align="center">
 
 	<div class="wrapper">
 		
@@ -135,7 +135,7 @@
 			<div>Registered in Toronto, Ontario, Canada</div>
 		</div>
 	</div>
-<!-- </div>	 -->
+</div>	
 </body>
 
 </html>
