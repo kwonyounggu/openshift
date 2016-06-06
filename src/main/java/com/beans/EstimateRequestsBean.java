@@ -111,7 +111,7 @@ public class EstimateRequestsBean implements Serializable
 	{
 		this.submittedTime = submittedTime;
 	}
-	public String toString()
+	public String toMyCompany()
 	{
 		//https://www.dropbox.com/home/Apps/webmonster/estimates?preview=Younggu_kwon_Unchained_melody___%EC%82%AC%EB%9E%91%EA%B3%BC%EC%98%81%ED%98%BCost_(alto)_2016_06_02_11_27_44.enc
 		return  "<p>"+
