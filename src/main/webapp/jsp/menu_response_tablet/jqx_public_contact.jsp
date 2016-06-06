@@ -226,6 +226,10 @@
 		{
 	        $("#estimate_form").valid();
 	    });
+		$('#estimate_form').on('submit',function(e)
+		{
+	        e.preventDefault();
+	    });
 	
 	});//$(document).ready
 
