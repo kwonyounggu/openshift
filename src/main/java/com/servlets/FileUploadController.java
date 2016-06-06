@@ -151,7 +151,7 @@ public class FileUploadController extends HttpServlet
 		catch(Exception e)
 		{	
 			log.severe(e.getMessage()+", written in the catch block (Exception e) - 1st level");
-			callResponse="ERROR: "+e.getMessage();
+			callResponse="ERROR: "+e.toString();
 			
 			try
 			{
