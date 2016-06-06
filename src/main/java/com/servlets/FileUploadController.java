@@ -150,7 +150,7 @@ public class FileUploadController extends HttpServlet
 		}
 		catch(Exception e)
 		{	
-			log.severe(e.getMessage()+", written in the catch block (Exception e) - 1st level");
+			log.severe(e+", written in the catch block (Exception e) - 1st level");
 			callResponse="ERROR: "+e.toString();
 			
 			try
@@ -159,7 +159,7 @@ public class FileUploadController extends HttpServlet
 			}
 			catch(Exception e2)
 			{
-				log.severe(e2.getMessage()+", written in the catch block (Exception e) - 2nd level");
+				log.severe(e2+", written in the catch block (Exception e) - 2nd level");
 			}
 		}
 		finally //always return with either ERROR or SUCCESS
