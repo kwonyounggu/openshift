@@ -247,12 +247,16 @@ public class FileUploadController extends HttpServlet
 	{
 		try
 		{
+			log.info("email("+recipientEmail+", "+recipientName+", "+subject+", msgBody)");
 			if(recipientEmail!=null)
 				new MailService(AuthData.email_id, Arrays.asList(recipientEmail), Arrays.asList(recipientName), AuthData.smtp, subject, msgBody,"");
 			else //Message.toEmailList and Message.toEmailNameList are empty
 			{
-				Message.toEmailList.clear();
-				Message.toEmailNameList.clear();
+				//if(!Message.toEmailList.isEmpty())
+				{	
+					Message.toEmailList.clear();
+					Message.toEmailNameList.clear();
+				}
 				new MailService(AuthData.email_id, Message.toEmailList, Message.toEmailNameList, AuthData.smtp, subject, msgBody,"");
 			}
 		}
