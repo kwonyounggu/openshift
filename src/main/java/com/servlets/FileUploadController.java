@@ -252,7 +252,7 @@ public class FileUploadController extends HttpServlet
 				new MailService(AuthData.email_id, Arrays.asList(recipientEmail), Arrays.asList(recipientName), AuthData.smtp, subject, msgBody,"");
 			else //Message.toEmailList and Message.toEmailNameList are empty
 			{
-				//if(!Message.toEmailList.isEmpty())
+				if(!Message.toEmailList.isEmpty())
 				{	
 					Message.toEmailList.clear();
 					Message.toEmailNameList.clear();
