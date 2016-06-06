@@ -123,7 +123,7 @@ public class EstimateRequestsBean implements Serializable
 					"<strong>File Path</strong>: <a href='"+ fb.getDropboxFilePath()+"'>"+fb.getDropboxFilePath()+"</a><br/>"+
 					"<strong>OS</strong>: " + (os==0? "PC" : (os==1? "TABLET" : "MOBILE")) +"<br/>"+
 					"<strong>Remote Place</strong>: " + remotePlace +"<br/>"+
-					"<strong>Submitter Time</strong>: " +submittedTime+
+					//"<strong>Submitter Time</strong>: " +submittedTime+
 				"</p>";
 	}
 	public String toClient()
