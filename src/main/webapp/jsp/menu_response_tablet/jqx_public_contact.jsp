@@ -235,7 +235,7 @@
 	function submitForm()
 	{
 		run_waitMe("roundBounce");
-		var formData=new FormData(document.getElementById("estimate_form"));
+		
 		/**** Android original google chrome does not support formData.set ****/
 		//formData.set('submitter_note', CKEDITOR.instances.estimateNoteEditor.getData());
 		//formData.set('note_msg', 'estimates');//it will be /estimates/filename.pdf in dropbox
@@ -243,7 +243,9 @@
 		document.getElementById("submitter_note").value=CKEDITOR.instances.estimateNoteEditor.getData();
 		document.getElementById("note_msg").value='estimates';
 		document.getElementById("submitter_name").value=document.getElementById("submitter_name").value.trim();
-
+		var formData=new FormData(document.getElementById("estimate_form"));
+		
+		
 		$.ajax
 	     ({
 	         type: "post",
