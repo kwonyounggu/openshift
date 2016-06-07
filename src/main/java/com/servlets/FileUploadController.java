@@ -125,7 +125,7 @@ public class FileUploadController extends HttpServlet
 				{
 					eb.setSubmitterName(eb.getSubmitterName()+" "+Utils.getFirstCapitalString(name));
 				}
-				eb.setSubmitterName(eb.getSubmitterName());
+				eb.setSubmitterName(eb.getSubmitterName().trim());//remove the 1st white space inserted from the above for loop
 				eb.setSubmitterPhone(request.getParameter("submitter_phone"));
 				eb.setSubmitterEmail(request.getParameter("submitter_email"));
 				eb.setSubmitterNote(request.getParameter("submitter_note"));
