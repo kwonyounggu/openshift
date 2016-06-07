@@ -240,9 +240,10 @@
 		//formData.set('submitter_note', CKEDITOR.instances.estimateNoteEditor.getData());
 		//formData.set('note_msg', 'estimates');//it will be /estimates/filename.pdf in dropbox
 		//formData.set('submitter_name', document.getElementById("submitter_name").value.trim());
+		
 		document.getElementById("submitter_note").value=CKEDITOR.instances.estimateNoteEditor.getData();
-		document.getElementById("note_msg").value='estimates';
-		document.getElementById("submitter_name").value=document.getElementById("submitter_name").value.trim();
+		//document.getElementById("note_msg").value='estimates';
+		//document.getElementById("submitter_name").value=document.getElementById("submitter_name").value.trim();
 		var formData=new FormData(document.getElementById("estimate_form"));
 		
 		
@@ -415,7 +416,7 @@
 			   			<td class='estimate_form_td' colspan='2'>Note about your requirements:
 			   				<span style='font-size: .95em; color: #8fc161;' id='note_span'>*
 			   					<!-- To hide the input but only to display the error message -->
-			   					<input type='text' style='width: 0px; height: 0px; border: none; background-color: #555762' name='note_msg' id='note_msg' value='1'/>
+			   					<input type='text' style='width: 0px; height: 0px; border: none; background-color: #555762' name='note_msg' id='note_msg' value='estimates'/>
 			   				</span>
 			   				<br/>
 			 				<textarea id='estimateNoteEditor' name='submitter_note' id='submitter_note' cols='80' rows='10'></textarea>
