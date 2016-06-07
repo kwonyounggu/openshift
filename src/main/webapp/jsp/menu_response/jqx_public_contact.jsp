@@ -229,7 +229,7 @@
 		run_waitMe("roundBounce");
 		var formData=new FormData(document.getElementById("estimate_form"));
 		formData.set('submitter_note', CKEDITOR.instances.estimateNoteEditor.getData());
-		//formData.set('note_msg', 'estimates');//it will be /estimates/filename.pdf in dropbox
+		formData.set('note_msg', 'estimates');//it will be /estimates/filename.pdf in dropbox
 
 		$.ajax
 	     ({
