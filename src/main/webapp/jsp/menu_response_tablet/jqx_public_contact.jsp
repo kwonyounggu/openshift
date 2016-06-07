@@ -230,16 +230,19 @@
 		{
 	        e.preventDefault();
 	    });
-	
 	});//$(document).ready
 
 	function submitForm()
 	{
 		run_waitMe("roundBounce");
 		var formData=new FormData(document.getElementById("estimate_form"));
-		formData.set('submitter_note', CKEDITOR.instances.estimateNoteEditor.getData());
-		formData.set('note_msg', 'estimates');//it will be /estimates/filename.pdf in dropbox
-		formData.set('submitter_name', document.getElementById("submitter_name").value.trim());
+		/**** Android original google chrome does not support formData.set ****/
+		//formData.set('submitter_note', CKEDITOR.instances.estimateNoteEditor.getData());
+		//formData.set('note_msg', 'estimates');//it will be /estimates/filename.pdf in dropbox
+		//formData.set('submitter_name', document.getElementById("submitter_name").value.trim());
+		document.getElementById("submitter_note").value=CKEDITOR.instances.estimateNoteEditor.getData();
+		document.getElementById("note_msg").value='estimates';
+		document.getElementById("submitter_name").value=document.getElementById("submitter_name").value.trim();
 
 		$.ajax
 	     ({
@@ -413,7 +416,7 @@
 			   					<input type='text' style='width: 0px; height: 0px; border: none; background-color: #555762' name='note_msg' id='note_msg' value='1'/>
 			   				</span>
 			   				<br/>
-			 				<textarea id='estimateNoteEditor' name='submitter_note' cols='80' rows='10'></textarea>
+			 				<textarea id='estimateNoteEditor' name='submitter_note' id='submitter_note' cols='80' rows='10'></textarea>
 						</td>
 			   		</tr>
 
