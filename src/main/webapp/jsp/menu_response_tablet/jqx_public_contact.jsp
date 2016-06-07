@@ -191,7 +191,7 @@
 		$.validator.addMethod("isNameValid", function(value, element)
 		{
 			//var tName=$.trim(value);
-		    return (isKoreanName(element) || checkNameUsingRegEx(value));
+		    return (isKoreanName(element) || checkNameUsingRegEx(value.trim()));
 		}, "Your name is not valid!");
 		$.validator.addMethod("isPhoneValid", function(value, element)
 		{
