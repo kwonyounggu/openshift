@@ -100,6 +100,7 @@ public class FileUploadController extends HttpServlet
 			//This is to get all items including the form field and file
 	        // Collection<Part> parts = request.getParts(); 
 			String typeOfMsg=request.getParameter("note_msg");
+			String submitterName=request.getParameter("submitter_name").trim();
 			FileUploadedToDropboxBean fb=null;
 	        Part filePart=request.getPart("file_to_upload");
 	        if(filePart.getSize()>0)
@@ -107,7 +108,7 @@ public class FileUploadController extends HttpServlet
 	        	//this is to write the file into the local repository, that is, app-root/data/client_file.pdf
 	        	// filePart.write(getFileName(filePart)); 
 
-	        	fb=uploadToDropbox(_dbxClient, filePart, typeOfMsg, request.getParameter("submitter_name")); //note_msg contains a dropbox path like estimates
+	        	fb=uploadToDropbox(_dbxClient, filePart, typeOfMsg, submitterName); //note_msg contains a dropbox path like estimates
 	        	
 	        	//insert into db table
 	        	FileUploadedToDropboxDao fDao=new FileUploadedToDropboxDao(_ds);
@@ -120,7 +121,7 @@ public class FileUploadController extends HttpServlet
 			{
 				EstimateRequestsBean eb=new EstimateRequestsBean();
 				
-				String names[]=(((String)request.getParameter("submitter_name")).trim()).split("\\s+");//trim left and right
+				String names[]=submitterName.split("\\s+");
 				for(String name: names) //Capital for the 1st and 2nd
 				{
 					eb.setSubmitterName(eb.getSubmitterName()+" "+Utils.getFirstCapitalString(name));
