@@ -241,9 +241,9 @@
 		
 		var formData=new FormData(document.getElementById("estimate_form"));
 		/**** Android original google chrome does not support formData.set ****/
-		//formData.append('submitter_note', CKEDITOR.instances.estimateNoteEditor.getData());
+		formData.append('submitter_note', CKEDITOR.instances.estimateNoteEditor.getData());
 		formData.append('note_msg', 'estimates');
-		
+		log("submitter_note: "+CKEDITOR.instances.estimateNoteEditor.getData());
 		$.ajax
 	     ({
 	         type: "post",
