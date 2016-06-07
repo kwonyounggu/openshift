@@ -241,14 +241,14 @@
 		
 		var formData=new FormData(document.getElementById("estimate_form"));
 		/**** Android original google chrome does not support formData.set ****/
-		formData.append('submitter_note', CKEDITOR.instances.estimateNoteEditor.getData());
-		formData.append('note_msg', 'estimates');
+		//formData.set('submitter_note', CKEDITOR.instances.estimateNoteEditor.getData());
+		//formData.set('note_msg', 'estimates');
 		log("submitter_note: "+CKEDITOR.instances.estimateNoteEditor.getData());
 		$.ajax
 	     ({
 	         type: "post",
 	         dataType: "", //see https://rochcass.wordpress.com/tag/freegeoip-net-post/
-	         url: "/fileupload",
+	         url: "/fileupload?note_msg=estimates&submitter_note="+CKEDITOR.instances.estimateNoteEditor.getData(),
 	         data: formData,
 	     	 processData: false, // Don't process the files
 	         contentType: false, // Set content type to false as jQuery will tell the server its a query string request
