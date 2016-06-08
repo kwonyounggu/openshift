@@ -86,7 +86,7 @@
 	.header 
 	{
 		width: 100%;
-		height: 200px;
+		height: 100%;
 	}
 	
 	.contents
