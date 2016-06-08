@@ -109,7 +109,7 @@
 		background:#353743;
 		height:100%;
 		border-radius:0 0 15px 15px;
-		font-size: 36px;
+		font-size: 26px;
 	}
 	/*This will affect the menu indentation
 	ul li
@@ -158,9 +158,9 @@
 		
 		<div class="header">
 			<%@ include file="/jsp/menu_response_smartphone/header.jsp" %>
-		</div>	
-		<div class="contents">
 			<%@ include file="/jsp/menu_response_smartphone/jqx_public_menu.jsp" %>
+		</div>	
+		<div class="contents">		
 			<div style="margin-top: .5cm; padding-bottom: 20px">
 				<jsp:include page='${body_panel}' flush='true'/>	
 			</div>		
