@@ -111,7 +111,7 @@
 		border-radius:0 0 15px 15px;
 		font-size: 11px;
 	}
-	/*This will affect the menu indentation
+	/*This will affect the menu indentation*/
 	ul li
 	{
 	    list-style-type: disc;
@@ -119,11 +119,13 @@
 	    padding: 10px 20px 5px 20px;
 	    text-indent: -1em;
 	    font-size: 46px;
-	}*/
+	}
+	/*
 	li
 	{
 		font-size: 46px;
 	}
+	*/
 	h1
 	{
 		font-size: 60px;
