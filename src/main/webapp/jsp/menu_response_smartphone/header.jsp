@@ -10,7 +10,8 @@
 		<a href="mailto:<%=AuthData.mycompany_email_address%>?Subject=Hello John KWON" style="color:inherit;text-decoration: none" target="_top">John KWON</a>
 	</h4>
 </div>
-<nav class="navbar navbar-inverse">
+<!-- see http://www.w3schools.com/bootstrap/bootstrap_navbar.asp -->
+<nav class="navbar navbar-inverse" style="height: 90px">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
