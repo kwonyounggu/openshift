@@ -51,14 +51,14 @@
 		 	<div>
 		 		<h3>WORK EXPERIENCE:</h3>
 		 		<div style="padding-left: 20px; padding-right: 50px">
-			 		<h3>Clinical Research Software Developer, Contract, 05/2011 - Current</b></p>
-			 		<h3>The Hospital for Sick Children in the department of Paediatric Laboratory Medicine, Toronto</h3>
+			 		<h5>Clinical Research Software Developer, Contract, 05/2011 - Current</h5>
+			 		<h5>The Hospital for Sick Children in the department of Paediatric Laboratory Medicine, Toronto</h5>
 			 		<ul >
 		 				<li>Developed web applications to produce and manage dynamical statistical charts using 65 different blood samples collected from 6000 normal children’s serum, in order to analyze correlations between each analyte and BMI, clustering analytes' concentration in each age group, ethnic group, gender and so on.</li>
 		 				<li>Main statistical algorithms are Dixon, Harris/Boyd and Horn/Pesce Robust with mean and standard deviation.</li>
 		 				<li>Java and ActionScript running in Apache Tomcat Server are used on top of Eclipse IDE in addition to MySQL database and R/Perl.</li>
 		 			</ul>
-		 			<p>The Hospital for Sick Children in the department of Clinical Care Medicine, Toronto</p>
+		 			<h5>The Hospital for Sick Children in the department of Clinical Care Medicine, Toronto</h5>
 			 		<ul >
 		 				<li>Developed  several clinical research applications such as EPOCH providing data management system including research infrastructure,  site enrolment, intervention fidelity, sub-studies and reporting systems with over 50,000 pdf documents uploaded from remote hospitals, EXEMPLAR providing medication safety studies using patient data and over 12,000 drugs, SPIRE providing quality of patient care,  medical education, etc from physician trainees, TTT  (Tele-Team Training System) providing real-time-based online training system through web-cams and clinical video files between local hospitals and remote hospitals, BPEWS (Bedside Pediatric Early Warning System)  providing ways of studies through clinical data provided from over 50 worldwide hospitals and CAP (Cardiac Arrest Preventability) providing anonymous patient data to medical doctors for the study of Cardiac Arrest Preventability.</li>
 		 				<li>Development methodologies:
@@ -75,8 +75,8 @@
 		 			</ul>
 		 		</div>
 		 		<div style="padding-left: 20px">
-			 		<p><b>Software Developer, Contract,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;05/2007 - 07/2010</b></p>
-			 		<p>Cinram International Inc, Toronto</p>
+			 		<h5>Software Developer, Contract, 05/2007 - 07/2010</h5>
+			 		<h5>Cinram International Inc, Toronto</h5>
 			 		<ul >
 		 				<li>Developed web service applications based on SOAP and accounting management applications</li>
 		 				<li>Development methodologies:
@@ -92,9 +92,9 @@
 		 				<li>IDE: Eclipse with SVN</li>
 		 			</ul>
 		 		</div>
-		 		<div style="padding-left: 20px; padding-right: 50px">
-			 		<p><b>Software Engineer, Full Time Permanent,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;04/2000 - 12/2006</b></p>
-			 		<p>Motorola Canada Inc, Toronto</p>
+		 		<div style="padding-left: 20px; padding-right: 10px">
+			 		<h5>Software Engineer, Full Time Permanent, 04/2000 - 12/2006</h5>
+			 		<h5>Motorola Canada Inc, Toronto</h5>
 			 		<ul >
 		 				<li>Designed, developed and released web based software application tools for Network Node Performance/Configuration Management and QoS(ATM/PPPoE/FrameRelay/ Ethernet/Applications), Voice Performance Management and VPN Performance Management including automatic topology discovery, event analysis/correlation, configuration management and drill down graphical reporting system.</li>
 		 				<li>Technologies involved above are OO Design in N-tiered web architecture, Java, Java Swing, JSP/Servlets based GUI, JNI, XML/HTML/JavaScript, JDBC, Oracle/MySql/MsAccess.</li>
@@ -102,9 +102,9 @@
 		 				<li>Developed administrative application tool management software using C++ running as services through Windows Service Control Manager, running on Windows platform.</li>
 		 			</ul>
 		 		</div>
-		 		<div style="padding-left: 20px; padding-right: 50px">
-			 		<p><b>CIM Software Engineer, Full Time Permanent,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;03/1995 - 03/2000</b></p>
-			 		<p>Motorola Korea, Korea</p>
+		 		<div style="padding-left: 20px; padding-right: 10px">
+			 		<h5>CIM Software Engineer, Full Time Permanent, 03/1995 - 03/2000</h5>
+			 		<h5>Motorola Korea, Korea</h5>
 			 		<ul >
 		 				<li>Designed and developed Semiconductor test/process equipment assembly line control software to provide Work In Process (WIP) data, Equipment Utilization Data and Automatic Manufacturing Equipment control system.</li>
 		 				<li>Technologies involved: 1). OO Design in three-tiered distributed architecture, C++, COM/DCOM/ATL, ODBC/OLE-DB/RDO/DAO/ADO for Oracle7.x/MSSQL6.5 and 2).  OO Designed in three-tiered web architecture, Java, Applet, JNI, HTML/JavaScript, JDBC, Oracle7.x/MSSQL6.5 and IIS4.0 on Windows NT.</li>
@@ -115,8 +115,8 @@
 		 	</div>
 		 	<div>
 		 		<h3>EDUCATION:</h3>
-		 		<div style="padding-left: 20px; padding-right: 50px">
-			 		<p><b>Post Graduate Diploma in Bioinformatics for Software Professionals, Centennial College, Toronto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2010 - 2011</b></p>
+		 		<div style="padding-left: 20px; padding-right: 10px">
+			 		<h5>Post Graduate Diploma in Bioinformatics for Software Professionals, Centennial College, Toronto 2010 - 2011</h5>
 			 		<ul >
 		 				<li>Java/ActionScript-based statistical analysis project done with 3,500 patients' data in coronary artery disease, 588 patients' data in knee osteoarthritis, and various Monte Carlo algorithms.</li>
 		 				<li>Java/ActionScript-based sequence alignment projects done for Needleman-Wounsch algorithm, searching for short DNA sequence and identifying corresponding loci, protein translation from DNA sequence and more.</li>
@@ -125,7 +125,7 @@
 		 			</ul>
 		 		</div>
 		 		<div style="padding-left: 20px">
-			 		<p><b>Master of Computer Science, National Technological University, Colorado, USA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1997 - 1998</b></p>
+			 		<h5>Master of Computer Science, National Technological University, Colorado, USA 1997 - 1998</h5>
 			 		<ul >
 		 				<li>Advanced Data Structure from University of Florida</li>
 		 				<li>Object Oriented Visual C++ from Oklahoma State University</li>
@@ -136,7 +136,7 @@
 		 			</ul>
 		 		</div>
 		 		<div style="padding-left: 20px">
-			 		<p><b>M & B of Computer Science, University of Newcastle, Australia&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1991 - 1994</b></p>
+			 		<h5>M & B of Computer Science, University of Newcastle, Australia 1991 - 1994</h5>
 		 		</div>
 	
 		 	</div>

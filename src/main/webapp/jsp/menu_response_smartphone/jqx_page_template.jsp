@@ -138,6 +138,14 @@
 	{
 		font-size: 54px;
 	}
+	h4
+	{
+		font-size: 50px;
+	}
+	h5
+	{
+		font-size: 46px;
+	}
 </style>
 </head>
 
