@@ -22,7 +22,8 @@
    		<li>Tomcat 5.x, 6.x, 7.x, 8.x and JBoss</li>
    	</ul>
 </div>
-<div style="width: 90%; background-color: #555762; color: #ffffff; padding: 10px 20px 10px 20px; border: 1px solid gray">
+<div style="height: 20px;"></div>
+<div style="width: 90%; padding: 10px 20px 10px 20px; border: 1px solid gray">
 		<div style="width:100%; padding:5px 20px 5px 20px;text-align:left;"><!-- Resume -->	
 		 	<div style="width:100%;"><!-- Objective and Profile in depth 1 -->
 		 		<div style="float:left; width:80%">
@@ -50,8 +51,8 @@
 		 	<div>
 		 		<h3>WORK EXPERIENCE:</h3>
 		 		<div style="padding-left: 20px; padding-right: 50px">
-			 		<p><b>Clinical Research Software Developer, Contract,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;05/2011 - Current</b></p>
-			 		<p>The Hospital for Sick Children in the department of Paediatric Laboratory Medicine, Toronto</p>
+			 		<h3>Clinical Research Software Developer, Contract, 05/2011 - Current</b></p>
+			 		<h3>The Hospital for Sick Children in the department of Paediatric Laboratory Medicine, Toronto</h3>
 			 		<ul >
 		 				<li>Developed web applications to produce and manage dynamical statistical charts using 65 different blood samples collected from 6000 normal children’s serum, in order to analyze correlations between each analyte and BMI, clustering analytes' concentration in each age group, ethnic group, gender and so on.</li>
 		 				<li>Main statistical algorithms are Dixon, Harris/Boyd and Horn/Pesce Robust with mean and standard deviation.</li>
