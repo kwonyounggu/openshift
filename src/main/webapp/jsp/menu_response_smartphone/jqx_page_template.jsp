@@ -144,7 +144,8 @@
 	}
 	h5
 	{
-		font-size: 46px;
+		font-size: 38px;
+		font-weight: bold;
 	}
 </style>
 </head>

@@ -41,11 +41,11 @@
 	 			<h3>PROFILE:</h3>
 	 			<ul>
 	 				<li>20 years' software development experience in developing web and desktop applications on clinical research management, accounting management, online shopping mall, network management and CIM areas.</li>
-	 				<li>Over 5 year experience in Flex 2.x/3.x/4.x and Action Script 3.0 including Caurina Tweener, Cairngorm/Robotlegs, fds/lcds/BlazeDs, red5/fms</li>
-	 				<li>Extensive experiences in Java (Servlets, Filters, Java Beans, JavaMail, etc), JSP (EL, JSTL, etc), Ajax/HTML/JavaScript/XML/JSON/CSS using MVC (Model 2) and C/C++.</li>
-	 				<li>Windows for over 10 years, UNIX family: HP/SUN/CentOS/Ubuntu for over 10 years.</li>
-	 				<li>MySQL/PostGreSQL/Oracle for 6 years,  MsSQL/MsAccess for 5 years,  DB2 for 2 year.</li>
-	 				<li>Good analytical/problem-solving capabilities, self-motivated and quick/steady learner.</li>
+	 				<li>Over 5 year experience in Flex 2-4.x and Action Script 3.0 including Caurina Tweener, Cairngorm/Robotlegs, fds/lcds/BlazeDs, red5/fms</li>
+	 				<li>Extensive experiences in Java (Servlets, Filters, Java Beans, JavaMail, etc), JSP (EL, JSTL, etc), Ajax HTML JavaScript XML JSON CSS using MVC (Model 2) and C/C++.</li>
+	 				<li>Windows for over 10 years, UNIX family: HP SUN CentOS Ubuntu for over 10 years.</li>
+	 				<li>MySQL PostGreSQL Oracle for 6 years,  MsSQL MsAccess for 5 years,  DB2 for 2 year.</li>
+	 				<li>Good analytical problem-solving capabilities, self-motivated and quick steady learner.</li>
 	 			</ul>
 	 		</div>
 		 	<div>
@@ -55,7 +55,7 @@
 			 		<h5>The Hospital for Sick Children in the department of Paediatric Laboratory Medicine, Toronto</h5>
 			 		<ul >
 		 				<li>Developed web applications to produce and manage dynamical statistical charts using 65 different blood samples collected from 6000 normal children’s serum, in order to analyze correlations between each analyte and BMI, clustering analytes' concentration in each age group, ethnic group, gender and so on.</li>
-		 				<li>Main statistical algorithms are Dixon, Harris/Boyd and Horn/Pesce Robust with mean and standard deviation.</li>
+		 				<li>Main statistical algorithms are Dixon, Harris Boyd and Horn Pesce Robust with mean and standard deviation.</li>
 		 				<li>Java and ActionScript running in Apache Tomcat Server are used on top of Eclipse IDE in addition to MySQL database and R/Perl.</li>
 		 			</ul>
 		 			<h5>The Hospital for Sick Children in the department of Clinical Care Medicine, Toronto</h5>
@@ -64,13 +64,13 @@
 		 				<li>Development methodologies:
 		 					<br/>-	Collected the user requirements from professional researchers.
 		 					<br/>-	Designed architecture using MVC (model 2) design pattern and Robotlegs.
-		 					<br/>-	Designed & created DB schema using Oracle11.x/PostgresSQL8.4 including MySQL migration.
-		 					<br/>-	Implemented Controllers using Java Servlets and Filters, Models using Java Beans /JDBC& PL/SQL and Views (JSP, AJAX,
-		 					<br/>&nbsp;&nbsp;&nbsp;HTML/Javascript/css, JSON/XML, EL & JSTL).
-		 					<br/>-	Front end: JSP, AJAX, Javascript, JQuery, HTML/HTML5, Flex 4.x and Action Script 3.0
+		 					<br/>-	Designed & created DB schema using Oracle11.x PostgresSQL8.4 including MySQL migration.
+		 					<br/>-	Implemented Controllers using Java Servlets and Filters, Models using Java Beans  JDBC& PL/SQL and Views (JSP, AJAX,
+		 					HTML Javascript css, JSON XML, EL & JSTL).
+		 					<br/>-	Front end: JSP, AJAX, Javascript, JQuery, HTML HTML5, Flex 4.x and Action Script 3.0
 		 					<br/>-	Middleware: Java using BlazeDS, servlets and SOAP service
 		 				</li>
-		 				<li>OS: Windows and Red Hat Linux, Web Server: Apache Tomcat.5.5.x/7.x, Stream Server: Red5</li>
+		 				<li>OS: Windows and Red Hat Linux, Web Server: Apache Tomcat.5-7.x, Stream Server: Red5</li>
 		 				<li>IDE: Eclipse with Git and SVN</li>
 		 			</ul>
 		 		</div>
@@ -84,9 +84,9 @@
 		 					<br/>-	Designed architecture using MVC (model 2) design pattern.
 		 					<br/>-	Designed & created DB schema using MySQL/MsSQL database.
 		 					<br/>-	Implemented Controllers using JMS, Java Servlets and Filters, Models using Java Beans & JDBC and
-		 					<br/>&nbsp;&nbsp;&nbsp;Views (JSP, HTML/Javascript/css, EL & JSTL).
+		 					Views (JSP, HTML Javascript css, EL & JSTL).
 		 					<br/>-	Front end: Flex 2.0.1 and Action Script 3.0 (Caurina Tweener, Cairngorm)
-		 					<br/>-	Middleware: Java using FDS/LCDS & servlets, JMS and SOAP Service
+		 					<br/>-	Middleware: Java using FDS LCDS & servlets, JMS and SOAP Service
 		 				</li>
 		 				<li>OS: Windows XP, Web Server: Apache Tomcat & JBoss</li>
 		 				<li>IDE: Eclipse with SVN</li>
@@ -96,9 +96,9 @@
 			 		<h5>Software Engineer, Full Time Permanent, 04/2000 - 12/2006</h5>
 			 		<h5>Motorola Canada Inc, Toronto</h5>
 			 		<ul >
-		 				<li>Designed, developed and released web based software application tools for Network Node Performance/Configuration Management and QoS(ATM/PPPoE/FrameRelay/ Ethernet/Applications), Voice Performance Management and VPN Performance Management including automatic topology discovery, event analysis/correlation, configuration management and drill down graphical reporting system.</li>
-		 				<li>Technologies involved above are OO Design in N-tiered web architecture, Java, Java Swing, JSP/Servlets based GUI, JNI, XML/HTML/JavaScript, JDBC, Oracle/MySql/MsAccess.</li>
-		 				<li>JBoss/Tomcat servers and 3rd party libs (quadbase reporting, quartz scheduler and Cyberon SNMP) with running platforms; SUN Solaris and Windows and Eclipse/Jbuilder.</li>
+		 				<li>Designed, developed and released web based software application tools for Network Node Performance Configuration Management and QoS(ATM PPPoE FrameRelay  Ethernet Applications), Voice Performance Management and VPN Performance Management including automatic topology discovery, event analysis correlation, configuration management and drill down graphical reporting system.</li>
+		 				<li>Technologies involved above are OO Design in N-tiered web architecture, Java, Java Swing, JSP Servlets based GUI, JNI, XML HTML JavaScript, JDBC, Oracle MySql MsAccess.</li>
+		 				<li>JBoss Tomcat servers and 3rd party libs (quadbase reporting, quartz scheduler and Cyberon SNMP) with running platforms; SUN Solaris and Windows and Eclipse Jbuilder.</li>
 		 				<li>Developed administrative application tool management software using C++ running as services through Windows Service Control Manager, running on Windows platform.</li>
 		 			</ul>
 		 		</div>
