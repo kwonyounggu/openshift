@@ -12,6 +12,7 @@
    		<li>Web Site Support and Maintenance</li>
    	</ul>
 </div>
+<div style="height: 20px;"></div>
 <div style="width: 90%; background-color: #555762; color: #ffffff; padding: 10px 20px 10px 20px; text-align:left;">
    	<ul><h3 style="color: #f9d548;">Developement Technologies</h3>
    		<li>Java, C/C++</li>
@@ -21,9 +22,7 @@
    		<li>Tomcat 5.x, 6.x, 7.x, 8.x and JBoss</li>
    	</ul>
 </div>
-<table style="width: 90%; padding-bottom: 20px; table-layout: fixed">
-<tr>
-	<td style="border: 1px solid gray">
+<div style="width: 90%; background-color: #555762; color: #ffffff; padding: 10px 20px 10px 20px; border: 1px solid gray">
 		<div style="width:100%; padding:5px 20px 5px 20px;text-align:left;"><!-- Resume -->	
 		 	<div style="width:100%;"><!-- Objective and Profile in depth 1 -->
 		 		<div style="float:left; width:80%">
@@ -141,8 +140,6 @@
 	
 		 	</div>
 	</div><!-- Resume -->	
-	</td>
-  <tr>
-</table>
+</div>
 
 
