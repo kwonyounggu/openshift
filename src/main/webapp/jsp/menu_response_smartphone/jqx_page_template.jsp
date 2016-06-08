@@ -158,7 +158,6 @@
 		
 		<div class="header">
 			<%@ include file="/jsp/menu_response_smartphone/header.jsp" %>
-			<%@ include file="/jsp/menu_response_smartphone/jqx_public_menu.jsp" %>
 		</div>	
 		<div class="contents">		
 			<div style="margin-top: .5cm; padding-bottom: 20px">
