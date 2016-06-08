@@ -3,7 +3,12 @@
 <%@ page import="com.common.*" %>
 
 <%@ page import="java.util.*" %>
-
+<style>
+	li
+	{
+		font-size: initial;
+	}
+</style>
 <div style="padding-top: 4px;">
 	<h2>Freelance App Developer</h2>
 	<h4>
