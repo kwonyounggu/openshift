@@ -11,7 +11,7 @@
 	</h4>
 </div>
 <!-- see http://www.w3schools.com/bootstrap/bootstrap_navbar.asp -->
-<nav class="navbar navbar-inverse" style="height: 90px">
+<nav class="navbar navbar-inverse" style="vertical-align: middle">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
