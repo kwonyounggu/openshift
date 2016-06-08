@@ -3,9 +3,7 @@
 <%@ page import="java.util.*" %>
 <%@ page isELIgnored ="false" %>
 
-<table style="width: 90%; padding-bottom: 20px; font-size: 20px; table-layout: fixed">
-  <tr>
-    <td style="background-color: #555762; color: #ffffff;">
+<div>
     	<ul><h3 style="color: #f9d548;">What to provide</h3>
     		<li>Web Applications<br/>(eg: stock-charts, e-learning, e-commerce, etc)</li>
     		<li>PC-based Applications<br/>(eg: stock-charts, research, etc)</li>
@@ -13,13 +11,8 @@
     		<li>Tablet Applications<br/>(eg: stock-charts, education, etc)</li>
     		<li>Web Site Support and Maintenance</li>
     	</ul>
-    </td>	
-  </tr>
-  <tr style="width: 20px">
-    <td ></td>
-  </tr>
-  <tr>
-    <td style="background-color: #555762; color: #ffffff;">
+</div>
+<div>
     	<ul><h3 style="color: #f9d548;">Developement Technologies</h3>
     		<li>Java, C/C++</li>
     		<li>Actionscript 3.0 including Starling, Feathers UI</li>
@@ -28,10 +21,7 @@
     		<li>Tomcat 5.x, 6.x, 7.x, 8.x and JBoss</li>
     		<li style="list-style-type: none; height: 30%" />
     	</ul>
-    </td>
-  </tr>
-  <tr style="height: 20px"><td></td></tr>
-</table>
+</div>
 <table style="width: 90%; padding-bottom: 20px; table-layout: fixed">
 <tr>
 	<td style="border: 1px solid gray">
