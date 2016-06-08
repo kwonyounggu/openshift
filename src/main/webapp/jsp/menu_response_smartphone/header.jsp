@@ -6,7 +6,7 @@
 <style>
 	li
 	{
-		font-size: initial;
+		font-size: 200%;
 	}
 </style>
 <div style="padding-top: 4px;">

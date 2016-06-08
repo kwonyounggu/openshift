@@ -111,21 +111,6 @@
 		border-radius:0 0 15px 15px;
 		font-size: 26px;
 	}
-	/*This will affect the menu indentation
-	ul li
-	{
-	    list-style-type: disc;
-	    list-style-position: inside;
-	    padding: 10px 20px 5px 20px;
-	    text-indent: -1em;
-	    font-size: 46px;
-	}*/
-	
-	li
-	{
-		font-size: 46px;
-	}
-	
 	h1
 	{
 		font-size: 60px;
@@ -160,6 +145,12 @@
 			<%@ include file="/jsp/menu_response_smartphone/header.jsp" %>
 		</div>	
 		<div class="contents">		
+		<style>
+				li
+				{
+					font-size: 46px;
+				}
+		</style>
 			<div style="margin-top: .5cm; padding-bottom: 20px">
 				<jsp:include page='${body_panel}' flush='true'/>	
 			</div>		
