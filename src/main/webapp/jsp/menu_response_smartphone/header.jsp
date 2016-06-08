@@ -9,14 +9,14 @@
 		font-size: 200%;
 	}
 </style>
-<div style="padding-top: 4px;">
+<div style="padding-top: 4px; color: #ffff00;">
 	<h2>Freelance App Developer</h2>
 	<h4>
 		<a href="mailto:<%=AuthData.mycompany_email_address%>?Subject=Hello John KWON" style="color:inherit;text-decoration: none" target="_top">John KWON</a>
 	</h4>
 </div>
 <!-- see http://www.w3schools.com/bootstrap/bootstrap_navbar.asp -->
-<nav class="navbar navbar-inverse" style="vertical-align: middle">
+<nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
