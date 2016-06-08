@@ -7,7 +7,7 @@
 <script type="text/javascript">
      $(document).ready(function () {
 
-        $("#jqxMenu").jqxMenu({ width: 'auto', height: 'auto', autoOpen: false, autoCloseOnMouseLeave: false, showTopLevelArrows: true, 
+        $("#jqxMenu").jqxMenu({ width: 'auto', height: '80px', autoOpen: false, autoCloseOnMouseLeave: false, showTopLevelArrows: true, 
         						theme: 'metro'
         					  });
         $("#jqxMenu").css('visibility', 'visible');               
@@ -30,10 +30,10 @@
 		</div>
 	</div>
 	<div style="float:right; width:85%; padding-top: 4px;">
-		<font size="6" color="#ffda48">Freelance App Developer</font><br/>
-		<font size="4" color="#bad5fe" style="margin-top: 2px;">
+		<h1>Freelance App Developer</h1>
+		<h3>
 			<a href="mailto:<%=AuthData.mycompany_email_address%>?Subject=Hello John KWON" style="color:inherit;text-decoration: none" target="_top">John KWON</a>
-		</font>
+		</h3>
 	</div>
 </div>
  
