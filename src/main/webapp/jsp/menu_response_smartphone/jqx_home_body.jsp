@@ -3,7 +3,7 @@
 <%@ page import="java.util.*" %>
 <%@ page isELIgnored ="false" %>
 
-<table style="width: 90%; padding-bottom: 20px; table-layout: fixed">
+<table style="width: 90%; padding-bottom: 20px; font-size: 20px; table-layout: fixed">
   <tr>
     <td style="background-color: #555762; color: #ffffff;">
     	<ul><h3 style="color: #f9d548;">What to provide</h3>
