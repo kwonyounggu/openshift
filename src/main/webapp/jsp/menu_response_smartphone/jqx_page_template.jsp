@@ -53,7 +53,7 @@
 <script language="Javascript" type="text/javascript">
 	if (!isCanvasSupported())
 	{
-		//alert("ERROR: your browser does not support HTML5!!!\n\nPlease upgrade your browser with the latest version.\n\nOtherwise it won't work properly!!!");
+		log("ERROR: your browser does not support HTML5!!!\n\nPlease upgrade your browser with the latest version.\n\nOtherwise it won't work properly!!!");
 	}
 </script>
 
@@ -72,7 +72,7 @@
 	{
 		
 		margin-top:2px;
-		width:1000px;
+		width:auto;
 
 	}
 	.header 

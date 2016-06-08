@@ -235,9 +235,6 @@
 	function submitForm()
 	{
 		run_waitMe("roundBounce");
-		//Not working
-		//document.getElementById("submitter_note").value=CKEDITOR.instances.estimateNoteEditor.getData();
-		//document.getElementById("note_msg").value='estimates';
 		
 		var formData=new FormData(document.getElementById("estimate_form"));
 		/**** Android original google chrome does not support formData.set ****/
