@@ -10,7 +10,8 @@
         $("#jqxMenu").jqxMenu({ width: 'auto', height: '30px', autoOpen: false, autoCloseOnMouseLeave: false, showTopLevelArrows: true, 
         						theme: 'metro'
         					  });
-        $("#jqxMenu").css('visibility', 'visible');               
+        $("#jqxMenu").css('visibility', 'visible');  
+        $('#jqxMenu').jqxMenu('restore');
     }); 
 </script>
 
