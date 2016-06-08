@@ -67,15 +67,14 @@
 		marginwidth: 0;
 		
 		font-family: verdana;
-		font-size: 16px;
 	}
 	.small-font
 	{
-		font-size: 12px; 
+		font-size: 42px; 
 	}
 	.large-font
 	{
-		font-size: 20px; 
+		font-size: 50px; 
 	}
 	.wrapper
 	{
@@ -119,6 +118,11 @@
 	    list-style-position: inside;
 	    padding: 10px 20px 5px 20px;
 	    text-indent: -1em;
+	    font-size: 46px;
+	}
+	h1
+	{
+		font-size: 54px;
 	}
 </style>
 </head>

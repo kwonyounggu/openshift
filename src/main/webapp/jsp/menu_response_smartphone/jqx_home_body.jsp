@@ -15,8 +15,8 @@
     	</ul>
     </td>	
   </tr>
-  <tr>
-    <td style="width: 20px"></td>
+  <tr style="width: 20px">
+    <td ></td>
   </tr>
   <tr>
     <td style="background-color: #555762; color: #ffffff;">
