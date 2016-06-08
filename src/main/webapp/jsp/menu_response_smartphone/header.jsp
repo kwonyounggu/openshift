@@ -7,7 +7,7 @@
 <script type="text/javascript">
      $(document).ready(function () {
 
-        $("#jqxMenu").jqxMenu({ width: 'auto', height: '80px', autoOpen: false, autoCloseOnMouseLeave: false, showTopLevelArrows: true, 
+        $("#jqxMenu").jqxMenu({ width: 'auto', height: 'auto', autoOpen: false, autoCloseOnMouseLeave: false, showTopLevelArrows: true, 
         						theme: 'metro'
         					  });
         $("#jqxMenu").css('visibility', 'visible');               
