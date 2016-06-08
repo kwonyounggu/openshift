@@ -3,9 +3,7 @@
 <%@ page import="java.util.*" %>
 <%@ page isELIgnored ="false" %>
 
-<div style="background-color: #555762; color: #ffffff; padding-bottom: 20px; text-align:left; margin: auto;">
-
-  <div style="width: 90%; align: center;">
+<div style="background-color: #555762; color: #ffffff; padding: 20px 20px 20px 20px; text-align:left;">
    	<ul><h3 style="color: #f9d548;">What to provide</h3>
    		<li>Web Applications<br/>(eg: stock-charts, e-learning, e-commerce, etc)</li>
    		<li>PC-based Applications<br/>(eg: stock-charts, research, etc)</li>
@@ -13,8 +11,6 @@
    		<li>Tablet Applications<br/>(eg: stock-charts, education, etc)</li>
    		<li>Web Site Support and Maintenance</li>
    	</ul>
-  </div>
-
 </div>
 <div style="background-color: #555762; color: #ffffff; padding-bottom: 20px; text-align:left;">
   <div style="width: 90%;">
