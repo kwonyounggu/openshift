@@ -67,6 +67,15 @@
 		marginwidth: 0;
 		
 		font-family: verdana;
+		font-size: 16px;
+	}
+	.small-font
+	{
+		font-size: 12px; 
+	}
+	.large-font
+	{
+		font-size: 20px; 
 	}
 	.wrapper
 	{
