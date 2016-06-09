@@ -47,7 +47,7 @@ $(document).ready(function ()
 			$('a[href="/"]').closest('li').addClass('active');
 			break;	
 	}
-)};
+});
 
 
 /* Useful when header remains without reloading
