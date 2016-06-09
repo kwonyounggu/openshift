@@ -22,8 +22,34 @@ function getParameterByName(name, url)
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
-var op=getParameterByName('op');
-log("op="+op);
+$(document).ready(function ()
+{
+	var op=getParameterByName('op');
+	log("op="+op);
+	switch(op)
+	{
+		case "menu_public_showcase":
+			$('a[href="?op=menu_public_showcase"]').closest('li').addClass('active');
+			break;
+		case "menu_public_contact":
+			$('a[href="?op=menu_public_contact"]').closest('li').addClass('active');
+			break;
+		case "menu_public_stockcharts":
+			$('a[href="?op=menu_public_stockcharts"]').closest('li').addClass('active');
+			break;
+		case "menu_public_hvac":
+			$('a[href="?op=menu_public_hvac"]').closest('li').addClass('active');
+			break;
+		case "menu_public_saxophone":
+			$('a[href="?op=menu_public_saxophone"]').closest('li').addClass('active');
+			break;
+		default:
+			$('a[href="/"]').closest('li').addClass('active');
+			break;	
+	}
+};
+
+
 /* Useful when header remains without reloading
 $(".nav a").on("click", function(){
 	   $(".nav").find(".active").removeClass("active");
@@ -51,7 +77,7 @@ $(".nav a").on("click", function(){
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="<%= MenuLink.home %>" onfocus="this.blur()">Home</a></li>							
+        <li><a href="<%= MenuLink.home %>" onfocus="this.blur()">Home</a></li>							
 		<li><a href="<%= MenuLink.menu_public_showcase %>" onfocus="this.blur()">Showcase</a></li>
 		<li><a href="<%= MenuLink.menu_public_contact %>" onfocus="this.blur()">Contact/Estimate</a></li>		
       </ul>
