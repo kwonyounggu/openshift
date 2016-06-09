@@ -90,7 +90,7 @@
 	}
 	.footer 
 	{
-		margin-top: 2px;
+		margin-top: 4px;
 		margin-bottom: 5px;
 	    color:#8a8a8a;
 	    clear:both;
@@ -100,8 +100,8 @@
 	    box-shadow: 10px 10px 5px #888888;
 		background:#353743;
 		height:100%;
-		border-radius:0 0 15px 15px;
-		font-size: 11px;
+		border-radius:0 0 0px 0px;
+		font-size: 12px;
 	}
 	/*This will affect the menu indentation*/
 	ul li
