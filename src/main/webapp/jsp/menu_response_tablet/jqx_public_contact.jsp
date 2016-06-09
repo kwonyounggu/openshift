@@ -12,11 +12,7 @@
 	{
 		color: #000000;
 	}
-	table
-	{
-		border-collapse: separate;
-		border-spacing: 5px;
-	}
+	
 	.tooltipster-default
 	{
 		border-radius: 1px;
