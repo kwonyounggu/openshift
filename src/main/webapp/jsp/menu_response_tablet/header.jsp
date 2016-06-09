@@ -52,12 +52,7 @@ $(".nav a").on("click", function(){
 */
 
 </script>
-<div style="padding-top: 4px; color: #ffff00;">
-	<h4>Freelance App Developer</h4>
-<!-- 	<h4> -->
-<%-- 		<a href="mailto:<%=AuthData.mycompany_email_address%>?Subject=Hello John KWON" style="color:inherit;text-decoration: none" target="_top">John KWON</a> --%>
-<!-- 	</h4> -->
-</div>
+
 <!-- see http://www.w3schools.com/bootstrap/bootstrap_navbar.asp -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
