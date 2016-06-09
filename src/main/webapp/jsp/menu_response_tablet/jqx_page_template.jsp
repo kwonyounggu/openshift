@@ -125,7 +125,7 @@
 		</div>	
 		<div class="contents">
 			
- 			<div style="margin-top: .15cm; padding-bottom: 20px">
+ 			<div style="margin-top: 20px; padding-bottom: 20px">
 				<jsp:include page='${body_panel}' flush='true'/>	
  			</div>		
 		</div>
