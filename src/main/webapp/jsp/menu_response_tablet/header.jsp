@@ -3,7 +3,14 @@
 <%@ page import="com.common.*" %>
 
 <%@ page import="java.util.*" %>
-
+<style>
+<!--
+	.nav a
+	{
+	    font-size: 14px !important;
+	}
+-->
+</style>
 <script type="text/javascript">
 //http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
 function getParameterByName(name, url) 
