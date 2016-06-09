@@ -9,11 +9,19 @@
 		font-size: 200%;
 	}
 </style>
+<<script type="text/javascript">
+<!--
+$(".nav a").on("click", function(){
+	   $(".nav").find(".active").removeClass("active");
+	   $(this).parent().addClass("active");
+	});
+//-->
+</script>
 <div style="padding-top: 4px; color: #ffff00;">
-	<h2>Freelance App Developer</h2>
-	<h4>
-		<a href="mailto:<%=AuthData.mycompany_email_address%>?Subject=Hello John KWON" style="color:inherit;text-decoration: none" target="_top">John KWON</a>
-	</h4>
+	<h4>Freelance App Developer</h4>
+<!-- 	<h4> -->
+<%-- 		<a href="mailto:<%=AuthData.mycompany_email_address%>?Subject=Hello John KWON" style="color:inherit;text-decoration: none" target="_top">John KWON</a> --%>
+<!-- 	</h4> -->
 </div>
 <!-- see http://www.w3schools.com/bootstrap/bootstrap_navbar.asp -->
 <nav class="navbar navbar-inverse">
@@ -34,7 +42,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
       	<li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span></a>
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
           <ul class="dropdown-menu">
             <li><a href="<%= MenuLink.menu_public_stockcharts %>" onfocus="this.blur()">Stock-Charts</a></li>
 			<li><a href="<%= MenuLink.menu_public_hvac %>" onfocus="this.blur()">HVAC</a></li>
