@@ -125,9 +125,9 @@
 		</div>	
 		<div class="contents">
 			
-<!-- 			<div style="margin-top: .5cm; padding-bottom: 20px"> -->
+ 			<div style="margin-top: .15cm; padding-bottom: 20px">
 				<jsp:include page='${body_panel}' flush='true'/>	
-<!-- 			</div>		 -->
+ 			</div>		
 		</div>
 		<div class="footer">
 			<div>555 University Avenue, Toronto, Ontario, Canada M1S5C2</div>
