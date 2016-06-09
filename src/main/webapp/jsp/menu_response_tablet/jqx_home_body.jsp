@@ -27,7 +27,7 @@
     </td>
   </tr>
 </table>
-<table style="width: 90%; padding-bottom: 20px; table-layout: fixed">
+<table style="width: 90%; padding: 20px 0 0 0; table-layout: fixed">
 <tr>
 	<td style="border: 1px solid gray">
 		<div style="width:100%; padding:5px 20px 5px 20px;text-align:left;"><!-- Resume -->	
