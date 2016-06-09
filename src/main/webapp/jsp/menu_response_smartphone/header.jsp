@@ -9,13 +9,15 @@
 		font-size: 200%;
 	}
 </style>
-<<script type="text/javascript">
-<!--
+<script type="text/javascript">
+log("op="+$.url.attr('op'));
+/* Useful when header remains without reloading
 $(".nav a").on("click", function(){
 	   $(".nav").find(".active").removeClass("active");
 	   $(this).parent().addClass("active");
 	});
-//-->
+*/
+
 </script>
 <div style="padding-top: 4px; color: #ffff00;">
 	<h4>Freelance App Developer</h4>
