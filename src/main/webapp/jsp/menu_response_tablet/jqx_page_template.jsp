@@ -124,7 +124,7 @@
 			<%@ include file="/jsp/menu_response_tablet/header.jsp" %>
 		</div>	
 		<div class="contents">
-			<%@ include file="/jsp/menu_response_tablet/jqx_public_menu.jsp" %>
+			
 			<div style="margin-top: .5cm; padding-bottom: 20px">
 				<jsp:include page='${body_panel}' flush='true'/>	
 			</div>		
