@@ -26,7 +26,6 @@
     	</ul>
     </td>
   </tr>
-  <tr style="height: 20px"><td colspan="3"></td></tr>
 </table>
 <table style="width: 90%; padding-bottom: 20px; table-layout: fixed">
 <tr>
