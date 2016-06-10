@@ -24,7 +24,7 @@
 	#estimate_table input
 	{
 		font-size: 38px;
-		width: 70%;
+		width: 80%;
 	}
 	.tooltipster-default
 	{
@@ -434,8 +434,8 @@
 			   		<tr>
 			   			<td class='estimate_form_td' colspan='2'>Please select the elephant before submitting <span style='color: #8fc161;' id='check_robot_span'>*</span>&nbsp;:&nbsp;
 			   				<br />
-			   				<input type='radio' style='margin-left: 150px;' name='animalGroup' id='animal_1' value='1'/>
-			   				<input type='radio' style='margin-left: 150px;' name='animalGroup' id='animal_2' value='2'/>
+			   				<input type='radio' style='width: 150px;' name='animalGroup' id='animal_1' value='1'/>
+			   				<input type='radio' style='width: 150px;' name='animalGroup' id='animal_2' value='2'/>
 			   				<input type='radio' style='width: 150px;' name='animalGroup' id='animal_3' value='3'/>
 			   				<br />
 			   				<img src="images/three_animals.png" width="100%" height="86" alt="Three Animals" border="0"/>
