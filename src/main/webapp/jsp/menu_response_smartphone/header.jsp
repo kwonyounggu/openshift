@@ -58,7 +58,7 @@ $(".nav a").on("click", function(){
 */
 
 </script>
-<div style="padding-top: 4px; color: #ffff00;">
+<div style="padding-top: 15px; color: #ffff00;">
 	<a href="http://www.webmonster.ca"><img src="images/wm_logo.png" width="250" height="26" alt="WM_LOGO" border="0"/></a>
 	<h4>Freelance App Developer</h4>
 </div>
