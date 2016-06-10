@@ -109,8 +109,15 @@
 	    box-shadow: 10px 10px 5px #888888;
 		background:#353743;
 		height:100%;
-		border-radius:0 0 15px 15px;
+		border-radius:0 0 0px 0px;
 		font-size: 26px;
+	}
+	ul li
+	{
+	    list-style-type: disc;
+	    list-style-position: inside;
+	    padding: 10px 20px 5px 20px;
+	    text-indent: -1em;
 	}
 	h1
 	{
