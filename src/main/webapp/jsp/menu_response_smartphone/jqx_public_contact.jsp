@@ -30,7 +30,7 @@
 	{
 	    border: 0px;
 	    width: 100%;
-	    height: 2em;
+	    height: 1em;
 	}
 	.tooltipster-default
 	{
