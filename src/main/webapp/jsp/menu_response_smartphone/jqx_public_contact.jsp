@@ -370,16 +370,16 @@
 <div style="height: 20px;"></div>
 <div style="width: 95%; background-color: #555762; color: #ffffff; padding: 10px 20px 10px 30px; text-align:left;">
   			<form id='estimate_form' action='./'>
-			   	<table  id='estimate_table' style='width: 100%; border-spacing: 4px; padding: 0px 0px 10px 0px; font-size: 28px;'>
+			   	<table  id='estimate_table' style='width: 100%; border-spacing: 4px; padding: 0px 0px 10px 0px;'>
 			   		<tr>
-			   			<td colspan='2' style='text-align: left;'>
+			   			<td colspan='2' style='text-align: left; font-size: 32px;'>
 			   				<h3 style='color: #f9d548;'>Estimate</h3>
-			   				<span style='font-size: 26px; color: #8fc161;'>(*: required)</span>
-			   				<span style='font-size: 26px; color: #bad5fe;'>Payment is not required unless you are satisfied.</span>
+			   				<span style='font-size: 32px; color: #8fc161;'>(*: required)</span>
+			   				<span style='font-size: 32px; color: #bad5fe;'>Payment is not required unless you are satisfied.</span>
 			   			</td>
 			   		</tr>
 			   		<tr>
-			   			<td class='estimate_form_td'  style='width: 20%'>Name: <span style='font-size: .95em; color: #8fc161;'>*</span>
+			   			<td class='estimate_form_td'  style='width: 20%; font-size: 32px;'>Name: <span style='font-size: .95em; color: #8fc161;'>*</span>
 			   			</td>
 			   			<td>
 			 				<input type='text' id='submitter_name' name='submitter_name'  placeholder='Bob Smith' style='width: 250px; height: 22px'/>
