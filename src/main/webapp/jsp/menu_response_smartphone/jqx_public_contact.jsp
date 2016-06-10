@@ -33,6 +33,8 @@
 
 		background: #942724;
 		color: #e4f1ff;
+		
+		font-size: 38px;
 	}	
 	.hide-bt-alert
 	{
