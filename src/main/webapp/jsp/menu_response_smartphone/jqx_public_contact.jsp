@@ -332,9 +332,7 @@
 	
 	//see, http://abandon.ie/notebook/simple-file-uploads-using-jquery-ajax
 </script>
-<table style='width: 90%; padding-bottom: 20px; table-layout: fixed'>
-   <tr>
-    <td style='background-color: #555762; color: #ffffff; width: 50%; vertical-align: top;'>
+<div style="width: 95%; background-color: #555762; color: #ffffff; padding: 10px 20px 10px 30px; text-align:left;">
     	<ul style='font-size: 12px'>
     		<h3 style='color: #f9d540'>Contact</h3>
     		<br/>
@@ -368,10 +366,9 @@
     		<li>What did you have in mind? Suggestions to include: competitor's websites, designs that you like, some initial ideas for your brand, what kind of niches you'd like to explore, and anything to get the conversation going!</li>
     		<li style='list-style-type: none; height: 30%' />
     	</ul>
-    </td>	
-    <td style='width: 20px'></td>
-        <td style='background-color: #555762; color: #ffffff; width: 50%; padding: 5px 20px 20px 20px;'>
-
+</div>
+<div style="height: 20px;"></div>
+<div style="width: 95%; background-color: #555762; color: #ffffff; padding: 10px 20px 10px 30px; text-align:left;">
   			<form id='estimate_form' action='./'>
 			   	<table  id='estimate_table' style='width: 100%; border-spacing: 4px; padding: 0px 0px 10px 0px;'>
 			   		<tr>
@@ -454,6 +451,4 @@
 					</tr>
 			 </table>
 		 </form>
-    </td>
-  </tr>
-</table>
+</div>
