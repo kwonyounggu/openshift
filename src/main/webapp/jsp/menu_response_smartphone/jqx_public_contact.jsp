@@ -370,12 +370,12 @@
 <div style="height: 20px;"></div>
 <div style="width: 95%; background-color: #555762; color: #ffffff; padding: 10px 20px 10px 30px; text-align:left;">
   			<form id='estimate_form' action='./'>
-			   	<table  id='estimate_table' style='width: 250%; border-spacing: 4px; padding: 0px 0px 10px 0px;'>
+			   	<table  id='estimate_table' style='width: 100%; border-spacing: 4px; padding: 0px 0px 10px 0px; font-size: 28px;'>
 			   		<tr>
 			   			<td colspan='2' style='text-align: left;'>
 			   				<h3 style='color: #f9d548;'>Estimate</h3>
-			   				<span style='font-size: 20px; color: #8fc161;'>(*: required)</span>
-			   				<span style='font-size: 20px; color: #bad5fe;'>Payment is not required unless you are satisfied.</span>
+			   				<span style='font-size: 26px; color: #8fc161;'>(*: required)</span>
+			   				<span style='font-size: 26px; color: #bad5fe;'>Payment is not required unless you are satisfied.</span>
 			   			</td>
 			   		</tr>
 			   		<tr>
