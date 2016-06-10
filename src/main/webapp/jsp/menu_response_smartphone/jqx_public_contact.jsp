@@ -336,7 +336,7 @@
     	<ul style='font-size: 12px'>
     		<h3 style='color: #f9d540'>Contact</h3>
     		<h4 style='font-size: 32px; color: #bad5fe;'>
-    		If you are interested in growing your business and building a positive brand expirience for your customers/patients, then we should talk:
+    		If you are interested in growing your business and building a positive brand experience for your customers/patients, then we should talk:
     		</h4>
     		<li>By Email: <a href="mailto:<%=AuthData.mycompany_email_address%>?Subject=Hello WebMonster.CA" style="color:inherit;text-decoration: none" target="_top"><%=AuthData.mycompany_email_address%></a></li>
     		
@@ -363,7 +363,7 @@
     			- appointment required
     		</li>
     		
-    		<li>What did you have in mind? Suggestions to include: competitor's websites, designs that you like, some initial ideas for your brand, what kind of niches you'd like to explore, and anything to get the conversation going!</li>
+    		<li>What did you have in mind? <h4 style='font-size: 32px; color: #bad5fe;'>Suggestions to include: competitor's websites, designs that you like, some initial ideas for your brand, what kind of niches you'd like to explore, and anything to get the conversation going!</h4></li>
     		<li style='list-style-type: none; height: 30%' />
     	</ul>
 </div>
