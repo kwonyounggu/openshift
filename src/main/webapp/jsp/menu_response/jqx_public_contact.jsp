@@ -8,9 +8,10 @@
 		color: #ffffff;
 		vertical-align: top;
 	}
-	input
+	
+	#estimate_table input
 	{
-		color: #000000;
+		width: 80%;
 	}
 	.tooltipster-default
 	{
