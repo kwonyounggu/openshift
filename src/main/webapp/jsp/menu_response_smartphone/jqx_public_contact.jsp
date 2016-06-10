@@ -438,7 +438,7 @@
 			   				<input type='radio' style='width: 150px;' name='animalGroup' id='animal_2' value='2'/>
 			   				<input type='radio' style='width: 150px;' name='animalGroup' id='animal_3' value='3'/>
 			   				<br />
-			   				<img src="images/three_animals.png" width="100%" height="86" alt="Three Animals" border="0"/>
+			   				<img src="images/three_animals.png" width="362" height="86" alt="Three Animals" border="0"/>
 						</td>
 			   		</tr>
 					<tr>
