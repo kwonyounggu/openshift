@@ -365,7 +365,7 @@
     		
     		<li>By Visiting primary place: 
     			<br/>
-    			- <%=AuthData.company_address %>			
+    			- <%=AuthData.company_address.substring(0, -15) %>			
     			<br/>
     			- appointment required
     		</li>
@@ -419,7 +419,7 @@
 			   					<input type='text' style='width: 0px; height: 0px; border: none; background-color: #555762' name='note_msg' id='note_msg' value='estimates'/>
 			   				</span>
 			   				<br/>
-			 				<textarea id='estimateNoteEditor' name='submitter_note' id='submitter_note' cols='80' rows='10'></textarea>
+			 				<textarea id='estimateNoteEditor' name='submitter_note' id='submitter_note' ></textarea>
 						</td>
 			   		</tr>
 
@@ -440,7 +440,7 @@
 			   				<input type='radio' style='margin-left: 50px;' name='animalGroup' id='animal_2' value='2'/>
 			   				<input type='radio' style='width: 150px;' name='animalGroup' id='animal_3' value='3'/>
 			   				<br />
-			   				<img src="images/three_animals.png" width="362" height="86" alt="Three Animals" border="0"/>
+			   				<img src="images/three_animals.png" width="100%" height="86" alt="Three Animals" border="0"/>
 						</td>
 			   		</tr>
 					<tr>
