@@ -365,7 +365,7 @@
     		
     		<li>By Visiting primary place: 
     			<br/>
-    			- <%=AuthData.company_address.substring(0, -15) %>			
+    			- <%=AuthData.company_address.substring(0, AuthData.company_address.length()-15) %>			
     			<br/>
     			- appointment required
     		</li>
