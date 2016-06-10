@@ -335,7 +335,7 @@
 <div style="width: 95%; background-color: #555762; color: #ffffff; padding: 10px 20px 10px 30px; text-align:left;">
     	<ul style='font-size: 12px'>
     		<h3 style='color: #f9d540'>Contact</h3>
-    		<h4>
+    		<h4 style='font-size: 32px; color: #bad5fe;'>
     		If you are interested in growing your business and building a positive brand expirience for your customers/patients, then we should talk:
     		</h4>
     		<li>By Email: <a href="mailto:<%=AuthData.mycompany_email_address%>?Subject=Hello WebMonster.CA" style="color:inherit;text-decoration: none" target="_top"><%=AuthData.mycompany_email_address%></a></li>
