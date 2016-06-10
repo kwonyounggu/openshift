@@ -8,10 +8,7 @@
 		color: #ffffff;
 		vertical-align: top;
 	}
-	input
-	{
-		color: #000000;
-	}
+	
 	#estimate_table td
 	{
 		font-size: 32px;
@@ -21,6 +18,10 @@
 		font-size: 32px;
 	}
 	#estimate_table span
+	{
+		font-size: 32px;
+	}
+	#estimate_table input
 	{
 		font-size: 32px;
 	}
@@ -344,7 +345,7 @@
 	//see, http://abandon.ie/notebook/simple-file-uploads-using-jquery-ajax
 </script>
 <div style="width: 95%; background-color: #555762; color: #ffffff; padding: 10px 20px 10px 30px; text-align:left;">
-    	<ul style='font-size: 12px'>
+    	<ul>
     		<h3 style='color: #f9d540'>Contact</h3>
     		<h4 style='font-size: 32px; color: #bad5fe;'>
     		If you are interested in growing your business and building a positive brand experience for your customers/patients, then we should talk:
@@ -390,21 +391,21 @@
 			   			</td>
 			   		</tr>
 			   		<tr>
-			   			<td class='estimate_form_td'  style='width: 20%; font-size: 32px;'>Name: <span style='font-size: .95em; color: #8fc161;'>*</span>
+			   			<td class='estimate_form_td'  style='width: 20%; '>Name: <span style='color: #8fc161;'>*</span>
 			   			</td>
 			   			<td>
-			 				<input type='text' id='submitter_name' name='submitter_name'  placeholder='Bob Smith' style='width: 250px; font-size: 32px; height: 22px'/>
+			 				<input type='text' id='submitter_name' name='submitter_name'  placeholder='Bob Smith' style='width: 250px; '/>
 						</td>
 			   		</tr>
 			   		<tr>
-			   			<td class='estimate_form_td'   style='width: 20%; font-size: 32px;'>Phone: <span style='font-size: .95em; color: #8fc161;'>*</span>
+			   			<td class='estimate_form_td'   style='width: 20%; '>Phone: <span style='color: #8fc161;'>*</span>
 			   			</td>
 			   			<td>
 			 				<input type='text' name='submitter_phone' placeholder='(123)-123-1234' style='width: 250px; height: 22px'/>
 						</td>
 			   		</tr>
 			   		<tr>
-			   			<td class='estimate_form_td'   style='width: 20%'>E-Mail: <span style='font-size: .95em; color: #8fc161;'>*</span>
+			   			<td class='estimate_form_td'   style='width: 20%'>E-Mail: <span style='color: #8fc161;'>*</span>
 			   			</td>
 			   			<td>
 			 				<input type='text' name='submitter_email' placeholder='webmosnter.ca@gmail.com' style='width: 250px; height: 22px'/>
@@ -412,7 +413,7 @@
 			   		</tr>
 					<tr>
 			   			<td class='estimate_form_td' colspan='2'>Note about your requirements:
-			   				<span style='font-size: .95em; color: #8fc161;' id='note_span'>*
+			   				<span style='color: #8fc161;' id='note_span'>*
 			   					<!-- To hide the input but only to display the error message -->
 			   					<input type='text' style='width: 0px; height: 0px; border: none; background-color: #555762' name='note_msg' id='note_msg' value='estimates'/>
 			   				</span>
@@ -432,7 +433,7 @@
 			   		</tr>
 
 			   		<tr>
-			   			<td class='estimate_form_td' colspan='2'>Please select the elephant before submitting <span style='font-size: .95em; color: #8fc161;' id='check_robot_span'>*</span>&nbsp;:&nbsp;
+			   			<td class='estimate_form_td' colspan='2'>Please select the elephant before submitting <span style='color: #8fc161;' id='check_robot_span'>*</span>&nbsp;:&nbsp;
 			   				<br />
 			   				<input type='radio' style='margin-right: 100px; margin-left: 50px;' name='animalGroup' id='animal_1' value='1'/>
 			   				<input type='radio' style='margin-right: 100px;' name='animalGroup' id='animal_2' value='2'/>
