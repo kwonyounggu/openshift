@@ -4,7 +4,7 @@
 
 <%@ page import="java.util.*" %>
 <style>
-	.nav ul li
+	nav ul li
 	{
 	    font-size: 150%;
 	}
