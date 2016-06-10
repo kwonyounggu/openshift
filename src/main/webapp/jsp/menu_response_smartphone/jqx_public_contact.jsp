@@ -26,6 +26,12 @@
 		font-size: 38px;
 		width: 80%;
 	}
+	input[type=radio] 
+	{
+	    border: 0px;
+	    width: 100%;
+	    height: 2em;
+	}
 	.tooltipster-default
 	{
 		border-radius: 1px;
@@ -37,7 +43,7 @@
 	/* http://iamceege.github.io/tooltipster */
 	.tooltipster-content
 	{
-		font-size: 380px;
+		/*Not working*/
 	}
 	.hide-bt-alert
 	{
