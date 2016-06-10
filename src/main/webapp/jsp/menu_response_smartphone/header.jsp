@@ -6,8 +6,6 @@
 <style>
 	li
 	{
-	    padding: 10px 20px 5px 20px;
-	    text-indent: -1em;
 	    font-size: 150%;
 	}
 </style>
