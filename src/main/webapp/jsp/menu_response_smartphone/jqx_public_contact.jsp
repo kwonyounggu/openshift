@@ -12,7 +12,18 @@
 	{
 		color: #000000;
 	}
-	
+	#estimate_table td
+	{
+		font-size: 32px;
+	}
+	#estimate_table span
+	{
+		font-size: 32px;
+	}
+	#estimate_table span
+	{
+		font-size: 32px;
+	}
 	.tooltipster-default
 	{
 		border-radius: 1px;
@@ -372,10 +383,10 @@
   			<form id='estimate_form' action='./'>
 			   	<table  id='estimate_table' style='width: 100%; border-spacing: 4px; padding: 0px 0px 10px 0px;'>
 			   		<tr>
-			   			<td colspan='2' style='text-align: left; font-size: 32px;'>
+			   			<td colspan='2' style='text-align: left;'>
 			   				<h3 style='color: #f9d548;'>Estimate</h3>
-			   				<span style='font-size: 32px; color: #8fc161;'>(*: required)</span>
-			   				<span style='font-size: 32px; color: #bad5fe;'>Payment is not required unless you are satisfied.</span>
+			   				<span style='color: #8fc161;'>(*: required)</span>
+			   				<span style='color: #bad5fe;'>Payment is not required unless you are satisfied.</span>
 			   			</td>
 			   		</tr>
 			   		<tr>
@@ -386,7 +397,7 @@
 						</td>
 			   		</tr>
 			   		<tr>
-			   			<td class='estimate_form_td'   style='width: 20%'>Phone: <span style='font-size: .95em; color: #8fc161;'>*</span>
+			   			<td class='estimate_form_td'   style='width: 20%; font-size: 32px;'>Phone: <span style='font-size: .95em; color: #8fc161;'>*</span>
 			   			</td>
 			   			<td>
 			 				<input type='text' name='submitter_phone' placeholder='(123)-123-1234' style='width: 250px; height: 22px'/>
