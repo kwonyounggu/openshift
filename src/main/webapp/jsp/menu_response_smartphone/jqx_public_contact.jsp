@@ -370,54 +370,85 @@
 <div style="height: 20px;"></div>
 <div style="width: 95%; background-color: #555762; color: #ffffff; padding: 10px 20px 10px 30px; text-align:left;">
   			<form id='estimate_form' action='./'>
-			   	
-			   		<div>
+			   	<table  id='estimate_table' style='width: 250%; border-spacing: 4px; padding: 0px 0px 10px 0px;'>
+			   		<tr>
+			   			<td colspan='2' style='text-align: left;'>
 			   				<h3 style='color: #f9d548;'>Estimate</h3>
-			   				<span style='font-size: .95em; color: #8fc161;'>(*: required)</span>
-			   				<span style='font-size: 11px; color: #bad5fe;'>Payment is not required unless you are satisfied.</span>
-			   		</div>
-
-			   		<div>Name: <span style='font-size: .95em; color: #8fc161;'>*</span>
-			   			 <input type='text' id='submitter_name' name='submitter_name'  placeholder='Bob Smith' style='width: 250px; height: 22px'/>
-					</div>
-			   		<div>Phone: <span style='font-size: .95em; color: #8fc161;'>*</span>
-			   			<input type='text' name='submitter_phone' placeholder='(123)-123-1234' style='width: 250px; height: 22px'/>
-					</div>
-			   		<div>E-Mail: <span style='font-size: .95em; color: #8fc161;'>*</span>
-			   			<input type='text' name='submitter_email' placeholder='webmosnter.ca@gmail.com' style='width: 250px; height: 22px'/>
-					</div>
-					<div>Note about your requirements:
+			   				<span style='font-size: 20px; color: #8fc161;'>(*: required)</span>
+			   				<span style='font-size: 20px; color: #bad5fe;'>Payment is not required unless you are satisfied.</span>
+			   			</td>
+			   		</tr>
+			   		<tr>
+			   			<td class='estimate_form_td'  style='width: 20%'>Name: <span style='font-size: .95em; color: #8fc161;'>*</span>
+			   			</td>
+			   			<td>
+			 				<input type='text' id='submitter_name' name='submitter_name'  placeholder='Bob Smith' style='width: 250px; height: 22px'/>
+						</td>
+			   		</tr>
+			   		<tr>
+			   			<td class='estimate_form_td'   style='width: 20%'>Phone: <span style='font-size: .95em; color: #8fc161;'>*</span>
+			   			</td>
+			   			<td>
+			 				<input type='text' name='submitter_phone' placeholder='(123)-123-1234' style='width: 250px; height: 22px'/>
+						</td>
+			   		</tr>
+			   		<tr>
+			   			<td class='estimate_form_td'   style='width: 20%'>E-Mail: <span style='font-size: .95em; color: #8fc161;'>*</span>
+			   			</td>
+			   			<td>
+			 				<input type='text' name='submitter_email' placeholder='webmosnter.ca@gmail.com' style='width: 250px; height: 22px'/>
+						</td>
+			   		</tr>
+					<tr>
+			   			<td class='estimate_form_td' colspan='2'>Note about your requirements:
 			   				<span style='font-size: .95em; color: #8fc161;' id='note_span'>*
 			   					<!-- To hide the input but only to display the error message -->
 			   					<input type='text' style='width: 0px; height: 0px; border: none; background-color: #555762' name='note_msg' id='note_msg' value='estimates'/>
 			   				</span>
-			   				
+			   				<br/>
 			 				<textarea id='estimateNoteEditor' name='submitter_note' id='submitter_note' cols='80' rows='10'></textarea>
-					</div>
+						</td>
+			   		</tr>
 
 
-					<div>A file about your application design to upload :&nbsp;
-			   		
+					<tr>
+			   			<td class='estimate_form_td' colspan='2'>A file about your application design to upload :&nbsp;</td>
+			   		</tr>
+			   		<tr>
+			   			<td class='estimate_form_td' colspan='2'>
 			 				<input type='file' id='file_to_upload' name='file_to_upload' style='color: #ffffff; width: 300px'/>
-					</div>
+						</td>
+			   		</tr>
 
-			   		<div>Please select the elephant before submitting <span style='font-size: .95em; color: #8fc161;' id='check_robot_span'>*</span>&nbsp;:&nbsp;
+			   		<tr>
+			   			<td class='estimate_form_td' colspan='2'>Please select the elephant before submitting <span style='font-size: .95em; color: #8fc161;' id='check_robot_span'>*</span>&nbsp;:&nbsp;
 			   				<br />
 			   				<input type='radio' style='margin-right: 100px; margin-left: 50px;' name='animalGroup' id='animal_1' value='1'/>
 			   				<input type='radio' style='margin-right: 100px;' name='animalGroup' id='animal_2' value='2'/>
 			   				<input type='radio' name='animalGroup' id='animal_3' value='3'/>
 			   				<img src="images/three_animals.png" width="362" height="86" alt="Three Animals" border="0"/>
-					</div>
-					<div>
+						</td>
+			   		</tr>
+					<tr>
+					    <td colspan='2' >
 							<input type='submit' value='Submit' id='submitButton' />
 							<input type='hidden' id='client_place' name='client_place' value='toronto'/>
-					</div>
+						</td>
+					</tr>
 					
-					<div id="submit_success_alert" class="alert alert-success hide-bt-alert"><%=Message.CONTACT_SUCCESS %>
-					</div>
-			
-					<div id="submit_error_alert" class="alert alert-danger  hide-bt-alert">
-						<a href='#' id='submit_error_alert_anchor'>Error: please check your input data and try again!</a>
-					</div>
+					<tr>
+						<td colspan='2'>
+							<div id="submit_success_alert" class="alert alert-success hide-bt-alert"><%=Message.CONTACT_SUCCESS %>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td colspan='2'>
+							<div id="submit_error_alert" class="alert alert-danger  hide-bt-alert">
+								<a href='#' id='submit_error_alert_anchor'>Error: please check your input data and try again!</a>
+							</div>
+						</td>
+					</tr>
+			 </table>
 		 </form>
 </div>
