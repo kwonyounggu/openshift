@@ -24,6 +24,7 @@
 	#estimate_table input
 	{
 		font-size: 32px;
+		width: 480px;
 	}
 	.tooltipster-default
 	{
@@ -394,21 +395,21 @@
 			   			<td class='estimate_form_td'  style='width: 20%; '>Name: <span style='color: #8fc161;'>*</span>
 			   			</td>
 			   			<td>
-			 				<input type='text' id='submitter_name' name='submitter_name'  placeholder='Bob Smith' style='width: 250px; '/>
+			 				<input type='text' id='submitter_name' name='submitter_name'  placeholder='Bob Smith' />
 						</td>
 			   		</tr>
 			   		<tr>
 			   			<td class='estimate_form_td'   style='width: 20%; '>Phone: <span style='color: #8fc161;'>*</span>
 			   			</td>
 			   			<td>
-			 				<input type='text' name='submitter_phone' placeholder='(123)-123-1234' style='width: 250px; '/>
+			 				<input type='text' name='submitter_phone' placeholder='(123)-123-1234' />
 						</td>
 			   		</tr>
 			   		<tr>
 			   			<td class='estimate_form_td'   style='width: 20%'>E-Mail: <span style='color: #8fc161;'>*</span>
 			   			</td>
 			   			<td>
-			 				<input type='text' name='submitter_email' placeholder='webmosnter.ca@gmail.com' style='width: 250px; '/>
+			 				<input type='text' name='submitter_email' placeholder='webmosnter.ca@gmail.com' />
 						</td>
 			   		</tr>
 					<tr>
@@ -428,7 +429,7 @@
 			   		</tr>
 			   		<tr>
 			   			<td class='estimate_form_td' colspan='2'>
-			 				<input type='file' id='file_to_upload' name='file_to_upload' style='color: #ffffff; width: 300px'/>
+			 				<input type='file' id='file_to_upload' name='file_to_upload' style='color: #ffffff; width: 600px'/>
 						</td>
 			   		</tr>
 
