@@ -23,7 +23,7 @@
    	</ul>
 </div>
 <div style="height: 20px;"></div>
-<div style="width: 90%; padding: 10px 20px 10px 20px; border: 1px solid gray">
+<div id="resume_div" style="width: 90%; padding: 10px 20px 10px 20px; border: 1px solid gray">
 		<div style="width:100%; padding:5px 20px 5px 20px;text-align:left;"><!-- Resume -->	
 		 	<div style="width:100%;"><!-- Objective and Profile in depth 1 -->
 		 		<div style="float:left; width:80%">

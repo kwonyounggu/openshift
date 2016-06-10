@@ -120,6 +120,10 @@
 	    text-indent: -1em;
 	    font-size: 46px;
 	}
+	#resume_div ul li
+	{
+		font-size: 150%;
+	}
 	h1
 	{
 		font-size: 60px;
