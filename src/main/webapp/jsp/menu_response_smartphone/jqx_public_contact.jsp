@@ -383,7 +383,7 @@
 <div style="height: 20px;"></div>
 <div style="width: 95%; background-color: #555762; color: #ffffff; padding: 10px 20px 10px 30px; text-align:left;">
   			<form id='estimate_form' action='./'>
-			   	<table  id='estimate_table' style='width: 100%; border-spacing: 4px; padding: 0px 0px 10px 0px;'>
+			   	<table  id='estimate_table' style='width: 100%; border-spacing: 4px; padding: 0px 0px 30px 0px;'>
 			   		<tr>
 			   			<td colspan='2' style='text-align: left;'>
 			   				<h3 style='color: #f9d548;'>Estimate</h3>
@@ -436,8 +436,8 @@
 			   		<tr>
 			   			<td class='estimate_form_td' colspan='2'>Please select the elephant before submitting <span style='color: #8fc161;' id='check_robot_span'>*</span>&nbsp;:&nbsp;
 			   				<br />
-			   				<input type='radio' style='margin-right: 100px; margin-left: 50px;' name='animalGroup' id='animal_1' value='1'/>
-			   				<input type='radio' style='margin-right: 100px;' name='animalGroup' id='animal_2' value='2'/>
+			   				<input type='radio'  name='animalGroup' id='animal_1' value='1'/>
+			   				<input type='radio'  name='animalGroup' id='animal_2' value='2'/>
 			   				<input type='radio' name='animalGroup' id='animal_3' value='3'/>
 			   				<br />
 			   				<img src="images/three_animals.png" width="362" height="86" alt="Three Animals" border="0"/>
