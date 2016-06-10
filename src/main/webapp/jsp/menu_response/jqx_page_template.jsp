@@ -72,7 +72,7 @@
 	{
 		
 		margin-top:2px;
-		width:1000px;
+		width:auto;
 
 	}
 	.header 
@@ -86,11 +86,11 @@
 		background-color:#ffffff;
 		border: 1px solid #e9e9ea;
 		height: 100%;
-		margin-top: 2px;
+		margin-top: 55px;
 	}
 	.footer 
 	{
-		margin-top: 2px;
+		margin-top: 4px;
 		margin-bottom: 5px;
 	    color:#8a8a8a;
 	    clear:both;
@@ -101,10 +101,10 @@
 		background:#353743;
 		height:100%;
 		border-radius:0 0 0px 0px;
-		font-size: 11px;
+		font-size: 12px;
 	}
 	/*This will affect the menu indentation*/
-	ul li
+	.contents ul li
 	{
 	    list-style-type: disc;
 	    list-style-position: inside;
