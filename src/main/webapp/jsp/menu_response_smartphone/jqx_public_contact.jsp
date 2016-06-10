@@ -11,19 +11,19 @@
 	
 	#estimate_table td
 	{
-		font-size: 32px;
+		font-size: 40px;
 	}
 	#estimate_table span
 	{
-		font-size: 32px;
+		font-size: 40px;
 	}
 	#estimate_table span
 	{
-		font-size: 32px;
+		font-size: 40px;
 	}
 	#estimate_table input
 	{
-		font-size: 32px;
+		font-size: 38px;
 		width: 480px;
 	}
 	.tooltipster-default
@@ -437,8 +437,8 @@
 			   			<td class='estimate_form_td' colspan='2'>Please select the elephant before submitting <span style='color: #8fc161;' id='check_robot_span'>*</span>&nbsp;:&nbsp;
 			   				<br />
 			   				<input type='radio' style='width: 150px;' name='animalGroup' id='animal_1' value='1'/>
-			   				<input type='radio' style='width: 150px;' name='animalGroup' id='animal_2' value='2'/>
-			   				<input type='radio' name='animalGroup' id='animal_3' value='3'/>
+			   				<input type='radio' style='margin-left: 50px;' name='animalGroup' id='animal_2' value='2'/>
+			   				<input type='radio' style='width: 150px;' name='animalGroup' id='animal_3' value='3'/>
 			   				<br />
 			   				<img src="images/three_animals.png" width="362" height="86" alt="Three Animals" border="0"/>
 						</td>
