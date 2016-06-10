@@ -100,7 +100,7 @@
 	    box-shadow: 10px 10px 5px #888888;
 		background:#353743;
 		height:100%;
-		border-radius:0 0 15px 15px;
+		border-radius:0 0 0px 0px;
 		font-size: 11px;
 	}
 	/*This will affect the menu indentation*/
@@ -124,7 +124,7 @@
 			<%@ include file="/jsp/menu_response/header.jsp" %>
 		</div>	
 		<div class="contents">
-			<%@ include file="/jsp/menu_response/jqx_public_menu.jsp" %>
+			<!--   include file="/jsp/menu_response/jqx_public_menu.jsp" -->
 			<div style="margin-top: .5cm; padding-bottom: 20px">
 				<jsp:include page='${body_panel}' flush='true'/>	
 			</div>		
