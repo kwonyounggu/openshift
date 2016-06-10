@@ -386,9 +386,7 @@
 			   	<table  id='estimate_table' style='width: 100%; border-spacing: 4px; padding: 0px 0px 30px 0px;'>
 			   		<tr>
 			   			<td colspan='2' style='text-align: left;'>
-			   				<h3 style='color: #f9d548;'>Estimate</h3>
-			   				<span style='color: #8fc161;'>(*: required)</span>
-			   				<span style='color: #bad5fe;'>Payment is not required unless you are satisfied.</span>
+			   				<h3 style='color: #f9d548;'>Estimate<span style='color: #8fc161;'>(*: required)</span></h3>		   				
 			   			</td>
 			   		</tr>
 			   		<tr>
@@ -436,8 +434,8 @@
 			   		<tr>
 			   			<td class='estimate_form_td' colspan='2'>Please select the elephant before submitting <span style='color: #8fc161;' id='check_robot_span'>*</span>&nbsp;:&nbsp;
 			   				<br />
-			   				<input type='radio' style='width: 150px;' name='animalGroup' id='animal_1' value='1'/>
-			   				<input type='radio' style='margin-left: 50px;' name='animalGroup' id='animal_2' value='2'/>
+			   				<input type='radio' style='width: 250px;' name='animalGroup' id='animal_1' value='1'/>
+			   				<input type='radio' style='margin-left: 150px;' name='animalGroup' id='animal_2' value='2'/>
 			   				<input type='radio' style='width: 150px;' name='animalGroup' id='animal_3' value='3'/>
 			   				<br />
 			   				<img src="images/three_animals.png" width="100%" height="86" alt="Three Animals" border="0"/>
