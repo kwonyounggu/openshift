@@ -6,7 +6,6 @@
 <style>
 	ul li
 	{
-	    text-indent: -1em;
 	    font-size: 150%;
 	}
 </style>
