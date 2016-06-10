@@ -453,7 +453,7 @@
 						</td>
 			   		</tr>
 					<tr>
-					    <td colspan='2' style='padding-top: 30px;'>
+					    <td colspan='2' style='padding-top: 30px; text-align: center;'>
 							<input type='submit' value='Submit' id='submitButton' />
 							<input type='hidden' id='client_place' name='client_place' value='toronto'/>
 						</td>
