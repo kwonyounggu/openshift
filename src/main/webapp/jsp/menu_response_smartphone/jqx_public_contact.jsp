@@ -34,9 +34,10 @@
 		background: #942724;
 		color: #e4f1ff;
 	}	
+	/* http://iamceege.github.io/tooltipster */
 	.tooltipster-content
 	{
-		font-size: 38px;
+		font-size: 380px;
 	}
 	.hide-bt-alert
 	{
