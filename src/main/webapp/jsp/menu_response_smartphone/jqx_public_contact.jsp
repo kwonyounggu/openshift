@@ -12,11 +12,7 @@
 	{
 		color: #000000;
 	}
-	table
-	{
-		border-collapse: separate;
-		border-spacing: 5px;
-	}
+	
 	.tooltipster-default
 	{
 		border-radius: 1px;
@@ -374,7 +370,7 @@
     	</ul>
     </td>	
     <td style='width: 20px'></td>
-        <td style='background-color: #555762; color: #ffffff; width: 50%; padding: 5px 20px 5px 20px;'>
+        <td style='background-color: #555762; color: #ffffff; width: 50%; padding: 5px 20px 20px 20px;'>
 
   			<form id='estimate_form' action='./'>
 			   	<table  id='estimate_table' style='width: 100%; border-spacing: 4px; padding: 0px 0px 10px 0px;'>

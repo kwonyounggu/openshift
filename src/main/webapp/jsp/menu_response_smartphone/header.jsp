@@ -65,7 +65,7 @@ $(".nav a").on("click", function(){
 <!-- 	</h4> -->
 </div>
 <!-- see http://www.w3schools.com/bootstrap/bootstrap_navbar.asp -->
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -73,18 +73,19 @@ $(".nav a").on("click", function(){
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-<!--       <a class="navbar-brand" href="http://www.webmonster.ca">WebMonster</a> -->
+	  <a class="navbar-brand" href="http://www.webmonster.ca"><img src="images/wm_logo.png" width="150" height="26" alt="WM_LOGO" border="0"/></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="<%= MenuLink.home %>" onfocus="this.blur()">Home</a></li>							
-		<li><a href="<%= MenuLink.menu_public_showcase %>" onfocus="this.blur()">Showcase</a></li>
+		
 		<li><a href="<%= MenuLink.menu_public_contact %>" onfocus="this.blur()">Contact/Estimate</a></li>		
       </ul>
       <ul class="nav navbar-nav navbar-right">
       	<li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
           <ul class="dropdown-menu">
+            <li><a href="<%= MenuLink.menu_public_showcase %>" onfocus="this.blur()">Showcase</a></li>
             <li><a href="<%= MenuLink.menu_public_stockcharts %>" onfocus="this.blur()">Stock-Charts</a></li>
 			<li><a href="<%= MenuLink.menu_public_hvac %>" onfocus="this.blur()">HVAC</a></li>
 			<li><a href="<%= MenuLink.menu_public_saxophone %>" onfocus="this.blur()">Saxophone</a></li>
