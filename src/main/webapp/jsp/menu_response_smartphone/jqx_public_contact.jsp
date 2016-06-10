@@ -108,7 +108,7 @@
 			// Remove the redundant buttons from toolbar groups defined above.
 			removeButtons: 'Underline,Strike,Subscript,Superscript,Anchor,Styles,Specialchar',
 			resize_enabled: false,
-			height: 150
+			height: 300
 		});
 	
 		//Initialize the tooltips
@@ -401,14 +401,14 @@
 			   			<td class='estimate_form_td'   style='width: 20%; '>Phone: <span style='color: #8fc161;'>*</span>
 			   			</td>
 			   			<td>
-			 				<input type='text' name='submitter_phone' placeholder='(123)-123-1234' style='width: 250px; height: 22px'/>
+			 				<input type='text' name='submitter_phone' placeholder='(123)-123-1234' style='width: 250px; '/>
 						</td>
 			   		</tr>
 			   		<tr>
 			   			<td class='estimate_form_td'   style='width: 20%'>E-Mail: <span style='color: #8fc161;'>*</span>
 			   			</td>
 			   			<td>
-			 				<input type='text' name='submitter_email' placeholder='webmosnter.ca@gmail.com' style='width: 250px; height: 22px'/>
+			 				<input type='text' name='submitter_email' placeholder='webmosnter.ca@gmail.com' style='width: 250px; '/>
 						</td>
 			   		</tr>
 					<tr>
@@ -438,6 +438,7 @@
 			   				<input type='radio' style='margin-right: 100px; margin-left: 50px;' name='animalGroup' id='animal_1' value='1'/>
 			   				<input type='radio' style='margin-right: 100px;' name='animalGroup' id='animal_2' value='2'/>
 			   				<input type='radio' name='animalGroup' id='animal_3' value='3'/>
+			   				<br />
 			   				<img src="images/three_animals.png" width="362" height="86" alt="Three Animals" border="0"/>
 						</td>
 			   		</tr>
