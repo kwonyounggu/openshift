@@ -122,7 +122,7 @@
 	}
 	#resume_div ul li
 	{
-		font-size: 150%;
+		font-size: 180%;
 	}
 	h1
 	{
@@ -142,7 +142,7 @@
 	}
 	h5
 	{
-		font-size: 38px;
+		font-size: 24px;
 		font-weight: bold;
 	}
 </style>
