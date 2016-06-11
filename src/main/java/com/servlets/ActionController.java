@@ -37,7 +37,7 @@ public class ActionController extends HttpServlet
 	   
 	    if(detector.detectTierTablet())  
 	    {
-	    	((RequestDispatcher)request.getRequestDispatcher("/tabletController")).forward(request,response);
+	    	((RequestDispatcher)request.getRequestDispatcher("http://www.webmonster.ca/tabletController")).forward(request,response);
 	    	return;
 	    }
 	    else if(detector.detectTierIphone())
