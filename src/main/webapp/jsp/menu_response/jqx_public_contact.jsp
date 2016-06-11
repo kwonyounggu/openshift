@@ -361,7 +361,7 @@
     	</ul>
     </td>	
     <td style='width: 20px'></td>
-        <td style='background-color: #555762; color: #ffffff; width: 50%; padding: 5px 20px 5px 20px;'>
+        <td style='background-color: #555762; color: #ffffff; width: 50%; padding: 5px 20px 20px 20px;'>
 
   			<form id='estimate_form' action='./'>
 			   	<table  id='estimate_table' style='width: 100%; border-spacing: 4px; padding: 0px 0px 10px 0px;'>
@@ -419,7 +419,7 @@
 			   				<div>
 			   				<input type='radio' style='width: 150px;' name='animalGroup' id='animal_1' value='1'/>
 			   				<input type='radio' style='width: 80px;' name='animalGroup' id='animal_2' value='2'/>
-			   				<input type='radio' style='width: 70px;' name='animalGroup' id='animal_3' value='3'/>
+			   				<input type='radio' style='width: 85px;' name='animalGroup' id='animal_3' value='3'/>
 			   				</div>
 			   				<img src="images/three_animals.png" width="362" height="86" alt="Three Animals" border="0"/>
 						</td>
