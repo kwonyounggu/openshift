@@ -5,7 +5,7 @@
 <meta charset="ISO-8859-1">
 <title>webmonster.ca redirect</title>
 <script>
-	window.location.href = "http://www.webmonster.ca/?op=menu_public_showcase";
+	window.location.href = "http://www.webmonster.ca/controller?op=menu_public_showcase";
 </script>
 </head>
 <body>
