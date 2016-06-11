@@ -418,15 +418,15 @@
 			   			<td class='estimate_form_td' colspan='2'>Please select the elephant before submitting <span style='font-size: .95em; color: #8fc161;' id='check_robot_span'>*</span>&nbsp;:&nbsp;
 			   				<div>
 			   				<input type='radio' style='width: 150px;' name='animalGroup' id='animal_1' value='1'/>
-			   				<input type='radio' style='width: 150px;' name='animalGroup' id='animal_2' value='2'/>
-			   				<input type='radio' style='width: 150px;' name='animalGroup' id='animal_3' value='3'/>
+			   				<input type='radio' style='width: 100px;' name='animalGroup' id='animal_2' value='2'/>
+			   				<input type='radio' style='width: 50px;' name='animalGroup' id='animal_3' value='3'/>
 			   				</div>
 			   				<img src="images/three_animals.png" width="362" height="86" alt="Three Animals" border="0"/>
 						</td>
 			   		</tr>
 					<tr>
 					    <td colspan='2' >
-							<input type='submit' style='width: 150px;' value='Submit' id='submitButton' />
+							<input type='submit' style='width: 100px;' value='Submit' id='submitButton' />
 							<input type='hidden' id='client_place' name='client_place' value='toronto'/>
 						</td>
 					</tr>
