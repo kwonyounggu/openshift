@@ -100,7 +100,7 @@
 	    box-shadow: 10px 10px 5px #888888;
 		background:#353743;
 		height:100%;
-		border-radius:2px 2px 2px 2px;
+		border-radius:6px 6px 6px 6px;
 		font-size: 11px;
 	}
 	.contents ul li
@@ -123,8 +123,7 @@
 			<%@ include file="/jsp/menu_response/header.jsp" %>
 		</div>	
 		<div class="contents">
-			<!--   include file="/jsp/menu_response/jqx_public_menu.jsp" -->
-			<div style="margin-top: .5cm; padding-bottom: 20px">
+			<div style="padding-bottom: 20px">
 				<jsp:include page='${body_panel}' flush='true'/>	
 			</div>		
 		</div>
