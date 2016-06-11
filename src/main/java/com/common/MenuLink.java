@@ -4,7 +4,7 @@ public class MenuLink
 {
 	////// PUBLIC MENUS ///////
 	public static final String ADMIN_CONTEXT="/admin_controller"; //use it later in this way April-19-2016
-	public static final String PUBLIC_CONTEXT=""; //www.webmonster.ca ->this is calling http://www.webmonster.ca/controller
+	public static final String PUBLIC_CONTEXT="http://www.webmonster.ca"; //www.webmonster.ca ->this is calling http://www.webmonster.ca/controller
 	
 	//Home
 	public static final String home="/";
