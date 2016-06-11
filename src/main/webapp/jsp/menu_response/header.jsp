@@ -64,7 +64,7 @@ $(document).ready(function ()
 
 <!-- see http://www.w3schools.com/bootstrap/bootstrap_navbar.asp -->
 
-<nav class="navbar navbar-inverse navbar-fixed-top" style="width: 1000px;">
+<nav class="navbar navbar-inverse " style="width: 1000px;">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
