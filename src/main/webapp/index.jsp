@@ -4,7 +4,8 @@
 <meta charset="ISO-8859-1">
 <title>webmonster.ca redirect</title>
 <script>
-	console.log(window.location.hostname==="webmonster-younggu.rhcloud.com"+", "+window.location.hostname);
+	console.log("window.location.hostname: "+window.location.hostname);
+	console.log("window.location.href: "+window.location.href);
 	window.location.href = "http://www.webmonster.ca/controller?op=menu_public_showcase";
 </script>
 </head>
