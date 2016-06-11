@@ -52,7 +52,7 @@ $(document).ready(function ()
 </script>
 
 <!-- see http://www.w3schools.com/bootstrap/bootstrap_navbar.asp -->
-<div style="width: inherit;">
+<div style="width: 1000px;">
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
