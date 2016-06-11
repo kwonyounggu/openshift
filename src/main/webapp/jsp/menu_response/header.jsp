@@ -16,7 +16,7 @@
 
 	.navbar .navbar-collapse 
 	{
-    	text-align: center;
+    	text-align: left;
 	}
 	
 -->
