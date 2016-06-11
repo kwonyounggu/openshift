@@ -72,7 +72,7 @@
 	{
 		
 		margin-top:2px;
-		width:auto;
+		width:1000px;
 
 	}
 	.header 
