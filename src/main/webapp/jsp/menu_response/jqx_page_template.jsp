@@ -86,7 +86,7 @@
 		background-color:#ffffff;
 		border: 1px solid #e9e9ea;
 		height: 100%;
-		margin-top: 55px;
+		margin-top: 4px;
 	}
 	.footer 
 	{
@@ -100,10 +100,9 @@
 	    box-shadow: 10px 10px 5px #888888;
 		background:#353743;
 		height:100%;
-		border-radius:0 0 0px 0px;
+		border-radius:2px 2px 2px 2px;
 		font-size: 11px;
 	}
-	/*This will affect the menu indentation*/
 	.contents ul li
 	{
 	    list-style-type: disc;
