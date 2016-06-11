@@ -8,6 +8,7 @@
 	{
 	    font-size: 16px !important;
 	}
+	/*
 	.navbar .navbar-nav 
 	{
     	display: inline-block;
@@ -18,7 +19,7 @@
 	{
     	text-align: left;
 	}
-	
+	*/
 -->
 </style>
 <script type="text/javascript">
@@ -64,7 +65,7 @@ $(document).ready(function ()
 
 <!-- see http://www.w3schools.com/bootstrap/bootstrap_navbar.asp -->
 
-<nav class="navbar navbar-inverse " style="width: 1000px;">
+<nav class="navbar navbar-inverse ">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
