@@ -86,7 +86,7 @@
 		background-color:#ffffff;
 		border: 1px solid #e9e9ea;
 		height: 100%;
-		margin-top: -25px;
+		margin-top: -15px;
 	}
 	.footer 
 	{
