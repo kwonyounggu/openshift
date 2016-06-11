@@ -52,6 +52,7 @@ $(document).ready(function ()
 </script>
 
 <!-- see http://www.w3schools.com/bootstrap/bootstrap_navbar.asp -->
+<div style="width: inherit;">
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -82,19 +83,4 @@ $(document).ready(function ()
     </div>
   </div>
 </nav>
-
-<!-- 
-<div style="width:100%;height:80px;position:relative;">
-	<div style="position:absolute; z-index:1;width:100%;">
-		<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0" width="1024" height="80">
-		<param name="movie" value="header.swf" />
-		<param name="quality" value="high" />
-		<param name="wmode" value="transparent">
-		<embed src="/swf/header.swf" quality="high" type="application/x-shockwave-flash" width="100%" height="80" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" />
-		</object>
-	</div>
-	<div style="position:relative; z-index:2;width:100%; padding-top: 12px;">
-		<div><font size="4" color="#ffda48">Freelance App Developer</font><br/><font size="2" color="#bad5fe"><a href="mailto:<%=AuthData.mycompany_email_address%>?Subject=Hello John KWON" style="color:inherit;text-decoration: none" target="_top">John KWON</a></font></div>
-	</div>
-</div>		
- -->
+</div>
