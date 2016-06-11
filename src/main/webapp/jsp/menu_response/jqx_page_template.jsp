@@ -100,7 +100,7 @@
 	    box-shadow: 10px 10px 5px #888888;
 		background:#353743;
 		height:100%;
-		border-radius:6px 6px 6px 6px;
+		border-radius:0px 0px 0px 0px;
 		font-size: 11px;
 	}
 	.contents ul li
