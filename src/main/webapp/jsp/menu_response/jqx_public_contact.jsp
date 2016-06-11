@@ -7,6 +7,7 @@
 	{
 		color: #ffffff;
 		vertical-align: top;
+		text-align: left;
 	}
 	
 	#estimate_table input
@@ -418,7 +419,7 @@
 			   				<div>
 			   				<input type='radio' style='width: 150px;' name='animalGroup' id='animal_1' value='1'/>
 			   				<input type='radio' style='width: 150px;' name='animalGroup' id='animal_2' value='2'/>
-			   				<input type='radio' name='animalGroup' id='animal_3' value='3'/>
+			   				<input type='radio' style='width: 150px;' name='animalGroup' id='animal_3' value='3'/>
 			   				</div>
 			   				<img src="images/three_animals.png" width="362" height="86" alt="Three Animals" border="0"/>
 						</td>
