@@ -101,7 +101,7 @@
 		background:#353743;
 		height:100%;
 		border-radius:0 0 0px 0px;
-		font-size: 12px;
+		font-size: 11px;
 	}
 	/*This will affect the menu indentation*/
 	.contents ul li
