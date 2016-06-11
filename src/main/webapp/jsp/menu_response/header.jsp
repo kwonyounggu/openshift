@@ -8,6 +8,17 @@
 	{
 	    font-size: 16px !important;
 	}
+	.navbar .navbar-nav 
+	{
+    	display: inline-block;
+    	float: none;
+	}
+
+	.navbar .navbar-collapse 
+	{
+    	text-align: center;
+	}
+	
 -->
 </style>
 <script type="text/javascript">
@@ -52,7 +63,7 @@ $(document).ready(function ()
 </script>
 
 <!-- see http://www.w3schools.com/bootstrap/bootstrap_navbar.asp -->
-<div style="text-align: center;">
+
 <nav class="navbar navbar-inverse navbar-fixed-top" style="width: 1000px;">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -83,4 +94,3 @@ $(document).ready(function ()
     </div>
   </div>
 </nav>
-</div>
