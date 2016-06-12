@@ -29,7 +29,7 @@
     </div>
 
     <div class="item">
-      <img src="images/freelance_showcase/carm_diagnotices_problems.PNG" alt="carm_diagnotices_problems.PNG">
+      <img src="images/freelance_showcase/carm_diagnostices_problems.PNG" alt="carm_diagnostices_problems.PNG">
     </div>
     <div class="item">
       <img src="images/freelance_showcase/carm_data_review.PNG" alt="carm_data_review.PNG">
