@@ -12,7 +12,7 @@
 <META name=author content="Younggu Kwon">
 <META name=email content="<%=AuthData.mycompany_email_address%>">
 
-<link rel="SHORTCUT ICON" href="ico/favicon.ico" />
+<link rel="SHORTCUT ICON" href="images/webmonster_logo.ico" />
 
 <link rel="stylesheet" type="text/css" href="css/main.css" />
 <link rel="stylesheet" type="text/css" href="css/waitMe.css" />
