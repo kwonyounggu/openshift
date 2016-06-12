@@ -401,21 +401,21 @@
 			   			</td>
 			   		</tr>
 			   		<tr>
-			   			<td class='estimate_form_td'  style='width: 20%; '>Name: <span style='color: #8fc161;'>*</span>
+			   			<td class='estimate_form_td'  style='width: 25%; '>Name: <span style='color: #8fc161;'>*</span>
 			   			</td>
 			   			<td>
 			 				<input type='text' id='submitter_name' name='submitter_name'  placeholder='Bob Smith' />
 						</td>
 			   		</tr>
 			   		<tr>
-			   			<td class='estimate_form_td'   style='width: 20%; '>Phone: <span style='color: #8fc161;'>*</span>
+			   			<td class='estimate_form_td'   style='width: 25%; '>Phone: <span style='color: #8fc161;'>*</span>
 			   			</td>
 			   			<td>
 			 				<input type='text' name='submitter_phone' placeholder='(123)-123-1234' />
 						</td>
 			   		</tr>
 			   		<tr>
-			   			<td class='estimate_form_td'   style='width: 20%'>E-Mail: <span style='color: #8fc161;'>*</span>
+			   			<td class='estimate_form_td'   style='width: 25%'>E-Mail: <span style='color: #8fc161;'>*</span>
 			   			</td>
 			   			<td>
 			 				<input type='text' name='submitter_email' placeholder='webmosnter.ca@gmail.com' />
@@ -434,7 +434,7 @@
 
 
 					<tr>
-			   			<td class='estimate_form_td' colspan='2'>A file about your application design to upload :&nbsp;</td>
+			   			<td class='estimate_form_td' colspan='2'>A file to upload about your app :&nbsp;</td>
 			   		</tr>
 			   		<tr>
 			   			<td class='estimate_form_td' colspan='2'>
@@ -443,7 +443,7 @@
 			   		</tr>
 
 			   		<tr>
-			   			<td class='estimate_form_td' colspan='2'>Please select the elephant before submitting <span style='color: #8fc161;' id='check_robot_span'>*</span>&nbsp;:&nbsp;
+			   			<td class='estimate_form_td' colspan='2'>Select the elephant before submitting <span style='color: #8fc161;' id='check_robot_span'>*</span>&nbsp;:&nbsp;
 			   				<br />
 			   				<input type='radio' style='width: 150px;' name='animalGroup' id='animal_1' value='1'/>
 			   				<input type='radio' style='width: 150px;' name='animalGroup' id='animal_2' value='2'/>
