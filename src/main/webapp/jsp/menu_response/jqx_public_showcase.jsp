@@ -10,24 +10,32 @@
     <li data-target="#sickkidsCarousel" data-slide-to="1"></li>
     <li data-target="#sickkidsCarousel" data-slide-to="2"></li>
     <li data-target="#sickkidsCarousel" data-slide-to="3"></li>
+    <li data-target="#sickkidsCarousel" data-slide-to="4"></li>
+    <li data-target="#sickkidsCarousel" data-slide-to="5"></li>
   </ol>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="img_chania.jpg" alt="Chania">
+      <img src="images/freelance_showcase/carm_vital_signs.PNG" alt="SickKids">
     </div>
 
     <div class="item">
-      <img src="img_chania2.jpg" alt="Chania">
+      <img src="images/freelance_showcase/carm_login.PNG" alt="SickKids">
     </div>
 
     <div class="item">
-      <img src="img_flower.jpg" alt="Flower">
+      <img src="images/freelance_showcase/carm_labdata_result.PNG" alt="SickKids">
     </div>
 
     <div class="item">
-      <img src="img_flower2.jpg" alt="Flower">
+      <img src="images/freelance_showcase/carm_diagnotics_problems.PNG" alt="SickKids">
+    </div>
+    <div class="item">
+      <img src="images/freelance_showcase/carm_data_review.PNG" alt="SickKids">
+    </div>
+    <div class="item">
+      <img src="images/freelance_showcase/carm_admin.PNG" alt="SickKids">
     </div>
   </div>
 
