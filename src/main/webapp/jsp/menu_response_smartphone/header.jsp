@@ -29,22 +29,22 @@ $(document).ready(function ()
 	switch(op)
 	{
 		case "menu_public_showcase":
-			$('a[href="?op=menu_public_showcase"]').closest('li').addClass('active');
+			$('a[href="/smartphoneController?op=menu_public_showcase"]').closest('li').addClass('active');
 			break;
 		case "menu_public_contact":
-			$('a[href="?op=menu_public_contact"]').closest('li').addClass('active');
+			$('a[href="/smartphoneController?op=menu_public_contact"]').closest('li').addClass('active');
 			break;
 		case "menu_public_stockcharts":
-			$('a[href="?op=menu_public_stockcharts"]').closest('li').addClass('active');
+			$('a[href="/smartphoneController?op=menu_public_stockcharts"]').closest('li').addClass('active');
 			break;
 		case "menu_public_hvac":
-			$('a[href="?op=menu_public_hvac"]').closest('li').addClass('active');
+			$('a[href="/smartphoneController?op=menu_public_hvac"]').closest('li').addClass('active');
 			break;
 		case "menu_public_saxophone":
-			$('a[href="?op=menu_public_saxophone"]').closest('li').addClass('active');
+			$('a[href="/smartphoneController?op=menu_public_saxophone"]').closest('li').addClass('active');
 			break;
 		default:
-			$('a[href="/"]').closest('li').addClass('active');
+			$('a[href="/smartphoneController"]').closest('li').addClass('active');
 			break;	
 	}
 });
@@ -75,17 +75,17 @@ $(".nav a").on("click", function(){
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="<%= MenuLink.home %>" onfocus="this.blur()">Home</a></li>							
-		<li><a href="<%= MenuLink.menu_public_showcase %>" onfocus="this.blur()">Showcase</a></li>
-		<li><a href="<%= MenuLink.menu_public_contact %>" onfocus="this.blur()">Contact/Estimate</a></li>		
+        <li><a href="<%= MenuLink.phone_home %>" onfocus="this.blur()">Home</a></li>							
+		<li><a href="<%= MenuLink.phone_menu_public_showcase %>" onfocus="this.blur()">Showcase</a></li>
+		<li><a href="<%= MenuLink.phone_menu_public_contact %>" onfocus="this.blur()">Contact/Estimate</a></li>		
       </ul>
       <ul class="nav navbar-nav navbar-right">
       	<li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="<%= MenuLink.menu_public_stockcharts %>" onfocus="this.blur()">Stock-Charts</a></li>
-			<li><a href="<%= MenuLink.menu_public_hvac %>" onfocus="this.blur()">HVAC</a></li>
-			<li><a href="<%= MenuLink.menu_public_saxophone %>" onfocus="this.blur()">Saxophone</a></li>
+            <li><a href="<%= MenuLink.phone_menu_public_stockcharts %>" onfocus="this.blur()">Stock-Charts</a></li>
+			<li><a href="<%= MenuLink.phone_menu_public_hvac %>" onfocus="this.blur()">HVAC</a></li>
+			<li><a href="<%= MenuLink.phone_menu_public_saxophone %>" onfocus="this.blur()">Saxophone</a></li>
           </ul>
         </li>
         
