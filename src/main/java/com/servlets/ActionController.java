@@ -33,6 +33,7 @@ public class ActionController extends HttpServlet
 	{
 		log.info("doGet() is called in ActionController.java");
 
+		/*
 		UAgentInfo detector = new UAgentInfo(request.getHeader("User-Agent"), request.getHeader("Accept"));
 	   
 	    if(detector.detectTierTablet())  
@@ -45,7 +46,7 @@ public class ActionController extends HttpServlet
 	    	((RequestDispatcher)request.getRequestDispatcher("/smartphoneController")).forward(request,response);
 	    	return;
 	    }
-	    
+	    */
 		
 		request.setCharacterEncoding("UTF-8");//put this otherwise UNI-Code characters will be broken.
 		
