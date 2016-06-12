@@ -454,7 +454,7 @@
 			   		</tr>
 					<tr>
 					    <td colspan='2' style='padding-top: 30px; text-align: left;'>
-							<input type='submit' style='width: 180px;' value='Submit' id='submitButton' onfocus="this.blur()"/>
+							<input type='submit' style='width: 220px;' value='Submit' id='submitButton' onfocus="this.blur()"/>
 							<input type='hidden' id='client_place' name='client_place' value='toronto'/>
 						</td>
 					</tr>
