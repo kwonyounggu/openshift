@@ -203,9 +203,10 @@ on clinical outcomes, processes of care and resource utilization in 22 paediatri
 	  <ol class="carousel-indicators">
 	    <li data-target="#sickkidsCarousel_spire" data-slide-to="0" class="active"></li>
 	    <li data-target="#sickkidsCarousel_spire" data-slide-to="1"></li>
-	    <li data-target="#sickkidsCarousel_spire" data-slide-to="2" class="active"></li>
+	    <li data-target="#sickkidsCarousel_spire" data-slide-to="2"></li>
 	    <li data-target="#sickkidsCarousel_spire" data-slide-to="3"></li>
-	    <li data-target="#sickkidsCarousel_spire" data-slide-to="4" class="active"></li>
+	    <li data-target="#sickkidsCarousel_spire" data-slide-to="4"></li>
+	    <li data-target="#sickkidsCarousel_spire" data-slide-to="5"></li>
 	  </ol>
 	
 	  <!-- Wrapper for slides -->
@@ -225,6 +226,9 @@ on clinical outcomes, processes of care and resource utilization in 22 paediatri
 	    <div class="item">
 	      <img src="images/freelance_showcase/spire_admin_participant_accounts.PNG" alt="spire_admin_participant_accounts.PNG">
 	    </div>
+	    <div class="item">
+	      <img src="images/freelance_showcase/spire_participation_status.PNG" alt="spire_participation_status.PNG">
+	    </div>
 	  </div>
 	
 	  <!-- Left and right controls -->
@@ -240,7 +244,7 @@ on clinical outcomes, processes of care and resource utilization in 22 paediatri
 	
 			<!-- CINRAM -->
 	<div class="showcase_rectangle" style="margin-top: 2em">
-		<strong>Procurement and Receiving System Project for  Accounting Department:
+		<strong>Procurement and Receiving System Project for  Accounting Department</strong>:
 		Cinram International Inc, Java, Action script 3.0, HTML/CSS, JQuery/Javascript, JBoss, MS-SQL/IBM-DB2	
 	</div>
 	<div id="cinram" class="carousel slide">
@@ -248,9 +252,9 @@ on clinical outcomes, processes of care and resource utilization in 22 paediatri
 	  <ol class="carousel-indicators">
 	    <li data-target="#cinram" data-slide-to="0" class="active"></li>
 	    <li data-target="#cinram" data-slide-to="1"></li>
-	    <li data-target="#cinram" data-slide-to="2" class="active"></li>
+	    <li data-target="#cinram" data-slide-to="2"></li>
 	    <li data-target="#cinram" data-slide-to="3"></li>
-	    <li data-target="#cinram" data-slide-to="4" class="active"></li>
+	    <li data-target="#cinram" data-slide-to="4"></li>
 	  </ol>
 	
 	  <!-- Wrapper for slides -->
@@ -269,6 +273,67 @@ on clinical outcomes, processes of care and resource utilization in 22 paediatri
 	    </div>
 	    <div class="item">
 	      <img src="images/freelance_showcase/cinram_closed_pr.PNG" alt="cinram_closed_pr.PNG">
+	    </div>
+	  </div>
+	
+	  <!-- Left and right controls -->
+	  <a class="left carousel-control" href="#cinram" role="button" data-slide="prev">
+	    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+	    <span class="sr-only">Previous</span>
+	  </a>
+	  <a class="right carousel-control" href="#cinram" role="button" data-slide="next">
+	    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+	    <span class="sr-only">Next</span>
+	  </a>
+	</div>
+	
+				<!-- OTHERS -->
+	<div class="showcase_rectangle" style="margin-top: 2em">
+		<strong>E-Commerce, Online-Education, Others</strong>:
+		Java, Flex 2.0/3.0/Action script 3.0, HTML/CSS, JQuery/Javascript, JBoss/Tomcat, MySQL/MS-SQL
+	</div>
+	<div id="cinram" class="carousel slide">
+	  <!-- Indicators -->
+	  <ol class="carousel-indicators">
+	    <li data-target="#cinram" data-slide-to="0" class="active"></li>
+	    <li data-target="#cinram" data-slide-to="1"></li>
+	    <li data-target="#cinram" data-slide-to="2"></li>
+	    <li data-target="#cinram" data-slide-to="3"></li>
+	    <li data-target="#cinram" data-slide-to="4"></li>
+	    <li data-target="#cinram" data-slide-to="5"></li>
+	    <li data-target="#cinram" data-slide-to="6"></li>
+	    <li data-target="#cinram" data-slide-to="7"></li>
+	    <li data-target="#cinram" data-slide-to="8"></li>
+	  </ol>
+	
+	  <!-- Wrapper for slides -->
+	  <div class="carousel-inner" role="listbox">
+	    <div class="item active">
+	      <img src="images/freelance_showcase/aqnings_shopping_mall_home.PNG" alt="aqnings_shopping_mall_home.PNG">
+	    </div>
+	    <div class="item">
+	      <img src="images/freelance_showcase/healthcountry_home.PNG" alt="healthcountry_home.PNG">
+	    </div>
+	    <div class="item">
+	      <img src="images/freelance_showcase/modeling_home.PNG" alt="modeling_home.PNG">
+	    </div>
+	    <div class="item">
+	      <img src="images/freelance_showcase/motorbike_shopping_mall_home.PNG" alt="motorbike_shopping_mall_home.PNG">
+	    </div>
+	    <div class="item">
+	      <img src="images/freelance_showcase/myesl_home.PNG" alt="myesl_home.PNG">
+	    </div>
+	    <div class="item">
+	      <img src="images/freelance_showcase/myesl_objective.PNG" alt="myesl_objective.PNG">
+	    </div>
+	    <div class="item">
+	      <img src="images/freelance_showcase/patriquin_law_home.PNG" alt="patriquin_law_home.PNG">
+	    </div>
+	    <div class="item">
+	      <img src="images/freelance_showcase/scrap_home.PNG" alt="scrap_home.PNG">
+	    </div>
+	    <div class="item">
+	      <img src="images/freelance_showcase/tour_home.PNG" alt="tour_home.PNG">
 	    </div>
 	  </div>
 	
