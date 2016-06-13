@@ -115,7 +115,6 @@ on clinical outcomes, processes of care and resource utilization in 22 paediatri
 	    <li data-target="#sickkidsCarousel_epoch" data-slide-to="6"></li>
 	    <li data-target="#sickkidsCarousel_epoch" data-slide-to="7"></li>
 	    <li data-target="#sickkidsCarousel_epoch" data-slide-to="8"></li>
-	    <li data-target="#sickkidsCarousel_epoch" data-slide-to="9"></li>
 	  </ol>
 	
 	  <!-- Wrapper for slides -->
@@ -123,11 +122,6 @@ on clinical outcomes, processes of care and resource utilization in 22 paediatri
 	    <div class="item active">
 	      <img src="images/freelance_showcase/epoch_login.PNG" alt="epoch_login.PNG">
 	    </div>
-	
-	    <div class="item">
-	      <img src="images/freelance_showcase/epoch_home.PNG" alt="epoch_home.PNG">
-	    </div>
-	
 	    <div class="item">
 	      <img src="images/freelance_showcase/epoch_data_entry_verification.PNG" alt="epoch_data_entry_verification.PNG">
 	    </div>
@@ -161,6 +155,39 @@ on clinical outcomes, processes of care and resource utilization in 22 paediatri
 	    <span class="sr-only">Previous</span>
 	  </a>
 	  <a class="right carousel-control" href="#sickkidsCarousel_epoch" role="button" data-slide="next">
+	    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+	    <span class="sr-only">Next</span>
+	  </a>
+	</div>
+	
+	<!-- EXEMPLAR MEDICATION SAFETY -->
+	<div class="showcase_rectangle" style="margin-top: 2em">
+		<strong>Clinical Research Project for  Medication Safety</strong>:
+		The Hospital for Sick Children, Java, Action script 3.0, HTML/CSS, JQuery/Javascript, Apache Tomcat 5.5/6.0, PostGresql, Oracle	
+	</div>
+	<div id="sickkidsCarousel_exemplar" class="carousel slide">
+	  <!-- Indicators -->
+	  <ol class="carousel-indicators">
+	    <li data-target="#sickkidsCarousel_exemplar" data-slide-to="0" class="active"></li>
+	    <li data-target="#sickkidsCarousel_exemplar" data-slide-to="1"></li>
+	  </ol>
+	
+	  <!-- Wrapper for slides -->
+	  <div class="carousel-inner" role="listbox">
+	    <div class="item active">
+	      <img src="images/freelance_showcase/exemplar_login.PNG" alt="exemplar_login.PNG">
+	    </div>
+	    <div class="item">
+	      <img src="images/freelance_showcase/exemplar_demographics.PNG" alt="exemplar_demographics.PNG">
+	    </div>
+	  </div>
+	
+	  <!-- Left and right controls -->
+	  <a class="left carousel-control" href="#sickkidsCarousel_exemplar" role="button" data-slide="prev">
+	    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+	    <span class="sr-only">Previous</span>
+	  </a>
+	  <a class="right carousel-control" href="#sickkidsCarousel_exemplar" role="button" data-slide="next">
 	    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 	    <span class="sr-only">Next</span>
 	  </a>
