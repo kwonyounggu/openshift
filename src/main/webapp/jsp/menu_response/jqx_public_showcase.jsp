@@ -18,11 +18,11 @@
     </div>
 
     <div class="item">
-      <img src="images/freelance_showcase/caliper_reference_interval_html.PNG" alt="carm_login.PNG">
+      <img src="images/freelance_showcase/caliper_refence_interval_html.PNG" alt="caliper_refence_interval_html.PNG">
     </div>
 
     <div class="item">
-      <img src="images/freelance_showcase/caliper_reference_interval.PNG" alt="carm_labdata_result.PNG">
+      <img src="images/freelance_showcase/caliper_refence_interval.PNG" alt="caliper_refence_interval.PNG">
     </div>
   </div>
 

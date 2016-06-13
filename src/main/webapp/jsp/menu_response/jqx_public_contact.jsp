@@ -141,7 +141,7 @@
 					required: false,
 					isFileValid: true
 				},
-				animalGroup:
+				animal_3:
 				{
 					required: true,
 					isAnimalValid: true
@@ -423,7 +423,6 @@
 			   				<input type='radio' style='width: 150px; outline: 0px' name='animalGroup' id='animal_1' value='1'/>
 			   				<input type='radio' style='width: 80px; outline: 0px' name='animalGroup' id='animal_2' value='2'/>
 			   				<input type='radio' style='width: 100px; outline: 0px' name='animalGroup' id='animal_3' value='3'/>
-			   				<label for="animalGroup" class="error" style="display:none;">Please choose one</label>
 			   				</fieldset>
 			   				<img src="images/three_animals.png" width="362" height="86" alt="Three Animals" border="0"/>
 						</td>
