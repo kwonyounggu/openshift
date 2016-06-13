@@ -60,6 +60,7 @@
 <script src="js/ckeditor/ckeditor.js"></script>
 <script type="text/javascript">
 
+	$("estimate_form").data("validator").settings.ignore = "";
 	$(document).ready(function ()
 	{
 		//change the following on top of the contact, just below the menu
@@ -113,7 +114,6 @@
 		//$(".phone").mask("(999) 999-9999");
 		$('#estimate_form').validate
 		({
-			ignore: [],
 			rules:
 			{
 				submitter_name:
