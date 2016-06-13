@@ -141,7 +141,7 @@
 					required: false,
 					isFileValid: true
 				},
-				select_animal:
+				animalGroup:
 				{
 					required: true,
 					isAnimalValid: true
@@ -418,6 +418,7 @@
 			   			<td class='estimate_form_td' colspan='2'>Please select the elephant before submitting <span style='font-size: .95em; color: #8fc161;' name='check_robot_span' id='check_robot_span'>*</span>
 			   				<!-- To hide the input but only to display the error message -->
 			   				<input type='text' style='width: 0%; height: 0%; border: none;' name='select_animal' id='select_animal' value='1'/>
+			   				<input type='radio' style='width: 0%; height: 0%; display: none; outline: 0px' name='animalGroup' id='animal_0' value='0'/>
 			   				<div>
 			   				<input type='radio' style='width: 150px; outline: 0px' name='animalGroup' id='animal_1' value='1'/>
 			   				<input type='radio' style='width: 80px; outline: 0px' name='animalGroup' id='animal_2' value='2'/>
