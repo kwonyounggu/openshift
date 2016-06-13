@@ -237,4 +237,49 @@ on clinical outcomes, processes of care and resource utilization in 22 paediatri
 	    <span class="sr-only">Next</span>
 	  </a>
 	</div>
+	
+			<!-- CINRAM -->
+	<div class="showcase_rectangle" style="margin-top: 2em">
+		<strong>Procurement and Receiving System Project for  Accounting Department:
+		Cinram International Inc, Java, Action script 3.0, HTML/CSS, JQuery/Javascript, JBoss, MS-SQL/IBM-DB2	
+	</div>
+	<div id="cinram" class="carousel slide">
+	  <!-- Indicators -->
+	  <ol class="carousel-indicators">
+	    <li data-target="#cinram" data-slide-to="0" class="active"></li>
+	    <li data-target="#cinram" data-slide-to="1"></li>
+	    <li data-target="#cinram" data-slide-to="2" class="active"></li>
+	    <li data-target="#cinram" data-slide-to="3"></li>
+	    <li data-target="#cinram" data-slide-to="4" class="active"></li>
+	  </ol>
+	
+	  <!-- Wrapper for slides -->
+	  <div class="carousel-inner" role="listbox">
+	    <div class="item active">
+	      <img src="images/freelance_showcase/cinram_login.PNG" alt="cinram_login.PNG">
+	    </div>
+	    <div class="item">
+	      <img src="images/freelance_showcase/cinram_home.PNG" alt="cinram_home.PNG">
+	    </div>
+	    <div class="item">
+	      <img src="images/freelance_showcase/cinram_newpr.PNG" alt="cinram_newpr.PNG">
+	    </div>
+	    <div class="item">
+	      <img src="images/freelance_showcase/cinram_selected_pr.PNG" alt="cinram_selected_pr.PNG">
+	    </div>
+	    <div class="item">
+	      <img src="images/freelance_showcase/cinram_closed_pr.PNG" alt="cinram_closed_pr.PNG">
+	    </div>
+	  </div>
+	
+	  <!-- Left and right controls -->
+	  <a class="left carousel-control" href="#cinram" role="button" data-slide="prev">
+	    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+	    <span class="sr-only">Previous</span>
+	  </a>
+	  <a class="right carousel-control" href="#cinram" role="button" data-slide="next">
+	    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+	    <span class="sr-only">Next</span>
+	  </a>
+	</div>
 </div>
