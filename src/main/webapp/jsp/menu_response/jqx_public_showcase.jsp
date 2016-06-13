@@ -3,6 +3,10 @@
 <%@ page import="java.util.*" %>
 <%@ page isELIgnored ="false" %>
 <div style="width: 90%">
+	<div class="showcase_rectangle">
+		<h1>Padiatric Reference Interval Project</h1>
+		<h3>The Hospital for Sick Children</h3>
+	</div>
 	<div id="padiatric_reference_interval" class="carousel slide">
 	  <!-- Indicators -->
 	  <ol class="carousel-indicators">
