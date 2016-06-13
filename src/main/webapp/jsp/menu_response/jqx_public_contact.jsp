@@ -140,12 +140,12 @@
 				{
 					required: false,
 					isFileValid: true
-				},
-				animal_3:
+				}/*,
+				#animal_3:
 				{
 					required: true,
 					isAnimalValid: true
-				}
+				}*/
 			},
 			messages:
 			{
@@ -185,6 +185,11 @@
 				$(element).tooltipster('hide');
 			}
 		});
+		$("#animal_3").rules("add", 
+		{
+			required: true,
+			isAnimalValid: true
+	    });
 		$.validator.addMethod("isNameValid", function(value, element)
 		{
 			//var tName=$.trim(value);
