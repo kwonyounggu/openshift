@@ -112,6 +112,7 @@
 		border-radius:0px 0px 0px 0px;
 		font-size: 13px;
 		font-weight: bold;
+		color: white;
 	}
 	.contents ul li
 	{
