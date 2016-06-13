@@ -4,7 +4,7 @@
 <%@ page isELIgnored ="false" %>
 <div style="width: 90%">
 	<div class="showcase_rectangle">
-		<strong>Pediatric Reference Interval Project</strong>:
+		<strong>Pediatric Reference Interval Project</strong> for a multi-centre, nation-wide initiative aimed at developing complete and accurate paediatric reference intervals:
 		The Hospital for Sick Children, Java, Action script 3.0/Perl, HTML/CSS, JQuery/Javascript, Apache Tomcat 5.5/6.0, MySQL	
 	</div>
 	<div id="padiatric_reference_interval" class="carousel slide">
