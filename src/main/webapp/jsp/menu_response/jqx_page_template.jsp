@@ -108,11 +108,7 @@
 	    text-align:left;
 	    padding:5px 5px 5px 5px; 
 	    border:1px solid #000000;
-		background:#555762;
 		border-radius:0px 0px 0px 0px;
-		font-size: 13px;
-		font-weight: bold;
-		color: white;
 	}
 	.contents ul li
 	{

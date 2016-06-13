@@ -4,11 +4,8 @@
 <%@ page isELIgnored ="false" %>
 <div style="width: 90%">
 	<div class="showcase_rectangle">
-		<ul>Padiatric Reference Interval Project
-			<li>The Hospital for Sick Children</li>
-			<li>Action script 3.0, Java, HTML, JQuery/Javascript</li>
-			<li>Apache Tomcat 5.5/6.0, MySQL</li>
-		</ul>
+		<strong>Pediatric Reference Interval Project</strong>
+		The Hospital for Sick Children, Action script 3.0, Java, HTML, JQuery/Javascript, Apache Tomcat 5.5/6.0, MySQL	
 	</div>
 	<div id="padiatric_reference_interval" class="carousel slide">
 	  <!-- Indicators -->
