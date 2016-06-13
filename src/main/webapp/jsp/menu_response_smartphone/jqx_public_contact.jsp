@@ -438,7 +438,7 @@
 			   		</tr>
 			   		<tr>
 			   			<td class='estimate_form_td' colspan='2'>
-			 				<input type='file' id='file_to_upload' name='file_to_upload' style='color: #ffffff; width: 600px'/>
+			 				<input type='file' id='file_to_upload' name='file_to_upload' style='color: #ffffff; width: 600px; -webkit-appearance: none'/>
 						</td>
 			   		</tr>
 
