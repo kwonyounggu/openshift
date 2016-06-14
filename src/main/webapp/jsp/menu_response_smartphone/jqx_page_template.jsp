@@ -116,7 +116,7 @@
 	{
 	    text-align:left;
 	    padding:5px 5px 5px 5px; 
-	    border:1px solid #e9e9ea;
+	    border:1px solid #555762;
 		border-radius:0px 0px 0px 0px;
 	}
 	#menu_contents ul li
