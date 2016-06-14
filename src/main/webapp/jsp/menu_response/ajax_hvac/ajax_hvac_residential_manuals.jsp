@@ -9,7 +9,7 @@
 //style='background-color:#E0E9F5;
 %>
 <script type="text/javascript">
-	//see http://www.jqueryscript.net/layout/Nice-Tree-View-Plugin-with-jQuery-Bootstrap-3-Easy-Tree.html
+	/*
 	$(document).ready(function ()
 	{
 		$('.easy-tree').EasyTree
@@ -20,8 +20,9 @@
 	        deletable: false
 	    });
 	});
+	*/
 </script>
-<div class="easy-tree">
+
 <ul>
 <li>Example 1</li>
 <li>Example 2</li>
@@ -56,5 +57,4 @@
 </ul>
 </li>
 </ul>
-</div>
-</div>
+

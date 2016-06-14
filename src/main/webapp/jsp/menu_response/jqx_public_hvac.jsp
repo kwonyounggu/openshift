@@ -25,6 +25,15 @@
 
 $(document).ready(function ()
 {
+	//see http://www.jqueryscript.net/layout/Nice-Tree-View-Plugin-with-jQuery-Bootstrap-3-Easy-Tree.html
+	$('.easy-tree').EasyTree
+	({
+		selectable: true,
+		addable: false,
+        editable: false,
+        deletable: false
+    });
+	
 	//see http://stackoverflow.com/questions/8456974/how-to-use-ajax-loading-with-bootstrap-tabs
 	$('[data-toggle="tab_ajax"]').click(function(e) 
 	{
@@ -63,7 +72,7 @@ $(document).ready(function ()
   </ul>
 
   <div class="tab-content">
-    <div id="residential_manuals" class="tab-pane fade in active">
+    <div id="residential_manuals" class="easy-tree tab-pane fade in active">
       <!-- Ajax content will be loaded here-->
     </div>
     <div id="commercial_manuals" class="tab-pane fade">
