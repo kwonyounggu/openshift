@@ -3,7 +3,8 @@
 <%@ page import="java.util.*" %>
 <%@ page isELIgnored ="false" %>
 
-<table class="contents_ul_li" style='width: 90%; padding-bottom: 20px; table-layout: fixed'>
+<div class="contents_ul_li">
+<table  style='width: 90%; padding-bottom: 20px; table-layout: fixed'>
   <tr>
     <td style='background-color: #555762; color: #ffffff; width: 50%'>
     	<ul style='font-size: 14px'><h3 style='color: #f9d548;'>What to provide</h3>
@@ -151,5 +152,5 @@
 	</td>
   <tr>
 </table>
-
+</div>
 
