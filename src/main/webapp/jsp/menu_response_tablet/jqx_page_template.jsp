@@ -103,8 +103,7 @@
 		border-radius:0 0 0px 0px;
 		font-size: 12px;
 	}
-	/*This will affect the menu indentation*/
-	.contents ul li
+	#menu_contents ul li
 	{
 	    list-style-type: disc;
 	    list-style-position: inside;

@@ -356,6 +356,7 @@
 	
 	//see, http://abandon.ie/notebook/simple-file-uploads-using-jquery-ajax
 </script>
+<div id="menu_contents">
 <div style="width: 95%; background-color: #555762; color: #ffffff; padding: 10px 20px 10px 30px; text-align:left;">
     	<ul>
     		<h3 style='color: #f9d540'>Contact</h3>
@@ -476,4 +477,5 @@
 					</tr>
 			 </table>
 		 </form>
+</div>
 </div>

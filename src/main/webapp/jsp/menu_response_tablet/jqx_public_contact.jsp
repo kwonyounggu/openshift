@@ -332,6 +332,7 @@
 	
 	//see, http://abandon.ie/notebook/simple-file-uploads-using-jquery-ajax
 </script>
+<div id="menu_contents">
 <table style='width: 90%; padding-bottom: 20px; table-layout: fixed'>
    <tr>
     <td style='background-color: #555762; color: #ffffff; width: 50%; vertical-align: top;'>
@@ -459,3 +460,4 @@
     </td>
   </tr>
 </table>
+</div>

@@ -3,6 +3,7 @@
 <%@ page import="java.util.*" %>
 <%@ page isELIgnored ="false" %>
 
+<div id="menu_contents">
 <table style='width: 90%; padding-bottom: 20px; table-layout: fixed'>
   <tr>
     <td style='background-color: #555762; color: #ffffff; width: 50%'>
@@ -151,5 +152,5 @@
 	</td>
   <tr>
 </table>
-
+</div>
 

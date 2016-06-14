@@ -3,6 +3,7 @@
 <%@ page import="java.util.*" %>
 <%@ page isELIgnored ="false" %>
 
+<div id="menu_contents">
 <div style="width: 95%; background-color: #555762; color: #ffffff; padding: 10px 20px 10px 30px; text-align:left;">
    	<ul><h3 style="color: #f9d548;">What to provide</h3>
    		<li>Web Applications<br/>(eg: stock-charts, e-learning, e-commerce, etc)</li>
@@ -142,5 +143,5 @@
 		 	</div>
 	</div><!-- Resume -->	
 </div>
-
+</div>
 
