@@ -7,6 +7,7 @@
 	{
 		/*list-style: initial;*/
 	}
+	/*see http://stackoverflow.com/questions/15316559/how-to-give-a-border-to-bootstrap-tab-contents*/
 	.tab-content 
 	{
 	    border-left: 1px solid #ddd;
@@ -17,7 +18,6 @@
 	    
 	    padding: 10px;
 	}
-
 	.nav-tabs 
 	{
 	    margin-bottom: -1px;
@@ -27,6 +27,12 @@
 
 $(document).ready(function ()
 {
+	//the 1st page in default
+	$.get("jsp/menu_response/ajax_hvac/ajax_hvac_residential_manuals.jsp", function(data) 
+    {
+        $("#residential_manuals").html(data)
+
+    });
 	//see http://stackoverflow.com/questions/8456974/how-to-use-ajax-loading-with-bootstrap-tabs
 	$('[data-toggle="tab_ajax"]').click(function(e) 
 	{
