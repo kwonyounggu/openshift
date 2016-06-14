@@ -10,9 +10,9 @@
 	/*see http://stackoverflow.com/questions/15316559/how-to-give-a-border-to-bootstrap-tab-contents*/
 	.tab-content 
 	{
-	    border-left: 1px solid #ddd;
-	    border-right: 1px solid #ddd;
-	    border-bottom: 1px solid #dddddd;
+	    border-left: 1px solid #e9e9ea;
+	    border-right: 1px solid #e9e9ea;
+	    border-bottom: 1px solid #e9e9ea;
 	    
 	    border-radius: 0 0 0px 0px;
 	    
@@ -20,6 +20,7 @@
 	}
 	.nav-tabs 
 	{
+		border: 1px solid #e9e9ea;
 	    margin-bottom: -1px;
 	}
 </style>
