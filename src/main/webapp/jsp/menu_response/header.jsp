@@ -6,7 +6,7 @@
 <!--
 	#header_nav a
 	{
-	    font-size: 16px !important;
+	    font-size: 26px !important;
 	}
 	/*
 	.navbar .navbar-nav 
