@@ -20,78 +20,70 @@
 	{
 	    margin-bottom: -1px;
 	}
-	/*see http://jsfiddle.net/jhfrench/GpdgF/*/
-	.tree 
-	{
-	    min-height:20px;
-	    padding:19px;
-	    margin-bottom:20px;
-	    background-color:#fbfbfb;
-	    border:1px solid #999;
-	    -webkit-border-radius:4px;
-	    -moz-border-radius:4px;
-	    border-radius:4px;
-	    -webkit-box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.05);
-	    -moz-box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.05);
-	    box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.05)
-	}
-	.tree li 
-	{
-	    list-style-type:none;
-	    margin:0;
-	    padding:10px 5px 0 5px;
-	    position:relative
-	}
-	.tree li::before, .tree li::after 
-	{
-	    content:'';
-	    left:-20px;
-	    position:absolute;
-	    right:auto
-	}
-	.tree li::before 
-	{
-	    border-left:1px solid #999;
-	    bottom:50px;
-	    height:100%;
-	    top:0;
-	    width:1px
-	}
-	.tree li::after 
-	{
-	    border-top:1px solid #999;
-	    height:20px;
-	    top:25px;
-	    width:25px
-	}
-	.tree li span 
-	{
-	    -moz-border-radius:5px;
-	    -webkit-border-radius:5px;
-	    border:1px solid #999;
-	    border-radius:5px;
-	    display:inline-block;
-	    padding:3px 8px;
-	    text-decoration:none
-	}
-	.tree li.parent_li>span 
-	{
-	    cursor:pointer
-	}
-	.tree>ul>li::before, .tree>ul>li::after 
-	{
-	    border:0
-	}
-	.tree li:last-child::before 
-	{
-	    height:30px
-	}
-	.tree li.parent_li>span:hover, .tree li.parent_li>span:hover+ul li span 
-	{
-	    background:#eee;
-	    border:1px solid #94a0b4;
-	    color:#000
-	}
+	/*see http://bootsnipp.com/snippets/z4z38 */
+.tree, .tree ul {
+    margin:0;
+    padding:0;
+    list-style:none
+}
+.tree ul {
+    margin-left:1em;
+    position:relative
+}
+.tree ul ul {
+    margin-left:.5em
+}
+.tree ul:before {
+    content:"";
+    display:block;
+    width:0;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    border-left:1px solid
+}
+.tree li {
+    margin:0;
+    padding:0 1em;
+    line-height:2em;
+    color:#369;
+    font-weight:700;
+    position:relative
+}
+.tree ul li:before {
+    content:"";
+    display:block;
+    width:10px;
+    height:0;
+    border-top:1px solid;
+    margin-top:-1px;
+    position:absolute;
+    top:1em;
+    left:0
+}
+.tree ul li:last-child:before {
+    background:#fff;
+    height:auto;
+    top:1em;
+    bottom:0
+}
+.indicator {
+    margin-right:5px;
+}
+.tree li a {
+    text-decoration: none;
+    color:#369;
+}
+.tree li button, .tree li button:active, .tree li button:focus {
+    text-decoration: none;
+    color:#369;
+    border:none;
+    background:transparent;
+    margin:0px 0px 0px 0px;
+    padding:0px 0px 0px 0px;
+    outline: 0;
+}
 </style>
 <script type="text/javascript">
 
@@ -114,21 +106,67 @@ $(document).ready(function ()
 	
 	$("#residential_anchor").click();//for the 1st initiation page by firing an event
 	
-	$(function () 
-	{
-	    $('.tree li:has(ul)').addClass('parent_li').find(' > span').attr('title', 'Collapse this branch');
-	    $('.tree li.parent_li > span').on('click', function (e) {
-	        var children = $(this).parent('li.parent_li').find(' > ul > li');
-	        if (children.is(":visible")) {
-	            children.hide('fast');
-	            $(this).attr('title', 'Expand this branch').find(' > i').addClass('icon-plus-sign').removeClass('icon-minus-sign');
-	        } else {
-	            children.show('fast');
-	            $(this).attr('title', 'Collapse this branch').find(' > i').addClass('icon-minus-sign').removeClass('icon-plus-sign');
+	$.fn.extend({
+	    treed: function (o) {
+	      
+	      var openedClass = 'glyphicon-minus-sign';
+	      var closedClass = 'glyphicon-plus-sign';
+	      
+	      if (typeof o != 'undefined'){
+	        if (typeof o.openedClass != 'undefined'){
+	        openedClass = o.openedClass;
 	        }
-	        e.stopPropagation();
-	    });
+	        if (typeof o.closedClass != 'undefined'){
+	        closedClass = o.closedClass;
+	        }
+	      };
+	      
+	        //initialize each of the top levels
+	        var tree = $(this);
+	        tree.addClass("tree");
+	        tree.find('li').has("ul").each(function () {
+	            var branch = $(this); //li with children ul
+	            branch.prepend("<i class='indicator glyphicon " + closedClass + "'></i>");
+	            branch.addClass('branch');
+	            branch.on('click', function (e) {
+	                if (this == e.target) {
+	                    var icon = $(this).children('i:first');
+	                    icon.toggleClass(openedClass + " " + closedClass);
+	                    $(this).children().children().toggle();
+	                }
+	            })
+	            branch.children().children().toggle();
+	        });
+	        //fire event from the dynamically added icon
+	      tree.find('.branch .indicator').each(function(){
+	        $(this).on('click', function () {
+	            $(this).closest('li').click();
+	        });
+	      });
+	        //fire event to open branch if the li contains an anchor instead of text
+	        tree.find('.branch>a').each(function () {
+	            $(this).on('click', function (e) {
+	                $(this).closest('li').click();
+	                e.preventDefault();
+	            });
+	        });
+	        //fire event to open branch if the li contains a button instead of text
+	        tree.find('.branch>button').each(function () {
+	            $(this).on('click', function (e) {
+	                $(this).closest('li').click();
+	                e.preventDefault();
+	            });
+	        });
+	    }
 	});
+
+	//Initialization of treeviews
+
+	$('#tree1').treed();
+
+	$('#tree2').treed({openedClass:'glyphicon-folder-open', closedClass:'glyphicon-folder-close'});
+
+	$('#tree3').treed({openedClass:'glyphicon-chevron-right', closedClass:'glyphicon-chevron-down'});
 });//$(document).ready
 
 </script>
