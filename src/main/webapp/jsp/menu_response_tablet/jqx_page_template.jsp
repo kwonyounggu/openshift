@@ -111,6 +111,13 @@
 	    padding: 10px 20px 5px 20px;
 	    text-indent: -1em;
 	}
+	.showcase_rectangle 
+	{
+	    text-align:left;
+	    padding:5px 5px 5px 5px; 
+	    border:1px solid #000000;
+		border-radius:0px 0px 0px 0px;
+	}
 </style>
 </head>
 
