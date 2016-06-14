@@ -22,16 +22,15 @@ $('.carousel').carousel({
 	
 	  <!-- Wrapper for slides -->
 	  <div class="carousel-inner" role="listbox">
-	    <div class="item active">
-	      <img src="images/freelance_showcase/caliper_home.PNG" alt="carm_vital_signs.PNG">
-	    </div>
-	
 	    <div class="item">
 	      <img src="images/freelance_showcase/caliper_refence_interval_html.PNG" alt="caliper_refence_interval_html.PNG">
 	    </div>
 	
 	    <div class="item">
 	      <img src="images/freelance_showcase/caliper_refence_interval.PNG" alt="caliper_refence_interval.PNG">
+	    </div>
+	    <div class="item">
+	      <img src="images/freelance_showcase/caliper_home.PNG" alt="carm_vital_signs.PNG">
 	    </div>
 	  </div>
 	
