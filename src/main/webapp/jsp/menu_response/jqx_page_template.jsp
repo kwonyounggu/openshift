@@ -110,6 +110,13 @@
 	    border:1px solid #000000;
 		border-radius:0px 0px 0px 0px;
 	}
+	.hvac_rectangle 
+	{
+	    text-align:left;
+	    padding:5px 5px 5px 5px; 
+	    border:1px solid #000000;
+		border-radius:0px 0px 0px 0px;
+	}
 	.contents ul li
 	{
 	    list-style-type: disc;
