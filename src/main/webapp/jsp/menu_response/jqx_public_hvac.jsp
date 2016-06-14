@@ -12,7 +12,7 @@
 <!--
 $(document).ready(function ()
 {
-	$('[data-toggle="taba"]').click(function(e) 
+	$('[data-toggle="tabajax"]').click(function(e) 
 	{
 	    e.preventDefault()
 	    var loadurl = $(this).attr('href')
