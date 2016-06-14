@@ -22,7 +22,7 @@ $('.carousel').carousel({
 	
 	  <!-- Wrapper for slides -->
 	  <div class="carousel-inner" role="listbox">
-	    <div class="item">
+	    <div class="item active">
 	      <img src="images/freelance_showcase/caliper_refence_interval_html.PNG" alt="caliper_refence_interval_html.PNG">
 	    </div>
 	
@@ -53,7 +53,7 @@ $('.carousel').carousel({
 	<div id="sickkidsCarousel_carm" class="carousel slide">
 	  <!-- Indicators -->
 	  <ol class="carousel-indicators">
-	    <li data-target="#sickkidsCarousel_carm" data-slide-to="0" class="active"></li>
+	    <li data-target="#sickkidsCarousel_carm" data-slide-to="0"></li>
 	    <li data-target="#sickkidsCarousel_carm" data-slide-to="1"></li>
 	    <li data-target="#sickkidsCarousel_carm" data-slide-to="2"></li>
 	    <li data-target="#sickkidsCarousel_carm" data-slide-to="3"></li>
@@ -307,7 +307,7 @@ on clinical outcomes, processes of care and resource utilization in 22 paediatri
 	
 	  <!-- Wrapper for slides -->
 	  <div class="carousel-inner" role="listbox">
-	    <div class="item active">
+	    <div class="item">
 	      <img src="images/freelance_showcase/aqnings_shopping_mall_home.PNG" alt="aqnings_shopping_mall_home.PNG">
 	    </div>
 	    <div class="item">
@@ -319,7 +319,7 @@ on clinical outcomes, processes of care and resource utilization in 22 paediatri
 	    <div class="item">
 	      <img src="images/freelance_showcase/motorbike_shopping_mall_home.PNG" alt="motorbike_shopping_mall_home.PNG">
 	    </div>
-	    <div class="item">
+	    <div class="item active">
 	      <img src="images/freelance_showcase/myesl_home.PNG" alt="myesl_home.PNG">
 	    </div>
 	    <div class="item">
