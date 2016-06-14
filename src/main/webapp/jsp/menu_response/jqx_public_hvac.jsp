@@ -10,8 +10,10 @@
 	.tab-pane
 	{
 		text-align:left;
-	    padding:5px 5px 5px 5px; 
+	    padding:0px 0px 0px 0px; 
+	    /*see https://css-tricks.com/three-sided-border */
 	    border:1px solid #000000;
+	    border-top: 0;
 		border-radius:0px 0px 0px 0px;
 	}
 </style>
