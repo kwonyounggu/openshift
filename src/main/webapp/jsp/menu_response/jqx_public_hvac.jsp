@@ -25,13 +25,6 @@
 
 $(document).ready(function ()
 {
-	$('.easy-tree').EasyTree
-	({
-		selectable: true,
-		addable: false,
-        editable: false,
-        deletable: false
-    });
 	//see http://stackoverflow.com/questions/8456974/how-to-use-ajax-loading-with-bootstrap-tabs
 	$('[data-toggle="tab_ajax"]').click(function(e) 
 	{
@@ -48,8 +41,6 @@ $(document).ready(function ()
 	});
 	
 	$("#residential_anchor").click();//for the 1st initiation page by firing an event
-	//see http://www.jqueryscript.net/layout/Nice-Tree-View-Plugin-with-jQuery-Bootstrap-3-Easy-Tree.html
-	
 });//$(document).ready
 
 </script>

@@ -8,6 +8,19 @@
 //The following color is corresponding with energyblue
 //style='background-color:#E0E9F5;
 %>
+<script type="text/javascript">
+	//see http://www.jqueryscript.net/layout/Nice-Tree-View-Plugin-with-jQuery-Bootstrap-3-Easy-Tree.html
+	$(document).ready(function ()
+	{
+		$('.easy-tree').EasyTree
+		({
+			selectable: true,
+			addable: false,
+	        editable: false,
+	        deletable: false
+	    });
+	});
+</script>
 <div class="easy-tree">
 <ul>
 <li>Example 1</li>
