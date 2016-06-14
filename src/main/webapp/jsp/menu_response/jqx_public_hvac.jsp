@@ -2,8 +2,14 @@
 
 <%@ page import="java.util.*" %>
 <%@ page isELIgnored ="false" %>
+<style>
+	#hvac_cotainer ul
+	{
+		list-style: initial;
+	}
+</style>
 <h4>HVAC in North America</h4>
-<div class="container" style="width: 90%">
+<div id="hvac_cotainer" style="width: 90%">
   <ul class="nav nav-tabs">
     <li class="active dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" href="#">Manuals<span class="caret"></span></a>
