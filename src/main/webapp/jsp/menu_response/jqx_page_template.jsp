@@ -114,7 +114,7 @@
 	    border:1px solid #000000;
 		border-radius:0px 0px 0px 0px;
 	}
-	.contents ul li
+	.contents_ul_li
 	{
 	    list-style-type: disc;
 	    list-style-position: inside;

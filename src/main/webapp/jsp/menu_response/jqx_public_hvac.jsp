@@ -5,7 +5,7 @@
 <style>
 	#hvac_container ul
 	{
-		list-style: initial;
+		/*list-style: initial;*/
 	}
 </style>
 <h4>HVAC in North America</h4>

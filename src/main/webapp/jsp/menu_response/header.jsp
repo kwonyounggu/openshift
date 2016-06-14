@@ -83,7 +83,7 @@ $(document).ready(function ()
       </ul>
       <ul class="nav navbar-nav navbar-right">
       	<li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-th"></span></a>
           <ul class="dropdown-menu">
             <li><a href="<%= MenuLink.pc_menu_public_stockcharts %>" onfocus="this.blur()">Stock-Charts</a></li>
 			<li><a href="<%= MenuLink.pc_menu_public_hvac %>" onfocus="this.blur()">HVAC</a></li>
