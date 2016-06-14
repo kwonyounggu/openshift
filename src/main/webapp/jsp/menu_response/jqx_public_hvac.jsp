@@ -7,14 +7,20 @@
 	{
 		/*list-style: initial;*/
 	}
-	.tab-pane
+	.tab-content 
 	{
-		text-align:left;
-	    padding:0px 0px 0px 0px; 
-	    /*see https://css-tricks.com/three-sided-border */
-	    border:1px solid #000000;
-	    border-top: 0;
-		border-radius:0px 0px 0px 0px;
+	    border-left: 1px solid #ddd;
+	    border-right: 1px solid #ddd;
+	    border-bottom: 1px solid #dddddd;
+	    
+	    border-radius: 0 0 0px 0px;
+	    
+	    padding: 10px;
+	}
+
+	.nav-tabs 
+	{
+	    margin-bottom: -1px;
 	}
 </style>
 <script type="text/javascript">
