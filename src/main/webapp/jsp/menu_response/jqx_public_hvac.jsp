@@ -3,7 +3,7 @@
 <%@ page import="java.util.*" %>
 <%@ page isELIgnored ="false" %>
 <h4>HVAC in North America</h4>
-<div class="hvac_rectangle" style="width: 90%">
+<div class="container" style="width: 90%">
   <ul class="nav nav-tabs">
     <li class="active dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" href="#">Manuals<span class="caret"></span></a>
