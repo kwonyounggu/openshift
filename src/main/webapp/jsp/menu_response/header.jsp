@@ -4,7 +4,7 @@
 <%@ page import="java.util.*" %>
 <style>
 <!--
-	.nav a
+	#header_nav a
 	{
 	    font-size: 16px !important;
 	}
@@ -65,7 +65,7 @@ $(document).ready(function ()
 
 <!-- see http://www.w3schools.com/bootstrap/bootstrap_navbar.asp -->
 
-<nav class="navbar navbar-inverse" style="border-radius: 0px;">
+<nav class="navbar navbar-inverse" style="border-radius: 0px;" id="header_nav">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
