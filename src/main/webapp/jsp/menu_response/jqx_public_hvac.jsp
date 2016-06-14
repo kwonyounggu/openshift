@@ -15,9 +15,9 @@
     </li>
     <li><a data-toggle="tab" href="#troubleshootings">Trouble Shootings</a></li>
     <li><a data-toggle="tab" href="#questions_answers">Q & A</a></li>
-    <li><a data-toggle="tab" href="#estimates">Estimate</a></li>
-    <li><a data-toggle="tab" href="#search_contractors">Search Contractors</a></li>
-    <li><a data-toggle="tab" href="#parts_supplies">Parts & Supplies</a></li>
+    <li><a data-toggle="tab" href="#estimates">Estimates</a></li>
+    <li><a data-toggle="tab" href="#search_contractors">Contractors</a></li>
+    <li><a data-toggle="tab" href="#parts_supplies">Supplies</a></li>
   </ul>
 
   <div class="tab-content">
