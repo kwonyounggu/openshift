@@ -28,11 +28,12 @@
 $(document).ready(function ()
 {
 	//the 1st page in default
+	/*
 	$.get("jsp/menu_response/ajax_hvac/ajax_hvac_residential_manuals.jsp", function(data) 
     {
-        $("#residential_manuals").html(data)
+        $("#residential_manuals").html(data);
 
-    });
+    });*/
 	//see http://stackoverflow.com/questions/8456974/how-to-use-ajax-loading-with-bootstrap-tabs
 	$('[data-toggle="tab_ajax"]').click(function(e) 
 	{
@@ -45,8 +46,10 @@ $(document).ready(function ()
 	        $(targ).html(data)
 
 	    });
-	    $(this).tab('show')
+	    $(this).tab('show');
 	});
+	
+	$("#residential_anchor").click();
 });//$(document).ready
 
 </script>
@@ -56,7 +59,7 @@ $(document).ready(function ()
     <li class="active dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" href="#">Manuals<span class="caret"></span></a>
       <ul class="dropdown-menu">
-        <li><a data-toggle="tab_ajax" data-target="#residential_manuals" href="jsp/menu_response/ajax_hvac/ajax_hvac_residential_manuals.jsp">Residential</a></li>
+        <li><a id="residential_anchor" data-toggle="tab_ajax" data-target="#residential_manuals" href="jsp/menu_response/ajax_hvac/ajax_hvac_residential_manuals.jsp">Residential</a></li>
         <li><a data-toggle="tab_ajax" data-target="#commercial_manuals" href="jsp/menu_response/ajax_hvac/ajax_hvac_commercial_manuals.jsp">Commercial</a></li>
         <li><a data-toggle="tab_ajax" data-target="#industrial_manuals" href="jsp/menu_response/ajax_hvac/ajax_hvac_industrial_manuals.jsp">Industrial</a></li>
       </ul>
