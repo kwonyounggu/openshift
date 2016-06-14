@@ -33,7 +33,7 @@ $(document).ready(function ()
     <li class="active dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" href="#">Manuals<span class="caret"></span></a>
       <ul class="dropdown-menu">
-        <li><a data-toggle="tabajax" data-target="#residential_manuals" href="/controller?op=menu_public_hvac_ajax_residential_manuals">Residential</a></li>
+        <li><a data-toggle="tabajax" data-target="#residential_manuals" href="jsp/menu_response/ajax_hvac/ajax_hvac_residential_manuals.jsp">Residential</a></li>
         <li><a data-toggle="tabajax" data-target="#commercial_manuals" href="/controller?op=menu_public_hvac_ajax_commercial_manuals">Commercial</a></li>
         <li><a data-toggle="tabajax" data-target="#industrial_manuals" href="/controller?op=menu_public_hvac_ajax_industrial_manuals">Industrial</a></li>
       </ul>
