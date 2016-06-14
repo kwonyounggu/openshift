@@ -25,14 +25,7 @@
 
 $(document).ready(function ()
 {
-	//see http://www.jqueryscript.net/layout/Nice-Tree-View-Plugin-with-jQuery-Bootstrap-3-Easy-Tree.html
-	$('.easy-tree').EasyTree
-	({
-		selectable: true,
-		addable: false,
-        editable: false,
-        deletable: false
-    });
+	
 	
 	//see http://stackoverflow.com/questions/8456974/how-to-use-ajax-loading-with-bootstrap-tabs
 	$('[data-toggle="tab_ajax"]').click(function(e) 
@@ -43,7 +36,15 @@ $(document).ready(function ()
 	    var targ = $(this).attr('data-target')
 	    $.get(loadurl, function(data) 
 	    {
-	        $(targ).html(data)
+	        $(targ).html(data);
+	      //see http://www.jqueryscript.net/layout/Nice-Tree-View-Plugin-with-jQuery-Bootstrap-3-Easy-Tree.html
+	    	$('.easy-tree').EasyTree
+	    	({
+	    		selectable: true,
+	    		addable: false,
+	            editable: false,
+	            deletable: false
+	        });
 
 	    });
 	    $(this).tab('show');
