@@ -114,13 +114,15 @@
 	    border:1px solid #000000;
 		border-radius:0px 0px 0px 0px;
 	}
-	.contents_ul_li
+	
+	#menu_contents ul li
 	{
 	    list-style-type: disc;
 	    list-style-position: inside;
 	    padding: 10px 20px 5px 20px;
 	    text-indent: -1em;
 	}
+	*/
 </style>
 </head>
 

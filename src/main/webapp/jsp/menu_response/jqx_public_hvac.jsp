@@ -9,7 +9,7 @@
 	}
 </style>
 <h4>HVAC in North America</h4>
-<div id="hvac_container" style="width: 90%">
+<div style="width: 90%">
   <ul class="nav nav-tabs">
     <li class="active dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" href="#">Manuals<span class="caret"></span></a>

@@ -324,8 +324,8 @@
 	
 	//see, http://abandon.ie/notebook/simple-file-uploads-using-jquery-ajax
 </script>
-<div class="contents_ul_li">
-<table style='width: 90%; padding-bottom: 20px; table-layout: fixed'>
+
+<table style='width: 90%; padding-bottom: 20px; table-layout: fixed' id="menu_contents">
    <tr>
     <td style='background-color: #555762; color: #ffffff; width: 50%; vertical-align: top;'>
     	<ul style='font-size: 12px'>
@@ -454,4 +454,3 @@
     </td>
   </tr>
 </table>
-</div>
