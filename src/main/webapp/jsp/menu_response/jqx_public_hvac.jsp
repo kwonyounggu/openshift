@@ -12,8 +12,9 @@
 <!--
 $(document).ready(function ()
 {
-	$('[data-toggle="tabajax"]').click(function(e) 
+	$('[data-toggle="tab_ajax"]').click(function(e) 
 	{
+		log("INFO: tab is clicked ...");
 	    e.preventDefault()
 	    var loadurl = $(this).attr('href')
 	    var targ = $(this).attr('data-target')
@@ -33,9 +34,9 @@ $(document).ready(function ()
     <li class="active dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" href="#">Manuals<span class="caret"></span></a>
       <ul class="dropdown-menu">
-        <li><a data-toggle="tabajax" data-target="#residential_manuals" href="jsp/menu_response/ajax_hvac/ajax_hvac_residential_manuals.jsp">Residential</a></li>
-        <li><a data-toggle="tabajax" data-target="#commercial_manuals" href="/controller?op=menu_public_hvac_ajax_commercial_manuals">Commercial</a></li>
-        <li><a data-toggle="tabajax" data-target="#industrial_manuals" href="/controller?op=menu_public_hvac_ajax_industrial_manuals">Industrial</a></li>
+        <li><a data-toggle="tab_ajax" data-target="#residential_manuals" href="jsp/menu_response/ajax_hvac/ajax_hvac_residential_manuals.jsp">Residential</a></li>
+        <li><a data-toggle="tab_ajax" data-target="#commercial_manuals" href="jsp/menu_response/ajax_hvac/ajax_hvac_commercial_manuals.jsp">Commercial</a></li>
+        <li><a data-toggle="tab_ajax" data-target="#industrial_manuals" href="jsp/menu_response/ajax_hvac/ajax_hvac_industrial_manuals.jsp">Industrial</a></li>
       </ul>
     </li>
     <li><a data-toggle="tab" href="#troubleshootings">Trouble Shootings</a></li>
@@ -50,12 +51,10 @@ $(document).ready(function ()
       <!-- Ajax content will be loaded here-->
     </div>
     <div id="commercial_manuals" class="tab-pane fade">
-     <h3>Under construction</h3>
-      <p>Under construction</p>
+     <!-- Ajax content will be loaded here-->
     </div>
     <div id="industrial_manuals" class="tab-pane fade">
-      <h3>Under construction</h3>
-      <p>Under construction</p>
+      <!-- Ajax content will be loaded here-->
     </div>
     <div id="troubleshootings" class="tab-pane fade">
       <h3>Under construction</h3>
