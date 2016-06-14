@@ -7,11 +7,19 @@
 	{
 		/*list-style: initial;*/
 	}
+	.tab-pane
+	{
+		text-align:left;
+	    padding:5px 5px 5px 5px; 
+	    border:1px solid #000000;
+		border-radius:0px 0px 0px 0px;
+	}
 </style>
 <script type="text/javascript">
-<!--
+
 $(document).ready(function ()
 {
+	//see http://stackoverflow.com/questions/8456974/how-to-use-ajax-loading-with-bootstrap-tabs
 	$('[data-toggle="tab_ajax"]').click(function(e) 
 	{
 		log("INFO: tab is clicked ...");
@@ -26,7 +34,7 @@ $(document).ready(function ()
 	    $(this).tab('show')
 	});
 });//$(document).ready
-//-->
+
 </script>
 <h4>HVAC in North America</h4>
 <div style="width: 90%">
