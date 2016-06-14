@@ -324,7 +324,7 @@ on clinical outcomes, processes of care and resource utilization in 22 paediatri
 	      <img src="images/freelance_showcase/myesl_home.PNG" alt="myesl_home.PNG">
 	    </div>
 	    <div class="item">
-	      <img src="images/freelance_showcase/myesl_objective.PNG" alt="myesl_objective.PNG">
+	      <img src="images/freelance_showcase/myesl_objective.gif" alt="myesl_objective.gif">
 	    </div>
 	    <div class="item">
 	      <img src="images/freelance_showcase/patriquin_law_home.PNG" alt="patriquin_law_home.PNG">
