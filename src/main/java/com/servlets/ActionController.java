@@ -83,9 +83,22 @@ public class ActionController extends HttpServlet
 				{
 					request.setAttribute("body_panel", "/jsp/menu_response/jqx_public_stockcharts.jsp");
 				}
-				else if(op.equals("menu_public_hvac"))
+				else if(op.indexOf("menu_public_hvac")!=-1)
 				{
-					request.setAttribute("body_panel", "/jsp/menu_response/jqx_public_hvac.jsp");
+					if(op.equals("menu_public_hvac"))
+						request.setAttribute("body_panel", "/jsp/menu_response/jqx_public_hvac.jsp");
+					else if(op.equals("menu_public_hvac_ajax_residential_manuals"))
+					{
+						((RequestDispatcher)request.getRequestDispatcher("jsp/menu_response/ajax_hvac/ajax_hvac_residential_manuals.jsp")).forward(request,response);
+					}
+					else if(op.equals("menu_public_hvac_ajax_commercial_manuals"))
+					{
+						((RequestDispatcher)request.getRequestDispatcher("jsp/menu_response/ajax_hvac/ajax_hvac_commercial_manuals.jsp")).forward(request,response);
+					}
+					else if(op.equals("menu_public_hvac_ajax_industrial_manuals"))
+					{
+						((RequestDispatcher)request.getRequestDispatcher("jsp/menu_response/ajax_hvac/ajax_hvac_industrial_manuals.jsp")).forward(request,response);
+					}
 				}
 				else if(op.equals("menu_public_saxophone"))
 				{
