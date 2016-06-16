@@ -7,7 +7,8 @@
   <tr>
 	<td colspan='3' style='border: 1px solid gray'>
 		<div style="width:100%; padding:5px 20px 5px 20px;text-align:left;">
-			<img src="images/under_construction.gif" width="800" height="525" alt="Please visit again next time due to the construction!!!" border="0"/>
+			Under construction
+			<iframe src="https://docs.google.com/viewer?srcid=0By5p9XYb0jQ1ejhvUGNFMnExTHc&pid=explorer&efh=false&a=v&chrome=false&embedded=true" width="100%" height="480px"></iframe>
 		</div>
 	</td>
   <tr>
