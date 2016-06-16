@@ -118,6 +118,8 @@
 	    padding:5px 5px 5px 5px; 
 	    border:1px solid #555762;
 		border-radius:0px 0px 0px 0px;
+		background: #555762;
+		color: white;
 	}
 	#menu_contents ul li
 	{
