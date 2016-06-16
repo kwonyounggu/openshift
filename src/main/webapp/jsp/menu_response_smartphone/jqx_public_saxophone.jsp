@@ -7,7 +7,9 @@
   <tr>
 	<td colspan='3' style='border: 1px solid gray'>
 		<div style="width:100%; padding:5px 20px 5px 20px;text-align:left;">
-			<img src="images/under_construction.gif" width="800" height="525" alt="Please visit again next time due to the construction!!!" border="0"/>
+			<iframe src="https://drive.google.com/viewerng/viewer?
+url=https://library.osu.edu/assets/Documents/SEL/QuickConvertWordPDF.pdf?
+pid=explorer&efh=false&a=v&chrome=false&embedded=true" width="400px" height="300px"  />
 		</div>
 	</td>
   <tr>
