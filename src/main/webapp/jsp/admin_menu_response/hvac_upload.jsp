@@ -324,10 +324,10 @@
 	
 	//see, http://abandon.ie/notebook/simple-file-uploads-using-jquery-ajax
 </script>
-<span style="padding-left: 30px">Upload - <strong>HVAC</strong></span>
-<div style="background-color: #555762; text-align: left; padding: 0px 20px 0px 20px">
+<span style="padding-left: 30px; text-align: left;">Upload -> <strong>HVAC</strong></span>
+
 	<form id='hvac_upload_form' action='./'>
-	   	<table  id='hvac_upload_table' style='width: 90%; border-spacing: 4px;  padding: 0 20px 10px 20px; table-layout: fixed'>
+	   	<table  id='hvac_upload_table' style='width: 90%; background-color: #555762; border-spacing: 4px;  padding: 20 20px 20px 20px; table-layout: fixed'>
 	   		<tr>
 	   			<td colspan='2' style='text-align: left;'>
 	   				<h4 style='color: #f9d548;'>Upload HVAC files</h4>
@@ -412,5 +412,5 @@
 			</tr>
 	 </table>
 	</form>
-</div>
+
   
