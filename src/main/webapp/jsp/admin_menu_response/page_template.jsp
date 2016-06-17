@@ -136,7 +136,7 @@
 	<div class="wrapper">
 		
 		<div class="header">
-			<%@ include file="/jsp/menu_response/header.jsp" %>
+			<%@ include file="/jsp/admin_menu_response/header.jsp" %>
 		</div>	
 		<div class="contents">
 			<div style="margin-top: .5cm; padding-bottom: 20px">
