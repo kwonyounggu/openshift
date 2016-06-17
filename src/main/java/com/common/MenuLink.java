@@ -2,8 +2,17 @@ package com.common;
 
 public class MenuLink 
 {
-	////// PUBLIC MENUS ///////
-	public static final String ADMIN_CONTEXT="/admin_controller"; //use it later in this way April-19-2016
+	////// ADMIN MENUS ///////
+	public static final String ADMIN_CONTEXT="/adminController"; //use it later in this way April-19-2016
+	
+	public static final String admin_home="/adminController";
+
+	public static final String admin_menu_hvac_upload=ADMIN_CONTEXT+"?op=admin_menu_hvac_upload";
+
+	public static final String admin_login=ADMIN_CONTEXT+"?op=admin_login&sm=0";
+	public static final String admin_logout=ADMIN_CONTEXT+"?op=admin_logout&sm=0";
+	
+	//------------------------------------------------------------------------------------------------------------------------------
 	public static final String PC_CONTEXT="/controller"; //www.webmonster.ca ->this is calling http://www.webmonster.ca/controller
 	
 	//Home
