@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="com.common.*" %>
+<%@ page import="com.enums.*" %>
 <%@ page import="java.util.*" %>
 <%@ page isELIgnored ="false" %>
 <style>
@@ -65,13 +66,7 @@
 		//change the following on top of the contact, just below the menu
 		if(typeof FormData == 'undefined')
 			jAlert("<p>Your browser does not support HTML5. Please upgrade your browser with the latest version. Otherwise it won't work properly!</p>", "Warning Message");
-	
-		//The following does not work from Google Chrome
-		/*$.getJSON("http://freegeoip.net/json/", function(data) 
-		{
-			var location_info=data.city+" "+data.region_name+" "+data.country_name;
-		});
-		*/
+
 		//see https://rochcass.wordpress.com/tag/freegeoip-net-post/
 		$.ajax
 		({
@@ -84,22 +79,7 @@
 				$('#client_place').val(data.city+" "+data.region_name+" "+data.country_name);
 			}
 		});
-		CKEDITOR.replace( 'estimateNoteEditor',
-		{
-			// Define the toolbar groups as it is a more accessible solution.
-			toolbarGroups:
-			[
-				{"name":"basicstyles","groups":["basicstyles"]},
-				{"name":"links","groups":["links"]},
-				{"name":"paragraph","groups":["list","blocks"]},
-				{"name":"insert","groups":["insert"]}
-			],
-			// Remove the redundant buttons from toolbar groups defined above.
-			removeButtons: 'Underline,Strike,Subscript,Superscript,Anchor,Styles,Specialchar',
-			resize_enabled: false,
-			height: 150
-		});
-	
+		
 		//Initialize the tooltips
 		 $('form input').tooltipster
 		 ({
@@ -115,30 +95,9 @@
 		({
 			rules:
 			{
-				submitter_name:
-				{	required: true,
-					minlength: 2,
-					maxlength: 80,
-					isNameValid: true
-				},
-				submitter_phone:
-				{
-					required: true,
-					isPhoneValid: true
-				},
-				submitter_email:
-				{
-					required: true,
-					email: true
-				},
-				note_msg:
-				{
-					required: true,
-					isTextValid: true
-				},
 				file_to_upload:
 				{
-					required: false,
+					required: true,
 					isFileValid: true
 				},
 				select_animal:
@@ -149,17 +108,13 @@
 			},
 			messages:
 			{
-				submitter_name:
+				file_to_upload:
 				{
-					required: "Your name is required!"
+					required: "You should choose a file to upload!"
 				},
-				submitter_phone:
+				select_animal:
 				{
-					required: "Phone number is required!"
-				},
-				submitter_email:
-				{
-					required: "E-Mail is required!"
+					required: "You should choose the right image for the elephant!"
 				}
 			},
 			submitHandler: function (form)
@@ -324,61 +279,75 @@
 	
 	//see, http://abandon.ie/notebook/simple-file-uploads-using-jquery-ajax
 </script>
-<span style="padding-left: 30px; text-align: left;">Upload -> <strong>HVAC</strong></span>
+<div style="padding-left: 30px; text-align: left;">Upload -> <strong>HVAC</strong></div>
 
 	<form id='hvac_upload_form' action='./'>
-	   	<table  id='hvac_upload_table' style='width: 90%; background-color: #555762; border-spacing: 4px;  padding: 20 20px 20px 20px; table-layout: fixed'>
-	   		<tr>
-	   			<td colspan='2' style='text-align: left;'>
-	   				<h4 style='color: #f9d548;'>Upload HVAC files</h4>
-	   				<span style='font-size: .95em; color: #8fc161;'>(*: required)</span>
-	   				<span style='font-size: 11px; color: #bad5fe;'>Payment is not required unless you are satisfied.</span>
-	   			</td>
-	   		</tr>
-	   		<tr>
-	   			<td class='hvac_upload_form_td'  style='width: 20%'>Name: <span style='font-size: .95em; color: #8fc161;'>*</span>
-	   			</td>
-	   			<td>
-	 				<input type='text' id='submitter_name' name='submitter_name'  placeholder='Bob Smith' style='width: 250px; height: 22px'/>
-				</td>
-	   		</tr>
-	   		<tr>
-	   			<td class='hvac_upload_form_td'   style='width: 20%'>Phone: <span style='font-size: .95em; color: #8fc161;'>*</span>
-	   			</td>
-	   			<td>
-	 				<input type='text' name='submitter_phone' placeholder='(123)-123-1234' style='width: 250px; height: 22px'/>
-				</td>
-	   		</tr>
-	   		<tr>
-	   			<td class='hvac_upload_form_td'   style='width: 20%'>E-Mail: <span style='font-size: .95em; color: #8fc161;'>*</span>
-	   			</td>
-	   			<td>
-	 				<input type='text' name='submitter_email' placeholder='webmosnter.ca@gmail.com' style='width: 250px; height: 22px'/>
-				</td>
-	   		</tr>
-			<tr>
-	   			<td class='hvac_upload_form_td' colspan='2'>Note about your requirements:
-	   				<span style='font-size: .95em; color: #8fc161;' id='note_span'>*
-	   					<!-- To hide the input but only to display the error message -->
-	   					<input type='text' style='width: 0px; height: 0px; border: none; background-color: #555762' name='note_msg' id='note_msg' value='estimates'/>
-	   				</span>
-	   				<br/>
-	 				<textarea id='estimateNoteEditor' name='submitter_note' cols='80' rows='10'></textarea>
-				</td>
-	   		</tr>
-	
-	
-			<tr>
-	   			<td class='hvac_upload_form_td' colspan='2'>A file about your application design to upload :&nbsp;</td>
-	   		</tr>
-	   		<tr>
-	   			<td class='hvac_upload_form_td' colspan='2'>
-	 				<input type='file' id='file_to_upload' name='file_to_upload' style='color: #ffffff; width: 300px'/>
-				</td>
-	   		</tr>
-	
-	   		<tr>
-	   			<td class='hvac_upload_form_td' colspan='2'>Please select the elephant before submitting <span style='font-size: .95em; color: #8fc161;' name='check_robot_span' id='check_robot_span'>*</span>
+		<div>
+	   		<label for="hvacBrands">Brand:</label>
+	   		<select id="hvacBrands">
+	   			<%
+	   				for(HvacBrands brand : HvacBrands.values())
+	   				{
+	   					out.print("<option value='"+brand.toString()+"' >"+brand.toString()+"</option>");
+	   				}
+	   			%>
+	   		</select>
+	   	</div>
+	   	<div>
+	   		<label for="hvacAccommodationType">Space Type:</label>
+	   		<select id="hvacAccommodationType">
+	   			<%
+	   				for(HvacAccommodationTypes space : HvacAccommodationTypes.values())
+	   				{
+	   					out.print("<option value='"+space.toString()+"' >"+space.toString()+"</option>");
+	   				}
+	   			%>
+	   		</select>
+	   	</div>
+	   	<div>
+	   		<label for="hvacSystemType">System Type:</label>
+	   		<select id="hvacSystemType">
+	   			<%
+	   				for(HvacSystems sys : HvacSystems.values())
+	   				{
+	   					out.print("<option value='"+sys.toString()+"' >"+sys.toString()+"</option>");
+	   				}
+	   			%>
+	   		</select>
+	   	</div>
+	   	<div>
+	   		<label for="hvacSystemModel">Model Number:</label>
+	   		<input type='text' id='hvacSystemModel' name='hvacSystemModel'  placeholder='Model Number' style='width: 250px; height: 22px'/>
+	   	</div>
+	   	<div>
+	   		<label for="hvacManualType">Manual Type:</label>
+	   		<select id="hvacManualType">
+	   			<%
+	   				for(HvacManualTypes manual : HvacManualTypes.values())
+	   				{
+	   					out.print("<option value='"+manual.toString()+"' >"+manual.toString()+"</option>");
+	   				}
+	   			%>
+	   		</select>
+	   		<input type='hiddden' style='width: 0px; height: 0px; border: none; background-color: #555762' name='submittingCompanyId' id='submittingCompanyId' value='1'/>
+	   	</div>
+	   	<div>
+	   		<label for="hvacFuelType">Fuel Type:</label>
+	   		<select id="hvacFuelType">
+	   			<%
+	   				for(HvacFuels fuel : HvacFuels.values())
+	   				{
+	   					out.print("<option value='"+fuel.toString()+"' >"+fuel.toString()+"</option>");
+	   				}
+	   			%>
+	   		</select>
+	   	</div>
+	   	<div>
+	   		<label for="file_to_upload">A file about your application design to upload :</label>
+			<input type='file' id='file_to_upload' name='file_to_upload' style='color: #ffffff; width: 300px'/>
+	   	</div>
+	   	<div>
+	   		<label>Please select the elephant before submitting <span style='font-size: .95em; color: #8fc161;' name='check_robot_span' id='check_robot_span'>*</span></label>
 	   				<!-- To hide the input but only to display the error message -->
 	   				<input type='text' style='width: 0; height: 0; border: none; -webkit-appearance: none; background-color: #555762' name='select_animal' id='select_animal' value='a'/>
 	
@@ -388,29 +357,18 @@
 	   				<input type='radio' style='width: 100px; outline: 0px' name='animalGroup' id='animal_3' value='3'/>
 	   				</fieldset>
 	   				<img src="images/three_animals.png" width="362" height="86" alt="Three Animals" border="0"/>
-				</td>
-	   		</tr>
-			<tr>
-			    <td colspan='2' >
+	   	</div>
+	   	<div>
 					<input type='submit' style='width: 80px;' value='Submit' id='submitButton' />
 					<input type='hidden' id='client_place' name='client_place' value='toronto'/>
-				</td>
-			</tr>
-			
-			<tr>
-				<td colspan='2'>
-					<div id="submit_success_alert" class="alert alert-success hide-bt-alert"><%=Message.CONTACT_SUCCESS %>
-					</div>
-				</td>
-			</tr>
-			<tr>
-				<td colspan='2'>
-					<div id="submit_error_alert" class="alert alert-danger  hide-bt-alert">
-						<a href='#' id='submit_error_alert_anchor'>Error: please check your input data and try again!</a>
-					</div>
-				</td>
-			</tr>
-	 </table>
+		</div>
+		<div id="submit_success_alert" class="alert alert-success hide-bt-alert"><%=Message.CONTACT_SUCCESS %>
+		</div>
+
+		<div id="submit_error_alert" class="alert alert-danger  hide-bt-alert">
+			<a href='#' id='submit_error_alert_anchor'>Error: please check your input data and try again!</a>
+		</div>
+				
 	</form>
 
   
