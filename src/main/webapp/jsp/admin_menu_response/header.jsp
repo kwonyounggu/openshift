@@ -51,7 +51,7 @@ $(document).ready(function ()
 			break;
 		case "menu_public_hvac":
 			$('a[href="/adminController?op=menu_public_hvac"]').closest('li').addClass('active');
-			$('a[href="/adminController?op=menu_public_hvac"]').closest('li').closest('li.dropdown').addClass('active');
+			$('a[href="/adminController?op=menu_public_hvac"]').closest('li').closest('li').addClass('active');
 			break;
 		case "menu_public_saxophone":
 			$('a[href="/adminController?op=menu_public_saxophone"]').closest('li').addClass('active');
