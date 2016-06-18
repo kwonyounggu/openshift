@@ -11,9 +11,9 @@
 		text-align: left;
 	}
 	
-	#hvac_upload_table input
+	#hvac_upload_form label
 	{
-		width: 80%;
+		font-weight: normal;
 	}
 	.tooltipster-default
 	{
@@ -279,8 +279,9 @@
 	
 	//see, http://abandon.ie/notebook/simple-file-uploads-using-jquery-ajax
 </script>
-<div style="padding: 20px 20px 20px 20px; text-align: left; background-color: #555762;">
-	<span style="padding-left: 30px;">Upload -> <strong>HVAC</strong></span>
+<span style="padding-left: 30px;">Upload -> <strong>HVAC</strong></span>
+<div style="padding: 20px 20px 20px 20px; text-align: left; background-color: #555762; color: white;">
+	<span>Upload files to google drive</span>
 
 	<form id='hvac_upload_form' action='./'>
 		<div>
