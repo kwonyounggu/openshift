@@ -8,7 +8,7 @@
 	#hvac_upload_form label
 	{
 		font-weight: normal;
-		width: 300px;
+		width: 160px;
 	}
 	#hvac_upload_form select
 	{
@@ -351,7 +351,7 @@
 			<input type='file' id='file_to_upload' name='file_to_upload' style='color: #ffffff;'/>
 	   	</div>
 	   	<div>
-	   		<label>Please select the elephant before submitting <span style='font-size: .95em; color: #8fc161;' name='check_robot_span' id='check_robot_span'>*</span></label>
+	   		<label style="width: 100%">Please select the elephant before submitting:</label>
 	   				<!-- To hide the input but only to display the error message -->
 	   				<input type='text' style='width: 0; height: 0; border: none; -webkit-appearance: none; background-color: #555762' name='select_animal' id='select_animal' value='a'/>
 	
