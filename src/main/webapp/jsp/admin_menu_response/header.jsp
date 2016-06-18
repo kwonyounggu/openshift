@@ -42,27 +42,25 @@ $(document).ready(function ()
 	{
 		case "admin_menu_hvac_upload":
 			$('a[href="/adminController?op=admin_menu_hvac_upload"]').closest('li').addClass('active');
+			$("#menu_upload").addClass('active');
 			break;
-		case "menu_public_contact":
+		/*case "menu_public_contact":
 			$('a[href="/adminController?op=menu_public_contact"]').closest('li').addClass('active');
 			break;
 		case "menu_public_stockcharts":
 			$('a[href="/adminController?op=menu_public_stockcharts"]').closest('li').addClass('active');
 			break;
 		case "menu_public_hvac":
-			$("#menu_upload").addClass('active');
-			$('a[href="/adminController?op=menu_public_hvac"]').closest('li').addClass('active');
-			
+			$('a[href="/adminController?op=menu_public_hvac"]').closest('li').addClass('active');			
 			break;
 		case "menu_public_saxophone":
 			$('a[href="/adminController?op=menu_public_saxophone"]').closest('li').addClass('active');
 			break;
+		*/
 		default:
 			$('a[href="/adminController"]').closest('li').addClass('active');
 			break;	
 	}
-	
-	//$("#menu_upload").addClass('active');
 });
 
 </script>
