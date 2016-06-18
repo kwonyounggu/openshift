@@ -50,8 +50,9 @@ $(document).ready(function ()
 			$('a[href="/adminController?op=menu_public_stockcharts"]').closest('li').addClass('active');
 			break;
 		case "menu_public_hvac":
-			$('a[href="/adminController?op=menu_public_hvac"]').closest('li').addClass('active');
 			$("#menu_upload").addClass('active');
+			$('a[href="/adminController?op=menu_public_hvac"]').closest('li').addClass('active');
+			
 			break;
 		case "menu_public_saxophone":
 			$('a[href="/adminController?op=menu_public_saxophone"]').closest('li').addClass('active');
