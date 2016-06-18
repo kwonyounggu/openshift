@@ -61,7 +61,7 @@ $(document).ready(function ()
 			break;	
 	}
 	
-	$("#menu_upload").addClass('active');
+	//$("#menu_upload").addClass('active');
 });
 
 </script>
