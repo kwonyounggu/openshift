@@ -18,6 +18,12 @@
 	{
 		color: black;
 	}
+	#hvac_upload_form input[type=radio] 
+	{
+	    border: 0px;
+	    width: 100%;
+	    height: 1em;
+	}
 	.tooltipster-default
 	{
 		border-radius: 1px;
