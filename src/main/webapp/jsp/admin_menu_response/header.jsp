@@ -51,7 +51,7 @@ $(document).ready(function ()
 			break;
 		case "menu_public_hvac":
 			$('a[href="/adminController?op=menu_public_hvac"]').closest('li').addClass('active');
-			$('a[href="/adminController?op=menu_public_hvac"]').closest('li').closest('li').addClass('active');
+			$("#menu_upload").addClass('active');
 			break;
 		case "menu_public_saxophone":
 			$('a[href="/adminController?op=menu_public_saxophone"]').closest('li').addClass('active');
@@ -60,6 +60,8 @@ $(document).ready(function ()
 			$('a[href="/adminController"]').closest('li').addClass('active');
 			break;	
 	}
+	
+	$("#menu_upload").addClass('active');
 });
 
 </script>
@@ -79,7 +81,7 @@ $(document).ready(function ()
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="<%= MenuLink.admin_home %>" onfocus="this.blur()">Home</a></li>							
-		<li class="dropdown">
+		<li class="dropdown" id="menu_upload">
         	<a class="dropdown-toggle" data-toggle="dropdown" href="#">Upload
         	<span class="caret"></span></a>
         	<ul class="dropdown-menu">
