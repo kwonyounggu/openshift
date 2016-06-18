@@ -4,16 +4,18 @@
 <%@ page import="java.util.*" %>
 <%@ page isELIgnored ="false" %>
 <style>
-	td.hvac_upload_form_td
-	{
-		color: #ffffff;
-		vertical-align: top;
-		text-align: left;
-	}
-	
+
 	#hvac_upload_form label
 	{
 		font-weight: normal;
+	}
+	#hvac_upload_form select
+	{
+		color: black;
+	}
+	#hvac_upload_form input
+	{
+		color: black;
 	}
 	.tooltipster-default
 	{
@@ -279,9 +281,9 @@
 	
 	//see, http://abandon.ie/notebook/simple-file-uploads-using-jquery-ajax
 </script>
-<span style="padding-left: 30px; text-align: left;">Upload -> <strong>HVAC</strong></span>
+<div style="padding-left: 30px; text-align: left; margin-top: -10px;">Upload -> <strong>HVAC</strong></div>
 <div style="padding: 20px 20px 20px 20px; text-align: left; background-color: #555762; color: white;">
-	<h3 style='color: #f9d540'>Upload files to google drive</h3>
+	<h3 style='color: #f9d540; margin-top: -10px;'>Upload files to google drive</h3>
 	<form id='hvac_upload_form' action='./'>
 		<div>
 	   		<label for="hvacBrands">Brand:</label>
