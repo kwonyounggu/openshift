@@ -279,7 +279,8 @@
 	
 	//see, http://abandon.ie/notebook/simple-file-uploads-using-jquery-ajax
 </script>
-<div style="padding-left: 30px; text-align: left;">Upload -> <strong>HVAC</strong></div>
+<div style="padding: 20px 20px 20px 20px; text-align: left; background-color: #555762;">
+	<span style="padding-left: 30px;">Upload -> <strong>HVAC</strong></span>
 
 	<form id='hvac_upload_form' action='./'>
 		<div>
@@ -370,5 +371,5 @@
 		</div>
 				
 	</form>
-
+</div>
   
