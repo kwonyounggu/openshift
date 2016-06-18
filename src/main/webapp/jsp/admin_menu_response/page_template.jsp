@@ -139,7 +139,7 @@
 			<%@ include file="/jsp/admin_menu_response/header.jsp" %>
 		</div>	
 		<div class="contents">
-			<div style="margin-top: .5cm; padding: 20px 20px 20px 20px">
+			<div style="margin-top: .5cm; padding: 0px 20px 20px 20px">
 				<jsp:include page='${body_panel}' flush='true'/>	
 			</div>		
 		</div>
