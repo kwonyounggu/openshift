@@ -185,6 +185,7 @@
 		}, "Please limit the file size upto 5MB!");
 		$.validator.addMethod("isAnimalValid", function(value, element)
 		{
+			if (!$("input[name='animalGroup']:checked").val()) return true;
 			return $("#animal_3").is(":checked");
 		}, "Please answer correctly");
 	
