@@ -346,7 +346,7 @@
 	   			%>
 	   		</select>
 	   	</div>
-	   	<div>
+	   	<div style="margin-bottom: 20px;">
 	   		<label for="file_to_upload">A file to upload :</label>
 			<input type='file' id='file_to_upload' name='file_to_upload' style='color: #ffffff;'/>
 	   	</div>
@@ -362,7 +362,7 @@
 	   				</fieldset>
 	   				<img src="images/three_animals.png" width="362" height="86" alt="Three Animals" border="0"/>
 	   	</div>
-	   	<div>
+	   	<div style="margin-top: 10px;">
 					<input type='submit' style='width: 80px;' value='Submit' id='submitButton' />
 					<input type='hidden' id='client_place' name='client_place' value='toronto'/>
 		</div>
