@@ -104,10 +104,6 @@
 		({
 			rules:
 			{
-				animalGroup:
-				{
-					required: true
-				},
 				file_to_upload:
 				{
 					required: true,
@@ -124,10 +120,6 @@
 				file_to_upload:
 				{
 					required: "You should choose a file to upload!"
-				},
-				animalGroup:
-				{
-					required: "Selection is required!"
 				}
 			},
 			submitHandler: function (form)
@@ -153,7 +145,7 @@
 				$(element).tooltipster('hide');
 			}
 		});
-		
+		$("#animal_3").rules("add", {required:true});
 		$.validator.addMethod("isNameValid", function(value, element)
 		{
 			//var tName=$.trim(value);
@@ -296,7 +288,7 @@
 <div style="padding-left: 20px; padding-bottom: 5px; text-align: left; margin-top: -10px;">Upload -> <strong>HVAC</strong></div>
 <div style="padding: 20px 20px 20px 20px; text-align: left; background-color: #555762; color: white;">
 	<h3 style='color: #f9d540; margin-top: 0px;'>Upload files to google drive</h3>
-	<form id='hvac_upload_form' action='./' style="padding-left: 20px; margin-top: 5px;">
+	<form id='hvac_upload_form' action='./' style="padding-left: 20px; margin-top: 10px;">
 		<div>
 	   		<label for="hvacBrands">Brand:</label>
 	   		<select id="hvacBrands">
