@@ -282,7 +282,7 @@
 	
 	//see, http://abandon.ie/notebook/simple-file-uploads-using-jquery-ajax
 </script>
-<div style="padding-left: 30px; padding-bottom: 10px; text-align: left; margin-top: -10px;">Upload -> <strong>HVAC</strong></div>
+<div style="padding-left: 20px; padding-bottom: 5px; text-align: left; margin-top: -10px;">Upload -> <strong>HVAC</strong></div>
 <div style="padding: 20px 20px 20px 20px; text-align: left; background-color: #555762; color: white;">
 	<h3 style='color: #f9d540; margin-top: -10px;'>Upload files to google drive</h3>
 	<form id='hvac_upload_form' action='./' style="padding-left: 20px;">
