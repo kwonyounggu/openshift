@@ -304,7 +304,7 @@
 	<form id='hvac_upload_form' action='./' style="padding-left: 20px; margin-top: 20px;">
 		<div>
 	   		<label for="hvacBrands">Brand:</label>
-	   		<select id="hvacBrands">
+	   		<select id="hvacBrands" name="hvacBrands">
 	   			<%
 	   				for(HvacBrands brand : HvacBrands.values())
 	   				{
@@ -315,7 +315,7 @@
 	   	</div>
 	   	<div>
 	   		<label for="hvacAccommodationType">Space Type:</label>
-	   		<select id="hvacAccommodationType">
+	   		<select id="hvacAccommodationType" name="hvacAccommodationType">
 	   			<%
 	   				for(HvacAccommodationTypes space : HvacAccommodationTypes.values())
 	   				{
@@ -326,7 +326,7 @@
 	   	</div>
 	   	<div>
 	   		<label for="hvacSystemType">System Type:</label>
-	   		<select id="hvacSystemType">
+	   		<select id="hvacSystemType" name="hvacSystemType">
 	   			<%
 	   				for(HvacSystems sys : HvacSystems.values())
 	   				{
@@ -341,7 +341,7 @@
 	   	</div>
 	   	<div>
 	   		<label for="hvacManualType">Manual Type:</label>
-	   		<select id="hvacManualType">
+	   		<select id="hvacManualType" name="hvacManualType">
 	   			<%
 	   				for(HvacManualTypes manual : HvacManualTypes.values())
 	   				{
@@ -353,7 +353,7 @@
 	   	</div>
 	   	<div>
 	   		<label for="hvacFuelType">Fuel Type:</label>
-	   		<select id="hvacFuelType">
+	   		<select id="hvacFuelType" name="hvacFuelType">
 	   			<%
 	   				for(HvacFuels fuel : HvacFuels.values())
 	   				{
