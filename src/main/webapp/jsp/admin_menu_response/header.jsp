@@ -79,8 +79,8 @@ $(document).ready(function ()
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="<%= MenuLink.admin_home %>" onfocus="this.blur()">Home</a></li>							
-		<li class="dropdown">
-        	<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="menu_upload">Upload
+		<li class="dropdown" id="menu_upload">
+        	<a class="dropdown-toggle" data-toggle="dropdown" href="#">Upload
         	<span class="caret"></span></a>
         	<ul class="dropdown-menu">
 	          <li><a href="<%= MenuLink.admin_menu_hvac_upload %>">HVAC</a></li>
