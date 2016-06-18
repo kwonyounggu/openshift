@@ -98,6 +98,10 @@
 		({
 			rules:
 			{
+				animalGroup:
+				{
+					required: true
+				}
 				file_to_upload:
 				{
 					required: true,
@@ -105,7 +109,7 @@
 				},
 				select_animal:
 				{
-					required: true,
+					required: false,
 					isAnimalValid: true
 				}
 			},
@@ -115,9 +119,9 @@
 				{
 					required: "You should choose a file to upload!"
 				},
-				select_animal:
+				animalGroup:
 				{
-					required: "You should choose the right image for the elephant!"
+					required: "Selection is required!"
 				}
 			},
 			submitHandler: function (form)
@@ -284,15 +288,15 @@
 </script>
 <div style="padding-left: 20px; padding-bottom: 5px; text-align: left; margin-top: -10px;">Upload -> <strong>HVAC</strong></div>
 <div style="padding: 20px 20px 20px 20px; text-align: left; background-color: #555762; color: white;">
-	<h3 style='color: #f9d540; margin-top: -10px;'>Upload files to google drive</h3>
-	<form id='hvac_upload_form' action='./' style="padding-left: 20px;">
+	<h3 style='color: #f9d540; margin-top: 0px;'>Upload files to google drive</h3>
+	<form id='hvac_upload_form' action='./' style="padding-left: 20px; margin-top: 5px;">
 		<div>
 	   		<label for="hvacBrands">Brand:</label>
 	   		<select id="hvacBrands">
 	   			<%
 	   				for(HvacBrands brand : HvacBrands.values())
 	   				{
-	   					out.print("<option value='"+brand.toString()+"' >"+brand.toString()+"</option>");
+	   					out.print("<option value='"+brand.toString()+"' >"+Utils.getFirstCapitalString(brand.toString())+"</option>");
 	   				}
 	   			%>
 	   		</select>
@@ -303,7 +307,7 @@
 	   			<%
 	   				for(HvacAccommodationTypes space : HvacAccommodationTypes.values())
 	   				{
-	   					out.print("<option value='"+space.toString()+"' >"+space.toString()+"</option>");
+	   					out.print("<option value='"+space.toString()+"' >"+Utils.getFirstCapitalString(space.toString())+"</option>");
 	   				}
 	   			%>
 	   		</select>
@@ -314,7 +318,7 @@
 	   			<%
 	   				for(HvacSystems sys : HvacSystems.values())
 	   				{
-	   					out.print("<option value='"+sys.toString()+"' >"+sys.toString()+"</option>");
+	   					out.print("<option value='"+sys.toString()+"' >"+Utils.getFirstCapitalString(sys.toString())+"</option>");
 	   				}
 	   			%>
 	   		</select>
@@ -329,7 +333,7 @@
 	   			<%
 	   				for(HvacManualTypes manual : HvacManualTypes.values())
 	   				{
-	   					out.print("<option value='"+manual.toString()+"' >"+manual.toString()+"</option>");
+	   					out.print("<option value='"+manual.toString()+"' >"+Utils.getFirstCapitalString(manual.toString())+"</option>");
 	   				}
 	   			%>
 	   		</select>
@@ -351,10 +355,10 @@
 			<input type='file' id='file_to_upload' name='file_to_upload' style='color: #ffffff;'/>
 	   	</div>
 	   	<div>
-	   		<label style="width: 100%">Please select the elephant before submitting:</label>
+	   		<label style="width: 100%">Please select the elephant before submitting:
 	   				<!-- To hide the input but only to display the error message -->
 	   				<input type='text' style='width: 0; height: 0; border: none; -webkit-appearance: none; background-color: #555762' name='select_animal' id='select_animal' value='a'/>
-	
+			</label>
 	   				<fieldset>
 	   				<input type='radio' style='width: 150px; outline: 0px' name='animalGroup' id='animal_1' value='1'/>
 	   				<input type='radio' style='width: 80px; outline: 0px' name='animalGroup' id='animal_2' value='2'/>

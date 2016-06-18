@@ -2,8 +2,8 @@ package com.enums;
 
 public enum HvacFuels
 {
-	ELECTRIC,
 	GAS,
+	ELECTRIC,
 	GEOTHERMAL,
 	OIL
 }
