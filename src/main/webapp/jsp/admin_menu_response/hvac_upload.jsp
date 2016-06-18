@@ -101,7 +101,7 @@
 				animalGroup:
 				{
 					required: true
-				}
+				},
 				file_to_upload:
 				{
 					required: true,
@@ -345,7 +345,7 @@
 	   			<%
 	   				for(HvacFuels fuel : HvacFuels.values())
 	   				{
-	   					out.print("<option value='"+fuel.toString()+"' >"+fuel.toString()+"</option>");
+	   					out.print("<option value='"+fuel.toString()+"' >"+Utils.getFirstCapitalString(fuel.toString())+"</option>");
 	   				}
 	   			%>
 	   		</select>
