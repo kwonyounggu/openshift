@@ -12,6 +12,7 @@ public class Utils
 {
 	public static final String DATE_FORMAT_NOW = "yyyy-MM-dd HH:mm:ss";
 	public static final long MAX_FILE_SIZE = 5242880;
+	public static final long MAX_MANUAL_FILE_SIZE = 52428800;
 	
 	public static void delay(int sec)
 	{

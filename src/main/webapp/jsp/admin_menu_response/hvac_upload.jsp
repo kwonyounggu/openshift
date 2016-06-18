@@ -187,7 +187,7 @@
 				return (document.getElementById("file_to_upload").files[0].size <= <%=Utils.MAX_FILE_SIZE%>);
 	
 			}
-		}, "Please limit the file size upto 5MB!");
+		}, "Please limit the file size upto 50MB!");
 		$.validator.addMethod("isAnimalValid", function(value, element)
 		{
 			if (!$("input[name='animalGroup']:checked").val()) return true;
@@ -207,7 +207,7 @@
 	     ({
 	         type: "post",
 	         dataType: "", //see https://rochcass.wordpress.com/tag/freegeoip-net-post/
-	         url: "/fileupload",
+	         url: "/uploadToGoogleController",
 	         data: formData,
 	     	 processData: false, // Don't process the files
 	         contentType: false, // Set content type to false as jQuery will tell the server its a query string request
