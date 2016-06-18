@@ -91,7 +91,7 @@ public class UploadToGoogleController extends HttpServlet
 				String value=request.getParameter(param);
 				log.info(request.getContextPath()+" Parameter Name is '"+param+"' and Parameter Value is '"+value+"'");
 			}	
-			log.info(request.getParameter(""));
+			
 			/*
 			//detect OS
 			UAgentInfo detector = new UAgentInfo(request.getHeader("User-Agent"), request.getHeader("Accept"));
