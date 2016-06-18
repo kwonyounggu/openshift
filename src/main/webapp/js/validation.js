@@ -204,7 +204,8 @@ function isRightWordForDemographics(obj)
 	str = str.toUpperCase();
 	if(!('A' <= str.charAt(0) && str.charAt(0) <= 'Z')) return false;
 
-	for(var i=1; i < str.length; i++) {
+	for(var i=1; i < str.length; i++) 
+	{
 		if(!(('A' <= str.charAt(i) && str.charAt(i) <= 'Z') ||
 			('0' <= str.charAt(i) && str.charAt(i) <= '9') ||
 			(str.charAt(i) == '_')||

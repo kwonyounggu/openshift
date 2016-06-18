@@ -104,6 +104,13 @@
 		({
 			rules:
 			{
+				hvacSystemModel:
+				{
+					required: true,
+					minlength: 2,
+					maxlength: 80,
+					isModelValid: true
+				},
 				file_to_upload:
 				{
 					required: true,
@@ -120,7 +127,11 @@
 				file_to_upload:
 				{
 					required: "You should choose a file to upload!"
-				}
+				},
+				hvacSystemModel:
+				{
+					required: "Model Number is required!"
+				},
 			},
 			submitHandler: function (form)
 			{ 
@@ -146,21 +157,23 @@
 			}
 		});
 		$("#animal_3").rules("add", {required:true, messages: {required: "Required"}});
-		$.validator.addMethod("isNameValid", function(value, element)
+		$.validator.addMethod("isModelValid", function(value, element)
 		{
-			//var tName=$.trim(value);
-		    return (isKoreanName(element) || checkNameUsingRegEx(value.trim()));
-		}, "Your name is not valid!");
+		    return check_alphanumeric(value.trim());
+		}, "Model Number is not valid!");
+		//Not used
 		$.validator.addMethod("isPhoneValid", function(value, element)
 		{
 			var regPhone=/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/;
 			return regPhone.test(value);
 		}, "Phone number is not valid!");
+		//Not used
 		$.validator.addMethod("isTextValid", function(value, element)
 		{
 			var estimateEditorText=$.trim($(CKEDITOR.instances.estimateNoteEditor.getData()).text());
 			return estimateEditorText.length>3;
 		}, "Please put a note!");
+		
 		$.validator.addMethod("isFileValid", function(value, element)
 		{
 			if( document.getElementById("file_to_upload").files.length == 0 )
@@ -187,8 +200,8 @@
 	{
 		run_waitMe("roundBounce");
 		var formData=new FormData(document.getElementById("hvac_upload_form"));
-		formData.set('submitter_note', CKEDITOR.instances.estimateNoteEditor.getData());
-		formData.set('note_msg', 'estimates');//it will be /estimates/filename.pdf in dropbox
+		//formData.set('submitter_note', CKEDITOR.instances.estimateNoteEditor.getData());
+		//formData.set('note_msg', 'estimates');//it will be /estimates/filename.pdf in dropbox
 
 		$.ajax
 	     ({
@@ -261,7 +274,7 @@
 		{
 			$('#submit_success_alert').css('visibility','visible').fadeIn();
 			$('#submit_error_alert').css('visibility','hidden');
-			CKEDITOR.instances.estimateNoteEditor.setData("");
+			//CKEDITOR.instances.estimateNoteEditor.setData("");
 			$('#hvac_upload_form')[0].reset();
 			
 			//in 5 sec, remove the success sign and reload
@@ -272,7 +285,7 @@
 			        $(this).remove(); 
 			        location.reload();
 			    });
-			}, 5000);
+			}, 3000);
 		}
 		else
 		{
