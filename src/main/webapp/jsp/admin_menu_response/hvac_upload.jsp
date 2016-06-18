@@ -351,7 +351,7 @@
 	   	</div>
 	   	<div style="margin-bottom: 20px;">
 	   		<label for="file_to_upload">A file to upload :</label>
-			<input type='file' id='file_to_upload' name='file_to_upload' style='color: #ffffff;'/>
+			<input type='file' id='file_to_upload' name='file_to_upload' style='color: #ffffff; outline: 0px'/>
 	   	</div>
 	   	<div>
 	   		<label style="width: 100%">Please select the elephant before submitting:

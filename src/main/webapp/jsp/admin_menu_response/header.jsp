@@ -51,6 +51,7 @@ $(document).ready(function ()
 			break;
 		case "menu_public_hvac":
 			$('a[href="/adminController?op=menu_public_hvac"]').closest('li').addClass('active');
+			$('#menu_upload').addClass('active');
 			break;
 		case "menu_public_saxophone":
 			$('a[href="/adminController?op=menu_public_saxophone"]').closest('li').addClass('active');
@@ -79,7 +80,7 @@ $(document).ready(function ()
       <ul class="nav navbar-nav">
         <li><a href="<%= MenuLink.admin_home %>" onfocus="this.blur()">Home</a></li>							
 		<li class="dropdown">
-        	<a class="dropdown-toggle" data-toggle="dropdown" href="#">Upload
+        	<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="menu_upload">Upload
         	<span class="caret"></span></a>
         	<ul class="dropdown-menu">
 	          <li><a href="<%= MenuLink.admin_menu_hvac_upload %>">HVAC</a></li>
