@@ -56,6 +56,7 @@ public class GoogleDrive
 
     private GoogleClientSecrets getClientSecret(ServletContext ctx) throws IOException, Exception
     {
+    	log.info("realPath: "+ctx.getRealPath("/")+": "+ctx.getRealPath(CLIENT_SECRETS_FILE_PATH));
     	GoogleClientSecrets secrets=null;
     	try 
     	{
