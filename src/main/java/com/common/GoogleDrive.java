@@ -68,6 +68,7 @@ public class GoogleDrive
     	}
     	catch(Exception e)
     	{
+    		e.printStackTrace();
     		log.severe(e.toString());
     		throw new Exception("Exception, client_secrets.json is missing or invalid.\n"+e);
     	}
