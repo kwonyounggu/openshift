@@ -105,7 +105,7 @@ public class UploadToGoogleController extends HttpServlet
 	private Logger log = Logger.getLogger(this.getClass().getName());   
     
 	private DataSource _ds=null;
-	private Credential _googleCredential=null;
+	private GoogleCredential _googleCredential=null;
     public UploadToGoogleController() 
     {
         super();
@@ -116,10 +116,10 @@ public class UploadToGoogleController extends HttpServlet
 	{
         _dbxClient = new DbxClientV2(new DbxRequestConfig("webmonster.ca->estimates", Locale.getDefault().toString()), ACCESS_TOKEN);
         _ds=(DataSource) config.getServletContext().getAttribute("dataSource");
-        /*
+        
         try
 		{
-			_googleCredential=new GoogleDrive().authorize(config.getServletContext()); 
+			_googleCredential=authorize(config.getServletContext()); 
 		}
 		catch (IOException e)
 		{
@@ -131,7 +131,7 @@ public class UploadToGoogleController extends HttpServlet
 			log.severe("Exeption with +"+e.getMessage());
 			e.printStackTrace();
 		}
-        */
+     
 	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
@@ -165,7 +165,7 @@ public class UploadToGoogleController extends HttpServlet
 			*/
 	        Part filePart=request.getPart("file_to_upload");
 	        
-	        log.info("GoogleCredential: "+ (_googleCredential==null));
+	        //log.info("GoogleCredential: "+ (_googleCredential==null));
 	        
 	        if(filePart!=null && filePart.getSize()>0)
 	        {
@@ -178,7 +178,7 @@ public class UploadToGoogleController extends HttpServlet
 	        	////->FileUploadedToDropboxDao fDao=new FileUploadedToDropboxDao(_ds);
 	        	////->fb=fDao.create(fb);
 	        	
-	        	uploadToGoogleDrive((GoogleCredential) authorize(),filePart.getName(), "", "image/jpeg", filePart.getInputStream());
+	        	uploadToGoogleDrive(_googleCredential, filePart.getName(), "", "image/jpeg", filePart.getInputStream());
 	        }
 	        /*
 			//Insert bean data to the corresponding table
@@ -355,12 +355,12 @@ public class UploadToGoogleController extends HttpServlet
 	}
 	
 	//***** Google Drive Management *****//
-    private GoogleClientSecrets getClientSecret() throws IOException, Exception
+    private GoogleClientSecrets getClientSecret(ServletContext ctx) throws IOException, Exception
     {
 
     	try 
     	{
-    	      return GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(this.getServletContext().getResourceAsStream(CLIENT_SECRETS_FILE_PATH)));    	    	
+    	      return GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(ctx.getResourceAsStream(CLIENT_SECRETS_FILE_PATH)));    	    	
     	} 
     	catch (IOException e) 
     	{
@@ -376,10 +376,10 @@ public class UploadToGoogleController extends HttpServlet
     	}
     }
     
-    public GoogleCredential authorize() throws IOException, Exception
+    public GoogleCredential authorize(ServletContext ctx) throws IOException, Exception
     {
     	return new GoogleCredential.Builder()
-                .setClientSecrets(getClientSecret())
+                .setClientSecrets(getClientSecret(ctx))
                 .setTransport(HTTP_TRANSPORT)
                 .setJsonFactory(JSON_FACTORY)
                 .build();
