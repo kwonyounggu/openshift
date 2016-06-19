@@ -40,7 +40,7 @@ public class GoogleDrive
         "https://www.googleapis.com/auth/userinfo.profile"
     );
 
-    public static final String CLIENT_SECRETS_FILE_PATH = "/webmonster-c3052a87df08.json";
+    public static final String CLIENT_SECRETS_FILE_PATH = "webmonster-c3052a87df08.json";
     static 
     {
         try 
@@ -56,7 +56,7 @@ public class GoogleDrive
 
     private GoogleClientSecrets getClientSecret(ServletContext ctx) throws IOException, Exception
     {
-    	log.info("realPath: "+ctx.getRealPath("/")+": "+ctx.getResource(CLIENT_SECRETS_FILE_PATH));
+    	log.info("realPath: "+ctx.getRealPath("")+": "+ctx.getResource(CLIENT_SECRETS_FILE_PATH));
     	GoogleClientSecrets secrets=null;
     	try 
     	{
