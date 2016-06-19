@@ -214,6 +214,7 @@ public class UploadToGoogleController extends HttpServlet
 		}
 		catch(Exception e)
 		{	
+			e.printStackTrace();
 			log.severe(e+", written in the catch block (Exception e) - 1st level");
 			callResponse="ERROR: "+e.toString();
 			
