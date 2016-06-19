@@ -116,7 +116,7 @@ public class UploadToGoogleController extends HttpServlet
 	{
         _dbxClient = new DbxClientV2(new DbxRequestConfig("webmonster.ca->estimates", Locale.getDefault().toString()), ACCESS_TOKEN);
         _ds=(DataSource) config.getServletContext().getAttribute("dataSource");
-        
+        /*
         try
 		{
 			_googleCredential=new GoogleDrive().authorize(config.getServletContext()); 
@@ -131,6 +131,7 @@ public class UploadToGoogleController extends HttpServlet
 			log.severe("Exeption with +"+e.getMessage());
 			e.printStackTrace();
 		}
+        */
 	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
@@ -373,7 +374,7 @@ public class UploadToGoogleController extends HttpServlet
     	}
     }
     
-    public Credential authorize() throws IOException, Exception
+    public GoogleCredential authorize() throws IOException, Exception
     {
     	return new GoogleCredential.Builder()
                 .setClientSecrets(getClientSecret())
@@ -383,12 +384,13 @@ public class UploadToGoogleController extends HttpServlet
     }
     public File uploadToGoogleDrive(GoogleCredential credential,String title, String parentId, String mimeType, InputStream stream) throws IOException, Exception
     {
+    	System.out.println("----------- 1 -----------");
     	Drive driveService = new Drive.Builder(HTTP_TRANSPORT, JSON_FACTORY, credential).setApplicationName("DRIVE_TEST").build();
         // File's metadata.
         File body = new File();
         body.setName(title);
         body.setMimeType(mimeType);
-
+        System.out.println("----------- 2 -----------");
         // Set the parent folder.
         if (parentId != null && parentId.length() > 0) 
         {
@@ -403,7 +405,7 @@ public class UploadToGoogleController extends HttpServlet
      	   return driveService.files().create(body, mediaContent).execute();
         } 
         catch (IOException e) 
-        {
+        {	System.out.println("----------- 3 -----------");
           log.severe("Uploading "+body.getName()+" has been failed!");
           throw new IOException(e);
         }    
