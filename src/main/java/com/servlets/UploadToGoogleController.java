@@ -158,14 +158,16 @@ public class UploadToGoogleController extends HttpServlet
 			
 			//This is to get all items including the form field and file
 	        // Collection<Part> parts = request.getParts(); 
+			/*
 			String typeOfMsg=request.getParameter("note_msg");
 			String submitterName=request.getParameter("submitter_name").trim();
 			FileUploadedToDropboxBean fb=null;
+			*/
 	        Part filePart=request.getPart("file_to_upload");
 	        
 	        log.info("GoogleCredential: "+ (_googleCredential==null));
 	        
-	        if(filePart.getSize()>0)
+	        if(filePart!=null && filePart.getSize()>0)
 	        {
 	        	//this is to write the file into the local repository, that is, app-root/data/client_file.pdf
 	        	// filePart.write(getFileName(filePart)); 
