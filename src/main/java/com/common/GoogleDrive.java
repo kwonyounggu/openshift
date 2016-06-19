@@ -61,16 +61,21 @@ public class GoogleDrive
     	try 
     	{
     	      secrets = GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(ctx.getResourceAsStream(CLIENT_SECRETS_FILE_PATH)));
+    	      if(secrets!=null)
+    	    	  System.out.println("************ Not NULL ***************");
+    	      else
+    	    	  System.out.println("************ NULL ***************");
+    	    	
     	} 
     	catch (IOException e) 
     	{
-    		log.severe("IOExeption with +"+e.getMessage());
+    		log.severe("***** IOExeption with +"+e.getMessage()+" ************");
     		e.printStackTrace();
     	    throw new IOException("IOException, client_secrets.json is missing or invalid.\n"+e);
     	}
     	catch(Exception e)
     	{
-    		log.severe("Exception with +"+e.getMessage());
+    		log.severe("***** Exeption with +"+e.getMessage()+" ************");
     		e.printStackTrace();
     		throw new Exception("Exception, client_secrets.json is missing or invalid.\n"+e);
     	}
