@@ -63,13 +63,13 @@ public class GoogleDrive
     	} 
     	catch (IOException e) 
     	{
-    		log.severe(e.getMessage());
+    		log.severe(e.toString());
     	    throw new IOException("IOException, client_secrets.json is missing or invalid.\n"+e);
     	}
     	catch(Exception e)
     	{
-    		log.severe(e.getMessage());
-    		throw new IOException("Exception, client_secrets.json is missing or invalid.\n"+e);
+    		log.severe(e.toString());
+    		throw new Exception("Exception, client_secrets.json is missing or invalid.\n"+e);
     	}
     	return secrets;
     }
