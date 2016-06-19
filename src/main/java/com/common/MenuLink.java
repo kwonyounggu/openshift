@@ -1,5 +1,6 @@
 package com.common;
 
+
 public class MenuLink 
 {
 	////// ADMIN MENUS ///////

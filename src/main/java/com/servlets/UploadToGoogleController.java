@@ -26,6 +26,7 @@ import javax.sql.DataSource;
 import com.beans.EstimateRequestsBean;
 import com.beans.FileUploadedToDropboxBean;
 import com.common.AuthData;
+import com.common.GoogleDrive;
 import com.common.Message;
 import com.common.UAgentInfo;
 import com.common.Utils;
@@ -39,6 +40,11 @@ import com.dropbox.core.v2.files.FileMetadata;
 import com.dropbox.core.v2.files.UploadErrorException;
 import com.dropbox.core.v2.files.WriteMode;
 import com.dropbox.core.v2.sharing.SharedLinkMetadata;
+import com.google.api.client.auth.oauth2.Credential;
+import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
+import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.api.client.json.jackson2.JacksonFactory;
+import com.google.api.services.drive.Drive;
 import com.service.MailService;
 
 /**
@@ -64,7 +70,7 @@ public class UploadToGoogleController extends HttpServlet
 	private Logger log = Logger.getLogger(this.getClass().getName());   
     
 	private DataSource _ds=null;
-	
+	private Credential _googleCredential=null;
     public UploadToGoogleController() 
     {
         super();
@@ -75,6 +81,21 @@ public class UploadToGoogleController extends HttpServlet
 	{
         _dbxClient = new DbxClientV2(new DbxRequestConfig("webmonster.ca->estimates", Locale.getDefault().toString()), ACCESS_TOKEN);
         _ds=(DataSource) config.getServletContext().getAttribute("dataSource");
+        
+        try
+		{
+			_googleCredential=new GoogleDrive().authorize(config.getServletContext());
+		}
+		catch (IOException e)
+		{
+			//e.printStackTrace();
+			log.severe(e.toString());
+		}
+		catch (Exception e)
+		{
+			//e.printStackTrace();
+			log.severe(e.toString());
+		}
 	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
@@ -92,7 +113,7 @@ public class UploadToGoogleController extends HttpServlet
 				log.info(request.getContextPath()+" Parameter Name is '"+param+"' and Parameter Value is '"+value+"'");
 			}	
 			
-			/*
+			
 			//detect OS
 			UAgentInfo detector = new UAgentInfo(request.getHeader("User-Agent"), request.getHeader("Accept"));
 			byte os=0;//0: PC, 1: TABLET, 2: MOBILE/SMART-PHONE
@@ -105,18 +126,21 @@ public class UploadToGoogleController extends HttpServlet
 			String submitterName=request.getParameter("submitter_name").trim();
 			FileUploadedToDropboxBean fb=null;
 	        Part filePart=request.getPart("file_to_upload");
+	        
+	        log.info("GoogleCredential: "+ (_googleCredential==null));
+	        
 	        if(filePart.getSize()>0)
 	        {
 	        	//this is to write the file into the local repository, that is, app-root/data/client_file.pdf
 	        	// filePart.write(getFileName(filePart)); 
 
-	        	fb=uploadToDropbox(_dbxClient, filePart, typeOfMsg, submitterName); //note_msg contains a dropbox path like estimates
+	        	////->fb=uploadToDropbox(_dbxClient, filePart, "typeOfMsg", "submitterName"); //note_msg contains a dropbox path like estimates
 	        	
 	        	//insert into db table
-	        	FileUploadedToDropboxDao fDao=new FileUploadedToDropboxDao(_ds);
-	        	fb=fDao.create(fb);
+	        	////->FileUploadedToDropboxDao fDao=new FileUploadedToDropboxDao(_ds);
+	        	////->fb=fDao.create(fb);
 	        }
-	        
+	        /*
 			//Insert bean data to the corresponding table
 			
 			if(typeOfMsg.equals("estimates"))
@@ -190,7 +214,66 @@ public class UploadToGoogleController extends HttpServlet
         }
         return null;
     }
+    //https://developers.google.com/drive/v2/reference/files/insert#examples
+    //parentId ID folder drive
+    
+    //Login, webmonster.ca@gmail.com with koreaandong
+    //Google Authentication information from https://console.developers.google.com/iam-admin/serviceaccounts/project?project=webmonster-0001
+    //Service account name: webmonster
+    //Key ID: c3052a87df08fee5cbcb47ac101beddf063306a3
+    //Service Account ID: webmonster@webmonster-0001.iam.gserviceaccount.com
+    
+    //from playground
+    //Content-type: application/json; charset=UTF-8
+    //{
+    //		  "access_token": "ya29.Ci8FA1yMytGjXM3QexGwqucDMYiQvV6DW9EhsN32OS7scsIZE3bXENNcvH4Bvr4VTg", 
+    //		  "token_type": "Bearer", 
+    //		  "expires_in": 3600, 
+    //		  "refresh_token": "1/qKdriHaaN-2ooX8Ve-AZqxh2lL9ZUxpIGfSUmhioxgQ"
+    //}
+    /*
+    private File insertFile(GoogleCredential credential,String title, String parentId, String mimeType, String filename, InputStream stream) 
+    {
 
+       try 
+       {
+                //Drive driveService = new Drive.Builder(httpTransport, jsonFactory, null).setApplicationName("DRIVE_TEST").setHttpRequestInitializer(credential).build();
+                Drive driveService = new Drive.Builder(NetHttpTransport, jsonFactory, null).setApplicationName("DRIVE_TEST").setHttpRequestInitializer(credential).build();
+               // File's metadata.
+               File body = new File();
+               body.setTitle(title);
+               body.setMimeType(mimeType);
+
+               // Set the parent folder.
+               if (parentId != null && parentId.length() > 0) 
+               {
+                 body.setParents(
+                     Arrays.asList(new ParentReference().setId(parentId)));
+               }
+
+               // File's content.
+               InputStreamContent mediaContent = new InputStreamContent(mimeType, new BufferedInputStream(stream));  
+               try {
+                 File file = driveService.files().insert(body, mediaContent).execute();
+
+                 return file;
+               } 
+               catch (IOException e) 
+               {
+                 logger.log(Level.WARNING, "un error en drive service: "+ e);
+                 return null;
+               }
+
+       } 
+       catch (IOException e1) 
+       {
+              // TODO Auto-generated catch block
+              e1.printStackTrace();
+              return null;
+       }
+
+     }
+    */
     private FileUploadedToDropboxBean uploadToDropbox(DbxClientV2 dbxClient, Part part, String dropboxDir, String submitterName) throws Exception
     {
         try
