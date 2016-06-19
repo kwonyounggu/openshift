@@ -1,19 +1,21 @@
 package com.servlets;
 
-import java.io.File;
+import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Enumeration;
-
+import java.util.List;
 import java.util.Locale;
 
 import java.util.logging.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
-
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -41,10 +43,17 @@ import com.dropbox.core.v2.files.UploadErrorException;
 import com.dropbox.core.v2.files.WriteMode;
 import com.dropbox.core.v2.sharing.SharedLinkMetadata;
 import com.google.api.client.auth.oauth2.Credential;
+import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
+import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
+import com.google.api.client.http.FileContent;
+import com.google.api.client.http.HttpTransport;
+import com.google.api.client.http.InputStreamContent;
 import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.services.drive.Drive;
+import com.google.api.services.drive.model.File;
 import com.service.MailService;
 
 /**
@@ -64,6 +73,32 @@ import com.service.MailService;
 public class UploadToGoogleController extends HttpServlet 
 {
 	private static final long serialVersionUID = 1L;
+	
+	//**** Google Drive ****//
+    private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
+    private static HttpTransport HTTP_TRANSPORT;
+    public static final List<String> SCOPES = Arrays.asList
+    (
+        // Required to access and manipulate files.
+        "https://www.googleapis.com/auth/drive.file",
+        // Required to identify the user in our data store.
+        "https://www.googleapis.com/auth/userinfo.email",
+        "https://www.googleapis.com/auth/userinfo.profile"
+    );
+    public static final String CLIENT_SECRETS_FILE_PATH = "/WEB-INF/classes/client_secret_WebMonster-Upload-To-Google-Drive.json";
+    static 
+    {
+        try 
+        {
+            HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
+        } 
+        catch (Throwable t) 
+        {
+            t.printStackTrace();
+            System.err.println("ERROR: failed in getting HTTP_TRANSPORT, msg="+t);
+        }
+    }
+    
 	private static final String ACCESS_TOKEN="b3c4WiWzNgAAAAAAAAAAB7OVomREroFuSCcV-xJWdvLJrJ8271YWPv3W7w8OLALb";
 	//private static String DROPBOX_PATH="";//it can be either /estimates/filename.pdf or /anything/filename.pdf
 	private DbxClientV2 _dbxClient=null;
@@ -85,7 +120,6 @@ public class UploadToGoogleController extends HttpServlet
         try
 		{
 			_googleCredential=new GoogleDrive().authorize(config.getServletContext()); 
-			log.info("Expires in sec: "+_googleCredential.getExpiresInSeconds());
 		}
 		catch (IOException e)
 		{
@@ -140,6 +174,8 @@ public class UploadToGoogleController extends HttpServlet
 	        	//insert into db table
 	        	////->FileUploadedToDropboxDao fDao=new FileUploadedToDropboxDao(_ds);
 	        	////->fb=fDao.create(fb);
+	        	
+	        	uploadToGoogleDrive((GoogleCredential) authorize(),filePart.getName(), "", "image/jpeg", filePart.getInputStream());
 	        }
 	        /*
 			//Insert bean data to the corresponding table
@@ -232,49 +268,8 @@ public class UploadToGoogleController extends HttpServlet
     //		  "expires_in": 3600, 
     //		  "refresh_token": "1/qKdriHaaN-2ooX8Ve-AZqxh2lL9ZUxpIGfSUmhioxgQ"
     //}
-    /*
-    private File insertFile(GoogleCredential credential,String title, String parentId, String mimeType, String filename, InputStream stream) 
-    {
+    
 
-       try 
-       {
-                //Drive driveService = new Drive.Builder(httpTransport, jsonFactory, null).setApplicationName("DRIVE_TEST").setHttpRequestInitializer(credential).build();
-                Drive driveService = new Drive.Builder(NetHttpTransport, jsonFactory, null).setApplicationName("DRIVE_TEST").setHttpRequestInitializer(credential).build();
-               // File's metadata.
-               File body = new File();
-               body.setTitle(title);
-               body.setMimeType(mimeType);
-
-               // Set the parent folder.
-               if (parentId != null && parentId.length() > 0) 
-               {
-                 body.setParents(
-                     Arrays.asList(new ParentReference().setId(parentId)));
-               }
-
-               // File's content.
-               InputStreamContent mediaContent = new InputStreamContent(mimeType, new BufferedInputStream(stream));  
-               try {
-                 File file = driveService.files().insert(body, mediaContent).execute();
-
-                 return file;
-               } 
-               catch (IOException e) 
-               {
-                 logger.log(Level.WARNING, "un error en drive service: "+ e);
-                 return null;
-               }
-
-       } 
-       catch (IOException e1) 
-       {
-              // TODO Auto-generated catch block
-              e1.printStackTrace();
-              return null;
-       }
-
-     }
-    */
     private FileUploadedToDropboxBean uploadToDropbox(DbxClientV2 dbxClient, Part part, String dropboxDir, String submitterName) throws Exception
     {
         try
@@ -354,4 +349,77 @@ public class UploadToGoogleController extends HttpServlet
 		}
 		return "E-Mail SUCCESS";
 	}
+	
+	//***** Google Drive Management *****//
+    private GoogleClientSecrets getClientSecret() throws IOException, Exception
+    {
+
+    	try 
+    	{
+    	      return GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(this.getServletContext().getResourceAsStream(CLIENT_SECRETS_FILE_PATH)));    	    	
+    	} 
+    	catch (IOException e) 
+    	{
+    		log.severe("***** IOExeption with +"+e.getMessage()+" ************");
+    		e.printStackTrace();
+    	    throw new IOException("IOException, client_secrets.json is missing or invalid.\n"+e);
+    	}
+    	catch(Exception e)
+    	{
+    		log.severe("***** Exeption with +"+e.getMessage()+" ************");
+    		e.printStackTrace();
+    		throw new Exception("Exception, client_secrets.json is missing or invalid.\n"+e);
+    	}
+    }
+    
+    public Credential authorize() throws IOException, Exception
+    {
+    	return new GoogleCredential.Builder()
+                .setClientSecrets(getClientSecret())
+                .setTransport(HTTP_TRANSPORT)
+                .setJsonFactory(JSON_FACTORY)
+                .build();
+    }
+    public File uploadToGoogleDrive(GoogleCredential credential,String title, String parentId, String mimeType, InputStream stream) throws IOException, Exception
+    {
+    	Drive driveService = new Drive.Builder(HTTP_TRANSPORT, JSON_FACTORY, credential).setApplicationName("DRIVE_TEST").build();
+        // File's metadata.
+        File body = new File();
+        body.setName(title);
+        body.setMimeType(mimeType);
+
+        // Set the parent folder.
+        if (parentId != null && parentId.length() > 0) 
+        {
+          //body.setParents(
+          //    Arrays.asList(new ParentReference().setId(parentId)));
+        }
+
+        // File's content.
+        InputStreamContent mediaContent = new InputStreamContent(mimeType, new BufferedInputStream(stream));  
+        try 
+        {
+     	   return driveService.files().create(body, mediaContent).execute();
+        } 
+        catch (IOException e) 
+        {
+          log.severe("Uploading "+body.getName()+" has been failed!");
+          throw new IOException(e);
+        }    
+     }
+    /*
+     private File uploadFile(Part part) throws IOException 
+     {
+        File fileMetadata = new File();
+        fileMetadata.setName(getFileName(part));
+        fileMetadata.setMimeType("image/jpeg");
+
+        FileContent mediaContent = new FileContent("image/jpeg", part.);
+
+        Drive.Files.Insert insert = drive.files().insert(fileMetadata, mediaContent);
+        MediaHttpUploader uploader = insert.getMediaHttpUploader();
+        uploader.setDirectUploadEnabled(true);
+        return insert.execute();
+      }
+      */
 }
