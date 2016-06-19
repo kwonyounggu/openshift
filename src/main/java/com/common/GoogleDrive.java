@@ -64,13 +64,14 @@ public class GoogleDrive
     	} 
     	catch (IOException e) 
     	{
-    		log.severe(e.toString());
+    		log.severe("IOExeption with +"+e.getMessage());
+    		e.printStackTrace();
     	    throw new IOException("IOException, client_secrets.json is missing or invalid.\n"+e);
     	}
     	catch(Exception e)
     	{
+    		log.severe("Exception with +"+e.getMessage());
     		e.printStackTrace();
-    		log.severe(e.toString());
     		throw new Exception("Exception, client_secrets.json is missing or invalid.\n"+e);
     	}
     	return secrets;

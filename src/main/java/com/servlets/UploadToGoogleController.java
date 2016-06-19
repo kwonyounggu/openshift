@@ -84,17 +84,18 @@ public class UploadToGoogleController extends HttpServlet
         
         try
 		{
-			_googleCredential=new GoogleDrive().authorize(config.getServletContext());
+			_googleCredential=new GoogleDrive().authorize(config.getServletContext()); 
+			log.info("Expires in sec: "+_googleCredential.getExpiresInSeconds());
 		}
 		catch (IOException e)
 		{
-			//e.printStackTrace();
-			log.severe(e.toString());
+			log.severe("IOExeption with +"+e.getMessage());
+			e.printStackTrace();
 		}
 		catch (Exception e)
 		{
-			//e.printStackTrace();
-			log.severe(e.toString());
+			log.severe("Exeption with +"+e.getMessage());
+			e.printStackTrace();
 		}
 	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
