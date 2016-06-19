@@ -40,7 +40,7 @@ public class GoogleDrive
         "https://www.googleapis.com/auth/userinfo.profile"
     );
 
-    public static final String CLIENT_SECRETS_FILE_PATH = "webmonster-c3052a87df08.json";
+    public static final String CLIENT_SECRETS_FILE_PATH = "/WEB-INF/classes/webmonster-c3052a87df08.json";
     static 
     {
         try 
