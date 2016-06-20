@@ -125,17 +125,11 @@ public class UploadToGoogleController extends HttpServlet
 		{
 			_googleCredential=authorize(config.getServletContext()); 
 		}
-		catch (IOException e)
-		{
-			log.severe("IOExeption with +"+e.getMessage());
-			e.printStackTrace();
-			googleErrorMsg+=e.getMessage();
-		}
 		catch (Exception e)
 		{
-			log.severe("Exeption with +"+e.getMessage());
+			log.severe("Exeption with +"+e);
 			e.printStackTrace();
-			googleErrorMsg+=e.getMessage();
+			googleErrorMsg+=e;
 		}
      
 	}
