@@ -56,6 +56,7 @@ import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.services.drive.Drive;
 import com.google.api.services.drive.model.File;
+import com.google.api.services.drive.model.FileList;
 import com.service.MailService;
 
 /**
@@ -89,8 +90,8 @@ public class UploadToGoogleController extends HttpServlet
         "https://www.googleapis.com/auth/userinfo.profile"
     );
     
-    public static final String CLIENT_SECRETS_FILE_PATH = "/client_secret_drive_api_quickstart.json";
-    //public static final String CLIENT_SECRETS_FILE_PATH = "/client_secret_WebMonster-Upload-To-Google-Drive.json";
+    //public static final String CLIENT_SECRETS_FILE_PATH = "/client_secret_drive_api_quickstart.json";
+    public static final String CLIENT_SECRETS_FILE_PATH = "/client_secret_WebMonster-Upload-To-Google-Drive.json";
     //public static final String CLIENT_SECRETS_FILE_PATH = "/WEB-INF/classes/client_secret_WebMonster-Upload-To-Google-Drive.json";
     static 
     {
@@ -414,7 +415,26 @@ public class UploadToGoogleController extends HttpServlet
         InputStreamContent mediaContent = new InputStreamContent(mimeType, new BufferedInputStream(stream));  
         try 
         {
-     	   return driveService.files().create(body, mediaContent).execute();
+     	   //return driveService.files().create(body, mediaContent).execute();
+        	FileList result = driveService.files().list()
+   	             .setPageSize(100)
+   	             .setFields("nextPageToken, files(id, name)")
+   	             .execute();
+   	        System.err.println("----------------------  4  -----------------------------");
+   	        List<File> files = result.getFiles();
+   	        if (files == null || files.size() == 0) 
+   	        {
+   	            System.out.println("No files found.");
+   	        } 
+   	        else 
+   	        {
+   	            System.out.println("------------- Files: ------------------");
+   	            for (File file : files) 
+   	            {
+   	                System.out.printf("%s (%s)\n", file.getName(), file.getId());
+   	            }
+   	        }
+   	        return null;
         } 
         catch (IOException e) 
         {	System.out.println("----------- 3 -----------");
