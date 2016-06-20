@@ -179,8 +179,8 @@ public class UploadToGoogleController extends HttpServlet
 	        	//insert into db table
 	        	////->FileUploadedToDropboxDao fDao=new FileUploadedToDropboxDao(_ds);
 	        	////->fb=fDao.create(fb);
-	        	
-	        	uploadToGoogleDrive(_googleCredential, filePart.getName(), "", "image/jpeg", filePart.getInputStream());
+	        	if(_googleCredential!=null)
+	        		uploadToGoogleDrive(_googleCredential, filePart.getName(), "", "image/jpeg", filePart.getInputStream());
 	        }
 	        /*
 			//Insert bean data to the corresponding table
