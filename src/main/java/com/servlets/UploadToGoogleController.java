@@ -89,7 +89,8 @@ public class UploadToGoogleController extends HttpServlet
         "https://www.googleapis.com/auth/userinfo.profile"
     );
     
-    public static final String CLIENT_SECRETS_FILE_PATH = "/client_secret_WebMonster-Upload-To-Google-Drive.json";
+    public static final String CLIENT_SECRETS_FILE_PATH = "/client_secret_drive_api_quickstart.json";
+    //public static final String CLIENT_SECRETS_FILE_PATH = "/client_secret_WebMonster-Upload-To-Google-Drive.json";
     //public static final String CLIENT_SECRETS_FILE_PATH = "/WEB-INF/classes/client_secret_WebMonster-Upload-To-Google-Drive.json";
     static 
     {
