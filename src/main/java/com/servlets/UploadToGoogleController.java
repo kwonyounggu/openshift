@@ -395,7 +395,7 @@ public class UploadToGoogleController extends HttpServlet
     }
     public File uploadToGoogleDrive(GoogleCredential credential,String title, String parentId, String mimeType, InputStream stream) throws IOException, Exception
     {
-    	System.out.println("----------- 1 -----------credential="+credential.getAccessToken()+" "+credential.getServiceAccountUser());
+    	System.out.println("----------- 1 -----------credential="+credential.getRefreshToken()+" "+credential.getServiceAccountUser());
     	Drive driveService = new Drive.Builder(HTTP_TRANSPORT, JSON_FACTORY, credential).setApplicationName("DRIVE_TEST").build();
         // File's metadata.
         File body = new File();
