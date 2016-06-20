@@ -43,6 +43,9 @@ import com.dropbox.core.v2.files.UploadErrorException;
 import com.dropbox.core.v2.files.WriteMode;
 import com.dropbox.core.v2.sharing.SharedLinkMetadata;
 import com.google.api.client.auth.oauth2.Credential;
+import com.google.api.client.auth.oauth2.CredentialRefreshListener;
+import com.google.api.client.auth.oauth2.TokenErrorResponse;
+import com.google.api.client.auth.oauth2.TokenResponse;
 import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
@@ -393,6 +396,26 @@ public class UploadToGoogleController extends HttpServlet
                 .setJsonFactory(JSON_FACTORY)
                 //.setServiceAccountId( "webmonster@webmonster-0001.iam.gserviceaccount.com" )
                 //.setServiceAccountScopes(Arrays.asList(DriveScopes.DRIVE))
+ 
+                .addRefreshListener(
+                        new CredentialRefreshListener() {
+                            @Override
+                            public void onTokenResponse(
+                                    Credential credential,
+                                    TokenResponse tokenResponse) {
+                                System.out
+                                        .println("Credential was refreshed successfully.");
+                            }
+
+                            @Override
+                            public void onTokenErrorResponse(
+                                    Credential credential,
+                                    TokenErrorResponse tokenErrorResponse) {
+                                System.err
+                                        .println("Credential was not refreshed successfully. "
+                                                + "Redirect to error page or login screen.");
+                            }
+                        })
                 .build();
     	//googleCredential.setRefreshToken(GOOGLE_REFRESH_TOKEN);
     	
