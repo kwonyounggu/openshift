@@ -47,6 +47,8 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 import com.google.api.client.http.FileContent;
+import com.google.api.client.http.HttpRequest;
+import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.InputStreamContent;
 import com.google.api.client.http.javanet.NetHttpTransport;
@@ -102,7 +104,7 @@ public class UploadToGoogleController extends HttpServlet
             googleErrorMsg+=t;
         }
     }
-    
+    private static final String GOOGLE_ACCESS_TOKEN="ya29.Ci8HA_f3lCb8WLyjP8cTYIuY2C3-YNkxK5ILdfuajHqTdIt3n1AXbnJKADmshRkWFg";
 	private static final String ACCESS_TOKEN="b3c4WiWzNgAAAAAAAAAAB7OVomREroFuSCcV-xJWdvLJrJ8271YWPv3W7w8OLALb";
 	//private static String DROPBOX_PATH="";//it can be either /estimates/filename.pdf or /anything/filename.pdf
 	private DbxClientV2 _dbxClient=null;
@@ -384,7 +386,17 @@ public class UploadToGoogleController extends HttpServlet
     	return new GoogleCredential.Builder()
                 .setClientSecrets(getClientSecret(ctx))
                 .setTransport(HTTP_TRANSPORT)
-                .setJsonFactory(JSON_FACTORY)
+                .setJsonFactory(JSON_FACTORY).setRequestInitializer
+                (
+                		(new HttpRequestInitializer()
+                		{
+                            @Override
+                            public void initialize(HttpRequest request)throws IOException 
+                            {
+                                request.getHeaders().put("Authorization", "Bearer " + GOOGLE_ACCESS_TOKEN);
+                            }
+                		})
+                )
                 .build();
     }
     public File uploadToGoogleDrive(GoogleCredential credential,String title, String parentId, String mimeType, InputStream stream) throws IOException, Exception
