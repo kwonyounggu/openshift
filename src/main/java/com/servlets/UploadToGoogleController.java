@@ -105,6 +105,7 @@ public class UploadToGoogleController extends HttpServlet
         }
     }
     private static final String GOOGLE_ACCESS_TOKEN="ya29.Ci8HA_f3lCb8WLyjP8cTYIuY2C3-YNkxK5ILdfuajHqTdIt3n1AXbnJKADmshRkWFg";
+    private static final String GOOGLE_REFRESH_TOKEN="1/PA7qcR_rplwgog0T6eWQaxdM81GP6f1uNMOY1KvpaVc";
 	private static final String ACCESS_TOKEN="b3c4WiWzNgAAAAAAAAAAB7OVomREroFuSCcV-xJWdvLJrJ8271YWPv3W7w8OLALb";
 	//private static String DROPBOX_PATH="";//it can be either /estimates/filename.pdf or /anything/filename.pdf
 	private DbxClientV2 _dbxClient=null;
@@ -383,21 +384,14 @@ public class UploadToGoogleController extends HttpServlet
     
     public GoogleCredential authorize(ServletContext ctx) throws IOException, Exception
     {
-    	return new GoogleCredential.Builder()
+    	GoogleCredential googleCredential=new GoogleCredential.Builder()
                 .setClientSecrets(getClientSecret(ctx))
                 .setTransport(HTTP_TRANSPORT)
-                .setJsonFactory(JSON_FACTORY).setRequestInitializer
-                (
-                		(new HttpRequestInitializer()
-                		{
-                            @Override
-                            public void initialize(HttpRequest request)throws IOException 
-                            {
-                                request.getHeaders().put("Authorization", "Bearer " + GOOGLE_ACCESS_TOKEN);
-                            }
-                		})
-                )
+                .setJsonFactory(JSON_FACTORY)
                 .build();
+    	googleCredential.setRefreshToken(GOOGLE_REFRESH_TOKEN);
+    	
+    	return googleCredential;
     }
     public File uploadToGoogleDrive(GoogleCredential credential,String title, String parentId, String mimeType, InputStream stream) throws IOException, Exception
     {
