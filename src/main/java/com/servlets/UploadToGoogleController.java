@@ -391,7 +391,7 @@ public class UploadToGoogleController extends HttpServlet
                 .setClientSecrets(getClientSecret(ctx))
                 .setTransport(HTTP_TRANSPORT)
                 .setJsonFactory(JSON_FACTORY)
-                .setServiceAccountId( "webmonster@webmonster-0001.iam.gserviceaccount.com" )
+                //.setServiceAccountId( "webmonster@webmonster-0001.iam.gserviceaccount.com" )
                 .setServiceAccountScopes(Arrays.asList(DriveScopes.DRIVE))
                 .build();
     	//googleCredential.setRefreshToken(GOOGLE_REFRESH_TOKEN);
