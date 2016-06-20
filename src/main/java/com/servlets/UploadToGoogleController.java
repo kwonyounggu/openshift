@@ -87,8 +87,8 @@ public class UploadToGoogleController extends HttpServlet
         "https://www.googleapis.com/auth/userinfo.profile"
     );
     
-    //public static final String CLIENT_SECRETS_FILE_PATH = "/WEB-INF/classes/webmonster-c3052a87df08.json";
-    public static final String CLIENT_SECRETS_FILE_PATH = "/WEB-INF/classes/client_secret_WebMonster-Upload-To-Google-Drive.json";
+    public static final String CLIENT_SECRETS_FILE_PATH = "/client_secret_WebMonster-Upload-To-Google-Drive.json";
+    //public static final String CLIENT_SECRETS_FILE_PATH = "/WEB-INF/classes/client_secret_WebMonster-Upload-To-Google-Drive.json";
     static 
     {
         try 
@@ -362,7 +362,8 @@ public class UploadToGoogleController extends HttpServlet
 
     	try 
     	{
-    	      return GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(ctx.getResourceAsStream(CLIENT_SECRETS_FILE_PATH)));    	    	
+    		return GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(UploadToGoogleController.class.getResourceAsStream(CLIENT_SECRETS_FILE_PATH)));
+    	    //  return GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(ctx.getResourceAsStream(CLIENT_SECRETS_FILE_PATH)));    	    	
     	} 
     	catch (IOException e) 
     	{
