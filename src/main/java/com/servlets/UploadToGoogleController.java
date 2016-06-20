@@ -55,6 +55,7 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.services.drive.Drive;
+import com.google.api.services.drive.DriveScopes;
 import com.google.api.services.drive.model.File;
 import com.google.api.services.drive.model.FileList;
 import com.service.MailService;
@@ -390,15 +391,17 @@ public class UploadToGoogleController extends HttpServlet
                 .setClientSecrets(getClientSecret(ctx))
                 .setTransport(HTTP_TRANSPORT)
                 .setJsonFactory(JSON_FACTORY)
+                .setServiceAccountId( "webmonster@webmonster-0001.iam.gserviceaccount.com" )
+                .setServiceAccountScopes(Arrays.asList(DriveScopes.DRIVE))
                 .build();
-    	googleCredential.setRefreshToken(GOOGLE_REFRESH_TOKEN);
+    	//googleCredential.setRefreshToken(GOOGLE_REFRESH_TOKEN);
     	
     	return googleCredential;
     }
     public File uploadToGoogleDrive(GoogleCredential credential,String title, String parentId, String mimeType, InputStream stream) throws IOException, Exception
     {
     	System.out.println("----------- 1 -----------credential="+credential.getRefreshToken()+" "+credential.getServiceAccountUser());
-    	Drive driveService = new Drive.Builder(HTTP_TRANSPORT, JSON_FACTORY, credential).setApplicationName("DRIVE_TEST").build();
+    	Drive driveService = new Drive.Builder(HTTP_TRANSPORT, JSON_FACTORY, null).setHttpRequestInitializer(credential).setApplicationName("DRIVE_TEST").build();
         // File's metadata.
         File body = new File();
         body.setName(title);
