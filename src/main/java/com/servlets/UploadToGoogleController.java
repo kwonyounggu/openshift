@@ -75,6 +75,7 @@ public class UploadToGoogleController extends HttpServlet
 	private static final long serialVersionUID = 1L;
 	
 	//**** Google Drive ****//
+	private static String googleErrorMsg = "Google Error in ";
     private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
     private static HttpTransport HTTP_TRANSPORT;
     public static final List<String> SCOPES = Arrays.asList
@@ -98,6 +99,7 @@ public class UploadToGoogleController extends HttpServlet
         {
             t.printStackTrace();
             System.err.println("ERROR: failed in getting HTTP_TRANSPORT, msg="+t);
+            googleErrorMsg+=t;
         }
     }
     
@@ -127,11 +129,13 @@ public class UploadToGoogleController extends HttpServlet
 		{
 			log.severe("IOExeption with +"+e.getMessage());
 			e.printStackTrace();
+			googleErrorMsg+=e.getMessage();
 		}
 		catch (Exception e)
 		{
 			log.severe("Exeption with +"+e.getMessage());
 			e.printStackTrace();
+			googleErrorMsg+=e.getMessage();
 		}
      
 	}
@@ -181,6 +185,8 @@ public class UploadToGoogleController extends HttpServlet
 	        	////->fb=fDao.create(fb);
 	        	if(_googleCredential!=null)
 	        		uploadToGoogleDrive(_googleCredential, filePart.getName(), "", "image/jpeg", filePart.getInputStream());
+	        	else
+	        		throw new Exception(googleErrorMsg);
 	        }
 	        /*
 			//Insert bean data to the corresponding table
