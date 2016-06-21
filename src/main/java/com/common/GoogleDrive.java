@@ -100,7 +100,7 @@ public class GoogleDrive
     }
     public static Drive getDrive() throws Exception
     {
-    	return new Drive.Builder(HTTP_TRANSPORT, JSON_FACTORY, authorize()).build();
+    	return new Drive.Builder(HTTP_TRANSPORT, JSON_FACTORY, authorize()).setApplicationName("webmonster").build();
     }
    
 }
