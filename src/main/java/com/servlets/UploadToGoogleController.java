@@ -188,6 +188,7 @@ public class UploadToGoogleController extends HttpServlet
 	        	////->FileUploadedToDropboxDao fDao=new FileUploadedToDropboxDao(_ds);
 	        	////->fb=fDao.create(fb);
 	        	//if(_googleCredential!=null)
+	        	System.err.println("------------here 0 -------------------");
 	        		uploadToGoogleDrive(getCredential(request, response), filePart.getName(), "", "image/jpeg", filePart.getInputStream());
 	        	//else
 	        		//throw new Exception(googleErrorMsg);
@@ -472,6 +473,7 @@ public class UploadToGoogleController extends HttpServlet
      }
     protected CredentialMediator getCredentialMediator(HttpServletRequest req, HttpServletResponse resp) throws IOException 
     {
+    	log.info("--------- getCredentialMediator() is called");
     	    // Authorize or fetch credentials.  Required here to ensure this happens
     	    // on first page load.  Then, credentials will be stored in the user's
     	    // session.
