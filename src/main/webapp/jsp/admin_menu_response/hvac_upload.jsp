@@ -200,14 +200,12 @@
 	{
 		run_waitMe("roundBounce");
 		var formData=new FormData(document.getElementById("hvac_upload_form"));
-		//formData.set('submitter_note', CKEDITOR.instances.estimateNoteEditor.getData());
-		//formData.set('note_msg', 'estimates');//it will be /estimates/filename.pdf in dropbox
 
 		$.ajax
 	     ({
 	         type: "post",
 	         dataType: "", //see https://rochcass.wordpress.com/tag/freegeoip-net-post/
-	         url: "/uploadToGoogleController",
+	         url: "/hvacfileupload",
 	         data: formData,
 	     	 processData: false, // Don't process the files
 	         contentType: false, // Set content type to false as jQuery will tell the server its a query string request
@@ -270,7 +268,7 @@
 		
 		$('#hvac_upload_form').waitMe('hide');
 		
-		if(strResponse==="<%= Message.CONTACT_SUCCESS %>")
+		if(strResponse==="<%= Message.HVAC_UPLOAD_SUCCESS %>")
 		{
 			$('#submit_success_alert').css('visibility','visible').fadeIn();
 			$('#submit_error_alert').css('visibility','hidden');
@@ -381,6 +379,8 @@
 	   	<div style="margin-top: 10px;">
 					<input type='submit' style='width: 80px;' value='Submit' id='submitButton' />
 					<input type='hidden' id='client_place' name='client_place' value='toronto'/>
+					<input type='hidden' id='submitterName' name='submitterName' value='Admin'/>
+					<input type='hidden' id='dropboxDir' name='dropboxDir' value='systemManuals'/>
 		</div>
 		<div id="submit_success_alert" class="alert alert-success hide-bt-alert"><%=Message.CONTACT_SUCCESS %>
 		</div>
