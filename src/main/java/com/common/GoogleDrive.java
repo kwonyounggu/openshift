@@ -9,7 +9,8 @@ import java.util.logging.Logger;
 
 import javax.servlet.ServletContext;
 
-
+import com.exceptions.GoogleCredentialFailureException;
+import com.exceptions.GoogleInvalidClientSecretException;
 import com.google.api.client.auth.oauth2.Credential;
 
 import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets;
@@ -19,21 +20,29 @@ import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
+import com.google.api.services.drive.Drive;
 
+//Login, webmonster.ca@gmail.com with koreaandong
+//Google Authentication information from https://console.developers.google.com/iam-admin/serviceaccounts/project?project=webmonster-0001
+//Service account name: webmonster
+//Key ID: c3052a87df08fee5cbcb47ac101beddf063306a3
+//Service Account ID: webmonster@webmonster-0001.iam.gserviceaccount.com
 
+//from playground
+//Content-type: application/json; charset=UTF-8
+//{
+//		  "access_token": "ya29.Ci8FA1yMytGjXM3QexGwqucDMYiQvV6DW9EhsN32OS7scsIZE3bXENNcvH4Bvr4VTg", 
+//		  "token_type": "Bearer", 
+//		  "expires_in": 3600, 
+//		  "refresh_token": "1/qKdriHaaN-2ooX8Ve-AZqxh2lL9ZUxpIGfSUmhioxgQ"
+//}
 
 public class GoogleDrive
-{
-	private  Logger log = Logger.getLogger(this.getClass().getName());
-	
-	/** Global instance of the JSON factory. */
+{	
     private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
-    /** Global instance of the HTTP transport. */
+
     private static HttpTransport HTTP_TRANSPORT;
     
-    /**
-     * Scopes for which to request access from the user.
-     */
     public static final List<String> SCOPES = Arrays.asList
     (
         // Required to access and manipulate files.
@@ -43,7 +52,7 @@ public class GoogleDrive
         "https://www.googleapis.com/auth/userinfo.profile"
     );
 
-    public static final String CLIENT_SECRETS_FILE_PATH = "/WEB-INF/classes/client_secret_WebMonster-Upload-To-Google-Drive.json";
+    public static final String CLIENT_SECRETS_FILE_PATH = "/client_secret_WebMonster-Upload-To-Google-Drive.json";
     static 
     {
         try 
@@ -57,40 +66,41 @@ public class GoogleDrive
         }
     }
 
-    private GoogleClientSecrets getClientSecret(ServletContext ctx) throws IOException, Exception
+    private static GoogleClientSecrets getClientSecret() throws GoogleInvalidClientSecretException
     {
-    	log.info("realPath: "+ctx.getRealPath("")+": "+ctx.getResource(CLIENT_SECRETS_FILE_PATH));
-    	GoogleClientSecrets secrets=null;
-    	try 
+    	try
     	{
-    	      secrets = GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(ctx.getResourceAsStream(CLIENT_SECRETS_FILE_PATH)));
-    	      if(secrets!=null)
-    	    	  System.out.println("************ Not NULL ***************");
-    	      else
-    	    	  System.out.println("************ NULL ***************");
-    	    	
-    	} 
-    	catch (IOException e) 
-    	{
-    		log.severe("***** IOExeption with +"+e.getMessage()+" ************");
-    		e.printStackTrace();
-    	    throw new IOException("IOException, client_secrets.json is missing or invalid.\n"+e);
+    		return GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(GoogleDrive.class.getResourceAsStream(CLIENT_SECRETS_FILE_PATH)));
     	}
     	catch(Exception e)
     	{
-    		log.severe("***** Exeption with +"+e.getMessage()+" ************");
     		e.printStackTrace();
-    		throw new Exception("Exception, client_secrets.json is missing or invalid.\n"+e);
+    		throw new GoogleInvalidClientSecretException("client_secrets.json is missing or invalid");
     	}
-    	return secrets;
     }
-    public Credential authorize(ServletContext ctx) throws IOException, Exception
+    public static Credential authorize() throws GoogleInvalidClientSecretException, GoogleCredentialFailureException
     {
-    	return new GoogleCredential.Builder()
-                .setClientSecrets(getClientSecret(ctx))
-                .setTransport(HTTP_TRANSPORT)
-                .setJsonFactory(JSON_FACTORY)
-                .build();
+    	try
+    	{
+	    	return new GoogleCredential.Builder()
+	                .setClientSecrets(getClientSecret())
+	                .setTransport(HTTP_TRANSPORT)
+	                .setJsonFactory(JSON_FACTORY)
+	                .build();
+    	}
+    	catch(GoogleInvalidClientSecretException e)
+    	{
+    		throw new GoogleInvalidClientSecretException(e);
+    	}
+    	catch(Exception e)
+    	{
+    		e.printStackTrace();
+    		throw new GoogleCredentialFailureException("Failed in building GoogleCredential");
+    	}
+    }
+    public static Drive getDrive() throws Exception
+    {
+    	return new Drive.Builder(HTTP_TRANSPORT, JSON_FACTORY, authorize()).build();
     }
    
 }

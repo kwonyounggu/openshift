@@ -42,6 +42,8 @@ import com.dropbox.core.v2.files.FileMetadata;
 import com.dropbox.core.v2.files.UploadErrorException;
 import com.dropbox.core.v2.files.WriteMode;
 import com.dropbox.core.v2.sharing.SharedLinkMetadata;
+import com.exceptions.GoogleCredentialFailureException;
+import com.exceptions.GoogleInvalidClientSecretException;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.auth.oauth2.CredentialRefreshListener;
 import com.google.api.client.auth.oauth2.TokenErrorResponse;
@@ -82,44 +84,13 @@ public class UploadToGoogleController extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
 	
-	//**** Google Drive ****//
-	private static String googleErrorMsg = "Google Error in ";
-    private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
-    private static HttpTransport HTTP_TRANSPORT;
-    public static final List<String> SCOPES = Arrays.asList
-    (
-        // Required to access and manipulate files.
-        "https://www.googleapis.com/auth/drive.file",
-        // Required to identify the user in our data store.
-        "https://www.googleapis.com/auth/userinfo.email",
-        "https://www.googleapis.com/auth/userinfo.profile"
-    );
-    
-    //public static final String CLIENT_SECRETS_FILE_PATH = "/client_secret_drive_api_quickstart.json";
-    public static final String CLIENT_SECRETS_FILE_PATH = "/client_secret_WebMonster-Upload-To-Google-Drive.json";
-    //public static final String CLIENT_SECRETS_FILE_PATH = "/WEB-INF/classes/client_secret_WebMonster-Upload-To-Google-Drive.json";
-    static 
-    {
-        try 
-        {
-            HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
-        } 
-        catch (Throwable t) 
-        {
-            t.printStackTrace();
-            System.err.println("ERROR: failed in getting HTTP_TRANSPORT, msg="+t);
-            googleErrorMsg+=t;
-        }
-    }
-    private static final String GOOGLE_ACCESS_TOKEN="ya29.Ci8HA_f3lCb8WLyjP8cTYIuY2C3-YNkxK5ILdfuajHqTdIt3n1AXbnJKADmshRkWFg";
-    private static final String GOOGLE_REFRESH_TOKEN="1/PA7qcR_rplwgog0T6eWQaxdM81GP6f1uNMOY1KvpaVc";
 	private static final String ACCESS_TOKEN="b3c4WiWzNgAAAAAAAAAAB7OVomREroFuSCcV-xJWdvLJrJ8271YWPv3W7w8OLALb";
 	//private static String DROPBOX_PATH="";//it can be either /estimates/filename.pdf or /anything/filename.pdf
 	private DbxClientV2 _dbxClient=null;
 	private Logger log = Logger.getLogger(this.getClass().getName());   
     
 	private DataSource _ds=null;
-	private GoogleCredential _googleCredential=null;
+
     public UploadToGoogleController() 
     {
         super();
@@ -130,18 +101,6 @@ public class UploadToGoogleController extends HttpServlet
 	{
         _dbxClient = new DbxClientV2(new DbxRequestConfig("webmonster.ca->estimates", Locale.getDefault().toString()), ACCESS_TOKEN);
         _ds=(DataSource) config.getServletContext().getAttribute("dataSource");
-        
-        try
-		{
-			_googleCredential=authorize(config.getServletContext()); 
-		}
-		catch (Exception e)
-		{
-			log.severe("Exeption with +"+e);
-			e.printStackTrace();
-			googleErrorMsg+=e+" in calling authorize(ctx)";
-		}
-     
 	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
@@ -187,11 +146,9 @@ public class UploadToGoogleController extends HttpServlet
 	        	//insert into db table
 	        	////->FileUploadedToDropboxDao fDao=new FileUploadedToDropboxDao(_ds);
 	        	////->fb=fDao.create(fb);
-	        	//if(_googleCredential!=null)
-	        	System.err.println("------------here 0 -------------------");
-	        		uploadToGoogleDrive(getCredential(request, response), filePart.getName(), "", "image/jpeg", filePart.getInputStream());
-	        	//else
-	        		//throw new Exception(googleErrorMsg);
+	        	
+	        		uploadToGoogleDrive(filePart.getName(), "", "image/jpeg", filePart.getInputStream());
+
 	        }
 	        /*
 			//Insert bean data to the corresponding table
@@ -268,25 +225,7 @@ public class UploadToGoogleController extends HttpServlet
         }
         return null;
     }
-    //https://developers.google.com/drive/v2/reference/files/insert#examples
-    //parentId ID folder drive
     
-    //Login, webmonster.ca@gmail.com with koreaandong
-    //Google Authentication information from https://console.developers.google.com/iam-admin/serviceaccounts/project?project=webmonster-0001
-    //Service account name: webmonster
-    //Key ID: c3052a87df08fee5cbcb47ac101beddf063306a3
-    //Service Account ID: webmonster@webmonster-0001.iam.gserviceaccount.com
-    
-    //from playground
-    //Content-type: application/json; charset=UTF-8
-    //{
-    //		  "access_token": "ya29.Ci8FA1yMytGjXM3QexGwqucDMYiQvV6DW9EhsN32OS7scsIZE3bXENNcvH4Bvr4VTg", 
-    //		  "token_type": "Bearer", 
-    //		  "expires_in": 3600, 
-    //		  "refresh_token": "1/qKdriHaaN-2ooX8Ve-AZqxh2lL9ZUxpIGfSUmhioxgQ"
-    //}
-    
-
     private FileUploadedToDropboxBean uploadToDropbox(DbxClientV2 dbxClient, Part part, String dropboxDir, String submitterName) throws Exception
     {
         try
@@ -367,66 +306,11 @@ public class UploadToGoogleController extends HttpServlet
 		return "E-Mail SUCCESS";
 	}
 	
-	//***** Google Drive Management *****//
-    private GoogleClientSecrets getClientSecret(ServletContext ctx) throws IOException, Exception
-    {
 
-    	try 
-    	{
-    		return GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(UploadToGoogleController.class.getResourceAsStream(CLIENT_SECRETS_FILE_PATH)));
-    	    //  return GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(ctx.getResourceAsStream(CLIENT_SECRETS_FILE_PATH)));    	    	
-    	} 
-    	catch (IOException e) 
-    	{
-    		log.severe("***** IOExeption with +"+e.getMessage()+" ************");
-    		e.printStackTrace();
-    	    throw new IOException("IOException, client_secrets.json is missing or invalid.\n"+e);
-    	}
-    	catch(Exception e)
-    	{
-    		log.severe("***** Exeption with +"+e.getMessage()+" ************");
-    		e.printStackTrace();
-    		throw new Exception("Exception, client_secrets.json is missing or invalid.\n"+e);
-    	}
-    }
-    
-    public GoogleCredential authorize(ServletContext ctx) throws IOException, Exception
+    public File uploadToGoogleDrive(String title, String parentId, String mimeType, InputStream stream) throws IOException, Exception
     {
-    	GoogleCredential googleCredential=new GoogleCredential.Builder()
-                .setClientSecrets(getClientSecret(ctx))
-                .setTransport(HTTP_TRANSPORT)
-                .setJsonFactory(JSON_FACTORY)
-                //.setServiceAccountId( "webmonster@webmonster-0001.iam.gserviceaccount.com" )
-                //.setServiceAccountScopes(Arrays.asList(DriveScopes.DRIVE))
- 
-                .addRefreshListener(
-                        new CredentialRefreshListener() {
-                            @Override
-                            public void onTokenResponse(
-                                    Credential credential,
-                                    TokenResponse tokenResponse) {
-                                System.out
-                                        .println("Credential was refreshed successfully.");
-                            }
-
-                            @Override
-                            public void onTokenErrorResponse(
-                                    Credential credential,
-                                    TokenErrorResponse tokenErrorResponse) {
-                                System.err
-                                        .println("Credential was not refreshed successfully. "
-                                                + "Redirect to error page or login screen.");
-                            }
-                        })
-                .build();
-    	//googleCredential.setRefreshToken(GOOGLE_REFRESH_TOKEN);
-    	
-    	return googleCredential;
-    }
-    public File uploadToGoogleDrive(Credential credential,String title, String parentId, String mimeType, InputStream stream) throws IOException, Exception
-    {
-    	System.out.println("----------- 1 -----------credential="+credential.getAccessToken());
-    	Drive driveService =new Drive.Builder(HTTP_TRANSPORT, JSON_FACTORY, credential).build();
+    	System.out.println("----------- 1 -----------");
+    	Drive driveService =GoogleDrive.getDrive();
 
         // File's metadata.
         File body = new File();
@@ -471,75 +355,6 @@ public class UploadToGoogleController extends HttpServlet
           throw new IOException(e);
         }    
      }
-    protected CredentialMediator getCredentialMediator(HttpServletRequest req, HttpServletResponse resp) throws IOException 
-    {
-    	log.info("--------- getCredentialMediator() is called");
-    	    // Authorize or fetch credentials.  Required here to ensure this happens
-    	    // on first page load.  Then, credentials will be stored in the user's
-    	    // session.
-    	    CredentialMediator mediator;
-    	    try 
-    	    {
-    	      mediator = new CredentialMediator(req, getClientSecretsStream(), SCOPES);
-    	      mediator.getActiveCredential();
-    	      return mediator;
-    	    } 
-    	    catch (CredentialMediator.NoRefreshTokenException e) 
-    	    {
-    	      try 
-    	      {
-    	        resp.sendRedirect(e.getAuthorizationUrl());
-    	      } 
-    	      catch (IOException ioe) 
-    	      {
-    	        throw new RuntimeException("Failed to redirect user for authorization");
-    	      }
-    	      throw new RuntimeException("No refresh token found. Re-authorizing.");
-    	    } 
-    	    catch (InvalidClientSecretsException e) 
-    	    {
-    	      String message = String.format("This application is not properly configured: %s", e.getMessage());
-    	      throw new RuntimeException(message);
-    	    }
-    	  }
-
-    	  private InputStreamReader getClientSecretsStream()
-		  {
-			return new InputStreamReader(UploadToGoogleController.class.getResourceAsStream(CLIENT_SECRETS_FILE_PATH));
-		  }
-
-		protected Credential getCredential(HttpServletRequest req, HttpServletResponse resp) throws IOException 
-    	  {
-    	    try 
-    	    {
-    	      CredentialMediator mediator = getCredentialMediator(req, resp);
-    	      return mediator.getActiveCredential();
-    	    } 
-    	    catch(CredentialMediator.NoRefreshTokenException e) 
-    	    {
-    	      try 
-    	      {
-    	        resp.sendRedirect(e.getAuthorizationUrl());
-    	      } 
-    	      catch (IOException ioe) 
-    	      {
-    	        ioe.printStackTrace();
-    	        throw new RuntimeException("Failed to redirect for authorization.");
-    	      }
-    	    }
-    	    return null;
-    	  }
-
-    	  protected String getClientId(HttpServletRequest req, HttpServletResponse resp) throws IOException 
-    	  {
-    	    return getCredentialMediator(req, resp).getClientSecrets().getWeb().getClientId();
-    	  }
-
-    	  protected void deleteCredential(HttpServletRequest req, HttpServletResponse resp) throws IOException 
-    	  {
-    	    CredentialMediator mediator = getCredentialMediator(req, resp);
-    	    mediator.deleteActiveCredential();
-    	  }
     /*
      private File uploadFile(Part part) throws IOException 
      {
