@@ -16,7 +16,7 @@ import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
-
+import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
@@ -27,6 +27,8 @@ import com.google.api.services.drive.Drive;
 //Service account name: webmonster
 //Key ID: c3052a87df08fee5cbcb47ac101beddf063306a3
 //Service Account ID: webmonster@webmonster-0001.iam.gserviceaccount.com
+
+//Reference: https://developers.google.com/drive/v2/web/auth/web-server#exchange_the_authorization_code_for_an_access_token
 
 //from playground
 //Content-type: application/json; charset=UTF-8
@@ -39,6 +41,7 @@ import com.google.api.services.drive.Drive;
 
 public class GoogleDrive
 {	
+	private static final String API_KEY = "AIzaSyCqj4in5P4zGLohIQKA5cUtpJwVqbeBnFM";
     private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
 
     private static HttpTransport HTTP_TRANSPORT;
@@ -100,7 +103,9 @@ public class GoogleDrive
     }
     public static Drive getDrive() throws Exception
     {
-    	return new Drive.Builder(HTTP_TRANSPORT, JSON_FACTORY, authorize()).setApplicationName("webmonster").build();
+    	return new Drive.Builder(HTTP_TRANSPORT, JSON_FACTORY, authorize())
+    			   .setApplicationName("webmonster")
+    			   .build();
     }
    
 }

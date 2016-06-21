@@ -19,7 +19,7 @@ pid=explorer&efh=false&a=v&chrome=false&embedded=true" width="100%" height="100%
 		</div>
 		<div>
 		<!-- http://www.benschersten.com/blog/2014/04/embedding-a-pdf-from-drive-into-a-blog/ -->
-			<iframe src="https://docs.google.com/viewer?srcid=0By5p9XYb0jQ1ejhvUGNFMnExTHc&pid=explorer&efh=false&a=v&chrome=false&embedded=true" width="100%" height="480px"></iframe>
+			<iframe src="https://www.dropbox.com/s/0a168mjaq9vadkt/Younggu_kwon_%EC%86%A1%ED%95%99%EC%82%AC_2016_06_21_13_26_26.pdf?dl=0&raw=1" width="100%" height="480px"></iframe>
 		</div>
 		
 		<div>
