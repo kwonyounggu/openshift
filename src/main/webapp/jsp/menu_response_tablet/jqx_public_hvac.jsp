@@ -8,7 +8,7 @@
 	<td colspan='3' style='border: 1px solid gray'>
 		<div style="width:100%; padding:5px 20px 5px 20px;text-align:left;">
 			Under construction
-			<iframe src="https://www.dropbox.com/s/0a168mjaq9vadkt/Younggu_kwon_%EC%86%A1%ED%95%99%EC%82%AC_2016_06_21_13_26_26.pdf?dl=0&raw=1" width="100%" height="480px"></iframe>
+			<iframe src="https://www.dropbox.com/s/0a168mjaq9vadkt/Younggu_kwon_%EC%86%A1%ED%95%99%EC%82%AC_2016_06_21_13_26_26.pdf?raw=1" width="100%" height="480px"></iframe>
 
 		</div>
 	</td>
