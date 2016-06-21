@@ -52,7 +52,7 @@ public class GoogleDrive
         "https://www.googleapis.com/auth/userinfo.profile"
     );
 
-    public static final String CLIENT_SECRETS_FILE_PATH = "/client_secret_WebMonster-Upload-To-Google-Drive.json";
+    public static final String CLIENT_SECRETS_FILE_PATH = "/client_secret.json";
     static 
     {
         try 
