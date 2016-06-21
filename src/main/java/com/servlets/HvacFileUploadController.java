@@ -216,9 +216,10 @@ public class HvacFileUploadController extends HttpServlet
              
              //Uncomment if you need. June 2nd, 2016
              //The followings such as setting to share and its link are working when you want to send a shared link to people
-             //SharedLinkMetadata sharedData=dbxClient.sharing().createSharedLinkWithSettings(metaData.getPathLower());
-             //fb.setDropboxFilePath(sharedData.getUrl());
-             //log.info(sharedData.toStringMultiline());
+             SharedLinkMetadata sharedData=dbxClient.sharing().createSharedLinkWithSettings(metaData.getPathLower());
+             fb.setDropboxFilePath(sharedData.getUrl());
+             log.info(sharedData.toStringMultiline());
+             log.info(fb.toString());
              return fb;
         } 
         catch (UploadErrorException e) 
