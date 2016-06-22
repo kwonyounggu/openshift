@@ -301,14 +301,14 @@
 	<h3 style='color: #f9d540; margin-top: 0px;'>Upload a manual file in pdf form</h3>
 	<form id='hvac_upload_form' action='./' style="padding-left: 20px; margin-top: 20px;">
 		<div>
-	   		<label class="radio-inline">Manual Type:</label>
-	   		<label class="radio-inline" for="hvacManualType_system">
+	   		<label>Manual Type:</label>
+	   		<label for="hvacManualType_system">
 	   				<input type='radio' style='outline: 0px' name='hvacManualType' id='hvacManualType_system' value='SYSTEM'/>System
 	   		</label>
-	   		<label class="radio-inline" for="hvacManualType_technical">
+	   		<label for="hvacManualType_technical">
 	   				<input type='radio' style='outline: 0px' name='hvacManualType' id='hvacManualType_technical' value='TECHNICAL'/>Technical
 	   		</label>
-	   		<label class="radio-inline" for="hvacManualType_book">
+	   		<label for="hvacManualType_book">
 	   				<input type='radio' style='outline: 0px' name='hvacManualType' id='hvacManualType_book' value='BOOK'/>Book
 	   		</label>
 	   	</div>
