@@ -301,7 +301,7 @@
 	<h3 style='color: #f9d540; margin-top: 0px;'>Upload a manual file in pdf form</h3>
 	<form id='hvac_upload_form' action='./' style="padding-left: 20px; margin-top: 20px;">
 		<div>
-	   		<label>Manual Type:</label>
+	   		<label class="radio-inline">Manual Type:</label>
 	   		<label class="radio-inline">
 	   				<input type='radio' style='outline: 0px' name='hvacManualType' id='hvacManualType_system' value='SYSTEM'/>System
 	   		</label>
