@@ -302,7 +302,7 @@
 	<form id='hvac_upload_form' action='./' style="padding-left: 20px; margin-top: 20px;">
 		<div>
 	   		<label>Manual Type:</label>
-	   		<input type='radio' style='outline: 0px' name='hvacManualType' id='hvacManualType_system' value='SYSTEM'/>
+	   		<input type='radio'  name='hvacManualType' id='hvacManualType_system' value='SYSTEM'/>
 	   		<label for="hvacManualType_system">System</label>
 	   		<label for="hvacManualType_technical">Technical
 	   				
