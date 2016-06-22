@@ -302,16 +302,8 @@
 	<form id='hvac_upload_form' action='./' style="padding-left: 20px; margin-top: 20px;">
 		<div>
 	   		<label>Manual Type:</label>
-	   		<!-- 
-	   		<input type='radio' style="width: auto" name='hvacManualType' id='hvacManualType_system' value='SYSTEM'/>
-	   		<label for="hvacManualType_system">System</label>
-	   		<input type='radio' style='width: auto' name='hvacManualType' id='hvacManualType_technical' value='TECHNICAL'/>
-	   		<label for="hvacManualType_technical">Technical</label>
-	   		<input type='radio' style='width: auto' name='hvacManualType' id='hvacManualType_book' value='BOOK'/>
-	   		<label for="hvacManualType_book">Book</label>
-	   		-->
 	   		<label class="radio-inline">
-	   			<input type='radio' style="width: auto" name='hvacManualType' id='hvacManualType_system' value='SYSTEM'/>System
+	   			<input type='radio' style="width: auto" name='hvacManualType' id='hvacManualType_system' value='SYSTEM' checked="checked"/>System
 	   		</label>
 	   		<label class="radio-inline">
 	   			<input type='radio' style='width: auto' name='hvacManualType' id='hvacManualType_technical' value='TECHNICAL'/>Technical
