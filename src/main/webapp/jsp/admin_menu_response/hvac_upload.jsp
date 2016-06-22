@@ -298,11 +298,11 @@
 </script>
 <div style="padding-left: 20px; padding-bottom: 5px; text-align: left; margin-top: -10px;">Upload -> <strong>HVAC</strong></div>
 <div style="padding: 20px 20px 20px 20px; text-align: left; background-color: #555762; color: white;">
-	<h3 style='color: #f9d540; margin-top: 0px;'>Upload a manual file in pdf form</h3>
+	<h3 style='color: #f9d540; margin-top: 0px;'>Upload a manual file in pdf format</h3>
 	<form id='hvac_upload_form' action='./' style="padding-left: 20px; margin-top: 20px;">
 		<div>
 	   		<label>Manual Type:</label>
-	   		<input type='radio'  name='hvacManualType' id='hvacManualType_system' value='SYSTEM'/>
+	   		<input type='radio' style="width: auto" name='hvacManualType' id='hvacManualType_system' value='SYSTEM'/>
 	   		<label for="hvacManualType_system">System</label>
 	   		<label for="hvacManualType_technical">Technical
 	   				
