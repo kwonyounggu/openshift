@@ -303,13 +303,9 @@
 		<div>
 	   		<label>Manual Type:</label>
 	   		<label class="radio-inline">
-	   				<input type='radio' style='width: outline: 0px' name='hvacManualType' id='hvacManualType_system' value='SYSTEM'/>System
-	   		</label>
-	   		<label class="radio-inline">
-	   				<input type='radio' style='outline: 0px' name='hvacManualType' id='hvacManualType_technical' value='TECHNICAL'/>Technical
-	   		</label>
-	   		<label class="radio-inline">
-	   				<input type='radio' style='outline: 0px' name='hvacManualType' id='hvacManualType_book' value='BOOK'/>Book
+	   			<input type='radio' style='width: outline: 0px' name='hvacManualType' id='hvacManualType_system' value='SYSTEM'/>System
+	   			<input type='radio' style='outline: 0px' name='hvacManualType' id='hvacManualType_technical' value='TECHNICAL'/>Technical
+	   			<input type='radio' style='outline: 0px' name='hvacManualType' id='hvacManualType_book' value='BOOK'/>Book
 	   		</label>
 	   	</div>
 		<div>
