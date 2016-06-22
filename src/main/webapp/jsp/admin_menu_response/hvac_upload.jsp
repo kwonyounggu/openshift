@@ -304,12 +304,10 @@
 	   		<label>Manual Type:</label>
 	   		<input type='radio' style="width: auto" name='hvacManualType' id='hvacManualType_system' value='SYSTEM'/>
 	   		<label for="hvacManualType_system">System</label>
-	   		<label for="hvacManualType_technical">Technical
-	   				
-	   		</label><input type='radio' style='outline: 0px' name='hvacManualType' id='hvacManualType_technical' value='TECHNICAL'/>
-	   		<label for="hvacManualType_book">Book
-	   				
-	   		</label><input type='radio' style='outline: 0px' name='hvacManualType' id='hvacManualType_book' value='BOOK'/>
+	   		<input type='radio' style='width: auto' name='hvacManualType' id='hvacManualType_technical' value='TECHNICAL'/>
+	   		<label for="hvacManualType_technical">Technical</label>
+	   		<input type='radio' style='width: auto' name='hvacManualType' id='hvacManualType_book' value='BOOK'/>
+	   		<label for="hvacManualType_book">Book</label>
 	   	</div>
 		<div>
 	   		<label for="hvacBrands">Brand:</label>
