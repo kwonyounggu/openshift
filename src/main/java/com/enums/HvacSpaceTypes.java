@@ -1,6 +1,6 @@
 package com.enums;
 
-public enum HvacAccommodationTypes
+public enum HvacSpaceTypes
 {
 	RESIDENTIAL,
 	COMMECIAL,

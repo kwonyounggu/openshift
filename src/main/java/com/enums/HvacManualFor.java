@@ -1,9 +1,10 @@
 package com.enums;
 
-public enum HvacManualTypes
+public enum HvacManualFor
 {
 	INSTALLATION,
 	OWNER_OPERATION,
 	SERVICE,
-	SUPPLEMENT
+	SUPPLEMENT,
+	NOT_APPLICABLE	
 }

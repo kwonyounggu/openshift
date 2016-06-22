@@ -298,8 +298,16 @@
 </script>
 <div style="padding-left: 20px; padding-bottom: 5px; text-align: left; margin-top: -10px;">Upload -> <strong>HVAC</strong></div>
 <div style="padding: 20px 20px 20px 20px; text-align: left; background-color: #555762; color: white;">
-	<h3 style='color: #f9d540; margin-top: 0px;'>Upload files to google drive</h3>
+	<h3 style='color: #f9d540; margin-top: 0px;'>Upload a manual file in pdf form</h3>
 	<form id='hvac_upload_form' action='./' style="padding-left: 20px; margin-top: 20px;">
+		<div>
+	   		<label for="hvacManualType">Submitting Manual Type:</label>
+	   		<fieldset>
+	   				<input type='radio' style='outline: 0px' name='hvacManualType' id='hvacManualType_system' value='SYSTEM'>System</input>
+	   				<input type='radio' style='outline: 0px' name='hvacManualType' id='hvacManualType_technical' value='TECHNICAL'>Technical</input>
+	   				<input type='radio' style='outline: 0px' name='hvacManualType' id='hvacManualType_book' value='BOOK'>Book</input>
+	   		</fieldset>
+	   	</div>
 		<div>
 	   		<label for="hvacBrands">Brand:</label>
 	   		<select id="hvacBrands" name="hvacBrands">
@@ -312,10 +320,10 @@
 	   		</select>
 	   	</div>
 	   	<div>
-	   		<label for="hvacAccommodationType">Space Type:</label>
-	   		<select id="hvacAccommodationType" name="hvacAccommodationType">
+	   		<label for="hvacSpaceType">Space Type:</label>
+	   		<select id="hvacSpaceType" name="hvacSpaceType">
 	   			<%
-	   				for(HvacAccommodationTypes space : HvacAccommodationTypes.values())
+	   				for(HvacSpaceTypes space : HvacSpaceTypes.values())
 	   				{
 	   					out.print("<option value='"+space.toString()+"' >"+Utils.getFirstCapitalString(space.toString())+"</option>");
 	   				}
@@ -338,10 +346,10 @@
 	   		<input type='text' id='hvacSystemModel' name='hvacSystemModel'  placeholder='Model Number' style='width: 250px; height: 22px'/>
 	   	</div>
 	   	<div>
-	   		<label for="hvacManualType">Manual Type:</label>
-	   		<select id="hvacManualType" name="hvacManualType">
+	   		<label for="hvacManualFor">Manual For:</label>
+	   		<select id="hvacManualFor" name="hvacManualFor">
 	   			<%
-	   				for(HvacManualTypes manual : HvacManualTypes.values())
+	   				for(HvacManualFor manual : HvacManualFor.values())
 	   				{
 	   					out.print("<option value='"+manual.toString()+"' >"+Utils.getFirstCapitalString(manual.toString())+"</option>");
 	   				}
