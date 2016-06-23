@@ -398,7 +398,7 @@
 					<input type='hidden' id='submitterName' name='submitterName' value='Admin'/>
 					<input type='hidden' id='dropboxDir' name='dropboxDir' value='systemManuals'/>
 		</div>
-		<div id="submit_success_alert" class="alert alert-success hide-bt-alert"><%=Message.CONTACT_SUCCESS %>
+		<div id="submit_success_alert" class="alert alert-success hide-bt-alert"><%=Message.HVAC_UPLOAD_SUCCESS %>
 		</div>
 
 		<div id="submit_error_alert" class="alert alert-danger  hide-bt-alert">
