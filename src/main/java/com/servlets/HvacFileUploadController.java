@@ -25,12 +25,14 @@ import javax.sql.DataSource;
 
 import com.beans.EstimateRequestsBean;
 import com.beans.FileUploadedToDropboxBean;
+import com.beans.HvacManualsBean;
 import com.common.AuthData;
 import com.common.Message;
 import com.common.UAgentInfo;
 import com.common.Utils;
 import com.dao.EstimateRequestsDao;
 import com.dao.FileUploadedToDropboxDao;
+import com.dao.HvacManualsDao;
 import com.dropbox.core.DbxException;
 import com.dropbox.core.DbxRequestConfig;
 
@@ -56,6 +58,72 @@ import com.service.MailService;
  * owner: myesl.education@gmail.com
  * pwd: korea안동
  */
+/*
+ * Temporary
+ * Jun 22, 2016 5:15:08 PM com.servlets.HvacFileUploadController doGet
+INFO:  Parameter Name is 'hvacManualType' and Parameter Value is 'SYSTEM'
+Jun 22, 2016 5:15:08 PM com.servlets.HvacFileUploadController doGet
+INFO:  Parameter Name is 'hvacBrands' and Parameter Value is 'AAON'
+Jun 22, 2016 5:15:08 PM com.servlets.HvacFileUploadController doGet
+INFO:  Parameter Name is 'hvacSpaceType' and Parameter Value is 'RESIDENTIAL'
+Jun 22, 2016 5:15:08 PM com.servlets.HvacFileUploadController doGet
+INFO:  Parameter Name is 'hvacSystemType' and Parameter Value is 'AIR_CONDITIONER'
+Jun 22, 2016 5:15:08 PM com.servlets.HvacFileUploadController doGet
+INFO:  Parameter Name is 'hvacSystemModel' and Parameter Value is 'KBS123'
+Jun 22, 2016 5:15:08 PM com.servlets.HvacFileUploadController doGet
+INFO:  Parameter Name is 'hvacManualFor' and Parameter Value is 'INSTALLATION'
+Jun 22, 2016 5:15:08 PM com.servlets.HvacFileUploadController doGet
+INFO:  Parameter Name is 'submittingCompanyId' and Parameter Value is '1'
+Jun 22, 2016 5:15:08 PM com.servlets.HvacFileUploadController doGet
+INFO:  Parameter Name is 'hvacFuelType' and Parameter Value is 'GAS'
+Jun 22, 2016 5:15:08 PM com.servlets.HvacFileUploadController doGet
+INFO:  Parameter Name is 'select_animal' and Parameter Value is 'a'
+Jun 22, 2016 5:15:08 PM com.servlets.HvacFileUploadController doGet
+INFO:  Parameter Name is 'animalGroup' and Parameter Value is '3'
+Jun 22, 2016 5:15:08 PM com.servlets.HvacFileUploadController doGet
+INFO:  Parameter Name is 'client_place' and Parameter Value is 'Toronto Ontario Canada'
+Jun 22, 2016 5:15:08 PM com.servlets.HvacFileUploadController doGet
+INFO:  Parameter Name is 'submitterName' and Parameter Value is 'Admin'
+Jun 22, 2016 5:15:08 PM com.servlets.HvacFileUploadController doGet
+INFO:  Parameter Name is 'dropboxDir' and Parameter Value is 'systemManuals'
+Jun 22, 2016 5:15:08 PM com.servlets.HvacFileUploadController uploadToDropbox
+INFO: uploadToDropbox is called ...
+Jun 22, 2016 5:15:10 PM com.servlets.HvacFileUploadController uploadToDropbox
+INFO: {
+  ".tag" : "file",
+  "name" : "Admin_Laplaya2_2016_06_22_17_15_08.jpg",
+  "path_lower" : "/systemmanuals/admin_laplaya2_2016_06_22_17_15_08.jpg",
+  "path_display" : "/systemManuals/Admin_Laplaya2_2016_06_22_17_15_08.jpg",
+  "id" : "id:lnKvckdO7MAAAAAAAAAAAQ",
+  "client_modified" : "2016-06-22T21:15:08Z",
+  "server_modified" : "2016-06-22T21:15:10Z",
+  "rev" : "44a30f50b",
+  "size" : 77559
+}
+Jun 22, 2016 5:15:11 PM com.servlets.HvacFileUploadController uploadToDropbox
+INFO: {
+  ".tag" : "file",
+  "url" : "https://www.dropbox.com/s/kczw3a2e85c7lnd/Admin_Laplaya2_2016_06_22_17_15_08.jpg?dl=0",
+  "name" : "Admin_Laplaya2_2016_06_22_17_15_08.jpg",
+  "link_permissions" : {
+    "can_revoke" : true,
+    "resolved_visibility" : "other",
+    "requested_visibility" : "public"
+  },
+  "client_modified" : "2016-06-22T21:15:08Z",
+  "server_modified" : "2016-06-22T21:15:10Z",
+  "rev" : "44a30f50b",
+  "size" : 77559,
+  "id" : "id:lnKvckdO7MAAAAAAAAAAAQ",
+  "path_lower" : "/systemmanuals/admin_laplaya2_2016_06_22_17_15_08.jpg"
+}
+Jun 22, 2016 5:15:11 PM com.servlets.HvacFileUploadController uploadToDropbox
+INFO: File SeqID: -1
+DropBox File Path: https://www.dropbox.com/s/kczw3a2e85c7lnd/Admin_Laplaya2_2016_06_22_17_15_08.jpg?dl=0
+File Name Submitted: LaPlaya2.jpg
+File Size (Kb): 77
+
+ * */
 @WebServlet(name = "hvacfileupload", urlPatterns = { "/hvacfileupload" })
 @MultipartConfig(location = "/var/lib/openshift/56ddb9c10c1e66c9db000081/app-root/data")
 public class HvacFileUploadController extends HttpServlet 
@@ -106,6 +174,7 @@ public class HvacFileUploadController extends HttpServlet
 		    String dropboxDir=request.getParameter("dropboxDir");
 			String submitterName=request.getParameter("submitterName").trim();
 			
+			//Default values for the followings, but change later if changed
 			//String dropboxDir="systemManuals";
 			//String submitterName="Admin";
 			FileUploadedToDropboxBean fb=null;
@@ -120,42 +189,40 @@ public class HvacFileUploadController extends HttpServlet
 	        	
 	        	//insert into db table
 	        	FileUploadedToDropboxDao fDao=new FileUploadedToDropboxDao(_ds);
-	        	////-> fb=fDao.create(fb);
+	        	fb=fDao.create(fb);
 	        }
 	        
 			//Insert bean data to the corresponding table
-			/*
+			
 			if(dropboxDir.equals("systemManuals"))
 			{
-				EstimateRequestsBean eb=new EstimateRequestsBean();
+				HvacManualsBean hb=new HvacManualsBean();
 				
-				String names[]=submitterName.split("\\s+");
-				for(String name: names) //Capital for the 1st and 2nd
-				{
-					eb.setSubmitterName(eb.getSubmitterName()+" "+Utils.getFirstCapitalString(name));
-				}
-				eb.setSubmitterName(eb.getSubmitterName().trim());//remove the 1st white space inserted from the above for loop
-				eb.setSubmitterPhone(request.getParameter("submitter_phone"));
-				eb.setSubmitterEmail(request.getParameter("submitter_email"));
-				eb.setSubmitterNote(request.getParameter("submitter_note"));
-				eb.setSelectAnimal((byte) Integer.parseInt(request.getParameter("animalGroup")));
+				hb.setManualType(request.getParameter("hvacManualType"));
+				hb.setBrandName(request.getParameter("hvacBrands"));
+				hb.setSpaceType(request.getParameter("hvacSpaceType"));
+				hb.setSystemType(request.getParameter("hvacSystemType"));
+				hb.setModelNumber(request.getParameter("hvacSystemModel"));
+				hb.setManualFor(request.getParameter("hvacManualFor"));
+				hb.setFuelType(request.getParameter("hvacFuelType"));
+				hb.setSubmittingCompanyId(Integer.parseInt(request.getParameter("submittingCompanyId")));
 				if(filePart.getSize()>0)
 				{
-					eb.setFileSeqId(fb.getFileSeqId());
-					eb.setFb(fb); //just for an additional information
+					hb.setFileSeqId(fb.getFileSeqId());
+					hb.setFb(fb); //just for an additional information
 				}
+				hb.setOs(os);
+				hb.setRemotePlace(request.getParameter("client_place"));
+				hb.setSubmissionTime(Utils.currentTimestamp());
+				hb.setValid(true);
 				
-				eb.setOs(os);
-				eb.setRemotePlace(request.getParameter("client_place"));
-				eb.setSubmittedTime(Utils.currentTimestamp());
+				HvacManualsDao hDao=new HvacManualsDao(_ds);
+				hDao.create(hb);
 				
-				EstimateRequestsDao eDao=new EstimateRequestsDao(_ds);
-				eDao.create(eb);
-				
-				email("", "", "Contact/Estimate - Success", eb.toMyCompany());
-				email(eb.getSubmitterEmail(), eb.getSubmitterName(), "Contact/Estimate", eb.toClient());
+				//the following email can be for a customer upload this file
+				//email("", "", "Contact/Estimate - Success", eb.toMyCompany());
+				//email(eb.getSubmitterEmail(), eb.getSubmitterName(), "Contact/Estimate", eb.toClient());
 			}
-			*/
 		}
 		catch(Exception e)
 		{	
@@ -164,7 +231,7 @@ public class HvacFileUploadController extends HttpServlet
 			
 			try
 			{
-				email("", "", "Contact/Estimate - Failure", callResponse);	
+				email("", "", "UPLOAD -> HVAC - Failure", callResponse);	
 			}
 			catch(Exception e2)
 			{
@@ -210,8 +277,11 @@ public class HvacFileUploadController extends HttpServlet
 									                 .withClientModified(new Date())
 									                 .uploadAndFinish(part.getInputStream());
 
-             log.info(metaData.toStringMultiline());
-             fb.setDropboxFilePath("https://www.dropbox.com/home/Apps/webmonster/estimates?preview="+metaData.getName());
+        	 //Uncomment if you want the file for preview later, june 23-2016
+             //log.info(metaData.toStringMultiline());
+             //fb.setDropboxFilePath("https://www.dropbox.com/home/Apps/webmonster/estimates?preview="+metaData.getName());
+             
+             
              fb.setFileSize(Math.round(part.getSize()/1000));
              
              //Uncomment if you need. June 2nd, 2016
