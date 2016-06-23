@@ -3,6 +3,7 @@ package com.servlets;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Enumeration;
@@ -268,6 +269,9 @@ public class HvacFileUploadController extends HttpServlet
     {
         try
         {
+        	//temporary
+        	URL pdfUrl=new URL("http://www.utcccs-cdn.com/hvac/docs/1009/Public/00/58CV-13SI.pdf");
+        	        	
         	log.info("uploadToDropbox is called ...");
         	FileUploadedToDropboxBean fb=new FileUploadedToDropboxBean();
         	fb.setFileNameSubmitted(getFileName(part));
@@ -275,7 +279,8 @@ public class HvacFileUploadController extends HttpServlet
         	FileMetadata metaData = dbxClient.files().uploadBuilder(dropboxPath)
             										 .withMode(WriteMode.ADD)
 									                 .withClientModified(new Date())
-									                 .uploadAndFinish(part.getInputStream());
+									                 .uploadAndFinish(pdfUrl.openStream());
+									                 //.uploadAndFinish(part.getInputStream());
 
         	 //Uncomment if you want the file for preview later, june 23-2016
              //log.info(metaData.toStringMultiline());
@@ -290,7 +295,9 @@ public class HvacFileUploadController extends HttpServlet
              fb.setDropboxFilePath(sharedData.getUrl());
              log.info(sharedData.toStringMultiline());
              log.info(fb.toString());
-             return fb;
+             
+             return null;
+             //return fb;
         } 
         catch (UploadErrorException e) 
         {
