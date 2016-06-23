@@ -387,6 +387,19 @@ function checkAlphanumericSpace(cid)
 	}	
 	return pass;
 }
+function checkHvacModel(cid) 
+{	
+	if(cid=="") return false;
+	var alpha_numeric = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'+'1234567890'+'_'; 
+		var pass=true;
+	for (var i=0; i < cid.length; i++) 
+	{	if (alpha_numeric.indexOf(cid.charAt(i)) < 0) 
+		{	pass=false;
+			break; 
+		}
+	}	
+	return pass;
+}
 /*****************************************
 find a special character:
 return false if it contains a special char

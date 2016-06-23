@@ -159,7 +159,7 @@
 		$("#animal_3").rules("add", {required:true, messages: {required: "Required"}});
 		$.validator.addMethod("isModelValid", function(value, element)
 		{
-		    return check_alphanumeric(value.trim());
+		    return checkHvacModel(value.trim());
 		}, "Model Number is not valid!");
 		//Not used
 		$.validator.addMethod("isPhoneValid", function(value, element)
