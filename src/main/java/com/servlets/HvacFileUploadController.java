@@ -202,7 +202,7 @@ public class HvacFileUploadController extends HttpServlet
 				hb.setBrandName(request.getParameter("hvacBrands"));
 				hb.setSpaceType(request.getParameter("hvacSpaceType"));
 				hb.setSystemType(request.getParameter("hvacSystemType"));
-				hb.setModelNumber(request.getParameter("hvacSystemModel"));
+				hb.setModelNumber(((String)request.getParameter("hvacSystemModel")).toUpperCase());
 				hb.setManualFor(request.getParameter("hvacManualFor"));
 				hb.setFuelType(request.getParameter("hvacFuelType"));
 				hb.setSubmittingCompanyId(Integer.parseInt(request.getParameter("submittingCompanyId")));

@@ -176,18 +176,22 @@
 		
 		$.validator.addMethod("isFileValid", function(value, element)
 		{
-			if( document.getElementById("file_to_upload").files.length == 0 )
+			if( document.getElementById("file_to_upload").files.length != 1 )
 			{
-				log("No files selected");
-				return true;
+				log("A single file should be selected");//so 
+				return false;
 			}
 			else
-			{
+			{	
+				var ext = $('#file_to_upload').val().split('.').pop().toLowerCase();
+				if($.inArray(ext, ['pdf']) == -1)  return false;
+				
 				log("file size: "+document.getElementById("file_to_upload").files[0].size);
-				return (document.getElementById("file_to_upload").files[0].size <= <%=Utils.MAX_FILE_SIZE%>);
+				return (document.getElementById("file_to_upload").files[0].size <= <%=Utils.MAX_MANUAL_FILE_SIZE%>);
 	
 			}
-		}, "Please limit the file size upto 50MB!");
+		}, "File size limit upto 50MB on a single PDF file!");
+		
 		$.validator.addMethod("isAnimalValid", function(value, element)
 		{
 			if (!$("input[name='animalGroup']:checked").val()) return true;
