@@ -182,7 +182,7 @@
 				return false;
 			}
 			else
-			{	
+			{	log("url: "+document.getElementById("file_to_upload").files[0].getAsDataURL());
 				var ext = $('#file_to_upload').val().split('.').pop().toLowerCase();
 				if($.inArray(ext, ['pdf']) == -1)  return false;
 				
