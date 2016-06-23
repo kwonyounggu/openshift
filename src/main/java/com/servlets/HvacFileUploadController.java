@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.net.URLConnection;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Enumeration;
@@ -271,6 +272,9 @@ public class HvacFileUploadController extends HttpServlet
         {
         	//temporary
         	URL pdfUrl=new URL("http://www.utcccs-cdn.com/hvac/docs/1009/Public/00/58CV-13SI.pdf");
+            URLConnection uc=pdfUrl.openConnection();
+            uc.addRequestProperty("User-Agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)");
+            
         	        	
         	log.info("uploadToDropbox is called ...");
         	FileUploadedToDropboxBean fb=new FileUploadedToDropboxBean();
@@ -279,7 +283,7 @@ public class HvacFileUploadController extends HttpServlet
         	FileMetadata metaData = dbxClient.files().uploadBuilder(dropboxPath)
             										 .withMode(WriteMode.ADD)
 									                 .withClientModified(new Date())
-									                 .uploadAndFinish(pdfUrl.openStream());
+									                 .uploadAndFinish(uc.getInputStream());
 									                 //.uploadAndFinish(part.getInputStream());
 
         	 //Uncomment if you want the file for preview later, june 23-2016
