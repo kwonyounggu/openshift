@@ -376,11 +376,24 @@
 	   			%>
 	   		</select>
 	   	</div>
-	   	<div style="margin-bottom: 20px;">
+	   	<div style="margin-top: 20px;">
 	   		<label for="file_to_upload">A file to upload :</label>
-			<input type='file' id='file_to_upload' name='file_to_upload' style='color: #ffffff; outline: 0px'/>
 	   	</div>
 	   	<div>
+	   		<label class="radio-inline">
+	   			<input type='radio' style="width: auto" name='hvacManualUploadType' id='hvacManualUploadType_Local' value='LOCAL' checked="checked"/>Local
+	   			<input type='file' id='file_to_upload' name='file_to_upload' style='color: #ffffff; outline: 0px'/>
+	   		</label>
+	   	</div>
+	   	<div>
+	   		<label class="radio-inline">
+	   			<input type='radio' style='width: auto' name='hvacManualUploadType' id='hvacManualUploadType_Remote' value='REMOTE'/>Remote
+	   			<input type='text' id='hvacManualRemoteURL' name='hvacManualRemoteURL'  placeholder='Remote URL' style='width: 450px; height: 22px'/>
+	   		</label>
+			
+	   	</div>
+	   	
+	   	<div  style="margin-top: 20px;">
 	   		<label style="width: 100%">Please select the elephant before submitting:
 	   				<!-- To hide the input but only to display the error message -->
 	   				<input type='text' style='width: 0; height: 0; border: none; -webkit-appearance: none; background-color: #555762' name='select_animal' id='select_animal' value='a'/>

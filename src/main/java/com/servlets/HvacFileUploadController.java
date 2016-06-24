@@ -270,12 +270,6 @@ public class HvacFileUploadController extends HttpServlet
     {
         try
         {
-        	//temporary
-        	URL pdfUrl=new URL("http://www.utcccs-cdn.com/hvac/docs/1009/Public/00/58CV-13SI.pdf");
-            URLConnection uc=pdfUrl.openConnection();
-            uc.addRequestProperty("User-Agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)");
-            
-        	        	
         	log.info("uploadToDropbox is called ...");
         	FileUploadedToDropboxBean fb=new FileUploadedToDropboxBean();
         	fb.setFileNameSubmitted(getFileName(part));
@@ -283,8 +277,59 @@ public class HvacFileUploadController extends HttpServlet
         	FileMetadata metaData = dbxClient.files().uploadBuilder(dropboxPath)
             										 .withMode(WriteMode.ADD)
 									                 .withClientModified(new Date())
+									                 .uploadAndFinish(part.getInputStream());
+
+        	 //Uncomment if you want the file for preview later, june 23-2016
+             //log.info(metaData.toStringMultiline());
+             //fb.setDropboxFilePath("https://www.dropbox.com/home/Apps/webmonster/estimates?preview="+metaData.getName());
+             
+             
+             fb.setFileSize(Math.round(part.getSize()/1000));
+             
+             //Uncomment if you need. June 2nd, 2016
+             //The followings such as setting to share and its link are working when you want to send a shared link to people
+             SharedLinkMetadata sharedData=dbxClient.sharing().createSharedLinkWithSettings(metaData.getPathLower());
+             fb.setDropboxFilePath(sharedData.getUrl());
+             log.info(sharedData.toStringMultiline());
+             log.info(fb.toString());
+             
+             return fb;
+        } 
+        catch (UploadErrorException e) 
+        {
+        	log.severe(e.toString());
+            throw new Exception(e.getMessage());
+        } 
+        catch (DbxException e) 
+        {
+        	log.severe(e.toString());
+            throw new Exception(e.getMessage());
+        } 
+        catch (IOException e) 
+        {
+        	log.severe(e.toString());
+            throw new Exception(e.getMessage());
+        }
+    }
+    private FileUploadedToDropboxBean uploadToDropboxFromURL(DbxClientV2 dbxClient, Part part, String dropboxDir, String submitterName) throws Exception
+    {
+        try
+        {
+        	//http://stackoverflow.com/questions/4797593/java-io-ioexception-server-returned-http-response-code-403-for-url
+        	URL pdfUrl=new URL("http://www.utcccs-cdn.com/hvac/docs/1009/Public/00/58CV-13SI.pdf");
+        	//if you don't put the property, uc.addRequestProperty, then there will be  an error, 403 for URL
+            URLConnection uc=pdfUrl.openConnection();
+            uc.addRequestProperty("User-Agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)");
+            
+        	        	
+        	log.info("uploadToDropboxFromURL is called ...");
+        	FileUploadedToDropboxBean fb=new FileUploadedToDropboxBean();
+        	fb.setFileNameSubmitted(getFileName(part));
+        	String dropboxPath="/"+dropboxDir+"/"+renameFileName(fb.getFileNameSubmitted(), submitterName);//Submitter_File_name_2016_02_13_hh_mm_ss.ext
+        	FileMetadata metaData = dbxClient.files().uploadBuilder(dropboxPath)
+            										 .withMode(WriteMode.ADD)
+									                 .withClientModified(new Date())
 									                 .uploadAndFinish(uc.getInputStream());
-									                 //.uploadAndFinish(part.getInputStream());
 
         	 //Uncomment if you want the file for preview later, june 23-2016
              //log.info(metaData.toStringMultiline());
