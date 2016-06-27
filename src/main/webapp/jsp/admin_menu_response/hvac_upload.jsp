@@ -202,7 +202,7 @@
 				log("A single file should be selected");//so 
 				return false;
 			}
-			else
+			else if($("#hvacManualUploadType_Local").is(":checked"))
 			{	//log("url: "+document.getElementById("file_to_upload").files[0].getAsDataURL());
 				var ext = $('#file_to_upload').val().split('.').pop().toLowerCase();
 				if($.inArray(ext, ['pdf']) == -1)  return false;
@@ -211,6 +211,7 @@
 				return (document.getElementById("file_to_upload").files[0].size <= <%=Utils.MAX_MANUAL_FILE_SIZE%>);
 	
 			}
+			else return true;
 		}, "File size limit upto 50MB on a single PDF file!");
 		
 		$.validator.addMethod("isAnimalValid", function(value, element)
