@@ -61,7 +61,7 @@ $(document).ready(function ()
     <li><a data-toggle="tab" href="#estimates">Estimates</a></li>
     <li><a data-toggle="tab" href="#search_contractors">Contractors</a></li>
     <li><a data-toggle="tab" href="#parts_supplies">Supplies</a></li>
-    <li><a data-toggle="tab" href="#buy_sell">Supplies</a></li>
+    <li><a data-toggle="tab" href="#buy_sell">Buy & Sell</a></li>
   </ul>
 
   <div class="tab-content">
