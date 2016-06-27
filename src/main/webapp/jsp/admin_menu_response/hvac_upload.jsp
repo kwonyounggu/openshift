@@ -197,19 +197,22 @@
 		
 		$.validator.addMethod("isFileValid", function(value, element)
 		{
-			if( document.getElementById("file_to_upload").files.length != 1 )
+			if($("#hvacManualUploadType_Local").is(":checked"))
 			{
-				log("A single file should be selected");//so 
-				return false;
-			}
-			else if($("#hvacManualUploadType_Local").is(":checked"))
-			{	//log("url: "+document.getElementById("file_to_upload").files[0].getAsDataURL());
-				var ext = $('#file_to_upload').val().split('.').pop().toLowerCase();
-				if($.inArray(ext, ['pdf']) == -1)  return false;
-				
-				log("file size: "+document.getElementById("file_to_upload").files[0].size);
-				return (document.getElementById("file_to_upload").files[0].size <= <%=Utils.MAX_MANUAL_FILE_SIZE%>);
-	
+				if( document.getElementById("file_to_upload").files.length != 1 )
+				{
+					log("A single file should be selected");//so 
+					return false;
+				}
+				else 
+				{	//log("url: "+document.getElementById("file_to_upload").files[0].getAsDataURL());
+					var ext = $('#file_to_upload').val().split('.').pop().toLowerCase();
+					if($.inArray(ext, ['pdf']) == -1)  return false;
+					
+					log("file size: "+document.getElementById("file_to_upload").files[0].size);
+					return (document.getElementById("file_to_upload").files[0].size <= <%=Utils.MAX_MANUAL_FILE_SIZE%>);
+		
+				}
 			}
 			else return true;
 		}, "File size limit upto 50MB on a single PDF file!");
