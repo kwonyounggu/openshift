@@ -61,6 +61,7 @@ $(document).ready(function ()
     <li><a data-toggle="tab" href="#estimates">Estimates</a></li>
     <li><a data-toggle="tab" href="#search_contractors">Contractors</a></li>
     <li><a data-toggle="tab" href="#parts_supplies">Supplies</a></li>
+    <li><a data-toggle="tab" href="#buy_sell">Supplies</a></li>
   </ul>
 
   <div class="tab-content">
@@ -90,6 +91,10 @@ $(document).ready(function ()
       <p>Under construction</p>
     </div>
     <div id="parts_supplies" class="tab-pane fade">
+      <h3>Under construction</h3>
+      <p>Under construction</p>
+    </div>
+    <div id="buy_sell" class="tab-pane fade">
       <h3>Under construction</h3>
       <p>Under construction</p>
     </div>
