@@ -61,7 +61,7 @@ public class UploadHvacManualsTask extends Task
 			{
 				// read the table hvac_manuals_scheduled
 				// upload, update tables file_uploaded_to_dropbox, hvac_manuals			
-				FileUploadedToDropboxBean fb=uploadToDropboxFromURL(_dbxClient, sb, "systemManuals", "Scheduled_admin");
+				FileUploadedToDropboxBean fb=uploadToDropboxFromURL(_dbxClient, sb, "systemManuals", "Scheduled_admin"+sb.getBrandName()+"_"+sb.getSystemType());
 				fb=fDao.create(fb);
 	        	
 	        	HvacManualsBean hb=new HvacManualsBean();
