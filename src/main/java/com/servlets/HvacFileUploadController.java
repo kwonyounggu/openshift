@@ -28,6 +28,7 @@ import javax.sql.DataSource;
 import com.beans.EstimateRequestsBean;
 import com.beans.FileUploadedToDropboxBean;
 import com.beans.HvacManualsBean;
+import com.beans.HvacManualsScheduledBean;
 import com.common.AuthData;
 import com.common.Message;
 import com.common.UAgentInfo;
@@ -35,6 +36,7 @@ import com.common.Utils;
 import com.dao.EstimateRequestsDao;
 import com.dao.FileUploadedToDropboxDao;
 import com.dao.HvacManualsDao;
+import com.dao.HvacManualsScheduledDao;
 import com.dropbox.core.DbxException;
 import com.dropbox.core.DbxRequestConfig;
 
@@ -176,54 +178,77 @@ public class HvacFileUploadController extends HttpServlet
 		    String dropboxDir=request.getParameter("dropboxDir");
 			String submitterName=request.getParameter("submitterName").trim();
 			
-			//Default values for the followings, but change later if changed
+			//Default values from hvac_upload.jsp for the followings, but change later if changed
 			//String dropboxDir="systemManuals";
 			//String submitterName="Admin";
-			FileUploadedToDropboxBean fb=null;
-	        Part filePart=request.getPart("file_to_upload");
-	        
-	        if(filePart.getSize()>0)
-	        {
-	        	//this is to write the file into the local repository, that is, app-root/data/client_file.pdf
-	        	// filePart.write(getFileName(filePart)); 
-
-	        	fb=uploadToDropbox(_dbxClient, filePart, dropboxDir, submitterName); //note_msg contains a dropbox path like estimates
-	        	
-	        	//insert into db table
-	        	FileUploadedToDropboxDao fDao=new FileUploadedToDropboxDao(_ds);
-	        	fb=fDao.create(fb);
-	        }
-	        
-			//Insert bean data to the corresponding table
 			
-			if(dropboxDir.equals("systemManuals"))
+			String hvacManualUploadType=request.getParameter("hvacManualUploadType");
+			if(hvacManualUploadType.equals("LOCAL"))
 			{
-				HvacManualsBean hb=new HvacManualsBean();
+			
+				FileUploadedToDropboxBean fb=null;
+		        Part filePart=request.getPart("file_to_upload");
+		        
+		        if(filePart.getSize()>0)
+		        {
+		        	//this is to write the file into the local repository, that is, app-root/data/client_file.pdf
+		        	// filePart.write(getFileName(filePart)); 
+	
+		        	fb=uploadToDropbox(_dbxClient, filePart, dropboxDir, submitterName); //note_msg contains a dropbox path like estimates
+		        	
+		        	//insert into db table
+		        	FileUploadedToDropboxDao fDao=new FileUploadedToDropboxDao(_ds);
+		        	fb=fDao.create(fb);
+		        }
+		        
+				//Insert bean data to the corresponding table
 				
-				hb.setManualType(request.getParameter("hvacManualType"));
-				hb.setBrandName(request.getParameter("hvacBrands"));
-				hb.setSpaceType(request.getParameter("hvacSpaceType"));
-				hb.setSystemType(request.getParameter("hvacSystemType"));
-				hb.setModelNumber(((String)request.getParameter("hvacSystemModel")).toUpperCase());
-				hb.setManualFor(request.getParameter("hvacManualFor"));
-				hb.setFuelType(request.getParameter("hvacFuelType"));
-				hb.setSubmittingCompanyId(Integer.parseInt(request.getParameter("submittingCompanyId")));
-				if(filePart.getSize()>0)
+				if(dropboxDir.equals("systemManuals"))
 				{
-					hb.setFileSeqId(fb.getFileSeqId());
-					hb.setFb(fb); //just for an additional information
+					HvacManualsBean hb=new HvacManualsBean();
+					
+					hb.setManualType(request.getParameter("hvacManualType"));
+					hb.setBrandName(request.getParameter("hvacBrands"));
+					hb.setSpaceType(request.getParameter("hvacSpaceType"));
+					hb.setSystemType(request.getParameter("hvacSystemType"));
+					hb.setModelNumber(((String)request.getParameter("hvacSystemModel")).toUpperCase());
+					hb.setManualFor(request.getParameter("hvacManualFor"));
+					hb.setFuelType(request.getParameter("hvacFuelType"));
+					hb.setSubmittingCompanyId(Integer.parseInt(request.getParameter("submittingCompanyId")));
+					if(filePart.getSize()>0)
+					{
+						hb.setFileSeqId(fb.getFileSeqId());
+						hb.setFb(fb); //just for an additional information
+					}
+					hb.setOs(os);
+					hb.setRemotePlace(request.getParameter("client_place"));
+					hb.setSubmissionTime(Utils.currentTimestamp());
+					hb.setValid(true);
+					
+					HvacManualsDao hDao=new HvacManualsDao(_ds);
+					hDao.create(hb);
 				}
-				hb.setOs(os);
-				hb.setRemotePlace(request.getParameter("client_place"));
-				hb.setSubmissionTime(Utils.currentTimestamp());
-				hb.setValid(true);
+			}
+			else if(hvacManualUploadType.equals("REMOTE"))
+			{
+				HvacManualsScheduledBean sb=new HvacManualsScheduledBean();
+
+				sb.setManualType(request.getParameter("hvacManualType"));
+				sb.setBrandName(request.getParameter("hvacBrands"));
+				sb.setSpaceType(request.getParameter("hvacSpaceType"));
+				sb.setSystemType(request.getParameter("hvacSystemType"));
+				sb.setModelNumber(((String)request.getParameter("hvacSystemModel")).toUpperCase());
+				sb.setManualFor(request.getParameter("hvacManualFor"));
+				sb.setFuelType(request.getParameter("hvacFuelType"));
+				sb.setSubmittingCompanyId(Integer.parseInt(request.getParameter("submittingCompanyId")));
+				sb.setFileUrl(request.getParameter("hvacManualRemoteURL"));
+				sb.setSubmissionTime(Utils.currentTimestamp());
+				sb.setUploadedTime(null);
+				sb.setUploaded(false);
+				sb.setValid(true);
 				
-				HvacManualsDao hDao=new HvacManualsDao(_ds);
-				hDao.create(hb);
-				
-				//the following email can be for a customer upload this file
-				//email("", "", "Contact/Estimate - Success", eb.toMyCompany());
-				//email(eb.getSubmitterEmail(), eb.getSubmitterName(), "Contact/Estimate", eb.toClient());
+				HvacManualsScheduledDao sDao=new HvacManualsScheduledDao(_ds);
+				sDao.create(sb);
 			}
 		}
 		catch(Exception e)
@@ -345,8 +370,7 @@ public class HvacFileUploadController extends HttpServlet
              log.info(sharedData.toStringMultiline());
              log.info(fb.toString());
              
-             return null;
-             //return fb;
+             return fb;
         } 
         catch (UploadErrorException e) 
         {

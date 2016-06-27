@@ -8,7 +8,7 @@ public class Message
 {
 	//webmonster.ca
 	public static final String CONTACT_SUCCESS="Thank you for contacting me - I will get back to you soon!";
-	public static final String HVAC_UPLOAD_SUCCESS="Succefully uploaded!";
+	public static final String HVAC_UPLOAD_SUCCESS="Succefully uploaded/scheduled!";
 	
 	//webmonster admin mail information in default
 	public static List<String> toEmailList=new ArrayList<String>();

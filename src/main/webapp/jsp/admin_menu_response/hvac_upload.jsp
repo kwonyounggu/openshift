@@ -113,8 +113,13 @@
 				},
 				file_to_upload:
 				{
-					required: true,
+					required: false,
 					isFileValid: true
+				},
+				hvacManualRemoteURL:
+				{
+					required: false,
+					isURLValid: true
 				},
 				select_animal:
 				{
@@ -126,6 +131,7 @@
 			{
 				file_to_upload:
 				{
+					//this won't be called because required: false
 					required: "You should choose a file to upload!"
 				},
 				hvacSystemModel:
@@ -173,6 +179,21 @@
 			var estimateEditorText=$.trim($(CKEDITOR.instances.estimateNoteEditor.getData()).text());
 			return estimateEditorText.length>3;
 		}, "Please put a note!");
+		
+		$.validator.addMethod("isURLValid", function(value, element)
+		{
+			if($("#hvacManualUploadType_Remote").is(":checked"))
+			{
+				var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+						  '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|'+ // domain name
+						  '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+						  '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+						  '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+						  '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+				return pattern.test(value);
+			}
+			else return true;
+		}, "The URL is invalid!");
 		
 		$.validator.addMethod("isFileValid", function(value, element)
 		{
