@@ -15,6 +15,10 @@ import javax.servlet.ServletContextListener;
 
 import javax.sql.DataSource;
 
+import com.scheduled.UploadHvacManualsTask;
+
+import it.sauronsoftware.cron4j.Scheduler;
+
 /*
  * OK, ServletContext and InitialContext are very different things. 
  * In a web container, each web application is associated with a context, and all resources contained within a web application exist relative to its context. For example if we have a store application, it could exist under the context /store. Therefore if the application contained a file called cart.jsp if would be accessible at http://localhost:8080/store/cart.jsp.
@@ -30,6 +34,7 @@ import javax.sql.DataSource;
 public class MainContextListener implements ServletContextListener
 {
 	private Logger log = Logger.getLogger(this.getClass().getName());
+	private Scheduler uploadHvacManualsScheduler=null;
 	
 	public MainContextListener()
 	{		
@@ -61,6 +66,14 @@ public class MainContextListener implements ServletContextListener
 			//from here, codes are for webmonster app
 			ServletContext context=event.getServletContext();
 			context.setAttribute("dataSource", (DataSource)new InitialContext().lookup(jndiName));
+			
+			//This is to get additional DEs if being existed due to the addition from remote hospitals
+			uploadHvacManualsScheduler = new Scheduler();
+	    	//The following will be executed once a day at 0:00AM
+			//uploadHvacManualsScheduler.schedule("10 0 * * *", new UploadHvacManualsTask((DataSource)context.getAttribute("dataSource")));//"10 0 * * *" at 00:10am
+			uploadHvacManualsScheduler.schedule("*/5 * * * *", new UploadHvacManualsTask((DataSource)context.getAttribute("dataSource")));//every 5 minute for testing.
+
+			uploadHvacManualsScheduler.start();
 			
 		}
 		catch(NamingException e)
@@ -142,5 +155,7 @@ public class MainContextListener implements ServletContextListener
 		log.info("MainContextListener started being destroyed ...");
 		ServletContext context=event.getServletContext();		
 		context.removeAttribute("dataSource");
+		
+		if(uploadHvacManualsScheduler!=null && uploadHvacManualsScheduler.isStarted()) uploadHvacManualsScheduler.stop();
 	}
 }
