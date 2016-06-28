@@ -10,30 +10,45 @@
 //style='background-color:#E0E9F5;
 %>
 <script type="text/javascript">
-	//see http://www.jqueryscript.net/layout/Nice-Tree-View-Plugin-with-jQuery-Bootstrap-3-Easy-Tree.html
+	//see http://jsfiddle.net/jayhilwig/hv8vU/
 	$(document).ready(function ()
 	{
-		$('.easy-tree').EasyTree
-		({
-			selectable: true,
-			addable: false,
-	        editable: false,
-	        deletable: false
+	    $('.tree li:has(ul)').addClass('parent_li').find(' > span').attr('title', 'Collapse this branch');
+
+	    $('.tree li.parent_li > span').on('click', function (e) 
+	    {
+	        var children = $(this).parent('li.parent_li').find(' > ul > li');
+	        if (children.is(":visible")) 
+	        {
+	            children.hide('fast');
+	            $(this).attr('title', 'Expand').find(' > i').addClass('glyphicon-plus-sign').removeClass('glyphicon-minus-sign');
+	        } 
+	        else 
+	        {
+	            children.show('fast');
+	            $(this).attr('title', 'Collapse').find(' > i').addClass('glyphicon-minus-sign').removeClass('glyphicon-plus-sign');
+	        }
+	        e.stopPropagation();
 	    });
+	    $(".glyphicon-folder-open").trigger("click");
 	});
-</script>
+</script> 
 
 <h4>Under Construction</h4>
-<div class="easy-tree">
+<div class="tree well">
 <ul>
 <%
 	for(HvacBrands brand : HvacBrands.values())
 	{
-		out.print("<li class='li_selected'>"+Utils.getFirstCapitalString(brand.toString()));
+		out.print("<li><span><i class='glyphicon glyphicon-folder-open'></i>"+Utils.getFirstCapitalString(brand.toString())+"</span>");
 		out.print("<ul>");
 		for(HvacSystems sys : HvacSystems.values())
 		{
-			out.print("<li>"+Utils.getFirstCapitalString(sys.toString())+"</li>");
+			out.print("<li><span><i class='glyphicon glyphicon-minus-sign'></i>"+Utils.getFirstCapitalString(sys.toString())+"</span><a href=''>link to db</a>");
+				out.print("<ul>");
+					out.print("<li> <span><i class='glyphicon glyphicon-leaf'></i>Model Number</span>  <a href=''>direct link to pdf</a></li>");
+				out.print("</ul>");
+			out.print("</li>");
 		}
 		out.print("</ul>");
 		out.print("</li>");
