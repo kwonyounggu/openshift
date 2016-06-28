@@ -64,7 +64,7 @@
 }
 
 .easy-tree li.parent_li > span:hover, .easy-tree li.parent_li > span:hover + ul li span {
-    background: #ff6c60;
+    background: #555762;
     color: #fff;
 }
 
@@ -89,7 +89,7 @@
 
 .easy-tree li.li_selected > span:hover, .easy-tree li.li_selected > span:hover > a {
     background: #fafafa;
-    color: #ff6c60;
+    color: #555762;
 }
 
 .easy-tree .easy-tree-toolbar {
