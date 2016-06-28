@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="com.common.*" %>
+<%@ page import="com.enums.*" %>
 <%@ page import="java.util.*" %>
 <%@ page isELIgnored ="false" %>
  
@@ -25,37 +26,18 @@
 <h4>Under Construction</h4>
 <div class="easy-tree">
 <ul>
-	<li>Example 1</li>
-	<li>Example 2</li>
-	<li>Example 3
-		<ul>
-			<li>Example 1</li>
-			<li>Example 2
-				<ul>
-					<li>Example 1</li>
-					<li>Example 2</li>
-					<li>Example 3</li>
-					<li>Example 4</li>
-				</ul>
-</li>
-<li>Example 3</li>
-<li>Example 4</li>
-</ul>
-</li>
-<li>Example 0
-<ul>
-<li>Example 1</li>
-<li>Example 2</li>
-<li>Example 3</li>
-<li>Example 4
-<ul>
-<li>Example 1</li>
-<li>Example 2</li>
-<li>Example 3</li>
-<li>Example 4</li>
-</ul>
-</li>
-</ul>
-</li>
+<%
+	for(HvacBrands brand : HvacBrands.values())
+	{
+		out.print("<li>"+Utils.getFirstCapitalString(brand.toString()));
+		out.print("<ul>");
+		for(HvacSystems sys : HvacSystems.values())
+		{
+			out.print("<li>"+Utils.getFirstCapitalString(sys.toString())+"</li>");
+		}
+		out.print("</ul>");
+		out.print("</li>");
+	}
+%>
 </ul>
 </div>
