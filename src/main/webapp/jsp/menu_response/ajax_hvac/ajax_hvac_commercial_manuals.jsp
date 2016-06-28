@@ -38,7 +38,7 @@
                 	<span><i class="icon-minus-sign"></i> Child</span> <a href="">Goes somewhere</a>
                     <ul>
                         <li>
-	                        <span><i class="icon-leaf"></i> Grand Child</span> <a href="">Goes somewhere</a>
+	                        <span><i class="icon-leaf"></i> <a href="">Grand Child Link</a></span> 
                         </li>
                     </ul>
                 </li>
