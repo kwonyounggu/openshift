@@ -38,11 +38,12 @@
 <div class="tree well">
 <ul>
 <%
+	String sysList[]={"Heating", "Cooling", "Heating Cooling Combo", "Air Handler"};
 	for(HvacBrands brand : HvacBrands.values())
 	{
 		out.print("<li><span><i class='glyphicon glyphicon-folder-open'></i>"+Utils.getFirstCapitalString(brand.toString())+"</span>");
 		out.print("<ul>");
-		for(HvacSystems sys : HvacSystems.values())
+		for(String sys : sysList)
 		{
 			out.print("<li><span><i class='glyphicon glyphicon-minus-sign'></i>"+Utils.getFirstCapitalString(sys.toString())+"</span><a href=''>link to db</a>");
 				out.print("<ul>");
