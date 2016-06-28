@@ -86,7 +86,7 @@
 	        }
 	        e.stopPropagation();
 	    });
-	    $("li.parent_li").trigger("click");
+	    $(".glyphicon-folder-open").trigger("click");
 	});
 </script> 
 <% 
