@@ -78,7 +78,7 @@
     text-decoration: none;
 }
 
-.easy-tree li > span > span.glyphicon-folder-close, .easy-tree li > span > span.glyphicon-folder-open {
+.easy-tree li > span > span.glyphicon-plus-sign, .easy-tree li > span > span.glyphicon-minus-sign {
     margin-right: 5px;
 }
 
