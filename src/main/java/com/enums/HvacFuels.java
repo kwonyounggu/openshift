@@ -1,5 +1,7 @@
 package com.enums;
 
+import com.common.Utils;
+
 public enum HvacFuels
 {
 	GAS,
@@ -12,5 +14,17 @@ public enum HvacFuels
 	GEOTHERMAL_REFRIGERANT_R22,
 	GEOTHERMAL_REFRIGERANT_R410A,
 	OIL,	
-	NOT_APPLICABLE
+	ETC;
+	
+	//Return like Refrigenrant R22
+	public String ctoString()
+	{
+		String sList[]=super.toString().split("_");
+		String temp="";
+		for(String s: sList)
+		{
+			temp+=Utils.getFirstCapitalString(s)+" ";
+		}
+		return temp.trim();
+	}
 }

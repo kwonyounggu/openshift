@@ -1,5 +1,7 @@
 package com.enums;
 
+import com.common.Utils;
+
 /*
 Trane, which also makes American Standard
 Carrier, which owns Bryant, Payne and Tempstar
@@ -77,7 +79,7 @@ public enum HvacBrands
 	MITCHELL,
 	MONCRIEF,
 	MUELLER_CLIMATROL,
-	NATIONAL_US_RADIATOR_Capitolaire,
+	NATIONAL_US_RADIATOR_CAPITOLAIRE,
 	NESBITT,
 	NIAGRA,
 	NORTEK,
@@ -110,5 +112,17 @@ public enum HvacBrands
 	WILLIAMSON,
 	WORTHINGTON,
 	YORK,
-	NOT_APPLICABLE
+	ETC;
+	
+	//Return like Oneida Royal
+	public String ctoString()
+	{
+		String sList[]=super.toString().split("_");
+		String temp="";
+		for(String s: sList)
+		{
+			temp+=Utils.getFirstCapitalString(s)+" ";
+		}
+		return temp.trim();
+	}
 }

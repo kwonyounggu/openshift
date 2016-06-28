@@ -35,25 +35,3 @@
 </script> 
 
 <h4>Under Construction</h4>
-<div class="tree well">
-<ul>
-<%
-	String sysList[]={"Heating", "Cooling", "Heating Cooling Combo", "Air Handler", "Humidifier"};
-	for(HvacBrands brand : HvacBrands.values())
-	{
-		out.print("<li><span><i class='glyphicon glyphicon-folder-open'></i>"+Utils.getFirstCapitalString(brand.toString())+"</span>");
-		out.print("<ul>");
-		for(String sys : sysList)
-		{
-			out.print("<li><span><i class='glyphicon glyphicon-minus-sign'></i>"+sys.toString()+"</span><a href=''>link to db</a>");
-				out.print("<ul>");
-					out.print("<li> <span><i class='glyphicon glyphicon-leaf'></i>Model Number</span>  <a href=''>direct link to pdf</a></li>");
-				out.print("</ul>");
-			out.print("</li>");
-		}
-		out.print("</ul>");
-		out.print("</li>");
-	}
-%>
-</ul>
-</div>

@@ -1,5 +1,7 @@
 package com.enums;
 
+import com.common.Utils;
+
 public enum HvacSystems
 {
 	AIR_CONDITIONER,
@@ -19,5 +21,16 @@ public enum HvacSystems
 	TANKLESS_WATER_HEATER,
 	WALLHUNG_BOILER,
 	WATER_HEATER,
-	NOT_APPLICABLE
+	ETC;
+	
+	public String ctoString()
+	{
+		String sList[]=super.toString().split("_");
+		String temp="";
+		for(String s: sList)
+		{
+			temp+=Utils.getFirstCapitalString(s)+" ";
+		}
+		return temp.trim();
+	}
 }

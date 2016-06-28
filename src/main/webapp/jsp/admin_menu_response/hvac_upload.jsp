@@ -347,7 +347,7 @@
 	   			<%
 	   				for(HvacBrands brand : HvacBrands.values())
 	   				{
-	   					out.print("<option value='"+brand.toString()+"' >"+Utils.getFirstCapitalString(brand.toString())+"</option>");
+	   					out.print("<option value='"+brand.toString()+"' >"+brand.ctoString()+"</option>");
 	   				}
 	   			%>
 	   		</select>
@@ -369,7 +369,7 @@
 	   			<%
 	   				for(HvacSystems sys : HvacSystems.values())
 	   				{
-	   					out.print("<option value='"+sys.toString()+"' >"+Utils.getFirstCapitalString(sys.toString())+"</option>");
+	   					out.print("<option value='"+sys.toString()+"' >"+sys.ctoString()+"</option>");
 	   				}
 	   			%>
 	   		</select>
@@ -384,7 +384,7 @@
 	   			<%
 	   				for(HvacManualFor manual : HvacManualFor.values())
 	   				{
-	   					out.print("<option value='"+manual.toString()+"' >"+Utils.getFirstCapitalString(manual.toString())+"</option>");
+	   					out.print("<option value='"+manual.toString()+"' >"+manual.ctoString()+"</option>");
 	   				}
 	   			%>
 	   		</select>
@@ -396,7 +396,7 @@
 	   			<%
 	   				for(HvacFuels fuel : HvacFuels.values())
 	   				{
-	   					out.print("<option value='"+fuel.toString()+"' >"+Utils.getFirstCapitalString(fuel.toString())+"</option>");
+	   					out.print("<option value='"+fuel.toString()+"' >"+fuel.ctoString()+"</option>");
 	   				}
 	   			%>
 	   		</select>

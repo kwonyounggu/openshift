@@ -1,5 +1,7 @@
 package com.enums;
 
+import com.common.Utils;
+
 public enum HvacManualFor
 {
 	INSTALLATION,
@@ -10,5 +12,16 @@ public enum HvacManualFor
 	PRODUCT_DATA,
 	WARRANTY,
 	SUPPLEMENT,
-	NOT_APPLICABLE	
+	ETC;
+	
+	public String ctoString()
+	{
+		String sList[]=super.toString().split("_");
+		String temp="";
+		for(String s: sList)
+		{
+			temp+=Utils.getFirstCapitalString(s)+" ";
+		}
+		return temp.trim();
+	}
 }

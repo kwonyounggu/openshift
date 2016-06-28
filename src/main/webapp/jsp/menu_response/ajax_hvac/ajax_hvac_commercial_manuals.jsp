@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="com.common.*" %>
+<%@ page import="com.enums.*" %>
 <%@ page import="java.util.*" %>
 <%@ page isELIgnored ="false" %>
 
@@ -36,62 +37,26 @@
 	<h1>Commercial Under Construction</h1>
 </p>
 <div class="tree well">
-    <ul>
-        <li> <span><i class="glyphicon glyphicon-folder-open"></i> Parent</span>  <a href="">Goes somewhere</a>
-
-            <ul>
-                <li>	<span><i class="glyphicon glyphicon-minus-sign"></i> Child</span>  <a href="">Goes somewhere</a>
-
-                    <ul>
-                        <li> <span><i class="glyphicon glyphicon-leaf"></i> Grand Child</span>  <a href="">Goes somewhere</a>
-
-                        </li>
-                    </ul>
-                </li>
-                <li>	<span><i class="glyphicon glyphicon-minus-sign"></i> Child</span>  <a href="">Goes somewhere</a>
-
-                    <ul>
-                        <li> <span><i class="glyphicon glyphicon-leaf"></i> Grand Child</span>  <a href="">Goes somewhere</a>
-
-                        </li>
-                        <li>	<span><i class="glyphicon glyphicon-minus-sign"></i> Grand Child</span>  <a href="">Goes somewhere</a>
-
-                            <ul>
-                                <li> <span><i class="glyphicon glyphicon-minus-sign"></i> Great Grand Child</span>  <a href="">Goes somewhere</a>
-
-                                    <ul>
-                                        <li> <span><i class="glyphicon glyphicon-leaf"></i> Great great Grand Child</span>  <a href="">Goes somewhere</a>
-
-                                        </li>
-                                        <li> <span><i class="glyphicon glyphicon-leaf"></i> Great great Grand Child</span>  <a href="">Goes somewhere</a>
-
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li> <span><i class="glyphicon glyphicon-leaf"></i> Great Grand Child</span>  <a href="">Goes somewhere</a>
-
-                                </li>
-                                <li> <span><i class="glyphicon glyphicon-leaf"></i> Great Grand Child</span>  <a href="">Goes somewhere</a>
-
-                                </li>
-                            </ul>
-                        </li>
-                        <li> <span><i class="glyphicon glyphicon-leaf"></i> Grand Child</span>  <a href="">Goes somewhere</a>
-
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-        <li> <span><i class="glyphicon glyphicon-folder-open"></i> Parent2</span>  <a href="">Goes somewhere</a>
-
-            <ul>
-                <li>	<span><i class="glyphicon glyphicon-leaf"></i> Child</span>  <a href="">Goes somewhere</a>
-
-                </li>
-            </ul>
-        </li>
-    </ul>
+<ul>
+<%
+	String sysList[]={"Heating", "Cooling", "Heating Cooling Combo", "Air Handler", "Humidifier"};
+	for(HvacBrands brand : HvacBrands.values())
+	{
+		out.print("<li><span><i class='glyphicon glyphicon-folder-open'></i>"+brand.ctoString()+"</span>");
+		out.print("<ul>");
+		for(String sys : sysList)
+		{
+			out.print("<li><span><i class='glyphicon glyphicon-minus-sign'></i>"+sys.toString()+"</span><a href=''>link to db</a>");
+				out.print("<ul>");
+					out.print("<li> <span><i class='glyphicon glyphicon-leaf'></i>Model Number</span>  <a href=''>direct link to pdf</a></li>");
+				out.print("</ul>");
+			out.print("</li>");
+		}
+		out.print("</ul>");
+		out.print("</li>");
+	}
+%>
+</ul>
 </div>
 <div class="tree">
     <ul>
