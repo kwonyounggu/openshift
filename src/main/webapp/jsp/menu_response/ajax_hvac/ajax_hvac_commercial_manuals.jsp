@@ -85,7 +85,7 @@
 	        }
 	        e.stopPropagation();
 	    });
-	    $('.tree li.parent_li > span').onclick();
+	    $('.tree li.parent_li').onclick();
 	});
 </script> 
 <% 
