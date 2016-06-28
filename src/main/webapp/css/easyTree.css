@@ -79,7 +79,7 @@
 }
 
 .easy-tree li > span > span.glyphicon-folder-close, .easy-tree li > span > span.glyphicon-folder-open {
-    margin-right: 5px;
+    margin-right: 8px;
 }
 
 .easy-tree li.li_selected > span, .easy-tree li.li_selected > span > a {
