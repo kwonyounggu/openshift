@@ -29,7 +29,7 @@
 <%
 	for(HvacBrands brand : HvacBrands.values())
 	{
-		out.print("<li>"+Utils.getFirstCapitalString(brand.toString()));
+		out.print("<li class='li_selected'>"+Utils.getFirstCapitalString(brand.toString()));
 		out.print("<ul>");
 		for(HvacSystems sys : HvacSystems.values())
 		{
