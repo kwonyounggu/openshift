@@ -2,7 +2,7 @@
 .easy-tree {
     min-height: 20px;
     margin-bottom: 20px;
-    background-color: #e56155;
+    background-color: #555762;
     color: #fff;
     border: none;
     border-top: none;
@@ -70,7 +70,7 @@
 
 .easy-tree li.parent_li > span:hover + ul li.li_selected span {
     background: #e5e2e1;
-    color: #e56155;
+    color: #555762;
 }
 
 .easy-tree li > span > a {
@@ -84,7 +84,7 @@
 
 .easy-tree li.li_selected > span, .easy-tree li.li_selected > span > a {
     background: #e5e2e1;
-    color: #e56155;
+    color: #555762;
 }
 
 .easy-tree li.li_selected > span:hover, .easy-tree li.li_selected > span:hover > a {
