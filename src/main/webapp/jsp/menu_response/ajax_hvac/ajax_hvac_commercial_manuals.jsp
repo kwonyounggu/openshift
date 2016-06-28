@@ -86,7 +86,7 @@
 	        }
 	        e.stopPropagation();
 	    });
-	    $(".tree li.parent_li").trigger("click");
+	    $("li.parent_li").trigger("click");
 	});
 </script> 
 <% 
