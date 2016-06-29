@@ -20,7 +20,8 @@
 		{
 			log(data.instance.get_node(data.selected).text); // newly selected
 			log(data.instance.get_node(data.selected)); // newly selected
-		    log(data.instance.get_parent(data.selected).text); // newly deselected
+			log(data.instance.get_node(data.selected).parent.text); // newly selected
+
 		});
 	});
 </script>  
