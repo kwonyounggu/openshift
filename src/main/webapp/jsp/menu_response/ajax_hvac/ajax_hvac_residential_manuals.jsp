@@ -23,7 +23,7 @@
 <h4>Under Construction</h4>
 <div class="container">
 	<div class="row">
-		<div class="col-md-3">
+		<div class="col-md-3" style="background-color:pink;">
 			<div id="residential_manual_tree_div">
 				<ul>
 				<%
@@ -47,7 +47,7 @@
 				</ul>
 			</div>
 		</div>
-		<div class="col-md-9">
+		<div class="col-md-9" style="background-color:yellow;">
 			hello here
 		</div>
 	</div>
