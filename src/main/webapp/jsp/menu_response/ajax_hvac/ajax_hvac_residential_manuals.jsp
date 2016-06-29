@@ -56,8 +56,7 @@
 				</ul>
 			</div>
 		</td>
-		<td style='width: 10px; background-color: black;'><br></td>
-		<td style='width: 75%; border-radius:0px 0px 0px 0px; border:0px solid #dddddd; vertical-align: top;'>
+		<td style='width: 75%; border-radius:0px 0px 0px 0px; border:1px solid #dddddd; border-style: hidden hidden hidden solid; vertical-align: top;'>
 			hello
 		</td>
 	</tr>
