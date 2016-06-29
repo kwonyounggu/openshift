@@ -57,8 +57,8 @@
 			</div>
 		</td>
 		<td style='width: 1px; background-color: #00ffff;'></td>
-		<td style='width: 75%; border-radius:0px 0px 0px 0px; border:0px solid #dddddd;'>
-			
+		<td style='width: 75%; border-radius:0px 0px 0px 0px; border:0px solid #dddddd; vertical-align: top;'>
+			hello
 		</td>
 	</tr>
 </table>
