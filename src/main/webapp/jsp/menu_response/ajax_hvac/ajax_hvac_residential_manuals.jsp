@@ -55,7 +55,7 @@
 			</div>
 		</td>
 		<td style='width: 10px;'></td>
-		<td style='width: 75%; background-color: yellow; border-radius:0px 0px 0px 0px; border:1px solid #000000;'>
+		<td style='width: 75%; border-radius:0px 0px 0px 0px; border:1px solid #dddddd;'>
 			
 		</td>
 	</tr>
