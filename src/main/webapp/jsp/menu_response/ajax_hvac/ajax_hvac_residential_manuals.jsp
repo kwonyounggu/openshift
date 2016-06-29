@@ -19,8 +19,15 @@
 		$('#residential_manual_tree_div').on("changed.jstree", function (e, data) 
 		{
 			log(data.instance.get_node(data.selected).text); // newly selected
-			log(data.instance.get_node(data.selected)); // newly selected
-			log(data.instance.get_node(data.selected).parent); // newly selected
+			var node=data.instance.get_node(data.selected);
+			if(node.children.length==0)
+			{
+				log("It's a leaf with a parent ID="+node.parent);
+			}
+			else
+			{
+				log("It has children");
+			}
 
 		});
 	});
