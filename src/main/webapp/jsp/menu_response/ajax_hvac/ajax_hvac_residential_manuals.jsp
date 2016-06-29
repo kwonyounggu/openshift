@@ -24,7 +24,7 @@
 <table style='table-layout: fixed'>
 	<tr>
 		<td style='width: 25% background-color: pink;'>
-			<div id="residential_manual_tree_div" style="border-radius:0px 0px 0px 0px; border:1px solid #000000;">
+			<div id="residential_manual_tree_div" style="border-radius:0px 0px 0px 0px; border:0px solid #000000;">
 				<ul>
 				<%
 					String sysList[]={"Heating", "Cooling", "Heating Cooling Combo", "Air Handler", "Humidifier"};
@@ -48,7 +48,7 @@
 			</div>
 		</td>
 		<td style='width: 10px;'></td>
-		<td style='width: 75%; background-color: yellow;'>
+		<td style='width: 75%; background-color: yellow; height: 100%;'>
 			<div style="border-radius:0px 0px 0px 0px; border:1px solid #000000;">
 			</div>
 		</td>
