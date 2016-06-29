@@ -16,9 +16,11 @@
 			  }
 		});
 		
-		$('#residential_manual_tree_div').on("changed.jstree", function (e, data) {
-			  log(data.selected);
-			});
+		$('#residential_manual_tree_div').on("changed.jstree", function (e, data) 
+		{
+			log(data.changed.selected); // newly selected
+		    log(data.changed.deselected); // newly deselected
+		});
 	});
 </script>  
 <% 
@@ -30,7 +32,7 @@
 <h4>Under Construction</h4>
 <table style='table-layout: fixed'>
 	<tr>
-		<td style='width: 25% background-color: pink;'>
+		<td style='width: 25%'>
 			<div id="residential_manual_tree_div" style="border-radius:0px 0px 0px 0px; border:0px solid #000000;">
 				<ul>
 				<%
@@ -41,7 +43,7 @@
 						out.print("<ul>");
 						for(String sys : sysList)
 						{
-							out.print("<li>"+sys.toString()+"");
+							out.print("<li data-jstree='{\"icon\":\"glyphicon glyphicon-leaf\"}'>"+sys.toString()+"");
 								//out.print("<ul>");
 								//	out.print("<li> <span><i class='glyphicon glyphicon-leaf'></i>Model Number</span>  <a href=''>direct link to pdf</a></li>");
 								//out.print("</ul>");
@@ -54,8 +56,8 @@
 				</ul>
 			</div>
 		</td>
-		<td style='width: 10px;'></td>
-		<td style='width: 75%; border-radius:0px 0px 0px 0px; border:1px solid #dddddd;'>
+		<td style='width: 1px; background-color: #00ffff;'></td>
+		<td style='width: 75%; border-radius:0px 0px 0px 0px; border:0px solid #dddddd;'>
 			
 		</td>
 	</tr>
