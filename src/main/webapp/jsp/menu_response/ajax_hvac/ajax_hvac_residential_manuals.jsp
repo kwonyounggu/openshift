@@ -18,8 +18,8 @@
 		
 		$('#residential_manual_tree_div').on("changed.jstree", function (e, data) 
 		{
-			log(data.changed.selected); // newly selected
-		    log(data.changed.deselected); // newly deselected
+			log(data.instance.get_node(data.selected[0]).text); // newly selected
+		    log(data.instance.get_node(data.deselected[0]).text); // newly deselected
 		});
 	});
 </script>  
