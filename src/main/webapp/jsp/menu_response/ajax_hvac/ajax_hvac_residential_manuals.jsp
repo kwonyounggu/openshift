@@ -21,9 +21,9 @@
 %>
 
 <h4>Under Construction</h4>
-<div class="container">
-	<div class="row">
-		<div class="col-md-3" style="background-color:pink; max-width: 200px;">
+<table style='table-layout: fixed'>
+	<tr>
+		<td style='width: 25% background-color: pink;'>
 			<div id="residential_manual_tree_div">
 				<ul>
 				<%
@@ -46,9 +46,10 @@
 				%>
 				</ul>
 			</div>
-		</div>
-		<div class="col-md-9" style="background-color:yellow;">
-			hello here
-		</div>
-	</div>
-</div>
+		</td>
+		<td style='width: 10px;'></td>
+		<td style='width: 75%; background-color: yellow;'>
+			hello
+		</td>
+	</tr>
+</table>
