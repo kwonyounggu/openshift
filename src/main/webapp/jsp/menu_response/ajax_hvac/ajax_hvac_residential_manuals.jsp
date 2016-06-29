@@ -19,6 +19,7 @@
 		$('#residential_manual_tree_div').on("changed.jstree", function (e, data) 
 		{
 			log(data.instance.get_node(data.selected).text); // newly selected
+			log(data.instance.get_node(data.selected)); // newly selected
 		    log(data.instance.get_parent(data.selected).text); // newly deselected
 		});
 	});
