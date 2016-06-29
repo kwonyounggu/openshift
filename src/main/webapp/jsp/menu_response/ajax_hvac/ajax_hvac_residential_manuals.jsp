@@ -7,7 +7,14 @@
 	//see http://jsfiddle.net/jayhilwig/hv8vU/
 	$(document).ready(function ()
 	{
-		$('#residential_manual_tree_div').jstree();
+		$('#residential_manual_tree_div').jstree
+		({
+			  "core" : 
+			  {
+				    "multiple" : false,
+				    "animation" : 0
+			  }
+		});
 		
 		$('#residential_manual_tree_div').on("changed.jstree", function (e, data) {
 			  log(data.selected);
@@ -48,9 +55,8 @@
 			</div>
 		</td>
 		<td style='width: 10px;'></td>
-		<td style='width: 75%; background-color: yellow; height: auto;'>
-			<div style="border-radius:0px 0px 0px 0px; border:1px solid #000000; height: 100%;">
-			</div>
+		<td style='width: 75%; background-color: yellow; border-radius:0px 0px 0px 0px; border:1px solid #000000;'>
+			
 		</td>
 	</tr>
 </table>
