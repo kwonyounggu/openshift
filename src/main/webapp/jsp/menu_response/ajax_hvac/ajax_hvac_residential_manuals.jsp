@@ -23,7 +23,7 @@
 <h4>Under Construction</h4>
 <div class="container">
 	<div class="row">
-		<div class="col-md-3" style="background-color:pink;">
+		<div class="col-md-3" style="background-color:pink; overflow: auto;">
 			<div id="residential_manual_tree_div">
 				<ul>
 				<%
