@@ -48,8 +48,8 @@
 			</div>
 		</td>
 		<td style='width: 10px;'></td>
-		<td style='width: 75%; background-color: yellow; height: 100%;'>
-			<div style="border-radius:0px 0px 0px 0px; border:1px solid #000000;">
+		<td style='width: 75%; background-color: yellow; height: auto;'>
+			<div style="border-radius:0px 0px 0px 0px; border:1px solid #000000; height: 100%;">
 			</div>
 		</td>
 	</tr>
