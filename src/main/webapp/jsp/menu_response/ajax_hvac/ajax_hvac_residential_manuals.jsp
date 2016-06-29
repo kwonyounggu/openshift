@@ -20,7 +20,7 @@
 		{
 			log(data.instance.get_node(data.selected).text); // newly selected
 			log(data.instance.get_node(data.selected)); // newly selected
-			log(data.instance.get_node(data.selected).parent.text); // newly selected
+			log(data.instance.get_node(data.selected).parent); // newly selected
 
 		});
 	});
@@ -41,7 +41,7 @@
 					String sysList[]={"Heating", "Cooling", "Heating Cooling Combo", "Air Handler", "Humidifier"};
 					for(HvacBrands brand : HvacBrands.values())
 					{
-						out.print("<li>"+brand.ctoString()+"");
+						out.print("<li id='"+brand.toString()+"'>"+brand.ctoString()+"");
 						out.print("<ul>");
 						for(String sys : sysList)
 						{
