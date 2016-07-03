@@ -62,72 +62,7 @@ import com.service.MailService;
  * owner: myesl.education@gmail.com
  * pwd: korea안동
  */
-/*
- * Temporary
- * Jun 22, 2016 5:15:08 PM com.servlets.HvacFileUploadController doGet
-INFO:  Parameter Name is 'hvacManualType' and Parameter Value is 'SYSTEM'
-Jun 22, 2016 5:15:08 PM com.servlets.HvacFileUploadController doGet
-INFO:  Parameter Name is 'hvacBrands' and Parameter Value is 'AAON'
-Jun 22, 2016 5:15:08 PM com.servlets.HvacFileUploadController doGet
-INFO:  Parameter Name is 'hvacSpaceType' and Parameter Value is 'RESIDENTIAL'
-Jun 22, 2016 5:15:08 PM com.servlets.HvacFileUploadController doGet
-INFO:  Parameter Name is 'hvacSystemType' and Parameter Value is 'AIR_CONDITIONER'
-Jun 22, 2016 5:15:08 PM com.servlets.HvacFileUploadController doGet
-INFO:  Parameter Name is 'hvacSystemModel' and Parameter Value is 'KBS123'
-Jun 22, 2016 5:15:08 PM com.servlets.HvacFileUploadController doGet
-INFO:  Parameter Name is 'hvacManualFor' and Parameter Value is 'INSTALLATION'
-Jun 22, 2016 5:15:08 PM com.servlets.HvacFileUploadController doGet
-INFO:  Parameter Name is 'submittingCompanyId' and Parameter Value is '1'
-Jun 22, 2016 5:15:08 PM com.servlets.HvacFileUploadController doGet
-INFO:  Parameter Name is 'hvacFuelType' and Parameter Value is 'GAS'
-Jun 22, 2016 5:15:08 PM com.servlets.HvacFileUploadController doGet
-INFO:  Parameter Name is 'select_animal' and Parameter Value is 'a'
-Jun 22, 2016 5:15:08 PM com.servlets.HvacFileUploadController doGet
-INFO:  Parameter Name is 'animalGroup' and Parameter Value is '3'
-Jun 22, 2016 5:15:08 PM com.servlets.HvacFileUploadController doGet
-INFO:  Parameter Name is 'client_place' and Parameter Value is 'Toronto Ontario Canada'
-Jun 22, 2016 5:15:08 PM com.servlets.HvacFileUploadController doGet
-INFO:  Parameter Name is 'submitterName' and Parameter Value is 'Admin'
-Jun 22, 2016 5:15:08 PM com.servlets.HvacFileUploadController doGet
-INFO:  Parameter Name is 'dropboxDir' and Parameter Value is 'systemManuals'
-Jun 22, 2016 5:15:08 PM com.servlets.HvacFileUploadController uploadToDropbox
-INFO: uploadToDropbox is called ...
-Jun 22, 2016 5:15:10 PM com.servlets.HvacFileUploadController uploadToDropbox
-INFO: {
-  ".tag" : "file",
-  "name" : "Admin_Laplaya2_2016_06_22_17_15_08.jpg",
-  "path_lower" : "/systemmanuals/admin_laplaya2_2016_06_22_17_15_08.jpg",
-  "path_display" : "/systemManuals/Admin_Laplaya2_2016_06_22_17_15_08.jpg",
-  "id" : "id:lnKvckdO7MAAAAAAAAAAAQ",
-  "client_modified" : "2016-06-22T21:15:08Z",
-  "server_modified" : "2016-06-22T21:15:10Z",
-  "rev" : "44a30f50b",
-  "size" : 77559
-}
-Jun 22, 2016 5:15:11 PM com.servlets.HvacFileUploadController uploadToDropbox
-INFO: {
-  ".tag" : "file",
-  "url" : "https://www.dropbox.com/s/kczw3a2e85c7lnd/Admin_Laplaya2_2016_06_22_17_15_08.jpg?dl=0",
-  "name" : "Admin_Laplaya2_2016_06_22_17_15_08.jpg",
-  "link_permissions" : {
-    "can_revoke" : true,
-    "resolved_visibility" : "other",
-    "requested_visibility" : "public"
-  },
-  "client_modified" : "2016-06-22T21:15:08Z",
-  "server_modified" : "2016-06-22T21:15:10Z",
-  "rev" : "44a30f50b",
-  "size" : 77559,
-  "id" : "id:lnKvckdO7MAAAAAAAAAAAQ",
-  "path_lower" : "/systemmanuals/admin_laplaya2_2016_06_22_17_15_08.jpg"
-}
-Jun 22, 2016 5:15:11 PM com.servlets.HvacFileUploadController uploadToDropbox
-INFO: File SeqID: -1
-DropBox File Path: https://www.dropbox.com/s/kczw3a2e85c7lnd/Admin_Laplaya2_2016_06_22_17_15_08.jpg?dl=0
-File Name Submitted: LaPlaya2.jpg
-File Size (Kb): 77
 
- * */
 @WebServlet(name = "hvacfileupload", urlPatterns = { "/hvacfileupload" })
 @MultipartConfig(location = "/var/lib/openshift/56ddb9c10c1e66c9db000081/app-root/data")
 public class HvacFileUploadController extends HttpServlet 
