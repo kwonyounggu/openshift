@@ -12,7 +12,7 @@ public enum HvacManualFor
 	PRODUCT_DATA,
 	WARRANTY,
 	SUPPLEMENT,
-	ETC;
+	WIRING_DIAGRAM;
 	
 	public String ctoString()
 	{
