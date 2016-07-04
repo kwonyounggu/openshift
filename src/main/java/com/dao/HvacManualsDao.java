@@ -5,11 +5,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 
 import javax.sql.DataSource;
 
 import com.beans.HvacManualsBean;
+import com.beans.HvacManualsScheduledBean;
 import com.exceptions.DAOException;
 
 public class HvacManualsDao
@@ -120,6 +123,95 @@ public class HvacManualsDao
 			log.info("Ending for getARecord(HvacManualsBean lb)");
 		}
 		return eb;
+
+	}
+	public List<HvacManualsBean> getRecords(String arg) throws DAOException
+	{
+		log.info("Calling for getRecords("+arg+")");
+		
+		List<HvacManualsBean> list=new ArrayList<HvacManualsBean>();
+		
+		Connection c = null;
+		Statement s=null;
+		ResultSet rs=null;
+		try
+		{
+			c = _ds.getConnection();
+			s = c.createStatement();
+			rs = s.executeQuery("select * from hvac_manuals "+arg);
+			FileUploadedToDropboxDao fDao=new FileUploadedToDropboxDao(_ds);
+			while (rs.next())
+			{
+				HvacManualsBean hb=new HvacManualsBean();
+				
+				hb.setHvacManualSeqId(rs.getInt(1));
+				hb.setManualType(rs.getString(2));
+				hb.setBrandName(rs.getString(3));
+				hb.setSpaceType(rs.getString(4));
+				hb.setSystemType(rs.getString(5));
+				hb.setModelNumber(rs.getString(6));
+				hb.setManualFor(rs.getString(7));
+				hb.setFuelType(rs.getString(8));
+				hb.setOs(rs.getByte(9));
+				hb.setSubmittingCompanyId(rs.getInt(10));
+				
+				hb.setFileSeqId(rs.getInt(11));
+				hb.setFb(fDao.getARecord(hb.getFileSeqId()));
+				
+				hb.setRemotePlace(rs.getString(12));
+				hb.setSubmissionTime(rs.getTimestamp(13));
+				hb.setValid(rs.getBoolean(14));
+
+				list.add(hb);
+			}
+		}
+		catch (SQLException e)
+		{
+			log.severe(e.getMessage());
+			throw new DAOException(e);
+		}
+		finally
+		{
+			closeResultSet(rs);
+			closeStatement(s);
+			closeConnection(c);
+			log.info("Ending for getRecords(String arg)");
+		}
+		return list;
+
+	}
+	public List<String> getBrandNames(String arg) throws DAOException
+	{
+		log.info("Calling for getBrandNames("+arg+")");
+		
+		List<String> list=new ArrayList<String>();
+		
+		Connection c = null;
+		Statement s=null;
+		ResultSet rs=null;
+		try
+		{
+			c = _ds.getConnection();
+			s = c.createStatement();
+			rs = s.executeQuery("select distinct brand_name from hvac_manuals "+arg);
+			while (rs.next())
+			{
+				list.add(rs.getString(1));
+			}
+		}
+		catch (SQLException e)
+		{
+			log.severe(e.getMessage());
+			throw new DAOException(e);
+		}
+		finally
+		{
+			closeResultSet(rs);
+			closeStatement(s);
+			closeConnection(c);
+			log.info("Ending for getBrandNames(String arg)");
+		}
+		return list;
 
 	}
 	private void closeResultSet(ResultSet rs)

@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="com.common.*" %>
 <%@ page import="com.enums.*" %>
+<%@ page import="com.dao.*" %>
 <%@ page import="java.util.*" %>
+<%@ page import="javax.sql.*" %>
 <%@ page isELIgnored ="false" %>
 <script type="text/javascript">
 	//see http://jsfiddle.net/jayhilwig/hv8vU/
@@ -45,6 +47,7 @@
 			<div id="residential_manual_tree_div" style="border-radius:0px 0px 0px 0px; border:0px solid #000000;">
 				<ul>
 				<%
+					/*
 					String sysList[]={"Heating", "Cooling", "Heating Cooling Combo", "Air Handler", "Humidifier"};
 					for(HvacBrands brand : HvacBrands.values())
 					{
@@ -61,6 +64,18 @@
 						out.print("</ul>");
 						out.print("</li>");
 					}
+					*/
+					DataSource ds=(DataSource)application.getAttribute("dataSource");
+					HvacManualsDao hvacManualsDao=new HvacManualsDao(ds);
+					List<String> brands=hvacManualsDao.getBrandNames("where valid=true");
+					
+					//add company link from the enum
+					for(String brand : brands)
+					{
+						out.print("<li id='"+brand+"'>"+brand+"");
+						out.print("</li>");
+					}
+					
 				%>
 				</ul>
 			</div>
