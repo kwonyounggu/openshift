@@ -29,8 +29,8 @@
 							out.print("{	'id':     '"+brand+"', ");
 							out.print("  	'parent': '#', ");
 							out.print("  	'text':   '"+brand+"',");
-							out.print("'state' : 'closed'");
-														
+							out.print("'state' : 'closed',");
+							out.print("'children': 'true'")	;						
 							out.print("}");
 							if((i+1)<brands.size()) out.print(",");
 						}
