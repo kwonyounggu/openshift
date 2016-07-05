@@ -26,7 +26,8 @@
 				    	{
 				    		log("data: node_id: "+node.id);
 				    		return {'id' : node.id};
-				    	}
+				    	},
+				    	'dataType': 'json'
 				    }
 				    //[
 				     <%
