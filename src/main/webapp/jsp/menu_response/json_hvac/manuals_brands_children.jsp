@@ -9,7 +9,7 @@
 	//see http://jsfiddle.net/jayhilwig/hv8vU/
 	$(document).ready(function ()
 	{
-		log("list brands ...");
+		log("hello it is ...");
 	}
 </script>
 <% 

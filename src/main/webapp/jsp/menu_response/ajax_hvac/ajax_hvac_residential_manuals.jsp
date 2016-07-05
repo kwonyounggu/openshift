@@ -16,8 +16,19 @@
 				    'multiple' : false,
 				    'animation' : 0,
 				    'data':
-				    [
+				    {
+				    	'url': function(node)
+				    	{
+				    		return node.id==='#' ? 'jsp/menu_response/json_hvac/manuals_brands.jsp' : 'jsp/menu_response/json_hvac/manuals_brands_children.jsp';
+				    	},
+				    	'data': function(node)
+				    	{log("node_id: "+node.id));
+				    		return {'id' : node.id};
+				    	}
+				    }
+				    //[
 				     <%
+				     	/*
 				     	DataSource ds=(DataSource)application.getAttribute("dataSource");
 						HvacManualsDao hvacManualsDao=new HvacManualsDao(ds);
 						List<String> brands=hvacManualsDao.getBrandNames("where valid=true order by brand_name asc");
@@ -34,17 +45,10 @@
 							out.print("}");
 							if((i+1)<brands.size()) out.print(",");
 						}
+						*/
 				     %>
-				    ],
-				    'ajax':
-				    {
-				    	'url': 'jsp/menu_response/json_hvac/manuals_brands.jsp',
-				    	'data': function(node)
-				    	{
-				    		log("node_id: "+node.id));
-				    		return {'id': node.id};
-				    	}
-				    }
+				    //],
+
 			  }
 		});
 		
