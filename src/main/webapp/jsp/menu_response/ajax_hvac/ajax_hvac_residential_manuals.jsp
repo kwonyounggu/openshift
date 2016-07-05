@@ -26,9 +26,10 @@
 						for(int i=0; i<brands.size();i++)
 						{
 							String brand=brands.get(i);
-							out.print("{	'id': '"+brand+"', ");
-							out.print("{	'parent': '#', ");
-							out.print("{	'text': '"+brand+"'}");
+							out.print("{	'id':     '"+brand+"', ");
+							out.print("  	'parent': '#', ");
+							out.print("  	'text':   '"+brand+"'");
+							out.print("}");
 							if((i+1)<brands.size()) out.print(",");
 						}
 				     %>
