@@ -9,16 +9,34 @@
 	//see http://jsfiddle.net/jayhilwig/hv8vU/
 	$(document).ready(function ()
 	{
-		$('#residential_manual_tree_div').jstree
+		$('#manual_tree_div').jstree
 		({
-			  "core" : 
+			  'core' : 
 			  {
-				    "multiple" : false,
-				    "animation" : 0
+				    'multiple' : false,
+				    'animation' : 0,
+				    'data':
+				    [
+				     <%
+				     	DataSource ds=(DataSource)application.getAttribute("dataSource");
+						HvacManualsDao hvacManualsDao=new HvacManualsDao(ds);
+						List<String> brands=hvacManualsDao.getBrandNames("where valid=true order by brand_name asc");
+						
+						//add company link from the enum
+						for(int i=0; i<brands.size();i++)
+						{
+							String brand=brands.get(i);
+							out.print("{	'id': '"+brand+"', ");
+							out.print("{	'parent': '#', ");
+							out.print("{	'text': '"+brand+"'}");
+							if((i+1)<brands.size()) out.print(",");
+						}
+				     %>
+				    ]
 			  }
 		});
 		
-		$('#residential_manual_tree_div').on("changed.jstree", function (e, data) 
+		$('#manual_tree_div').on("changed.jstree", function (e, data) 
 		{
 			log(data.instance.get_node(data.selected).text); // newly selected
 			var node=data.instance.get_node(data.selected);
@@ -44,7 +62,7 @@
 <table style='table-layout: fixed'>
 	<tr>
 		<td style='width: 25%'>
-			<div id="residential_manual_tree_div" style="border-radius:0px 0px 0px 0px; border:0px solid #000000;">
+			<div id="manual_tree_div" style="border-radius:0px 0px 0px 0px; border:0px solid #000000;">
 				<ul>
 				<%
 					/*
@@ -65,9 +83,10 @@
 						out.print("</li>");
 					}
 					*/
+					/*
 					DataSource ds=(DataSource)application.getAttribute("dataSource");
 					HvacManualsDao hvacManualsDao=new HvacManualsDao(ds);
-					List<String> brands=hvacManualsDao.getBrandNames("where valid=true");
+					List<String> brands=hvacManualsDao.getBrandNames("where valid=true order by brand_name asc");
 					
 					//add company link from the enum
 					for(String brand : brands)
@@ -75,7 +94,7 @@
 						out.print("<li id='"+brand+"'>"+brand+"");
 						out.print("</li>");
 					}
-					
+					*/
 				%>
 				</ul>
 			</div>
