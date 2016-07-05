@@ -22,7 +22,7 @@
 				    		return node.id==='#' ? 'jsp/menu_response/json_hvac/manuals_brands.jsp' : 'jsp/menu_response/json_hvac/manuals_brands_children.jsp';
 				    	},
 				    	'data': function(node)
-				    	{log("node_id: "+node.id));
+				    	{log("node_id: "+node.id);
 				    		return {'id' : node.id};
 				    	}
 				    }
