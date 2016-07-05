@@ -28,7 +28,13 @@
 							String brand=brands.get(i);
 							out.print("{	'id':     '"+brand+"', ");
 							out.print("  	'parent': '#', ");
-							out.print("  	'text':   '"+brand+"'");
+							out.print("  	'text':   '"+brand+"',");
+							out.print("'children' :");
+								out.print("[");
+									out.print("{");
+										out.print("'data': {'url': 'jsp/menu_response/json_hvac/manuals_brands.jsp'}");
+									out.print("}");
+								out.print("]");								
 							out.print("}");
 							if((i+1)<brands.size()) out.print(",");
 						}
