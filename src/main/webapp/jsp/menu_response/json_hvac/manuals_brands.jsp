@@ -22,6 +22,4 @@
 */		
 	System.out.println("brands, id="+request.getParameter("id"));
 %>
-[
-	[{"id":"CARRIER","text":"CARRIER","children":true}]
-]
+[{"id":"CARRIER","text":"CARRIER","children":true}]
