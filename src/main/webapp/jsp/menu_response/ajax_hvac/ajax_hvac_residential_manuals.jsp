@@ -20,7 +20,7 @@
 				    	'url': function(node)
 				    	{
 				    		log("url: node_id: "+node.id);
-				    		return (node.id==='#' ? 'http://www.webmonster.ca/jsp/menu_response/json_hvac/manuals_brands.jsp' : 'http://www.webmonster.ca/jsp/menu_response/json_hvac/manuals_brands_children.jsp');
+				    		return (node.id==='#' ? '//www.webmonster.ca/jsp/menu_response/json_hvac/manuals_brands.jsp' : '//www.webmonster.ca/jsp/menu_response/json_hvac/manuals_brands_children.jsp');
 				    	},
 				    	'data': function(node)
 				    	{
