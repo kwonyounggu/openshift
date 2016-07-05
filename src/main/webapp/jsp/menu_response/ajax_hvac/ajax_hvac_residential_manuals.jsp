@@ -29,17 +29,22 @@
 							out.print("{	'id':     '"+brand+"', ");
 							out.print("  	'parent': '#', ");
 							out.print("  	'text':   '"+brand+"',");
-							out.print("'children' :");
-								out.print("[");
-									out.print("{");
-										out.print("'data': {'url': 'jsp/menu_response/json_hvac/manuals_brands.jsp'}");
-									out.print("}");
-								out.print("]");								
+							out.print("'state' : 'closed'");
+														
 							out.print("}");
 							if((i+1)<brands.size()) out.print(",");
 						}
 				     %>
-				    ]
+				    ],
+				    'ajax':
+				    {
+				    	'url': 'jsp/menu_response/json_hvac/manuals_brands.jsp',
+				    	'data': function(node)
+				    	{
+				    		log("node_id: "+$.trim(node.attr('id')));
+				    		return {'id': node.id};
+				    	}
+				    }
 			  }
 		});
 		
