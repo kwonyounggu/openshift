@@ -30,7 +30,7 @@
 							out.print("  	'parent': '#', ");
 							out.print("  	'text':   '"+brand+"',");
 							out.print("'state' : 'closed',");
-							out.print("'children': 'true'")	;						
+							out.print("'children': true")	;						
 							out.print("}");
 							if((i+1)<brands.size()) out.print(",");
 						}
@@ -41,7 +41,7 @@
 				    	'url': 'jsp/menu_response/json_hvac/manuals_brands.jsp',
 				    	'data': function(node)
 				    	{
-				    		log("node_id: "+$.trim(node.attr('id')));
+				    		log("node_id: "+node.id));
 				    		return {'id': node.id};
 				    	}
 				    }
