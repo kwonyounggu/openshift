@@ -14,18 +14,19 @@
 
 	DataSource ds=(DataSource)application.getAttribute("dataSource");
 	HvacManualsDao hvacManualsDao=new HvacManualsDao(ds);
-	List<String> brands=hvacManualsDao.getBrandNames("where valid=true order by brand_name asc");
+	Map<String, Integer> brands=hvacManualsDao.getBrandNames("where valid=true group by brand_name order by brand_name asc");
 	
 	//Note: each property and value are expected double-quatationed
-	for(int i=0; i<brands.size();i++)
+	Iterator<Map.Entry<String, Integer>> entries = brands.entrySet().iterator();
+	while(entries.hasNext())
 	{
-		String brand=brands.get(i);
-		out.print("{	\"id\":     \""+brand+"\", ");
+		Map.Entry<String, Integer> entry=entries.next();
+		out.print("{	\"id\":     \""+entry.getKey()+"\", "); //brand
 		out.print("  	\"parent\": \"#\", ");
-		out.print("  	\"text\":   \""+brand+"\",");
+		out.print("  	\"text\":   \""+entry.getKey()+" ("+entry.getValue()+")\",");//brand (number of manuals)
 		out.print("		\"children\": true")	;						
 		out.print("}");
-		if((i+1)<brands.size()) out.print(",");
+		if(entries.hasNext()) out.print(",");
 	}
 %>
 ]

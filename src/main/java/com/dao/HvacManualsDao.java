@@ -6,7 +6,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 import java.util.logging.Logger;
 
 import javax.sql.DataSource;
@@ -180,11 +183,12 @@ public class HvacManualsDao
 		return list;
 
 	}
-	public List<String> getBrandNames(String arg) throws DAOException
+	//select brand_name, count(*) from hvac_manuals where valid=true group by brand_name order by brand_name asc;
+	public Map<String, Integer> getBrandNames(String arg) throws DAOException
 	{
 		log.info("Calling for getBrandNames("+arg+")");
 		
-		List<String> list=new ArrayList<String>();
+		Map<String, Integer> map=new TreeMap<String, Integer>();
 		
 		Connection c = null;
 		Statement s=null;
@@ -193,10 +197,10 @@ public class HvacManualsDao
 		{
 			c = _ds.getConnection();
 			s = c.createStatement();
-			rs = s.executeQuery("select distinct brand_name from hvac_manuals "+arg);
+			rs = s.executeQuery("select brand_name, count(*) from hvac_manuals "+arg);
 			while (rs.next())
 			{
-				list.add(rs.getString(1));
+				map.put(rs.getString(1), rs.getInt(2));
 			}
 		}
 		catch (SQLException e)
@@ -211,7 +215,7 @@ public class HvacManualsDao
 			closeConnection(c);
 			log.info("Ending for getBrandNames(String arg)");
 		}
-		return list;
+		return map;
 
 	}
 	private void closeResultSet(ResultSet rs)
