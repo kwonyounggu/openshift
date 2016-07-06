@@ -13,6 +13,7 @@
 	}
 </script>
 <% 
+response.setContentType("application/json");
 /*
 [
 	{	

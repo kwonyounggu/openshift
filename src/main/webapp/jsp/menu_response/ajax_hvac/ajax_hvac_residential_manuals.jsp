@@ -22,15 +22,17 @@
 				    	'url': function(node)
 				    	{
 				    		log("url: node_id: "+node.id);
-				    		return '//www.jstree.com/fiddle/?lazy';
-				    		//return (node.id==='#' ? '//www.jstree.com/fiddle/?lazy' : '//www.webmonster.ca/jsp/menu_response/json_hvac/manuals_brands_children.jsp');
+				    		//return '//www.jstree.com/fiddle/?lazy';
+				    		return (node.id==='#' ? '//www.webmonster.ca/jsp/menu_response/json_hvac/manuals_brands.jsp' : '//www.webmonster.ca/jsp/menu_response/json_hvac/manuals_brands_children.jsp');
 				    	},
+				    	'type': 'post',
+				    	'dataType': 'json',
 				    	'data': function(node)
 				    	{
 				    		log("data: node_id: "+node.id);
 				    		return {'id' : node.id};
-				    	},
-				    	'dataType': 'json'
+				    	}
+				    	
 				    }
 				    //[
 				     <%
