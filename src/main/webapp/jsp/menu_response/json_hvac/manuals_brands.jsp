@@ -5,13 +5,7 @@
 <%@ page import="java.util.*" %>
 <%@ page import="javax.sql.*" %>
 <%@ page isELIgnored ="false" %>
-<script type="text/javascript">
-	//see http://jsfiddle.net/jayhilwig/hv8vU/
-	$(document).ready(function ()
-	{
-		log("list brands ...");
-	}
-</script>
+
 <% 
 response.setContentType("application/json");
 /*
