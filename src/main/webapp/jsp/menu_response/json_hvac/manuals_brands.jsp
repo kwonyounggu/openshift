@@ -14,7 +14,7 @@
 
 	DataSource ds=(DataSource)application.getAttribute("dataSource");
 	HvacManualsDao hvacManualsDao=new HvacManualsDao(ds);
-	Map<String, Integer> brands=hvacManualsDao.getBrandNames("where valid=true group by brand_name order by brand_name asc");
+	Map<String, Integer> brands=hvacManualsDao.getKeysValues("select brand_name, count(*) from hvac_manuals where valid=true group by brand_name order by brand_name asc");
 	
 	//Note: each property and value are expected double-quatationed
 	Iterator<Map.Entry<String, Integer>> entries = brands.entrySet().iterator();

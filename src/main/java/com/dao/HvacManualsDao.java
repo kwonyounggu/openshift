@@ -218,6 +218,41 @@ public class HvacManualsDao
 		return map;
 
 	}
+	//select brand_name, count(*) from hvac_manuals where valid=true group by brand_name order by brand_name asc;
+	public Map<String, Integer> getKeysValues(String sqlStatement) throws DAOException
+	{
+		log.info("Calling for getKeysValues("+sqlStatement+")");
+		
+		Map<String, Integer> map=new TreeMap<String, Integer>();
+		
+		Connection c = null;
+		Statement s=null;
+		ResultSet rs=null;
+		try
+		{
+			c = _ds.getConnection();
+			s = c.createStatement();
+			rs = s.executeQuery(sqlStatement);
+			while (rs.next())
+			{
+				map.put(rs.getString(1), rs.getInt(2));
+			}
+		}
+		catch (SQLException e)
+		{
+			log.severe(e.getMessage());
+			throw new DAOException(e);
+		}
+		finally
+		{
+			closeResultSet(rs);
+			closeStatement(s);
+			closeConnection(c);
+			log.info("Ending for getKeysValues(String sqlStatement)");
+		}
+		return map;
+
+	}
 	private void closeResultSet(ResultSet rs)
 	{
 		try
