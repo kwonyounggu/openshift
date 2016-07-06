@@ -11,10 +11,11 @@
 	{
 		$('#manual_tree_div').jstree
 		({
-			  'plugins': ['wholerow', 'checkbox'],
+			  'plugins': ['json_data', 'ui'],
 			  'core' : 
 			  {
 				    'multiple' : false,
+				    'cache': false,
 				    'animation' : 0,
 				    'data':
 				    {
