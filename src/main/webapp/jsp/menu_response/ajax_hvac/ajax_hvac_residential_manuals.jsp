@@ -11,6 +11,7 @@
 	{
 		$('#manual_tree_div').jstree
 		({
+			  'plugins': ['wholerow', 'checkbox'],
 			  'core' : 
 			  {
 				    'multiple' : false,
