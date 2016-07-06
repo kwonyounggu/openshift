@@ -15,7 +15,9 @@
 			  'core' : 
 			  {
 				    'multiple' : false,
-				    'cache': false,
+				    //'cache': false,
+				    'check_callback' : true,
+    				'themes' : { 'stripes' : true },
 				    'animation' : 0,
 				    'data':
 				    {
