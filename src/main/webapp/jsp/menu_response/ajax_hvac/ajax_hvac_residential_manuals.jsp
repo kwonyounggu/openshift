@@ -33,7 +33,7 @@
 				    	{
 				    		log("data: node_id: "+node.id);
 				    		log(node);
-				    		return {'id' : node.id};
+				    		return {'id' : node.id, 'parent': node.parent};
 				    	}
 				    	
 				    }
