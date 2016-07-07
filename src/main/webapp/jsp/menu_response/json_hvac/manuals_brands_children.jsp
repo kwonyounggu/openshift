@@ -99,21 +99,21 @@ file_seq_id
 		{
 			Map.Entry<String, Integer> entry=entries.next();
 			out.print("{	\"id\":     \""+entry.getKey()+"\", "); //model_number
-			out.print("  	\"text\":   \""+entry.getKey()+" ("+entry.getValue()+")\",");//number of model_number
+			out.print("  	\"text\":   \""+entry.getKey()+" ("+entry.getValue()+")\"");//number of model_number
 			if(entry.getValue()>0)
 			{	
-				out.print("		\"children\": [");					
+				out.print(",		\"children\": [");					
 				Map<String, Integer> manualFor=hvacManualsDao.getKeysValues("select manual_for, count(manual_for) from hvac_manuals where brand_name='"+parentId+"' and system_type='"+currentId.substring(3)+"' and model_number='"+entry.getKey()+"' and valid=true group by manual_for order by manual_for asc");
 				Iterator<Map.Entry<String, Integer>> entriesManualFor = manualFor.entrySet().iterator();
 				while(entriesManualFor.hasNext())
 				{
 					Map.Entry<String, Integer> manualEntry=entries.next();
 					out.print("{	\"id\":     \""+manualEntry.getKey()+"\", "); //installation, owner_operation
-					out.print("  	\"text\":   \""+manualEntry.getKey()+" ("+manualEntry.getValue()+")\",");//number of manualFor
+					out.print("  	\"text\":   \""+manualEntry.getKey()+" ("+manualEntry.getValue()+")\"");//number of manualFor
 					if(manualEntry.getValue()>0)
-					{	/*
-						out.print("		\"children\": [");	
-						Map<String, Integer> fileMap=hvacManualsDao.getKeysValues("select file_seq_id from hvac_manuals where brand_name='CARRIER' and system_type='FURNACE' and model_number='58CTW_CTY' and manual_for='INSTALLATION' and valid=true order by file_seq_id asc");
+					{	
+						out.print(",		\"children\": [");	
+						/*Map<String, Integer> fileMap=hvacManualsDao.getKeysValues("select file_seq_id from hvac_manuals where brand_name='CARRIER' and system_type='FURNACE' and model_number='58CTW_CTY' and manual_for='INSTALLATION' and valid=true order by file_seq_id asc");
 						Iterator<Map.Entry<String, Integer>> fileEntries = fileMap.entrySet().iterator();
 						while(fileEntries.hasNext())
 						{
@@ -123,8 +123,9 @@ file_seq_id
 							out.print("}");
 							if(fileEntries.hasNext()) out.print(",");
 						}
-						out.print("]");
 						*/
+						out.print("]");
+						
 					}
 					out.print("}");
 					if(entriesManualFor.hasNext()) out.print(",");
