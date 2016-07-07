@@ -107,7 +107,7 @@ file_seq_id
 				Iterator<Map.Entry<String, Integer>> entriesManualFor = manualFor.entrySet().iterator();
 				while(entriesManualFor.hasNext())
 				{
-					Map.Entry<String, Integer> manualEntry=entries.next();
+					Map.Entry<String, Integer> manualEntry=entriesManualFor.next();
 					out.print("{	\"id\":     \""+manualEntry.getKey()+"\", "); //installation, owner_operation
 					out.print("  	\"text\":   \""+manualEntry.getKey()+" ("+manualEntry.getValue()+")\"");//number of manualFor
 					if(manualEntry.getValue()>0)
