@@ -32,6 +32,7 @@
 				    	'data': function(node)
 				    	{
 				    		log("data: node_id: "+node.id);
+				    		log("node:"+node);
 				    		return {'id' : node.id};
 				    	}
 				    	

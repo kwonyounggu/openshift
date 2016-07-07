@@ -24,7 +24,8 @@
 		out.print("{	\"id\":     \""+entry.getKey()+"\", "); //brand
 		out.print("  	\"parent\": \"#\", ");
 		out.print("  	\"text\":   \""+entry.getKey()+" ("+entry.getValue()+")\",");//brand (number of manuals)
-		out.print("		\"children\": true")	;						
+		if(entry.getValue()>0)
+			out.print("		\"children\": true")	;						
 		out.print("}");
 		if(entries.hasNext()) out.print(",");
 	}

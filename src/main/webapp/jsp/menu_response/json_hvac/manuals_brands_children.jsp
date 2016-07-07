@@ -84,18 +84,14 @@ file_seq_id
 	response.setContentType("application/json");
 	
 	System.out.println("brand name, id="+request.getParameter("id"));
-	String sId=request.getParameter("id");
+	String currentId=request.getParameter("id");
 	
 	DataSource ds=(DataSource)application.getAttribute("dataSource");
 	HvacManualsDao hvacManualsDao=new HvacManualsDao(ds);
 	
-	if(sId.startsWith("ST:")) //provide model_number, manual_for, file_link
+	if(currentId.startsWith("ST:")) //provide model_number, manual_for, file_link
 	{
-		
-	}
-	else if(!sId.equals("#"))//provide system types
-	{
-		Map<String, Integer> sysTypes=hvacManualsDao.getKeysValues("select system_type, count(system_type) from hvac_manuals where brand_name='CARRIER' and valid=true group by system_type order by system_type asc");
+		Map<String, Integer> sysTypes=hvacManualsDao.getKeysValues("select model_number, count(model_number) from hvac_manuals where brand_name='CARRIER' and system_type='FURNACE' and valid=true group by model_number order by model_number asc");
 		
 		//Note: each property and value are expected double-quatationed
 		Iterator<Map.Entry<String, Integer>> entries = sysTypes.entrySet().iterator();
@@ -105,7 +101,26 @@ file_seq_id
 			out.print("{	\"id\":     \"ST:"+entry.getKey()+"\", "); //ac, furnace, etc
 			//out.print("  	\"parent\": \"#\", ");
 			out.print("  	\"text\":   \""+entry.getKey()+" ("+entry.getValue()+")\",");//number of manuals
-			out.print("		\"children\": true")	;						
+			if(entry.getValue()>0)
+				out.print("		\"children\": true");						
+			out.print("}");
+			if(entries.hasNext()) out.print(",");
+		}
+	}
+	else if(!currentId.equals("#"))//provide system types
+	{
+		Map<String, Integer> sysTypes=hvacManualsDao.getKeysValues("select system_type, count(system_type) from hvac_manuals where brand_name='"+currentId+"' and valid=true group by system_type order by system_type asc");
+		
+		//Note: each property and value are expected double-quatationed
+		Iterator<Map.Entry<String, Integer>> entries = sysTypes.entrySet().iterator();
+		while(entries.hasNext())
+		{
+			Map.Entry<String, Integer> entry=entries.next();
+			out.print("{	\"id\":     \"ST:"+entry.getKey()+"\", "); //ac, furnace, etc
+			//out.print("  	\"parent\": \"#\", ");
+			out.print("  	\"text\":   \""+entry.getKey()+" ("+entry.getValue()+")\",");//number of manuals
+			if(entry.getValue()>0)
+				out.print("		\"children\": true");						
 			out.print("}");
 			if(entries.hasNext()) out.print(",");
 		}
