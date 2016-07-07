@@ -126,10 +126,8 @@ file_seq_id
 							out.print("  	\"text\":   \""+fileEntry.getValue()+"\"");//number of manualFor
 							out.print("}");
 							if(fileEntries.hasNext()) out.print(",");
-						}
-						
-						out.print("]");
-						
+						}				
+						out.print("]");					
 					}
 					out.print("}");
 					if(entriesManualFor.hasNext()) out.print(",");
