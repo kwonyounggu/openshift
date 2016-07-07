@@ -84,7 +84,34 @@ file_seq_id
 <% 
 	response.setContentType("application/json");
 	
-	System.out.println("brands, id="+request.getParameter("id")+", (expected #)");
+	System.out.println("brand name, id="+request.getParameter("id"));
+	String sId=request.getParameter("id");
+	
+	DataSource ds=(DataSource)application.getAttribute("dataSource");
+	HvacManualsDao hvacManualsDao=new HvacManualsDao(ds);
+	
+	if(sId.startsWith("ST:")) //provide model_number, manual_for, file_link
+	{
+		
+	}
+	else if(!sId.equals("#"))//provide system types
+	{
+		Map<String, Integer> sysTypes=hvacManualsDao.getKeysValues("select system_type, count(system_type) from hvac_manuals where brand_name='CARRIER' and valid=true group by system_type order by system_type asc");
+		
+		//Note: each property and value are expected double-quatationed
+		Iterator<Map.Entry<String, Integer>> entries = sysTypes.entrySet().iterator();
+		while(entries.hasNext())
+		{
+			Map.Entry<String, Integer> entry=entries.next();
+			out.print("{	\"id\":     \""+entry.getKey()+"\", "); //ac, furnace, etc
+			//out.print("  	\"parent\": \"#\", ");
+			out.print("  	\"text\":   \""+entry.getKey()+" ("+entry.getValue()+")\",");//number of manuals
+			out.print("		\"children\": true")	;						
+			out.print("}");
+			if(entries.hasNext()) out.print(",");
+		}
+	}
+	
 	/*
 	DataSource ds=(DataSource)application.getAttribute("dataSource");
 	HvacManualsDao hvacManualsDao=new HvacManualsDao(ds);
