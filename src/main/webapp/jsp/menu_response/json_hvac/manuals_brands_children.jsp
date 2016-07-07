@@ -123,7 +123,7 @@ file_seq_id
 						{
 							Map.Entry<String, String> fileEntry=fileEntries.next();
 							out.print("{	\"id\":     \""+fileEntry.getKey()+"\", "); //installation, owner_operation
-							out.print("  	\"text\":   \""+fileEntry.getValue()+"\",");//number of manualFor
+							out.print("  	\"text\":   \""+fileEntry.getValue()+"\"");//number of manualFor
 							out.print("}");
 							if(fileEntries.hasNext()) out.print(",");
 						}
