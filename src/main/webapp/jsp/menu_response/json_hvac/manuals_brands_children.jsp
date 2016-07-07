@@ -76,7 +76,6 @@ file_seq_id
 (1 row)
 
 */
-	System.out.println("children id="+request.getParameter("id"));
 
 %>
 
@@ -103,7 +102,7 @@ file_seq_id
 		while(entries.hasNext())
 		{
 			Map.Entry<String, Integer> entry=entries.next();
-			out.print("{	\"id\":     \""+entry.getKey()+"\", "); //ac, furnace, etc
+			out.print("{	\"id\":     \"ST:"+entry.getKey()+"\", "); //ac, furnace, etc
 			//out.print("  	\"parent\": \"#\", ");
 			out.print("  	\"text\":   \""+entry.getKey()+" ("+entry.getValue()+")\",");//number of manuals
 			out.print("		\"children\": true")	;						
