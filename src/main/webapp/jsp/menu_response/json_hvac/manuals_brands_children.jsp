@@ -83,7 +83,7 @@ file_seq_id
 <% 
 	response.setContentType("application/json");
 	
-	System.out.println("brand name, id="+request.getParameter("id"));
+	System.out.println("currentId="+request.getParameter("id"));
 	String currentId=request.getParameter("id");
 	
 	DataSource ds=(DataSource)application.getAttribute("dataSource");
@@ -91,6 +91,8 @@ file_seq_id
 	
 	if(currentId.startsWith("ST:")) //provide model_number, manual_for, file_link
 	{
+		String parentId=request.getParameter("parent");
+		System.out.println("parent.id="+request.getParameter("parent"));
 		Map<String, Integer> sysTypes=hvacManualsDao.getKeysValues("select model_number, count(model_number) from hvac_manuals where brand_name='CARRIER' and system_type='FURNACE' and valid=true group by model_number order by model_number asc");
 		
 		//Note: each property and value are expected double-quatationed
