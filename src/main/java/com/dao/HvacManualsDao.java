@@ -14,6 +14,7 @@ import java.util.logging.Logger;
 
 import javax.sql.DataSource;
 
+import com.beans.FileUploadedToDropboxBean;
 import com.beans.HvacManualsBean;
 import com.beans.HvacManualsScheduledBean;
 import com.exceptions.DAOException;
@@ -181,6 +182,43 @@ public class HvacManualsDao
 			log.info("Ending for getRecords(String arg)");
 		}
 		return list;
+
+	}
+	//Map<'file link','filename'>
+	public Map<String, String> getKeysValuesForFiles(String sqlStatement) throws DAOException
+	{
+		log.info("Calling for getKeysValuesForFiles("+sqlStatement+")");
+		
+		Map<String, String> map=new TreeMap<String, String>();
+		
+		Connection c = null;
+		Statement s=null;
+		ResultSet rs=null;
+		try
+		{
+			c = _ds.getConnection();
+			s = c.createStatement();
+			rs = s.executeQuery(sqlStatement);
+			FileUploadedToDropboxDao fDao=new FileUploadedToDropboxDao(_ds);
+			while (rs.next())
+			{
+				FileUploadedToDropboxBean fb=fDao.getARecord(rs.getInt(1));
+				map.put(fb.getDropboxFilePath(), fb.getFileNameSubmitted());
+			}
+		}
+		catch (SQLException e)
+		{
+			log.severe(e.getMessage());
+			throw new DAOException(e);
+		}
+		finally
+		{
+			closeResultSet(rs);
+			closeStatement(s);
+			closeConnection(c);
+			log.info("Ending for getKeysValuesForFiles(String sqlStatement)");
+		}
+		return map;
 
 	}
 	//select brand_name, count(*) from hvac_manuals where valid=true group by brand_name order by brand_name asc;

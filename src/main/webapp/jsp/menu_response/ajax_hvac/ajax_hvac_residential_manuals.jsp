@@ -23,7 +23,7 @@
 				    {
 				    	'url': function(node)
 				    	{
-				    		log("url: node_id: "+node.id);
+				    		//log("url: node_id: "+node.id);
 				    		//return '//www.jstree.com/fiddle/?lazy';
 				    		return (node.id==='#' ? '//www.webmonster.ca/jsp/menu_response/json_hvac/manuals_brands.jsp' : '//www.webmonster.ca/jsp/menu_response/json_hvac/manuals_brands_children.jsp');
 				    	},
@@ -31,8 +31,8 @@
 				    	'dataType': 'json',
 				    	'data': function(node)
 				    	{
-				    		log("data: node_id: "+node.id);
-				    		log(node);
+				    		//log("data: node_id: "+node.id);
+				    		//log(node);
 				    		return {'id' : node.id, 'parent': node.parent};
 				    	}
 				    	

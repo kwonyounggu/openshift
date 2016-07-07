@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="com.common.*" %>
 <%@ page import="com.enums.*" %>
+<%@ page import="com.beans.*" %>
 <%@ page import="com.dao.*" %>
 <%@ page import="java.util.*" %>
 <%@ page import="javax.sql.*" %>
@@ -92,9 +93,10 @@ file_seq_id
 	if(currentId.startsWith("ST:")) //provide model_number, manual_for, file_link
 	{
 		String parentId=request.getParameter("parent");
-		System.out.println("parent.id="+request.getParameter("parent"));
+		//System.out.println("parent.id="+request.getParameter("parent"));
 		Map<String, Integer> sysTypes=hvacManualsDao.getKeysValues("select model_number, count(model_number) from hvac_manuals where brand_name='"+parentId+"' and system_type='"+currentId.substring(3)+"' and valid=true group by model_number order by model_number asc");
 		Iterator<Map.Entry<String, Integer>> entries = sysTypes.entrySet().iterator();
+		
 		while(entries.hasNext())
 		{
 			Map.Entry<String, Integer> entry=entries.next();
@@ -105,6 +107,7 @@ file_seq_id
 				out.print(",		\"children\": [");					
 				Map<String, Integer> manualFor=hvacManualsDao.getKeysValues("select manual_for, count(manual_for) from hvac_manuals where brand_name='"+parentId+"' and system_type='"+currentId.substring(3)+"' and model_number='"+entry.getKey()+"' and valid=true group by manual_for order by manual_for asc");
 				Iterator<Map.Entry<String, Integer>> entriesManualFor = manualFor.entrySet().iterator();
+				
 				while(entriesManualFor.hasNext())
 				{
 					Map.Entry<String, Integer> manualEntry=entriesManualFor.next();
@@ -113,17 +116,18 @@ file_seq_id
 					if(manualEntry.getValue()>0)
 					{	
 						out.print(",		\"children\": [");	
-						/*Map<String, Integer> fileMap=hvacManualsDao.getKeysValues("select file_seq_id from hvac_manuals where brand_name='CARRIER' and system_type='FURNACE' and model_number='58CTW_CTY' and manual_for='INSTALLATION' and valid=true order by file_seq_id asc");
-						Iterator<Map.Entry<String, Integer>> fileEntries = fileMap.entrySet().iterator();
+						Map<String, String> fileMap=hvacManualsDao.getKeysValuesForFiles("select file_seq_id from hvac_manuals where brand_name='"+parentId+"' and system_type='"+currentId.substring(3)+"' and model_number='"+entry.getKey()+"' and manual_for='"+manualEntry.getKey()+"' and valid=true order by file_seq_id asc");
+						Iterator<Map.Entry<String, String>> fileEntries = fileMap.entrySet().iterator();
+						
 						while(fileEntries.hasNext())
 						{
-							Map.Entry<String, Integer> fileEntry=entries.next();
+							Map.Entry<String, String> fileEntry=fileEntries.next();
 							out.print("{	\"id\":     \""+fileEntry.getKey()+"\", "); //installation, owner_operation
-							out.print("  	\"text\":   \""+fileEntry.getKey()+" ("+fileEntry.getValue()+")\",");//number of manualFor
+							out.print("  	\"text\":   \""+fileEntry.getValue()+"\",");//number of manualFor
 							out.print("}");
 							if(fileEntries.hasNext()) out.print(",");
 						}
-						*/
+						
 						out.print("]");
 						
 					}

@@ -108,6 +108,43 @@ public class FileUploadedToDropboxDao
 		return fb;
 
 	}
+	//Note the inner sql stament may contain more than one record
+	public FileUploadedToDropboxBean getARecord(String sqlStatement) throws DAOException
+	{
+		log.info("Calling for getARecord(String sqlStatement)");
+		FileUploadedToDropboxBean fb=new FileUploadedToDropboxBean();
+		Connection c = null;
+		Statement s=null;
+		ResultSet rs=null;
+		try
+		{
+			c = _ds.getConnection();
+			s = c.createStatement();
+			rs = s.executeQuery("select * from file_uploaded_to_dropbox where file_seq_id=("+sqlStatement+")");
+						
+			if (rs.next())
+			{
+				fb.setFileSeqId(rs.getInt(1));
+				fb.setDropboxFilePath(rs.getString(2));
+				fb.setFileNameSubmitted(rs.getString(3));
+				fb.setFileSize(rs.getShort(4));
+			}
+		}
+		catch (SQLException e)
+		{
+			log.severe(e.getMessage());
+			throw new DAOException(e);
+		}
+		finally
+		{
+			closeResultSet(rs);
+			closeStatement(s);
+			closeConnection(c);
+			log.info("Ending for getARecord(String sqlStatement)");
+		}
+		return fb;
+
+	}
 	private void closeResultSet(ResultSet rs)
 	{
 		try
