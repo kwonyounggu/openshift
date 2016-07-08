@@ -146,6 +146,7 @@ file_seq_id
 							Map.Entry<String, String> fileEntry=fileEntries.next();
 							out.print("{	\"id\":     \""+fileEntry.getKey()+"\", "); //unique id
 							out.print("  	\"text\":   \""+fileEntry.getValue()+"\",");
+							out.print("     \"icon\":   \"glyphicon glyphicon-leaf\",");
 							out.print("  	\"data\": {\"hint\":\"pdf file link level, leaf level\"} ");
 							out.print("}");
 							if(fileEntries.hasNext()) out.print(",");

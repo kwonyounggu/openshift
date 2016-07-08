@@ -32,7 +32,7 @@
 				    	'data': function(node)
 				    	{
 				    		//log("data: node_id: "+node.id);
-				    		log(node);
+				    		//log(node);
 				    		//return {'id' : node.id, 'parent': node.parent, 'myfield': node.data.myfield};
 				    		if(node.id==='#') return {'id' : node.id, 'parent': node.parent};
 				    		else return {'id' : node.id, 'parent': node.parent, 'hint': node.data.hint};
@@ -71,7 +71,7 @@
 			var node=data.instance.get_node(data.selected);
 			if(node.children.length==0)
 			{
-				log("It's a leaf with a parent ID="+node.parent);
+				log("It's a leaf with a parent ID="+node.parent+", node.id="+node.id);
 			}
 			else
 			{
