@@ -89,10 +89,10 @@ file_seq_id
 	
 	DataSource ds=(DataSource)application.getAttribute("dataSource");
 	HvacManualsDao hvacManualsDao=new HvacManualsDao(ds);
+	String parentId=request.getParameter("parent");
 	
 	if(currentId.startsWith("ST:")) //provide model_number, manual_for, file_link
-	{
-		String parentId=request.getParameter("parent");
+	{		
 		//System.out.println("parent.id="+request.getParameter("parent"));
 		Map<String, Integer> sysTypes=hvacManualsDao.getKeysValues("select model_number, count(model_number) from hvac_manuals where brand_name='"+parentId+"' and system_type='"+currentId.substring(3)+"' and valid=true group by model_number order by model_number asc");
 		Iterator<Map.Entry<String, Integer>> entries = sysTypes.entrySet().iterator();
@@ -147,7 +147,7 @@ file_seq_id
 		while(entries.hasNext())
 		{
 			Map.Entry<String, Integer> entry=entries.next();
-			out.print("{	\"id\":     \"ST:"+entry.getKey()+"\", "); //ac, furnace, etc
+			out.print("{	\"id\":     \""+parentId+":"+entry.getKey()+"\", "); //ac, furnace, etc
 			//out.print("  	\"parent\": \"#\", ");
 			out.print("  	\"text\":   \""+entry.getKey()+" ("+entry.getValue()+")\",");//number of manuals
 			if(entry.getValue()>0)
