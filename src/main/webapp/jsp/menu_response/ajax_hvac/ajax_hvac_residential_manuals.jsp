@@ -35,7 +35,7 @@
 				    		log(node);
 				    		//return {'id' : node.id, 'parent': node.parent, 'myfield': node.data.myfield};
 				    		if(node.id==='#') return {'id' : node.id, 'parent': node.parent};
-				    		else {'id' : node.id, 'parent': node.parent, 'myfield': node.data.myfield};
+				    		else return {'id' : node.id, 'parent': node.parent, 'myfield': node.data.myfield};
 				    	}
 				    	
 				    }
