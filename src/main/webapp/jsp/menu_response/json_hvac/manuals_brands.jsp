@@ -23,7 +23,9 @@
 		Map.Entry<String, Integer> entry=entries.next();
 		out.print("{	\"id\":     \""+entry.getKey()+"\", "); //brand
 		out.print("  	\"parent\": \"#\", ");
-		out.print("  	\"data\": {\"myfield\":\"some hidden value\"}, ");//see for the custom field, https://groups.google.com/forum/#!category-topic/jstree/qBM2ZCAkPL4
+		//custom field only available through data field when parent is not '#'
+		//see for the custom field, https://groups.google.com/forum/#!category-topic/jstree/qBM2ZCAkPL4
+		out.print("  	\"data\": {\"hint\":\"brand name level\"}, ");
 		out.print("  	\"text\":   \""+entry.getKey()+" ("+entry.getValue()+")\",");//brand (number of manuals)
 		if(entry.getValue()>0)
 			out.print("		\"children\": true")	;						

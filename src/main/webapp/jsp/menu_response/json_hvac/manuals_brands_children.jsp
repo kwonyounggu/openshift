@@ -84,7 +84,7 @@ file_seq_id
 <% 
 	response.setContentType("application/json");
 	
-	System.out.println("currentId="+request.getParameter("id")+", myfield:"+request.getParameter("myfield"));
+	System.out.println("currentId="+request.getParameter("id")+", hint:"+request.getParameter("hint")+", parentId="+request.getParameter("parent"));
 	String currentId=request.getParameter("id");
 	
 	DataSource ds=(DataSource)application.getAttribute("dataSource");
@@ -102,6 +102,7 @@ file_seq_id
 			Map.Entry<String, Integer> entry=entries.next();
 			out.print("{	\"id\":     \""+entry.getKey()+"\", "); //model_number
 			out.print("  	\"text\":   \""+entry.getKey()+" ("+entry.getValue()+")\"");//number of model_number
+			out.print("  	\"data\": {\"hint\":\"model number level\"}, ");
 			if(entry.getValue()>0)
 			{	
 				out.print(",		\"children\": [");					
@@ -113,6 +114,7 @@ file_seq_id
 					Map.Entry<String, Integer> manualEntry=entriesManualFor.next();
 					out.print("{	\"id\":     \""+manualEntry.getKey()+"\", "); //installation, owner_operation
 					out.print("  	\"text\":   \""+manualEntry.getKey()+" ("+manualEntry.getValue()+")\"");//number of manualFor
+					out.print("  	\"data\": {\"hint\":\"manuals for installation, owner_operation, wiring_diagram, etc\"}, ");
 					if(manualEntry.getValue()>0)
 					{	
 						out.print(",		\"children\": [");	
@@ -122,8 +124,9 @@ file_seq_id
 						while(fileEntries.hasNext())
 						{
 							Map.Entry<String, String> fileEntry=fileEntries.next();
-							out.print("{	\"id\":     \""+fileEntry.getKey()+"\", "); //installation, owner_operation
-							out.print("  	\"text\":   \""+fileEntry.getValue()+"\"");//number of manualFor
+							out.print("{	\"id\":     \""+fileEntry.getKey()+"\", "); 
+							out.print("  	\"text\":   \""+fileEntry.getValue()+"\"");
+							out.print("  	\"data\": {\"hint\":\"pdf file link level, leaf level\"}, ");
 							out.print("}");
 							if(fileEntries.hasNext()) out.print(",");
 						}				
@@ -150,6 +153,7 @@ file_seq_id
 			out.print("{	\"id\":     \""+parentId+":"+entry.getKey()+"\", "); //ac, furnace, etc
 			//out.print("  	\"parent\": \"#\", ");
 			out.print("  	\"text\":   \""+entry.getKey()+" ("+entry.getValue()+")\",");//number of manuals
+			out.print("  	\"data\": {\"hint\":\"system types such as ac, furnance, etc\"}, ");
 			if(entry.getValue()>0)
 				out.print("		\"children\": true");						
 			out.print("}");
