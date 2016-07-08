@@ -91,7 +91,27 @@ file_seq_id
 	HvacManualsDao hvacManualsDao=new HvacManualsDao(ds);
 	String parentId=request.getParameter("parent");
 	
-	if(currentId.startsWith("ST:")) //provide model_number, manual_for, file_link
+	if(parentId.equals("#"))//when brand names are clicked
+	{
+		Map<String, Integer> sysTypes=hvacManualsDao.getKeysValues("select system_type, count(system_type) from hvac_manuals where brand_name='"+currentId+"' and valid=true group by system_type order by system_type asc");
+		
+		//Note: each property and value are expected double-quatationed
+		Iterator<Map.Entry<String, Integer>> entries = sysTypes.entrySet().iterator();
+		while(entries.hasNext())
+		{
+			Map.Entry<String, Integer> entry=entries.next();
+			out.print("{	\"id\":     \""+currentId+":"+entry.getKey()+"\", "); //brand:ac, furnace, etc
+			//out.print("  	\"parent\": \"#\", ");
+			out.print("  	\"text\":   \""+entry.getKey()+" ("+entry.getValue()+")\",");//number of manuals
+			out.print("  	\"data\": {\"hint\":\"system types such as ac, furnance, etc\"}, ");
+			if(entry.getValue()>0)
+				out.print("		\"children\": true");						
+			out.print("}");
+			if(entries.hasNext()) out.print(",");
+		}
+	}
+	
+	else  //when ac, furnace is clicked 
 	{		
 		//System.out.println("parent.id="+request.getParameter("parent"));
 		Map<String, Integer> sysTypes=hvacManualsDao.getKeysValues("select model_number, count(model_number) from hvac_manuals where brand_name='"+parentId+"' and system_type='"+currentId.substring(3)+"' and valid=true group by model_number order by model_number asc");
@@ -100,7 +120,7 @@ file_seq_id
 		while(entries.hasNext())
 		{
 			Map.Entry<String, Integer> entry=entries.next();
-			out.print("{	\"id\":     \""+entry.getKey()+"\", "); //model_number
+			out.print("{	\"id\":     \""+parentId+":"+entry.getKey()+"\", "); //brand:ac:model_number
 			out.print("  	\"text\":   \""+entry.getKey()+" ("+entry.getValue()+")\"");//number of model_number
 			out.print("  	\"data\": {\"hint\":\"model number level\"}, ");
 			if(entry.getValue()>0)
@@ -112,7 +132,7 @@ file_seq_id
 				while(entriesManualFor.hasNext())
 				{
 					Map.Entry<String, Integer> manualEntry=entriesManualFor.next();
-					out.print("{	\"id\":     \""+manualEntry.getKey()+"\", "); //installation, owner_operation
+					out.print("{	\"id\":     \""+parentId+":"+entry.getKey()+":"+manualEntry.getKey()+"\", "); //brand:ac:model_number:owner_manual
 					out.print("  	\"text\":   \""+manualEntry.getKey()+" ("+manualEntry.getValue()+")\"");//number of manualFor
 					out.print("  	\"data\": {\"hint\":\"manuals for installation, owner_operation, wiring_diagram, etc\"}, ");
 					if(manualEntry.getValue()>0)
@@ -124,7 +144,7 @@ file_seq_id
 						while(fileEntries.hasNext())
 						{
 							Map.Entry<String, String> fileEntry=fileEntries.next();
-							out.print("{	\"id\":     \""+fileEntry.getKey()+"\", "); 
+							out.print("{	\"id\":     \""+fileEntry.getKey()+"\", "); //unique id
 							out.print("  	\"text\":   \""+fileEntry.getValue()+"\"");
 							out.print("  	\"data\": {\"hint\":\"pdf file link level, leaf level\"}, ");
 							out.print("}");
@@ -137,25 +157,6 @@ file_seq_id
 				}
 				out.print("]");
 			}
-			out.print("}");
-			if(entries.hasNext()) out.print(",");
-		}
-	}
-	else if(!currentId.equals("#"))//provide system types
-	{
-		Map<String, Integer> sysTypes=hvacManualsDao.getKeysValues("select system_type, count(system_type) from hvac_manuals where brand_name='"+currentId+"' and valid=true group by system_type order by system_type asc");
-		
-		//Note: each property and value are expected double-quatationed
-		Iterator<Map.Entry<String, Integer>> entries = sysTypes.entrySet().iterator();
-		while(entries.hasNext())
-		{
-			Map.Entry<String, Integer> entry=entries.next();
-			out.print("{	\"id\":     \""+parentId+":"+entry.getKey()+"\", "); //ac, furnace, etc
-			//out.print("  	\"parent\": \"#\", ");
-			out.print("  	\"text\":   \""+entry.getKey()+" ("+entry.getValue()+")\",");//number of manuals
-			out.print("  	\"data\": {\"hint\":\"system types such as ac, furnance, etc\"}, ");
-			if(entry.getValue()>0)
-				out.print("		\"children\": true");						
 			out.print("}");
 			if(entries.hasNext()) out.print(",");
 		}
