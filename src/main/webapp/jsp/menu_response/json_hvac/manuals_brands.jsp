@@ -23,7 +23,7 @@
 		Map.Entry<String, Integer> entry=entries.next();
 		out.print("{	\"id\":     \""+entry.getKey()+"\", "); //brand
 		out.print("  	\"parent\": \"#\", ");
-		out.print("  	\"myfield\": \"some hidden value\", ");
+		out.print("  	\"date\": {\"myfield\":\"some hidden value\"}, ");//see for the custom field, https://groups.google.com/forum/#!category-topic/jstree/qBM2ZCAkPL4
 		out.print("  	\"text\":   \""+entry.getKey()+" ("+entry.getValue()+")\",");//brand (number of manuals)
 		if(entry.getValue()>0)
 			out.print("		\"children\": true")	;						
