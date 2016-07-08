@@ -113,32 +113,32 @@ file_seq_id
 	
 	else  //when ac, furnace is clicked 
 	{		
-		//System.out.println("parent.id="+request.getParameter("parent"));
-		Map<String, Integer> sysTypes=hvacManualsDao.getKeysValues("select model_number, count(model_number) from hvac_manuals where brand_name='"+parentId+"' and system_type='"+currentId.substring(3)+"' and valid=true group by model_number order by model_number asc");
+		String sysType=currentId.split(":")[1];//only system type
+		Map<String, Integer> sysTypes=hvacManualsDao.getKeysValues("select model_number, count(model_number) from hvac_manuals where brand_name='"+parentId+"' and system_type='"+sysType+"' and valid=true group by model_number order by model_number asc");
 		Iterator<Map.Entry<String, Integer>> entries = sysTypes.entrySet().iterator();
 		
 		while(entries.hasNext())
 		{
 			Map.Entry<String, Integer> entry=entries.next();
-			out.print("{	\"id\":     \""+parentId+":"+entry.getKey()+"\", "); //brand:ac:model_number
+			out.print("{	\"id\":     \""+currentId+":"+entry.getKey()+"\", "); //brand:ac:model_number
 			out.print("  	\"text\":   \""+entry.getKey()+" ("+entry.getValue()+")\"");//number of model_number
 			out.print("  	\"data\": {\"hint\":\"model number level\"}, ");
 			if(entry.getValue()>0)
 			{	
 				out.print(",		\"children\": [");					
-				Map<String, Integer> manualFor=hvacManualsDao.getKeysValues("select manual_for, count(manual_for) from hvac_manuals where brand_name='"+parentId+"' and system_type='"+currentId.substring(3)+"' and model_number='"+entry.getKey()+"' and valid=true group by manual_for order by manual_for asc");
+				Map<String, Integer> manualFor=hvacManualsDao.getKeysValues("select manual_for, count(manual_for) from hvac_manuals where brand_name='"+parentId+"' and system_type='"+sysType+"' and model_number='"+entry.getKey()+"' and valid=true group by manual_for order by manual_for asc");
 				Iterator<Map.Entry<String, Integer>> entriesManualFor = manualFor.entrySet().iterator();
 				
 				while(entriesManualFor.hasNext())
 				{
 					Map.Entry<String, Integer> manualEntry=entriesManualFor.next();
-					out.print("{	\"id\":     \""+parentId+":"+entry.getKey()+":"+manualEntry.getKey()+"\", "); //brand:ac:model_number:owner_manual
+					out.print("{	\"id\":     \""+currentId+":"+entry.getKey()+":"+manualEntry.getKey()+"\", "); //brand:ac:model_number:owner_manual
 					out.print("  	\"text\":   \""+manualEntry.getKey()+" ("+manualEntry.getValue()+")\"");//number of manualFor
 					out.print("  	\"data\": {\"hint\":\"manuals for installation, owner_operation, wiring_diagram, etc\"}, ");
 					if(manualEntry.getValue()>0)
 					{	
 						out.print(",		\"children\": [");	
-						Map<String, String> fileMap=hvacManualsDao.getKeysValuesForFiles("select file_seq_id from hvac_manuals where brand_name='"+parentId+"' and system_type='"+currentId.substring(3)+"' and model_number='"+entry.getKey()+"' and manual_for='"+manualEntry.getKey()+"' and valid=true order by file_seq_id asc");
+						Map<String, String> fileMap=hvacManualsDao.getKeysValuesForFiles("select file_seq_id from hvac_manuals where brand_name='"+parentId+"' and system_type='"+sysType+"' and model_number='"+entry.getKey()+"' and manual_for='"+manualEntry.getKey()+"' and valid=true order by file_seq_id asc");
 						Iterator<Map.Entry<String, String>> fileEntries = fileMap.entrySet().iterator();
 						
 						while(fileEntries.hasNext())
