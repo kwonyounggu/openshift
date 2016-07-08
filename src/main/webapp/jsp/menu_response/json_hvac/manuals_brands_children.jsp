@@ -84,7 +84,7 @@ file_seq_id
 <% 
 	response.setContentType("application/json");
 	
-	System.out.println("currentId="+request.getParameter("id"));
+	System.out.println("currentId="+request.getParameter("id")+", myfield:"+request.getParameter("myfield"));
 	String currentId=request.getParameter("id");
 	
 	DataSource ds=(DataSource)application.getAttribute("dataSource");
