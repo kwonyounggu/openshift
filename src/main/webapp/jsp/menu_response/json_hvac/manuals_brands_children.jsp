@@ -121,8 +121,8 @@ file_seq_id
 		{
 			Map.Entry<String, Integer> entry=entries.next();
 			out.print("{	\"id\":     \""+currentId+":"+entry.getKey()+"\", "); //brand:ac:model_number
-			out.print("  	\"text\":   \""+entry.getKey()+" ("+entry.getValue()+")\"");//number of model_number
-			out.print("  	\"data\": {\"hint\":\"model number level\"}, ");
+			out.print("  	\"text\":   \""+entry.getKey()+" ("+entry.getValue()+")\",");//number of model_number
+			out.print("  	\"data\": {\"hint\":\"model number level\"} ");
 			if(entry.getValue()>0)
 			{	
 				out.print(",		\"children\": [");					
@@ -133,8 +133,8 @@ file_seq_id
 				{
 					Map.Entry<String, Integer> manualEntry=entriesManualFor.next();
 					out.print("{	\"id\":     \""+currentId+":"+entry.getKey()+":"+manualEntry.getKey()+"\", "); //brand:ac:model_number:owner_manual
-					out.print("  	\"text\":   \""+manualEntry.getKey()+" ("+manualEntry.getValue()+")\"");//number of manualFor
-					out.print("  	\"data\": {\"hint\":\"manuals for installation, owner_operation, wiring_diagram, etc\"}, ");
+					out.print("  	\"text\":   \""+manualEntry.getKey()+" ("+manualEntry.getValue()+")\",");//number of manualFor
+					out.print("  	\"data\": {\"hint\":\"manuals for installation, owner_operation, wiring_diagram, etc\"} ");
 					if(manualEntry.getValue()>0)
 					{	
 						out.print(",		\"children\": [");	
@@ -145,8 +145,8 @@ file_seq_id
 						{
 							Map.Entry<String, String> fileEntry=fileEntries.next();
 							out.print("{	\"id\":     \""+fileEntry.getKey()+"\", "); //unique id
-							out.print("  	\"text\":   \""+fileEntry.getValue()+"\"");
-							out.print("  	\"data\": {\"hint\":\"pdf file link level, leaf level\"}, ");
+							out.print("  	\"text\":   \""+fileEntry.getValue()+"\",");
+							out.print("  	\"data\": {\"hint\":\"pdf file link level, leaf level\"} ");
 							out.print("}");
 							if(fileEntries.hasNext()) out.print(",");
 						}				
