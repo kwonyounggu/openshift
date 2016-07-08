@@ -73,7 +73,7 @@
 			{
 				log("It's a leaf with a parent ID="+node.parent+", node.id="+node.id);
 				document.getElementById('myFileObject').setAttribute('data', node.id);
-				document.getElementById('bootstrapIframe').setAttribute('src', node.id);
+				//document.getElementById('bootstrapIframe').setAttribute('src', node.id);
 			}
 			else
 			{
