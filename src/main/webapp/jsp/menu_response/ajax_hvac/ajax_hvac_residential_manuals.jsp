@@ -72,6 +72,8 @@
 			if(node.children.length==0)
 			{
 				log("It's a leaf with a parent ID="+node.parent+", node.id="+node.id);
+				document.getElementById('myFileObject').setAttribute('data', node.id);
+				document.getElementById('bootstrapIframe').setAttribute('src', node.id);
 			}
 			else
 			{
@@ -129,7 +131,10 @@
 			</div>
 		</td>
 		<td style='width: 75%; border-radius:0px 0px 0px 0px; border:1px solid #dddddd; border-style: hidden hidden hidden solid; vertical-align: top;'>
-			hello
+			<object id="myFileObject" style="width: 100%; height: 100%; display: block;"></object>
+			<div class="embed-responsive embed-responsive-16by9">
+			  <iframe class="embed-responsive-item" id="bootstrapIframe"></iframe>
+			</div>
 		</td>
 	</tr>
 </table>
