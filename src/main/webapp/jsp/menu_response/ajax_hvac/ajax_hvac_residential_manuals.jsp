@@ -72,9 +72,9 @@
 			if(node.children.length==0)
 			{
 				log("It's a leaf with a parent ID="+node.parent+", node.id="+node.id);
-				//document.getElementById('myFileObject').setAttribute('data', node.id);
+				document.getElementById('pdfIfram').setAttribute('src', node.id);
 				
-				document.getElementById('pdfIfram').setAttribute('src', node.id.replace("dl=0", "raw=1"));
+				//document.getElementById('pdfIfram').setAttribute('src', node.id.replace("dl=0", "raw=1"));
 			}
 			else
 			{
