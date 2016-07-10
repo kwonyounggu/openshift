@@ -123,7 +123,7 @@
 				}
 			</style>
 			<div class='embed-container'>
-				<iframe id='pdfIfram' src='https://www.dropbox.com/s/acnim6xfo99h608/Scheduled_admin_carrier_air_conditioner_brochure_24aaa5_01-824-106-25_2016_07_03_15_06_32.pdf#page=1&view=FitH?raw=1' style='border:0' onload='resizeIframe(this)'></iframe>
+				<iframe id='pdfIfram' src='https://www.dropbox.com/s/acnim6xfo99h608/Scheduled_admin_carrier_air_conditioner_brochure_24aaa5_01-824-106-25_2016_07_03_15_06_32.pdf?raw=1&page=1&view=FitH' style='border:0' onload='resizeIframe(this)'></iframe>
 			</div>
 			<!-- <object id="myFileObject" style="width: 100%; height: 100%; display: block;"></object>
 			<div class="embed-responsive embed-responsive-16by9">
