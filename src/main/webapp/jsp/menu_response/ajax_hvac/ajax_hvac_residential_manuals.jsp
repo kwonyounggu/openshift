@@ -93,43 +93,11 @@
 <h4>Under Construction</h4>
 <table style='table-layout: fixed'>
 	<tr>
-		<td style='width: 250px'>
+		<td style='width: 25%'>
+		  <div style="width: 250px; height: 100%">
 			<div id="manual_tree_div" style="border-radius:0px 0px 0px 0px; border:0px solid #000000;">
-<!-- 				<ul> -->
-				<%
-					/*
-					String sysList[]={"Heating", "Cooling", "Heating Cooling Combo", "Air Handler", "Humidifier"};
-					for(HvacBrands brand : HvacBrands.values())
-					{
-						out.print("<li id='"+brand.toString()+"'>"+brand.ctoString()+"");
-						out.print("<ul>");
-						for(String sys : sysList)
-						{
-							out.print("<li data-jstree='{\"icon\":\"glyphicon glyphicon-leaf\"}'>"+sys.toString()+"");
-								//out.print("<ul>");
-								//	out.print("<li> <span><i class='glyphicon glyphicon-leaf'></i>Model Number</span>  <a href=''>direct link to pdf</a></li>");
-								//out.print("</ul>");
-							out.print("</li>");
-						}
-						out.print("</ul>");
-						out.print("</li>");
-					}
-					*/
-					/*
-					DataSource ds=(DataSource)application.getAttribute("dataSource");
-					HvacManualsDao hvacManualsDao=new HvacManualsDao(ds);
-					List<String> brands=hvacManualsDao.getBrandNames("where valid=true order by brand_name asc");
-					
-					//add company link from the enum
-					for(String brand : brands)
-					{
-						out.print("<li id='"+brand+"'>"+brand+"");
-						out.print("</li>");
-					}
-					*/
-				%>
-<!-- 				</ul> -->
 			</div>
+		  </div>
 		</td>
 		<td style='width: 75%; border-radius:0px 0px 0px 0px; border:1px solid #dddddd; border-style: hidden hidden hidden solid; vertical-align: top;'>
 			<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe id='pdfIfram' src='https://www.dropbox.com/s/acnim6xfo99h608/Scheduled_admin_carrier_air_conditioner_brochure_24aaa5_01-824-106-25_2016_07_03_15_06_32.pdf?raw=1' style='border:0'></iframe></div>
