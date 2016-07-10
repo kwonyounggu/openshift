@@ -131,10 +131,11 @@
 			</div>
 		</td>
 		<td style='width: 75%; border-radius:0px 0px 0px 0px; border:1px solid #dddddd; border-style: hidden hidden hidden solid; vertical-align: top;'>
-			<object id="myFileObject" style="width: 100%; height: 100%; display: block;"></object>
+			<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.dropbox.com/s/acnim6xfo99h608/Scheduled_admin_carrier_air_conditioner_brochure_24aaa5_01-824-106-25_2016_07_03_15_06_32.pdf?raw=1' style='border:0'></iframe></div>
+			<!-- <object id="myFileObject" style="width: 100%; height: 100%; display: block;"></object>
 			<div class="embed-responsive embed-responsive-16by9">
 			  <iframe class="embed-responsive-item" id="bootstrapIframe"></iframe>
-			</div>
+			</div> -->
 		</td>
 	</tr>
 </table>
