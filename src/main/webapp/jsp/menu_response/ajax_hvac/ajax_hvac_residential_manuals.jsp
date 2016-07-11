@@ -10,7 +10,7 @@
 	{ 
 		position: relative; 
 		/*padding-bottom: 56.25%; */
-		padding-bottom: 85%;
+		padding-bottom: 90%;
 		height: 0; 
 		overflow: hidden; 
 		max-width: 100%; 
@@ -122,6 +122,7 @@
 			</div>
 		  </div>
 		</td>
+		<td width='10'></td>
 		<td style='width: 75%; border-radius:0px 0px 0px 0px; border:1px solid #dddddd; border-style: hidden hidden hidden solid; vertical-align: top;'>
 			<!-- see http://embedresponsively.com/ and select Generic iFrame and google to display pdf with hint from http://stackoverflow.com/questions/8262278/supplying-an-embedable-pdf  -->
 			<div class='embed-container'>
