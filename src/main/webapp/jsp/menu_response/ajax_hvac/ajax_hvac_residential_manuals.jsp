@@ -10,7 +10,7 @@
 	{ 
 		position: relative; 
 		padding-bottom: 56.25%; 
-		height: 0; 
+		height: 100%; 
 		overflow: hidden; 
 		max-width: 100%; 
 	} 
@@ -19,8 +19,8 @@
 		position: absolute; 
 		top: 0; 
 		left: 0; 
-		width: 750px; 
-		height: 950px; 
+		width: 100%; 
+		height: 100%; 
 	}
 </style>
 <script type="text/javascript">
@@ -124,7 +124,7 @@
 		<td style='width: 75%; border-radius:0px 0px 0px 0px; border:1px solid #dddddd; border-style: hidden hidden hidden solid; vertical-align: top;'>
 			
 			<div class='embed-container'>
-				<iframe id='pdfIfram' src='https://www.dropbox.com/s/acnim6xfo99h608/Scheduled_admin_carrier_air_conditioner_brochure_24aaa5_01-824-106-25_2016_07_03_15_06_32.pdf?raw=1#page=3&view=FitV' style='border:0' onload='resizeIframe(this)'></iframe>
+				<iframe id='pdfIfram' src='https://www.dropbox.com/s/acnim6xfo99h608/Scheduled_admin_carrier_air_conditioner_brochure_24aaa5_01-824-106-25_2016_07_03_15_06_32.pdf?raw=1#page=3&view=FitV' style='border:0' onload='resizeIframe(this)' allowfullscreen></iframe>
 			</div>
 			<!-- <object id="myFileObject" style="width: 100%; height: 100%; display: block;"></object>
 			<div class="embed-responsive embed-responsive-16by9">
