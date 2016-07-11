@@ -102,7 +102,7 @@ file_seq_id
 			Map.Entry<String, Integer> entry=entries.next();
 			out.print("{	\"id\":     \""+currentId+":"+entry.getKey()+"\", "); //brand:ac, furnace, etc
 			//out.print("  	\"parent\": \"#\", ");
-			out.print("  	\"text\":   \""+entry.getKey()+" ("+entry.getValue()+")\",");//number of manuals
+			out.print("  	\"text\":   \""+getSystemType(entry.getKey())+" ("+entry.getValue()+")\",");//number of manuals
 			out.print("  	\"data\": {\"hint\":\"system types such as ac, furnance, etc\"}, ");
 			if(entry.getValue()>0)
 				out.print("		\"children\": true");						
@@ -133,7 +133,7 @@ file_seq_id
 				{
 					Map.Entry<String, Integer> manualEntry=entriesManualFor.next();
 					out.print("{	\"id\":     \""+currentId+":"+entry.getKey()+":"+manualEntry.getKey()+"\", "); //brand:ac:model_number:owner_manual
-					out.print("  	\"text\":   \""+manualEntry.getKey()+" ("+manualEntry.getValue()+")\",");//number of manualFor
+					out.print("  	\"text\":   \""+getManualFor(manualEntry.getKey())+" ("+manualEntry.getValue()+")\",");//number of manualFor
 					out.print("  	\"data\": {\"hint\":\"manuals for installation, owner_operation, wiring_diagram, etc\"} ");
 					if(manualEntry.getValue()>0)
 					{	
@@ -146,7 +146,7 @@ file_seq_id
 							Map.Entry<String, String> fileEntry=fileEntries.next();
 							out.print("{	\"id\":     \""+fileEntry.getKey()+"\", "); //unique id
 							//out.print("  	\"text\":   \""+fileEntry.getValue()+"\",");//original file name
-							out.print("  	\"text\":   \"file to view.pdf\",");//original file name
+							out.print("  	\"text\":   \"click to view.pdf\",");
 							out.print("     \"icon\":   \"glyphicon glyphicon-leaf\",");
 							out.print("  	\"data\": {\"hint\":\"pdf file link level, leaf level\"} ");
 							out.print("}");
@@ -165,4 +165,37 @@ file_seq_id
 	}
 %>
 ]
+<%!
+	public String getSystemType(String original)
+	{
+		if(original.equals("AIR_CLEANER")) return "Air Cleaner";
+		else if(original.equals("AIR_CONDITIONER")) return "Air Conditioner";
+		else if(original.equals("AIR_HANDLER")) return "Air Handler";
+		else if(original.equals("FIREPLACE")) return "Fireplace";
+		else if(original.equals("FURNACE")) return "Furnace";
+		else if(original.equals("HEAT_PUMP")) return "Heat pump";
+		else if(original.equals("HUMIDIFIER")) return "Humidifier";
+		else if(original.equals("ROOFTOP")) return "Rooftop";
+		else if(original.equals("BOILER")) return "Boiler";
+		else if(original.equals("WATER_HEATER")) return "Water heater";
+		else if(original.equals("BOILER_WATER_HEATER")) return "Combi boiler"; //both a high-efficiency water heater and a central heating boiler, combined (hence the name) within one compact unit.
+		else return original;
+	}
 
+	public String getManualFor(String original)
+	{
+		if(original.indexOf("INSTALLATION")!=-1) return "Installation";
+		else if(original.equals("OWNER_OPERATION")) return "Owner Manual";
+		else if(original.equals("AIR_HANDLER")) return "Air Handler";
+		else if(original.equals("SERVICE")) return "Troubleshooting";
+		else if(original.equals("BROCHURE")) return "Brochure";
+		else if(original.equals("PRODUCT_DATA")) return "Product data";
+		else if(original.equals("WARRANTY")) return "Warranty-En";
+		else if(original.equals("WARRANTY_FR")) return "Warranty-Fr";
+		else if(original.equals("SUPPLEMENT")) return "Supplement";
+		else if(original.equals("WIRING_DIAGRAM")) return "Wriring Diagram";
+		else return original;
+	
+	}
+
+%>
