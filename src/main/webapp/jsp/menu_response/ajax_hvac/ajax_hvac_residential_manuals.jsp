@@ -72,9 +72,9 @@
 			if(node.children.length==0)
 			{
 				log("It's a leaf with a parent ID="+node.parent+", node.id="+node.id);
-				document.getElementById('pdfIfram').setAttribute('src', node.id);
+				//document.getElementById('pdfIfram').setAttribute('src', node.id);
 				
-				//document.getElementById('pdfIfram').setAttribute('src', node.id.replace("dl=0", "raw=1"));
+				document.getElementById('pdfIfram').setAttribute('src', node.id.replace("dl=0", "raw=1#page=3&view=FitV"));
 			}
 			else
 			{
@@ -123,7 +123,7 @@
 				}
 			</style>
 			<div class='embed-container'>
-				<iframe id='pdfIfram' src='https://www.dropbox.com/s/acnim6xfo99h608/Scheduled_admin_carrier_air_conditioner_brochure_24aaa5_01-824-106-25_2016_07_03_15_06_32.pdf?raw=1&zoom=300&page=2&view=Fit' style='border:0' onload='resizeIframe(this)'></iframe>
+				<iframe id='pdfIfram' src='https://www.dropbox.com/s/acnim6xfo99h608/Scheduled_admin_carrier_air_conditioner_brochure_24aaa5_01-824-106-25_2016_07_03_15_06_32.pdf?raw=1#page=3&view=FitV' style='border:0' onload='resizeIframe(this)'></iframe>
 			</div>
 			<!-- <object id="myFileObject" style="width: 100%; height: 100%; display: block;"></object>
 			<div class="embed-responsive embed-responsive-16by9">
