@@ -98,12 +98,12 @@
 <table style='table-layout: fixed'>
 	<tr>
 		<td style='width: 25%'>
-		  <div style="width: 250px; height: 100%; overflow: auto">
+		  <div style="width: 25%; height: 100%; overflow: auto">
 			<div id="manual_tree_div" style="border-radius:0px 0px 0px 0px; border:0px solid #000000;">
 			</div>
 		  </div>
 		</td>
-		<td style='width: 75%; border-radius:0px 0px 0px 0px; border:1px solid #dddddd; border-style: hidden hidden hidden solid; vertical-align: top;'>
+		<td style='width: 750px; border-radius:0px 0px 0px 0px; border:1px solid #dddddd; border-style: hidden hidden hidden solid; vertical-align: top;'>
 			<style>
 				.embed-container 
 				{ 
