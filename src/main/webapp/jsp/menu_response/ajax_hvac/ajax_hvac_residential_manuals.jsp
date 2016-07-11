@@ -10,7 +10,7 @@
 	{ 
 		position: relative; 
 		/*padding-bottom: 56.25%; */
-		padding-bottom: 120%;
+		padding-bottom: 85%;
 		height: 0; 
 		overflow: hidden; 
 		max-width: 100%; 
@@ -92,8 +92,8 @@
 			{
 				log("It's a leaf with a parent ID="+node.parent+", node.id="+node.id);
 				//document.getElementById('pdfIfram').setAttribute('src', node.id);
-				
-				document.getElementById('pdfIfram').setAttribute('src', node.id.replace("dl=0", "raw=1#page=3&view=Fit&zoom=78"));
+				var pdfPath=node.id.replace("dl=0", "raw=1");
+				document.getElementById('pdfIfram').setAttribute('src', node.id.replace("dl=0", "http://docs.google.com/gview?url="+pdfPath+"&embedded=true"));
 			}
 			else
 			{
