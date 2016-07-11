@@ -93,7 +93,7 @@
 				log("It's a leaf with a parent ID="+node.parent+", node.id="+node.id);
 				//document.getElementById('pdfIfram').setAttribute('src', node.id);
 				
-				document.getElementById('pdfIfram').setAttribute('src', node.id.replace("dl=0", "raw=1#page=3&view=Fit&zoom=80"));
+				document.getElementById('pdfIfram').setAttribute('src', node.id.replace("dl=0", "raw=1#page=3&view=Fit&zoom=78"));
 			}
 			else
 			{
