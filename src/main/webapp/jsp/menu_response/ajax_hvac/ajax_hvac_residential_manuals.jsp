@@ -10,7 +10,7 @@
 	{ 
 		position: relative; 
 		/*padding-bottom: 56.25%; */
-		padding-bottom: 80%;
+		padding-bottom: 90%;
 		height: 0; 
 		overflow: hidden; 
 		max-width: 100%; 
