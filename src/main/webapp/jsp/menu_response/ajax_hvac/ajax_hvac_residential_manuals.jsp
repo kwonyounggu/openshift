@@ -115,16 +115,16 @@
 <h4>Under Construction</h4>
 <table style='table-layout: fixed'>
 	<tr>
-		<td style='width: 250px'>
-		  <div style="width: 25%; height: 100%; overflow: auto">
-			<div id="manual_tree_div" style="border-radius:0px 0px 0px 0px; border:0px solid #000000; height: 768px">
+		<td style='width: 25%'>
+		  <div style="width: 250px; height: 100%; overflow: auto">
+			<div id="manual_tree_div" style="border-radius:0px 0px 0px 0px; border:0px solid #000000;">
 			</div>
 		  </div>
 		</td>
 		<td style='width: 75%; border-radius:0px 0px 0px 0px; border:1px solid #dddddd; border-style: hidden hidden hidden solid; vertical-align: top;'>
 			
 			<div class='embed-container'>
-				<iframe id='pdfIfram' src='https://www.dropbox.com/s/acnim6xfo99h608/Scheduled_admin_carrier_air_conditioner_brochure_24aaa5_01-824-106-25_2016_07_03_15_06_32.pdf?raw=1#page=3&view=FitV' style='border:0; width: 750px; height: 768px' onload='resizeIframe(this)'></iframe>
+				<iframe id='pdfIfram' src='https://www.dropbox.com/s/acnim6xfo99h608/Scheduled_admin_carrier_air_conditioner_brochure_24aaa5_01-824-106-25_2016_07_03_15_06_32.pdf?raw=1#page=3&view=FitV' style='border:0; width: 750px; height: 700px' onload='resizeIframe(this)'></iframe>
 			</div>
 			<!-- <object id="myFileObject" style="width: 100%; height: 100%; display: block;"></object>
 			<div class="embed-responsive embed-responsive-16by9">
