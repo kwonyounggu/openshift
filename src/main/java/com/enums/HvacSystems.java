@@ -14,7 +14,7 @@ public enum HvacSystems
 	ROOFTOP,
 	BOILER,
 	WATER_HEATER,
-	BOILER_WATER_HEATER;
+	COMBI_BOILER;
 	
 	public String ctoString()
 	{

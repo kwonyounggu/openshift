@@ -102,7 +102,7 @@ file_seq_id
 			Map.Entry<String, Integer> entry=entries.next();
 			out.print("{	\"id\":     \""+currentId+":"+entry.getKey()+"\", "); //brand:ac, furnace, etc
 			//out.print("  	\"parent\": \"#\", ");
-			out.print("  	\"text\":   \""+getSystemType(entry.getKey())+" ("+entry.getValue()+")\",");//number of manuals
+			out.print("  	\"text\":   \""+Utils.getFirstCapitalString(entry.getKey())+" ("+entry.getValue()+")\",");//number of manuals
 			out.print("  	\"data\": {\"hint\":\"system types such as ac, furnance, etc\"}, ");
 			if(entry.getValue()>0)
 				out.print("		\"children\": true");						
@@ -133,7 +133,7 @@ file_seq_id
 				{
 					Map.Entry<String, Integer> manualEntry=entriesManualFor.next();
 					out.print("{	\"id\":     \""+currentId+":"+entry.getKey()+":"+manualEntry.getKey()+"\", "); //brand:ac:model_number:owner_manual
-					out.print("  	\"text\":   \""+getManualFor(manualEntry.getKey())+" ("+manualEntry.getValue()+")\",");//number of manualFor
+					out.print("  	\"text\":   \""+Utils.getFirstCapitalString(manualEntry.getKey())+" ("+manualEntry.getValue()+")\",");//number of manualFor
 					out.print("  	\"data\": {\"hint\":\"manuals for installation, owner_operation, wiring_diagram, etc\"} ");
 					if(manualEntry.getValue()>0)
 					{	
@@ -145,8 +145,9 @@ file_seq_id
 						{
 							Map.Entry<String, String> fileEntry=fileEntries.next();
 							out.print("{	\"id\":     \""+fileEntry.getKey()+"\", "); //unique id
-							//out.print("  	\"text\":   \""+fileEntry.getValue()+"\",");//original file name
-							out.print("  	\"text\":   \"click to view.pdf\",");
+							String fileName=fileEntry.getValue();
+							out.print("  	\"text\":   \""+fileName.substring(Math.max(0, fileName.length() - 14))+"\",");//original file name with only 14
+							//out.print("  	\"text\":   \"click to view.pdf\",");
 							out.print("     \"icon\":   \"glyphicon glyphicon-leaf\",");
 							out.print("  	\"data\": {\"hint\":\"pdf file link level, leaf level\"} ");
 							out.print("}");
@@ -166,6 +167,7 @@ file_seq_id
 %>
 ]
 <%!
+/*
 	public String getSystemType(String original)
 	{
 		if(original.equals("AIR_CLEANER")) return "Air Cleaner";
@@ -184,18 +186,23 @@ file_seq_id
 
 	public String getManualFor(String original)
 	{
-		if(original.indexOf("INSTALLATION")!=-1) return "Installation";
+		if(original.equals("INSTALLATION")) return "Installation";
+		else if(original.equals("INSTALLATION_CONDENSING")) return "Installation Co";
+		else if(original.equals("INSTALLATION_FR")) return "Installation-Fr";
+		else if(original.equals("INSTALLATION_FILCAB")) return "Installation Fi";
+		else if(original.equals("INSTALLATION_VENTING")) return "Installation Ve";
 		else if(original.equals("OWNER_OPERATION")) return "Owner Manual";
+		else if(original.equals("OWNER_OPERATION_FR")) return "Owner Manual Fr";
 		else if(original.equals("AIR_HANDLER")) return "Air Handler";
 		else if(original.equals("SERVICE")) return "Troubleshooting";
 		else if(original.equals("BROCHURE")) return "Brochure";
 		else if(original.equals("PRODUCT_DATA")) return "Product data";
-		else if(original.equals("WARRANTY")) return "Warranty-En";
+		else if(original.equals("WARRANTY")||original.equals("WARRANTY_EN")) return "Warranty-En";
 		else if(original.equals("WARRANTY_FR")) return "Warranty-Fr";
 		else if(original.equals("SUPPLEMENT")) return "Supplement";
 		else if(original.equals("WIRING_DIAGRAM")) return "Wriring Diagram";
 		else return original;
 	
 	}
-
+*/
 %>
