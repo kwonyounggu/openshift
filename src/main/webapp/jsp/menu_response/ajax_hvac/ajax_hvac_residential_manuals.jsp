@@ -140,11 +140,18 @@
 <table style='table-layout: fixed'>
 	<tr>
 		<td style='width: 25%; vertical-align: top'>
-		  <div style="width: 250px; height: 100%; overflow: auto">
-		  	<form class="form-search form-inline"><input type="text" class="search-query" placeholder="Search..." /></form>
-			<div id="manual_tree_div" style="border-radius:0px 0px 0px 0px; border:0px solid #000000;">
-			</div>
-		  </div>
+			  <div>
+			  	<form class="form-search form-inline">
+			        <div class="input-append">
+			            <input type="text" class="search-query" placeholder="Input a Model Number" />
+			            <button type="submit" class="btn btn-primary">Search</button>
+			         </div>
+			    </form>
+			  </div>
+			  <div style="width: 250px; height: 100%; overflow: auto">
+				<div id="manual_tree_div" style="border-radius:0px 0px 0px 0px; border:0px solid #000000;">
+				</div>
+			  </div>
 		</td>
 		<td width='10'></td>
 		<td style='width: 75%; border-radius:0px 0px 0px 0px; border:1px solid #dddddd; border-style: hidden hidden hidden solid; vertical-align: top;'>
