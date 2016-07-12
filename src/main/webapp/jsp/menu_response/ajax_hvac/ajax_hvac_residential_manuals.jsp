@@ -23,29 +23,6 @@
 		width: 100%; 
 		height: 100%; 
 	}
-	/*input.search-query 
-	{
-    	padding-left:26px;
-	}
-	form.form-search 
-	{
-    	position: relative;
-	}
-
-	form.form-search:before 
-	{
-	    content:'';
-	    display: block;
-	    width: 14px;
-	    height: 14px;
-	    background-image: url(http://getbootstrap.com/2.3.2/assets/img/glyphicons-halflings.png);
-	    background-position: -48px 0;
-	    position: absolute;
-	    top:8px;
-	    left:8px;
-	    opacity: .5;
-	    z-index: 1000;
-	}*/
 </style>
 <script type="text/javascript">
 	//see http://jsfiddle.net/jayhilwig/hv8vU/
@@ -81,29 +58,6 @@
 				    	}
 				    	
 				    }
-				    //[
-				     <%
-				     	/*
-				     	DataSource ds=(DataSource)application.getAttribute("dataSource");
-						HvacManualsDao hvacManualsDao=new HvacManualsDao(ds);
-						List<String> brands=hvacManualsDao.getBrandNames("where valid=true order by brand_name asc");
-						
-						//add company link from the enum
-						for(int i=0; i<brands.size();i++)
-						{
-							String brand=brands.get(i);
-							out.print("{	'id':     '"+brand+"', ");
-							out.print("  	'parent': '#', ");
-							out.print("  	'text':   '"+brand+"',");
-							out.print("'state' : 'closed',");
-							out.print("'children': true")	;						
-							out.print("}");
-							if((i+1)<brands.size()) out.print(",");
-						}
-						*/
-				     %>
-				    //],
-
 			  }
 		});
 		
@@ -124,6 +78,20 @@
 			}
 
 		});
+		$('#manual_tree_div').jstree({"plugins" : [ "search" ]});
+		$('#searchInput').keydown(function (e) 
+		{
+			if(e.which==13) $('#searchButton').trigger('click');
+		    //if(to) { clearTimeout(to); }
+		    //to = setTimeout(function () {
+		     // var v = $('#plugins4_q').val();
+		     // $('#plugins4').jstree(true).search(v);
+		    //}, 250);
+		 });
+		$('#searchButton').click(function()
+		{
+			log("search button is clicked ...");
+		});
 	});
 	function resizeIframe(obj) 
 	{
@@ -141,9 +109,9 @@
 	<tr>
 		<td style='width: 25%; vertical-align: top'>
 			  <div class="input-group">
-			       <input type="Search" placeholder="Search..." class="form-control" />
+			       <input id="searchInput" type="Search" placeholder="Search..." class="form-control" />
 			       <div class="input-group-btn">
-			           <button class="btn btn-info">
+			           <button id="searchButton" class="btn btn-info">
 			           <span class="glyphicon glyphicon-search"></span>
 			           </button>
 			       </div>
