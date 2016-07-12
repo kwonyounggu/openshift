@@ -23,6 +23,10 @@
 		width: 100%; 
 		height: 100%; 
 	}
+	input.search-query 
+	{
+    	padding-left:26px;
+	}
 </style>
 <script type="text/javascript">
 	//see http://jsfiddle.net/jayhilwig/hv8vU/
@@ -118,6 +122,7 @@
 	<tr>
 		<td style='width: 25%; vertical-align: top'>
 		  <div style="width: 250px; height: 100%; overflow: auto">
+		  	<form class="form-search form-inline"><input type="text" class="search-query" placeholder="Search..." /></form>
 			<div id="manual_tree_div" style="border-radius:0px 0px 0px 0px; border:0px solid #000000;">
 			</div>
 		  </div>
