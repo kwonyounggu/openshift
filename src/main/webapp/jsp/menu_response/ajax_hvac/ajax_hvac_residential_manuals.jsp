@@ -116,7 +116,7 @@
 <h4>Under Construction</h4>
 <table style='table-layout: fixed'>
 	<tr>
-		<td style='width: 25%'>
+		<td style='width: 25%; vertical-align: top'>
 		  <div style="width: 250px; height: 100%; overflow: auto">
 			<div id="manual_tree_div" style="border-radius:0px 0px 0px 0px; border:0px solid #000000;">
 			</div>
