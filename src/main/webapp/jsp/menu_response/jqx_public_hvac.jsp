@@ -48,7 +48,8 @@ $(document).ready(function ()
 <h4>HVAC in North America</h4>
 <div style="width: 95%">
   <ul class="nav nav-tabs">
-  	<li class="active"><a id="residential_anchor" data-toggle="tab_ajax" data-target="#residential_manuals" href="jsp/menu_response/ajax_hvac/ajax_hvac_residential_manuals.jsp">System Manuals</a></li>
+  	<li class="active"><a id="residential_anchor" data-toggle="tab_ajax" data-target="#residential_manuals" onfocus="this.blur()" href="jsp/menu_response/ajax_hvac/ajax_hvac_residential_manuals.jsp">System Manuals</a></li>
+<!-- The followings are commented because all manuals are integrated into one system manuals not dividing -->
 <!--     <li class="active dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" href="#">System Manuals<span class="caret"></span></a>
       <ul class="dropdown-menu">
@@ -57,12 +58,12 @@ $(document).ready(function ()
         <li><a data-toggle="tab_ajax" data-target="#industrial_manuals" href="jsp/menu_response/ajax_hvac/ajax_hvac_industrial_manuals.jsp">Industrial</a></li>
       </ul>
     </li> -->
-    <li><a data-toggle="tab" href="#troubleshootings">Trouble Shootings</a></li>
-    <li><a data-toggle="tab" href="#questions_answers">Q & A</a></li>
-    <li><a data-toggle="tab" href="#estimates">Estimates</a></li>
-    <li><a data-toggle="tab" href="#search_contractors">Contractors</a></li>
-    <li><a data-toggle="tab" href="#parts_supplies">Supplies</a></li>
-    <li><a data-toggle="tab" href="#buy_sell">Buy & Sell</a></li>
+    <li><a data-toggle="tab" onfocus="this.blur()" href="#troubleshootings">Trouble Shootings</a></li>
+    <li><a data-toggle="tab" onfocus="this.blur()" href="#questions_answers">Q & A</a></li>
+    <li><a data-toggle="tab" onfocus="this.blur()" href="#estimates">Estimates</a></li>
+    <li><a data-toggle="tab" onfocus="this.blur()" href="#search_contractors">Contractors</a></li>
+    <li><a data-toggle="tab" onfocus="this.blur()" href="#parts_supplies">Supplies</a></li>
+    <li><a data-toggle="tab" onfocus="this.blur()" href="#buy_sell">Buy & Sell</a></li>
   </ul>
 
   <div class="tab-content">
