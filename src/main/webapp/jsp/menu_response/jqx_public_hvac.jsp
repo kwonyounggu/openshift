@@ -48,14 +48,15 @@ $(document).ready(function ()
 <h4>HVAC in North America</h4>
 <div style="width: 95%">
   <ul class="nav nav-tabs">
-    <li class="active dropdown">
+  	<li><a data-toggle="tab" href="jsp/menu_response/ajax_hvac/ajax_hvac_residential_manuals.jsp">System Manuals</a></li>
+<!--     <li class="active dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" href="#">System Manuals<span class="caret"></span></a>
       <ul class="dropdown-menu">
         <li><a id="residential_anchor" data-toggle="tab_ajax" data-target="#residential_manuals" href="jsp/menu_response/ajax_hvac/ajax_hvac_residential_manuals.jsp">Residential</a></li>
         <li><a data-toggle="tab_ajax" data-target="#commercial_manuals" href="jsp/menu_response/ajax_hvac/ajax_hvac_commercial_manuals.jsp">Commercial</a></li>
         <li><a data-toggle="tab_ajax" data-target="#industrial_manuals" href="jsp/menu_response/ajax_hvac/ajax_hvac_industrial_manuals.jsp">Industrial</a></li>
       </ul>
-    </li>
+    </li> -->
     <li><a data-toggle="tab" href="#troubleshootings">Trouble Shootings</a></li>
     <li><a data-toggle="tab" href="#questions_answers">Q & A</a></li>
     <li><a data-toggle="tab" href="#estimates">Estimates</a></li>
@@ -65,15 +66,9 @@ $(document).ready(function ()
   </ul>
 
   <div class="tab-content">
-    <div id="residential_manuals" class="tab-pane fade in active">
-      <!-- Ajax content will be loaded here-->
-    </div>
-    <div id="commercial_manuals" class="tab-pane fade">
-     <!-- Ajax content will be loaded here-->
-    </div>
-    <div id="industrial_manuals" class="tab-pane fade">
-      <!-- Ajax content will be loaded here-->
-    </div>
+    <div id="residential_manuals" class="tab-pane fade in active"></div>
+<!--     <div id="commercial_manuals" class="tab-pane fade"></div> -->
+<!--     <div id="industrial_manuals" class="tab-pane fade"></div> -->
     <div id="troubleshootings" class="tab-pane fade">
       <h3>Under construction</h3>
       <p>Under construction</p>
