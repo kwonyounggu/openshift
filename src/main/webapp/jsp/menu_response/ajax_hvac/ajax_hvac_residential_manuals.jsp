@@ -23,7 +23,7 @@
 		width: 100%; 
 		height: 100%; 
 	}
-	input.search-query 
+	/*input.search-query 
 	{
     	padding-left:26px;
 	}
@@ -45,7 +45,7 @@
 	    left:8px;
 	    opacity: .5;
 	    z-index: 1000;
-	}
+	}*/
 </style>
 <script type="text/javascript">
 	//see http://jsfiddle.net/jayhilwig/hv8vU/
@@ -140,13 +140,13 @@
 <table style='table-layout: fixed'>
 	<tr>
 		<td style='width: 25%; vertical-align: top'>
-			  <div>
-			  	<form class="form-search form-inline">
-			        <div class="input-append">
-			            <input type="text" class="search-query" placeholder="Input a Model Number" />
-			            <button type="submit" class="btn btn-primary">Search</button>
-			         </div>
-			    </form>
+			  <div class="input-group">
+			       <input type="Search" placeholder="Search..." class="form-control" />
+			       <div class="input-group-btn">
+			           <button class="btn btn-info">
+			           <span class="glyphicon glyphicon-search"></span>
+			           </button>
+			       </div>
 			  </div>
 			  <div style="width: 250px; height: 100%; overflow: auto">
 				<div id="manual_tree_div" style="border-radius:0px 0px 0px 0px; border:0px solid #000000;">
