@@ -48,7 +48,7 @@ $(document).ready(function ()
 <h4>HVAC in North America</h4>
 <div style="width: 95%">
   <ul class="nav nav-tabs">
-  	<li><a data-toggle="tab" href="jsp/menu_response/ajax_hvac/ajax_hvac_residential_manuals.jsp">System Manuals</a></li>
+  	<li class="active"><a data-toggle="tab" href="jsp/menu_response/ajax_hvac/ajax_hvac_residential_manuals.jsp">System Manuals</a></li>
 <!--     <li class="active dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" href="#">System Manuals<span class="caret"></span></a>
       <ul class="dropdown-menu">
