@@ -67,7 +67,7 @@ $(document).ready(function ()
   </ul>
 
   <div class="tab-content">
-    <div id="residential_manuals" class="tab-pane fade in active"></div>
+    <div id="residential_manuals" class="tab-pane fade in active" style="vertical-align: top;"></div>
 <!--     <div id="commercial_manuals" class="tab-pane fade"></div> -->
 <!--     <div id="industrial_manuals" class="tab-pane fade"></div> -->
     <div id="troubleshootings" class="tab-pane fade">
