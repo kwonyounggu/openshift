@@ -81,8 +81,8 @@
 			}
 
 		});
-		
-		$('#manual_tree_div').on("changed.jstree", function (e, data) 
+		//see https://github.com/vakata/jstree/issues/668
+		$('#manual_tree_div').on("search.jstree before_open.jstree", function (e, data) 
 		{
 			if(data.instance.settings.search.show_only_matches) 
 			{
