@@ -82,15 +82,11 @@
 		$('#searchInput').keydown(function (e) 
 		{
 			if(e.which==13) $('#searchButton').trigger('click');
-		    //if(to) { clearTimeout(to); }
-		    //to = setTimeout(function () {
-		     // var v = $('#plugins4_q').val();
-		     // $('#plugins4').jstree(true).search(v);
-		    //}, 250);
 		 });
 		$('#searchButton').click(function()
 		{
 			log("search button is clicked ...");
+			$('#manual_tree_div').jstree(true).search($('#searchInput').val());
 		});
 	});
 	function resizeIframe(obj) 
