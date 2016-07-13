@@ -30,7 +30,7 @@
 	{
 		$('#manual_tree_div').jstree
 		({
-			  'plugins': ['search'],
+			  'plugins': ['checkbox', 'search'],
 			  'search': 
 			  { 
 				  //'show_only_matches' : true,
@@ -43,7 +43,7 @@
 			  },
 			  'core' : 
 			  {
-				    //'multiple' : false,
+				    'multiple' : false,
 				    //'cache': false,
 				    //'check_callback' : true,
     				//'themes' : { 'stripes' : true },
