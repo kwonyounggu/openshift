@@ -38,7 +38,7 @@
 			  'plugins': ['checkbox', 'search'],
 			  'checkbox':
 			  {
-				//'keep_selected_style': false ,
+				//see http://stackoverflow.com/questions/35502382/jstree-checkbox-check-event
 				 'three_state' : false, // to avoid that fact that checking a node also check others
       			 'whole_node' : false,  // to avoid checking the box just clicking the node 
       			 'tie_selection' : false // for checking without selecting and selecting without checking
@@ -87,6 +87,8 @@
 			var node=data.instance.get_node(data.selected);
 			if(node.children.length==0)
 			{
+				//Do item - July 13
+				//note: do not implement if the currently selected/displayed pdf is the same one as in the right hand side
 				log("It's a leaf with a parent ID="+node.parent+", node.id="+node.id);
 				//document.getElementById('pdfIfram').setAttribute('src', node.id);
 				var pdfPath=node.id.replace("dl=0", "raw=1");
@@ -97,6 +99,10 @@
 				log("It has children");
 			}
 
+		});
+		$('#manual_tree_div').on("check_node.jstree uncheck_node.jstree", function (e, data) 
+		{
+			log(data);
 		});
 		//see https://github.com/vakata/jstree/issues/668
 		$('#manual_tree_div').on("search.jstree before_open.jstree", function (e, data) 
