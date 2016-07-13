@@ -33,8 +33,13 @@
 			  'plugins': ['search'],
 			  'search': 
 			  { 
-				  'show_only_matches' : true//,
-				  //'show_only_matches_children' : true
+				  //'show_only_matches' : true,
+				  //'show_only_matches_children' : true,
+				  search_callback:function(str, node)
+				  {
+					  log("search_callback: "+node.id+", "+node.text);
+					  if(node.text===str) return true;
+				  }
 			  },
 			  'core' : 
 			  {
@@ -84,8 +89,10 @@
 		//see https://github.com/vakata/jstree/issues/668
 		$('#manual_tree_div').on("search.jstree before_open.jstree", function (e, data) 
 		{
+			log("--1---");
 			if(data.instance.settings.search.show_only_matches) 
 			{
+				log("--2---");
 		        data.instance._data.search.dom.find('.jstree-node')
 		            .show().filter('.jstree-last').filter(function() { return this.nextSibling; }).removeClass('jstree-last')
 		            .end().end().end().find(".jstree-children").each(function () { $(this).children(".jstree-node:visible").eq(-1).addClass("jstree-last"); });
