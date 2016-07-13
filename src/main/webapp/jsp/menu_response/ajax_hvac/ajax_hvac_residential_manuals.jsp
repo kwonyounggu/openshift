@@ -81,6 +81,17 @@
 			}
 
 		});
+		
+		$('#manual_tree_div').on("changed.jstree", function (e, data) 
+		{
+			if(data.instance.settings.search.show_only_matches) 
+			{
+		        data.instance._data.search.dom.find('.jstree-node')
+		            .show().filter('.jstree-last').filter(function() { return this.nextSibling; }).removeClass('jstree-last')
+		            .end().end().end().find(".jstree-children").each(function () { $(this).children(".jstree-node:visible").eq(-1).addClass("jstree-last"); });
+		    }
+
+		});
 
 		$('#searchInput').keydown(function (e) 
 		{
