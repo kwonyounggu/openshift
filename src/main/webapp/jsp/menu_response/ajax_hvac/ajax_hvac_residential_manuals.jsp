@@ -33,8 +33,8 @@
 			  'plugins': ['search'],
 			  'search': 
 			  { 
-				  'show_only_matches' : true,
-				  'show_only_matches_children' : true
+				  'show_only_matches' : true//,
+				  //'show_only_matches_children' : true
 			  },
 			  'core' : 
 			  {
@@ -93,6 +93,7 @@
 
 		});
 
+		//the following two event functions are triggering a tree search function
 		$('#searchInput').keydown(function (e) 
 		{
 			if(e.which==13) $('#searchButton').trigger('click');
