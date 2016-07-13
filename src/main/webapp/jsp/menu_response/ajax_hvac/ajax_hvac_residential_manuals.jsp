@@ -23,9 +23,6 @@
 		width: 100%; 
 		height: 100%; 
 	}
-	#manual_tree_div .jstree-closed > .jstree-anchor > .jstree-checkbox, 
-#manual_tree_div .jstree-open > .jstree-anchor > .jstree-checkbox { display:none; }
-	
 	
 </style>
 <script type="text/javascript">
