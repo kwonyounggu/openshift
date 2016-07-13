@@ -36,6 +36,10 @@
 		$('#manual_tree_div').jstree
 		({
 			  'plugins': ['checkbox', 'search'],
+			  'checkbox':
+			  {
+				'keep_selected_style': false  
+			  },
 			  'search': 
 			  { 
 				  //'show_only_matches' : true,
