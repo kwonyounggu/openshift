@@ -31,14 +31,18 @@
 		$('#manual_tree_div').jstree
 		({
 			  'plugins': ['search'],
-			  'search': { 'show_only_matches_children' : true},
+			  'search': 
+			  { 
+				  'show_only_matches' : true,
+				  'show_only_matches_children' : true
+			  },
 			  'core' : 
 			  {
 				    //'multiple' : false,
 				    //'cache': false,
-				    'check_callback' : true,
-    				'themes' : { 'stripes' : true },
-				    'animation' : 0,
+				    //'check_callback' : true,
+    				//'themes' : { 'stripes' : true },
+				    //'animation' : 0,
 				    'data':
 				    {
 				    	'url': function(node)
@@ -51,9 +55,7 @@
 				    	'dataType': 'json',
 				    	'data': function(node)
 				    	{
-				    		//log("data: node_id: "+node.id);
 				    		//log(node);
-				    		//return {'id' : node.id, 'parent': node.parent, 'myfield': node.data.myfield};
 				    		if(node.id==='#') return {'id' : node.id, 'parent': node.parent};
 				    		else return {'id' : node.id, 'parent': node.parent, 'hint': node.data.hint};
 				    	}
