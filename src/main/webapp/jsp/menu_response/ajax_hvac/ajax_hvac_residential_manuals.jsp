@@ -31,6 +31,7 @@
 		$('#manual_tree_div').jstree
 		({
 			  'plugins': ['search'],
+			  'search': { 'show_only_matches' : true},
 			  'core' : 
 			  {
 				    'multiple' : false,
