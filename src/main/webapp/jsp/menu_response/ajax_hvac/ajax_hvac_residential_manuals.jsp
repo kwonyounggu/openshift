@@ -30,7 +30,7 @@
 	{
 		$('#manual_tree_div').jstree
 		({
-			  //'plugins': ['json_data', 'ui'],
+			  'plugins': ['search'],
 			  'core' : 
 			  {
 				    'multiple' : false,
@@ -78,7 +78,7 @@
 			}
 
 		});
-		$('#manual_tree_div').jstree({"plugins" : [ "search" ]});
+
 		$('#searchInput').keydown(function (e) 
 		{
 			if(e.which==13) $('#searchButton').trigger('click');
