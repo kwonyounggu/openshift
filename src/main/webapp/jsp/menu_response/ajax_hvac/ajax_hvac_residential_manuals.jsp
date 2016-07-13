@@ -23,7 +23,10 @@
 		width: 100%; 
 		height: 100%; 
 	}
-	
+	.systemManualTree_noCheckbox
+	{
+		display: none;
+	}
 </style>
 <script type="text/javascript">
 	//see http://jsfiddle.net/jayhilwig/hv8vU/
@@ -31,7 +34,7 @@
 	{
 		$('#manual_tree_div').jstree
 		({
-			  'plugins': ['search'],
+			  'plugins': ['checkbox', 'search'],
 			  'search': 
 			  { 
 				  //'show_only_matches' : true,

@@ -104,8 +104,9 @@ file_seq_id
 			//out.print("  	\"parent\": \"#\", ");
 			out.print("  	\"text\":   \""+Utils.getFirstCapitalString(entry.getKey())+" ("+entry.getValue()+")\",");//number of manuals
 			out.print("  	\"data\": {\"hint\":\"system types such as ac, furnance, etc\"}, ");
+			out.print("  	\"a_attr\": {\"class\":\"systemManualTree_noCheckbox\"} ");
 			if(entry.getValue()>0)
-				out.print("		\"children\": true");						
+				out.print(",		\"children\": true");						
 			out.print("}");
 			if(entries.hasNext()) out.print(",");
 		}
@@ -122,6 +123,7 @@ file_seq_id
 			Map.Entry<String, Integer> entry=entries.next();
 			out.print("{	\"id\":     \""+currentId+":"+entry.getKey()+"\", "); //brand:ac:model_number
 			out.print("  	\"text\":   \""+entry.getKey()+" ("+entry.getValue()+")\",");//number of model_number
+			out.print("  	\"a_attr\": {\"class\":\"systemManualTree_noCheckbox\"}, ");//in order not to display checkbox through a css
 			out.print("  	\"data\": {\"hint\":\"model number level\"} ");
 			if(entry.getValue()>0)
 			{	
@@ -134,6 +136,7 @@ file_seq_id
 					Map.Entry<String, Integer> manualEntry=entriesManualFor.next();
 					out.print("{	\"id\":     \""+currentId+":"+entry.getKey()+":"+manualEntry.getKey()+"\", "); //brand:ac:model_number:owner_manual
 					out.print("  	\"text\":   \""+Utils.getFirstCapitalString(manualEntry.getKey())+" ("+manualEntry.getValue()+")\",");//number of manualFor
+					out.print("  	\"a_attr\": {\"class\":\"systemManualTree_noCheckbox\"}, ");//in order not to display checkbox through a css
 					out.print("  	\"data\": {\"hint\":\"manuals for installation, owner_operation, wiring_diagram, etc\"} ");
 					if(manualEntry.getValue()>0)
 					{	
@@ -149,6 +152,7 @@ file_seq_id
 							out.print("  	\"text\":   \""+fileName.substring(Math.max(0, fileName.length() - 10))+"\",");//original file name with only 10 chars from the last
 							//out.print("  	\"text\":   \"click to view.pdf\",");
 							out.print("     \"icon\":   \"glyphicon glyphicon-leaf\",");
+							out.print("  	\"a_attr\": {\"class\":\"systemManualTree_noCheckbox\"}, ");//in order not to display checkbox through a css
 							out.print("  	\"data\": {\"hint\":\"pdf file link level, leaf level\"} ");
 							out.print("}");
 							if(fileEntries.hasNext()) out.print(",");
