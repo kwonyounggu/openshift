@@ -23,8 +23,8 @@
 		width: 100%; 
 		height: 100%; 
 	}
-	.jstree li.jstree-open > a.jstree-anchor > i.jstree-checkbox, 
-	.jstree li.jstree-closed > a.jstree-anchor > i.jstree-checkbox { display:none; }
+	#manual_tree_div.jstree-open > .jstree-anchor > .jstree-checkbox, 
+	#manual_tree_div.jstree-closed > .jstree-anchor > .jstree-checkbox { display:none; }
 	
 </style>
 <script type="text/javascript">
