@@ -31,10 +31,10 @@
 		$('#manual_tree_div').jstree
 		({
 			  'plugins': ['search'],
-			  'search': { 'show_only_matches' : true},
+			  'search': { 'show_only_matches_children' : true},
 			  'core' : 
 			  {
-				    'multiple' : false,
+				    //'multiple' : false,
 				    //'cache': false,
 				    'check_callback' : true,
     				'themes' : { 'stripes' : true },
