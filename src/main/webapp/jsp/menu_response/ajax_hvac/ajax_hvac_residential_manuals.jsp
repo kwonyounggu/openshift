@@ -38,7 +38,8 @@
 			  'plugins': ['checkbox', 'search'],
 			  'checkbox':
 			  {
-				'keep_selected_style': false  
+				//'keep_selected_style': false ,
+				 tie_selection : false
 			  },
 			  'search': 
 			  { 
