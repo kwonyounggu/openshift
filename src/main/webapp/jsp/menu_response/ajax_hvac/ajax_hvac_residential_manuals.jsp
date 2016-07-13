@@ -85,8 +85,10 @@
 		 });
 		$('#searchButton').click(function()
 		{
-			log("search button is clicked ...");
-			$('#manual_tree_div').jstree(true).search($('#searchInput').val());
+			
+			var v=$('#searchInput').val();
+			log("search button is clicked, v="+v);
+			$('#manual_tree_div').jstree(true).search(v);
 		});
 	});
 	function resizeIframe(obj) 
