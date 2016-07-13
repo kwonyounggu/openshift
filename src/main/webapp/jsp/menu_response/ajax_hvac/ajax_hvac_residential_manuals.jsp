@@ -31,7 +31,7 @@
 	{
 		$('#manual_tree_div').jstree
 		({
-			  'plugins': ['checkbox', 'search'],
+			  'plugins': ['search'],
 			  'search': 
 			  { 
 				  //'show_only_matches' : true,
