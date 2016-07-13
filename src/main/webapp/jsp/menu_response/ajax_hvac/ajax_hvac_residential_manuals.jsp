@@ -39,7 +39,9 @@
 			  'checkbox':
 			  {
 				//'keep_selected_style': false ,
-				 tie_selection : false
+				 'three_state' : false, // to avoid that fact that checking a node also check others
+      			 'whole_node' : false,  // to avoid checking the box just clicking the node 
+      			 'tie_selection' : false // for checking without selecting and selecting without checking
 			  },
 			  'search': 
 			  { 
