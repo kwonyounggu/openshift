@@ -23,7 +23,8 @@
 		width: 100%; 
 		height: 100%; 
 	}
-	.systemManualTree_noCheckbox
+	/*http://stackoverflow.com/questions/6112567/jstree-hide-checkbox*/
+	.systemManualTree_noCheckbox > i.jstree-checkbox
 	{
 		display: none;
 	}
