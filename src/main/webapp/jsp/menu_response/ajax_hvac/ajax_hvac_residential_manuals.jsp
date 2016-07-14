@@ -133,7 +133,7 @@
 		{
 			log(data);
 			if(data.node.data.hint==="brand name level")
-				if(data.node.state.checked) 
+				if(data.node.state.selected) 
 				{
 					g_brandName=data.node.id;
 					$('#searchInput').tooltipster('hide');
