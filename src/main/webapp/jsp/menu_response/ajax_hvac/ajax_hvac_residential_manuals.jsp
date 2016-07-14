@@ -179,7 +179,7 @@
 				else //eg: CARRIER is selected
 				{
 					log("----- here 1 -------------");
-					
+					log(g_brandNode);
 					//$('#searchInput').tooltipster('hide');
 					//if children existing then search through it otherwise call it
 				}
@@ -191,6 +191,7 @@
 				//if children existing then search through it otherwise call it
 				
 				log("----- here 2 -------------");
+				log(g_brandNode);
 			}
 			else //search value empty and brand not checked
 			{
