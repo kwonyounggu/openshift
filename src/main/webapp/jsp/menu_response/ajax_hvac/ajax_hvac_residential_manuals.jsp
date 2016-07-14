@@ -103,7 +103,7 @@
 		$('#manual_tree_div').on("changed.jstree", function (e, data) 
 		{
 			log(data);
-			log(data.instance.get_node(data.selected).text); // newly selected
+			/*log(data.instance.get_node(data.selected).text); // newly selected
 			var node=data.instance.get_node(data.selected);
 			if(node.children.length==0)
 			{
@@ -117,6 +117,15 @@
 			else
 			{
 				log("It has children");
+			}*/
+			if(data.node.data.hint.indexOf("leaf level") != -1)
+			{
+				//Do item - July 13
+				//note: do not implement if the currently selected/displayed pdf is the same one as in the right hand side
+				log("It's a leaf with a parent ID="+node.parent+", node.id="+node.id);
+				//document.getElementById('pdfIfram').setAttribute('src', node.id);
+				var pdfPath=node.id.replace("dl=0", "raw=1");
+				document.getElementById('pdfIfram').setAttribute('src', "http://docs.google.com/gview?url="+pdfPath+"&embedded=true");
 			}
 
 		});
