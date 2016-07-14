@@ -42,7 +42,7 @@
 	
 	$(document).ready(function ()
 	{
-		var g_brandName="";
+		var g_brandNode=null;
 		//Initialize the tooltips
 		 $('div input').tooltipster
 		 ({
@@ -104,14 +104,14 @@
 		$('#manual_tree_div').on("changed.jstree", function (e, data) 
 		{
 			log(data);
-			g_brandName="";
+			g_brandNode=null;
 			if(data.node.data.hint!=null)
 			{
 				if(data.node.data.hint==="brand name level")
 				{
 					if(data.node.state.selected) 
 					{	
-						g_brandName=data.node.id;
+						g_brandNode=data.node;
 						$('#searchInput').tooltipster('hide');
 					}
 				}
@@ -168,7 +168,7 @@
 			var searchValue=$('#searchInput').val();
 			if(searchValue.length!=0)
 			{
-				if(g_brandName.length==0)
+				if(g_brandNode==null)
 				{
 					log("----- here 0 -------------");
 					//red tooltip to ask having a check of a brand name
@@ -184,7 +184,7 @@
 					//if children existing then search through it otherwise call it
 				}
 			}
-			else if (g_brandName.length>0) //there exists a brand selected and a search value empty
+			else if (g_brandNode!=null) //there exists a brand selected and a search value empty
 			{
 				//$('#searchInput').tooltipster('hide');
 				// search all models for the brand
