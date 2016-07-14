@@ -103,32 +103,33 @@
 		$('#manual_tree_div').on("changed.jstree", function (e, data) 
 		{
 			log(data);
-			/*log(data.instance.get_node(data.selected).text); // newly selected
-			var node=data.instance.get_node(data.selected);
-			if(node.children.length==0)
+
+			if(data.node.data.hint!=null)
 			{
-				//Do item - July 13
-				//note: do not implement if the currently selected/displayed pdf is the same one as in the right hand side
-				log("It's a leaf with a parent ID="+node.parent+", node.id="+node.id);
-				//document.getElementById('pdfIfram').setAttribute('src', node.id);
-				var pdfPath=node.id.replace("dl=0", "raw=1");
-				document.getElementById('pdfIfram').setAttribute('src', "http://docs.google.com/gview?url="+pdfPath+"&embedded=true");
+				if(data.node.data.hint==="brand name level")
+				{
+					if(data.node.state.selected) 
+					{	
+						g_brandName=data.node.id;
+						$('#searchInput').tooltipster('hide');
+					}
+					else g_brandName="";
+				}
+				else if(data.node.data.hint.indexOf("leaf level") != -1)
+				{
+					//Do item - July 13
+					//note: do not implement if the currently selected/displayed pdf is the same one as in the right hand side
+					log("It's a leaf with a parent ID="+data.node.parent+", node.id="+data.node.id);
+					//document.getElementById('pdfIfram').setAttribute('src', node.id);
+					var pdfPath=data.node.id.replace("dl=0", "raw=1");
+					document.getElementById('pdfIfram').setAttribute('src', "http://docs.google.com/gview?url="+pdfPath+"&embedded=true");
+				}
 			}
-			else
-			{
-				log("It has children");
-			}*/
-			if(data.node.data.hint!=null && data.node.data.hint.indexOf("leaf level") != -1)
-			{
-				//Do item - July 13
-				//note: do not implement if the currently selected/displayed pdf is the same one as in the right hand side
-				log("It's a leaf with a parent ID="+data.node.parent+", node.id="+data.node.id);
-				//document.getElementById('pdfIfram').setAttribute('src', node.id);
-				var pdfPath=data.node.id.replace("dl=0", "raw=1");
-				document.getElementById('pdfIfram').setAttribute('src', "http://docs.google.com/gview?url="+pdfPath+"&embedded=true");
-			}
+			
 
 		});
+		//The following event listener is not called, probabrly due to check settings
+		/*
 		$('#manual_tree_div').on("check_node.jstree uncheck_node.jstree", function (e, data) 
 		{
 			log("--- 100000 -------");
@@ -140,7 +141,7 @@
 					$('#searchInput').tooltipster('hide');
 				}
 				else g_brandName="";
-		});
+		});*/
 		//see https://github.com/vakata/jstree/issues/668
 		$('#manual_tree_div').on("search.jstree before_open.jstree", function (e, data) 
 		{
