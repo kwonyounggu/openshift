@@ -102,6 +102,7 @@
 		
 		$('#manual_tree_div').on("changed.jstree", function (e, data) 
 		{
+			log(data);
 			log(data.instance.get_node(data.selected).text); // newly selected
 			var node=data.instance.get_node(data.selected);
 			if(node.children.length==0)
