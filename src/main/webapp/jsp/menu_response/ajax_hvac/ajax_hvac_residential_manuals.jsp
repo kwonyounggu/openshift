@@ -100,10 +100,11 @@
 			  }
 		});
 		
+		//this is called whenever node in any level is clicked
 		$('#manual_tree_div').on("changed.jstree", function (e, data) 
 		{
 			log(data);
-
+			g_brandName="";
 			if(data.node.data.hint!=null)
 			{
 				if(data.node.data.hint==="brand name level")
@@ -113,7 +114,6 @@
 						g_brandName=data.node.id;
 						$('#searchInput').tooltipster('hide');
 					}
-					else g_brandName="";
 				}
 				else if(data.node.data.hint.indexOf("leaf level") != -1)
 				{
@@ -125,7 +125,7 @@
 					document.getElementById('pdfIfram').setAttribute('src', "http://docs.google.com/gview?url="+pdfPath+"&embedded=true");
 				}
 			}
-			
+
 
 		});
 		//The following event listener is not called, probabrly due to check settings
