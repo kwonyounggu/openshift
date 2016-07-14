@@ -49,8 +49,8 @@
 				     trigger: 'custom',
 				     onlyOne: false,
 				     position: 'right',
-				     multiple:false,
-				     autoClose:false
+				     multiple:false//,
+				     //autoClose:false
 		});
 		$('#manual_tree_div').jstree
 		({
