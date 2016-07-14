@@ -6,6 +6,14 @@
 <%@ page import="javax.sql.*" %>
 <%@ page isELIgnored ="false" %>
 <style>
+	.tooltipster-default
+	{
+		border-radius: 1px;
+		border: 1px solid #eee;
+
+		background: #942724;
+		color: #e4f1ff;
+	}
 	.embed-container 
 	{ 
 		position: relative; 
@@ -31,8 +39,19 @@
 </style>
 <script type="text/javascript">
 	//see http://jsfiddle.net/jayhilwig/hv8vU/
+	
 	$(document).ready(function ()
 	{
+		var g_brandName="";
+		//Initialize the tooltips
+		 $('div input').tooltipster
+		 ({
+				     trigger: 'custom',
+				     onlyOne: false,
+				     position: 'right',
+				     multiple:false,
+				     autoClose:false
+		});
 		$('#manual_tree_div').jstree
 		({
 			  'plugins': ['checkbox', 'search'],
@@ -103,6 +122,9 @@
 		$('#manual_tree_div').on("check_node.jstree uncheck_node.jstree", function (e, data) 
 		{
 			log(data);
+			if(data.node.data.hint==="brand name level")
+				if(data.node.state.checked) g_brandName=data.node.id;
+				else g_brandName="";
 		});
 		//see https://github.com/vakata/jstree/issues/668
 		$('#manual_tree_div').on("search.jstree before_open.jstree", function (e, data) 
@@ -125,10 +147,28 @@
 		 });
 		$('#searchButton').click(function()
 		{
-			
-			var v=$('#searchInput').val();
-			log("search button is clicked, v="+v);
-			$('#manual_tree_div').jstree(true).search(v);
+			if(g_brandName==="")
+			{
+				//red tooltip to ask having a check of a brand name
+				
+				$('#searchInput').tooltipster('content', "Please check a brand!");
+				$('#searchInput').tooltipster('show');
+			}
+			else //if nodes are not existing
+			{
+				//call url
+				$('#searchInput').tooltipster('hide');
+			}
+			/*
+			else //node existing
+			{
+				var v=$('#searchInput').val();
+				log("search button is clicked, v="+v);
+				$('#manual_tree_div').jstree(true).search(v);
+				$('#searchInput').tooltipster('hide');
+			}
+			*/
+			 
 		});
 	});
 	function resizeIframe(obj) 
@@ -137,9 +177,7 @@
 	}
 </script>  
 <% 
-	//CarmClinicalSummaryEditBean eb=(CarmClinicalSummaryEditBean)request.getAttribute("carm_clincal_summary_bean");
-//The following color is corresponding with energyblue
-//style='background-color:#E0E9F5;
+//to do, button->submit button->see contact for the button activation
 %>
 
 <h4>Under Construction</h4>

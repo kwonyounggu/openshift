@@ -108,7 +108,7 @@
 				     position: 'right',
 				     multiple:false,
 				     autoClose:false
-		   });
+		  });
 	
 		//$(".phone").mask("(999) 999-9999");
 		$('#estimate_form').validate

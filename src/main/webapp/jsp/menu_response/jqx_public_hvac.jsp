@@ -42,6 +42,7 @@ $(document).ready(function ()
 	});
 	
 	$("#residential_anchor").click();//for the 1st initiation page by firing an event
+
 });//$(document).ready
 
 </script>
