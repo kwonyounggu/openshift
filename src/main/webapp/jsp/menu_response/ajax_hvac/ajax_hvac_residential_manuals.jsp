@@ -131,10 +131,11 @@
 		});
 		$('#manual_tree_div').on("check_node.jstree uncheck_node.jstree", function (e, data) 
 		{
+			log("--- 100000 -------");
 			log(data);
 			if(data.node.data.hint==="brand name level")
 				if(data.node.state.selected) 
-				{
+				{	log("--- 100001 -------");
 					g_brandName=data.node.id;
 					$('#searchInput').tooltipster('hide');
 				}
