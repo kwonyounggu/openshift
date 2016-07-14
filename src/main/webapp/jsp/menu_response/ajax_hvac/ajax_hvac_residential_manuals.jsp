@@ -122,9 +122,9 @@
 			{
 				//Do item - July 13
 				//note: do not implement if the currently selected/displayed pdf is the same one as in the right hand side
-				log("It's a leaf with a parent ID="+node.parent+", node.id="+node.id);
+				log("It's a leaf with a parent ID="+data.node.parent+", node.id="+data.node.id);
 				//document.getElementById('pdfIfram').setAttribute('src', node.id);
-				var pdfPath=node.id.replace("dl=0", "raw=1");
+				var pdfPath=data.node.id.replace("dl=0", "raw=1");
 				document.getElementById('pdfIfram').setAttribute('src', "http://docs.google.com/gview?url="+pdfPath+"&embedded=true");
 			}
 
