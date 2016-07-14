@@ -58,9 +58,9 @@
 			  'checkbox':
 			  {
 				//see http://stackoverflow.com/questions/35502382/jstree-checkbox-check-event
-				 'three_state' : false, // to avoid that fact that checking a node also check others
-      			 'whole_node' : false,  // to avoid checking the box just clicking the node 
-      			 'tie_selection' : false // for checking without selecting and selecting without checking
+				 'three_state' : false // to avoid that fact that checking a node also check others
+      			 //'whole_node' : false,  // to avoid checking the box just clicking the node 
+      			 //'tie_selection' : false // for checking without selecting and selecting without checking
 			  },
 			  'search': 
 			  { 
