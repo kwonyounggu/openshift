@@ -118,7 +118,7 @@
 			{
 				log("It has children");
 			}*/
-			if(data.node.data.hint.indexOf("leaf level") != -1)
+			if(data.node.data.hint!=null && data.node.data.hint.indexOf("leaf level") != -1)
 			{
 				//Do item - July 13
 				//note: do not implement if the currently selected/displayed pdf is the same one as in the right hand side
@@ -161,17 +161,35 @@
 		 });
 		$('#searchButton').click(function()
 		{
-			if(g_brandName==="")
+			$('#searchInput').tooltipster('hide');
+			
+			var searchValue=$('#searchInput').val();
+			if(searchValue.length!=0)
 			{
-				//red tooltip to ask having a check of a brand name
-				
-				$('#searchInput').tooltipster('content', "Try again after checking a brand.");
-				$('#searchInput').tooltipster('show');
+				if(g_brandName==="")
+				{
+					//red tooltip to ask having a check of a brand name
+					
+					$('#searchInput').tooltipster('content', "Try again after checking a brand.");
+					$('#searchInput').tooltipster('show');
+				}
+				else //eg: CARRIER is selected
+				{
+					
+					//$('#searchInput').tooltipster('hide');
+					//if children existing then search through it otherwise call it
+				}
 			}
-			else //if nodes are not existing
+			else if (g_brandName.length>0) //there exists a brand selected and a search value empty
 			{
-				//call url
-				$('#searchInput').tooltipster('hide');
+				//$('#searchInput').tooltipster('hide');
+				// search all models for the brand
+				//if children existing then search through it otherwise call it
+			}
+			else //search value empty and brand not checked
+			{
+				//initial state of the tree
+				$('#manual_tree_div').jstree(true).search(searchValue);
 			}
 			/*
 			else //node existing
