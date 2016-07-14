@@ -48,9 +48,9 @@
 		 ({
 				     trigger: 'custom',
 				     onlyOne: false,
-				     position: 'right',
-				     multiple:false//,
-				     //autoClose:false
+				     position: 'top',
+				     multiple:false,
+				     autoClose:true
 		});
 		$('#manual_tree_div').jstree
 		({
@@ -123,7 +123,11 @@
 		{
 			log(data);
 			if(data.node.data.hint==="brand name level")
-				if(data.node.state.checked) g_brandName=data.node.id;
+				if(data.node.state.checked) 
+				{
+					g_brandName=data.node.id;
+					$('#searchInput').tooltipster('hide');
+				}
 				else g_brandName="";
 		});
 		//see https://github.com/vakata/jstree/issues/668
@@ -151,7 +155,7 @@
 			{
 				//red tooltip to ask having a check of a brand name
 				
-				$('#searchInput').tooltipster('content', "Please check a brand!");
+				$('#searchInput').tooltipster('content', "Try again after checking a brand.");
 				$('#searchInput').tooltipster('show');
 			}
 			else //if nodes are not existing
