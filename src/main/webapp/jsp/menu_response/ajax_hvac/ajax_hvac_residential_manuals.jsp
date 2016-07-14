@@ -143,7 +143,7 @@
 				else g_brandName="";
 		});*/
 		//see https://github.com/vakata/jstree/issues/668
-		$('#manual_tree_div').on("search.jstree before_open.jstree", function (e, data) 
+		/*$('#manual_tree_div').on("search.jstree before_open.jstree", function (e, data) 
 		{
 			log("--1---");
 			if(data.instance.settings.search.show_only_matches) 
@@ -155,7 +155,7 @@
 		    }
 
 		});
-
+		*/
 		//the following two event functions are triggering a tree search function
 		$('#searchInput').keydown(function (e) 
 		{
@@ -170,6 +170,7 @@
 			{
 				if(g_brandName.length==0)
 				{
+					log("----- here 0 -------------");
 					//red tooltip to ask having a check of a brand name
 					
 					$('#searchInput').tooltipster('content', "Try again after checking a brand.");
@@ -177,6 +178,7 @@
 				}
 				else //eg: CARRIER is selected
 				{
+					log("----- here 1 -------------");
 					
 					//$('#searchInput').tooltipster('hide');
 					//if children existing then search through it otherwise call it
@@ -187,11 +189,15 @@
 				//$('#searchInput').tooltipster('hide');
 				// search all models for the brand
 				//if children existing then search through it otherwise call it
+				
+				log("----- here 2 -------------");
 			}
 			else //search value empty and brand not checked
 			{
 				//initial state of the tree
 				$('#manual_tree_div').jstree(true).search(searchValue);
+				
+				log("----- here 3 -------------");
 			}
 			/*
 			else //node existing
