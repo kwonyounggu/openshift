@@ -166,7 +166,7 @@
 			var searchValue=$('#searchInput').val();
 			if(searchValue.length!=0)
 			{
-				if(g_brandName==="")
+				if(g_brandName.length==0)
 				{
 					//red tooltip to ask having a check of a brand name
 					
