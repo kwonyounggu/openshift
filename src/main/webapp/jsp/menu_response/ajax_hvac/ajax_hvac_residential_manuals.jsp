@@ -175,8 +175,9 @@
 		//    data.instance.toggle_node(data.node);
 		//});
 
-		$("manual_tree_div").bind("load_node.jstree", function (e, data) 
+		$("manual_tree_div").on("load_node.jstree", function (e, data) 
 		{ //if(data.rslt.status) { data.inst.open_node(data.rslt.obj); }
+			log("load_node.jstree");
 			log(data);
 		});
 		$('#searchButton').click(function()
