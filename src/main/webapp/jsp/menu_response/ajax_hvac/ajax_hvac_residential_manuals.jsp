@@ -43,6 +43,7 @@
 	$(document).ready(function ()
 	{
 		var g_brandNode=null;
+		var g_foundCount=0;
 		//Initialize the tooltips
 		 $('div input').tooltipster
 		 ({
@@ -74,6 +75,7 @@
 					  if(node.data.hint==="model number level" && node.parent.split(":")[0]===g_brandNode.selected[0] && node.id.split(":")[2].search(new RegExp(str, "i"))!=-1) 
 					  {
 						  log("search_callback (bingog): "+node.id+", "+node.text+", "+node.data.hint+", "+node.parent.split(":")[0]+", "+g_brandNode.selected[0]+", "+node.text.indexOf(str)!=-1);
+						  g_foundCount++;
 						  return true;
 					  }
 				  }
@@ -111,6 +113,7 @@
 		{
 			log(data);
 			g_brandNode=null;
+			g_foundCount=0;
 			if(data.node.data.hint!=null)
 			{
 				if(data.node.data.hint==="brand name level")
@@ -118,6 +121,7 @@
 					if(data.node.state.selected) 
 					{	
 						g_brandNode=data;
+						
 						$('#searchInput').tooltipster('hide');
 					}
 				}
@@ -186,6 +190,16 @@
 				{
 					log("----- here 1 -------------");
 					log(g_brandNode);
+					
+					if(g_brandNode.node.children.length==0)
+					{
+						//call system types
+						$('#manual_tree_div').jstree("select_node", g_brandNode.node.id)
+					}
+					else for(var i=0; i<g_brandNode.node.children.length;i++);
+					
+					
+					
 					g_brandNode.instance.search(searchValue);
 					//$('#searchInput').tooltipster('hide');
 					//if children existing then search through it otherwise call it
