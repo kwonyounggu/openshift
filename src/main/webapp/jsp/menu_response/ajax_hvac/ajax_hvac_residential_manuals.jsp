@@ -200,7 +200,9 @@
 						log("----- here 1-1 -------------");
 						//call system types
 						//$('#manual_tree_div').jstree("select_node", g_brandNode.node.id);
-						$("#manual_tree_div").jstree("open_node", g_brandNode.node.id);
+						var o=$("#manual_tree_div").jstree("open_node", g_brandNode.node.id);
+						log(g_brandNode);
+						log(o);
 					}
 					else for(var i=0; i<g_brandNode.node.children.length;i++);
 					
