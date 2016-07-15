@@ -171,7 +171,10 @@
 		{
 			if(e.which==13) $('#searchButton').trigger('click');
 		 });
-		$('#manual_tree_div').on("select_node.jstree", function (e, data) { $('#manual_tree_div').toggle_node(data.node); });
+		$('#manual_tree_div').on('select_node.jstree', function (e, data) {
+		    data.instance.toggle_node(data.node);
+		});
+
 		$('#searchButton').click(function()
 		{
 			$('#searchInput').tooltipster('hide');
