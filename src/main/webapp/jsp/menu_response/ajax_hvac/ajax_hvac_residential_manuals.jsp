@@ -84,7 +84,7 @@
 			  {
 				    'multiple' : false,
 				    //'cache': false,
-				    //'check_callback' : true,
+				    'check_callback' : true,
     				//'themes' : { 'stripes' : true },
 				    //'animation' : 0,
 
