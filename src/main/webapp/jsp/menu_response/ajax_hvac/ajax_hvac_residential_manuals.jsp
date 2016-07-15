@@ -180,6 +180,7 @@
 				{
 					log("----- here 1 -------------");
 					log(g_brandNode);
+					g_brandNode.instance.search(searchValue);
 					//$('#searchInput').tooltipster('hide');
 					//if children existing then search through it otherwise call it
 				}
