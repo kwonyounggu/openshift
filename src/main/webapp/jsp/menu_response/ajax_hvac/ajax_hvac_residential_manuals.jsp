@@ -87,6 +87,7 @@
 				    //'check_callback' : true,
     				//'themes' : { 'stripes' : true },
 				    //'animation' : 0,
+				    'load_node':function(node){log(node)},
 				    'data':
 				    {
 				    	'url': function(node)
