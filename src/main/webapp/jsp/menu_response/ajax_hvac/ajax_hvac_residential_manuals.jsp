@@ -111,7 +111,7 @@
 				{
 					if(data.node.state.selected) 
 					{	
-						g_brandNode=data.node;
+						g_brandNode=data;
 						$('#searchInput').tooltipster('hide');
 					}
 				}
