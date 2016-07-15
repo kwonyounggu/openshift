@@ -175,6 +175,10 @@
 		//    data.instance.toggle_node(data.node);
 		//});
 
+		$("manual_tree_div").bind("load_node.jstree", function (e, data) 
+		{ //if(data.rslt.status) { data.inst.open_node(data.rslt.obj); }
+			log(data);
+		});
 		$('#searchButton').click(function()
 		{
 			$('#searchInput').tooltipster('hide');
@@ -201,9 +205,9 @@
 						//call system types
 						//$('#manual_tree_div').jstree("select_node", g_brandNode.node.id);
 						$("#manual_tree_div").jstree("open_node", g_brandNode.node.id);
-						log(g_brandNode);
-						var o=$('#manual_tree_div').jstree(true).get_node(g_brandNode.node.id);
-						log(o);
+						//log(g_brandNode);
+						//var o=$('#manual_tree_div').jstree(true).get_node(g_brandNode.node.id);
+						//log(o);
 					}
 					else for(var i=0; i<g_brandNode.node.children.length;i++);
 					
