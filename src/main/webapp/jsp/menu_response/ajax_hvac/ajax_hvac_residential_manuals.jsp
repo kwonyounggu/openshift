@@ -171,6 +171,7 @@
 		{
 			if(e.which==13) $('#searchButton').trigger('click');
 		 });
+		$('#manual_tree_div').on("select_node.jstree", function (e, data) { $('#manual_tree_div').toggle_node(data.node); });
 		$('#searchButton').click(function()
 		{
 			$('#searchInput').tooltipster('hide');
@@ -194,7 +195,7 @@
 					if(g_brandNode.node.children.length==0)
 					{
 						//call system types
-						$('#manual_tree_div').jstree("select_node", g_brandNode.node.id)
+						$('#manual_tree_div').jstree("select_node", g_brandNode.node.id);
 					}
 					else for(var i=0; i<g_brandNode.node.children.length;i++);
 					
