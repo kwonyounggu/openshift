@@ -171,9 +171,9 @@
 		{
 			if(e.which==13) $('#searchButton').trigger('click');
 		 });
-		$('#manual_tree_div').on('select_node.jstree', function (e, data) {
-		    data.instance.toggle_node(data.node);
-		});
+		//$('#manual_tree_div').on('select_node.jstree', function (e, data) {
+		//    data.instance.toggle_node(data.node);
+		//});
 
 		$('#searchButton').click(function()
 		{
@@ -197,8 +197,10 @@
 					
 					if(g_brandNode.node.children.length==0)
 					{
+						log("----- here 1-1 -------------");
 						//call system types
-						$('#manual_tree_div').jstree("select_node", g_brandNode.node.id);
+						//$('#manual_tree_div').jstree("select_node", g_brandNode.node.id);
+						$("#manual_tree_div").jstree("open_node", g_brandNode.node.id);
 					}
 					else for(var i=0; i<g_brandNode.node.children.length;i++);
 					
