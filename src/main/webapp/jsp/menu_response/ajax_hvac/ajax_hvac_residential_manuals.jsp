@@ -68,8 +68,10 @@
 				  //'show_only_matches_children' : true,
 				  search_callback:function(str, node)
 				  {
-					  log("search_callback: "+node.id+", "+node.text);
-					  if(node.text===str) return true;
+					  log("search_callback: "+node.id+", "+node.text+", "+node.data.hint+", "+node.parent.split(":")[0]);
+					  //if(node.text===str) return true;
+					  
+					  if(node.data.hint==="model number level" && node.parent.split(":")[0]===g_brandNode.selected[0] && node.text.indexOf(str)) return true;
 				  }
 			  },
 			  'core' : 
