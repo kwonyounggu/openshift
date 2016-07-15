@@ -71,7 +71,7 @@
 					  log("search_callback: "+node.id+", "+node.text+", "+node.data.hint+", "+node.parent.split(":")[0]+", "+g_brandNode.selected[0]+", "+node.text.indexOf(str)!=-1);
 					  //if(node.text===str) return true;
 					  
-					  if(node.data.hint==="model number level" && node.parent.split(":")[0]===g_brandNode.selected[0] && node.text.indexOf(str)!=-1) 
+					  if(node.data.hint==="model number level" && node.parent.split(":")[0]===g_brandNode.selected[0] && node.id.split(":")[2].indexOf(str)!=-1) 
 					  {
 						  log("search_callback (bingog): "+node.id+", "+node.text+", "+node.data.hint+", "+node.parent.split(":")[0]+", "+g_brandNode.selected[0]+", "+node.text.indexOf(str)!=-1);
 						  return true;
