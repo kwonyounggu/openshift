@@ -36,6 +36,7 @@
 	{
 		display: none;
 	}
+	.typeahead { z-index: 1051; }
 </style>
 <script type="text/javascript">
 	//see http://jsfiddle.net/jayhilwig/hv8vU/
