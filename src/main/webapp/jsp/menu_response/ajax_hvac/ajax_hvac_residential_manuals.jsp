@@ -190,7 +190,7 @@
 			if(g_checkLoadNode)
 			{
 				g_checkLoadNode=false;
-				g_brandNode.node=data.node;//
+				g_brandNode.node=$('#manual_tree_div').jstree(true).get_node(g_brandNode.node.id);
 				$('#searchButton').trigger('click');
 			}
 		});
@@ -217,17 +217,13 @@
 					if(g_brandNode.node.children.length==0)
 					{
 						log("----- here 1-1 -------------");
-						openNode(g_brandNode.node.id);
-						//call system types
-						//$('#manual_tree_div').jstree("select_node", g_brandNode.node.id);
-						//$("#manual_tree_div").jstree("open_node", g_brandNode.node.id);
-						//log(g_brandNode);
-						//var o=$('#manual_tree_div').jstree(true).get_node(g_brandNode.node.id);
-						//log(o);
+						openNode(g_brandNode.node.id, true);
 					}
 					else for(var i=0; i<g_brandNode.node.children.length;i++)
 					{
-						log("child["+i+"]: "+g_brandNode.node.children[i].id);
+						log("child["+i+"]: "+g_brandNode.node.children[i]);
+						//var level2Node=$('#manual_tree_div').jstree(true).get_node(g_brandNode.node.children[i])
+						//if(level2Node.children.length==0) openNode(level2Node.id, false);
 					}
 					
 					
@@ -235,6 +231,8 @@
 					g_brandNode.instance.search(searchValue);
 					//$('#searchInput').tooltipster('hide');
 					//if children existing then search through it otherwise call it
+					
+					if(g_brandNode.node.parents.length<3)//bring more children progrmatically
 				}
 			}
 			else if (g_brandNode!=null) //there exists a brand selected and a search value empty
@@ -264,9 +262,9 @@
 			*/
 			 
 		});
-		function openNode(nodeId)
+		function openNode(nodeId, checkLoadNode)
 		{
-			g_checkLoadNode=true;
+			g_checkLoadNode=checkLoadNode;
 			$("#manual_tree_div").jstree("open_node", nodeId);
 		}
 	});
