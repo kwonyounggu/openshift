@@ -232,7 +232,7 @@
 					//$('#searchInput').tooltipster('hide');
 					//if children existing then search through it otherwise call it
 					
-					if(g_brandNode.node.parents.length<3)//bring more children progrmatically
+					//if(g_brandNode.node.parents.length<3)  //bring more children progrmatically
 				}
 			}
 			else if (g_brandNode!=null) //there exists a brand selected and a search value empty
