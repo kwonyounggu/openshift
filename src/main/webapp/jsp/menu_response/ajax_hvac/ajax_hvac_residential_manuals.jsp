@@ -218,7 +218,10 @@
 						//var o=$('#manual_tree_div').jstree(true).get_node(g_brandNode.node.id);
 						//log(o);
 					}
-					else for(var i=0; i<g_brandNode.node.children.length;i++);
+					else for(var i=0; i<g_brandNode.node.children.length;i++)
+					{
+						log("child["+i+"]: "+g_brandNode.node.children[i].id);
+					}
 					
 					
 					
