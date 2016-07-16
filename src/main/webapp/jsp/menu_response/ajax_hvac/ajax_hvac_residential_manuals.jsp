@@ -235,18 +235,19 @@
 			*/
 			 
 		});
+		$.get('http://www.webmonster.ca/jsp/menu_response/json_hvac/hvac_manuals_model_number.jsp', function(data)
+		{
+			log("inside of model number sourcce ...");
+			log(data);
+		    $("#searchInput").typeahead({ source:data, autoSelect: true });
+		},'json');
 		function openNode(nodeId, checkLoadNode)
 		{
 			g_checkLoadNode=checkLoadNode;
 			$("#manual_tree_div").jstree("open_node", nodeId);
 		}
 	});
-	$.get('http://www.webmonster.ca/jsp/menu_response/json_hvac/hvac_manuals_model_number.jsp', function(data)
-	{
-		log("inside of model number sourcce ...");
-		log(data);
-	    $("#searchInput").typeahead({ source:data, autoSelect: true });
-	},'json');
+	
 </script>  
 <% 
 //to do, button->submit button->see contact for the button activation
