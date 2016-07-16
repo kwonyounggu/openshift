@@ -243,8 +243,9 @@
 	});
 	$.get('http://www.webmonster.ca/jsp/menu_response/json_hvac/hvac_manuals_model_number.jsp', function(data)
 	{
+		log("inside of model number sourcce ...");
 		log(data);
-	    $("#searchInput").typeahead({ source:data });
+	    $("#searchInput").typeahead({ source:data, autoSelect: true });
 	},'json');
 </script>  
 <% 
