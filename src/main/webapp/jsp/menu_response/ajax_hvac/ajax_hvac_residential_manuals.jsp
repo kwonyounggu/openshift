@@ -44,6 +44,7 @@
 	{
 		var g_brandNode=null;
 		var g_foundCount=0;
+		var g_checkLoadNode=false;
 		//Initialize the tooltips
 		 $('div input').tooltipster
 		 ({
@@ -186,6 +187,12 @@
 		{ //if(data.rslt.status) { data.inst.open_node(data.rslt.obj); }
 			log("load_node.jstree");
 			log(data);
+			if(g_checkLoadNode)
+			{
+				g_checkLoadNode=false;
+				g_brandNode.node=data.node;//
+				$('#searchButton').trigger('click');
+			}
 		});
 		$('#searchButton').click(function()
 		{
@@ -259,6 +266,7 @@
 		});
 		function openNode(nodeId)
 		{
+			g_checkLoadNode=true;
 			$("#manual_tree_div").jstree("open_node", nodeId);
 		}
 	});
