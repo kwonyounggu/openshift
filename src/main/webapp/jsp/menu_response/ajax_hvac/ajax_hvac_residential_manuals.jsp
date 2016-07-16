@@ -84,7 +84,7 @@
 			  {
 				    'multiple' : false,
 				    //'cache': false,
-				    'check_callback' : true,
+				    //'check_callback' : true,
     				//'themes' : { 'stripes' : true },
 				    //'animation' : 0,
 
@@ -176,21 +176,12 @@
 		//    data.instance.toggle_node(data.node);
 		//});
 
-		$('#manual_tree_div').on("create_node.jstree", function (e, data) 
-		{
-			log("create_node.jstree");
-			log(data);
-		});
 		$('#manual_tree_div').on("ready.jstree", function (e, data) 
 		{
 			log("ready.jstree");
 			log(data);
 		});
-		$('#manual_tree_div').on("loading.jstree", function (e, data) 
-		{
-			log("loading.jstree");
-			log(data);
-		});
+
 		$('#manual_tree_div').on("load_node.jstree", function (e, data) 
 		{ //if(data.rslt.status) { data.inst.open_node(data.rslt.obj); }
 			log("load_node.jstree");
