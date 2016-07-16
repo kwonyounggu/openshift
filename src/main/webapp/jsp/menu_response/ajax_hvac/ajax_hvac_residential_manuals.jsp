@@ -240,7 +240,7 @@
 		{
 			log("inside of model number sourcce ...");
 			log(data);
-		    $("#searchInput").typeahead({ source:data, autoSelect: true });
+		    $("#searchInput").typeahead({ source:data});
 		});
 		function openNode(nodeId, checkLoadNode)
 		{
