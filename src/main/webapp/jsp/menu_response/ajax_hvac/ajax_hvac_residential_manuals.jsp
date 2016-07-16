@@ -236,11 +236,13 @@
 			*/
 			 
 		});
+		//collect at loading time
 		$.get('http://www.webmonster.ca/jsp/menu_response/json_hvac/hvac_manuals_model_number.jsp', function(data)
 		{
 			log("inside of model number sourcce ...");
 			log(data);
-		    $("#searchInput").typeahead({ source:data});
+			var temp=[{id: "someId1", name: "Display name 1"}, {id: "someId2", name: "Display name 2"}];
+		    $("#searchInput").typeahead({ source:temp});
 		});
 		function openNode(nodeId, checkLoadNode)
 		{
