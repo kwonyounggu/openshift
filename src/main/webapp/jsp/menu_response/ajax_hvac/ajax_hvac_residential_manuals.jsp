@@ -240,7 +240,7 @@
 			log("inside of model number sourcce ...");
 			log(data);
 		    $("#searchInput").typeahead({ source:data, autoSelect: true });
-		},'json');
+		});
 		function openNode(nodeId, checkLoadNode)
 		{
 			g_checkLoadNode=checkLoadNode;
