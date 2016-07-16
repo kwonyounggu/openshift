@@ -140,34 +140,7 @@
 
 
 		});
-		//The following event listener is not called, probabrly due to check settings
-		/*
-		$('#manual_tree_div').on("check_node.jstree uncheck_node.jstree", function (e, data) 
-		{
-			log("--- 100000 -------");
-			log(data);
-			if(data.node.data.hint==="brand name level")
-				if(data.node.state.selected) 
-				{	log("--- 100001 -------");
-					g_brandName=data.node.id;
-					$('#searchInput').tooltipster('hide');
-				}
-				else g_brandName="";
-		});*/
-		//see https://github.com/vakata/jstree/issues/668
-		/*$('#manual_tree_div').on("search.jstree before_open.jstree", function (e, data) 
-		{
-			log("--1---");
-			if(data.instance.settings.search.show_only_matches) 
-			{
-				log("--2---");
-		        data.instance._data.search.dom.find('.jstree-node')
-		            .show().filter('.jstree-last').filter(function() { return this.nextSibling; }).removeClass('jstree-last')
-		            .end().end().end().find(".jstree-children").each(function () { $(this).children(".jstree-node:visible").eq(-1).addClass("jstree-last"); });
-		    }
 
-		});
-		*/
 		//the following two event functions are triggering a tree search function
 		$('#searchInput').keydown(function (e) 
 		{
@@ -268,10 +241,10 @@
 			$("#manual_tree_div").jstree("open_node", nodeId);
 		}
 	});
-	function resizeIframe(obj) 
+	$.get('http://www.webmonster.ca/jsp/menu_response/json_hvac/hvac_manuals_model_number.jsp', function(data)
 	{
-	    //obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-	}
+	    $("#searchInput").typeahead({ source:data });
+	},'json');
 </script>  
 <% 
 //to do, button->submit button->see contact for the button activation
@@ -282,7 +255,7 @@
 	<tr>
 		<td style='width: 25%; vertical-align: top'>
 			  <div class="input-group">
-			       <input id="searchInput" type="Search" placeholder="Search..." class="form-control" />
+			       <input id="searchInput" type="Search" placeholder="Search..." class="form-control" data-provide="typeahead" />
 			       <div class="input-group-btn">
 			           <button id="searchButton" class="btn btn-info">
 			           <span class="glyphicon glyphicon-search"></span>
