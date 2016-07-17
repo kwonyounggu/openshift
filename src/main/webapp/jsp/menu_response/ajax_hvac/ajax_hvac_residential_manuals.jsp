@@ -241,7 +241,11 @@
 		{
 			log("inside of model number sourcce ...");
 			log(data);
-			var temp=[{id: "someId1:some", name: "Display name 1"}, {id: "someId2", name: "Display name 2"}];
+			//var temp=[{id: "someId1:some", name: "Display name 1"}, {id: "someId2", name: "Display name 2"}];
+			var temp=[
+				{id: "CARRIER:model1", name: "model number 1"},
+				{id: "CARRIER:model2", name: "model number 2"}
+			];
 		    $("#searchInput").typeahead({ source:temp});
 		});
 		function openNode(nodeId, checkLoadNode)
