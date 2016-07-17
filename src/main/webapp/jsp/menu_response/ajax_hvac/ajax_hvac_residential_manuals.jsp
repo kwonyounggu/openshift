@@ -236,24 +236,12 @@
 			*/
 			 
 		});
-		//collect at loading time
-		
+		//see https://github.com/bassjobsen/Bootstrap-3-Typeahead		
 		$.get('http://www.webmonster.ca/jsp/menu_response/json_hvac/hvac_manuals_model_number.jsp', function(data)
 		{
-			log("inside of model number sourcce ...");
-
-			log(data);
-
-		    $("#searchInput").typeahead({ source:data});
+			//log(data);
+		    $("#searchInput").typeahead({ source: data, minLength: 0});
 		},'json');
-		/*$.getJSON('http://www.webmonster.ca/jsp/menu_response/json_hvac/hvac_manuals_model_number.jsp', function(data)
-		{
-			log("inside of model number sourcce ...");
-
-			log(data);
-
-		    $("#searchInput").typeahead({ source:data});
-		});*/
 		function openNode(nodeId, checkLoadNode)
 		{
 			g_checkLoadNode=checkLoadNode;
