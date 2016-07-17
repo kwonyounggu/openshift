@@ -244,35 +244,30 @@
 		    $("#searchInput").typeahead(
 		    { 
 		    	source: data,
-		    	updater: searchModelNumber(item)
-		    	/*
 		    	updater: function(item)
 		    	{
-		    		log(item);
-		    		//1. Waiting sign
-		    		//2. event fire
-		    		//3. Waiting sign off when search tree is done.
+		    		searchModelNumber(item);
 		    		return item;
-		    	}*/
+		    	}
 		    });
 		},'json');
 		$('#searchInput').on('typeahead:selected', function(e, item) 
 		{
 		    alert(item.value);
 		});
-		function openNode(nodeId, checkLoadNode)
-		{
-			g_checkLoadNode=checkLoadNode;
-			$("#manual_tree_div").jstree("open_node", nodeId);
-		}
 		function searchModelNumber(item)
 		{
 			log(item);
     		//1. Waiting sign
     		//2. event fire
     		//3. Waiting sign off when search tree is done.
-    		return item;
 		}
+		function openNode(nodeId, checkLoadNode)
+		{
+			g_checkLoadNode=checkLoadNode;
+			$("#manual_tree_div").jstree("open_node", nodeId);
+		}
+		
 	});
 	
 </script>  
