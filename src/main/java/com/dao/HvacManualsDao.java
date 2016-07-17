@@ -293,7 +293,7 @@ public class HvacManualsDao
 	}
 	public Map<String, String> getKeysValues_SS(String sqlStatement) throws DAOException
 	{
-		log.info("Calling for getKeysValues("+sqlStatement+")");
+		log.info("Calling for getKeysValues_SS("+sqlStatement+")");
 		
 		Map<String, String> map=new TreeMap<String, String>();
 		
@@ -307,6 +307,7 @@ public class HvacManualsDao
 			rs = s.executeQuery(sqlStatement);
 			while (rs.next())
 			{
+				System.out.println(rs.getString(1)+", "+ rs.getString(2));
 				map.put(rs.getString(1), rs.getString(2));
 			}
 		}
@@ -320,7 +321,7 @@ public class HvacManualsDao
 			closeResultSet(rs);
 			closeStatement(s);
 			closeConnection(c);
-			log.info("Ending for getKeysValues(String sqlStatement)");
+			log.info("Ending for getKeysValues_SS(String sqlStatement)");
 		}
 		return map;
 
