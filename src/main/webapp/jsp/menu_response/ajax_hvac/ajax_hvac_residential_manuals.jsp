@@ -243,6 +243,10 @@
 			//log(data);
 		    $("#searchInput").typeahead({ source: data, autoSelect: false});
 		},'json');
+		$('#searchInput').on('typeahead:selected', function(e, item) 
+		{
+		    alert(item.value);
+		});
 		function openNode(nodeId, checkLoadNode)
 		{
 			g_checkLoadNode=checkLoadNode;
