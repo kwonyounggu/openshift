@@ -10,6 +10,6 @@
 	response.setContentType("application/json");
 %>
 [
-	{id: "CARRIER:model1", name: "model number 1"},
-	{id: "CARRIER:model2", name: "model number 2"}
+	{"id": "CARRIER:model1", "name": "model number 1"},
+	{"id": "CARRIER:model2", "name": "model number 2"}
 ]
