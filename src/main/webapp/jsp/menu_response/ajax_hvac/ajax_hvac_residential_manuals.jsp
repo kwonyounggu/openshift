@@ -244,11 +244,16 @@
 		    $("#searchInput").typeahead(
 		    { 
 		    	source: data,
+		    	updateer: searchModelNumber(item)
+		    	/*
 		    	updater: function(item)
 		    	{
 		    		log(item);
+		    		//1. Waiting sign
+		    		//2. event fire
+		    		//3. Waiting sign off when search tree is done.
 		    		return item;
-		    	}
+		    	}*/
 		    });
 		},'json');
 		$('#searchInput').on('typeahead:selected', function(e, item) 
@@ -259,6 +264,14 @@
 		{
 			g_checkLoadNode=checkLoadNode;
 			$("#manual_tree_div").jstree("open_node", nodeId);
+		}
+		function searchModelNumber(item)
+		{
+			log(item);
+    		//1. Waiting sign
+    		//2. event fire
+    		//3. Waiting sign off when search tree is done.
+    		return item;
 		}
 	});
 	
