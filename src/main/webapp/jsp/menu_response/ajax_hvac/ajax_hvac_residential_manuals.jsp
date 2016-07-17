@@ -247,6 +247,7 @@
 		    	updater: function(item)
 		    	{
 		    		log(item);
+		    		return item;
 		    	}
 		    });
 		},'json');
