@@ -236,11 +236,12 @@
 			*/
 			 
 		});
-		//see https://github.com/bassjobsen/Bootstrap-3-Typeahead		
+		//see https://github.com/bassjobsen/Bootstrap-3-Typeahead	
+		//see http://tosbourn.com/setting-a-minimum-length-for-your-search-in-typeahead-js/
 		$.get('http://www.webmonster.ca/jsp/menu_response/json_hvac/hvac_manuals_model_number.jsp', function(data)
 		{
 			//log(data);
-		    $("#searchInput").typeahead({ source: data, minLength: 0});
+		    $("#searchInput").typeahead({ source: data, autoSelect: false});
 		},'json');
 		function openNode(nodeId, checkLoadNode)
 		{
@@ -259,7 +260,7 @@
 	<tr>
 		<td style='width: 25%; vertical-align: top'>
 			  <div class="input-group">
-			       <input id="searchInput" type="Search" placeholder="Search..." class="form-control" data-provide="typeahead" />
+			       <input id="searchInput" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead" />
 			       <div class="input-group-btn">
 			           <button id="searchButton" class="btn btn-info">
 			           <span class="glyphicon glyphicon-search"></span>
