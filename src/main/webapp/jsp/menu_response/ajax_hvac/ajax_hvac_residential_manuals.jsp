@@ -240,19 +240,10 @@
 		$.get('http://www.webmonster.ca/jsp/menu_response/json_hvac/hvac_manuals_model_number.jsp', function(data)
 		{
 			log("inside of model number sourcce ...");
-			//data=data.trim();
+
 			log(data);
-			//var temp=[{id: "someId1:some", name: "Display name 1"}, {id: "someId2", name: "Display name 2"}];
-			//var temp=[
-			//	{id: "CARRIER:model1", name: "model number 1"},
-			//	{id: "CARRIER:model2", name: "model number 2"}
-			//];
-			/*****************************************************************************************************
-			//string to json
-			1. JSON.parse(this.responseString);
-			2. jQuery.parseJSON(this.responseString);
-			*****************************************************************************************************/
-		    $("#searchInput").typeahead({ source:JSON.parse(data)});//string to json format such as [{id:0, name: "a"},{id: 1, name: "b"}]
+
+		    $("#searchInput").typeahead({ source:data});
 		});
 		function openNode(nodeId, checkLoadNode)
 		{

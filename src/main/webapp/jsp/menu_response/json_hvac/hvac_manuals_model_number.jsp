@@ -6,6 +6,9 @@
 <%@ page import="javax.sql.*" %>
 <%@ page isELIgnored ="false" %>
 
+<% 
+	response.setContentType("application/json");
+%>
 [
 	{id: "CARRIER:model1", name: "model number 1"},
 	{id: "CARRIER:model2", name: "model number 2"}
