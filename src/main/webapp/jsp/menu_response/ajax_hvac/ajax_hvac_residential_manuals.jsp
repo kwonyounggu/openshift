@@ -244,7 +244,7 @@
 		    $("#searchInput").typeahead(
 		    { 
 		    	source: data,
-		    	updateer: searchModelNumber(item)
+		    	updater: searchModelNumber(item)
 		    	/*
 		    	updater: function(item)
 		    	{
