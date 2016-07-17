@@ -237,7 +237,16 @@
 			 
 		});
 		//collect at loading time
+		/*
 		$.get('http://www.webmonster.ca/jsp/menu_response/json_hvac/hvac_manuals_model_number.jsp', function(data)
+		{
+			log("inside of model number sourcce ...");
+
+			log(data);
+
+		    $("#searchInput").typeahead({ source:data});
+		},"json");*/
+		$.getJSON('http://www.webmonster.ca/jsp/menu_response/json_hvac/hvac_manuals_model_number.jsp', function(data)
 		{
 			log("inside of model number sourcce ...");
 
