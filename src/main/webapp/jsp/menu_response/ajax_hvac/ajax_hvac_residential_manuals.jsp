@@ -241,7 +241,14 @@
 		$.get('http://www.webmonster.ca/jsp/menu_response/json_hvac/hvac_manuals_model_number.jsp', function(data)
 		{
 			//log(data);
-		    $("#searchInput").typeahead({ source: data, autoSelect: false});
+		    $("#searchInput").typeahead(
+		    { 
+		    	source: data,
+		    	updater: function(item)
+		    	{
+		    		log(item);
+		    	}
+		    });
 		},'json');
 		$('#searchInput').on('typeahead:selected', function(e, item) 
 		{
