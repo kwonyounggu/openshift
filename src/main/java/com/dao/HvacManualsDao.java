@@ -307,7 +307,7 @@ public class HvacManualsDao
 			rs = s.executeQuery(sqlStatement);
 			while (rs.next())
 			{
-				System.out.println(rs.getString(1)+", "+ rs.getString(2));
+				//System.out.println(rs.getString(1)+", "+ rs.getString(2));
 				map.put(rs.getString(1), rs.getString(2));
 			}
 		}

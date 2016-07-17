@@ -15,7 +15,7 @@
 	
 	DataSource ds=(DataSource)application.getAttribute("dataSource");
 	HvacManualsDao hvacManualsDao=new HvacManualsDao(ds);
-	Map<String, String> modelNumber=hvacManualsDao.getKeysValues_SS("select (brand_name || ':' || system_type) as id, model_number from hvac_manuals group by model_number, system_type, brand_name order by brand_name");
+	Map<String, String> modelNumber=hvacManualsDao.getKeysValues_SS("select (brand_name || ':' || system_type || ':' || model_number) as id, model_number from hvac_manuals group by model_number, system_type, brand_name order by brand_name");
 	
 	System.out.println("len="+modelNumber.size());
 	//Note: each property and value are expected double-quatationed
