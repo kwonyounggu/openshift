@@ -175,6 +175,8 @@
 			$('#searchInput').tooltipster('hide');
 			
 			log("lookup testing ...");
+			log($("#searchInput").typeahead('getActive'));
+			log($("#searchInput").typeahead('lookup'));
 			//1. if searchValue == Selected Item then go ahead for search tree
 			//2. else find it on the json list and go ahead for search tree
 			
@@ -265,10 +267,7 @@
 		    	}
 		    });
 		},'json');
-		//$('#searchInput').on('typeahead:selected', function(e, item) 
-		//{
-		//    alert(item.value);
-		//});
+		
 		function searchModelNumber(item)
 		{
 			log(item);
@@ -281,7 +280,7 @@
 				if(g_brandNode!=null)//a node is already selected then
 					$("#manual_tree_div").jstree("uncheck_node", g_brandNode.node.id);
 				//fire an event, select_node, so that check_box of a corresponding brand will be checked
-				$("#manual_tree_div").jstree("select_node", item.id.split(":")[0]);
+				$("#manual_tree_div").jstree("select_node", item.id.split(":")[0]);//this will call $('#manual_tree_div').on("changed.jstree" ...
 			}
     		//1. Waiting sign
     		//2. event fire
