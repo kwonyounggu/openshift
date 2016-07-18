@@ -173,8 +173,8 @@
 		{
 			$('#searchInput').tooltipster('hide');
 			
-			
-			log("lookup: "+$('.typeahead').typeahead("lookup"));
+			log("lookup testing ...");
+			log($('.typeahead').typeahead("lookup"));
 			
 			var searchValue=$('#searchInput').val();
 			if(searchValue.length!=0)
