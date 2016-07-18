@@ -174,8 +174,9 @@
 			$('#searchInput').tooltipster('hide');
 			
 			log("lookup testing ...");
-			//log($('.typeahead').typeahead("lookup"));
-			
+			$(".typeahead").typeahead('lookup').focus();
+			//1. if searchValue == Selected Item then go ahead for search tree
+			//2. else find it on the json list and go ahead for search tree
 			
 			var searchValue=$('#searchInput').val();
 			
