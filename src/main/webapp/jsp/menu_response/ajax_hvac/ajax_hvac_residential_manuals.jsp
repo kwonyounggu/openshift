@@ -280,6 +280,9 @@
 			{
 				//g_brandNode=$('#manual_tree_div').jstree(true).get_node(item.id.split(":")[0]);
 				//g_brandNode.state
+				
+				 $('#manual_tree_div').jstree(true).deselect_all();
+				//fire an event, select_node, so that check_box of a corresponding brand will be checked
 				$("#manual_tree_div").jstree("select_node", item.id.split(":")[0]);
 			}
     		//1. Waiting sign
