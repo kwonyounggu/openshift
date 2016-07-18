@@ -278,7 +278,7 @@
 			}
 			else
 			{
-				if(g_brandNode.node!=null)//a node is already selected then
+				if(g_brandNode!=null)//a node is already selected then
 					$("#manual_tree_div").jstree("uncheck_node", g_brandNode.node.id);
 				//fire an event, select_node, so that check_box of a corresponding brand will be checked
 				$("#manual_tree_div").jstree("select_node", item.id.split(":")[0]);
