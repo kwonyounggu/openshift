@@ -174,9 +174,13 @@
 			$('#searchInput').tooltipster('hide');
 			
 			log("lookup testing ...");
-			log($('.typeahead').typeahead("lookup"));
+			//log($('.typeahead').typeahead("lookup"));
+			
 			
 			var searchValue=$('#searchInput').val();
+			
+			$(".typeahead").eq(0).val(searchValue).trigger("input");
+			
 			if(searchValue.length!=0)
 			{
 				if(g_brandNode==null)
