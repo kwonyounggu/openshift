@@ -201,7 +201,7 @@
 				}
 				else
 				{
-					$("#searchInput").typeahead('val', modelObj.name);
+					$("#searchInput").typeahead('val', modelObj);
 				}
 			}
 			else if(selectedModelNumberItem.name==searchValue)
