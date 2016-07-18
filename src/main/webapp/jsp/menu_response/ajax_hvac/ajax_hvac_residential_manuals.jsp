@@ -160,7 +160,7 @@
 
 		$('#manual_tree_div').on("load_node.jstree", function (e, data) 
 		{ //if(data.rslt.status) { data.inst.open_node(data.rslt.obj); }
-			log("load_node.jstree");
+			/*log("load_node.jstree");
 			log(data);
 			if(g_checkLoadNode)
 			{
@@ -168,19 +168,19 @@
 				g_brandNode.node=$('#manual_tree_div').jstree(true).get_node(g_brandNode.node.id);
 				$('#searchButton').trigger('click');
 			}
+			*/
 		});
 		$('#searchButton').click(function()
 		{
 			$('#searchInput').tooltipster('hide');
 			
 			log("lookup testing ...");
-			$(".typeahead").typeahead('lookup').focus();
 			//1. if searchValue == Selected Item then go ahead for search tree
 			//2. else find it on the json list and go ahead for search tree
 			
 			var searchValue=$('#searchInput').val();
 			
-			$(".typeahead").eq(0).val(searchValue).trigger("input");
+			//g_brandNode=$('#manual_tree_div').jstree(true).get_node("id")
 			
 			if(searchValue.length!=0)
 			{
@@ -272,6 +272,16 @@
 		function searchModelNumber(item)
 		{
 			log(item);
+			if(item.id==null)
+			{
+				//json search
+			}
+			else
+			{
+				//g_brandNode=$('#manual_tree_div').jstree(true).get_node(item.id.split(":")[0]);
+				//g_brandNode.state
+				$("#manual_tree_div").jstree("select_node", item.id.split(":")[0]);
+			}
     		//1. Waiting sign
     		//2. event fire
     		//3. Waiting sign off when search tree is done.
