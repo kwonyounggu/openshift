@@ -248,7 +248,7 @@
 		    $("#searchInput").typeahead(
 		    { 
 		    	source: data,
-		    	autoSelect: false,
+		    	autoSelect: true,
 		    	updater: function(item)
 		    	{
 		    		log("updater is called");
