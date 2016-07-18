@@ -199,7 +199,7 @@
 				}
 				else
 				{
-					searchModelNumber(modelObj);//to trigger a tree branch
+					searchModelNumber(modelObj[0]);//to trigger a tree branch
 				}
 			}
 			else if(selectedModelNumberItem.name==searchValue)
