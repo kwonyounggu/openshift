@@ -44,9 +44,12 @@
 	$(document).ready(function ()
 	{
 		var g_brandNode=null;
+		var g_modelList=[];
+		
+		
 		var g_foundCount=0;
 		var g_checkLoadNode=false;
-		var g_typeahead=$('.typeahead');
+		//var g_typeahead=$('.typeahead');
 		//Initialize the tooltips
 		 $('div input').tooltipster
 		 ({
@@ -189,8 +192,8 @@
 			}
 			else if(selectedModelNumberItem.name!=searchValue)
 			{
-				$("#searchInput").typeahead('open');
-				log($("#searchInput").typeahead('source'));
+				
+				log("modellist: "+g_modelList.length)
 			}
 			else if(selectedModelNumberItem.name==searchValue)
 			{
@@ -269,11 +272,12 @@
 		//see http://tosbourn.com/setting-a-minimum-length-for-your-search-in-typeahead-js/
 		$.get('http://www.webmonster.ca/jsp/menu_response/json_hvac/hvac_manuals_model_number.jsp', function(data)
 		{
+			g_modelList=data;
 			//log(data);
 		    $("#searchInput").typeahead(
 		    { 
 		    	source: data,
-		    	autoSelect: true,
+		    	autoSelect: false,
 		    	updater: function(item)
 		    	{
 		    		log("updater is called");
