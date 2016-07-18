@@ -173,14 +173,28 @@
 		$('#searchButton').click(function()
 		{
 			$('#searchInput').tooltipster('hide');
+			var searchValue=$('#searchInput').val();
 			
 			log("lookup testing ...");
 			log($("#searchInput").typeahead('getActive'));
-			log($("#searchInput").typeahead('lookup'));
+			
 			//1. if searchValue == Selected Item then go ahead for search tree
 			//2. else find it on the json list and go ahead for search tree
 			
-			var searchValue=$('#searchInput').val();
+			var selectedModelNumberItem=$("#searchInput").typeahead('getActive');
+			if(selectedModelNumberItem===undefined)
+			{
+				$('#searchInput').tooltipster('content', "Model number is required");
+				$('#searchInput').tooltipster('show');
+			}
+			else if(selectedModelNumberItem.name!=searchValue)
+			{
+				log($("#searchInput").typeahead('source'));
+			}
+			else if(selectedModelNumberItem.name==searchValue)
+			{
+				
+			}
 			
 			//g_brandNode=$('#manual_tree_div').jstree(true).get_node("id")
 			
