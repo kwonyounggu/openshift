@@ -182,13 +182,14 @@
 			//2. else find it on the json list and go ahead for search tree
 			
 			var selectedModelNumberItem=$("#searchInput").typeahead('getActive');
-			if(selectedModelNumberItem===undefined)
+			if(selectedModelNumberItem===undefined)//not selected of model number
 			{
 				$('#searchInput').tooltipster('content', "Model number is required");
 				$('#searchInput').tooltipster('show');
 			}
 			else if(selectedModelNumberItem.name!=searchValue)
 			{
+				$("#searchInput").typeahead('open');
 				log($("#searchInput").typeahead('source'));
 			}
 			else if(selectedModelNumberItem.name==searchValue)
