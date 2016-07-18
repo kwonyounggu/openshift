@@ -46,6 +46,7 @@
 		var g_brandNode=null;
 		var g_foundCount=0;
 		var g_checkLoadNode=false;
+		var g_typeahead=null;
 		//Initialize the tooltips
 		 $('div input').tooltipster
 		 ({
@@ -234,6 +235,9 @@
 				$('#searchInput').tooltipster('hide');
 			}
 			*/
+			
+			//testing
+			
 			 
 		});
 		//see https://github.com/bassjobsen/Bootstrap-3-Typeahead	
@@ -241,20 +245,21 @@
 		$.get('http://www.webmonster.ca/jsp/menu_response/json_hvac/hvac_manuals_model_number.jsp', function(data)
 		{
 			//log(data);
-		    $("#searchInput").typeahead(
+		    g_typeahead=$("#searchInput").typeahead(
 		    { 
 		    	source: data,
 		    	updater: function(item)
 		    	{
+		    		log("updater is called");
 		    		searchModelNumber(item);
 		    		return item;
 		    	}
 		    });
 		},'json');
-		$('#searchInput').on('typeahead:selected', function(e, item) 
-		{
-		    alert(item.value);
-		});
+		//$('#searchInput').on('typeahead:selected', function(e, item) 
+		//{
+		//    alert(item.value);
+		//});
 		function searchModelNumber(item)
 		{
 			log(item);
@@ -264,10 +269,34 @@
 		}
 		function openNode(nodeId, checkLoadNode)
 		{
+			
 			g_checkLoadNode=checkLoadNode;
 			$("#manual_tree_div").jstree("open_node", nodeId);
 		}
 		
+		$g_typeahead.change(function() 
+		{
+			log("typeahead.change is called");
+		    var current = $g_typeahead.typeahead("getActive");
+		    if (current) 
+		    {
+		    	log(current);
+		        // Some item from your model is active!
+		        if (current.name == $input.val()) 
+		        {
+		            // This means the exact match is found. Use toLowerCase() if you want case insensitive match.
+		        } 
+		        else 
+		        {
+		            // This means it is only a partial match, you can either add a new item 
+		            // or take the active if you don't want new items
+		        }
+		    } 
+		    else 
+		    {
+		        // Nothing is active so it is a new value (or maybe empty value)
+		    }
+		});
 	});
 	
 </script>  
