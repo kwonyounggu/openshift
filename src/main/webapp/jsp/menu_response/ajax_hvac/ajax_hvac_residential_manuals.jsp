@@ -274,7 +274,12 @@
 			$("#manual_tree_div").jstree("open_node", nodeId);
 		}
 		
-		$g_typeahead.change(function() 
+		$('#searchInput').on('typeahead:selected', function (obj, datum) 
+		{
+		    console.log(obj);
+		    console.log(datum);
+		});
+		g_typeahead.change(function() 
 		{
 			log("typeahead.change is called");
 		    var current = $g_typeahead.typeahead("getActive");
