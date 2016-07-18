@@ -46,7 +46,7 @@
 		var g_brandNode=null;
 		var g_foundCount=0;
 		var g_checkLoadNode=false;
-		var g_typeahead=null;
+		var g_typeahead=$('.typeahead');
 		//Initialize the tooltips
 		 $('div input').tooltipster
 		 ({
@@ -245,7 +245,7 @@
 		$.get('http://www.webmonster.ca/jsp/menu_response/json_hvac/hvac_manuals_model_number.jsp', function(data)
 		{
 			//log(data);
-		    g_typeahead=$("#searchInput").typeahead(
+		    $("#searchInput").typeahead(
 		    { 
 		    	source: data,
 		    	updater: function(item)
