@@ -187,15 +187,22 @@
 			var selectedModelNumberItem=$("#searchInput").typeahead('getActive');
 			if(selectedModelNumberItem===undefined)//not selected of model number
 			{
-				$('#searchInput').tooltipster('content', "Model number is required");
-				$('#searchInput').tooltipster('show');
+				showTooltip("Model number is required.");
+				return;
 			}
 			else if(selectedModelNumberItem.name!=searchValue)
-			{
-				
-				//log("modellist: "+g_modelList.length)
+			{	log("here --- 1000");
 				var modelObj=getModelObj(g_modelList, searchValue);
 				log(modelObj);
+				if(modelObj.length==0) //not found
+				{
+					showTooltip("Model number typed in is not existing.");
+					return;
+				}
+				else
+				{
+					$("#searchInput").typeahead('val', modelObj.name);
+				}
 			}
 			else if(selectedModelNumberItem.name==searchValue)
 			{
@@ -211,8 +218,8 @@
 					log("----- here 0 -------------");
 					//red tooltip to ask having a check of a brand name
 					
-					$('#searchInput').tooltipster('content', "Try again after checking a brand.");
-					$('#searchInput').tooltipster('show');
+					showTooltip("Try again after checking a brand.");
+					
 				}
 				else //eg: CARRIER is selected
 				{
@@ -292,17 +299,10 @@
 		function searchModelNumber(item)
 		{
 			log(item);
-			if(item.id==null)
-			{
-				//json search
-			}
-			else
-			{
-				if(g_brandNode!=null)//a node is already selected then
-					$("#manual_tree_div").jstree("uncheck_node", g_brandNode.node.id);
-				//fire an event, select_node, so that check_box of a corresponding brand will be checked
-				$("#manual_tree_div").jstree("select_node", item.id.split(":")[0]);//this will call $('#manual_tree_div').on("changed.jstree" ...
-			}
+			if(g_brandNode!=null)//a node is already selected then
+				$("#manual_tree_div").jstree("uncheck_node", g_brandNode.node.id);
+			//fire an event, select_node, so that check_box of a corresponding brand will be checked
+			$("#manual_tree_div").jstree("select_node", item.id.split(":")[0]);//this will call $('#manual_tree_div').on("changed.jstree" ...
     		//1. Waiting sign
     		//2. event fire
     		//3. Waiting sign off when search tree is done.
@@ -318,7 +318,12 @@
 				
 	function getModelObj(data, name)
 	{
-		return data.filter(function(data){return data.name==name})
+		return data.filter(function(data){return data.name.toUpperCase()==name.toUpperCase()})
+	}
+	function showTooltip(str)
+	{
+		$('#searchInput').tooltipster('content', str);
+		$('#searchInput').tooltipster('show');
 	}
 	
 </script>  
