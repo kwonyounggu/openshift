@@ -193,7 +193,9 @@
 			else if(selectedModelNumberItem.name!=searchValue)
 			{
 				
-				log("modellist: "+g_modelList.length)
+				//log("modellist: "+g_modelList.length)
+				var modelObj=getModelObj(g_modelList, searchValue);
+				log(modelObj);
 			}
 			else if(selectedModelNumberItem.name==searchValue)
 			{
@@ -313,6 +315,11 @@
 		}
 		
 	});
+				
+	function getModelObj(data, name)
+	{
+		return data.filter(function(data){return data.name==name})
+	}
 	
 </script>  
 <% 
