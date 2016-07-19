@@ -62,26 +62,14 @@
 		$('#manual_tree_div').jstree
 		({
 			  'plugins': ['search'],
-			  //'plugins': ['checkbox', 'search'],
-			  'checkbox':
-			  {
-				//see http://stackoverflow.com/questions/35502382/jstree-checkbox-check-event
-				 'three_state' : false // to avoid that fact that checking a node also check others
-      			 //'whole_node' : false,  // to avoid checking the box just clicking the node 
-      			 //'tie_selection' : false // for checking without selecting and selecting without checking
-			  },
 			  'search': 
 			  { 
-				  //'show_only_matches' : true,
-				  //'show_only_matches_children' : true,
+				  //'show_only_matches' : false,
 				  search_callback:function(str, node)
 				  {
-					  //log("search_callback: "+node.id+", "+node.text+", "+node.data.hint+", "+node.parent.split(":")[0]+", "+g_brandNode.selected[0]+", "+node.text.indexOf(str)!=-1);
-					  //if(node.text===str) return true;
-					  
-					  if(node.data.hint==="model number level" && node.parent.split(":")[0]===g_brandNode.selected[0] && node.id.split(":")[2].search(new RegExp(str, "i"))!=-1) 
+					  if(node.data.hint==="model number level" && node.id.split(":")[2].search(new RegExp(str, "i"))!=-1) 
 					  {
-						  log("search_callback (bingog): "+node.id+", "+node.text+", "+node.data.hint+", "+node.parent.split(":")[0]+", "+g_brandNode.selected[0]+", "+node.text.indexOf(str)!=-1);
+						  log("search_callback (bingog): "+node.id+", "+node.text+", "+node.data.hint+", "+node.parent.split(":")[0]+", "+node.text.indexOf(str)!=-1);
 						  g_foundCount++;
 						  return true;
 					  }
@@ -115,37 +103,15 @@
 				    }
 			  }
 		});
-		
-		/*
-		$('#manual_tree_div').on("check_node.jstree uncheck_node.jstree", function(e, data) 
-		{
-			 log(data.node.id + ' ' + data.node.text + 'checked: '+data.node.state.checked);
-		});*/
+
 		//this is called whenever node in any level is clicked
 		$('#manual_tree_div').on("changed.jstree", function (e, data) 
 		{
-			log("********** changed.jstree ************, "+data.action);
+			log("********** changed.jstree ************");
 			log(data);
-			if(data.action==="deselect_node")//regardless of what level it is
+			if(data.node.data.hint!=null)
 			{
-				g_brandNode=null;
-				g_foundCount=0;
-			}
-			else if(data.node.data.hint!=null)
-			{
-				if(data.node.data.hint==="brand name level")
-				{
-					if(data.node.state.selected) 
-					{	
-						g_brandNode=data;
-						
-						$('#searchInput').tooltipster('hide');
-						
-						log("********** changed.jstree ************ in the brand name level");
-						//searchModelNumber(itemSelected)
-					}
-				}
-				else if(data.node.data.hint.indexOf("leaf level") != -1)
+				if(data.node.data.hint.indexOf("leaf level") != -1)
 				{
 					//Do item - July 13
 					//note: do not implement if the currently selected/displayed pdf is the same one as in the right hand side
@@ -155,8 +121,6 @@
 					document.getElementById('pdfIfram').setAttribute('src', "http://docs.google.com/gview?url="+pdfPath+"&embedded=true");
 				}
 			}
-
-
 		});
 
 		//the following two event functions are triggering a tree search function
@@ -164,15 +128,7 @@
 		{
 			if(e.which==13) $('#searchButton').trigger('click');
 		 });
-		//$('#manual_tree_div').on('select_node.jstree', function (e, data) {
-		//    data.instance.toggle_node(data.node);
-		//});
 
-		$('#manual_tree_div').on("ready.jstree", function (e, data) 
-		{
-			log("ready.jstree");
-			log(data);
-		});
 
 		$('#manual_tree_div').on("load_node.jstree", function (e, data) 
 		{ //if(data.rslt.status) { data.inst.open_node(data.rslt.obj); }
@@ -213,14 +169,12 @@
 				}
 				else
 				{
-					searchModelNumber(modelObj[0]);//g_brandNode assigned in results of $('#manual_tree_div').on("changed.jstree"
+					searchTree(modelObj[0]);
 				}
 			}
 			else if(selectedModelNumberItem.name==searchValue) //g_brandNode already assigned in results of $('#manual_tree_div').on("changed.jstree"
 			{
 				log("selectedModelNumberItem.name==searchValue");
-				//if not checked
-				//else if checked but not the same one
 				searchTree(selectedModelNumberItem);
 			}
 		});
@@ -237,28 +191,12 @@
 		    	updater: function(item)
 		    	{
 		    		log("updater is called");
-		    		searchModelNumber(item);
+		    		searchTree(item);
 		    		return item;
 		    	}
 		    });
 		},'json');
-		
-		/**************************************************************************************************************************************
-		* Callers: 
-		* 1. $('#searchButton').click(function()
-		* 2. $('#manual_tree_div').on("changed.jstree"
-		**************************************************************************************************************************************/
-		function searchModelNumber(item)
-		{
-			log("searchModelNumber({id: "+item.id+", name: "+item.name+"}) is called");
-			//if(g_brandNode!=null)//a node is already selected then
-			//	$("#manual_tree_div").jstree("uncheck_node", g_brandNode.node.id);
-			//fire an event, select_node, so that check_box of a corresponding brand will be checked
-			$("#manual_tree_div").jstree("select_node", item.id.split(":")[0]);//this will call $('#manual_tree_div').on("changed.jstree" ...
-    		//1. Waiting sign
-    		//2. event fire
-    		//3. Waiting sign off when search tree is done.
-		}
+
 		function openNode(nodeId, checkLoadNode)
 		{
 			
@@ -268,7 +206,16 @@
 		function searchTree(modelObj)//where modelObj is a selected item object
 		{
 			log("searchTree({id: "+modelObj.id+", name: "+modelObj.name+"}) is called");
-			if(true) return;
+			//if(true) return;
+			
+			//1. var brand_id, system_type_id, model_number;
+			//1. get brand node
+			
+			var node=$('#manual_tree_div').jstree(true).get_node(modelObj.split(":")[2]);
+			log(node);
+			log($('#manual_tree_div').jstree('search', modelObj.name))
+			/*
+			
 			if(g_brandNode==null)
 			{
 				//This compound statement is not expected to implemented but if any, then it is a sementic error
@@ -284,10 +231,10 @@
 				//var level2Node=$('#manual_tree_div').jstree(true).get_node(g_brandNode.node.children[i])
 				//if(level2Node.children.length==0) openNode(level2Node.id, false);
 			}
+			*/
 			
 			
-			
-			g_brandNode.instance.search(searchValue);
+			//g_brandNode.instance.search(searchValue);
 			/*
 			else //node existing
 			{
