@@ -115,8 +115,10 @@
 			  }
 		});
 		
-		$('#manual_tree_div').on("check_node.jstree", function (e, data) {data.node.state.checked=false;});
-				
+		$('#manual_tree_div').on("check_node.jstree uncheck_node.jstree", function(e, data) 
+		{
+			 log(data.node.id + ' ' + data.node.text + 'checked: '+data.node.state.checked);
+		});
 		//this is called whenever node in any level is clicked
 		$('#manual_tree_div').on("changed.jstree", function (e, data) 
 		{
@@ -211,6 +213,8 @@
 			else if(selectedModelNumberItem.name==searchValue) //g_brandNode already assigned in results of $('#manual_tree_div').on("changed.jstree"
 			{
 				log("selectedModelNumberItem.name==searchValue");
+				//if not checked
+				//else if checked but not the same one
 				searchTree(selectedModelNumberItem);
 			}
 		});
