@@ -249,10 +249,12 @@
 		{
 			
 			g_checkLoadNode=checkLoadNode;
-			$("#manual_tree_div").jstree("open_node", nodeId);
+			$("#manual_tree_div").jstree("open_node", nodeId);//to call url
 		}
 		function searchTree(modelObj)//where modelObj is a selected item object
 		{
+			log("searchTree({id: "+modelObj.id+", name: "+modelObj.name+"}) is called");
+			if(true) return;
 			if(g_brandNode==null)
 			{
 				//This compound statement is not expected to implemented but if any, then it is a sementic error
