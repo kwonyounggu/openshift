@@ -194,6 +194,7 @@
 			}
 			else if(selectedModelNumberItem.name!=searchValue)
 			{	
+				log("selectedModelNumberItem.name!=searchValue");
 				var modelObj=getModelObj(g_modelList, searchValue);
 				log(modelObj);
 				if(modelObj.length==0) //not found
@@ -207,6 +208,7 @@
 			}
 			else if(selectedModelNumberItem.name==searchValue) //g_brandNode already assigned in results of $('#manual_tree_div').on("changed.jstree"
 			{
+				log("selectedModelNumberItem.name==searchValue");
 				searchTree(selectedModelNumberItem);
 			}
 		});
@@ -236,7 +238,7 @@
 		**************************************************************************************************************************************/
 		function searchModelNumber(item)
 		{
-			//log(item);
+			log("searchModelNumber({id: "+item.id+", name: "+item.name+"}) is called");
 			if(g_brandNode!=null)//a node is already selected then
 				$("#manual_tree_div").jstree("uncheck_node", g_brandNode.node.id);
 			//fire an event, select_node, so that check_box of a corresponding brand will be checked
