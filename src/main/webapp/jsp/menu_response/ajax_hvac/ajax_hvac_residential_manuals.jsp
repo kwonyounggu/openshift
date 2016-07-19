@@ -61,7 +61,8 @@
 		});
 		$('#manual_tree_div').jstree
 		({
-			  'plugins': ['checkbox', 'search'],
+			  'plugins': ['search'],
+			  //'plugins': ['checkbox', 'search'],
 			  'checkbox':
 			  {
 				//see http://stackoverflow.com/questions/35502382/jstree-checkbox-check-event
@@ -115,17 +116,22 @@
 			  }
 		});
 		
+		/*
 		$('#manual_tree_div').on("check_node.jstree uncheck_node.jstree", function(e, data) 
 		{
 			 log(data.node.id + ' ' + data.node.text + 'checked: '+data.node.state.checked);
-		});
+		});*/
 		//this is called whenever node in any level is clicked
 		$('#manual_tree_div').on("changed.jstree", function (e, data) 
 		{
+			log("********** changed.jstree ************, "+data.action);
 			log(data);
-			g_brandNode=null;
-			g_foundCount=0;
-			if(data.node.data.hint!=null)
+			if(data.action==="deselect_node")//regardless of what level it is
+			{
+				g_brandNode=null;
+				g_foundCount=0;
+			}
+			else if(data.node.data.hint!=null)
 			{
 				if(data.node.data.hint==="brand name level")
 				{
@@ -245,8 +251,8 @@
 		function searchModelNumber(item)
 		{
 			log("searchModelNumber({id: "+item.id+", name: "+item.name+"}) is called");
-			if(g_brandNode!=null)//a node is already selected then
-				$("#manual_tree_div").jstree("uncheck_node", g_brandNode.node.id);
+			//if(g_brandNode!=null)//a node is already selected then
+			//	$("#manual_tree_div").jstree("uncheck_node", g_brandNode.node.id);
 			//fire an event, select_node, so that check_box of a corresponding brand will be checked
 			$("#manual_tree_div").jstree("select_node", item.id.split(":")[0]);//this will call $('#manual_tree_div').on("changed.jstree" ...
     		//1. Waiting sign
