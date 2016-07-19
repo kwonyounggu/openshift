@@ -115,6 +115,7 @@
 			  }
 		});
 		
+		$('.jstree a').click(function() {return false;});//to make check-boxes read-only
 		//this is called whenever node in any level is clicked
 		$('#manual_tree_div').on("changed.jstree", function (e, data) 
 		{
