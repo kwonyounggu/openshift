@@ -130,6 +130,9 @@
 						g_brandNode=data;
 						
 						$('#searchInput').tooltipster('hide');
+						
+						log("********** changed.jstree ************ in the brand name level");
+						//searchModelNumber(itemSelected)
 					}
 				}
 				else if(data.node.data.hint.indexOf("leaf level") != -1)
@@ -190,7 +193,7 @@
 				showTooltip("Model number is required.");
 			}
 			else if(selectedModelNumberItem.name!=searchValue)
-			{	log("here --- 1000");
+			{	
 				var modelObj=getModelObj(g_modelList, searchValue);
 				log(modelObj);
 				if(modelObj.length==0) //not found
@@ -199,81 +202,13 @@
 				}
 				else
 				{
-					searchModelNumber(modelObj[0]);//to trigger a tree branch
+					searchModelNumber(modelObj[0]);//g_brandNode assigned in results of $('#manual_tree_div').on("changed.jstree"
 				}
 			}
-			else if(selectedModelNumberItem.name==searchValue)
+			else if(selectedModelNumberItem.name==searchValue) //g_brandNode already assigned in results of $('#manual_tree_div').on("changed.jstree"
 			{
-				
+				searchTree(selectedModelNumberItem);
 			}
-			
-			if(true) return;
-			
-			if(searchValue.length!=0)
-			{
-				if(g_brandNode==null)
-				{
-					log("----- here 0 -------------");
-					//red tooltip to ask having a check of a brand name
-					
-					showTooltip("Try again after checking a brand.");
-					
-				}
-				else //eg: CARRIER is selected
-				{
-					log("----- here 1 -------------");
-					log(g_brandNode);
-					
-					if(g_brandNode.node.children.length==0)
-					{
-						log("----- here 1-1 -------------");
-						openNode(g_brandNode.node.id, true);
-					}
-					else for(var i=0; i<g_brandNode.node.children.length;i++)
-					{
-						log("child["+i+"]: "+g_brandNode.node.children[i]);
-						//var level2Node=$('#manual_tree_div').jstree(true).get_node(g_brandNode.node.children[i])
-						//if(level2Node.children.length==0) openNode(level2Node.id, false);
-					}
-					
-					
-					
-					g_brandNode.instance.search(searchValue);
-					//$('#searchInput').tooltipster('hide');
-					//if children existing then search through it otherwise call it
-					
-					//if(g_brandNode.node.parents.length<3)  //bring more children progrmatically
-				}
-			}
-			else if (g_brandNode!=null) //there exists a brand selected and a search value empty
-			{
-				//$('#searchInput').tooltipster('hide');
-				// search all models for the brand
-				//if children existing then search through it otherwise call it
-				
-				log("----- here 2 -------------");
-				log(g_brandNode);
-			}
-			else //search value empty and brand not checked
-			{
-				//initial state of the tree
-				$('#manual_tree_div').jstree(true).search(searchValue);
-				
-				log("----- here 3 -------------");
-			}
-			/*
-			else //node existing
-			{
-				var v=$('#searchInput').val();
-				log("search button is clicked, v="+v);
-				$('#manual_tree_div').jstree(true).search(v);
-				$('#searchInput').tooltipster('hide');
-			}
-			*/
-			
-			//testing
-			
-			 
 		});
 		//see https://github.com/bassjobsen/Bootstrap-3-Typeahead	
 		//see http://tosbourn.com/setting-a-minimum-length-for-your-search-in-typeahead-js/
@@ -294,6 +229,11 @@
 		    });
 		},'json');
 		
+		/**************************************************************************************************************************************
+		* Callers: 
+		* 1. $('#searchButton').click(function()
+		* 2. $('#manual_tree_div').on("changed.jstree"
+		**************************************************************************************************************************************/
 		function searchModelNumber(item)
 		{
 			//log(item);
@@ -311,7 +251,41 @@
 			g_checkLoadNode=checkLoadNode;
 			$("#manual_tree_div").jstree("open_node", nodeId);
 		}
-		
+		function searchTree(modelObj)//where modelObj is a selected item object
+		{
+			if(g_brandNode==null)
+			{
+				//This compound statement is not expected to implemented but if any, then it is a sementic error
+				log("ERROR: b_brandNode is null, which is not expected. Please check the logic.");
+			}
+			else if(g_brandNode.node.children.length==0)
+			{
+				openNode(g_brandNode.node.id, true);
+			}
+			else for(var i=0; i<g_brandNode.node.children.length;i++)//ac, furnace, hp, humidifier, etc
+			{
+				log("child["+i+"]: "+g_brandNode.node.children[i]);
+				//var level2Node=$('#manual_tree_div').jstree(true).get_node(g_brandNode.node.children[i])
+				//if(level2Node.children.length==0) openNode(level2Node.id, false);
+			}
+			
+			
+			
+			g_brandNode.instance.search(searchValue);
+			/*
+			else //node existing
+			{
+				var v=$('#searchInput').val();
+				log("search button is clicked, v="+v);
+				$('#manual_tree_div').jstree(true).search(v);
+				$('#searchInput').tooltipster('hide');
+			}
+			*/
+			
+			//testing
+			
+			 
+		}
 	});
 				
 	function getModelObj(data, name)
