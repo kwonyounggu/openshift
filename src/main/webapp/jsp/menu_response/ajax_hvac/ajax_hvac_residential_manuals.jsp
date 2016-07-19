@@ -211,7 +211,7 @@
 			//1. var brand_id, system_type_id, model_number;
 			//1. get brand node
 			
-			var node=$('#manual_tree_div').jstree(true).get_node(modelObj.split(":")[2]);
+			var node=$('#manual_tree_div').jstree(true).get_node(modelObj.id.split(":")[2]);
 			log(node);
 			log($('#manual_tree_div').jstree('search', modelObj.name))
 			/*
