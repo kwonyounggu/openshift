@@ -43,13 +43,9 @@
 	
 	$(document).ready(function ()
 	{
-		var g_brandNode=null;
+
 		var g_modelList=[];
-		
-		
-		var g_foundCount=0;
-		var g_checkLoadNode=false;
-		//var g_typeahead=$('.typeahead');
+
 		//Initialize the tooltips
 		 $('div input').tooltipster
 		 ({
@@ -70,7 +66,6 @@
 					  if(node.data.hint.indexOf("model number level")!=-1 && node.id.split(":")[2].search(new RegExp(str, "i"))!=-1) 
 					  {
 						  log("search_callback (bingog): "+node.id+", "+node.text+", "+node.data.hint+", "+node.parent.split(":")[0]+", "+node.text.indexOf(str)!=-1);
-						  g_foundCount++;
 						  return true;
 					  }
 				  }
@@ -136,7 +131,7 @@
 		{ 
 			log("load_node.jstree");
 			log(data);
-			if(data.node.data.hint.indexOf(":go_next_level_to_open")!=-1)//means searching is implemented
+			if(data.node.data && data.node.data.hint.indexOf(":go_next_level_to_open")!=-1)//means searching is implemented
 			{
 				$('#searchButton').trigger('click');
 			}
@@ -146,8 +141,8 @@
 			$('#searchInput').tooltipster('hide');
 			var searchValue=$('#searchInput').val();
 			
-			log("lookup testing ...");
-			log($("#searchInput").typeahead('getActive'));
+			//log("lookup testing ...");
+			//log($("#searchInput").typeahead('getActive'));
 			
 			//1. if searchValue == Selected Item then go ahead for search tree
 			//2. else find it on the json list and go ahead for search tree
@@ -171,7 +166,7 @@
 					searchTree(modelObj[0]);
 				}
 			}
-			else if(selectedModelNumberItem.name==searchValue) //g_brandNode already assigned in results of $('#manual_tree_div').on("changed.jstree"
+			else if(selectedModelNumberItem.name==searchValue)
 			{
 				log("selectedModelNumberItem.name==searchValue");
 				searchTree(selectedModelNumberItem);
@@ -225,44 +220,7 @@
 					openNode(node.id);
 					break;
 				}
-			}
-			
-			//if found then search
-			//else go and get it first
-			/*
-			
-			if(g_brandNode==null)
-			{
-				//This compound statement is not expected to implemented but if any, then it is a sementic error
-				log("ERROR: b_brandNode is null, which is not expected. Please check the logic.");
-			}
-			else if(g_brandNode.node.children.length==0)
-			{
-				openNode(g_brandNode.node.id, true);
-			}
-			else for(var i=0; i<g_brandNode.node.children.length;i++)//ac, furnace, hp, humidifier, etc
-			{
-				log("child["+i+"]: "+g_brandNode.node.children[i]);
-				//var level2Node=$('#manual_tree_div').jstree(true).get_node(g_brandNode.node.children[i])
-				//if(level2Node.children.length==0) openNode(level2Node.id, false);
-			}
-			*/
-			
-			
-			//g_brandNode.instance.search(searchValue);
-			/*
-			else //node existing
-			{
-				var v=$('#searchInput').val();
-				log("search button is clicked, v="+v);
-				$('#manual_tree_div').jstree(true).search(v);
-				$('#searchInput').tooltipster('hide');
-			}
-			*/
-			
-			//testing
-			
-			 
+			} 
 		}
 	});
 				
