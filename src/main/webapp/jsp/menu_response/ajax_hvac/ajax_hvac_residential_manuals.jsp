@@ -133,16 +133,13 @@
 
 
 		$('#manual_tree_div').on("load_node.jstree", function (e, data) 
-		{ //if(data.rslt.status) { data.inst.open_node(data.rslt.obj); }
+		{ 
 			log("load_node.jstree");
 			log(data);
-			/*if(g_checkLoadNode)
+			if(data.node.data.hint.indexOf(":go_next_level_to_open")!=-1)//means searching is implemented
 			{
-				g_checkLoadNode=false;
-				g_brandNode.node=$('#manual_tree_div').jstree(true).get_node(g_brandNode.node.id);
 				$('#searchButton').trigger('click');
 			}
-			*/
 		});
 		$('#searchButton').click(function()
 		{
@@ -210,7 +207,7 @@
 			for(var ids=modelObj.id.split(":"), i=ids.length-1; i>=0; i-- )
 			{
 				var node=$('#manual_tree_div').jstree(true).get_node(ids[i]);
-				log("node returned on click of search: "+node);
+				log(i+" : node returned on click of search: "+node);
 				if(i==2 && node)//model number node
 				{
 					$("#manual_tree_div").jstree("select_node", node.id);//to high light
@@ -218,13 +215,13 @@
 				}
 				else if(i==1 && node) //system type node
 				{
-					node.data.hint+=":open_model_number";//load->model number node above if-statement
+					node.data.hint+=":go_next_level_to_open";//load->model number node above if-statement
 					openNode(node.id);
 					break;
 				}
 				else if(i==0 && node) //brand node
 				{
-					node.data.hint+=":open_system_type";//load->this function->system type node above if-statement
+					node.data.hint+=":go_next_level_to_open";//load->this function->system type node above if-statement
 					openNode(node.id);
 					break;
 				}
