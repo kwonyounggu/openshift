@@ -87,7 +87,7 @@ file_seq_id
 	System.out.println("currentId="+request.getParameter("id")+", hint:"+request.getParameter("hint")+", parentId="+request.getParameter("parent"));
 	String currentId=request.getParameter("id");
 	String[] hint=request.getParameter("hint").split(":");
-	hint[0]= hint.length>1 ? (":"+hint[0]) : ("");
+	hint[0]= hint.length>1 ? (":"+hint[1]) : ("");
 	DataSource ds=(DataSource)application.getAttribute("dataSource");
 	HvacManualsDao hvacManualsDao=new HvacManualsDao(ds);
 	String parentId=request.getParameter("parent");

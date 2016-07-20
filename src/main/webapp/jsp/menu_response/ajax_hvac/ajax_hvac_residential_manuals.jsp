@@ -199,8 +199,10 @@
 		{
 			log("searchTree({id: "+modelObj.id+", name: "+modelObj.name+"}) is called");
 			
+			var node;
 			for(var ids=modelObj.id.split(":"), i=ids.length-1; i>=0; i-- )
 			{
+				/*
 				var node=$('#manual_tree_div').jstree(true).get_node(ids[i]);
 				log(i+" : node returned on click of search: "+node);
 				if(i==2 && node)//model number node
@@ -219,6 +221,33 @@
 					node.data.hint+=":go_next_level_to_open";//load->this function->system type node above if-statement
 					openNode(node.id);
 					break;
+				}*/
+				switch(i)
+				{
+					case 2: node=$('#manual_tree_div').jstree(true).get_node(modelObj.id);
+							if(node) 
+							{
+								$("#manual_tree_div").jstree("select_node", node.id);
+								return;
+							}
+							break;
+					case 1: node=$('#manual_tree_div').jstree(true).get_node(ids[0]+":"+ids[1]);
+							if(node)
+							{
+								node.data.hint+=":go_next_level_to_open";//load->model number node above if-statement
+								openNode(node.id);
+								return;
+							}
+							break;
+					case 0: node=$('#manual_tree_div').jstree(true).get_node(ids[0]);
+							if(node)
+							{
+								node.data.hint+=":go_next_level_to_open";//load->model number node above if-statement
+								openNode(node.id);
+								return;
+							}
+							break;
+					default: break;//not expected
 				}
 			} 
 		}
