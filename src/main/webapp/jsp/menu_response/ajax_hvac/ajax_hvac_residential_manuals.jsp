@@ -146,7 +146,8 @@
 			if(searchValue==="" || selectedModelNumberItem===undefined)//not selected of model number
 			{
 				//showTooltip("Model number is required.");
-				$("#manual_tree_div").jstree(true).clear_search();
+				//$("#manual_tree_div").jstree(true).clear_search();
+				$("#manual_tree_div").jstree(true).open_node("#");
 			}
 			else if(selectedModelNumberItem.name!=searchValue)
 			{	
