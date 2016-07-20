@@ -146,8 +146,7 @@
 			if(searchValue==="" || selectedModelNumberItem===undefined)//not selected of model number
 			{
 				//showTooltip("Model number is required.");
-				//$("#manual_tree_div").jstree(true).clear_search();
-				$("#manual_tree_div").jstree(true).open_node("#");
+				$("#manual_tree_div").jstree(true).clear_search();
 			}
 			else if(selectedModelNumberItem.name!=searchValue)
 			{	
@@ -254,7 +253,7 @@
 			  <div class="input-group">
 			       <input id="searchInput" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead" />
 			       <div class="input-group-btn">
-			           <button id="searchButton" class="btn btn-info">
+			           <button id="searchButton" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Click with a blank to reset.">
 			           <span class="glyphicon glyphicon-search"></span>
 			           </button>
 			       </div>
@@ -269,12 +268,7 @@
 			<!-- see http://embedresponsively.com/ and select Generic iFrame and google to display pdf with hint from http://stackoverflow.com/questions/8262278/supplying-an-embedable-pdf  -->
 			<div class='embed-container'>
 				<iframe id='pdfIfram' src='http://docs.google.com/gview?url=https://www.dropbox.com/s/h3n5ukq6cjf6uyz/Scheduled_admin_carrier_air_conditioner_warranty_24aaa5_49004dp172_2016_07_03_15_06_10.pdf?raw=1&embedded=true' style='border:0'></iframe>
-<!-- 				<iframe id='pdfIfram' src='https://www.dropbox.com/s/h3n5ukq6cjf6uyz/Scheduled_admin_carrier_air_conditioner_warranty_24aaa5_49004dp172_2016_07_03_15_06_10.pdf?raw=1#zoom=78&view=FitH' style='border:0'></iframe> -->
-			</div>
-			<!-- The followings are good with a pdf without any restrictions (dropbox pdfs are restricted in showing)
-			<div class="embed-responsive embed-responsive-16by9">
-			  <iframe class="embed-responsive-item" id="bootstrapIframe"></iframe>
-			</div> -->
+			</div>	
 		</td>
 	</tr>
 </table>
