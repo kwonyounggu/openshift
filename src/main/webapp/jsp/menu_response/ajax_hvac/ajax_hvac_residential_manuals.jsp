@@ -67,7 +67,7 @@
 				  //'show_only_matches' : false,
 				  search_callback:function(str, node)
 				  {
-					  if(node.data.hint==="model number level" && node.id.split(":")[2].search(new RegExp(str, "i"))!=-1) 
+					  if(node.data.hint.indexOf("model number level")!=-1 && node.id.split(":")[2].search(new RegExp(str, "i"))!=-1) 
 					  {
 						  log("search_callback (bingog): "+node.id+", "+node.text+", "+node.data.hint+", "+node.parent.split(":")[0]+", "+node.text.indexOf(str)!=-1);
 						  g_foundCount++;
@@ -87,15 +87,15 @@
 				    {
 				    	'url': function(node)
 				    	{
-				    		log("url: node_id: "+node.id+" is called"); log(node);
+				    		//log("url: node_id: "+node.id+" is called"); log(node);
 				    		//return '//www.jstree.com/fiddle/?lazy';
 				    		return (node.id==='#' ? '//www.webmonster.ca/jsp/menu_response/json_hvac/manuals_brands.jsp' : '//www.webmonster.ca/jsp/menu_response/json_hvac/manuals_brands_children.jsp');
 				    	},
 				    	'type': 'post',
 				    	'dataType': 'json',
 				    	'data': function(node)
-				    	{
-				    		log("data: node_id: "+node.id+" is called"); log(node);
+				    	{	//The following return values are provided for parameters of a calling jsp file
+				    		//log("data: node_id: "+node.id+" is called"); log(node);
 				    		if(node.id==='#') return {'id' : node.id, 'parent': node.parent};
 				    		
 				    		log("data: node_id: "+node.id+", hint: "+node.data.hint+" is called"); log(node);
@@ -208,14 +208,20 @@
 		function searchTree(modelObj)//where modelObj is a selected item object
 		{
 			log("searchTree({id: "+modelObj.id+", name: "+modelObj.name+"}) is called");
-			if(true) return;
+			
 			
 			//1. var brand_id, system_type_id, model_number;
 			//1. get brand node
 			
-			var node=$('#manual_tree_div').jstree(true).get_node(modelObj.id.split(":")[2]);
+			var node=$('#manual_tree_div').jstree(true).get_node(modelObj.id.split(":")[0]);
+			node.data.hint=node.data.hint+":gonext";
 			log(node);//false if not found
+			openNode(node.id, false);
+			
+			if(true) return;
+			
 			log($('#manual_tree_div').jstree('search', modelObj.name));
+			
 			for(var ids=modelObj.id.split(":"), i=ids.length-1; i>=0; i-- )
 			{
 				var node=$('#manual_tree_div').jstree(true).get_node(ids[i]);
