@@ -254,7 +254,7 @@
 			  <div class="input-group">
 			       <input id="searchInput" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead" />
 			       <div class="input-group-btn">
-			           <button id="searchButton" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="Click with a blank to reset.">
+			           <button id="searchButton" class="btn btn-info" data-toggle="tooltip" data-placement="bottom" title="Click with a blank to reset.">
 			           <span class="glyphicon glyphicon-search"></span>
 			           </button>
 			       </div>
