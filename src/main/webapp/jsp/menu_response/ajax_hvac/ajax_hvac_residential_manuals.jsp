@@ -202,39 +202,21 @@
 			var node;
 			for(var ids=modelObj.id.split(":"), i=ids.length-1; i>=0; i-- )
 			{
-				/*
-				var node=$('#manual_tree_div').jstree(true).get_node(ids[i]);
-				log(i+" : node returned on click of search: "+node);
-				if(i==2 && node)//model number node
-				{
-					$("#manual_tree_div").jstree("select_node", node.id);//to high light
-					break; //the node in the tree already existing
-				}
-				else if(i==1 && node) //system type node
-				{
-					node.data.hint+=":go_next_level_to_open";//load->model number node above if-statement
-					openNode(node.id);
-					break;
-				}
-				else if(i==0 && node) //brand node
-				{
-					node.data.hint+=":go_next_level_to_open";//load->this function->system type node above if-statement
-					openNode(node.id);
-					break;
-				}*/
+
 				switch(i)
 				{
 					case 2: node=$('#manual_tree_div').jstree(true).get_node(modelObj.id);
 							if(node) 
 							{
-								$("#manual_tree_div").jstree("select_node", node.id);
+								//$("#manual_tree_div").jstree("select_node", node.id);
+								$("#manual_tree_div").jstree(true).search(modelObj.name);
 								return;
 							}
 							break;
 					case 1: node=$('#manual_tree_div').jstree(true).get_node(ids[0]+":"+ids[1]);
 							if(node)
 							{
-								node.data.hint+=":go_next_level_to_open";//load->model number node above if-statement
+								node.data.hint+=":go_next_level_to_open_model_numbers";//load_model_numbers->load_event->final_search(name)
 								openNode(node.id);
 								return;
 							}
@@ -242,7 +224,7 @@
 					case 0: node=$('#manual_tree_div').jstree(true).get_node(ids[0]);
 							if(node)
 							{
-								node.data.hint+=":go_next_level_to_open";//load->model number node above if-statement
+								node.data.hint+=":go_next_level_to_open_system_types";//load_system_type->load_event->load->model numbers
 								openNode(node.id);
 								return;
 							}
