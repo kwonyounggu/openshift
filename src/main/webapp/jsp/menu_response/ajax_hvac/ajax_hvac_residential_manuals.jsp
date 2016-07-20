@@ -87,7 +87,7 @@
 				    {
 				    	'url': function(node)
 				    	{
-				    		//log("url: node_id: "+node.id);
+				    		log("url: node_id: "+node.id+" is called"); log(node);
 				    		//return '//www.jstree.com/fiddle/?lazy';
 				    		return (node.id==='#' ? '//www.webmonster.ca/jsp/menu_response/json_hvac/manuals_brands.jsp' : '//www.webmonster.ca/jsp/menu_response/json_hvac/manuals_brands_children.jsp');
 				    	},
@@ -95,7 +95,7 @@
 				    	'dataType': 'json',
 				    	'data': function(node)
 				    	{
-				    		//log(node);
+				    		log("data: node_id: "+node.id+" is called"); log(node);
 				    		if(node.id==='#') return {'id' : node.id, 'parent': node.parent};
 				    		else return {'id' : node.id, 'parent': node.parent, 'hint': node.data.hint};
 				    	}
@@ -206,14 +206,22 @@
 		function searchTree(modelObj)//where modelObj is a selected item object
 		{
 			log("searchTree({id: "+modelObj.id+", name: "+modelObj.name+"}) is called");
-			//if(true) return;
+			if(true) return;
 			
 			//1. var brand_id, system_type_id, model_number;
 			//1. get brand node
 			
 			var node=$('#manual_tree_div').jstree(true).get_node(modelObj.id.split(":")[2]);
-			log(node);
-			log($('#manual_tree_div').jstree('search', modelObj.name))
+			log(node);//false if not found
+			log($('#manual_tree_div').jstree('search', modelObj.name));
+			for(var ids=modelObj.id.split(":"), i=ids.length-1; i>=0; i-- )
+			{
+				var node=$('#manual_tree_div').jstree(true).get_node(ids[i]);
+				if(node) continue;
+				else openNode(node.id, false);
+			}
+			//if found then search
+			//else go and get it first
 			/*
 			
 			if(g_brandNode==null)
