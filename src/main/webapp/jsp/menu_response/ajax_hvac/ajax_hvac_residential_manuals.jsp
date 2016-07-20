@@ -46,6 +46,7 @@
 
 		var g_modelList=[];
 
+		 $('[data-toggle="tooltip"]').tooltip(); //bootstrap tooltip, http://v4-alpha.getbootstrap.com/components/tooltips/#examples
 		//Initialize the tooltips
 		 $('div input').tooltipster
 		 ({
