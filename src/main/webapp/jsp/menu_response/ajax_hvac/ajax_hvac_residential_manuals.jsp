@@ -61,6 +61,7 @@
 			  'search': 
 			  { 
 				  'show_only_matches' : true,
+				  'show_only_matches_children': true,
 				  search_callback:function(str, node)
 				  {
 					  if(node.data.hint.indexOf("model number level")!=-1 && node.id.split(":")[2].search(new RegExp(str, "i"))!=-1) 
