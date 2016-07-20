@@ -86,7 +86,8 @@ file_seq_id
 	
 	System.out.println("currentId="+request.getParameter("id")+", hint:"+request.getParameter("hint")+", parentId="+request.getParameter("parent"));
 	String currentId=request.getParameter("id");
-	
+	String[] hint=request.getParameter("hint").split(":");
+	hint[0]= hint.length>1 ? (":"+hint[0]) : ("");
 	DataSource ds=(DataSource)application.getAttribute("dataSource");
 	HvacManualsDao hvacManualsDao=new HvacManualsDao(ds);
 	String parentId=request.getParameter("parent");
@@ -103,7 +104,7 @@ file_seq_id
 			out.print("{	\"id\":     \""+currentId+":"+entry.getKey()+"\", "); //brand:ac, furnace, etc
 			//out.print("  	\"parent\": \"#\", ");
 			out.print("  	\"text\":   \""+Utils.getFirstCapitalString(entry.getKey())+" ("+entry.getValue()+")\",");//number of manuals
-			out.print("  	\"data\": {\"hint\":\"system types such as ac, furnance, etc\"}, ");
+			out.print("  	\"data\": {\"hint\":\"system types such as ac, furnance, etc"+hint[0]+"\"}, ");
 			out.print("  	\"a_attr\": {\"class\":\"systemManualTree_noCheckbox\"} ");
 			if(entry.getValue()>0)
 				out.print(",		\"children\": true");						
@@ -124,7 +125,7 @@ file_seq_id
 			out.print("{	\"id\":     \""+currentId+":"+entry.getKey()+"\", "); //brand:ac:model_number
 			out.print("  	\"text\":   \""+entry.getKey()+" ("+entry.getValue()+")\",");//number of model_number
 			out.print("  	\"a_attr\": {\"class\":\"systemManualTree_noCheckbox\"}, ");//in order not to display checkbox through a css
-			out.print("  	\"data\": {\"hint\":\"model number level\"} ");
+			out.print("  	\"data\": {\"hint\":\"model number level"+hint[0]+"\"} ");
 			if(entry.getValue()>0)
 			{	
 				out.print(",		\"children\": [");					

@@ -134,9 +134,9 @@
 
 		$('#manual_tree_div').on("load_node.jstree", function (e, data) 
 		{ //if(data.rslt.status) { data.inst.open_node(data.rslt.obj); }
-			/*log("load_node.jstree");
+			log("load_node.jstree");
 			log(data);
-			if(g_checkLoadNode)
+			/*if(g_checkLoadNode)
 			{
 				g_checkLoadNode=false;
 				g_brandNode.node=$('#manual_tree_div').jstree(true).get_node(g_brandNode.node.id);
@@ -199,35 +199,37 @@
 		    });
 		},'json');
 
-		function openNode(nodeId, checkLoadNode)
+		function openNode(nodeId)
 		{
-			
-			g_checkLoadNode=checkLoadNode;
 			$("#manual_tree_div").jstree("open_node", nodeId);//to call url
 		}
 		function searchTree(modelObj)//where modelObj is a selected item object
 		{
 			log("searchTree({id: "+modelObj.id+", name: "+modelObj.name+"}) is called");
 			
-			
-			//1. var brand_id, system_type_id, model_number;
-			//1. get brand node
-			
-			var node=$('#manual_tree_div').jstree(true).get_node(modelObj.id.split(":")[0]);
-			node.data.hint=node.data.hint+":gonext";
-			log(node);//false if not found
-			openNode(node.id, false);
-			
-			if(true) return;
-			
-			log($('#manual_tree_div').jstree('search', modelObj.name));
-			
 			for(var ids=modelObj.id.split(":"), i=ids.length-1; i>=0; i-- )
 			{
 				var node=$('#manual_tree_div').jstree(true).get_node(ids[i]);
-				if(node) continue;
-				else openNode(node.id, false);
+				log("node returned on click of search: "+node);
+				if(i==2 && node)//model number node
+				{
+					$("#manual_tree_div").jstree("select_node", node.id);//to high light
+					break; //the node in the tree already existing
+				}
+				else if(i==1 && node) //system type node
+				{
+					node.data.hint+=":open_model_number";//load->model number node above if-statement
+					openNode(node.id);
+					break;
+				}
+				else if(i==0 && node) //brand node
+				{
+					node.data.hint+=":open_system_type";//load->this function->system type node above if-statement
+					openNode(node.id);
+					break;
+				}
 			}
+			
 			//if found then search
 			//else go and get it first
 			/*
