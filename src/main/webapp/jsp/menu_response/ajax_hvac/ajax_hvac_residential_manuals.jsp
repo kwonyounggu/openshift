@@ -94,7 +94,7 @@
 				    		//log("data: node_id: "+node.id+" is called"); log(node);
 				    		if(node.id==='#') return {'id' : node.id, 'parent': node.parent};
 				    		
-				    		log("data: node_id: "+node.id+", hint: "+node.data.hint+" is called"); log(node);
+				    		//log("data: node_id: "+node.id+", hint: "+node.data.hint+" is called"); log(node);
 				    		return {'id' : node.id, 'parent': node.parent, 'hint': node.data.hint};
 				    	}
 				    	
@@ -106,7 +106,7 @@
 		$('#manual_tree_div').on("changed.jstree", function (e, data) 
 		{
 			log("********** changed.jstree ************");
-			log(data);
+			//log(data);
 			if(data.node.data.hint!=null)
 			{
 				if(data.node.data.hint.indexOf("leaf level") != -1)
@@ -131,7 +131,7 @@
 		$('#manual_tree_div').on("load_node.jstree", function (e, data) 
 		{ 
 			log("load_node.jstree");
-			log(data);
+			//log(data);
 			if(data.node.data && data.node.data.hint.indexOf(":go_next_level_to_open")!=-1)//means searching is implemented
 			{
 				$('#searchButton').trigger('click');
@@ -145,7 +145,8 @@
 			var selectedModelNumberItem=$("#searchInput").typeahead('getActive');
 			if(selectedModelNumberItem===undefined)//not selected of model number
 			{
-				showTooltip("Model number is required.");
+				//showTooltip("Model number is required.");
+				$("#manual_tree_div").jstree(true).clear_search();
 			}
 			else if(selectedModelNumberItem.name!=searchValue)
 			{	
