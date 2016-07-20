@@ -138,15 +138,9 @@
 		});
 		$('#searchButton').click(function()
 		{
-			$('#searchInput').tooltipster('hide');
+			
 			var searchValue=$('#searchInput').val();
-			
-			//log("lookup testing ...");
-			//log($("#searchInput").typeahead('getActive'));
-			
-			//1. if searchValue == Selected Item then go ahead for search tree
-			//2. else find it on the json list and go ahead for search tree
-			
+		
 			var selectedModelNumberItem=$("#searchInput").typeahead('getActive');
 			if(selectedModelNumberItem===undefined)//not selected of model number
 			{
@@ -154,12 +148,12 @@
 			}
 			else if(selectedModelNumberItem.name!=searchValue)
 			{	
-				log("selectedModelNumberItem.name!=searchValue");
+				//log("selectedModelNumberItem.name!=searchValue");
 				var modelObj=getModelObj(g_modelList, searchValue);
-				log(modelObj);
+				//log(modelObj);
 				if(modelObj.length==0) //not found
 				{
-					showTooltip("Model number typed in is not existing.");
+					showTooltip("Model number typed in is not in the list.");
 				}
 				else
 				{
@@ -184,7 +178,7 @@
 		    	autoSelect: false,
 		    	updater: function(item)
 		    	{
-		    		log("updater is called");
+		    		//log("updater is called");
 		    		searchTree(item);
 		    		return item;
 		    	}
@@ -198,7 +192,7 @@
 		function searchTree(modelObj)//where modelObj is a selected item object
 		{
 			log("searchTree({id: "+modelObj.id+", name: "+modelObj.name+"}) is called");
-			
+			$('#searchInput').tooltipster('hide');
 			var node;
 			for(var ids=modelObj.id.split(":"), i=ids.length-1; i>=0; i-- )
 			{
@@ -208,8 +202,8 @@
 					case 2: node=$('#manual_tree_div').jstree(true).get_node(modelObj.id);
 							if(node) 
 							{
-								//$("#manual_tree_div").jstree("select_node", node.id);
-								$("#manual_tree_div").jstree(true).search(modelObj.name);
+								//$("#manual_tree_div").jstree("select_node", node.id);//just highlight if expanded already
+								$("#manual_tree_div").jstree(true).search(modelObj.name);//show model number's parents in expanded way
 								return;
 							}
 							break;
