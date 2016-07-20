@@ -97,7 +97,9 @@
 				    	{
 				    		log("data: node_id: "+node.id+" is called"); log(node);
 				    		if(node.id==='#') return {'id' : node.id, 'parent': node.parent};
-				    		else return {'id' : node.id, 'parent': node.parent, 'hint': node.data.hint};
+				    		
+				    		log("data: node_id: "+node.id+", hint: "+node.data.hint+" is called"); log(node);
+				    		return {'id' : node.id, 'parent': node.parent, 'hint': node.data.hint};
 				    	}
 				    	
 				    }
