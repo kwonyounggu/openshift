@@ -84,10 +84,13 @@ file_seq_id
 <% 
 	response.setContentType("application/json");
 	
-	System.out.println("currentId="+request.getParameter("id")+", hint:"+request.getParameter("hint")+", parentId="+request.getParameter("parent"));
+	
 	String currentId=request.getParameter("id");
 	String[] hint=request.getParameter("hint").split(":");
 	hint[0]= hint.length>1 ? (":"+hint[1]) : ("");
+	
+	System.out.println("currentId="+request.getParameter("id")+", hint:"+request.getParameter("hint")+", hint[0]:"+hint[0]+", parentId="+request.getParameter("parent"));
+	
 	DataSource ds=(DataSource)application.getAttribute("dataSource");
 	HvacManualsDao hvacManualsDao=new HvacManualsDao(ds);
 	String parentId=request.getParameter("parent");
@@ -127,7 +130,10 @@ file_seq_id
 			out.print("{	\"id\":     \""+currentId+":"+entry.getKey()+"\", "); //brand:ac:model_number
 			out.print("  	\"text\":   \""+entry.getKey()+" ("+entry.getValue()+")\",");//number of model_number
 			out.print("  	\"a_attr\": {\"class\":\"systemManualTree_noCheckbox\"}, ");//in order not to display checkbox through a css
-			out.print("  	\"data\": {\"hint\":\"model number level"+hint[0]+"\"} ");
+			if(hint[0].indexOf(entry.getKey())!=-1)
+				out.print("  	\"data\": {\"hint\":\"model number level"+hint[0]+"\"} ");
+			else
+				out.print("  	\"data\": {\"hint\":\"model number level\"} ");
 			if(entry.getValue()>0)
 			{	
 				out.print(",		\"children\": [");					
