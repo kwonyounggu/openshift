@@ -102,9 +102,11 @@ file_seq_id
 		{
 			Map.Entry<String, Integer> entry=entries.next();
 			out.print("{	\"id\":     \""+currentId+":"+entry.getKey()+"\", "); //brand:ac, furnace, etc
-			//out.print("  	\"parent\": \"#\", ");
 			out.print("  	\"text\":   \""+Utils.getFirstCapitalString(entry.getKey())+" ("+entry.getValue()+")\",");//number of manuals
-			out.print("  	\"data\": {\"hint\":\"system types such as ac, furnance, etc"+hint[0]+"\"}, ");
+			if(hint[0].indexOf(entry.getKey())!=-1)
+				out.print("  	\"data\": {\"hint\":\"system types such as ac, furnance, etc"+hint[0]+"\"}, ");
+			else
+				out.print("  	\"data\": {\"hint\":\"system types such as ac, furnance, etc\"}, ");
 			out.print("  	\"a_attr\": {\"class\":\"systemManualTree_noCheckbox\"} ");
 			if(entry.getValue()>0)
 				out.print(",		\"children\": true");						

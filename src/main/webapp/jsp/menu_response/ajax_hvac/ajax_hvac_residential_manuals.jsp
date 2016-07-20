@@ -216,7 +216,7 @@
 					case 1: node=$('#manual_tree_div').jstree(true).get_node(ids[0]+":"+ids[1]);
 							if(node)
 							{
-								node.data.hint+=":go_next_level_to_open_model_numbers";//load_model_numbers->load_event->final_search(name)
+								node.data.hint+=":go_next_level_to_"+ids[2];//load_model_numbers->load_event->final_search(name)
 								openNode(node.id);
 								return;
 							}
@@ -224,7 +224,7 @@
 					case 0: node=$('#manual_tree_div').jstree(true).get_node(ids[0]);
 							if(node)
 							{
-								node.data.hint+=":go_next_level_to_open_system_types";//load_system_type->load_event->load->model numbers
+								node.data.hint+=":go_next_level_to_"+ids[1];//load_system_type->load_event->load->model numbers
 								openNode(node.id);
 								return;
 							}
