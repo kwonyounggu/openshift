@@ -116,8 +116,10 @@
 	{
 	    text-align:left;
 	    padding:5px 5px 5px 5px; 
-	    border:1px solid #000000;
-		border-radius:0px 0px 0px 0px;
+	    border:1px solid #555762;
+		border-radius:0px 10px 0px 10px;
+		background: #555762;
+		color: white;
 	}
 	
 	#menu_contents ul li
