@@ -128,6 +128,10 @@
 			if(e.which==13) $('#searchButton').trigger('click');
 		 });
 
+		$('#searchInput').change(function (e) 
+		{
+			$('#searchInput').tooltipster('hide');
+		 });
 
 		$('#manual_tree_div').on("load_node.jstree", function (e, data) 
 		{ 
@@ -195,7 +199,7 @@
 		function searchTree(modelObj)//where modelObj is a selected item object
 		{
 			log("searchTree({id: "+modelObj.id+", name: "+modelObj.name+"}) is called");
-			$('#searchInput').tooltipster('hide');
+			//$('#searchInput').tooltipster('hide');
 			var node;
 			for(var ids=modelObj.id.split(":"), i=ids.length-1; i>=0; i-- )
 			{
@@ -251,10 +255,10 @@
 <table style='table-layout: fixed'>
 	<tr>
 		<td style='width: 25%; vertical-align: top'>
-			  <div class="input-group">
+			  <div class="input-group" data-toggle="tooltip" data-placement="bottom" title="Click with a blank to reset.">
 			       <input id="searchInput" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead" />
 			       <div class="input-group-btn">
-			           <button id="searchButton" class="btn btn-info" data-toggle="tooltip" data-placement="bottom" title="Click with a blank to reset.">
+			           <button id="searchButton" class="btn btn-info" >
 			           <span class="glyphicon glyphicon-search"></span>
 			           </button>
 			       </div>
