@@ -156,6 +156,15 @@
 				$('#searchButton').trigger('click');
 			}
 		});
+		$('#manual_tree_div').on("search.jstree", function (e, data) 
+		{ 
+			log("search.jstree");
+			log(data);
+			//if(data.node.data && data.node.data.hint.indexOf(":go_next_level_to_open")!=-1)//means searching is implemented
+			//{
+			//	$('#searchButton').trigger('click');
+			//}
+		});
 		$('#searchButton').click(function()
 		{
 			
@@ -290,7 +299,7 @@
 		<td style='width: 75%; border-radius:0px 0px 0px 0px; border:1px solid #dddddd; border-style: hidden hidden hidden solid; vertical-align: top;'>
 		
 			<div class="hvac_rectangle" id="tree_path_div">
-				CARRIER -> AIR-CONDITIONER -> 24AAA5 -> WARRANTY
+				CARRIER:AIR-CONDITIONER:24AAA5:WARRANTY
 			</div>
 			<!-- see http://embedresponsively.com/ and select Generic iFrame and google to display pdf with hint from http://stackoverflow.com/questions/8262278/supplying-an-embedable-pdf  -->
 			<div class='embed-container'>
