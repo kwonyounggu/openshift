@@ -131,8 +131,8 @@
 		$('.bstooltip').mouseenter(function () 
 		{
 			log("mouseenter");
-			var that = $(this)
-		    that.tooltip('show');
+			var that = $(this);
+			$(this).tooltip('show');
 		    setTimeout(function()
 		    {
 		        that.tooltip('hide');
