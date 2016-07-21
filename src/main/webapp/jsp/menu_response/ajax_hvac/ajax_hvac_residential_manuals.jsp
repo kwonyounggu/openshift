@@ -288,7 +288,7 @@
 			           </button>
 			       </div>
 			  </div>
-			  <div style="width: 250px; height: 100%; overflow: auto">
+			  <div style="width: 350px; height: 100%; overflow: auto">
 				<div id="manual_tree_div" style="border-radius:0px 0px 0px 0px; border:0px solid #000000;">
 				</div>
 			  </div>
