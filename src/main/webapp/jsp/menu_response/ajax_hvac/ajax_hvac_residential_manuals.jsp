@@ -279,7 +279,7 @@
 <h4>Under Construction</h4>
 <table style='table-layout: fixed'>
 	<tr>
-		<td style='width: 27%; vertical-align: top'>
+		<td style='width: 30%; vertical-align: top'>
 			  <div class="input-group" >
 			       <input id="searchInput" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead" data-toggle="tooltip" data-placement="auto" title="Search with a blank to reset." data-trigger="manual"/>
 			       <div class="input-group-btn">
@@ -294,7 +294,7 @@
 			  </div>
 		</td>
 		<td width='10'></td>
-		<td style='width: 73%; border-radius:0px 0px 0px 0px; border:1px solid #dddddd; border-style: hidden hidden hidden solid; vertical-align: top;'>
+		<td style='width: 70%; border-radius:0px 0px 0px 0px; border:1px solid #dddddd; border-style: hidden hidden hidden solid; vertical-align: top;'>
 		
 			<div class="hvac_rectangle" id="tree_path_div">
 				CARRIER:AIR-CONDITIONER:24AAA5:WARRANTY
