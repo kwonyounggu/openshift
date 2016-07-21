@@ -128,7 +128,7 @@
 			if(e.which==13) $('#searchButton').trigger('click');
 		 });
 
-		$('#searchInput').change(function (e) 
+		$('#searchInput').change(function () 
 		{
 			$('#searchInput').tooltipster('hide');
 		 });
@@ -160,7 +160,7 @@
 				//log(modelObj);
 				if(modelObj.length==0) //not found
 				{
-					showTooltip("Model number typed in is not in the list.");
+					showTooltip("Model number is not in the list.");
 				}
 				else
 				{
@@ -255,7 +255,7 @@
 <table style='table-layout: fixed'>
 	<tr>
 		<td style='width: 25%; vertical-align: top'>
-			  <div class="input-group" data-toggle="tooltip" data-placement="bottom" title="Click with a blank to reset.">
+			  <div class="input-group" data-toggle="tooltip" data-placement="top" data-delay='{"show":5000, "hide":3000}' title="Click with a blank to reset.">
 			       <input id="searchInput" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead" />
 			       <div class="input-group-btn">
 			           <button id="searchButton" class="btn btn-info" >
