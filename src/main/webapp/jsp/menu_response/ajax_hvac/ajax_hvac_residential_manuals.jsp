@@ -159,12 +159,11 @@
 			var searchValue=$('#searchInput').val();
 		
 			var selectedModelNumberItem=$("#searchInput").typeahead('getActive');
-			if(searchValue==="" || selectedModelNumberItem===undefined)//not selected of model number
+			if(searchValue==="")//not selected of model number
 			{
-				//showTooltip("Model number is required.");
 				$("#manual_tree_div").jstree(true).clear_search();
 			}
-			else if(selectedModelNumberItem.name!=searchValue)
+			else if(selectedModelNumberItem===undefined || selectedModelNumberItem.name!=searchValue)
 			{	
 				//log("selectedModelNumberItem.name!=searchValue");
 				var modelObj=getModelObj(g_modelList, searchValue);
