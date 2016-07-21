@@ -128,18 +128,19 @@
 			if(e.which==13) $('#searchButton').trigger('click');
 		 });
 
-		$('.bstooltip').mouseenter(function () 
+		$('#searchInput').mouseenter(function () 
 		{
 			log("mouseenter");
 			var that = $(this);
-			$(this).tooltip('show');
+			that.tooltip('show');
 		    setTimeout(function()
 		    {
 		        that.tooltip('hide');
 		    }, 2000);
 		 });
-		$('.bstooltip').mouseenter(function ()
+		$('#searchInput').mouseleave(function ()
 		{
+			log("mouseleave");
 			$(this).tooltip('hide');
 		});
 		
@@ -270,8 +271,8 @@
 <table style='table-layout: fixed'>
 	<tr>
 		<td style='width: 25%; vertical-align: top'>
-			  <div class="input-group bstooltip"  data-toggle="tooltip" data-placement="auto" title="Search with a blank to reset." data-trigger="manual">
-			       <input id="searchInput" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead"/>
+			  <div class="input-group" >
+			       <input id="searchInput" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead" data-toggle="tooltip" data-placement="auto" title="Search with a blank to reset." data-trigger="manual"/>
 			       <div class="input-group-btn">
 			           <button id="searchButton" class="btn btn-info">
 			           <span class="glyphicon glyphicon-search"></span>
