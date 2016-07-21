@@ -140,7 +140,7 @@
 		$('#searchInput').mouseenter(function ()
 		{
 			$(this).tooltip('hide');
-		}
+		});
 		
 		$('#manual_tree_div').on("load_node.jstree", function (e, data) 
 		{ 
