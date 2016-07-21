@@ -66,7 +66,6 @@
 				  'show_only_matches_children': true,
 				  search_callback:function(str, node)
 				  {
-					  //if(node.data.hint.indexOf("model number level")!=-1 && node.id.split(":")[2].search(new RegExp(str, "i"))!=-1) 
 					  if((node.data.hint.indexOf("model number level")!=-1 || node.data.hint.indexOf("manuals for")!=-1) && node.id.split(":")[2].search(new RegExp(str, "i"))!=-1)   
 					  {
 						  //log("search_callback (bingog): "+node.id+", "+node.text+", "+node.data.hint+", "+node.parent.split(":")[0]+", "+node.text.indexOf(str)!=-1);
@@ -117,7 +116,6 @@
 					//Do item - July 13
 					//note: do not implement if the currently selected/displayed pdf is the same one as in the right hand side
 					log("It's a leaf with a parent ID="+data.node.parent+", node.id="+data.node.id);
-					//document.getElementById('pdfIfram').setAttribute('src', node.id);
 					var pdfPath=data.node.id.replace("dl=0", "raw=1");
 					document.getElementById('pdfIfram').setAttribute('src', "http://docs.google.com/gview?url="+pdfPath+"&embedded=true");
 					
@@ -157,15 +155,14 @@
 				$('#searchButton').trigger('click');
 			}
 		});
+		//it is called after search is returned with a true.
+		/*
 		$('#manual_tree_div').on("search.jstree", function (e, data) 
 		{ 
 			log("search.jstree");
 			log(data);
-			//if(data.node.data && data.node.data.hint.indexOf(":go_next_level_to_open")!=-1)//means searching is implemented
-			//{
-			//	$('#searchButton').trigger('click');
-			//}
 		});
+		*/
 		$('#searchButton').click(function()
 		{
 			
