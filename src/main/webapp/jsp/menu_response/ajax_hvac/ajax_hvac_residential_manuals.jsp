@@ -119,6 +119,8 @@
 					//document.getElementById('pdfIfram').setAttribute('src', node.id);
 					var pdfPath=data.node.id.replace("dl=0", "raw=1");
 					document.getElementById('pdfIfram').setAttribute('src', "http://docs.google.com/gview?url="+pdfPath+"&embedded=true");
+					
+					$("#tree_path_div").html(data.node.id);
 				}
 			}
 		});
@@ -287,7 +289,7 @@
 		<td width='10'></td>
 		<td style='width: 75%; border-radius:0px 0px 0px 0px; border:1px solid #dddddd; border-style: hidden hidden hidden solid; vertical-align: top;'>
 		
-			<div class="hvac_rectangle">
+			<div class="hvac_rectangle" id="tree_path_div">
 				CARRIER -> AIR-CONDITIONER -> 24AAA5 -> WARRANTY
 			</div>
 			<!-- see http://embedresponsively.com/ and select Generic iFrame and google to display pdf with hint from http://stackoverflow.com/questions/8262278/supplying-an-embedable-pdf  -->
