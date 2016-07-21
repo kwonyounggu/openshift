@@ -128,12 +128,20 @@
 			if(e.which==13) $('#searchButton').trigger('click');
 		 });
 
-		$('#searchInput').keypress(function (e) 
+		$('#searchInput').mouseenter(function () 
 		{
-			log(e);
-			$('#searchInput').tooltipster('hide');
+			var that = $(this)
+		    that.tooltip('show');
+		    setTimeout(function()
+		    {
+		        that.tooltip('hide');
+		    }, 2000);
 		 });
-
+		$('#searchInput').mouseenter(function ()
+		{
+			$(this).tooltip('hide');
+		}
+		
 		$('#manual_tree_div').on("load_node.jstree", function (e, data) 
 		{ 
 			log("load_node.jstree");
@@ -245,6 +253,11 @@
 	{
 		$('#searchInput').tooltipster('content', str);
 		$('#searchInput').tooltipster('show');
+		
+		setTimeout(function()
+		{
+			$('#searchInput').tooltipster('hide');
+	    }, 2000);
 	}
 	
 </script>  
@@ -257,8 +270,8 @@
 	<tr>
 		<td style='width: 25%; vertical-align: top'>
 			  <div class="input-group" >
-			       <input id="searchInput" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead"/>
-			       <div class="input-group-btn" data-toggle="tooltip" data-placement="left" title="Search with a blank to reset." data-trigger="hover">
+			       <input id="searchInput" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead" data-toggle="tooltip" data-placement="auto" title="Search with a blank to reset." data-trigger="manual"/>
+			       <div class="input-group-btn">
 			           <button id="searchButton" class="btn btn-info">
 			           <span class="glyphicon glyphicon-search"></span>
 			           </button>
