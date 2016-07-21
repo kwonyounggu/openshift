@@ -47,7 +47,7 @@ $(document).ready(function ()
 
 </script>
 <h4>HVAC in North America</h4>
-<div style="width: 95%">
+<div style="width: 98%">
   <ul class="nav nav-tabs">
   	<li class="active"><a id="residential_anchor" data-toggle="tab_ajax" data-target="#residential_manuals" onfocus="this.blur()" href="jsp/menu_response/ajax_hvac/ajax_hvac_residential_manuals.jsp">System Manuals</a></li>
 <!-- The followings are commented because all manuals are integrated into one system manuals not dividing -->
