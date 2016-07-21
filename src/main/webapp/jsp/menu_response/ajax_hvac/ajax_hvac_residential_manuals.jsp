@@ -120,7 +120,7 @@
 					var pdfPath=data.node.id.replace("dl=0", "raw=1");
 					document.getElementById('pdfIfram').setAttribute('src', "http://docs.google.com/gview?url="+pdfPath+"&embedded=true");
 					
-					$("#tree_path_div").html(data.node.id);
+					$("#tree_path_div").html(data.node.parent);
 				}
 			}
 		});
