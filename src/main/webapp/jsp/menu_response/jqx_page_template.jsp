@@ -108,7 +108,7 @@
 	    text-align:left;
 	    padding:5px 5px 5px 5px; 
 	    border:1px solid #555762;
-		border-radius:0px 0px 0px 0px;
+		border-radius:10px 10px 0px 0px;
 		background: #555762;
 		color: white;
 	}
@@ -117,7 +117,7 @@
 	    text-align:left;
 	    padding:5px 5px 5px 5px; 
 	    border:1px solid #555762;
-		border-radius:0px 10px 0px 10px;
+		border-radius:10px 10px 0px 0px;
 		background: #555762;
 		color: white;
 	}
