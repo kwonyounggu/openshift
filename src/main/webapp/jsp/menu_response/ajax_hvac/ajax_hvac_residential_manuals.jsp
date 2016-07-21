@@ -257,8 +257,8 @@
 	<tr>
 		<td style='width: 25%; vertical-align: top'>
 			  <div class="input-group" >
-			       <input id="searchInput" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead" data-toggle="tooltip" data-placement="left" title="Search with a blank to reset." data-trigger="hover"/>
-			       <div class="input-group-btn">
+			       <input id="searchInput" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead"/>
+			       <div class="input-group-btn" data-toggle="tooltip" data-placement="left" title="Search with a blank to reset." data-trigger="hover">
 			           <button id="searchButton" class="btn btn-info">
 			           <span class="glyphicon glyphicon-search"></span>
 			           </button>
