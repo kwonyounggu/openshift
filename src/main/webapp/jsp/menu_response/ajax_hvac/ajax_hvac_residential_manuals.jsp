@@ -298,12 +298,14 @@
 		</td>
 		<td width='10'></td>
 		<td style='width: 73%; border-radius:0px 0px 0px 0px; border:1px solid #dddddd; border-style: hidden hidden hidden solid; vertical-align: top;'>
-			<div class="hvac_rectangle row">
-				<div id="tree_path_div" class="col-xs-9">
-					CARRIER:AIR-CONDITIONER:24AAA5:WARRANTY
-				</div>
-				<div class="col-xs-3">
-					<a href="#fbComments"><span class="label label-info">Leave a comment</span></a>
+			<div class="hvac_rectangle">
+				<div class="row">
+					<div id="tree_path_div" class="col-xs-9">
+						CARRIER:AIR-CONDITIONER:24AAA5:WARRANTY
+					</div>
+					<div class="col-xs-3">
+						<a href="#fbComments"><span class="label label-info">Leave a comment</span></a>
+					</div>
 				</div>
 			</div>
 			<!-- see http://embedresponsively.com/ and select Generic iFrame and google to display pdf with hint from http://stackoverflow.com/questions/8262278/supplying-an-embedable-pdf  -->
