@@ -306,7 +306,7 @@
 			<div class='embed-container'>
 				<iframe id='pdfIfram' src='http://docs.google.com/gview?url=https://www.dropbox.com/s/h3n5ukq6cjf6uyz/Scheduled_admin_carrier_air_conditioner_warranty_24aaa5_49004dp172_2016_07_03_15_06_10.pdf?raw=1&embedded=true' style='border:0'></iframe>
 			</div>	
-			<div><p>Don't forget to leave a comment if this page has helped you.</p></div>
+			<div><br/><p>Don't forget to <span class="label label-info">leave a comment</span> if this page has helped you.</p></div>
 			<div
 			  class="fb-like"
 			  data-share="true"
