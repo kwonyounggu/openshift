@@ -294,7 +294,7 @@
 			  </div>
 		</td>
 		<td width='10'></td>
-		<td style='width: 75%; border-radius:0px 0px 0px 0px; border:1px solid #dddddd; border-style: hidden hidden hidden solid; vertical-align: top;'>
+		<td style='width: 73%; border-radius:0px 0px 0px 0px; border:1px solid #dddddd; border-style: hidden hidden hidden solid; vertical-align: top;'>
 		
 			<div class="hvac_rectangle" id="tree_path_div">
 				CARRIER:AIR-CONDITIONER:24AAA5:WARRANTY
