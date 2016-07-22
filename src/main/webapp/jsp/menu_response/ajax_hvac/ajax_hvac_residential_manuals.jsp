@@ -46,7 +46,7 @@
 	{
 
 		var g_modelList=[];
-
+		var g_nodePdfDisplayed=null;
 		 $('[data-toggle="tooltip"]').tooltip(); //bootstrap tooltip, http://v4-alpha.getbootstrap.com/components/tooltips/#examples
 		//Initialize the tooltips
 		 $('div input').tooltipster
@@ -107,19 +107,23 @@
 		//this is called whenever node in any level is clicked
 		$('#manual_tree_div').on("changed.jstree", function (e, data) 
 		{
-			log("********** changed.jstree ************");
+			//log("********** changed.jstree ************");
 			//log(data);
 			if(data.node.data.hint!=null)
 			{
 				if(data.node.data.hint.indexOf("leaf level") != -1)
 				{
-					//Do item - July 13
 					//note: do not implement if the currently selected/displayed pdf is the same one as in the right hand side
-					log("It's a leaf with a parent ID="+data.node.parent+", node.id="+data.node.id);
-					var pdfPath=data.node.id.replace("dl=0", "raw=1");
-					document.getElementById('pdfIfram').setAttribute('src', "http://docs.google.com/gview?url="+pdfPath+"&embedded=true");
-					
-					$("#tree_path_div").html(data.node.parent);
+					if(g_nodePdfDisplayed==null || g_nodePdfDisplayed.id!=data.node.id)
+					{
+						log("It's a leaf with a parent ID="+data.node.parent+", node.id="+data.node.id);
+						var pdfPath=data.node.id.replace("dl=0", "raw=1");
+						document.getElementById('pdfIfram').setAttribute('src', "http://docs.google.com/gview?url="+pdfPath+"&embedded=true");
+						
+						$("#tree_path_div").html(data.node.parent);
+						
+						g_nodePdfDisplayed=data.node;
+					}
 				}
 			}
 		});
@@ -132,7 +136,7 @@
 
 		$('#searchInput').mouseenter(function () 
 		{
-			log("mouseenter");
+			//log("mouseenter");
 			var that = $(this);
 			that.tooltip('show');
 		    setTimeout(function()
@@ -142,7 +146,7 @@
 		 });
 		$('#searchInput').mouseleave(function ()
 		{
-			log("mouseleave");
+			//log("mouseleave");
 			$(this).tooltip('hide');
 		});
 		
@@ -189,7 +193,7 @@
 			}
 			else if(selectedModelNumberItem.name==searchValue)
 			{
-				log("selectedModelNumberItem.name==searchValue");
+				//log("selectedModelNumberItem.name==searchValue");
 				searchTree(selectedModelNumberItem);
 			}
 		});
@@ -219,7 +223,6 @@
 		function searchTree(modelObj)//where modelObj is a selected item object
 		{
 			log("searchTree({id: "+modelObj.id+", name: "+modelObj.name+"}) is called");
-			//$('#searchInput').tooltipster('hide');
 			var node;
 			for(var ids=modelObj.id.split(":"), i=ids.length-1; i>=0; i-- )
 			{
