@@ -300,10 +300,10 @@
 		<td style='width: 73%; border-radius:0px 0px 0px 0px; border:1px solid #dddddd; border-style: hidden hidden hidden solid; vertical-align: top;'>
 			<div class="hvac_rectangle">
 				<div class="row">
-					<div id="tree_path_div" class="col-xs-9">
+					<div id="tree_path_div" class="col-md-9">
 						CARRIER:AIR-CONDITIONER:24AAA5:WARRANTY
 					</div>
-					<div class="col-xs-3">
+					<div class="col-md-3 col-md-offset-3">
 						<a href="#fbComments"><span class="label label-info">Leave a comment</span></a>
 					</div>
 				</div>
