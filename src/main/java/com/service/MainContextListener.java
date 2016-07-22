@@ -70,8 +70,8 @@ public class MainContextListener implements ServletContextListener
 			//This is to get additional DEs if being existed due to the addition from remote hospitals
 			uploadHvacManualsScheduler = new Scheduler();
 	    	//The following will be executed once a day at 0:00AM
-			uploadHvacManualsScheduler.schedule("10 0 * * *", new UploadHvacManualsTask((DataSource)context.getAttribute("dataSource")));//"10 0 * * *" at 00:10am
-			//uploadHvacManualsScheduler.schedule("*/10 * * * *", new UploadHvacManualsTask((DataSource)context.getAttribute("dataSource")));//every 5 minute for testing.
+			//uploadHvacManualsScheduler.schedule("10 0 * * *", new UploadHvacManualsTask((DataSource)context.getAttribute("dataSource")));//"10 0 * * *" at 00:10am
+			uploadHvacManualsScheduler.schedule("*/10 * * * *", new UploadHvacManualsTask((DataSource)context.getAttribute("dataSource")));//every 5 minute for testing.
 
 			uploadHvacManualsScheduler.start();
 			
