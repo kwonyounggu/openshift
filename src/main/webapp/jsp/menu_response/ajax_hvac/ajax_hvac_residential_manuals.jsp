@@ -305,7 +305,7 @@
 					</div>
 					<!-- http://stackoverflow.com/questions/19758313/align-div-right-in-bootstrap-3 -->
 					<div class="col-md-2" style="padding-right: 5px;">
-						<a href="#fbComments"><span class="label label-info">Leave a comment</span></a>
+						<a href="#fbComments" onfocus="this.blur()"><span class="label label-info">Leave a comment</span></a>
 					</div>
 				</div>
 			</div>
