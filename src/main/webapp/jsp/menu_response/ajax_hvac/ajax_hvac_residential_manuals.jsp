@@ -159,6 +159,7 @@
 				$('#searchButton').trigger('click');
 			}
 		});
+		//see http://stackoverflow.com/questions/4486032/open-branch-when-clicking-on-a-node
 		$('#manual_tree_div').on("select_node.jstree", function (e, data) 
 		{ 
 			log("select_node.jstree");

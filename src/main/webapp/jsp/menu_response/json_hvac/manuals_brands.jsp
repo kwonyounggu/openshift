@@ -33,8 +33,11 @@
 		if(entries.hasNext()) out.print(",");
 	}
 %>
+
+<!-- 
 ,
 	{	"id":     "100",   	"parent": "#",   	"data": {"hint":"brand name level"},   	"text":   "GOODMAN (260)",		"children": true},
 	{	"id":     "101",   	"parent": "#",   	"data": {"hint":"brand name level"},   	"text":   "TRANE (260)",		"children": true},
 	{	"id":     "103",   	"parent": "#",   	"data": {"hint":"brand name level"},   	"text":   "LENNOX (260)",		"children": true}
+ -->
 ]
