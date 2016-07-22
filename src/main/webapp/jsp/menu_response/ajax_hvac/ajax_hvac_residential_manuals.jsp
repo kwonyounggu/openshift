@@ -159,6 +159,11 @@
 				$('#searchButton').trigger('click');
 			}
 		});
+		$('#manual_tree_div').on("select_node.jstree", function (e, data) 
+		{ 
+			log("select_node.jstree");
+			data.instance.toggle_node(data.node);
+		});
 		//it is called after search is returned with a true.
 		/*
 		$('#manual_tree_div').on("search.jstree", function (e, data) 
