@@ -279,7 +279,7 @@
 <h4>Under Construction</h4>
 <table style='table-layout: fixed'>
 	<tr>
-		<td style='width: 275px; vertical-align: top'>
+		<td style='width: 270px; vertical-align: top'>
 			  <div class="input-group" >
 			       <input id="searchInput" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead" data-toggle="tooltip" data-placement="auto" title="Search with a blank to reset." data-trigger="manual"/>
 			       <div class="input-group-btn">
@@ -288,7 +288,7 @@
 			           </button>
 			       </div>
 			  </div>
-			  <div style="width: 275px; height: 100%; overflow: auto">
+			  <div style="width: 270px; height: 100%; overflow: auto">
 				<div id="manual_tree_div" style="border-radius:0px 0px 0px 0px; border:0px solid #000000;">
 				</div>
 			  </div>
