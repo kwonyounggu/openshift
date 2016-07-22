@@ -285,7 +285,7 @@
 //to do, button->submit button->see contact for the button activation
 %>
 
-<h4>Under Construction</h4>
+<h4>More data will come soon.</h4>
 <table style='table-layout: fixed'>
 	<tr>
 		<td style='width: 270px; vertical-align: top'>
