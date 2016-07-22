@@ -307,7 +307,7 @@
 				<iframe id='pdfIfram' src='http://docs.google.com/gview?url=https://www.dropbox.com/s/h3n5ukq6cjf6uyz/Scheduled_admin_carrier_air_conditioner_warranty_24aaa5_49004dp172_2016_07_03_15_06_10.pdf?raw=1&embedded=true' style='border:0'></iframe>
 			</div>	
 			<div><br/><p>Don't forget to <span class="label label-info">leave a comment/request</span> if this page has helped you.</p></div>
-			<div class="fb-comments" data-href="http://www.webmonster.ca/controller?op=menu_public_hvac#system_manual" data-numposts="5"></div>
+			<div class="fb-comments" data-href="http://www.webmonster.ca/controller?op=menu_public_hvac#system_manual" data-numposts="5" data-order-by="reverse_time"></div>
 		</td>
 	</tr>
 </table>
