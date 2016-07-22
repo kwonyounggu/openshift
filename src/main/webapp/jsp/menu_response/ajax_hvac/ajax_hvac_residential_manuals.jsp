@@ -300,11 +300,11 @@
 		<td style='width: 73%; border-radius:0px 0px 0px 0px; border:1px solid #dddddd; border-style: hidden hidden hidden solid; vertical-align: top;'>
 			<div class="hvac_rectangle">
 				<div class="row">
-					<div id="tree_path_div" class="col-md-10">
+					<div id="tree_path_div" class="col-md-9">
 						CARRIER:AIR-CONDITIONER:24AAA5:WARRANTY
 					</div>
 					<!-- http://stackoverflow.com/questions/19758313/align-div-right-in-bootstrap-3 -->
-					<div class="col-md-2">
+					<div class="col-md-3" style="float: right !important; padding-right: 5px;">
 						<a href="#fbComments"><span class="label label-info">Leave a comment</span></a>
 					</div>
 				</div>
