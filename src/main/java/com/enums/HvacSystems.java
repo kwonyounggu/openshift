@@ -4,6 +4,7 @@ import com.common.Utils;
 
 public enum HvacSystems
 {
+	AC_COIL,
 	AIR_CLEANER,
 	AIR_CONDITIONER,
 	AIR_HANDLER,
