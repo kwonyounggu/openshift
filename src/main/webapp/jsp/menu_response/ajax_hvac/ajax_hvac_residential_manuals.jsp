@@ -307,7 +307,7 @@
 			<div class="hvac_rectangle">
 				<div class="row">
 					<div id="tree_path_div" class="col-md-10">
-						CARRIER:AIR-CONDITIONER:24AAA5:WARRANTY
+						GOODMAN:AIR_HANDLER:MBR:BROCHURE
 					</div>
 					<!-- http://stackoverflow.com/questions/19758313/align-div-right-in-bootstrap-3 -->
 					<div class="col-md-2" style="padding-right: 5px;">
@@ -317,7 +317,7 @@
 			</div>
 			<!-- see http://embedresponsively.com/ and select Generic iFrame and google to display pdf with hint from http://stackoverflow.com/questions/8262278/supplying-an-embedable-pdf  -->
 			<div class='embed-container'>
-				<iframe id='pdfIfram' src='http://docs.google.com/gview?url=https://www.dropbox.com/s/h3n5ukq6cjf6uyz/Scheduled_admin_carrier_air_conditioner_warranty_24aaa5_49004dp172_2016_07_03_15_06_10.pdf?raw=1&embedded=true' style='border:0'></iframe>
+				<iframe id='pdfIfram' src='http://docs.google.com/gview?url=https://www.dropbox.com/s/x2bux8g239pm0f9/Admin_goodman_airhandler_acnf_brochure_2016_07_23.pdf?raw=1&embedded=true' style='border:0'></iframe>
 			</div>	
 			<div><br/><p style="padding-left: 10px;">Don't forget to <span class="label label-info">leave a comment/request</span> if this page has helped you.</p></div>
 			<div id="fbComments" data-width="100%" class="fb-comments" data-href="http://www.webmonster.ca/controller?op=menu_public_hvac#system_manual" data-numposts="5" data-order-by="reverse_time"></div>
