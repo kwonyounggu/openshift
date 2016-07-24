@@ -90,8 +90,9 @@
   function testAPI() 
   {
     console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) 
+    FB.api('/me', 'GET', {fields: 'first_name, last_name, name, id'}, function(response) 
     {
+      //id: "1073293919426764"
       console.log('Successful login for: ' + response.name);
       console.log(response);
       document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.name + '!';
