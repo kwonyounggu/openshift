@@ -319,6 +319,9 @@
 			<div class='embed-container'>
 				<iframe id='pdfIfram' src='http://docs.google.com/gview?url=https://www.dropbox.com/s/x2bux8g239pm0f9/Admin_goodman_airhandler_acnf_brochure_2016_07_23.pdf?raw=1&embedded=true' style='border:0'></iframe>
 			</div>	
+			<!-- http://www.rantic.com/articles/facebook-comments-worth-seo-trade-off/ -->
+			<!-- https://www.quora.com/Which-comment-system-is-better-Komentbox-or-Disqus/answer/Saurabh-Goel-23 -->
+			<!-- https://www.quora.com/Are-Facebook-comments-crawlable/answer/Saurabh-Goel-23 -->
 			<div><br/><p style="padding-left: 10px;">Don't forget to <span class="label label-info">leave a comment/request</span> if this page has helped you.</p></div>
 			<div id="fbComments" data-width="100%" class="fb-comments" data-href="http://www.webmonster.ca/controller?op=menu_public_hvac#system_manual" data-numposts="5" data-order-by="reverse_time"></div>
 		</td>
