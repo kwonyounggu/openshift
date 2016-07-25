@@ -222,7 +222,7 @@
       {
     	  log("success begin");
     	  document.getElementById('bodyDiv').style.visibility='visible';
-    	  document.getElementById('fbDiv').style.visibility='collapse';
+    	  document.getElementById('fbLoginButton').style.visibility='hidden';
     	  log("success end");
       }
       else
@@ -243,7 +243,7 @@
 -->
 
 <div id="fbDiv">
-	<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+	<fb:login-button scope="public_profile,email" onlogin="checkLoginState();" id="fbLoginButton"></fb:login-button>
 	<div id="fbStatus"></div>
 </div>
 <div id="bodyDiv" style="visibility: collapse" align="center">
