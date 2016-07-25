@@ -142,16 +142,25 @@
       // Logged into your app and Facebook.
       testAPI();
     } 
-    else if (response.status === 'not_authorized') 
-    {
-      // The person is logged into Facebook, but not your app.
-      document.getElementById('fbStatus').innerHTML = 'Please log ' + 'into this app.';
-    } 
     else 
     {
-      // The person is not logged into Facebook, so we're not sure if
-      // they are logged into this app or not.
-      document.getElementById('fbStatus').innerHTML = 'Please log ' + 'into Facebook.';
+    	if (response.status === 'not_authorized') 
+	    {
+	      // The person is logged into Facebook, but not your app.
+	      document.getElementById('fbStatus').innerHTML = 'Please log ' + 'into this app.';
+	      
+	      
+	    } 
+	    else 
+	    {
+	      // The person is not logged into Facebook, so we're not sure if
+	      // they are logged into this app or not.
+	      document.getElementById('fbStatus').innerHTML = 'Please log ' + 'into Facebook.';
+	    }
+    	
+    	document.getElementById('bodyDiv').style.visibility='hidden';
+  	    document.getElementById('fbStatus').style.visibility='visible';
+  	    document.getElementById('fbButton').style.visibility='visible';
     }
   }
 
