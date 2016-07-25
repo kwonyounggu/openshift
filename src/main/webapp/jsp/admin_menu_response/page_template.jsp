@@ -245,7 +245,7 @@
 <div id="fbDiv">
 <!-- 	<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button> -->
 	<div id="fbStatus"></div>
-	<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false" default_audience="only_me"></div>
+	<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="true" default_audience="only_me"></div>
 </div>
 <div id="bodyDiv" style="visibility: collapse" align="center">
 
