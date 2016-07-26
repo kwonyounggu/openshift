@@ -223,7 +223,6 @@
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', 'GET', {fields: 'first_name, last_name, name, id'}, function(response) 
     {
-      //id: "1073293919426764"
       console.log('Successful login for: ' + response.name);
       console.log(response);
       
@@ -254,6 +253,7 @@
 
 <div id="fbDiv">
 <!-- The following statement is in the same way as in <div class="fb-login-button"> -->
+<!-- https://developers.facebook.com/docs/facebook-login/web/login-button -->
     <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" id="fbButton" data-auto-logout-link="true"></fb:login-button>
 	<div id="fbStatus"></div>
 <!-- 	<div id="fbButton" class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="true" default_audience="only_me"></div> -->
