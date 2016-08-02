@@ -15,6 +15,8 @@ import javax.servlet.ServletContextListener;
 
 import javax.sql.DataSource;
 
+import org.postgresql.ds.PGPoolingDataSource;
+
 import com.scheduled.UploadHvacManualsTask;
 
 import it.sauronsoftware.cron4j.Scheduler;
@@ -63,24 +65,48 @@ public class MainContextListener implements ServletContextListener
 			}
 			log.info("Number of tables in posgresql database of webmonster: " + totalRows);
 			
-			/*
-			closeResultSet(rs);
-			closeStatement(stmt);
-			closeConnection(con);
-			
-			
-			con = getConnection("java:comp/env/jdbc/PostgreSQLDS_ASGRAPH");
-			stmt = con.createStatement();
-			rs = stmt.executeQuery(showTablesSQL);
-			totalRows = 0;
-
-			log.info("Connected to DB of asgraph");
-			while (rs.next())
+			Connection asCon = null;
+			try
 			{
-				totalRows++;
+				PGPoolingDataSource asgraphDs=new PGPoolingDataSource();
+				
+				asgraphDs.setDataSourceName("asgraphDs");
+				asgraphDs.setServerName("ex-std-node589.prod.rhcloud.com");
+				asgraphDs.setDatabaseName("asgraph");
+				asgraphDs.setUser("adminns4nu3h");
+				asgraphDs.setPassword("lP9jb_ekZHI9");
+				asgraphDs.setMaxConnections(10);
+				
+				asCon=asgraphDs.getConnection();
+				
+				closeResultSet(rs);
+				closeStatement(stmt);
+
+				stmt = asCon.createStatement();
+				rs = stmt.executeQuery(showTablesSQL);
+				totalRows = 0;
+
+				log.info("Connected to DB of asgraph");
+				while (rs.next())
+				{
+					totalRows++;
+				}
+				log.info("Number of tables in posgresql database of asgraph: " + totalRows);
 			}
-			log.info("Number of tables in posgresql database of asgraph: " + totalRows);
-			*/
+			catch(SQLException e)
+			{
+				log.severe(e.toString());
+			}
+			catch(Exception e)
+			{
+				log.severe(e.toString());
+			}
+			finally
+			{
+				if(asCon!=null && !asCon.isClosed())
+					try { asCon.close(); } catch (SQLException e) {}
+			}
+
 			//from here, codes are for webmonster app
 			ServletContext context=event.getServletContext();
 			context.setAttribute("dataSource", (DataSource)new InitialContext().lookup(jndiName));
