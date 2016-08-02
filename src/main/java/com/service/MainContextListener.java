@@ -56,12 +56,28 @@ public class MainContextListener implements ServletContextListener
 			rs = stmt.executeQuery(showTablesSQL);
 			int totalRows = 0;
 
-			log.info("Connected to DB");
+			log.info("Connected to DB of webmonster");
 			while (rs.next())
 			{
 				totalRows++;
 			}
-			log.info("Number of tables in tomcat database: " + totalRows);
+			log.info("Number of tables in posgresql database of webmonster: " + totalRows);
+			closeResultSet(rs);
+			closeStatement(stmt);
+			closeConnection(con);
+			
+			
+			con = getConnection("java:comp/env/jdbc/PostgreSQLDS_ASGRAPH");
+			stmt = con.createStatement();
+			rs = stmt.executeQuery(showTablesSQL);
+			totalRows = 0;
+
+			log.info("Connected to DB of asgraph");
+			while (rs.next())
+			{
+				totalRows++;
+			}
+			log.info("Number of tables in posgresql database of asgraph: " + totalRows);
 			
 			//from here, codes are for webmonster app
 			ServletContext context=event.getServletContext();
