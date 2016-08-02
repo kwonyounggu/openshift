@@ -62,6 +62,8 @@ public class MainContextListener implements ServletContextListener
 				totalRows++;
 			}
 			log.info("Number of tables in posgresql database of webmonster: " + totalRows);
+			
+			/*
 			closeResultSet(rs);
 			closeStatement(stmt);
 			closeConnection(con);
@@ -78,7 +80,7 @@ public class MainContextListener implements ServletContextListener
 				totalRows++;
 			}
 			log.info("Number of tables in posgresql database of asgraph: " + totalRows);
-			
+			*/
 			//from here, codes are for webmonster app
 			ServletContext context=event.getServletContext();
 			context.setAttribute("dataSource", (DataSource)new InitialContext().lookup(jndiName));
