@@ -65,6 +65,8 @@ public class MainContextListener implements ServletContextListener
 			}
 			log.info("Number of tables in posgresql database of webmonster: " + totalRows);
 			
+			/*
+			 * Not working
 			Connection asCon = null;
 			try
 			{
@@ -76,6 +78,7 @@ public class MainContextListener implements ServletContextListener
 				asgraphDs.setUser("adminns4nu3h");
 				asgraphDs.setPassword("lP9jb_ekZHI9");
 				asgraphDs.setMaxConnections(10);
+				
 				
 				asCon=asgraphDs.getConnection();
 				
@@ -106,7 +109,7 @@ public class MainContextListener implements ServletContextListener
 				if(asCon!=null && !asCon.isClosed())
 					try { asCon.close(); } catch (SQLException e) {}
 			}
-
+			*/
 			//from here, codes are for webmonster app
 			ServletContext context=event.getServletContext();
 			context.setAttribute("dataSource", (DataSource)new InitialContext().lookup(jndiName));
@@ -152,7 +155,7 @@ public class MainContextListener implements ServletContextListener
 	{
 		try
 		{
-			rs.close();
+			if(rs!=null && !rs.isClosed()) rs.close();
 		}
 		catch (Exception e)
 		{
@@ -163,7 +166,7 @@ public class MainContextListener implements ServletContextListener
 	{
 		try
 		{
-			con.close();
+			if(con!=null && !con.isClosed()) con.close();
 		}
 		catch (Exception e)
 		{
@@ -174,7 +177,7 @@ public class MainContextListener implements ServletContextListener
 	{
 		try
 		{
-			stmt.close();
+			if(stmt!=null && !stmt.isClosed())stmt.close();
 		}
 		catch (Exception e)
 		{
