@@ -311,7 +311,7 @@
 					</div>
 					<!-- http://stackoverflow.com/questions/19758313/align-div-right-in-bootstrap-3 -->
 					<div class="col-md-2" style="padding-right: 5px;">
-						<a href="#fbComments" onfocus="this.blur()" style="text-decoration: none;"><span class="label label-info">Leave a comment</span></a>
+						<a href="#disqus_thread" onfocus="this.blur()" style="text-decoration: none;"><span class="label label-info">Leave a comment</span></a>
 					</div>
 				</div>
 			</div>
@@ -324,32 +324,32 @@
 			<!-- https://www.quora.com/Are-Facebook-comments-crawlable/answer/Saurabh-Goel-23 -->
 			<div><br/><p style="padding-left: 10px;">You are welcome to <span class="label label-info">leave a comment/request</span> for more manuals, any change, etc, according to this page.</p></div>
 <!-- 			<div id="fbComments" data-width="100%" class="fb-comments" data-href="http://www.webmonster.ca/controller?op=menu_public_hvac#system_manual" data-numposts="5" data-order-by="reverse_time"></div> -->
-			
-			<div id="disqus_thread"></div>
-			<script>
-			
-			/**
-			 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-			 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables 
-			 *  see https://help.disqus.com/customer/portal/articles/472098-javascript-configuration-variables
-			 */
-			
-			var disqus_config = function () 
-			{
-			    this.page.url = 'http://www.webmonster.ca/controller?op=menu_public_hvac';  // Replace PAGE_URL with your page's canonical URL variable
-			    this.page.identifier = '0001'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-			};
-			
-			(function() 
-			{ // DON'T EDIT BELOW THIS LINE
-			    var d = document, s = d.createElement('script');
-			    s.src = '//webmonster-ca.disqus.com/embed.js';
-			    s.setAttribute('data-timestamp', +new Date());
-			    (d.head || d.body).appendChild(s);
-			})();
-			</script>
-			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                                    
+			<div style="margin-left: 10px;">
+				<div id="disqus_thread"></div>	
+				<script>
+				
+				/**
+				 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+				 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables 
+				 *  see https://help.disqus.com/customer/portal/articles/472098-javascript-configuration-variables
+				 */
+				
+				var disqus_config = function () 
+				{
+				    this.page.url = 'http://www.webmonster.ca/controller?op=menu_public_hvac';  // Replace PAGE_URL with your page's canonical URL variable
+				    this.page.identifier = '0001'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+				};
+				
+				(function() 
+				{ // DON'T EDIT BELOW THIS LINE
+				    var d = document, s = d.createElement('script');
+				    s.src = '//webmonster-ca.disqus.com/embed.js';
+				    s.setAttribute('data-timestamp', +new Date());
+				    (d.head || d.body).appendChild(s);
+				})();
+				</script>
+				<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+             </div>                       
 		</td>
 	</tr>
 </table>
