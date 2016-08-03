@@ -161,6 +161,7 @@
 		</div>
 	</div>
 </div>	
+<script id="dsq-count-scr" src="//webmonster-ca.disqus.com/count.js" async></script>
 </body>
 
 </html>
