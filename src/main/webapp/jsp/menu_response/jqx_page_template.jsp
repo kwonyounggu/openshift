@@ -19,7 +19,7 @@
 <link rel="stylesheet" type="text/css" href="css/waitMe.css" />
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/css/tooltipster.min.css" />
-<link rel="stylesheet" type="text/css" href="css/jayhilwigTree.css" />
+<!-- <link rel="stylesheet" type="text/css" href="css/jayhilwigTree.css" /> -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
 
 
@@ -103,6 +103,13 @@
 		border-radius:0px 0px 0px 0px;
 		font-size: 11px;
 	}
+	#menu_contents ul li
+	{
+	    list-style-type: disc;
+	    list-style-position: inside;
+	    padding: 10px 20px 5px 20px;
+	    text-indent: -1em;
+	}
 	.showcase_rectangle 
 	{
 	    text-align:left;
@@ -122,13 +129,7 @@
 		color: white;
 	}
 	
-	#menu_contents ul li
-	{
-	    list-style-type: disc;
-	    list-style-position: inside;
-	    padding: 10px 20px 5px 20px;
-	    text-indent: -1em;
-	}
+	
 </style>
 </head>
 
