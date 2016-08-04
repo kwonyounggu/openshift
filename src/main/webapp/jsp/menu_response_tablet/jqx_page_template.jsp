@@ -132,7 +132,6 @@
 <body>
 
 <div align="center">
-
 	<div class="wrapper">
 		
 		<div class="header">

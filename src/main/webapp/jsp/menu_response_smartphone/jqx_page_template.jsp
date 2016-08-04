@@ -17,22 +17,20 @@
 <link rel="stylesheet" type="text/css" href="css/main.css" />
 <link rel="stylesheet" type="text/css" href="css/waitMe.css" />
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="https://jqwidgets.com/jquery-widgets-demo/jqwidgets/styles/jqx.base.css" />
-<link rel="stylesheet" type="text/css" href="https://jqwidgets.com/jquery-widgets-demo/jqwidgets/styles/jqx.metro.css" />
-<link rel="stylesheet" type="text/css" href="https://jqwidgets.com/jquery-widgets-demo/jqwidgets/styles/jqx.energyblue.css" />
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/css/tooltipster.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
 
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="https://jqwidgets.com/jquery-widgets-demo/jqwidgets/jqx-all.js"></script>
 <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/js/jquery.tooltipster.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
 
 
 <script type="text/javascript" src="js/waitMe.js" ></script>
-<script type="text/javascript" src="js/swfobject.js"></script>
 <script type="text/javascript" src="js/validation.js" ></script>
 
 <script type="text/javascript" src="js/common.js" ></script>
@@ -121,6 +119,15 @@
 		background: #555762;
 		color: white;
 	}
+	.hvac_rectangle 
+	{
+	    text-align:left;
+	    padding:5px 5px 5px 10px; 
+	    border:1px solid #555762;
+		border-radius:5px 5px 0px 0px;
+		background: #555762;
+		color: white;
+	}
 	#menu_contents ul li
 	{
 	    list-style-type: disc;
@@ -160,7 +167,6 @@
 <body>
 
 <div align="center">
-
 	<div class="wrapper">
 		
 		<div class="header">
@@ -181,6 +187,7 @@
 		</div>
 	</div>
 </div>	
+<script id="dsq-count-scr" src="//webmonster-ca.disqus.com/count.js" async></script>
 </body>
 
 </html>
