@@ -8,7 +8,7 @@
 <%@ page isELIgnored ="false" %>
 
 <% 
-response.setContentType("application/json");
+
 /*
 [
 	{	
