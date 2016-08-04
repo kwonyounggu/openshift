@@ -60,10 +60,10 @@ $(".nav a").on("click", function(){
 */
 
 </script>
-<div style="padding-top: 25px; color: #ffff00;">
+<!-- <div style="padding-top: 25px; color: #ffff00;">
 	<a href="<%= MenuLink.phone_home %>" onfocus="this.blur()"><img src="images/wm_logo.png" width="250" height="26" alt="WM_LOGO" border="0"/></a>
 	<h4>HVAC in North America</h4>
-</div>
+</div> -->
 
  <div class="navbar navbar-default navbar-fixed-side navbar-fixed-side-left" role="navigation">
      <div class="container">
