@@ -65,28 +65,32 @@ $(".nav a").on("click", function(){
 	<h4>HVAC in North America</h4>
 </div>
 
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">HVAC in North America </a>
-    </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">System Manuals</a></li>
-        <li><a href="#about">Q&A Forum</a></li>
-        <li><a href="#contact">Blog</a></li>
-        <li><a href="#contact">Estimates</a></li>
-        <li><a href="#contact">Contractors</a></li>
-        <li><a href="#contact">Jobs</a></li>
-        <li><a href="#contact">Buy & Sell</a></li>
+ <div class="navbar navbar-default navbar-fixed-side navbar-fixed-side-left" role="navigation">
+     <div class="container">
+         <div class="navbar-header">
+             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                 <span class="sr-only">Toggle navigation</span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+             </button>
+         </div>
+         <div class="navbar-collapse collapse">
+             <ul class="nav navbar-nav">
+                 <li><a class="navbar-brand" href="#">Project name</a></li>
+             </ul>
+             <ul class="nav navbar-nav">
+                 <li class="active"><a href="#">System Manuals</a></li>
+                 <li><a href="#about">Q&A Forum</a></li>
+		        <li><a href="#contact">Blog</a></li>
+		        <li><a href="#contact">Estimates</a></li>
+		        <li><a href="#contact">Contractors</a></li>
+		        <li><a href="#contact">Jobs</a></li>
+		        <li><a href="#contact">Buy & Sell</a></li>
+             </ul>
+         </div>
+     </div>
+ </div>
 
-    </div><!--/.nav-collapse -->
-  </div>
-</nav>
 
  
