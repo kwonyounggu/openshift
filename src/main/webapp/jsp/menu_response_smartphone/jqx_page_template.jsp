@@ -170,7 +170,8 @@
 	<div class="wrapper">
 		
 		<div class="header">
-			<%@ include file="/jsp/menu_response_smartphone/header.jsp" %>
+<%-- 			<%@ include file="/jsp/menu_response_smartphone/header.jsp" %> --%>
+			<jsp:include page='${header}' flush='true'/>
 		</div>	
 		<div class="contents">		
 			<style>

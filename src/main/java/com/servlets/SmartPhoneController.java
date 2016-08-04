@@ -46,11 +46,13 @@ public class SmartPhoneController extends HttpServlet
 		{
 			//Here, first check if the person is logged-in, otherwise go back to the public home
 			Object webmonsterBean=(Object)session.getAttribute("webmonsterBean"); //check this for the user if logged in or not, with 'if(webmonsterBean==null)'
+			
+			request.setAttribute("header", "/jsp/menu_response_smartphone/header.jsp");
+			
 			if(op==null || op.equals("") || op.equals("home"))
 			{
 				request.setAttribute("body_panel", "/jsp/menu_response_smartphone/jqx_home_body.jsp");
 				((RequestDispatcher)request.getRequestDispatcher("jsp/menu_response_smartphone/jqx_page_template.jsp")).forward(request,response);
-	
 			}
 			else if(op.indexOf("menu")!=-1)
 			{
