@@ -170,7 +170,7 @@
 	<div class="wrapper">
 		
 		<div class="header">
-			<jsp:include page='${header}' flush='true'/>
+			<jsp:include page='${header_panel}' flush='true'/>
 		</div>	
 		<div class="contents">		
 			<style>
