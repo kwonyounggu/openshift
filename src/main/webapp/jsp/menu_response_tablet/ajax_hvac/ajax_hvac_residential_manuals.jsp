@@ -288,7 +288,7 @@
 <h4>More data will come soon.</h4>
 <table style='table-layout: fixed'>
 	<tr>
-		<td style='width: 270px; vertical-align: top'>
+		<td style='width: 260px; vertical-align: top'>
 			  <div class="input-group" >
 			       <input id="searchInput" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead" data-toggle="tooltip" data-placement="auto" title="Search with a blank to reset." data-trigger="manual"/>
 			       <div class="input-group-btn">
@@ -297,12 +297,12 @@
 			           </button>
 			       </div>
 			  </div>
-			  <div style="width: 270px; height: 100%; overflow: auto">
+			  <div style="width: 260px; height: 100%; overflow: auto">
 				<div id="manual_tree_div" style="border-radius:0px 0px 0px 0px; border:0px solid #000000;">
 				</div>
 			  </div>
 		</td>
-		<td style='width: 15px; height: 100%'></td>
+		<td style='width: 10px; height: 100%'></td>
 		<td style='width: 100%; border-radius:0px 0px 0px 0px; border:1px solid #dddddd; border-style: hidden hidden hidden solid; vertical-align: top;'>
 			<div class="hvac_rectangle">
 				<div class="row">
