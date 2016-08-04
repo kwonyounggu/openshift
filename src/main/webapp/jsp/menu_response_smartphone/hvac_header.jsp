@@ -75,7 +75,7 @@ $(".nav a").on("click", function(){
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-      	<li><span id="selectedItem" style="color: white">System Manuals</span><span stye="color: red; font-size: 120%">on HVAC in North America</span></li>	
+      	<li><span id="selectedItem" style="color: #f1f1f1">System Manuals</span><span style="color: #f4f4f4; font-size: 20px"> on HVAC in North America</span></li>	
       </ul>
       <ul class="nav navbar-nav navbar-right">
       	<li class="dropdown">
