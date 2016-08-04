@@ -46,45 +46,12 @@ $(document).ready(function ()
 });//$(document).ready
 
 </script>
-<h4>HVAC in North America</h4>
-<div style="width: 95%" class="container">
- <div class="jumbotron">
+
+
   <ul class="nav nav-tabs">
   	<li class="active"><a id="residential_anchor" data-toggle="tab_ajax" data-target="#residential_manuals" onfocus="this.blur()" href="jsp/menu_response_smartphone/ajax_hvac/ajax_hvac_residential_manuals.jsp">System Manuals</a></li>
-    <li><a data-toggle="tab" onfocus="this.blur()" href="#troubleshootings">Trouble Shootings</a></li>
-    <li><a data-toggle="tab" onfocus="this.blur()" href="#questions_answers">Q & A</a></li>
-    <li><a data-toggle="tab" onfocus="this.blur()" href="#estimates">Estimates</a></li>
-    <li><a data-toggle="tab" onfocus="this.blur()" href="#search_contractors">Contractors</a></li>
-    <li><a data-toggle="tab" onfocus="this.blur()" href="#parts_supplies">Jobs</a></li>
-    <li><a data-toggle="tab" onfocus="this.blur()" href="#buy_sell">Buy & Sell</a></li>
   </ul>
 
   <div class="tab-content">
     <div id="residential_manuals" class="tab-pane fade in active" style="vertical-align: top;"></div>
-    <div id="troubleshootings" class="tab-pane fade">
-      <h3>Under construction</h3>
-      <p>Under construction</p>
-    </div>
-    <div id="questions_answers" class="tab-pane fade">
-      <h3>Under construction</h3>
-      <p>Under construction</p>
-    </div>
-    <div id="estimates" class="tab-pane fade">
-      <h3>Under construction</h3>
-      <p>Under construction</p>
-    </div>
-    <div id="search_contractors" class="tab-pane fade">
-      <h3>Under construction</h3>
-      <p>Under construction</p>
-    </div>
-    <div id="parts_supplies" class="tab-pane fade">
-      <h3>Under construction</h3>
-      <p>Under construction</p>
-    </div>
-    <div id="buy_sell" class="tab-pane fade">
-      <h3>Under construction</h3>
-      <p>Under construction</p>
-    </div>
   </div>
-  </div>
-</div>
