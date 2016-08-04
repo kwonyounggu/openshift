@@ -70,6 +70,7 @@ public class SmartPhoneController extends HttpServlet
 				}
 				else if(op.equals("menu_public_hvac"))
 				{
+					request.setAttribute("header_panel", "/jsp/menu_response_smartphone/hvac_header.jsp");
 					request.setAttribute("body_panel", "/jsp/menu_response_smartphone/jqx_public_hvac.jsp");
 				}
 				else if(op.equals("menu_public_saxophone"))
