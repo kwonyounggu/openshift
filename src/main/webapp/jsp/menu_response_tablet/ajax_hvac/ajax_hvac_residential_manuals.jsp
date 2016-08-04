@@ -302,7 +302,7 @@
 				</div>
 			  </div>
 		</td>
-		<td width='10'></td>
+		<td style='width: 15px; height: 100%'></td>
 		<td style='width: 100%; border-radius:0px 0px 0px 0px; border:1px solid #dddddd; border-style: hidden hidden hidden solid; vertical-align: top;'>
 			<div class="hvac_rectangle">
 				<div class="row">
