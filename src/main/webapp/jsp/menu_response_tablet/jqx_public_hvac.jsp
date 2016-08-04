@@ -49,7 +49,7 @@ $(document).ready(function ()
 <h4>HVAC in North America</h4>
 <div style="width: 95%">
   <ul class="nav nav-tabs">
-  	<li class="active"><a id="residential_anchor" data-toggle="tab_ajax" data-target="#residential_manuals" onfocus="this.blur()" href="jsp/menu_response_tablet/ajax_hvac/ajax_hvac_residential_manuals.jsp">System Manuals</a></li>
+  	<li class="active"><a id="residential_anchor" data-toggle="tab_ajax" data-target="#residential_manuals" onfocus="this.blur()" href="jsp/menu_response/ajax_hvac/ajax_hvac_residential_manuals.jsp">System Manuals</a></li>
     <li><a data-toggle="tab" onfocus="this.blur()" href="#troubleshootings">Trouble Shootings</a></li>
     <li><a data-toggle="tab" onfocus="this.blur()" href="#questions_answers">Q & A</a></li>
     <li><a data-toggle="tab" onfocus="this.blur()" href="#estimates">Estimates</a></li>
