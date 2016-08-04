@@ -74,7 +74,7 @@ $(".nav a").on("click", function(){
 	  <a class="navbar-brand" href="http://www.webmonster.ca"><img src="images/wm_logo.png" width="150" height="26" alt="WM_LOGO" border="0"/></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav"><li><span id="selectedItem">HVAC in North America</li></span>	
+      <ul class="nav navbar-nav"><li><span id="selectedItem" style="color: white">[System Manuals] HVAC in North America</li></span>	
       </ul>
       <ul class="nav navbar-nav navbar-right">
       	<li class="dropdown">
