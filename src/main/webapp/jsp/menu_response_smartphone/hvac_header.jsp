@@ -75,16 +75,20 @@ $(".nav a").on("click", function(){
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-      	<li id="selectedItem">System Manuals</li>	
-      	<li style="font-size: 120%">on HVAC in North America</li>
+      	<li><span id="selectedItem" style="color: white">System Manuals</span><span stye="color: red; font-size: 120%">on HVAC in North America</span></li>	
       </ul>
       <ul class="nav navbar-nav navbar-right">
       	<li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="<%= MenuLink.phone_menu_public_stockcharts %>" onfocus="this.blur()">Stock-Charts</a></li>
-			<li><a href="<%= MenuLink.phone_menu_public_hvac %>" onfocus="this.blur()">HVAC</a></li>
-			<li><a href="<%= MenuLink.phone_menu_public_saxophone %>" onfocus="this.blur()">Saxophone</a></li>
+            <li><a href="<%= MenuLink.phone_menu_public_stockcharts %>" onfocus="this.blur()">System Manuals</a></li>
+			<li><a href="<%= MenuLink.phone_menu_public_hvac %>" onfocus="this.blur()">Q&A Forum</a></li>
+			<li><a href="<%= MenuLink.phone_menu_public_saxophone %>" onfocus="this.blur()">Blog</a></li>
+			<li><a href="<%= MenuLink.phone_menu_public_stockcharts %>" onfocus="this.blur()">Estimate</a></li>
+			<li><a href="<%= MenuLink.phone_menu_public_hvac %>" onfocus="this.blur()">Contractors</a></li>
+			<li role="separator" class="divider"></li>
+			<li><a href="<%= MenuLink.phone_menu_public_saxophone %>" onfocus="this.blur()">Buy&Sell</a></li>
+			<li><a href="<%= MenuLink.phone_menu_public_saxophone %>" onfocus="this.blur()">Jobs</a></li>
           </ul>
         </li>
         
