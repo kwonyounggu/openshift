@@ -8,6 +8,18 @@
 	{
 	    font-size: 260%;
 	}
+	
+	.navbar .container-fluid>.navbar-header {
+  float: left;
+  margin-right: 10px;
+}
+.navbar .navbar-nav {
+  float: left;
+  margin: 5px;
+}
+.nav>li {
+  float: left;
+}
 </style>
 
 <script type="text/javascript">
