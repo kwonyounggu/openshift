@@ -302,8 +302,8 @@
 			           </button>
 			       </div>
 			  </div>
-			  <div style="height: 100%; overflow: auto;">
-				<div id="manual_tree_div" style="float: left; width: 100%">
+			  <div style="float: left; width: 100%; height: 100%; overflow: auto;">
+				<div id="manual_tree_div">
 				</div>
 			  </div>
 </div>
