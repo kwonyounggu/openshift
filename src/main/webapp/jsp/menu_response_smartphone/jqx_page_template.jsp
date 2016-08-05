@@ -92,7 +92,7 @@
 		background-color:#ffffff;
 		border: 1px solid #e9e9ea;
 		height: 100%;
-		/*margin-top: 0px;*/
+		margin-top: -1cm;
 	}
 	.footer 
 	{
@@ -173,7 +173,7 @@
 			<jsp:include page='${header_panel}' flush='true'/>
 		</div>	
 		<div class="contents">		
-			<div style="padding-bottom: 20px">
+			<div style="margin-top: .5cm; padding-bottom: 20px">
 				<jsp:include page='${body_panel}' flush='true'/>	
 			</div>		
 		</div>
