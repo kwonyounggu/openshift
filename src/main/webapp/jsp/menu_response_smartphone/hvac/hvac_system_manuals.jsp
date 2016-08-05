@@ -286,7 +286,7 @@
 %>
 
 <h4>More data will come soon.</h4>
-<table style='table-layout: fixed'>
+<table >
 	<tr>
 		<td style='width: 100%; vertical-align: top'>
 			  <div class="input-group" >
