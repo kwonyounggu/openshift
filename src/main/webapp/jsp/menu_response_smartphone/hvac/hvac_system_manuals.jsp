@@ -41,7 +41,8 @@
 	
 	.jstree-default .jstree-no-dots .jstree-closed > ins 
 	{
-  		background-position:0 4px;
+  		font-size: 200%;
+  		align: left;
 	}
 </style>
 <script type="text/javascript">
