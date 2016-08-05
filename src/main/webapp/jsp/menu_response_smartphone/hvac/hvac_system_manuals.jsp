@@ -59,7 +59,7 @@
 		});
 		$('#manual_tree_div').jstree
 		({
-			  'plugins': ['search'],
+			  'plugins': ['search','mobile'],
 			  'search': 
 			  { 
 				  'show_only_matches' : true,
@@ -80,7 +80,8 @@
 				    //'check_callback' : true,
     				//'themes' : { 'stripes' : true },
 				    //'animation' : 0,
-
+					'themes' : {'name' : 'mobile'},
+					
 				    'data':
 				    {
 				    	'url': function(node)
