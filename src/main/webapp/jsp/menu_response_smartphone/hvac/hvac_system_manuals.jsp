@@ -41,6 +41,7 @@
 	
 	.jstree
 	{
+		margin: 0;
 		font-size: 260%;
 	}
 </style>
