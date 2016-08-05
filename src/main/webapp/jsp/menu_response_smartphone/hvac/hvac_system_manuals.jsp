@@ -59,7 +59,7 @@
 		});
 		$('#manual_tree_div').jstree
 		({
-			  'plugins': ['search','mobile'],
+			  'plugins': ['search'],
 			  'search': 
 			  { 
 				  'show_only_matches' : true,
@@ -80,7 +80,6 @@
 				    //'check_callback' : true,
     				//'themes' : { 'stripes' : true },
 				    //'animation' : 0,
-					'themes' : {'name' : 'mobile'},
 					
 				    'data':
 				    {
@@ -299,7 +298,7 @@
 			       </div>
 			  </div>
 			  <div style="width: 100%; height: 100%; overflow: auto">
-				<div id="manual_tree_div" style="border-radius:0px 0px 0px 0px; border:0px solid #000000;">
+				<div id="manual_tree_div" style="border-radius:0px 0px 0px 0px; border:0px solid #000000; font-size: 260%">
 				</div>
 			  </div>
 		</td>
