@@ -166,7 +166,7 @@
 			log("select_node.jstree");
 			data.instance.toggle_node(data.node);
 		});
-		$('#manual_tree_div').jstree("set_theme", "apple");
+		//$('#manual_tree_div').jstree("set_theme", "apple");
 		//it is called after search is returned with a true.
 		/*
 		$('#manual_tree_div').on("search.jstree", function (e, data) 
@@ -297,8 +297,8 @@
 			           </button>
 			       </div>
 			  </div>
-				<div style="height: 100%; overflow: auto">
-				<div id="manual_tree_div" style="border-radius:0px 0px 0px 0px; border:0px solid #000000;">
+				<div style="height: 100%; overflow: auto; align: left">
+				<div id="manual_tree_div" style="border-radius:0px 0px 0px 0px; border:0px solid #000000; align: left">
 				</div>
 			  </div>
 </div>
