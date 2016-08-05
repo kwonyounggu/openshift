@@ -58,10 +58,10 @@ $(".nav a").on("click", function(){
 */
 
 </script>
-<div style="padding-top: 25px; color: #ffff00;">
+<!-- <div style="padding-top: 25px; color: #ffff00;">
 	<a href="http://www.webmonster.ca"><img src="images/wm_logo.png" width="250" height="26" alt="WM_LOGO" border="0"/></a>
 	<h4>Freelance App Developer</h4>
-</div>
+</div> -->
 <!-- see http://www.w3schools.com/bootstrap/bootstrap_navbar.asp -->
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -71,7 +71,7 @@ $(".nav a").on("click", function(){
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-<!-- 	  <a class="navbar-brand" href="http://www.webmonster.ca"><img src="images/wm_logo.png" width="150" height="26" alt="WM_LOGO" border="0"/></a> -->
+	<a class="navbar-brand" href="http://www.webmonster.ca"><img src="images/wm_logo.png" width="150" height="26" alt="WM_LOGO" border="0"/></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
