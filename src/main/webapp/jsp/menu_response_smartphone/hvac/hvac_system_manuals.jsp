@@ -286,9 +286,7 @@
 %>
 
 <h4>More data will come soon.</h4>
-<table >
-	<tr>
-		<td style='width: 100%; vertical-align: top'>
+<div style="font-size: 260%">
 			  <div class="input-group" >
 			       <input id="searchInput" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead" data-toggle="tooltip" data-placement="auto" title="Search with a blank to reset." data-trigger="manual"/>
 			       <div class="input-group-btn">
@@ -298,13 +296,11 @@
 			       </div>
 			  </div>
 			  <div style="width: 100%; height: 100%; overflow: auto">
-				<div id="manual_tree_div" style="border-radius:0px 0px 0px 0px; border:0px solid #000000; font-size: 260%">
+				<div id="manual_tree_div" style="border-radius:0px 0px 0px 0px; border:0px solid #000000;">
 				</div>
 			  </div>
-		</td>
-	</tr>
-	<tr>
-		<td style='width: 100%; border-radius:0px 0px 0px 0px; border:1px solid #dddddd; border-style: hidden hidden hidden solid; vertical-align: top;'>
+</div>
+<div>
 			<div class="hvac_rectangle">
 				<div class="row">
 					<div id="tree_path_div" class="col-md-10">
@@ -320,10 +316,8 @@
 			<div class='embed-container'>
 				<iframe id='pdfIfram' src='http://docs.google.com/gview?url=https://www.dropbox.com/s/x2bux8g239pm0f9/Admin_goodman_airhandler_acnf_brochure_2016_07_23.pdf?raw=1&embedded=true' style='border:0'></iframe>
 			</div>	
-		</td>
-	</tr>
-	<tr>
-		<td>
+</div>
+<div>
 			<div><p style="padding-left: 10px;">You are welcome to <span class="label label-info">leave a comment/request</span> for more manuals, any change, etc, according to this page.</p></div>
 
 			<div style="margin-left: 10px;">
@@ -352,6 +346,4 @@
 				</script>
 				<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
              </div>                       
-		</td>
-	</tr>
-</table>
+</div>
