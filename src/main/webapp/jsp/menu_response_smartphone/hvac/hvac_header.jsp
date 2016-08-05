@@ -34,22 +34,22 @@ $(document).ready(function ()
 			$('#selectedItem').html("<b>System Manuals</b>");
 			break;
 		case "phone_menu_hvac_qa_forum":
-			$('#selectedItem').html("<b>System Manuals</b>");
+			$('#selectedItem').html("<b>Q&A Forum</b>");
 			break;
 		case "phone_menu_hvac_blog":
-			$('#selectedItem').html("<b>System Manuals</b>");
+			$('#selectedItem').html("<b>Blog</b>");
 			break;
 		case "phone_menu_hvac_estimates":
-			$('#selectedItem').html("<b>System Manuals</b>");
+			$('#selectedItem').html("<b>Estimates</b>");
 			break;
 		case "phone_menu_hvac_contractors":
-			$('#selectedItem').html("<b>System Manuals</b>");
+			$('#selectedItem').html("<b>Contractors</b>");
 			break;
 		case "phone_menu_hvac_buysell":
-			$('#selectedItem').html("<b>System Manuals</b>");
+			$('#selectedItem').html("<b>Buy&Sell</b>");
 			break;
 		case "phone_menu_hvac_jobs":
-			$('#selectedItem').html("<b>System Manuals</b>");
+			$('#selectedItem').html("<b>Jobs</b>");
 			break;
 		default:
 			$('#selectedItem').html("<b>System Manuals</b>");
