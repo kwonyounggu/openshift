@@ -39,6 +39,9 @@
 	}
 	.typeahead { z-index: 1051; }
 	
+	.jstree
+	{
+	}
 </style>
 <script type="text/javascript">
 	//see http://jsfiddle.net/jayhilwig/hv8vU/
@@ -79,7 +82,7 @@
 				    'multiple' : false,
 				    //'cache': false,
 				    //'check_callback' : true,
-    				//'themes' : { 'stripes' : true },
+    				'themes' : { 'variant' : 'large' },
 				    //'animation' : 0,
 					
 				    'data':
@@ -297,8 +300,8 @@
 			           </button>
 			       </div>
 			  </div>
-				<div style="height: 100%; overflow: auto; align: left">
-				<div id="manual_tree_div" style="border-radius:0px 0px 0px 0px; border:0px solid #000000; align: left">
+				<div style="height: 100%; overflow: auto;">
+				<div id="manual_tree_div">
 				</div>
 			  </div>
 </div>
