@@ -77,23 +77,27 @@ public class SmartPhoneController extends HttpServlet
 					}
 					else if(op.equals("phone_menu_hvac_qa_forum"))
 					{
-						request.setAttribute("body_panel", "/jsp/menu_response_smartphone/jqx_public_hvac.jsp");
+						request.setAttribute("body_panel", "/jsp/menu_response_smartphone/hvac/hvac_qa_forum.jsp");
+					}
+					else if(op.equals("phone_menu_hvac_blog"))
+					{
+						request.setAttribute("body_panel", "/jsp/menu_response_smartphone/hvac/hvac_blog.jsp");
 					}
 					else if(op.equals("phone_menu_hvac_estimates"))
 					{
-						request.setAttribute("body_panel", "/jsp/menu_response_smartphone/jqx_public_hvac.jsp");
+						request.setAttribute("body_panel", "/jsp/menu_response_smartphone/hvac/hvac_estimates.jsp");
 					}
 					else if(op.equals("phone_menu_hvac_contractors"))
 					{
-						request.setAttribute("body_panel", "/jsp/menu_response_smartphone/jqx_public_hvac.jsp");
+						request.setAttribute("body_panel", "/jsp/menu_response_smartphone/hvac/hvac_contractors.jsp");
 					}
 					else if(op.equals("phone_menu_hvac_buysell"))
 					{
-						request.setAttribute("body_panel", "/jsp/menu_response_smartphone/jqx_public_hvac.jsp");
+						request.setAttribute("body_panel", "/jsp/menu_response_smartphone/hvac/hvac_buysell.jsp");
 					}
 					else if(op.equals("phone_menu_hvac_jobs"))
 					{
-						request.setAttribute("body_panel", "/jsp/menu_response_smartphone/jqx_public_hvac.jsp");
+						request.setAttribute("body_panel", "/jsp/menu_response_smartphone/hvac/hvac_jobs.jsp");
 					}
 					else //if(op.equals("menu_public_hvac"))//calling from main menu of the smartphone
 					{
