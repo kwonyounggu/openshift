@@ -295,8 +295,10 @@
 			           </button>
 			       </div>
 			  </div>
-				<div id="manual_tree_div" style="border-radius:0px 0px 0px 0px; border:0px solid #000000; height: auto; width: 100%; align: left">
+				<div style="height: 100%; overflow: auto">
+				<div id="manual_tree_div" style="border-radius:0px 0px 0px 0px; border:0px solid #000000;">
 				</div>
+			  </div>
 </div>
 <div>
 			<div class="hvac_rectangle">
