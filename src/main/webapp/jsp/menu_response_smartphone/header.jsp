@@ -63,7 +63,7 @@ $(".nav a").on("click", function(){
 	<h4>Freelance App Developer</h4>
 </div> -->
 <!-- see http://www.w3schools.com/bootstrap/bootstrap_navbar.asp -->
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
