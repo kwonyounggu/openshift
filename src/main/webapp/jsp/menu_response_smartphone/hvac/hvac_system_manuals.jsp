@@ -39,11 +39,6 @@
 	}
 	.typeahead { z-index: 1051; }
 	
-	.jstree-default .jstree-no-dots .jstree-closed > ins 
-	{
-  		font-size: 200%;
-  		align: left;
-	}
 </style>
 <script type="text/javascript">
 	//see http://jsfiddle.net/jayhilwig/hv8vU/
@@ -171,6 +166,7 @@
 			log("select_node.jstree");
 			data.instance.toggle_node(data.node);
 		});
+		$('#manual_tree_div').jstree("set_theme", "apple");
 		//it is called after search is returned with a true.
 		/*
 		$('#manual_tree_div').on("search.jstree", function (e, data) 
