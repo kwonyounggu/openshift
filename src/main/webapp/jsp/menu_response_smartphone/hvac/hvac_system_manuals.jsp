@@ -39,13 +39,7 @@
 	}
 	.typeahead { z-index: 1051; }
 	
-	.jstree
-	{
-		align: left;
-		/*
-		margin-left: 0;
-		font-size: 260%;*/
-	}
+	
 </style>
 <script type="text/javascript">
 	//see http://jsfiddle.net/jayhilwig/hv8vU/
@@ -309,7 +303,7 @@
 		</td>
 	 </tr>
 	 <tr>
-	 	<td align="left">
+	 	<td style="text-align: left; font-size: 200%">
 		  <div style="width: 650px; height: 100%; overflow: auto;">
 				<div id="manual_tree_div"></div>
 		  </div>
