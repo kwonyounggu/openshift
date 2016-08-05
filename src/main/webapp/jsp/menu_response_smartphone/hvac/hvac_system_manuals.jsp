@@ -41,7 +41,7 @@
 	
 	.jstree
 	{
-		margin: 0;
+		margin-left: 0;
 		font-size: 260%;
 	}
 </style>
@@ -302,8 +302,8 @@
 			           </button>
 			       </div>
 			  </div>
-				<div style="height: 100%; overflow: auto;">
-				<div id="manual_tree_div">
+			  <div style="height: 100%; overflow: auto;">
+				<div id="manual_tree_div" style="float: left; width: 100%">
 				</div>
 			  </div>
 </div>
