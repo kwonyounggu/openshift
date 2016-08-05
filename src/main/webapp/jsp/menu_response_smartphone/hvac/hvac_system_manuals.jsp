@@ -303,8 +303,8 @@
 		</td>
 	 </tr>
 	 <tr>
-	 	<td style="text-align: left; font-size: 200%">
-		  <div style="width: 650px; height: 100%; overflow: auto;">
+	 	<td style="text-align: left; ">
+		  <div style="width: 100%; height: 100%; overflow: auto;">
 				<div id="manual_tree_div"></div>
 		  </div>
 		</td>
