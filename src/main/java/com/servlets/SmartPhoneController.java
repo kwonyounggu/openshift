@@ -68,7 +68,7 @@ public class SmartPhoneController extends HttpServlet
 				{
 					request.setAttribute("body_panel", "/jsp/menu_response_smartphone/jqx_public_stockcharts.jsp");
 				}
-				else if(op.indexOf("_hvac_")!=-1)
+				else if(op.indexOf("_hvac")!=-1)
 				{
 					request.setAttribute("header_panel", "/jsp/menu_response_smartphone/hvac/hvac_header.jsp");
 					if(op.equals("phone_menu_hvac_system_manuals"))
