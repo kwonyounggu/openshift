@@ -68,10 +68,41 @@ public class SmartPhoneController extends HttpServlet
 				{
 					request.setAttribute("body_panel", "/jsp/menu_response_smartphone/jqx_public_stockcharts.jsp");
 				}
-				else if(op.equals("menu_public_hvac"))
+				else if(op.indexOf("_hvac_")!=-1)
 				{
-					request.setAttribute("header_panel", "/jsp/menu_response_smartphone/hvac_header.jsp");
-					request.setAttribute("body_panel", "/jsp/menu_response_smartphone/jqx_public_hvac.jsp");
+					request.setAttribute("header_panel", "/jsp/menu_response_smartphone/hvac/hvac_header.jsp");
+					if(op.equals("phone_menu_hvac_system_manuals"))
+					{
+						request.setAttribute("body_panel", "/jsp/menu_response_smartphone/hvac/hvac_system_manuals.jsp");
+					}
+					else if(op.equals("phone_menu_hvac_qa_forum"))
+					{
+						request.setAttribute("body_panel", "/jsp/menu_response_smartphone/jqx_public_hvac.jsp");
+					}
+					else if(op.equals("phone_menu_hvac_estimates"))
+					{
+						request.setAttribute("body_panel", "/jsp/menu_response_smartphone/jqx_public_hvac.jsp");
+					}
+					else if(op.equals("phone_menu_hvac_contractors"))
+					{
+						request.setAttribute("body_panel", "/jsp/menu_response_smartphone/jqx_public_hvac.jsp");
+					}
+					else if(op.equals("phone_menu_hvac_buysell"))
+					{
+						request.setAttribute("body_panel", "/jsp/menu_response_smartphone/jqx_public_hvac.jsp");
+					}
+					else if(op.equals("phone_menu_hvac_jobs"))
+					{
+						request.setAttribute("body_panel", "/jsp/menu_response_smartphone/jqx_public_hvac.jsp");
+					}
+					else //if(op.equals("menu_public_hvac"))//calling from main menu of the smartphone
+					{
+						//the file, 'jqx_public_hvac.jsp', will call eventually ajax_hvac_residential_manuals.jsp
+						//the reason why is for the further extension like hvac home
+						//request.setAttribute("body_panel", "/jsp/menu_response_smartphone/jqx_public_hvac.jsp");
+						
+						request.setAttribute("body_panel", "/jsp/menu_response_smartphone/hvac/hvac_system_manuals.jsp");
+					}
 				}
 				else if(op.equals("menu_public_saxophone"))
 				{

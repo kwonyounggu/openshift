@@ -47,9 +47,9 @@ $(document).ready(function ()
 
 </script>
 
-
+<!-- It may be used for hvac home later. Aug-5-2016 -->
   <ul class="nav nav-tabs">
-  	<li class="active"><a id="residential_anchor" data-toggle="tab_ajax" data-target="#residential_manuals" onfocus="this.blur()" href="jsp/menu_response_smartphone/ajax_hvac/ajax_hvac_residential_manuals.jsp">System Manuals</a></li>
+  	<li class="active"><a id="residential_anchor" data-toggle="tab_ajax" data-target="#residential_manuals" onfocus="this.blur()" href="jsp/menu_response_smartphone/hvac/hvac_system_manuals.jsp">System Manuals</a></li>
   </ul>
 
   <div class="tab-content">

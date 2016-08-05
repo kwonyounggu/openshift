@@ -25,31 +25,37 @@ function getParameterByName(name, url)
 }
 $(document).ready(function ()
 {
-	/*
+	
 	var op=getParameterByName('op');
 	log("op="+op);
 	switch(op)
 	{
-		case "menu_public_showcase":
-			$('a[href="/smartphoneController?op=menu_public_showcase"]').closest('li').addClass('active');
+		case "phone_menu_hvac_system_manuals":
+			$('#selectedItem').html("<b>System Manuals</b>");
 			break;
-		case "menu_public_contact":
-			$('a[href="/smartphoneController?op=menu_public_contact"]').closest('li').addClass('active');
+		case "phone_menu_hvac_qa_forum":
+			$('#selectedItem').html("<b>System Manuals</b>");
 			break;
-		case "menu_public_stockcharts":
-			$('a[href="/smartphoneController?op=menu_public_stockcharts"]').closest('li').addClass('active');
+		case "phone_menu_hvac_blog":
+			$('#selectedItem').html("<b>System Manuals</b>");
 			break;
-		case "menu_public_hvac":
-			$('a[href="/smartphoneController?op=menu_public_hvac"]').closest('li').addClass('active');
+		case "phone_menu_hvac_estimates":
+			$('#selectedItem').html("<b>System Manuals</b>");
 			break;
-		case "menu_public_saxophone":
-			$('a[href="/smartphoneController?op=menu_public_saxophone"]').closest('li').addClass('active');
+		case "phone_menu_hvac_contractors":
+			$('#selectedItem').html("<b>System Manuals</b>");
+			break;
+		case "phone_menu_hvac_buysell":
+			$('#selectedItem').html("<b>System Manuals</b>");
+			break;
+		case "phone_menu_hvac_jobs":
+			$('#selectedItem').html("<b>System Manuals</b>");
 			break;
 		default:
-			$('a[href="/smartphoneController"]').closest('li').addClass('active');
+			$('#selectedItem').html("<b>Unknown</b>");
 			break;	
 	}
-	*/
+	
 });
 
 
@@ -81,14 +87,14 @@ $(".nav a").on("click", function(){
       	<li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="<%= MenuLink.phone_menu_public_stockcharts %>" onfocus="this.blur()">System Manuals</a></li>
-			<li><a href="<%= MenuLink.phone_menu_public_hvac %>" onfocus="this.blur()">Q&A Forum</a></li>
-			<li><a href="<%= MenuLink.phone_menu_public_saxophone %>" onfocus="this.blur()">Blog</a></li>
-			<li><a href="<%= MenuLink.phone_menu_public_stockcharts %>" onfocus="this.blur()">Estimate</a></li>
-			<li><a href="<%= MenuLink.phone_menu_public_hvac %>" onfocus="this.blur()">Contractors</a></li>
+            <li><a href="<%= MenuLink.phone_menu_hvac_system_manuals %>" onfocus="this.blur()">System Manuals</a></li>
+			<li><a href="<%= MenuLink.phone_menu_hvac_qa_forum %>" onfocus="this.blur()">Q&A Forum</a></li>
+			<li><a href="<%= MenuLink.phone_menu_hvac_blog %>" onfocus="this.blur()">Blog</a></li>
+			<li><a href="<%= MenuLink.phone_menu_hvac_estimates %>" onfocus="this.blur()">Estimates</a></li>
+			<li><a href="<%= MenuLink.phone_menu_hvac_contractors %>" onfocus="this.blur()">Contractors</a></li>
 			<li role="separator" class="divider"></li>
-			<li><a href="<%= MenuLink.phone_menu_public_saxophone %>" onfocus="this.blur()">Buy&Sell</a></li>
-			<li><a href="<%= MenuLink.phone_menu_public_saxophone %>" onfocus="this.blur()">Jobs</a></li>
+			<li><a href="<%= MenuLink.phone_menu_hvac_buysell %>" onfocus="this.blur()">Buy&Sell</a></li>
+			<li><a href="<%= MenuLink.phone_menu_hvac_jobs %>" onfocus="this.blur()">Jobs</a></li>
           </ul>
         </li>
         

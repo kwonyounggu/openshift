@@ -48,6 +48,13 @@ public class MenuLink
 	public static final String phone_menu_public_stockcharts=PHONE_CONTEXT+"?op=menu_public_stockcharts";
 	//HVAC
 	public static final String phone_menu_public_hvac=PHONE_CONTEXT+"?op=menu_public_hvac";
+	public static final String phone_menu_hvac_system_manuals=PHONE_CONTEXT+"?op=phone_menu_hvac_system_manuals";
+	public static final String phone_menu_hvac_qa_forum=PHONE_CONTEXT+"?op=phone_menu_hvac_qa_forum";
+	public static final String phone_menu_hvac_blog=PHONE_CONTEXT+"?op=phone_menu_hvac_blog";
+	public static final String phone_menu_hvac_estimates=PHONE_CONTEXT+"?op=phone_menu_hvac_estimates";
+	public static final String phone_menu_hvac_contractors=PHONE_CONTEXT+"?op=phone_menu_hvac_contractors";
+	public static final String phone_menu_hvac_buysell=PHONE_CONTEXT+"?op=phone_menu_hvac_buysell";
+	public static final String phone_menu_hvac_jobs=PHONE_CONTEXT+"?op=phone_menu_hvac_jobs";
 	//Saxophone
 	public static final String phone_menu_public_saxophone=PHONE_CONTEXT+"?op=menu_public_saxophone";
 	
