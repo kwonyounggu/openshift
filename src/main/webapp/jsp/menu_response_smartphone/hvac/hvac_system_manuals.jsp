@@ -38,6 +38,11 @@
 		display: none;
 	}
 	.typeahead { z-index: 1051; }
+	
+	.jstree-default .jstree-no-dots .jstree-closed > ins 
+	{
+  		background-position:0 4px;
+	}
 </style>
 <script type="text/javascript">
 	//see http://jsfiddle.net/jayhilwig/hv8vU/
