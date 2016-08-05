@@ -52,7 +52,7 @@ $(document).ready(function ()
 			$('#selectedItem').html("<b>System Manuals</b>");
 			break;
 		default:
-			$('#selectedItem').html("<b>Unknown</b>");
+			$('#selectedItem').html("<b>System Manuals</b>");
 			break;	
 	}
 	

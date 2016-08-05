@@ -85,7 +85,6 @@
 	{
 		width: 100%;
 		height: 100%;
-		background-color: #222222;
 	}
 	
 	.contents
@@ -174,9 +173,6 @@
 			<jsp:include page='${header_panel}' flush='true'/>
 		</div>	
 		<div class="contents">		
-			<style>
-					
-			</style>
 			<div style="margin-top: .5cm; padding-bottom: 20px">
 				<jsp:include page='${body_panel}' flush='true'/>	
 			</div>		
