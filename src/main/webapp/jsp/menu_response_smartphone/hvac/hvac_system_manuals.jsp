@@ -302,10 +302,10 @@
 			           </button>
 			       </div>
 			  </div>
-			  <div style="float: left; width: 100%; height: 100%; overflow: auto;">
-				<div id="manual_tree_div">
-				</div>
-			  </div>
+	<div style="float: left; width: 300px; height: 100%; overflow: auto;">
+		<div id="manual_tree_div">
+		</div>
+	</div>
 </div>
 <div>
 			<div class="hvac_rectangle">
