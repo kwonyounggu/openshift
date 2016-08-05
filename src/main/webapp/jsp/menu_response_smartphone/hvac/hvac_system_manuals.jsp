@@ -286,7 +286,7 @@
 %>
 
 <h4>More data will come soon.</h4>
-<div style="font-size: 260%">
+<div style="font-size: 100%">
 			  <div class="input-group" >
 			       <input id="searchInput" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead" data-toggle="tooltip" data-placement="auto" title="Search with a blank to reset." data-trigger="manual"/>
 			       <div class="input-group-btn">
@@ -295,7 +295,7 @@
 			           </button>
 			       </div>
 			  </div>
-				<div id="manual_tree_div" style="border-radius:0px 0px 0px 0px; border:0px solid #000000;">
+				<div id="manual_tree_div" style="border-radius:0px 0px 0px 0px; border:0px solid #000000; height: auto; width: 100%; align: left">
 				</div>
 </div>
 <div>
