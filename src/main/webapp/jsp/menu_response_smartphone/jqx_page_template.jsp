@@ -77,8 +77,8 @@
 	.wrapper
 	{
 		
-		margin-top:2px;
-		width:auto;
+		/*margin-top:2px;
+		width:auto;*/
 
 	}
 	.header 
@@ -173,7 +173,7 @@
 			<jsp:include page='${header_panel}' flush='true'/>
 		</div>	
 		<div class="contents">		
-			<div style="margin-top: .5cm; padding-bottom: 20px">
+			<div style="padding-bottom: 20px">
 				<jsp:include page='${body_panel}' flush='true'/>	
 			</div>		
 		</div>
