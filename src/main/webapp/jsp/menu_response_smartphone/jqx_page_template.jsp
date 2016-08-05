@@ -77,8 +77,8 @@
 	.wrapper
 	{
 		
-		/*margin-top:2px;
-		width:auto;*/
+		margin-top:2px;
+		width:auto;
 
 	}
 	.header 
@@ -92,7 +92,7 @@
 		background-color:#ffffff;
 		border: 1px solid #e9e9ea;
 		height: 100%;
-		margin-top: -1cm;
+		margin-top: 55px;
 	}
 	.footer 
 	{
@@ -172,10 +172,11 @@
 		<div class="header">
 			<jsp:include page='${header_panel}' flush='true'/>
 		</div>	
-		<div class="contents">		
-			<div style="margin-top: .5cm; padding-bottom: 20px">
+		<div class="contents">
+			
+ 			<div style="margin-top: 20px; padding-bottom: 20px">
 				<jsp:include page='${body_panel}' flush='true'/>	
-			</div>		
+ 			</div>		
 		</div>
 		<div class="footer">
 			<div>555 University Avenue, Toronto, Ontario, Canada M1S5C2</div>
