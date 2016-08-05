@@ -295,9 +295,9 @@
 %>
 
 <h4>More data will come soon.</h4>
-<table>
+<table style="width: 100%;">
 	<tr>
-		<td>
+		<td align="left">
 			  <div class="input-group" >
 			       <input id="searchInput" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead" data-toggle="tooltip" data-placement="auto" title="Search with a blank to reset." data-trigger="manual"/>
 			       <div class="input-group-btn">
@@ -309,7 +309,7 @@
 		</td>
 	 </tr>
 	 <tr>
-	 	<td>
+	 	<td align="left">
 		  <div style="width: 650px; height: 100%; overflow: auto;">
 				<div id="manual_tree_div"></div>
 		  </div>
