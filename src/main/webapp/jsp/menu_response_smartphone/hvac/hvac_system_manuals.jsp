@@ -288,7 +288,7 @@
 <h4>More data will come soon.</h4>
 <table style='table-layout: fixed'>
 	<tr>
-		<td style='width: 270px; vertical-align: top'>
+		<td style='width: 100%; vertical-align: top'>
 			  <div class="input-group" >
 			       <input id="searchInput" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead" data-toggle="tooltip" data-placement="auto" title="Search with a blank to reset." data-trigger="manual"/>
 			       <div class="input-group-btn">
@@ -297,12 +297,13 @@
 			           </button>
 			       </div>
 			  </div>
-			  <div style="width: 270px; height: 100%; overflow: auto">
+			  <div style="width: 100%; height: 100%; overflow: auto">
 				<div id="manual_tree_div" style="border-radius:0px 0px 0px 0px; border:0px solid #000000;">
 				</div>
 			  </div>
 		</td>
-		<td style='width: 1%; height: 100%'></td>
+	</tr>
+	<tr>
 		<td style='width: 100%; border-radius:0px 0px 0px 0px; border:1px solid #dddddd; border-style: hidden hidden hidden solid; vertical-align: top;'>
 			<div class="hvac_rectangle">
 				<div class="row">
@@ -319,8 +320,11 @@
 			<div class='embed-container'>
 				<iframe id='pdfIfram' src='http://docs.google.com/gview?url=https://www.dropbox.com/s/x2bux8g239pm0f9/Admin_goodman_airhandler_acnf_brochure_2016_07_23.pdf?raw=1&embedded=true' style='border:0'></iframe>
 			</div>	
-
-			<div><br/><p style="padding-left: 10px;">You are welcome to <span class="label label-info">leave a comment/request</span> for more manuals, any change, etc, according to this page.</p></div>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div><p style="padding-left: 10px;">You are welcome to <span class="label label-info">leave a comment/request</span> for more manuals, any change, etc, according to this page.</p></div>
 
 			<div style="margin-left: 10px;">
 				<div id="disqus_thread"></div>	
