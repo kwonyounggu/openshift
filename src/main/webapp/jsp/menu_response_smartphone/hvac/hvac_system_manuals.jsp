@@ -37,7 +37,11 @@
 	{
 		display: none;
 	}
-	.typeahead { z-index: 1051; }
+	.typeahead 
+	{ 
+		z-index: 1051; 
+		font-size: 40px;
+	}
 	
 
 	/* partially for font-size working but there exist some congestion between two nodes, still ok in the worst case
@@ -311,7 +315,7 @@
 	<tr>
 		<td align="left">
 			<div class="input-group" >
-			       <input id="searchInput" style="font-size: 40px;" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead" data-toggle="tooltip" data-placement="auto" title="Search with a blank to reset." data-trigger="manual"/>
+			       <input id="searchInput" style="height: 45px; font-size: 40px;" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead" data-toggle="tooltip" data-placement="auto" title="Search with a blank to reset." data-trigger="manual"/>
 			       <div class="input-group-btn">
 			           <button id="searchButton" class="btn btn-info">
 			           <span class="glyphicon glyphicon-search"></span>
