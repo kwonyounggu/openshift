@@ -53,26 +53,10 @@
 	.jstree-children,
 	.jstree-container-ul
 	{
-		font-size: 38px;
+		/*font-size: 38px;*/
+		font-size: 260%;
 		padding: 10px 0 10px 0;
 	}
-	/*
-	.jstree-icon
-	{
-		padding: 10px 0 10px 0;
-	}
-	
-	.jstree-anchor
-	{
-		padding: 10px 0 10px 0;
-	}*/
-	
-	/*
-	.jstree-node > .jstree-anchor
-	{
-		font-size: 38px;
-		padding: 10px 0 10px 0;
-	}*/
 </style>
 <script type="text/javascript">
 	//see http://jsfiddle.net/jayhilwig/hv8vU/
