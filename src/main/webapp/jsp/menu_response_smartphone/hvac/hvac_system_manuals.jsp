@@ -309,9 +309,9 @@
 
 <table style="width: 100%;">
 	<tr>
-		<td align="left" style="height: 80px">
+		<td align="left">
 			<div class="input-group" >
-			       <input id="searchInput" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead" data-toggle="tooltip" data-placement="auto" title="Search with a blank to reset." data-trigger="manual"/>
+			       <input id="searchInput" style="font-size: 40px;" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead" data-toggle="tooltip" data-placement="auto" title="Search with a blank to reset." data-trigger="manual"/>
 			       <div class="input-group-btn">
 			           <button id="searchButton" class="btn btn-info">
 			           <span class="glyphicon glyphicon-search"></span>
