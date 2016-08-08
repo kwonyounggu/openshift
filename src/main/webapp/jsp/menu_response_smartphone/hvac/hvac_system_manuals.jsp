@@ -52,7 +52,7 @@
 		font-size: 38px;
 		padding: 10px 0 10px 0;
 	}
-	
+	/*
 	.jstree-anchor,
 	.jstree-anchor:link,
 	.jstree-anchor:visited,
@@ -62,6 +62,7 @@
 	  	font-size: 38px;
 		padding: 10px 0 10px 0;
 	}
+	*/
 </style>
 <script type="text/javascript">
 	//see http://jsfiddle.net/jayhilwig/hv8vU/
