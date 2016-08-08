@@ -16,8 +16,6 @@ $('.carousel').carousel({
 	  <!-- Indicators -->
 	  <ol class="carousel-indicators">
 	    <li data-target="#padiatric_reference_interval" data-slide-to="0"></li>
-	    <!-- <li data-target="#padiatric_reference_interval" data-slide-to="1"></li>
-	    <li data-target="#padiatric_reference_interval" data-slide-to="2"></li> -->
 	  </ol>
 	
 	  <!-- Wrapper for slides -->
@@ -25,12 +23,6 @@ $('.carousel').carousel({
 	    <div class="item">
 	      <img src="images/freelance_showcase/caliper_refence_interval.PNG" alt="caliper_refence_interval.PNG">
 	    </div>
-	    <!-- <div class="item active">
-	      <img src="images/freelance_showcase/caliper_refence_interval_html.PNG" alt="caliper_refence_interval_html.PNG">
-	    </div>
-	    <div class="item">
-	      <img src="images/freelance_showcase/caliper_home.PNG" alt="carm_vital_signs.PNG">
-	    </div> -->
 	  </div>
 	
 	  <!-- Left and right controls -->
@@ -300,8 +292,6 @@ on clinical outcomes, processes of care and resource utilization in 22 paediatri
 	    <li data-target="#others_others" data-slide-to="4"></li>
 	    <li data-target="#others_others" data-slide-to="5"></li>
 	    <li data-target="#others_others" data-slide-to="6"></li>
-	    <li data-target="#others_others" data-slide-to="7"></li>
-	    <!-- <li data-target="#others_others" data-slide-to="8"></li> -->
 	  </ol>
 	
 	  <!-- Wrapper for slides -->
@@ -319,9 +309,6 @@ on clinical outcomes, processes of care and resource utilization in 22 paediatri
 	      <img src="images/freelance_showcase/myesl_home.PNG" alt="myesl_home.PNG">
 	    </div>
 	    <div class="item">
-	      <img src="images/freelance_showcase/myesl_objective.gif" alt="myesl_objective.gif">
-	    </div>
-	    <div class="item">
 	      <img src="images/freelance_showcase/patriquin_law_home.PNG" alt="patriquin_law_home.PNG">
 	    </div>
 	    <div class="item">
@@ -330,9 +317,6 @@ on clinical outcomes, processes of care and resource utilization in 22 paediatri
 	    <div class="item">
 	      <img src="images/freelance_showcase/tour_home.PNG" alt="tour_home.PNG">
 	    </div>
-	    <!-- <div class="item">
-	      <img src="images/freelance_showcase/healthcountry_home.PNG" alt="healthcountry_home.PNG">
-	    </div> -->
 	  </div>
 	
 	  <!-- Left and right controls -->
