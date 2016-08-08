@@ -53,9 +53,8 @@
 	.jstree-children,
 	.jstree-container-ul
 	{
-		/*font-size: 38px;*/
-		font-size: 260%;
-		padding: 10px 0 10px 0;
+		font-size: 40px;
+		padding: 12px 0 12px 0;
 	}
 </style>
 <script type="text/javascript">
