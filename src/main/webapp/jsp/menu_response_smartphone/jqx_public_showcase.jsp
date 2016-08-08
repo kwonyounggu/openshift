@@ -301,16 +301,13 @@ on clinical outcomes, processes of care and resource utilization in 22 paediatri
 	    <li data-target="#others_others" data-slide-to="5"></li>
 	    <li data-target="#others_others" data-slide-to="6"></li>
 	    <li data-target="#others_others" data-slide-to="7"></li>
-	    <li data-target="#others_others" data-slide-to="8"></li>
+	    <!-- <li data-target="#others_others" data-slide-to="8"></li> -->
 	  </ol>
 	
 	  <!-- Wrapper for slides -->
 	  <div class="carousel-inner" role="listbox">
 	    <div class="item">
 	      <img src="images/freelance_showcase/aqnings_shopping_mall_home.PNG" alt="aqnings_shopping_mall_home.PNG">
-	    </div>
-	    <div class="item">
-	      <img src="images/freelance_showcase/healthcountry_home.PNG" alt="healthcountry_home.PNG">
 	    </div>
 	    <div class="item">
 	      <img src="images/freelance_showcase/modeling_home.PNG" alt="modeling_home.PNG">
@@ -333,6 +330,9 @@ on clinical outcomes, processes of care and resource utilization in 22 paediatri
 	    <div class="item">
 	      <img src="images/freelance_showcase/tour_home.PNG" alt="tour_home.PNG">
 	    </div>
+	    <!-- <div class="item">
+	      <img src="images/freelance_showcase/healthcountry_home.PNG" alt="healthcountry_home.PNG">
+	    </div> -->
 	  </div>
 	
 	  <!-- Left and right controls -->
