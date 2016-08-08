@@ -56,6 +56,10 @@
 		font-size: 40px;
 		padding: 12px 0 12px 0;
 	}
+	.input-group
+	{
+		font-size: 40px;
+	}
 </style>
 <script type="text/javascript">
 	//see http://jsfiddle.net/jayhilwig/hv8vU/
