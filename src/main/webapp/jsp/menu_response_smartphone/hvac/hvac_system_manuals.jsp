@@ -46,7 +46,8 @@
 		font-size: 200%;
 	}*/
 	/*see http://stackoverflow.com/questions/11163694/setting-line-height-on-a-jstree*/
-	.jstree-node
+	/*see http://jsfiddle.net/bablyukh/ynLryfhv */
+	.jstree-node .jstree-anchor .jstree-anchor:link,
 	{
 		font-size: 38px;
 		padding: 10px 0 10px 0;
