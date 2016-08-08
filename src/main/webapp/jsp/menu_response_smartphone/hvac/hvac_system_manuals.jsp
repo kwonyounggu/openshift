@@ -48,7 +48,7 @@
 	/*see http://stackoverflow.com/questions/11163694/setting-line-height-on-a-jstree*/
 	.jstree-node
 	{
-		font-size: 24px;
+		font-size: 32px;
 	}
 </style>
 <script type="text/javascript">
