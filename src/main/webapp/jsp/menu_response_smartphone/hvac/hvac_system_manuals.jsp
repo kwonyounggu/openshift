@@ -309,7 +309,7 @@
 //to do, button->submit button->see contact for the button activation
 %>
 
-<h4>More data will come soon.</h4>
+<h4>More data will come soon...</h4>
 
 <table style="width: 100%;">
 	<tr>
