@@ -40,9 +40,14 @@
 	.typeahead { z-index: 1051; }
 	
 
+	/*
 	.jstree-anchor
 	{
 		font-size: 200%;
+	}*/
+	.jstree-node
+	{
+		font-size: 260%;
 	}
 </style>
 <script type="text/javascript">
@@ -84,7 +89,7 @@
 				    'multiple' : false,
 				    //'cache': false,
 				    //'check_callback' : true,
-    				//'themes' : { 'variant' : 'large' },
+    				'themes' : { 'variant' : 'large' },
 				    //'animation' : 0,
 					
 				    'data':
