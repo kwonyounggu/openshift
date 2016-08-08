@@ -306,18 +306,18 @@
 %>
 
 <h4>More data will come soon.</h4>
-<div class="input-group" >
+
+<table style="width: 100%;">
+	<tr>
+		<td align="left" style="height: 80px">
+			<div class="input-group" >
 			       <input id="searchInput" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead" data-toggle="tooltip" data-placement="auto" title="Search with a blank to reset." data-trigger="manual"/>
 			       <div class="input-group-btn">
 			           <button id="searchButton" class="btn btn-info">
 			           <span class="glyphicon glyphicon-search"></span>
 			           </button>
 			       </div>
-			  </div>
-<table style="width: 100%;">
-	<tr>
-		<td align="left">
-			  
+			  </div> 
 		</td>
 	 </tr>
 	 <tr>
