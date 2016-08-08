@@ -39,7 +39,14 @@
 	}
 	.typeahead { z-index: 1051; }
 	
-	
+	.jstree 
+	{
+		font-size: 200%;
+	}
+	.jstree-anchor
+	{
+		font-size: 200%;
+	}
 </style>
 <script type="text/javascript">
 	//see http://jsfiddle.net/jayhilwig/hv8vU/
