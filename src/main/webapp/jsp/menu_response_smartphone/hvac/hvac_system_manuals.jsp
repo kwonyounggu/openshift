@@ -49,6 +49,7 @@
 	.jstree-node
 	{
 		font-size: 38px;
+		padding: 10px 0 10px 0;
 	}
 </style>
 <script type="text/javascript">
