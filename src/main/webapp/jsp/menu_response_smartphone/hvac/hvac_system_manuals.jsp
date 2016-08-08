@@ -47,6 +47,7 @@
 	}*/
 	/*see http://stackoverflow.com/questions/11163694/setting-line-height-on-a-jstree*/
 	/*see http://jsfiddle.net/bablyukh/ynLryfhv */
+	
 	.jstree-node,
 	.jstree-children,
 	.jstree-container-ul
@@ -55,7 +56,7 @@
 		padding: 10px 0 10px 0;
 	}
 	
-	/*
+	
 	.jstree-anchor,
 	.jstree-anchor:link,
 	.jstree-anchor:visited,
@@ -65,7 +66,7 @@
 	  	font-size: 38px;
 		padding: 10px 0 10px 0;
 	}
-	*/
+	
 </style>
 <script type="text/javascript">
 	//see http://jsfiddle.net/jayhilwig/hv8vU/
