@@ -55,7 +55,7 @@
 		font-size: 38px;
 		padding: 10px 0 10px 0;
 	}
-		
+	/*
 	.jstree-icon
 	{
 		padding: 10px 0 10px 0;
@@ -64,7 +64,7 @@
 	.jstree-anchor
 	{
 		padding: 10px 0 10px 0;
-	}
+	}*/
 	
 </style>
 <script type="text/javascript">
