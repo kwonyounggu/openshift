@@ -55,16 +55,11 @@
 		font-size: 38px;
 		padding: 10px 0 10px 0;
 	}
-	
-	
-	.jstree-anchor,
-	.jstree-anchor:link,
-	.jstree-anchor:visited,
-	.jstree-anchor:hover,
-	.jstree-anchor:active 
+		
+	.jstree-anchor
 	{
 	  	font-size: 38px;
-		
+		padding: 10px 0 10px 0;
 	}
 	
 </style>
