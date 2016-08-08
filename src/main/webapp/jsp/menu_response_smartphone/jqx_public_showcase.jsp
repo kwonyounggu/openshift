@@ -16,22 +16,21 @@ $('.carousel').carousel({
 	  <!-- Indicators -->
 	  <ol class="carousel-indicators">
 	    <li data-target="#padiatric_reference_interval" data-slide-to="0"></li>
-	    <li data-target="#padiatric_reference_interval" data-slide-to="1"></li>
-	    <li data-target="#padiatric_reference_interval" data-slide-to="2"></li>
+	    <!-- <li data-target="#padiatric_reference_interval" data-slide-to="1"></li>
+	    <li data-target="#padiatric_reference_interval" data-slide-to="2"></li> -->
 	  </ol>
 	
 	  <!-- Wrapper for slides -->
 	  <div class="carousel-inner" role="listbox">
-	    <div class="item active">
-	      <img src="images/freelance_showcase/caliper_refence_interval_html.PNG" alt="caliper_refence_interval_html.PNG">
-	    </div>
-	
 	    <div class="item">
 	      <img src="images/freelance_showcase/caliper_refence_interval.PNG" alt="caliper_refence_interval.PNG">
 	    </div>
+	    <!-- <div class="item active">
+	      <img src="images/freelance_showcase/caliper_refence_interval_html.PNG" alt="caliper_refence_interval_html.PNG">
+	    </div>
 	    <div class="item">
 	      <img src="images/freelance_showcase/caliper_home.PNG" alt="carm_vital_signs.PNG">
-	    </div>
+	    </div> -->
 	  </div>
 	
 	  <!-- Left and right controls -->
@@ -54,11 +53,11 @@ $('.carousel').carousel({
 	  <!-- Indicators -->
 	  <ol class="carousel-indicators">
 	    <li data-target="#sickkidsCarousel_carm" data-slide-to="0"></li>
-	    <li data-target="#sickkidsCarousel_carm" data-slide-to="1"></li>
+	   <!--  <li data-target="#sickkidsCarousel_carm" data-slide-to="1"></li>
 	    <li data-target="#sickkidsCarousel_carm" data-slide-to="2"></li>
 	    <li data-target="#sickkidsCarousel_carm" data-slide-to="3"></li>
 	    <li data-target="#sickkidsCarousel_carm" data-slide-to="4"></li>
-	    <li data-target="#sickkidsCarousel_carm" data-slide-to="5"></li>
+	    <li data-target="#sickkidsCarousel_carm" data-slide-to="5"></li> -->
 	  </ol>
 	
 	  <!-- Wrapper for slides -->
@@ -67,7 +66,7 @@ $('.carousel').carousel({
 	      <img src="images/freelance_showcase/carm_vital_signs.PNG" alt="carm_vital_signs.PNG">
 	    </div>
 	
-	    <div class="item">
+	   <!--  <div class="item">
 	      <img src="images/freelance_showcase/carm_login.PNG" alt="carm_login.PNG">
 	    </div>
 	
@@ -83,7 +82,7 @@ $('.carousel').carousel({
 	    </div>
 	    <div class="item">
 	      <img src="images/freelance_showcase/carm_admin.PNG" alt="carm_admin.PNG">
-	    </div>
+	    </div> -->
 	  </div>
 	
 	  <!-- Left and right controls -->
@@ -106,14 +105,14 @@ on clinical outcomes, processes of care and resource utilization in 22 paediatri
 	  <!-- Indicators -->
 	  <ol class="carousel-indicators">
 	    <li data-target="#sickkidsCarousel_epoch" data-slide-to="0" class="active"></li>
-	    <li data-target="#sickkidsCarousel_epoch" data-slide-to="1"></li>
+	    <!-- <li data-target="#sickkidsCarousel_epoch" data-slide-to="1"></li>
 	    <li data-target="#sickkidsCarousel_epoch" data-slide-to="2"></li>
 	    <li data-target="#sickkidsCarousel_epoch" data-slide-to="3"></li>
 	    <li data-target="#sickkidsCarousel_epoch" data-slide-to="4"></li>
 	    <li data-target="#sickkidsCarousel_epoch" data-slide-to="5"></li>
 	    <li data-target="#sickkidsCarousel_epoch" data-slide-to="6"></li>
 	    <li data-target="#sickkidsCarousel_epoch" data-slide-to="7"></li>
-	    <li data-target="#sickkidsCarousel_epoch" data-slide-to="8"></li>
+	    <li data-target="#sickkidsCarousel_epoch" data-slide-to="8"></li> -->
 	  </ol>
 	
 	  <!-- Wrapper for slides -->
@@ -121,7 +120,7 @@ on clinical outcomes, processes of care and resource utilization in 22 paediatri
 	    <div class="item active">
 	      <img src="images/freelance_showcase/epoch_login.PNG" alt="epoch_login.PNG">
 	    </div>
-	    <div class="item">
+<!-- 	    <div class="item">
 	      <img src="images/freelance_showcase/epoch_data_entry_verification.PNG" alt="epoch_data_entry_verification.PNG">
 	    </div>
 	
@@ -145,7 +144,7 @@ on clinical outcomes, processes of care and resource utilization in 22 paediatri
 	    </div>
 	    <div class="item">
 	      <img src="images/freelance_showcase/epoch_upload_study_doc.PNG" alt="epoch_upload_study_doc.PNG">
-	    </div>
+	    </div> -->
 	  </div>
 	
 	  <!-- Left and right controls -->
@@ -168,7 +167,7 @@ on clinical outcomes, processes of care and resource utilization in 22 paediatri
 	  <!-- Indicators -->
 	  <ol class="carousel-indicators">
 	    <li data-target="#sickkidsCarousel_exemplar" data-slide-to="0" class="active"></li>
-	    <li data-target="#sickkidsCarousel_exemplar" data-slide-to="1"></li>
+	   <!--  <li data-target="#sickkidsCarousel_exemplar" data-slide-to="1"></li> -->
 	  </ol>
 	
 	  <!-- Wrapper for slides -->
@@ -176,9 +175,9 @@ on clinical outcomes, processes of care and resource utilization in 22 paediatri
 	    <div class="item active">
 	      <img src="images/freelance_showcase/exemplar_login.PNG" alt="exemplar_login.PNG">
 	    </div>
-	    <div class="item">
+	    <!-- <div class="item">
 	      <img src="images/freelance_showcase/exemplar_demographics.PNG" alt="exemplar_demographics.PNG">
-	    </div>
+	    </div> -->
 	  </div>
 	
 	  <!-- Left and right controls -->
@@ -201,11 +200,11 @@ on clinical outcomes, processes of care and resource utilization in 22 paediatri
 	  <!-- Indicators -->
 	  <ol class="carousel-indicators">
 	    <li data-target="#sickkidsCarousel_spire" data-slide-to="0" class="active"></li>
-	    <li data-target="#sickkidsCarousel_spire" data-slide-to="1"></li>
+	    <!-- <li data-target="#sickkidsCarousel_spire" data-slide-to="1"></li>
 	    <li data-target="#sickkidsCarousel_spire" data-slide-to="2"></li>
 	    <li data-target="#sickkidsCarousel_spire" data-slide-to="3"></li>
 	    <li data-target="#sickkidsCarousel_spire" data-slide-to="4"></li>
-	    <li data-target="#sickkidsCarousel_spire" data-slide-to="5"></li>
+	    <li data-target="#sickkidsCarousel_spire" data-slide-to="5"></li> -->
 	  </ol>
 	
 	  <!-- Wrapper for slides -->
@@ -213,7 +212,7 @@ on clinical outcomes, processes of care and resource utilization in 22 paediatri
 	    <div class="item active">
 	      <img src="images/freelance_showcase/spire_about.PNG" alt="spire_about.PNG">
 	    </div>
-	    <div class="item">
+	    <!-- <div class="item">
 	      <img src="images/freelance_showcase/spire_home.PNG" alt="spire_home.PNG">
 	    </div>
 	    <div class="item">
@@ -227,7 +226,7 @@ on clinical outcomes, processes of care and resource utilization in 22 paediatri
 	    </div>
 	    <div class="item">
 	      <img src="images/freelance_showcase/spire_participation_status.PNG" alt="spire_participation_status.PNG">
-	    </div>
+	    </div> -->
 	  </div>
 	
 	  <!-- Left and right controls -->
