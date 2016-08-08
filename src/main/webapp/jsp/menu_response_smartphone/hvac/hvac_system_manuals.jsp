@@ -58,7 +58,11 @@
 		
 	.jstree-icon
 	{
-	  	font-size: 38px;
+		padding: 10px 0 10px 0;
+	}
+	
+	.jstree-anchor
+	{
 		padding: 10px 0 10px 0;
 	}
 	
