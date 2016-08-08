@@ -67,12 +67,12 @@
 		padding: 10px 0 10px 0;
 	}*/
 	
-	
+	/*
 	.jstree-node > .jstree-anchor
 	{
 		font-size: 38px;
 		padding: 10px 0 10px 0;
-	}
+	}*/
 </style>
 <script type="text/javascript">
 	//see http://jsfiddle.net/jayhilwig/hv8vU/
