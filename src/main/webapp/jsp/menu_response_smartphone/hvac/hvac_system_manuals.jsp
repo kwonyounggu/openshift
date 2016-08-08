@@ -39,10 +39,7 @@
 	}
 	.typeahead { z-index: 1051; }
 	
-	.jstree 
-	{
-		font-size: 200%;
-	}
+
 	.jstree-anchor
 	{
 		font-size: 200%;
