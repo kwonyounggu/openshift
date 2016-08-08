@@ -40,14 +40,15 @@
 	.typeahead { z-index: 1051; }
 	
 
-	/*
+	/* partially for font-size working but there exist some congestion between two nodes, still ok in the worst case
 	.jstree-anchor
 	{
 		font-size: 200%;
 	}*/
+	/*see http://stackoverflow.com/questions/11163694/setting-line-height-on-a-jstree*/
 	.jstree-node
 	{
-		font-size: 260%;
+		font-size: 28px;
 	}
 </style>
 <script type="text/javascript">
