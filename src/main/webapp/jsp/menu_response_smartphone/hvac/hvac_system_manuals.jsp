@@ -56,7 +56,7 @@
 		padding: 12px 0 12px 0;
 	}
 	
-	.jstree-leaf >a
+	.jstree-leaf .jstree-icon
 	{
 		padding: 0 100px 0 30px;
 		background-color: black;
