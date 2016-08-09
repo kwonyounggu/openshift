@@ -58,7 +58,7 @@
 	
 	.jstree-leaf
 	{
-  		padding: 20px 20px 20px 20px;
+  		height: auto !important;
 	}
 </style>
 <script type="text/javascript">
