@@ -313,7 +313,7 @@
 
 <table style="width: 100%;">
 	<tr>
-		<td align="left">
+		<td align="left" style="padding: 0 10px 0 10px">
 			<div class="input-group" >
 			       <input id="searchInput" style="height: 45px; font-size: 40px;" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead" data-toggle="tooltip" data-placement="auto" title="Search with a blank to reset." data-trigger="manual"/>
 			       <div class="input-group-btn" >
