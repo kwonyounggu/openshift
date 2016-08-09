@@ -314,11 +314,11 @@
 
 <table style="width: 100%;">
 	<tr>
-		<td align="left" style="padding: 0 10px 0 10px">
+		<td align="left" style="padding: 0 15px 0 15px">
 			<div class="input-group" >
 			       <input id="searchInput" style="height: 55px; font-size: 46px;" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead" data-toggle="tooltip" data-placement="auto" title="Search with a blank to reset." data-trigger="manual"/>
 			       <div class="input-group-btn" >
-			           <button id="searchButton" class="btn btn-info" style="height: 55px;">
+			           <button id="searchButton" class="btn btn-info" style="height: 55px; width: 55px">
 			           <span class="glyphicon glyphicon-search"></span>
 			           </button>
 			       </div>
