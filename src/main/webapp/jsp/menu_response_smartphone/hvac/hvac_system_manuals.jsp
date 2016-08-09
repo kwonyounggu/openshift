@@ -56,9 +56,14 @@
 		padding: 12px 0 12px 0;
 	}
 	
-	.jstree-leaf a 
+	.jstree-default .jstree-anchor 
+	{
+    	height: auto;
+  	}
+	.jstree-leaf .jstree-anchor 
 	{
 	   padding-right: 24px;
+	   height: auto;
 	}
 </style>
 <script type="text/javascript">
