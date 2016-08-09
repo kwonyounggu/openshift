@@ -61,6 +61,11 @@
 		font-size: 40px;
 		padding: 12px 0 12px 0;
 	}
+	
+	.jstree-leaf 
+	{
+	 padding-left: 12px;
+	}
 
 </style>
 <script type="text/javascript">
