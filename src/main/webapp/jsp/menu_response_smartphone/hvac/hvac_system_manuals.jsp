@@ -62,9 +62,14 @@
 		padding: 12px 0 12px 0;
 	}
 	
-	.jstree-leaf 
+	.jstree-anchor 
 	{
-	 padding-right: 12px;
+	    /*enable wrapping*/
+	    white-space : normal !important;
+	    /*ensure lower nodes move down*/
+	    height : auto !important;
+	    /*offset icon width*/
+	    padding-right : 24px;
 	}
 
 </style>
