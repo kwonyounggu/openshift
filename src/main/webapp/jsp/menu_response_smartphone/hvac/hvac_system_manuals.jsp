@@ -58,7 +58,7 @@
 	
 	.jstree-leaf .jstree-icon
 	{
-		padding-right: 30px;
+		padding: 0 100px 0 0;
 		background-color: black;
 	}
 	
