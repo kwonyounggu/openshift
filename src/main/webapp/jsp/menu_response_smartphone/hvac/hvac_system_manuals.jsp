@@ -61,7 +61,7 @@
 	{
 		padding: 0 60px 0 0;
 	}
-	#input-group .glyphicon
+	.glyphicon
 	{
 		font-size: 50px;
 	}
