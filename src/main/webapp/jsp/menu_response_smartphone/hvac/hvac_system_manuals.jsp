@@ -56,7 +56,7 @@
 		padding: 12px 0 12px 0;
 	}
 	
-	.jstree-default a .jstree-icon
+	.jstree-default .jstree-leaf > ins
 	{
 		padding-right: 20px;
 	}
