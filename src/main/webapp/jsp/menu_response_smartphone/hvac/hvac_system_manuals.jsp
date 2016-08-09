@@ -55,12 +55,12 @@
 		font-size: 40px;
 		padding: 12px 0 12px 0;
 	}
-	/*
+	
 	.jstree-default a .jstree-icon
 	{
 		padding-right: 20px;
 	}
-	*/
+	
 </style>
 <script type="text/javascript">
 	//see http://jsfiddle.net/jayhilwig/hv8vU/
