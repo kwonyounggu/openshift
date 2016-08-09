@@ -56,9 +56,10 @@
 		padding: 12px 0 12px 0;
 	}
 	
+	/*see http://stackoverflow.com/questions/12893165/jstree-different-icon-for-leaf-nodes*/
 	.jstree-leaf >a .jstree-icon
 	{
-		padding: 0 50px 0 0;
+		padding: 0 60px 0 0;
 	}
 	
 </style>
