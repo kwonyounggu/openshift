@@ -40,14 +40,14 @@
 	.typeahead 
 	{ 
 		z-index: 1051; 
-		font-size: 46px;
+		/*font-size: 46px;*/
 	}
 
 	/*see http://stackoverflow.com/questions/11163694/setting-line-height-on-a-jstree*/
 	/*see http://jsfiddle.net/bablyukh/ynLryfhv */
 	/*see http://stackoverflow.com/questions/11163694/setting-line-height-on-a-jstree */
 	
-	
+	/*
 	.jstree-node,
 	.jstree-children,
 	.jstree-container-ul
@@ -56,7 +56,7 @@
 		padding: 12px 0 12px 0;
 	}
 	
-	/*see http://stackoverflow.com/questions/12893165/jstree-different-icon-for-leaf-nodes*/
+	
 	.jstree-leaf >a .jstree-icon
 	{
 		padding: 0 60px 0 0;
@@ -65,6 +65,7 @@
 	{
 		font-size: 40px;
 	}
+	*/
 </style>
 <script type="text/javascript">
 	//see http://jsfiddle.net/jayhilwig/hv8vU/
@@ -319,9 +320,9 @@
 	<tr>
 		<td align="left" style="padding: 0 15px 0 15px">
 			<div class="input-group" >
-			       <input id="searchInput" style="height: 55px; font-size: 46px;" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead" data-toggle="tooltip" data-placement="auto" title="Search with a blank to reset." data-trigger="manual"/>
+			       <input id="searchInput" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead" data-toggle="tooltip" data-placement="auto" title="Search with a blank to reset." data-trigger="manual"/>
 			       <div class="input-group-btn" >
-			           <button id="searchButton" class="btn btn-info" style="height: 55px; width: 75px;">
+			           <button id="searchButton" class="btn btn-info" ">
 			           <span class="glyphicon glyphicon-search"></span>
 			           </button>
 			       </div>
