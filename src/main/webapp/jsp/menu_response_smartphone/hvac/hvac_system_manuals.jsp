@@ -40,7 +40,7 @@
 	.typeahead 
 	{ 
 		z-index: 1051; 
-		font-size: 40px;
+		font-size: 46px;
 	}
 
 	/*see http://stackoverflow.com/questions/11163694/setting-line-height-on-a-jstree*/
@@ -52,7 +52,7 @@
 	.jstree-children,
 	.jstree-container-ul
 	{
-		font-size: 40px;
+		font-size: 46px;
 		padding: 12px 0 12px 0;
 	}
 	
@@ -315,9 +315,9 @@
 	<tr>
 		<td align="left" style="padding: 0 10px 0 10px">
 			<div class="input-group" >
-			       <input id="searchInput" style="height: 45px; font-size: 40px;" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead" data-toggle="tooltip" data-placement="auto" title="Search with a blank to reset." data-trigger="manual"/>
+			       <input id="searchInput" style="height: 55px; font-size: 46px;" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead" data-toggle="tooltip" data-placement="auto" title="Search with a blank to reset." data-trigger="manual"/>
 			       <div class="input-group-btn" >
-			           <button id="searchButton" class="btn btn-info" style="height: 45px;">
+			           <button id="searchButton" class="btn btn-info" style="height: 55px;">
 			           <span class="glyphicon glyphicon-search"></span>
 			           </button>
 			       </div>
