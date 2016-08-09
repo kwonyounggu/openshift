@@ -53,17 +53,13 @@
 	.jstree-container-ul
 	{
 		font-size: 40px;
-		padding: 12px 0 12px 0;
+		padding: 12px 0 12px 12px;
 	}
 	
-	.jstree-default .jstree-anchor 
+	.jstree-leaf > .jstree-children 
 	{
-    	height: auto;
-  	}
-	.jstree-leaf .jstree-anchor 
-	{
-	   padding-right: 24px;
-	   height: auto;
+		height: auto;
+  		padding: 20px 20px 20px 20px;
 	}
 </style>
 <script type="text/javascript">
