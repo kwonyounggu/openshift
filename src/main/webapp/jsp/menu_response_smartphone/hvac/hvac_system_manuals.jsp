@@ -321,7 +321,7 @@
 			<div class="input-group" >
 			       <input id="searchInput" style="height: 55px; font-size: 46px;" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead" data-toggle="tooltip" data-placement="auto" title="Search with a blank to reset." data-trigger="manual"/>
 			       <div class="input-group-btn" >
-			           <button id="searchButton" class="btn btn-info" style="height: 55px; width: 55px; padding-right: 20px;">
+			           <button id="searchButton" class="btn btn-info" style="height: 55px; width: 75px;">
 			           <span class="glyphicon glyphicon-search"></span>
 			           </button>
 			       </div>
