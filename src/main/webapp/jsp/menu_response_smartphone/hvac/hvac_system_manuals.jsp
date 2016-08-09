@@ -56,9 +56,8 @@
 		padding: 12px 0 12px 12px;
 	}
 	
-	.jstree-leaf > .jstree-children 
+	.jstree-leaf
 	{
-		height: auto;
   		padding: 20px 20px 20px 20px;
 	}
 </style>
