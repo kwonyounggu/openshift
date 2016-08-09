@@ -354,7 +354,7 @@
 			</div>	
 </div>
 <div>
-			<div><p style="padding-left: 10px; text-align: left; font-size: 46px">You are welcome to <span class="label label-info">leave a comment/request</span> for more manuals, any change, etc, according to this page.</p></div>
+			<div><p style="padding-left: 10px; text-align: left;">You are welcome to <span class="label label-info">leave a comment/request</span> for more manuals, any change, etc, according to this page.</p></div>
 
 			<div style="margin-left: 10px;">
 				<div id="disqus_thread"></div>	
