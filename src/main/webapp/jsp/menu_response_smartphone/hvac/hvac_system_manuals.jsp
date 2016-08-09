@@ -61,7 +61,10 @@
 	{
 		padding: 0 60px 0 0;
 	}
-	
+	#input-group .glyphicon
+	{
+		font-size: 50px;
+	}
 </style>
 <script type="text/javascript">
 	//see http://jsfiddle.net/jayhilwig/hv8vU/
@@ -319,7 +322,7 @@
 			       <input id="searchInput" style="height: 55px; font-size: 46px;" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead" data-toggle="tooltip" data-placement="auto" title="Search with a blank to reset." data-trigger="manual"/>
 			       <div class="input-group-btn" >
 			           <button id="searchButton" class="btn btn-info" style="height: 55px; width: 55px">
-			           <span class="glyphicon glyphicon-search" style="height: 55px; width: 55px"></span>
+			           <span class="glyphicon glyphicon-search"></span>
 			           </button>
 			       </div>
 			  </div> 
