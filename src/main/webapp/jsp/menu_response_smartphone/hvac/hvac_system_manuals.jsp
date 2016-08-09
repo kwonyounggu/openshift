@@ -56,9 +56,9 @@
 		padding: 12px 0 12px 0;
 	}
 	
-	.jstree-default .jstree-leaf > ins
+	.jstree-leaf a
 	{
-		padding-right: 20px;
+		padding-left: 20px;
 	}
 	
 </style>
