@@ -60,7 +60,10 @@
 		font-size: 40px;
 		padding: 12px 0 12px 0;
 	}
-	
+	.jstree-anchor 
+	{
+    	height: auto !important;
+	}
 </style>
 <script type="text/javascript">
 	//see http://jsfiddle.net/jayhilwig/hv8vU/
