@@ -63,7 +63,7 @@
 	}
 	.glyphicon
 	{
-		font-size: 50px;
+		font-size: 40px;
 	}
 </style>
 <script type="text/javascript">
