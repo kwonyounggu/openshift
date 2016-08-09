@@ -59,6 +59,7 @@
 	.jstree-leaf >a
 	{
 		padding: 0 100px 0 30px;
+		background-color: black;
 	}
 	
 </style>
