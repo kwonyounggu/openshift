@@ -56,9 +56,9 @@
 		padding: 12px 0 12px 0;
 	}
 	
-	#manual_tree_div a 
+	.jstree-leaf a 
 	{
-	    height: auto;
+	   padding-right: 24px;
 	}
 </style>
 <script type="text/javascript">
