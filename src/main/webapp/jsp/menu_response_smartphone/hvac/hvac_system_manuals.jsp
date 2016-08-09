@@ -42,13 +42,7 @@
 		z-index: 1051; 
 		font-size: 40px;
 	}
-	
 
-	/* partially for font-size working but there exist some congestion between two nodes, still ok in the worst case
-	.jstree-anchor
-	{
-		font-size: 200%;
-	}*/
 	/*see http://stackoverflow.com/questions/11163694/setting-line-height-on-a-jstree*/
 	/*see http://jsfiddle.net/bablyukh/ynLryfhv */
 	/*see http://stackoverflow.com/questions/11163694/setting-line-height-on-a-jstree */
@@ -62,16 +56,10 @@
 		padding: 12px 0 12px 0;
 	}
 	
-	.jstree-anchor 
+	#manual_tree_div a 
 	{
-	    /*enable wrapping*/
-	    white-space : normal !important;
-	    /*ensure lower nodes move down*/
-	    height : auto !important;
-	    /*offset icon width*/
-	    padding-right : 24px;
+	    height: auto;
 	}
-
 </style>
 <script type="text/javascript">
 	//see http://jsfiddle.net/jayhilwig/hv8vU/
