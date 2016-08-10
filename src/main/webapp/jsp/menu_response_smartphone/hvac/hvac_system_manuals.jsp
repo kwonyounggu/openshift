@@ -355,9 +355,9 @@
 			</div>	
 </div>
 <div>
-			<div><p style="padding-left: 10px; text-align: left;">You are welcome to <span class="label label-info">leave a comment/request</span> for more manuals, any change, etc, according to this page.</p></div>
+			<div><p style="padding: 10px 10px 0 10px; text-align: left;">You are welcome to <span class="label label-info">leave a comment/request</span> for more manuals, any change, etc, according to this page.</p></div>
 
-			<div style="margin-left: 10px;">
+			<div style="margin-left: 10px; margin-right: -10px">
 				<div id="disqus_thread"></div>	
 				<script>
 				
