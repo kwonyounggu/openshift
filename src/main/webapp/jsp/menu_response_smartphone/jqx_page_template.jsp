@@ -75,7 +75,6 @@
 		border: 1px solid #e9e9ea;
 		height: 100%;
 		width: 100%;
-		margin-top: 55px;
 	}
 	.footer 
 	{
@@ -88,7 +87,7 @@
 	    border:1px solid #000000;
 	    box-shadow: 10px 10px 5px #888888;
 		background:#353743;
-		height:100%;
+		height:auto;
 		width: 100%;
 		border-radius:0 0 0px 0px;
 		/*font-size: 26px;*/
