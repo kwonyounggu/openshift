@@ -119,7 +119,8 @@
 	    list-style-type: disc;
 	    list-style-position: inside;
 	    padding: 0px 0px 0px 0px;
-	    text-indent: -0.5em;
+	    text-indent: -1em;
+	    margin-left: -10px;
 	}
 	#resume_div ul li
 	{
