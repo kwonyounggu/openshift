@@ -11,7 +11,7 @@
 <meta charset="utf-8">
 <META name=author content="Younggu Kwon">
 <META name=email content="<%=AuthData.mycompany_email_address%>">
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link rel="SHORTCUT ICON" href="images/webmonster_logo.ico" />
 
