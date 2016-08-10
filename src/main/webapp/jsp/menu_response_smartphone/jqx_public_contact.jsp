@@ -448,11 +448,11 @@
 			   				<!-- To hide the input but only to display the error message -->
 			   				<input type='text' style='width: 0; height: 0; border: none; -webkit-appearance: none; background-color: #555762' name='select_animal' id='select_animal' value='a'/>
 			   				<br />
-			   				<input type='radio' style='width: 150px; outline: 0px' name='animalGroup' id='animal_1' value='1'/>
-			   				<input type='radio' style='width: 150px; outline: 0px' name='animalGroup' id='animal_2' value='2'/>
-			   				<input type='radio' style='width: 150px; outline: 0px' name='animalGroup' id='animal_3' value='3'/>
+			   				<input type='radio' style='width: 33%; outline: 0px' name='animalGroup' id='animal_1' value='1'/>
+			   				<input type='radio' style='width: 33%; outline: 0px' name='animalGroup' id='animal_2' value='2'/>
+			   				<input type='radio' style='width: 33%; outline: 0px' name='animalGroup' id='animal_3' value='3'/>
 			   				<br />
-			   				<img src="images/three_animals.png" width="462" height="86" alt="Three Animals" border="0"/>
+			   				<img src="images/three_animals.png"  alt="Three Animals" border="0"/>
 						</td>
 			   		</tr>
 					<tr>
