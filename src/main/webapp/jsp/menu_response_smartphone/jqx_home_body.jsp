@@ -38,18 +38,18 @@
 	 	</div>
 	 </div>
 
-		<div style="width: 100%">
-			<h3>PROFILE:</h3>
-			<ul>
-				<li>20 years' software development experience in developing web and desktop applications on clinical research management, accounting management, online shopping mall, network management and CIM areas.</li>
-				<li>Over 5 year experience in Flex 2-4.x and Action Script 3.0 including Caurina Tweener, Cairngorm Robotlegs, fds lcds BlazeDs, red5 fms</li>
-				<li>Extensive experiences in Java (Servlets, Filters, Java Beans, JavaMail, etc), JSP (EL, JSTL, etc), Ajax HTML JavaScript XML JSON CSS using MVC (Model 2) and C/C++.</li>
-				<li>Windows for over 10 years, UNIX family: HP SUN CentOS Ubuntu for over 10 years.</li>
-				<li>MySQL PostGreSQL Oracle for 6 years,  MsSQL MsAccess for 5 years,  DB2 for 2 year.</li>
-				<li>Good analytical problem-solving capabilities, self-motivated and quick steady learner.</li>
-			</ul>
-		</div>
- 	<div>
+	<div style="width: 100%; font-size: 80%; ">
+		<h3>PROFILE:</h3>
+		<ul>
+			<li>20 years' software development experience in developing web and desktop applications on clinical research management, accounting management, online shopping mall, network management and CIM areas.</li>
+			<li>Over 5 year experience in Flex 2-4.x and Action Script 3.0 including Caurina Tweener, Cairngorm Robotlegs, fds lcds BlazeDs, red5 fms</li>
+			<li>Extensive experiences in Java (Servlets, Filters, Java Beans, JavaMail, etc), JSP (EL, JSTL, etc), Ajax HTML JavaScript XML JSON CSS using MVC (Model 2) and C/C++.</li>
+			<li>Windows for over 10 years, UNIX family: HP SUN CentOS Ubuntu for over 10 years.</li>
+			<li>MySQL PostGreSQL Oracle for 6 years,  MsSQL MsAccess for 5 years,  DB2 for 2 year.</li>
+			<li>Good analytical problem-solving capabilities, self-motivated and quick steady learner.</li>
+		</ul>
+	</div>
+ 	<div style="width: 100%; font-size: 80%; ">
  		<h3>WORK EXPERIENCE:</h3>
  		<div style="padding-left: 5px; padding-right: 5px">
 	 		<h5>Clinical Research Software Developer, Contract, 05/2011 - Current</h5>
@@ -114,7 +114,7 @@
  			</ul>
  		</div>
  	</div>
- 	<div>
+ 	<div style="width: 100%; font-size: 80%; ">
  		<h3>EDUCATION:</h3>
  		<div style="padding-left: 5px; padding-right: 5px">
 	 		<h5>Post Graduate Diploma in Bioinformatics for Software Professionals, Centennial College, Toronto 2010 - 2011</h5>
