@@ -356,8 +356,8 @@
 	
 	//see, http://abandon.ie/notebook/simple-file-uploads-using-jquery-ajax
 </script>
-<div id="menu_contents">
-<div style="width: 95%; background-color: #555762; color: #ffffff; padding: 10px 20px 10px 30px; text-align:left;">
+<div id="contents">
+<div style="width: 100%; background-color: #555762; color: #ffffff; padding: 10px 20px 10px 30px; text-align:left;">
     	<ul>
     		<h3 style='color: #f9d540'>Contact</h3>
     		<h4 style='font-size: 32px; color: #bad5fe;'>
@@ -393,7 +393,7 @@
     	</ul>
 </div>
 <div style="height: 20px;"></div>
-<div style="width: 95%; background-color: #555762; color: #ffffff; padding: 10px 20px 30px 30px; text-align:left;">
+<div style="width: 100%; background-color: #555762; color: #ffffff; padding: 10px 20px 30px 30px; text-align:left;">
   			<form id='estimate_form' action='./'>
 			   	<table  id='estimate_table' style='width: 100%; border-spacing: 4px; padding: 0px 0px 30px 0px;'>
 			   		<tr>
