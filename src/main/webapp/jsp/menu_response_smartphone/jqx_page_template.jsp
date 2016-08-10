@@ -114,14 +114,12 @@
 		color: white;
 	}
 	
-	#menu_contents ul li
+	#contents ul li
 	{
 	    list-style-type: disc;
 	    list-style-position: inside;
 	    padding: 0px 0px 0px 0px;
 	    text-indent: -2em;
-	    /*
-	    font-size: 46px;*/
 	}
 	#resume_div ul li
 	{
