@@ -78,7 +78,7 @@
 	.wrapper
 	{
 		
-		margin-top:2px;
+		margin-top:0px;
 		width:auto;
 
 	}
@@ -93,7 +93,7 @@
 		background-color:#ffffff;
 		border: 1px solid #e9e9ea;
 		height: 100%;
-		margin-top: 65px;
+		/*margin-top: 65px;*/
 	}
 	.footer 
 	{
@@ -167,26 +167,24 @@
 </head>
 
 <body>
-<!-- 
-<div align="center">
-	<div class="wrapper"> -->
+
+<div class="wrapper">
+	<div class="header">
+		<jsp:include page='${header_panel}' flush='true'/>
+	</div>	
+	<div class="contents">
 		
-		<div class="header">
-			<jsp:include page='${header_panel}' flush='true'/>
-		</div>	
-		<div class="contents">
-			
- 			<div style="margin-top: 20px; padding-bottom: 20px">
-				<jsp:include page='${body_panel}' flush='true'/>	
- 			</div>		
-		</div>
-		<div class="footer">
-			<div>555 University Avenue, Toronto, Ontario, Canada M1S5C2</div>
-			<div>Copyright &copy; 2016 WebMonster Technology Ltd. All Rights Reserved</div>
-			<div>Registered in Toronto, Ontario, Canada</div>
-		</div>
-	<!-- </div>
-</div>	 -->
+			<div style="margin-top: 0px; padding-bottom: 0px">
+			<jsp:include page='${body_panel}' flush='true'/>	
+			</div>		
+	</div>
+	<div class="footer">
+		<div>555 University Avenue, Toronto, Ontario, Canada M1S5C2</div>
+		<div>Copyright &copy; 2016 WebMonster Technology Ltd. All Rights Reserved</div>
+		<div>Registered in Toronto, Ontario, Canada</div>
+	</div>
+</div>
+
 <script id="dsq-count-scr" src="//webmonster-ca.disqus.com/count.js" async></script>
 </body>
 
