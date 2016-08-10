@@ -145,11 +145,10 @@
 	<div class="header">
 		<jsp:include page='${header_panel}' flush='true'/>
 	</div>	
-	<div class="contents">
-		
-			<div style="margin-top: 0px; padding-bottom: 0px">
+	<div class="contents">	
+		<div style="padding: 20px 0 0 0">
 			<jsp:include page='${body_panel}' flush='true'/>	
-			</div>		
+		</div>		
 	</div>
 	<div class="footer">
 		<div>555 University Avenue, Toronto, Ontario, Canada M1S5C2</div>
