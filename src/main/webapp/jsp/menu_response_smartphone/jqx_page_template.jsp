@@ -108,7 +108,7 @@
 		background:#353743;
 		height:100%;
 		border-radius:0 0 0px 0px;
-		font-size: 26px;
+		/*font-size: 26px;*/
 	}
 	.showcase_rectangle 
 	{
@@ -128,6 +128,7 @@
 		background: #555762;
 		color: white;
 	}
+	/*
 	#menu_contents ul li
 	{
 	    list-style-type: disc;
@@ -135,7 +136,7 @@
 	    padding: 10px 20px 5px 20px;
 	    text-indent: -1em;
 	    font-size: 46px;
-	}
+	}*/
 	#resume_div ul li
 	{
 		font-size: 180%;
@@ -166,9 +167,9 @@
 </head>
 
 <body>
-
+<!-- 
 <div align="center">
-	<div class="wrapper">
+	<div class="wrapper"> -->
 		
 		<div class="header">
 			<jsp:include page='${header_panel}' flush='true'/>
@@ -184,8 +185,8 @@
 			<div>Copyright &copy; 2016 WebMonster Technology Ltd. All Rights Reserved</div>
 			<div>Registered in Toronto, Ontario, Canada</div>
 		</div>
-	</div>
-</div>	
+	<!-- </div>
+</div>	 -->
 <script id="dsq-count-scr" src="//webmonster-ca.disqus.com/count.js" async></script>
 </body>
 
