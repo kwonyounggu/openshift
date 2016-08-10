@@ -119,7 +119,7 @@
 	    list-style-type: disc;
 	    list-style-position: inside;
 	    padding: 0px 0px 0px 0px;
-	    text-indent: -1em;
+	    text-indent: -2em;
 	    /*
 	    font-size: 46px;*/
 	}
