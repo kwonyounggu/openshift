@@ -116,7 +116,7 @@
 	
 	#contents ul li
 	{
-	    list-style-type: disc;
+	    /*list-style-type: disc;*/
 	    list-style-position: inside;
 	    padding: 0px 0px 0px 0px;
 	    text-indent: -1em;
