@@ -3,9 +3,9 @@
 <%@ page import="java.util.*" %>
 <%@ page isELIgnored ="false" %>
 <style>
-	.innerLi
+	ul.no-bullets li
 	{
-		list-style: none;
+		list-style-type: none;
 	}
 	li.innerLi::before
 	{
@@ -91,7 +91,7 @@
 	 		<ul >
  				<li>Developed web service applications based on SOAP and accounting management applications</li>
  				<li>Development methodologies:
- 					<ul style="list-style: none;">
+ 					<ul class="no-bullets">
 	 					<li class="innerLi">Collected the user requirements from professional researchers.</li>
 	 					<li class="innerLi">Designed architecture using MVC (model 2) design pattern.</li>
 	 					<li class="innerLi">Designed & created DB schema using MySQL/MsSQL database.</li>
