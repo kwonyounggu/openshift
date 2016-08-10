@@ -91,7 +91,7 @@
 		height:auto;
 		width: 100%;
 		border-radius:0 0 0px 0px;
-		/*font-size: 26px;*/
+		font-size: 70%;
 	}
 	
 	.showcase_rectangle 
