@@ -45,29 +45,38 @@
 <div style="height: 5px;"></div>
 
 <div id="contents" style="width:100%; padding:10px 10px 10px 10px; text-align:left; border: 1px solid gray"><!-- Resume -->	
- 	<div style="width:100%;"><!-- Objective and Profile in depth 1 -->
- 		<div style="float:left; width:80%">
- 			<h4>OBJECTIVE:</h4>
- 			<ul>
- 				<li>Seeking freelance works to provide PC-based, Web-based and or Mobile phone-based applications</li>
- 			</ul>
- 		</div>
- 		<div style="float:right;width:20%">
-	 		<a href="mailto:<%=AuthData.mycompany_email_address%>?Subject=Hello John KWON" target="_top"><img src="images/JohnKwon.png" width="67" height="73" alt="John KWON" border="0"/></a>
-	 	</div>
-	 </div>
-
-	<div style="width: 100%; font-size: 80%; text-align: left;">
-		<h4>PROFILE:</h4>
-		<ul>
-			<li>20 years' software development experience in developing web and desktop applications on clinical research management, accounting management, online shopping mall, network management and CIM areas.</li>
-			<li>Over 5 year experience in Flex 2-4.x and Action Script 3.0 including Caurina Tweener, Cairngorm Robotlegs, fds lcds BlazeDs, red5 fms</li>
-			<li>Extensive experiences in Java (Servlets, Filters, Java Beans, JavaMail, etc), JSP (EL, JSTL, etc), Ajax HTML JavaScript XML JSON CSS using MVC (Model 2) and C/C++.</li>
-			<li>Windows for over 10 years, UNIX family: HP SUN CentOS Ubuntu for over 10 years.</li>
-			<li>MySQL PostGreSQL Oracle for 6 years,  MsSQL MsAccess for 5 years,  DB2 for 2 year.</li>
-			<li>Good analytical problem-solving capabilities, self-motivated and quick steady learner.</li>
-		</ul>
-	</div>
+	<table>
+		<tr>
+			<td>
+			 	<div style="width:100%;"><!-- Objective and Profile in depth 1 -->
+			 		<div style="float:left; width:80%">
+			 			<h4>OBJECTIVE:</h4>
+			 			<ul>
+			 				<li>Seeking freelance works to provide PC-based, Web-based and or Mobile phone-based applications</li>
+			 			</ul>
+			 		</div>
+			 		<div style="float:right;width:20%">
+				 		<a href="mailto:<%=AuthData.mycompany_email_address%>?Subject=Hello John KWON" target="_top"><img src="images/JohnKwon.png" width="67" height="73" alt="John KWON" border="0"/></a>
+				 	</div>
+				 </div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div style="width: 100%; font-size: 80%; text-align: left;">
+					<h4>PROFILE:</h4>
+					<ul>
+						<li>20 years' software development experience in developing web and desktop applications on clinical research management, accounting management, online shopping mall, network management and CIM areas.</li>
+						<li>Over 5 year experience in Flex 2-4.x and Action Script 3.0 including Caurina Tweener, Cairngorm Robotlegs, fds lcds BlazeDs, red5 fms</li>
+						<li>Extensive experiences in Java (Servlets, Filters, Java Beans, JavaMail, etc), JSP (EL, JSTL, etc), Ajax HTML JavaScript XML JSON CSS using MVC (Model 2) and C/C++.</li>
+						<li>Windows for over 10 years, UNIX family: HP SUN CentOS Ubuntu for over 10 years.</li>
+						<li>MySQL PostGreSQL Oracle for 6 years,  MsSQL MsAccess for 5 years,  DB2 for 2 year.</li>
+						<li>Good analytical problem-solving capabilities, self-motivated and quick steady learner.</li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+	</table>
  	<div style="width: 100%; font-size: 80%; ">
  		<h4>WORK EXPERIENCE:</h4>
  		<div style="padding-left: 5px; padding-right: 5px">
