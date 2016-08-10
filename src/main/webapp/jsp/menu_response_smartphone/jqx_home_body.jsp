@@ -2,7 +2,12 @@
 <%@ page import="com.common.*" %>
 <%@ page import="java.util.*" %>
 <%@ page isELIgnored ="false" %>
-
+<style>
+	li.innerLi::before
+	{
+		content: "»";
+	}
+</style>
 
 <div style="width: 100%; background-color: #555762; color: #ffffff; padding: 10px 10px 10px 10px; text-align:left;">
    	<ul><h3 style="color: #f9d548;">What to provide</h3>
@@ -28,7 +33,7 @@
 <div id="contents" style="width:100%; padding:10px 10px 10px 10px; text-align:left; border: 1px solid gray"><!-- Resume -->	
  	<div style="width:100%;"><!-- Objective and Profile in depth 1 -->
  		<div style="float:left; width:80%">
- 			<h3>OBJECTIVE:</h3>
+ 			<h4>OBJECTIVE:</h4>
  			<ul>
  				<li>Seeking freelance works to provide PC-based, Web-based and or Mobile phone-based applications</li>
  			</ul>
@@ -39,7 +44,7 @@
 	 </div>
 
 	<div style="width: 100%; font-size: 80%; ">
-		<h3>PROFILE:</h3>
+		<h4>PROFILE:</h4>
 		<ul>
 			<li>20 years' software development experience in developing web and desktop applications on clinical research management, accounting management, online shopping mall, network management and CIM areas.</li>
 			<li>Over 5 year experience in Flex 2-4.x and Action Script 3.0 including Caurina Tweener, Cairngorm Robotlegs, fds lcds BlazeDs, red5 fms</li>
@@ -50,7 +55,7 @@
 		</ul>
 	</div>
  	<div style="width: 100%; font-size: 80%; ">
- 		<h3>WORK EXPERIENCE:</h3>
+ 		<h4>WORK EXPERIENCE:</h4>
  		<div style="padding-left: 5px; padding-right: 5px">
 	 		<h5>Clinical Research Software Developer, Contract, 05/2011 - Current</h5>
 	 		<h5>The Hospital for Sick Children in the department of Paediatric Laboratory Medicine, Toronto</h5>
@@ -81,13 +86,14 @@
 	 		<ul >
  				<li>Developed web service applications based on SOAP and accounting management applications</li>
  				<li>Development methodologies:
- 					<br/>-	Collected the user requirements from professional researchers.
- 					<br/>-	Designed architecture using MVC (model 2) design pattern.
- 					<br/>-	Designed & created DB schema using MySQL/MsSQL database.
- 					<br/>-	Implemented Controllers using JMS, Java Servlets and Filters, Models using Java Beans & JDBC and
- 					Views (JSP, HTML Javascript css, EL & JSTL).
- 					<br/>-	Front end: Flex 2.0.1 and Action Script 3.0 (Caurina Tweener, Cairngorm)
- 					<br/>-	Middleware: Java using FDS LCDS & servlets, JMS and SOAP Service
+ 					<ul style="list-style: none;">
+	 					<li class="innerLi">Collected the user requirements from professional researchers.</li>
+	 					<li class="innerLi">Designed architecture using MVC (model 2) design pattern.</li>
+	 					<li class="innerLi">Designed & created DB schema using MySQL/MsSQL database.</li>
+	 					<li class="innerLi">Implemented Controllers using JMS, Java Servlets and Filters, Models using Java Beans & JDBC and Views (JSP, HTML Javascript css, EL & JSTL).</li>
+	 					<li class="innerLi">Front end: Flex 2.0.1 and Action Script 3.0 (Caurina Tweener, Cairngorm)</li>
+	 					<li class="innerLi">Middleware: Java using FDS LCDS & servlets, JMS and SOAP Service</li>
+ 					</ul>
  				</li>
  				<li>OS: Windows XP, Web Server: Apache Tomcat & JBoss</li>
  				<li>IDE: Eclipse with SVN</li>
@@ -115,7 +121,7 @@
  		</div>
  	</div>
  	<div style="width: 100%; font-size: 80%; ">
- 		<h3>EDUCATION:</h3>
+ 		<h4>EDUCATION:</h4>
  		<div style="padding-left: 5px; padding-right: 5px">
 	 		<h5>Post Graduate Diploma in Bioinformatics for Software Professionals, Centennial College, Toronto 2010 - 2011</h5>
 	 		<ul >

@@ -120,7 +120,7 @@
 	    list-style-position: inside;
 	    padding: 0px 0px 0px 0px;
 	    text-indent: -1em;
-	    margin-left: -10px;
+	    margin-left: -15px;
 	}
 	#resume_div ul li
 	{
