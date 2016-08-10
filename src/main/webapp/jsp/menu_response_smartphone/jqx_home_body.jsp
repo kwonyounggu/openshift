@@ -35,7 +35,7 @@
 		 			</ul>
 		 		</div>
 		 		<div style="float:right;width:20%">
-			 		<a href="mailto:<%=AuthData.mycompany_email_address%>?Subject=Hello John KWON" target="_top"><img src="images/JohnKwon.png" width="135" height="146" alt="John KWON" border="0"/></a>
+			 		<a href="mailto:<%=AuthData.mycompany_email_address%>?Subject=Hello John KWON" target="_top"><img src="images/JohnKwon.png" width="67" height="73" alt="John KWON" border="0"/></a>
 			 	</div>
 			 </div>
 	
