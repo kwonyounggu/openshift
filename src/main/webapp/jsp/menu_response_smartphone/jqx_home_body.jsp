@@ -21,7 +21,7 @@
 
 </style>
 
-<div style="width: 100%; background-color: #555762; color: #ffffff; padding: 0px 10px 10px 10px; text-align:left;">
+<div style="width: 100%; background-color: #555762; color: #ffffff; padding: 10px 10px 10px 10px; text-align:left;">
 	<h4 style="color: #f9d548;">What to provide</h4>
    	<ul>
    		<li>Web Applications</li>
@@ -32,7 +32,7 @@
    	</ul>
 </div>
 <div style="height: 5px;"></div>
-<div style="width: 100%; background-color: #555762; color: #ffffff; padding: 0px 10px 10px 10px; text-align:left;">
+<div style="width: 100%; background-color: #555762; color: #ffffff; padding: 10px 10px 10px 10px; text-align:left;">
 	<h4 style="color: #f9d548;">Developement Technologies</h4>
    	<ul>
    		<li>Java, C/C++</li>
