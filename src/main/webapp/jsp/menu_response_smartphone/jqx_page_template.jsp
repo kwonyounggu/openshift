@@ -79,7 +79,7 @@
 	{
 		
 		margin-top:0px;
-		width:auto;
+		width:100%;
 
 	}
 	.header 
