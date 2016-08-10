@@ -67,14 +67,6 @@
 		
 		font-family: verdana;
 	}
-	.small-font
-	{
-		font-size: 42px; 
-	}
-	.large-font
-	{
-		font-size: 50px; 
-	}
 	
 	.wrapper
 	{
