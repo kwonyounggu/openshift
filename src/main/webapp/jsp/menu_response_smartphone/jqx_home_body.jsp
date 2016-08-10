@@ -3,15 +3,27 @@
 <%@ page import="java.util.*" %>
 <%@ page isELIgnored ="false" %>
 <style>
+
+	ul.no-bullets
+	{
+		list-style: none outside none;
+	}
+	ul.no-bullets li:before
+	{
+		content: "»";
+		float: left;
+    	margin: 0 0 0 -27px;
+	}
 	ul.no-bullets li
 	{
 		list-style-type: none;
 	}
+	/*
 	li.innerLi::before
 	{
 		content: "»";
 		padding-right: 5px;
-	}
+	}*/
 </style>
 
 <div style="width: 100%; background-color: #555762; color: #ffffff; padding: 10px 10px 10px 10px; text-align:left;">
