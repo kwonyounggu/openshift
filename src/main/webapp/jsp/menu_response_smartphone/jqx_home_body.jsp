@@ -21,17 +21,17 @@
 
 </style>
 
-<div style="width: 100%; background-color: #555762; color: #ffffff; padding: 10px 10px 10px 10px; text-align:left;">
+<div style="width: 100%; background-color: #555762; color: #ffffff; padding: 0px 10px 10px 10px; text-align:left;">
    	<ul><h3 style="color: #f9d548;">What to provide</h3>
-   		<li>Web Applications<br/>(eg: stock-charts, e-learning, e-commerce, etc)</li>
-   		<li>PC-based Applications<br/>(eg: stock-charts, research, etc)</li>
-   		<li>Smart Phone Applications<br/>(eg: stock-charts, research, etc)</li>
-   		<li>Tablet Applications<br/>(eg: stock-charts, education, etc)</li>
+   		<li>Web Applications</li>
+   		<li>PC-based Applications</li>
+   		<li>Smart Phone Applications</li>
+   		<li>Tablet Applications</li>
    		<li>Web Site Support and Maintenance</li>
    	</ul>
 </div>
 <div style="height: 5px;"></div>
-<div style="width: 100%; background-color: #555762; color: #ffffff; padding: 10px 10px 10px 10px; text-align:left;">
+<div style="width: 100%; background-color: #555762; color: #ffffff; padding: 0px 10px 10px 10px; text-align:left;">
    	<ul><h3 style="color: #f9d548;">Developement Technologies</h3>
    		<li>Java, C/C++</li>
    		<li>Actionscript 3.0 including Starling, Feathers UI</li>
