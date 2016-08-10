@@ -60,21 +60,10 @@
 	body
 	{
 		background-color: #818493;
-		leftmargin: 0;
-		topmargin: 0;
-		marginheight: 0;
-		marginwidth: 0;
 		
 		font-family: verdana;
 	}
-	
-	.wrapper
-	{
-		
-		margin-top:0px;
-		width:100%;
 
-	}
 	.header 
 	{
 		width: 100%;
@@ -100,6 +89,7 @@
 	    box-shadow: 10px 10px 5px #888888;
 		background:#353743;
 		height:100%;
+		width: 100%;
 		border-radius:0 0 0px 0px;
 		/*font-size: 26px;*/
 	}
@@ -146,7 +136,7 @@
 		<jsp:include page='${header_panel}' flush='true'/>
 	</div>	
 	<div class="contents">	
-		<div style="padding: 20px 0 0 0">
+		<div style="padding: 5px 5px 5px 5px">
 			<jsp:include page='${body_panel}' flush='true'/>	
 		</div>		
 	</div>
