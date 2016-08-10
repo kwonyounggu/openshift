@@ -91,7 +91,7 @@
 	 		<ul >
  				<li>Developed web service applications based on SOAP and accounting management applications</li>
  				<li>Development methodologies:
- 					<ul style="list-style-type: none;">
+ 					<ul style="list-style: none;">
 	 					<li class="innerLi">Collected the user requirements from professional researchers.</li>
 	 					<li class="innerLi">Designed architecture using MVC (model 2) design pattern.</li>
 	 					<li class="innerLi">Designed & created DB schema using MySQL/MsSQL database.</li>
