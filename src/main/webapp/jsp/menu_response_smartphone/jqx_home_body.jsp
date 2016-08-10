@@ -3,9 +3,14 @@
 <%@ page import="java.util.*" %>
 <%@ page isELIgnored ="false" %>
 <style>
+	.innerLi
+	{
+		list-style-type: none;
+	}
 	li.innerLi::before
 	{
 		content: "»";
+		padding-right: 5px;
 	}
 </style>
 
