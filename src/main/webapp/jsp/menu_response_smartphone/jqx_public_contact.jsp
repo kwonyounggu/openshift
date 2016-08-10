@@ -11,19 +11,19 @@
 	
 	#estimate_table td
 	{
-		font-size: 40px;
+		/*font-size: 40px;*/
 	}
 	#estimate_table span
 	{
-		font-size: 40px;
+		/*font-size: 40px;*/
 	}
 	#estimate_table span
 	{
-		font-size: 40px;
+		/*font-size: 40px;*/
 	}
 	#estimate_table input
 	{
-		font-size: 38px;
+		/*font-size: 38px;*/
 		width: 80%;
 	}
 	input[type=radio] 
