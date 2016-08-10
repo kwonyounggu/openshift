@@ -23,8 +23,8 @@
 	}
 	#estimate_table input
 	{
-		/*font-size: 38px;*/
-		width: 80%;
+		/*font-size: 38px;
+		width: 80%;*/
 	}
 	input[type=radio] 
 	{
