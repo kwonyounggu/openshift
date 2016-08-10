@@ -7,7 +7,7 @@ $('.carousel').carousel({
     interval: false
 }); 
 </script>
-<div style="width: 95%" id="menu_contents">
+<div style="width: 100%" id="menu_contents">
 	<div class="showcase_rectangle">
 		<strong>Pediatric Reference Interval Project</strong> for a multi-centre, nation-wide initiative aimed at developing complete and accurate paediatric reference intervals:
 		The Hospital for Sick Children, Java, Action script 3.0/Perl, HTML/CSS, JQuery/Javascript, Apache Tomcat 5.5/6.0, MySQL	
