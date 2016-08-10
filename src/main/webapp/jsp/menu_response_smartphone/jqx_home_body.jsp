@@ -57,8 +57,7 @@
 	 	</div>
 	 </div>
 
-	<br/>
-	<div style="width: 100%; font-size: 80%; ">
+	<div style="width: 100%; font-size: 80%; text-align: left;">
 		<h4>PROFILE:</h4>
 		<ul>
 			<li>20 years' software development experience in developing web and desktop applications on clinical research management, accounting management, online shopping mall, network management and CIM areas.</li>
