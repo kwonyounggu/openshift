@@ -18,13 +18,7 @@
 	{
 		list-style-type: none;
 	}
-	
-	/*
-	li.innerLi:before
-	{
-		content: "»";
-		padding-right: 5px;
-	}*/
+
 </style>
 
 <div style="width: 100%; background-color: #555762; color: #ffffff; padding: 10px 10px 10px 10px; text-align:left;">
@@ -86,13 +80,14 @@
 	 		<ul >
  				<li>Developed  several clinical research applications such as EPOCH providing data management system including research infrastructure,  site enrolment, intervention fidelity, sub-studies and reporting systems with over 50,000 pdf documents uploaded from remote hospitals, EXEMPLAR providing medication safety studies using patient data and over 12,000 drugs, SPIRE providing quality of patient care,  medical education, etc from physician trainees, TTT  (Tele-Team Training System) providing real-time-based online training system through web-cams and clinical video files between local hospitals and remote hospitals, BPEWS (Bedside Pediatric Early Warning System)  providing ways of studies through clinical data provided from over 50 worldwide hospitals and CAP (Cardiac Arrest Preventability) providing anonymous patient data to medical doctors for the study of Cardiac Arrest Preventability.</li>
  				<li>Development methodologies:
- 					<br/>-	Collected the user requirements from professional researchers.
- 					<br/>-	Designed architecture using MVC (model 2) design pattern and Robotlegs.
- 					<br/>-	Designed & created DB schema using Oracle11.x PostgresSQL8.4 including MySQL migration.
- 					<br/>-	Implemented Controllers using Java Servlets and Filters, Models using Java Beans  JDBC& PL/SQL and Views (JSP, AJAX,
- 					HTML Javascript css, JSON XML, EL & JSTL).
- 					<br/>-	Front end: JSP, AJAX, Javascript, JQuery, HTML HTML5, Flex 4.x and Action Script 3.0
- 					<br/>-	Middleware: Java using BlazeDS, servlets and SOAP service
+ 					<ul class="no-bullets">
+	 					<li >Collected the user requirements from professional researchers.</li>
+	 					<li >Designed architecture using MVC (model 2) design pattern and Robotlegs.</li>
+	 					<li >Designed & created DB schema using Oracle11.x PostgresSQL8.4 including MySQL migration.</li>
+	 					<li >Implemented Controllers using Java Servlets and Filters, Models using Java Beans  JDBC& PL/SQL and Views (JSP, AJAX, HTML Javascript css, JSON XML, EL & JSTL).</li>
+	 					<li >Front end: JSP, AJAX, Javascript, JQuery, HTML HTML5, Flex 4.x and Action Script 3.0</li>
+	 					<li >Middleware: Java using BlazeDS, servlets and SOAP service</li>
+ 					</ul>
  				</li>
  				<li>OS: Windows and Red Hat Linux, Web Server: Apache Tomcat.5-7.x, Stream Server: Red5</li>
  				<li>IDE: Eclipse with Git and SVN</li>
