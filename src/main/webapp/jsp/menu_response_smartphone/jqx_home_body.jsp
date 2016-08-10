@@ -5,7 +5,7 @@
 <style>
 	.innerLi
 	{
-		list-style-type: none;
+		list-style: none;
 	}
 	li.innerLi::before
 	{
