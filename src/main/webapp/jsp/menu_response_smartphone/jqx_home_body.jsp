@@ -4,7 +4,7 @@
 <%@ page isELIgnored ="false" %>
 
 <div id="menu_contents">
-<div style="width: 95%; background-color: #555762; color: #ffffff; padding: 10px 20px 10px 30px; text-align:left;">
+<div style="width: 100%; background-color: #555762; color: #ffffff; padding: 10px 10px 10px 10px; text-align:left;">
    	<ul><h3 style="color: #f9d548;">What to provide</h3>
    		<li>Web Applications<br/>(eg: stock-charts, e-learning, e-commerce, etc)</li>
    		<li>PC-based Applications<br/>(eg: stock-charts, research, etc)</li>
@@ -14,7 +14,7 @@
    	</ul>
 </div>
 <div style="height: 20px;"></div>
-<div style="width: 95%; background-color: #555762; color: #ffffff; padding: 10px 20px 10px 30px; text-align:left;">
+<div style="width: 100%; background-color: #555762; color: #ffffff; padding: 10px 10px 10px 10px; text-align:left;">
    	<ul><h3 style="color: #f9d548;">Developement Technologies</h3>
    		<li>Java, C/C++</li>
    		<li>Actionscript 3.0 including Starling, Feathers UI</li>
@@ -24,8 +24,8 @@
    	</ul>
 </div>
 <div style="height: 20px;"></div>
-<div id="resume_div" style="width: 95%; padding: 10px 20px 10px 30px; border: 1px solid gray">
-		<div style="width:100%; padding:5px 20px 5px 20px;text-align:left;"><!-- Resume -->	
+<div id="resume_div" style="width: 100%; padding: 10px 10px 10px 10px; border: 1px solid gray">
+		<div style="width:100%; padding:10px 10px 10px 10px;text-align:left;"><!-- Resume -->	
 		 	<div style="width:100%;"><!-- Objective and Profile in depth 1 -->
 		 		<div style="float:left; width:80%">
 		 			<h3>OBJECTIVE:</h3>

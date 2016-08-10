@@ -128,18 +128,18 @@
 		background: #555762;
 		color: white;
 	}
-	/*
+	
 	#menu_contents ul li
 	{
 	    list-style-type: disc;
 	    list-style-position: inside;
 	    padding: 10px 20px 5px 20px;
 	    text-indent: -1em;
-	    font-size: 46px;
-	}*/
+	    /*font-size: 46px;*/
+	}
 	#resume_div ul li
 	{
-		font-size: 180%;
+		font-size: 100%;
 	}
 	h1
 	{
