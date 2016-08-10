@@ -51,7 +51,7 @@
 		</div>
  	<div>
  		<h3>WORK EXPERIENCE:</h3>
- 		<div style="padding-left: 20px; padding-right: 50px">
+ 		<div style="padding-left: 5px; padding-right: 5px">
 	 		<h5>Clinical Research Software Developer, Contract, 05/2011 - Current</h5>
 	 		<h5>The Hospital for Sick Children in the department of Paediatric Laboratory Medicine, Toronto</h5>
 	 		<ul >
@@ -75,7 +75,7 @@
  				<li>IDE: Eclipse with Git and SVN</li>
  			</ul>
  		</div>
- 		<div style="padding-left: 20px">
+ 		<div style="padding-left: 5px; padding-right: 5px">
 	 		<h5>Software Developer, Contract, 05/2007 - 07/2010</h5>
 	 		<h5>Cinram International Inc, Toronto</h5>
 	 		<ul >
@@ -93,7 +93,7 @@
  				<li>IDE: Eclipse with SVN</li>
  			</ul>
  		</div>
- 		<div style="padding-left: 20px; padding-right: 10px">
+ 		<div style="padding-left: 5px; padding-right: 5px">
 	 		<h5>Software Engineer, Full Time Permanent, 04/2000 - 12/2006</h5>
 	 		<h5>Motorola Canada Inc, Toronto</h5>
 	 		<ul >
@@ -103,7 +103,7 @@
  				<li>Developed administrative application tool management software using C++ running as services through Windows Service Control Manager, running on Windows platform.</li>
  			</ul>
  		</div>
- 		<div style="padding-left: 20px; padding-right: 10px">
+ 		<div style="padding-left: 5px; padding-right: 5px">
 	 		<h5>CIM Software Engineer, Full Time Permanent, 03/1995 - 03/2000</h5>
 	 		<h5>Motorola Korea, Korea</h5>
 	 		<ul >
@@ -116,7 +116,7 @@
  	</div>
  	<div>
  		<h3>EDUCATION:</h3>
- 		<div style="padding-left: 20px; padding-right: 10px">
+ 		<div style="padding-left: 5px; padding-right: 5px">
 	 		<h5>Post Graduate Diploma in Bioinformatics for Software Professionals, Centennial College, Toronto 2010 - 2011</h5>
 	 		<ul >
  				<li>Java/ActionScript-based statistical analysis project done with 3,500 patients' data in coronary artery disease, 588 patients' data in knee osteoarthritis, and various Monte Carlo algorithms.</li>
@@ -125,7 +125,7 @@
  				<li>Courses completed include: Molecular Biology, Biochemistry, Biostatistics, Bioinformatics tools, Bioinformatics algorithms, Advanced protein structure and analysis, Developing bioinformatics tools, Database design for biological data, and Computational Intelligence.</li>
  			</ul>
  		</div>
- 		<div style="padding-left: 20px">
+ 		<div style="padding-left: 5px; padding-right: 5px">
 	 		<h5>Master of Computer Science, National Technological University, Colorado, USA 1997 - 1998</h5>
 	 		<ul >
  				<li>Advanced Data Structure from University of Florida</li>
@@ -136,7 +136,7 @@
  				<li>Internetworking Higher from New Jersey Institute of Technology</li>
  			</ul>
  		</div>
- 		<div style="padding-left: 20px">
+ 		<div style="padding-left: 5px; padding-right: 5px">
 		 		<h5>M & B of Computer Science, University of Newcastle, Australia 1991 - 1994</h5>
 	 		</div>
 
