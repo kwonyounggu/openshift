@@ -75,6 +75,7 @@
 		border: 1px solid #e9e9ea;
 		height: 100%;
 		width: 100%;
+		margin-top: 55px;
 	}
 	.footer 
 	{
@@ -115,10 +116,11 @@
 	
 	#menu_contents ul li
 	{
-	   /* list-style-type: disc;
+	    list-style-type: disc;
 	    list-style-position: inside;
 	    padding: 0px 0px 0px 0px;
 	    text-indent: -1em;
+	    /*
 	    font-size: 46px;*/
 	}
 	#resume_div ul li
