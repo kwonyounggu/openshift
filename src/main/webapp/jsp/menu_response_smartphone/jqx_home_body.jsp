@@ -57,6 +57,7 @@
 	 	</div>
 	 </div>
 
+	<br/>
 	<div style="width: 100%; font-size: 80%; ">
 		<h4>PROFILE:</h4>
 		<ul>
