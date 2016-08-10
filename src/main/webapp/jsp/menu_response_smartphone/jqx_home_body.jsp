@@ -20,7 +20,7 @@
 		list-style-type: none;
 	}
 	*/
-	li.innerLi::before
+	li.innerLi:before
 	{
 		content: "»";
 		padding-right: 5px;
