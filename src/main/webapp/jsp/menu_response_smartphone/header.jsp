@@ -58,11 +58,7 @@ $(".nav a").on("click", function(){
 */
 
 </script>
-<!-- <div style="padding-top: 25px; color: #ffff00;">
-	<a href="http://www.webmonster.ca"><img src="images/wm_logo.png" width="250" height="26" alt="WM_LOGO" border="0"/></a>
-	<h4>Freelance App Developer</h4>
-</div> -->
-<!-- see http://www.w3schools.com/bootstrap/bootstrap_navbar.asp -->
+
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -77,18 +73,11 @@ $(".nav a").on("click", function(){
       <ul class="nav navbar-nav">
         <li><a href="<%= MenuLink.phone_home %>" onfocus="this.blur()">Home</a></li>							
 		<li><a href="<%= MenuLink.phone_menu_public_showcase %>" onfocus="this.blur()">Showcase</a></li>
-		<li><a href="<%= MenuLink.phone_menu_public_contact %>" onfocus="this.blur()">Contact/Estimate</a></li>		
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-      	<li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-th"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="<%= MenuLink.phone_menu_public_stockcharts %>" onfocus="this.blur()">Stock-Charts</a></li>
-			<li><a href="<%= MenuLink.phone_menu_public_hvac %>" onfocus="this.blur()">HVAC</a></li>
-			<li><a href="<%= MenuLink.phone_menu_public_saxophone %>" onfocus="this.blur()">Saxophone</a></li>
-          </ul>
-        </li>
-        
+		<li><a href="<%= MenuLink.phone_menu_public_contact %>" onfocus="this.blur()">Contact/Estimate</a></li>	
+		
+		<li><a href="<%= MenuLink.phone_menu_public_stockcharts %>" onfocus="this.blur()">Stock-Charts</a></li>
+		<li><a href="<%= MenuLink.phone_menu_public_hvac %>" onfocus="this.blur()">HVAC</a></li>
+		<li><a href="<%= MenuLink.phone_menu_public_saxophone %>" onfocus="this.blur()">Saxophone</a></li>	
       </ul>
     </div>
   </div>
