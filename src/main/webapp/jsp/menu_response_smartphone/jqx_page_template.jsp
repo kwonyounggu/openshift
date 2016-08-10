@@ -103,6 +103,7 @@
 		border-radius:0 0 0px 0px;
 		/*font-size: 26px;*/
 	}
+	
 	.showcase_rectangle 
 	{
 	    text-align:left;
@@ -112,6 +113,7 @@
 		background: #555762;
 		color: white;
 	}
+	
 	.hvac_rectangle 
 	{
 	    text-align:left;
