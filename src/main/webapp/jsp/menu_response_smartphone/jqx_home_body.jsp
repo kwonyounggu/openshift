@@ -4,6 +4,7 @@
 <%@ page isELIgnored ="false" %>
 <style>
 
+/*
 	ul.no-bullets
 	{
 		list-style: none outside none;
@@ -18,12 +19,12 @@
 	{
 		list-style-type: none;
 	}
-	/*
+	*/
 	li.innerLi::before
 	{
 		content: "»";
 		padding-right: 5px;
-	}*/
+	}
 </style>
 
 <div style="width: 100%; background-color: #555762; color: #ffffff; padding: 10px 10px 10px 10px; text-align:left;">
@@ -103,7 +104,7 @@
 	 		<ul >
  				<li>Developed web service applications based on SOAP and accounting management applications</li>
  				<li>Development methodologies:
- 					<ul class="no-bullets">
+ 					<ul class="list-unstyled">
 	 					<li class="innerLi">Collected the user requirements from professional researchers.</li>
 	 					<li class="innerLi">Designed architecture using MVC (model 2) design pattern.</li>
 	 					<li class="innerLi">Designed & created DB schema using MySQL/MsSQL database.</li>
