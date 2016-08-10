@@ -87,7 +87,6 @@
 		width: 100%;
 		height: 100%;
 	}
-	
 	.contents
 	{
 		background-color:#ffffff;
@@ -141,28 +140,6 @@
 	{
 		font-size: 100%;
 	}
-	h1
-	{
-		font-size: 60px;
-	}
-	h2
-	{
-		font-size: 57px;
-	}
-	h3
-	{
-		font-size: 54px;
-	}
-	h4
-	{
-		font-size: 50px;
-	}
-	h5
-	{
-		font-size: 24px;
-		font-weight: bold;
-	}
-
 </style>
 </head>
 
