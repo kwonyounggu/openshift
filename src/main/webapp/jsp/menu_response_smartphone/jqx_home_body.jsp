@@ -76,7 +76,8 @@
 				</div>
 			</td>
 		</tr>
-	</table>
+		<tr>
+		  <td>
  	<div style="width: 100%; font-size: 80%; ">
  		<h4>WORK EXPERIENCE:</h4>
  		<div style="padding-left: 5px; padding-right: 5px">
@@ -171,5 +172,8 @@
 	 		</div>
 
 	 	</div>
+	 	</td>
+	   </tr>
+	</table>
 </div><!-- Resume -->	
 
