@@ -22,7 +22,8 @@
 </style>
 
 <div style="width: 100%; background-color: #555762; color: #ffffff; padding: 0px 10px 10px 10px; text-align:left;">
-   	<ul><h3 style="color: #f9d548;">What to provide</h3>
+	<h4 style="color: #f9d548;">What to provide</h4>
+   	<ul>
    		<li>Web Applications</li>
    		<li>PC-based Applications</li>
    		<li>Smart Phone Applications</li>
@@ -32,7 +33,8 @@
 </div>
 <div style="height: 5px;"></div>
 <div style="width: 100%; background-color: #555762; color: #ffffff; padding: 0px 10px 10px 10px; text-align:left;">
-   	<ul><h3 style="color: #f9d548;">Developement Technologies</h3>
+	<h4 style="color: #f9d548;">Developement Technologies</h4>
+   	<ul>
    		<li>Java, C/C++</li>
    		<li>Actionscript 3.0 including Starling, Feathers UI</li>
    		<li>HTML/CSS/Javascript including JQuery</li>
