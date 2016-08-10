@@ -12,8 +12,7 @@
 	ul.no-bullets li:before
 	{
 		content: "»";
-		float: left;
-    	margin: 0 0 0 -27px;
+		padding-right: 5px;
 	}
 	ul.no-bullets li
 	{
