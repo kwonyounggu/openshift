@@ -67,7 +67,7 @@ $(".nav a").on("click", function(){
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-	<a class="navbar-brand" href="http://www.webmonster.ca"><span style='color: #ffda48'>W</span><span style='color: #ffda48; font-size: 50%'>eb</span><span style='color: #bad5fe'>M</span><span style='color: #bad5fe; font-size: 50%'>onster</span><span id="currentMenu" style="padding-left: 10px; font-weight: bold">Home</span></a>
+	<a class="navbar-brand" href="http://www.webmonster.ca"><span style='color: #ffda48'>W</span><span style='color: #ffda48; font-size: 50%'>eb</span><span style='color: #bad5fe'>M</span><span style='color: #bad5fe; font-size: 50%'>onster</span><span id="currentMenu" style="padding-left: 10px; font-weight: bold; color: white">Home</span></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -76,7 +76,23 @@ $(".nav a").on("click", function(){
 		<li><a href="<%= MenuLink.phone_menu_public_contact %>" onfocus="this.blur()">Contact/Estimate</a></li>	
 		
 		<li><a href="<%= MenuLink.phone_menu_public_stockcharts %>" onfocus="this.blur()">Stock-Charts</a></li>
-		<li><a href="<%= MenuLink.phone_menu_public_hvac %>" onfocus="this.blur()">HVAC</a></li>
+		<li class="dropdown">
+	        <a class="dropdown-toggle" data-toggle="dropdown" href="<%= MenuLink.phone_menu_public_hvac %>">HVAC
+	        <span class="caret"></span></a>
+	        <ul class="dropdown-menu">
+	          	<li><a href="<%= MenuLink.phone_menu_hvac_system_manuals %>" onfocus="this.blur()">System Manuals</a></li>
+				<li><a href="<%= MenuLink.phone_menu_hvac_qa_forum %>" onfocus="this.blur()">Q&A Forum</a></li>
+				<li><a href="<%= MenuLink.phone_menu_hvac_blog %>" onfocus="this.blur()">Blog</a></li>
+				<li><a href="<%= MenuLink.phone_menu_hvac_estimates %>" onfocus="this.blur()">Estimates</a></li>
+				<li><a href="<%= MenuLink.phone_menu_hvac_contractors %>" onfocus="this.blur()">Contractors</a></li>
+				<li role="separator" class="divider"></li>
+				<li><a href="<%= MenuLink.phone_menu_hvac_buysell %>" onfocus="this.blur()">Buy&Sell</a></li>
+				<li><a href="<%= MenuLink.phone_menu_hvac_jobs %>" onfocus="this.blur()">Jobs</a></li>
+	        </ul>
+	      </li>
+		
+		
+<%-- 		<li><a href="<%= MenuLink.phone_menu_public_hvac %>" onfocus="this.blur()">HVAC</a></li> --%>
 		<li><a href="<%= MenuLink.phone_menu_public_saxophone %>" onfocus="this.blur()">Saxophone</a></li>	
       </ul>
     </div>
