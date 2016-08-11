@@ -40,9 +40,37 @@ $(document).ready(function ()
 		case "menu_public_hvac":
 			$('a[href="/smartphoneController?op=menu_public_hvac"]').closest('li').addClass('active');
 			break;
+			
+			case "phone_menu_hvac_system_manuals":
+				$('#currentMenu').html("HVAC->System Manuals");
+				break;
+			case "phone_menu_hvac_qa_forum":
+				$('#currentMenu').html("HVAC->Q&A Forum");
+				break;
+			case "phone_menu_hvac_blog":
+				$('#currentMenu').html("HVAC->Blog");
+				break;
+			case "phone_menu_hvac_estimates":
+				$('#currentMenu').html("HVAC->Estimates");
+				break;
+			case "phone_menu_hvac_contractors":
+				$('#currentMenu').html("HVAC->Contractors");
+				break;
+			case "phone_menu_hvac_buysell":
+				$('#currentMenu').html("HVAC->Buy&Sell");
+				break;
+			case "phone_menu_hvac_jobs":
+				$('#currentMenu').html("HVAC->Jobs");
+				break;
+			
+			
 		case "menu_public_saxophone":
 			$('a[href="/smartphoneController?op=menu_public_saxophone"]').closest('li').addClass('active');
 			break;
+			
+			
+			
+			
 		default:
 			$('a[href="/smartphoneController"]').closest('li').addClass('active');
 			break;	
