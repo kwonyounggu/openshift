@@ -30,22 +30,25 @@ $(document).ready(function ()
 	{
 		case "menu_public_showcase":
 			$('a[href="/smartphoneController?op=menu_public_showcase"]').closest('li').addClass('active');
+			$('#currentMenu').html("Showcase");
 			break;
 		case "menu_public_contact":
 			$('a[href="/smartphoneController?op=menu_public_contact"]').closest('li').addClass('active');
+			$('#currentMenu').html("Contact/Estimate");
 			break;
 		case "menu_public_stockcharts":
 			$('a[href="/smartphoneController?op=menu_public_stockcharts"]').closest('li').addClass('active');
+			$('#currentMenu').html("Stockcharts");
 			break;
 		case "menu_public_hvac":
 			$('a[href="/smartphoneController?op=menu_public_hvac"]').closest('li').addClass('active');
 			break;
 			
 			case "phone_menu_hvac_system_manuals":
-				$('#currentMenu').html("HVAC->System Manuals");
+				$('#currentMenu').html("HVAC->Manuals");
 				break;
 			case "phone_menu_hvac_qa_forum":
-				$('#currentMenu').html("HVAC->Q&A Forum");
+				$('#currentMenu').html("HVAC->Forum");
 				break;
 			case "phone_menu_hvac_blog":
 				$('#currentMenu').html("HVAC->Blog");
@@ -66,13 +69,12 @@ $(document).ready(function ()
 			
 		case "menu_public_saxophone":
 			$('a[href="/smartphoneController?op=menu_public_saxophone"]').closest('li').addClass('active');
+			$('#currentMenu').html("Saxophone");
 			break;
-			
-			
-			
-			
+	
 		default:
 			$('a[href="/smartphoneController"]').closest('li').addClass('active');
+			$('#currentMenu').html("Home");
 			break;	
 	}
 });
