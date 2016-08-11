@@ -375,7 +375,7 @@
    		<h4 style='color: #bad5fe;'>
    		If you are interested in growing your business and building a positive brand experience for your customers/patients, then we should talk:
    		</h4>
-    	<ul style="padding-left: 20px;">  		
+    	<ul>  		
     		<li>By Email: <a href="mailto:<%=AuthData.mycompany_email_address%>?Subject=Hello WebMonster.CA" style="color:inherit;text-decoration: none" target="_top"><%=AuthData.mycompany_email_address%></a></li>
     		
     		<li>By Skype: <%=AuthData.skype_id %>
@@ -410,7 +410,6 @@
     				</li>
     			</ul>
     		</li>
-    		<li style='list-style-type: none; height: 30%' />
     	</ul>
 </div>
 <div style="height: 20px;"></div>
