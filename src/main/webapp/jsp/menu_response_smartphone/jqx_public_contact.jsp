@@ -414,7 +414,7 @@
 </div>
 <div style="height: 5px;"></div>
 <div style="width: 100%; background-color: #555762; color: #ffffff; padding: 5px 20px 10px 20px; text-align:left;">
-	<h3 style='color: #f9d548;'>Estimate<span style='color: #8fc161; font-size: 80%'>(*: required)</span></h3>	
+	<h3 style='color: #f9d548;'>Estimate <span style='color: #8fc161; font-size: 65%'>(*: required)</span></h3>	
   			<form id='estimate_form' action='./'>
 			   	<table  id='estimate_table' style='width: 100%; border-spacing: 4px; padding: 0px 0px 30px 0px;'>
 			   		<tr>
@@ -465,6 +465,7 @@
 						</td>
 			   		</tr>
 
+					<tr style='height: 10px'><td colspan='2'></td></tr>
 			   		<tr>
 			   			<td class='estimate_form_td' colspan='2'>Select the elephant before submitting <span style='color: #8fc161;' id='check_robot_span'>*</span>
 			   				<!-- To hide the input but only to display the error message -->
@@ -479,7 +480,7 @@
 			   		</tr>
 					<tr>
 					    <td colspan='2' style='padding-top: 30px; text-align: left;'>
-							<input type='submit' style='width: 220px;' value='Submit' id='submitButton' onfocus="this.blur()"/>
+							<input type='submit' value='Submit' id='submitButton' onfocus="this.blur()"/>
 							<input type='hidden' id='client_place' name='client_place' value='toronto'/>
 						</td>
 					</tr>
