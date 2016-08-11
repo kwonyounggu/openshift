@@ -6,7 +6,7 @@
 <style>
 	nav ul li
 	{
-	    font-size: 260%;
+	    /*font-size: 260%;*/
 	}
 </style>
 
