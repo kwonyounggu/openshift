@@ -370,7 +370,7 @@
 	//see, http://abandon.ie/notebook/simple-file-uploads-using-jquery-ajax
 </script>
 <div id="contents">
-<div style="width: 100%; background-color: #555762; color: #ffffff; padding: 5px 5px 10px 5px; text-align:left;">
+<div style="width: 100%; background-color: #555762; color: #ffffff; padding: 5px 5px 10px 20px; text-align:left;">
 		<h3 style='color: #f9d540'>Contact</h3>
    		<h4 style='color: #bad5fe;'>
    		If you are interested in growing your business and building a positive brand experience for your customers/patients, then we should talk:
@@ -405,7 +405,7 @@
     		
     		<li>What did you have in mind? 
     			<ul class="no-bullets">
-    				<li style='color: #bad5fe; font-size: 150%'>
+    				<li style='color: #bad5fe; font-size: 110%'>
     					Suggestions to include: competitor's websites, designs that you like, some initial ideas for your brand, what kind of niches you'd like to explore, and anything to get the conversation going!
     				</li>
     			</ul>
