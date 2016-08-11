@@ -432,17 +432,18 @@
 			   		<tr>
 			   			<td class='estimate_form_td'   style='width: 25%; '>Phone: <span style='color: #8fc161;'>*</span>
 			   			</td>
-			   			<td>
+			   			<td style='width: 75%; '>
 			 				<input type='text' name='submitter_phone' placeholder='(123)-123-1234' />
 						</td>
 			   		</tr>
 			   		<tr>
 			   			<td class='estimate_form_td'   style='width: 25%'>E-Mail: <span style='color: #8fc161;'>*</span>
 			   			</td>
-			   			<td>
+			   			<td style='width: 75%; '>
 			 				<input type='text' name='submitter_email' placeholder='webmosnter.ca@gmail.com' />
 						</td>
 			   		</tr>
+			   		<tr style='height: 10px'><td colspan='2'></td></tr>
 					<tr>
 			   			<td class='estimate_form_td' colspan='2'>Note about your requirements:
 			   				<span style='color: #8fc161;' id='note_span'>*
@@ -454,7 +455,7 @@
 						</td>
 			   		</tr>
 
-
+					<tr style='height: 10px'><td colspan='2'></td></tr>
 					<tr>
 			   			<td class='estimate_form_td' colspan='2'>A file to upload about your app :&nbsp;</td>
 			   		</tr>
