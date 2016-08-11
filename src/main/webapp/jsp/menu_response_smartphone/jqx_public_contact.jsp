@@ -371,11 +371,11 @@
 </script>
 <div id="contents">
 <div style="width: 100%; background-color: #555762; color: #ffffff; padding: 5px 5px 10px 5px; text-align:left;">
-    	<ul>
-    		<h3 style='color: #f9d540'>Contact</h3>
-    		<h4 style='color: #bad5fe;'>
-    		If you are interested in growing your business and building a positive brand experience for your customers/patients, then we should talk:
-    		</h4>
+		<h3 style='color: #f9d540'>Contact</h3>
+   		<h4 style='color: #bad5fe;'>
+   		If you are interested in growing your business and building a positive brand experience for your customers/patients, then we should talk:
+   		</h4>
+    	<ul style="padding-left: 20px;">  		
     		<li>By Email: <a href="mailto:<%=AuthData.mycompany_email_address%>?Subject=Hello WebMonster.CA" style="color:inherit;text-decoration: none" target="_top"><%=AuthData.mycompany_email_address%></a></li>
     		
     		<li>By Skype: <%=AuthData.skype_id %>
@@ -403,7 +403,13 @@
     			</ul>
     		</li>
     		
-    		<li>What did you have in mind? <h4 style='color: #bad5fe;'>Suggestions to include: competitor's websites, designs that you like, some initial ideas for your brand, what kind of niches you'd like to explore, and anything to get the conversation going!</h4></li>
+    		<li>What did you have in mind? 
+    			<ul class="no-bullets">
+    				<li style='color: #bad5fe; font-size: 150%'>
+    					Suggestions to include: competitor's websites, designs that you like, some initial ideas for your brand, what kind of niches you'd like to explore, and anything to get the conversation going!
+    				</li>
+    			</ul>
+    		</li>
     		<li style='list-style-type: none; height: 30%' />
     	</ul>
 </div>
