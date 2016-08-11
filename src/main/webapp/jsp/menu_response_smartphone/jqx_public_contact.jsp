@@ -3,6 +3,19 @@
 <%@ page import="java.util.*" %>
 <%@ page isELIgnored ="false" %>
 <style>
+	ul.no-bullets
+	{
+		list-style: none outside none;
+	}
+	ul.no-bullets li:before
+	{
+		content: "»";
+		padding-right: 5px;
+	}
+	ul.no-bullets li
+	{
+		list-style-type: none;
+	}
 	td.estimate_form_td
 	{
 		color: #ffffff;
@@ -357,7 +370,7 @@
 	//see, http://abandon.ie/notebook/simple-file-uploads-using-jquery-ajax
 </script>
 <div id="contents">
-<div style="width: 100%; background-color: #555762; color: #ffffff; padding: 10px 20px 10px 30px; text-align:left;">
+<div style="width: 100%; background-color: #555762; color: #ffffff; padding: 5px 5px 10px 5px; text-align:left;">
     	<ul>
     		<h3 style='color: #f9d540'>Contact</h3>
     		<h4 style='color: #bad5fe;'>
@@ -366,26 +379,28 @@
     		<li>By Email: <a href="mailto:<%=AuthData.mycompany_email_address%>?Subject=Hello WebMonster.CA" style="color:inherit;text-decoration: none" target="_top"><%=AuthData.mycompany_email_address%></a></li>
     		
     		<li>By Skype: <%=AuthData.skype_id %>
-    			<br />
-    			- appointment required
+    			<ul class="no-bullets">
+    				<li>appointment required</li>
+    			</ul>
     		</li>
     		
     		<li>By Phone: <%=AuthData.company_phone %>
-    			<br/>
-    			- from 9:00am to 5:00pm (EST)
+    			<ul class="no-bullets">
+    				<li>from 9:00am to 5:00pm (EST)</li>
+    			</ul>
     		</li>
     		
     		<li>By Visiting primary place: 
-    			<br/>
-    			- <%=AuthData.company_address.substring(0, AuthData.company_address.length()-15) %>			
-    			<br/>
-    			- appointment required
+    			<ul class="no-bullets">
+    				<li><%=AuthData.company_address.substring(0, AuthData.company_address.length()-15) %></li>			
+    				<li>appointment required</li>
+    			</ul>
     		</li>
     		<li>By Visiting secondary place: 		
-    			<br/>
-    			- TBD
-    			<br/>
-    			- appointment required
+    			<ul class="no-bullets">
+	    			<li>TBD</li>
+	    			<li>appointment required</li>
+    			</ul>
     		</li>
     		
     		<li>What did you have in mind? <h4 style='color: #bad5fe;'>Suggestions to include: competitor's websites, designs that you like, some initial ideas for your brand, what kind of niches you'd like to explore, and anything to get the conversation going!</h4></li>
