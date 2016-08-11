@@ -67,7 +67,7 @@ $(".nav a").on("click", function(){
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-	<a class="navbar-brand" href="http://www.webmonster.ca"><span style='color: #ffda48'>W</span><span style='color: #ffda48; font-size: 20%'>eb</span><span style='color: #bad5fe'>M</span><span style='color: #bad5fe; font-size: 20%'>onster</span></a>
+	<a class="navbar-brand" href="http://www.webmonster.ca"><span style='color: #ffda48'>W</span><span style='color: #ffda48; font-size: 50%'>eb</span><span style='color: #bad5fe'>M</span><span style='color: #bad5fe; font-size: 50%'>onster</span><span id="currentMenu">Home</span></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
