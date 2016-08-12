@@ -317,17 +317,9 @@
 </table>
 <!-- PDF DISPLAY -->
 <div id="pdfDisplay">
-	<!-- <div class="text-right">
-		<a href="#disqus_thread" class="btn btn-info" role="button">Leave a comment</a>				
-		
-	</div> -->
 	<div  class="hvac_rectangle">
-		<span id="treePath">GOODMAN:AIR_HANDLER:MBR:BROCHURE</span>
-		
-		<button type="button" class="btn btn-info text-right">
-	      <span class="glyphicon glyphicon-search"></span>
-	    </button>
-	    
+		<span id="treePath" style='font-size: 80%'>GOODMAN:AIR_HANDLER:MBR:BROCHURE</span>
+	     <span class="glyphicon glyphicon-search text-right"></span>	    
 	</div>
 			
 	<!-- see http://embedresponsively.com/ and select Generic iFrame and google to display pdf with hint from http://stackoverflow.com/questions/8262278/supplying-an-embedable-pdf  -->
