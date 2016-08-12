@@ -321,8 +321,8 @@
 	  
 		<span id="treePath" style='font-size: 70%' >GOODMAN:AIR_HANDLER:MBR:BROCHURE</span>
 		<!-- http://stackoverflow.com/questions/25961012/filling-available-space-in-bootstrap -->
-	    <a class="pull-right"><span class="glyphicon glyphicon-search" ></span></a>
-	      <i class="glyphicon glyphicon-home white"></i>
+	    <a class="pull-right"><i class="glyphicon glyphicon-search white" ></i></a>
+
 	</div>
 			
 	<!-- see http://embedresponsively.com/ and select Generic iFrame and google to display pdf with hint from http://stackoverflow.com/questions/8262278/supplying-an-embedable-pdf  -->
