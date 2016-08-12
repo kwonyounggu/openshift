@@ -316,20 +316,17 @@
 	</tr>
 </table>
 <!-- PDF DISPLAY -->
-<div>
-	<div class="hvac_rectangle">
-			<div id="tree_path_div">
-				GOODMAN:AIR_HANDLER:MBR:BROCHURE
-			</div>
-			<!-- http://stackoverflow.com/questions/19758313/align-div-right-in-bootstrap-3 -->
-			<div>
-				<a href="#disqus_thread" class="btn btn-info" role="button">Leave a comment</a>				
-				<button type="button" class="btn btn-info">
-			      <span class="glyphicon glyphicon-search"></span>
-			    </button>
-			</div>
-		</div>
+<div id="pdfDisplay">
+	<div class="text-right">
+		<a href="#disqus_thread" class="btn btn-info" role="button">Leave a comment</a>				
+		<button type="button" class="btn btn-info">
+	      <span class="glyphicon glyphicon-search"></span>
+	    </button>
 	</div>
+	<div id="tree_path_div" class="hvac_rectangle">
+		GOODMAN:AIR_HANDLER:MBR:BROCHURE
+	</div>
+			
 	<!-- see http://embedresponsively.com/ and select Generic iFrame and google to display pdf with hint from http://stackoverflow.com/questions/8262278/supplying-an-embedable-pdf  -->
 	<div class='embed-container'>
 		<iframe id='pdfIfram' src='http://docs.google.com/gview?url=https://www.dropbox.com/s/x2bux8g239pm0f9/Admin_goodman_airhandler_acnf_brochure_2016_07_23.pdf?raw=1&embedded=true' style='border:0'></iframe>
