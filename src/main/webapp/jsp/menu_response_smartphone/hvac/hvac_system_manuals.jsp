@@ -49,7 +49,7 @@
 	.white-glyphicon, .white-glyphicon a
 	{
 		color: #fff;
-		font-size: 115%;
+		font-size: 120%;
 	}
 </style>
 <script type="text/javascript">
@@ -322,7 +322,7 @@
 </table>
 <!-- PDF DISPLAY -->
 <div id="pdfDisplay">
-	<div  class="hvac_rectangle">
+	<div  class="hvac_rectangle" style="padding-right: 5px">
 	  
 		<span id="treePath" style='font-size: 70%' >GOODMAN:AIR_HANDLER:MBR:BROCHURE</span>
 		<!-- http://stackoverflow.com/questions/25961012/filling-available-space-in-bootstrap -->
