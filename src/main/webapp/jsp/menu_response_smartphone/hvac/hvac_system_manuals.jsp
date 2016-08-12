@@ -42,30 +42,10 @@
 		z-index: 1051; 
 		/*font-size: 46px;*/
 	}
-
-	/*see http://stackoverflow.com/questions/11163694/setting-line-height-on-a-jstree*/
-	/*see http://jsfiddle.net/bablyukh/ynLryfhv */
-	/*see http://stackoverflow.com/questions/11163694/setting-line-height-on-a-jstree */
-	
-	/*
-	.jstree-node,
-	.jstree-children,
-	.jstree-container-ul
+	.badge
 	{
-		font-size: 46px;
-		padding: 12px 0 12px 0;
+		font-size: 80%;
 	}
-	
-	
-	.jstree-leaf >a .jstree-icon
-	{
-		padding: 0 60px 0 0;
-	}
-	.glyphicon.glyphicon-search
-	{
-		font-size: 40px;
-	}
-	*/
 </style>
 <script type="text/javascript">
 	//see http://jsfiddle.net/jayhilwig/hv8vU/
