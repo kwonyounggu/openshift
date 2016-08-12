@@ -325,7 +325,7 @@
 	<div  class="hvac_rectangle" >
 		<!-- http://stackoverflow.com/questions/25961012/filling-available-space-in-bootstrap -->
 	    <a href="www.webmonster.ca" class="pull-left"><i class="glyphicon glyphicon-search white-glyphicon" ></i></a>
-		<span id="treePath" style='font-size: 70%' >GOODMAN:AIR_HANDLER:MBR:BROCHURE</span>
+		<span id="treePath" style='padding-left: 10px; font-size: 70%' >GOODMAN:AIR_HANDLER:MBR:BROCHURE</span>
 	</div>
 			
 	<!-- see http://embedresponsively.com/ and select Generic iFrame and google to display pdf with hint from http://stackoverflow.com/questions/8262278/supplying-an-embedable-pdf  -->
