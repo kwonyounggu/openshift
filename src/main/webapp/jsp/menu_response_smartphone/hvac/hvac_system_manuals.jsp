@@ -318,13 +318,15 @@
 <!-- PDF DISPLAY -->
 <div>
 	<div class="hvac_rectangle">
-		<div class="row">
-			<div id="tree_path_div" class="col-md-10">
+			<div id="tree_path_div">
 				GOODMAN:AIR_HANDLER:MBR:BROCHURE
 			</div>
 			<!-- http://stackoverflow.com/questions/19758313/align-div-right-in-bootstrap-3 -->
-			<div class="col-md-2" style="padding-right: 5px;">
-				<a href="#disqus_thread" onfocus="this.blur()" style="text-decoration: none;"><span class="label label-info">Leave a comment</span></a>
+			<div>
+				<a href="#disqus_thread" class="btn btn-info" role="button">Leave a comment</a>				
+				<button type="button" class="btn btn-info">
+			      <span class="glyphicon glyphicon-search"></span>
+			    </button>
 			</div>
 		</div>
 	</div>
