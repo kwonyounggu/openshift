@@ -128,7 +128,7 @@
 						var pdfPath=data.node.id.replace("dl=0", "raw=1");
 						document.getElementById('pdfIfram').setAttribute('src', "http://docs.google.com/gview?url="+pdfPath+"&embedded=true");
 						
-						$("#tree_path_div").html(data.node.parent);
+						$("#treePath").html(data.node.parent);
 						
 						g_nodePdfDisplayed=data.node;
 					}
@@ -317,14 +317,17 @@
 </table>
 <!-- PDF DISPLAY -->
 <div id="pdfDisplay">
-	<div class="text-right">
+	<!-- <div class="text-right">
 		<a href="#disqus_thread" class="btn btn-info" role="button">Leave a comment</a>				
-		<button type="button" class="btn btn-info">
+		
+	</div> -->
+	<div  class="hvac_rectangle">
+		<span id="treePath">GOODMAN:AIR_HANDLER:MBR:BROCHURE</span>
+		
+		<button type="button" class="btn btn-info text-right">
 	      <span class="glyphicon glyphicon-search"></span>
 	    </button>
-	</div>
-	<div id="tree_path_div" class="hvac_rectangle">
-		GOODMAN:AIR_HANDLER:MBR:BROCHURE
+	    
 	</div>
 			
 	<!-- see http://embedresponsively.com/ and select Generic iFrame and google to display pdf with hint from http://stackoverflow.com/questions/8262278/supplying-an-embedable-pdf  -->
