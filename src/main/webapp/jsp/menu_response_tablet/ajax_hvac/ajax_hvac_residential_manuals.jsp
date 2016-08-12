@@ -38,6 +38,10 @@
 		display: none;
 	}
 	.typeahead { z-index: 1051; }
+	.badge
+	{
+		font-size: 80%;
+	}
 </style>
 <script type="text/javascript">
 	//see http://jsfiddle.net/jayhilwig/hv8vU/
