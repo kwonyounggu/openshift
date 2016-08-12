@@ -320,7 +320,7 @@
 	<div  class="hvac_rectangle">
 	  
 		<span id="treePath" style='font-size: 70%' >GOODMAN:AIR_HANDLER:MBR:BROCHURE</span>
-	    <span class="glyphicon glyphicon-search" ></span>
+	    <button class="btn btn-info pull-right"><span class="glyphicon glyphicon-search" ></span></button>
 	      
 	</div>
 			
