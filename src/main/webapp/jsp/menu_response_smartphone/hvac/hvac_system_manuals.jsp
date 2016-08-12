@@ -316,7 +316,7 @@
 <!-- DATA/SEARCH DISPLAY -->
 <table style="width: 100%;">
 	<tr>
-		<td align="left" style="padding: 0 5px 0 5px">
+		<td align="left" style="padding: 0 0px 0 0px">
 			<div class="input-group" >
 			       <input id="searchInput" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead" data-toggle="tooltip" data-placement="auto" title="Search with a blank to reset." data-trigger="manual"/>
 			       <div class="input-group-btn" >
