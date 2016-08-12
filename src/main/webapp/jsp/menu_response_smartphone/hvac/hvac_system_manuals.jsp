@@ -310,15 +310,13 @@
 	}
 	
 </script>  
-<% 
-//to do, button->submit button->see contact for the button activation
-%>
+
 
 <h4>More data will come soon...</h4>
-
+<!-- DATA/SEARCH DISPLAY -->
 <table style="width: 100%;">
 	<tr>
-		<td align="left" style="padding: 0 15px 0 15px">
+		<td align="left" style="padding: 0 5px 0 5px">
 			<div class="input-group" >
 			       <input id="searchInput" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead" data-toggle="tooltip" data-placement="auto" title="Search with a blank to reset." data-trigger="manual"/>
 			       <div class="input-group-btn" >
@@ -337,50 +335,52 @@
 		</td>
 	</tr>
 </table>
+<!-- PDF DISPLAY -->
 <div>
-			<div class="hvac_rectangle">
-				<div class="row">
-					<div id="tree_path_div" class="col-md-10">
-						GOODMAN:AIR_HANDLER:MBR:BROCHURE
-					</div>
-					<!-- http://stackoverflow.com/questions/19758313/align-div-right-in-bootstrap-3 -->
-					<div class="col-md-2" style="padding-right: 5px;">
-						<a href="#disqus_thread" onfocus="this.blur()" style="text-decoration: none;"><span class="label label-info">Leave a comment</span></a>
-					</div>
-				</div>
+	<div class="hvac_rectangle">
+		<div class="row">
+			<div id="tree_path_div" class="col-md-10">
+				GOODMAN:AIR_HANDLER:MBR:BROCHURE
 			</div>
-			<!-- see http://embedresponsively.com/ and select Generic iFrame and google to display pdf with hint from http://stackoverflow.com/questions/8262278/supplying-an-embedable-pdf  -->
-			<div class='embed-container'>
-				<iframe id='pdfIfram' src='http://docs.google.com/gview?url=https://www.dropbox.com/s/x2bux8g239pm0f9/Admin_goodman_airhandler_acnf_brochure_2016_07_23.pdf?raw=1&embedded=true' style='border:0'></iframe>
-			</div>	
+			<!-- http://stackoverflow.com/questions/19758313/align-div-right-in-bootstrap-3 -->
+			<div class="col-md-2" style="padding-right: 5px;">
+				<a href="#disqus_thread" onfocus="this.blur()" style="text-decoration: none;"><span class="label label-info">Leave a comment</span></a>
+			</div>
+		</div>
+	</div>
+	<!-- see http://embedresponsively.com/ and select Generic iFrame and google to display pdf with hint from http://stackoverflow.com/questions/8262278/supplying-an-embedable-pdf  -->
+	<div class='embed-container'>
+		<iframe id='pdfIfram' src='http://docs.google.com/gview?url=https://www.dropbox.com/s/x2bux8g239pm0f9/Admin_goodman_airhandler_acnf_brochure_2016_07_23.pdf?raw=1&embedded=true' style='border:0'></iframe>
+	</div>	
 </div>
+<!-- COMMENT DISPLAY -->
 <div>
-			<div><p style="padding: 10px 10px 0 10px; text-align: left;">You are welcome to <span class="label label-info">leave a comment/request</span> for more manuals, any change, etc, according to this page.</p></div>
+	<div><p style="padding: 10px 10px 0 10px; text-align: left;">You are welcome to <span class="label label-info">leave a comment/request</span> for more manuals, any change, etc, according to this page.</p></div>
 
-			<div style="margin-left: 10px; margin-right: 10px">
-				<div id="disqus_thread"></div>	
-				<script>
-				
-				/**
-				 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-				 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables 
-				 *  see https://help.disqus.com/customer/portal/articles/472098-javascript-configuration-variables
-				 */
-				
-				var disqus_config = function () 
-				{
-				    this.page.url = 'http://www.webmonster.ca/tabletController?op=menu_public_hvac';  // Replace PAGE_URL with your page's canonical URL variable
-				    this.page.identifier = '0001'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-				};
-				
-				(function() 
-				{ // DON'T EDIT BELOW THIS LINE
-				    var d = document, s = d.createElement('script');
-				    s.src = '//webmonster-ca.disqus.com/embed.js';
-				    s.setAttribute('data-timestamp', +new Date());
-				    (d.head || d.body).appendChild(s);
-				})();
-				</script>
-				<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-             </div>                       
+	<div style="margin-left: 10px; margin-right: 10px">
+		<div id="disqus_thread"></div>	
+		<script>
+		
+		/**
+		 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+		 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables 
+		 *  see https://help.disqus.com/customer/portal/articles/472098-javascript-configuration-variables
+		 */
+		
+		var disqus_config = function () 
+		{
+		    this.page.url = 'http://www.webmonster.ca/tabletController?op=menu_public_hvac';  // Replace PAGE_URL with your page's canonical URL variable
+		    this.page.identifier = '0001'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		};
+		
+		(function() 
+		{ // DON'T EDIT BELOW THIS LINE
+		    var d = document, s = d.createElement('script');
+		    s.src = '//webmonster-ca.disqus.com/embed.js';
+		    s.setAttribute('data-timestamp', +new Date());
+		    (d.head || d.body).appendChild(s);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+           </div>                       
 </div>
