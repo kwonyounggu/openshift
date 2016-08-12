@@ -105,7 +105,7 @@ file_seq_id
 		{
 			Map.Entry<String, Integer> entry=entries.next();
 			out.print("{	\"id\":     \""+currentId+":"+entry.getKey()+"\", "); //brand:ac, furnace, etc
-			out.print("  	\"text\":   \""+Utils.getFirstCapitalString(entry.getKey())+" ("+entry.getValue()+")\",");//number of manuals
+			out.print("  	\"text\":   \""+Utils.getFirstCapitalString(entry.getKey())+" <span class='badge'>"+entry.getValue()+"</span>\",");//number of manuals
 			if(hint[0].indexOf(entry.getKey())!=-1)
 				out.print("  	\"data\": {\"hint\":\"system types such as ac, furnance, etc"+hint[0]+"\"}, ");
 			else
@@ -128,7 +128,7 @@ file_seq_id
 		{
 			Map.Entry<String, Integer> entry=entries.next();
 			out.print("{	\"id\":     \""+currentId+":"+entry.getKey()+"\", "); //brand:ac:model_number
-			out.print("  	\"text\":   \""+entry.getKey()+" ("+entry.getValue()+")\",");//number of model_number
+			out.print("  	\"text\":   \""+entry.getKey()+" <span class='badge'>"+entry.getValue()+"</span>\",");//number of model_number
 			out.print("  	\"a_attr\": {\"class\":\"systemManualTree_noCheckbox\"}, ");//in order not to display checkbox through a css
 			if(hint[0].indexOf(entry.getKey())!=-1)
 				out.print("  	\"data\": {\"hint\":\"model number level"+hint[0]+"\"} ");
@@ -144,7 +144,7 @@ file_seq_id
 				{
 					Map.Entry<String, Integer> manualEntry=entriesManualFor.next();
 					out.print("{	\"id\":     \""+currentId+":"+entry.getKey()+":"+manualEntry.getKey()+"\", "); //brand:ac:model_number:owner_manual
-					out.print("  	\"text\":   \""+Utils.getFirstCapitalString(manualEntry.getKey())+" ("+manualEntry.getValue()+")\",");//number of manualFor
+					out.print("  	\"text\":   \""+Utils.getFirstCapitalString(manualEntry.getKey())+" <span class='badge'>"+manualEntry.getValue()+"</span>\",");//number of manualFor
 					out.print("  	\"a_attr\": {\"class\":\"systemManualTree_noCheckbox\"}, ");//in order not to display checkbox through a css
 					out.print("  	\"data\": {\"hint\":\"manuals for installation, owner_operation, wiring_diagram, etc\"} ");
 					if(manualEntry.getValue()>0)

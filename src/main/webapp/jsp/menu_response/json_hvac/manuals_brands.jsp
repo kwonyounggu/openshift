@@ -26,7 +26,7 @@
 		//custom field only available through data field when parent is not '#'
 		//see for the custom field, https://groups.google.com/forum/#!category-topic/jstree/qBM2ZCAkPL4
 		out.print("  	\"data\": {\"hint\":\"brand name level\"}, ");
-		out.print("  	\"text\":   \""+entry.getKey()+"<span class='badge'> ("+entry.getValue()+")</span>\",");//brand (number of manuals)
+		out.print("  	\"text\":   \""+entry.getKey()+" <span class='badge'>"+entry.getValue()+"</span>\",");//brand (number of manuals)
 		if(entry.getValue()>0)
 			out.print("		\"children\": true")	;						
 		out.print("}");
