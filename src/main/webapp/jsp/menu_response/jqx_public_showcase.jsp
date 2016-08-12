@@ -21,7 +21,7 @@ $('.carousel').carousel({
 	  <!-- Wrapper for slides -->
 	  <div class="carousel-inner" role="listbox">
 	    <div class="item active">
-	      <img src="images/freelance_showcase/caliper_refence_interval.PNG" alt="caliper_refence_interval.PNG">
+	      <img src="images/freelance_showcase/caliper_refence_interval.PNG"  class="img-thumbnail" alt="caliper_refence_interval.PNG">
 	    </div>
 	  </div>
 	
@@ -55,7 +55,7 @@ $('.carousel').carousel({
 	  <!-- Wrapper for slides -->
 	  <div class="carousel-inner" role="listbox">
 	    <div class="item active">
-	      <img src="images/freelance_showcase/carm_vital_signs.PNG" alt="carm_vital_signs.PNG">
+	      <img src="images/freelance_showcase/carm_vital_signs.PNG" class="img-thumbnail" alt="carm_vital_signs.PNG">
 	    </div>
 <!-- 	
 	    <div class="item">
@@ -110,7 +110,7 @@ on clinical outcomes, processes of care and resource utilization in 22 paediatri
 	  <!-- Wrapper for slides -->
 	  <div class="carousel-inner" role="listbox">
 	    <div class="item active">
-	      <img src="images/freelance_showcase/epoch_login.PNG" alt="epoch_login.PNG">
+	      <img src="images/freelance_showcase/epoch_login.PNG" class="img-thumbnail" alt="epoch_login.PNG">
 	    </div>
 	    <!-- <div class="item">
 	      <img src="images/freelance_showcase/epoch_data_entry_verification.PNG" alt="epoch_data_entry_verification.PNG">
@@ -165,7 +165,7 @@ on clinical outcomes, processes of care and resource utilization in 22 paediatri
 	  <!-- Wrapper for slides -->
 	  <div class="carousel-inner" role="listbox">
 	    <div class="item active">
-	      <img src="images/freelance_showcase/exemplar_login.PNG" alt="exemplar_login.PNG">
+	      <img src="images/freelance_showcase/exemplar_login.PNG"  class="img-thumbnail" alt="exemplar_login.PNG">
 	    </div>
 	    <!-- <div class="item">
 	      <img src="images/freelance_showcase/exemplar_demographics.PNG" alt="exemplar_demographics.PNG">
@@ -202,7 +202,7 @@ on clinical outcomes, processes of care and resource utilization in 22 paediatri
 	  <!-- Wrapper for slides -->
 	  <div class="carousel-inner" role="listbox">
 	    <div class="item active">
-	      <img src="images/freelance_showcase/spire_about.PNG" alt="spire_about.PNG">
+	      <img src="images/freelance_showcase/spire_about.PNG"  class="img-thumbnail" alt="spire_about.PNG">
 	    </div>
 	    <!-- <div class="item">
 	      <img src="images/freelance_showcase/spire_home.PNG" alt="spire_home.PNG">
@@ -250,19 +250,19 @@ on clinical outcomes, processes of care and resource utilization in 22 paediatri
 	  <!-- Wrapper for slides -->
 	  <div class="carousel-inner" role="listbox">
 	    <div class="item active">
-	      <img src="images/freelance_showcase/cinram_login.PNG" alt="cinram_login.PNG">
+	      <img src="images/freelance_showcase/cinram_login.PNG"  class="img-thumbnail" alt="cinram_login.PNG">
 	    </div>
 	    <div class="item">
-	      <img src="images/freelance_showcase/cinram_home.PNG" alt="cinram_home.PNG">
+	      <img src="images/freelance_showcase/cinram_home.PNG"  class="img-thumbnail" alt="cinram_home.PNG">
 	    </div>
 	    <div class="item">
-	      <img src="images/freelance_showcase/cinram_newpr.PNG" alt="cinram_newpr.PNG">
+	      <img src="images/freelance_showcase/cinram_newpr.PNG"  class="img-thumbnail" alt="cinram_newpr.PNG">
 	    </div>
 	    <div class="item">
-	      <img src="images/freelance_showcase/cinram_selected_pr.PNG" alt="cinram_selected_pr.PNG">
+	      <img src="images/freelance_showcase/cinram_selected_pr.PNG"  class="img-thumbnail" alt="cinram_selected_pr.PNG">
 	    </div>
 	    <div class="item">
-	      <img src="images/freelance_showcase/cinram_closed_pr.PNG" alt="cinram_closed_pr.PNG">
+	      <img src="images/freelance_showcase/cinram_closed_pr.PNG"  class="img-thumbnail" alt="cinram_closed_pr.PNG">
 	    </div>
 	  </div>
 	
@@ -299,25 +299,25 @@ on clinical outcomes, processes of care and resource utilization in 22 paediatri
 	  <!-- Wrapper for slides -->
 	  <div class="carousel-inner" role="listbox">
 	    <div class="item">
-	      <img src="images/freelance_showcase/aqnings_shopping_mall_home.PNG" alt="aqnings_shopping_mall_home.PNG">
+	      <img src="images/freelance_showcase/aqnings_shopping_mall_home.PNG"  class="img-thumbnail" alt="aqnings_shopping_mall_home.PNG">
 	    </div>
 	    <div class="item">
-	      <img src="images/freelance_showcase/modeling_home.PNG" alt="modeling_home.PNG">
+	      <img src="images/freelance_showcase/modeling_home.PNG"  class="img-thumbnail" alt="modeling_home.PNG">
 	    </div>
 	    <div class="item">
-	      <img src="images/freelance_showcase/motorbike_shopping_mall_home.PNG" alt="motorbike_shopping_mall_home.PNG">
+	      <img src="images/freelance_showcase/motorbike_shopping_mall_home.PNG"  class="img-thumbnail" alt="motorbike_shopping_mall_home.PNG">
 	    </div>
 	    <div class="item active">
-	      <img src="images/freelance_showcase/myesl_home.PNG" alt="myesl_home.PNG">
+	      <img src="images/freelance_showcase/myesl_home.PNG"  class="img-thumbnail" alt="myesl_home.PNG">
 	    </div>
 	    <div class="item">
-	      <img src="images/freelance_showcase/patriquin_law_home.PNG" alt="patriquin_law_home.PNG">
+	      <img src="images/freelance_showcase/patriquin_law_home.PNG"  class="img-thumbnail" alt="patriquin_law_home.PNG">
 	    </div>
 	    <div class="item">
-	      <img src="images/freelance_showcase/scrap_home.PNG" alt="scrap_home.PNG">
+	      <img src="images/freelance_showcase/scrap_home.PNG"  class="img-thumbnail" alt="scrap_home.PNG">
 	    </div>
 	    <div class="item">
-	      <img src="images/freelance_showcase/tour_home.PNG" alt="tour_home.PNG">
+	      <img src="images/freelance_showcase/tour_home.PNG"  class="img-thumbnail" alt="tour_home.PNG">
 	    </div>
 	  </div>
 	
