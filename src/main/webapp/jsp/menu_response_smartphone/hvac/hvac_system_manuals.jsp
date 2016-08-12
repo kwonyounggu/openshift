@@ -49,6 +49,7 @@
 	.white-glyphicon, .white-glyphicon a
 	{
 		color: #fff;
+		font-size: 115%;
 	}
 </style>
 <script type="text/javascript">
@@ -325,7 +326,7 @@
 	  
 		<span id="treePath" style='font-size: 70%' >GOODMAN:AIR_HANDLER:MBR:BROCHURE</span>
 		<!-- http://stackoverflow.com/questions/25961012/filling-available-space-in-bootstrap -->
-	    <a href="www.webmonster.ca"class="pull-right"><i class="glyphicon glyphicon-search white-glyphicon" ></i></a>
+	    <a href="www.webmonster.ca" class="pull-right"><i class="glyphicon glyphicon-search white-glyphicon" ></i></a>
 
 	</div>
 			
