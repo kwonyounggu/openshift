@@ -132,7 +132,7 @@
 
 <body>
 
-<div class="container">
+<div>
 	<div class="header">
 		<jsp:include page='${header_panel}' flush='true'/>
 	</div>	
