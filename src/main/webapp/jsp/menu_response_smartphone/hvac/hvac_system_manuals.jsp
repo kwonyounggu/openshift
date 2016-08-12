@@ -318,8 +318,10 @@
 <!-- PDF DISPLAY -->
 <div id="pdfDisplay">
 	<div  class="hvac_rectangle">
-		<span id="treePath" style='font-size: 80%'>GOODMAN:AIR_HANDLER:MBR:BROCHURE</span>
-	     <span class="glyphicon glyphicon-search text-right"></span>	    
+	  <div class="row">
+		<span id="treePath" style='font-size: 70%'  class="col-md-11">GOODMAN:AIR_HANDLER:MBR:BROCHURE</span>
+	    <a href="#" class="col-md-2"><span class="glyphicon glyphicon-search" ></span></a>	
+	  </div>    
 	</div>
 			
 	<!-- see http://embedresponsively.com/ and select Generic iFrame and google to display pdf with hint from http://stackoverflow.com/questions/8262278/supplying-an-embedable-pdf  -->
