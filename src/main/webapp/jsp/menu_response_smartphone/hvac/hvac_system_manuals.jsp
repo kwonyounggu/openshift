@@ -319,8 +319,8 @@
 <div id="pdfDisplay">
 	<div  class="hvac_rectangle">
 	  
-		<span id="treePath" style='font-size: 70%'  class="col-md-11">GOODMAN:AIR_HANDLER:MBR:BROCHURE</span>
-	    <a href="#" class="col-md-1"><span class="glyphicon glyphicon-search" ></span></a>	
+		<span id="treePath" style='font-size: 70%' >GOODMAN:AIR_HANDLER:MBR:BROCHURE</span>
+	    <a href="#" ><span class="glyphicon glyphicon-search" ></span></a>	
 	      
 	</div>
 			
