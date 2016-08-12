@@ -320,7 +320,7 @@
 	<div  class="hvac_rectangle">
 	  <div class="row">
 		<span id="treePath" style='font-size: 70%'  class="col-md-11">GOODMAN:AIR_HANDLER:MBR:BROCHURE</span>
-	    <a href="#" class="col-md-2"><span class="glyphicon glyphicon-search" ></span></a>	
+	    <a href="#" class="col-md-1"><span class="glyphicon glyphicon-search" ></span></a>	
 	  </div>    
 	</div>
 			
