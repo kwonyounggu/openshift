@@ -134,7 +134,7 @@
 						document.getElementById('pdfIfram').setAttribute('src', "http://docs.google.com/gview?url="+pdfPath+"&embedded=true");
 						
 						$("#treePath").html(data.node.parent);
-						window.location.href="#treePath";
+						window.location.href="#pdfDisplay";
 						g_nodePdfDisplayed=data.node;
 					}
 				}
