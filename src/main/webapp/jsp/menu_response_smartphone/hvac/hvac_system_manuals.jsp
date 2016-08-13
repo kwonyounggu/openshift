@@ -303,10 +303,15 @@
 	<tr>
 		<td align="left" style="padding: 0 0px 0 0px">
 			<div class="input-group" >
+				  <div class="input-group-btn" >
+			           <button id="treeButton" class="btn btn-info" ">
+			           		<span class="glyphicon glyphicon-tree-conifer"></span>
+			           </button>
+			       </div>
 			       <input id="searchInput" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead" data-toggle="tooltip" data-placement="auto" title="Search with a blank to reset." data-trigger="manual"/>
 			       <div class="input-group-btn" >
 			           <button id="searchButton" class="btn btn-info" ">
-			           <span class="glyphicon glyphicon-search"></span>
+			           		<span class="glyphicon glyphicon-search"></span>
 			           </button>
 			       </div>
 			  </div> 
@@ -324,7 +329,7 @@
 <div id="pdfDisplay">
 	<div  class="hvac_rectangle" >
 		<!-- http://stackoverflow.com/questions/25961012/filling-available-space-in-bootstrap -->
-	    <a href="www.webmonster.ca" class="pull-left"><i class="glyphicon glyphicon-tree-conifer white-glyphicon" ></i></a>
+<!-- 	    <a href="www.webmonster.ca" class="pull-left"><i class="glyphicon glyphicon-tree-conifer white-glyphicon" ></i></a> -->
 		<span id="treePath" style='padding-left: 10px; font-size: 70%' >GOODMAN:AIR_HANDLER:MBR:BROCHURE</span>
 	</div>
 			
