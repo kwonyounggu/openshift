@@ -304,7 +304,7 @@
 		<td align="left" style="padding: 0 0px 0 0px">
 			<div class="input-group" >
 				  <div class="input-group-btn" >
-			           <button id="treeButton" class="btn btn-info" ">
+			           <button id="treeButton" class="btn btn-info" data-toggle="collapse" data-target="#manual_tree_div">
 			           		<span class="glyphicon glyphicon-tree-conifer"></span>
 			           </button>
 			       </div>
@@ -320,7 +320,7 @@
 	 <tr>
 	 	<td style="text-align: left; ">
 		  <div style="width: 100%; height: 100%; overflow: auto;">
-				<div id="manual_tree_div"></div>
+				<div id="manual_tree_div" class="collapse"></div>
 		  </div>
 		</td>
 	</tr>
