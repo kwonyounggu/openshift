@@ -7,11 +7,13 @@
 <!doctype html>
 <html>
 <head>
-<title>WebMonster</title>
+<title>${title}</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <META name=author content="Younggu Kwon">
 <META name=email content="<%=AuthData.mycompany_email_address%>">
+<meta name="description" content="${description}">
+<meta name="keywords" content="${keywords}">
 
 <link rel="SHORTCUT ICON" href="images/webmonster_logo.ico" />
 

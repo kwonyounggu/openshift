@@ -65,6 +65,10 @@ public class ActionController extends HttpServlet
 			Object webmonsterBean=(Object)session.getAttribute("webmonsterBean"); //check this for the user if logged in or not, with 'if(webmonsterBean==null)'
 			if(op==null || op.equals("") || op.equals("home"))
 			{
+				request.setAttribute("title", "WebMonster-SW Freelancer Site");
+				request.setAttribute("description", "SW Freelancer - Providing sw solutions for desktop apps, tablet apps and mobile phone apps");
+				request.setAttribute("keywords", "SW Freelancer, Java, Action Script, HTML/JQuery/Bootstrap, JSP, HVAC, Stock-Charts, Saxophone");
+				
 				request.setAttribute("body_panel", "/jsp/menu_response/jqx_home_body.jsp");
 				((RequestDispatcher)request.getRequestDispatcher("jsp/menu_response/jqx_page_template.jsp")).forward(request,response);
 	
@@ -73,20 +77,38 @@ public class ActionController extends HttpServlet
 			{
 				if(op.equals("menu_public_showcase"))
 				{
+					request.setAttribute("title", "WebMonster-Showcase Site");
+					request.setAttribute("description", "SW Freelancer - Providing samples of web applications");
+					request.setAttribute("keywords", "SickKids, Research Application, Caliper, EPOCH, Reference Interval, Accouting Managment, Remote English Education");
+					
 					request.setAttribute("body_panel", "/jsp/menu_response/jqx_public_showcase.jsp");
 				}
 				else if(op.equals("menu_public_contact"))
 				{
+					request.setAttribute("title", "WebMonster-Contact/Estimate");
+					request.setAttribute("description", "SW Freelancer - Contact/Estimate Information");
+					request.setAttribute("keywords", "SW Freelancer, Contact information and estimate information");
+					
 					request.setAttribute("body_panel", "/jsp/menu_response/jqx_public_contact.jsp");
 				}
 				else if(op.equals("menu_public_stockcharts"))
 				{
+					request.setAttribute("title", "WebMonster, Stock-Charts Site");
+					request.setAttribute("description", "SW Freelancer - Providing stock-charts that are customizable");
+					request.setAttribute("keywords", "Stock-charts, moving average, technical analysis, etc");
+					
 					request.setAttribute("body_panel", "/jsp/menu_response/jqx_public_stockcharts.jsp");
 				}
 				else if(op.indexOf("menu_public_hvac")!=-1)
 				{
 					if(op.equals("menu_public_hvac"))
+					{
+						request.setAttribute("title", "WebMonster-HVAC Site");
+						request.setAttribute("description", "HVAC - Providing hvac manuals, contractor information, system manuals, service manuals, owner manuals, how to be a HVAC technician and how to get HVAC licences");
+						request.setAttribute("keywords", "HVAC, furnace, air conditioner, boiler, hot water tank, split, combination, system manuals, service manuals, owner manuals, troubleshooting");
+						
 						request.setAttribute("body_panel", "/jsp/menu_response/jqx_public_hvac.jsp");
+					}					
 					else if(op.equals("menu_public_hvac_ajax_residential_manuals"))
 					{
 						((RequestDispatcher)request.getRequestDispatcher("jsp/menu_response/ajax_hvac/ajax_hvac_residential_manuals.jsp")).forward(request,response);
@@ -102,10 +124,18 @@ public class ActionController extends HttpServlet
 				}
 				else if(op.equals("menu_public_saxophone"))
 				{
+					request.setAttribute("title", "WebMonster-Saxophone Site");
+					request.setAttribute("description", "Saxophon - Providing all about saxophone music");
+					request.setAttribute("keywords", "Saxophone, tutorials, you-tube, lessons");
+					
 					request.setAttribute("body_panel", "/jsp/menu_response/jqx_public_saxophone.jsp");
 				}
 				else //unknown, so display the home page
 				{
+					request.setAttribute("title", "WebMonster-SW Freelancer Site");
+					request.setAttribute("description", "SW Freelancer - Providing sw solutions for desktop apps, tablet apps and mobile phone apps");
+					request.setAttribute("keywords", "SW Freelancer, Java, Action Script, HTML/JQuery/Bootstrap, JSP, HVAC, Stock-Charts, Saxophone");
+					
 					request.setAttribute("body_panel", "/jsp/menu_response/jqx_home_body.jsp");
 				}
 				//common to all the menu listed above, such as menu_public ...
