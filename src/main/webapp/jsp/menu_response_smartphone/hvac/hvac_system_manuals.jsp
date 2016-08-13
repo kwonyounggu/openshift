@@ -324,7 +324,7 @@
 <div id="pdfDisplay">
 	<div  class="hvac_rectangle" >
 		<!-- http://stackoverflow.com/questions/25961012/filling-available-space-in-bootstrap -->
-	    <a href="www.webmonster.ca" class="pull-left"><i class="glyphicon glyphicon-search white-glyphicon" ></i></a>
+	    <a href="www.webmonster.ca" class="pull-left"><i class="glyphicon glyphicons-tree-structure" ></i></a>
 		<span id="treePath" style='padding-left: 10px; font-size: 70%' >GOODMAN:AIR_HANDLER:MBR:BROCHURE</span>
 	</div>
 			
