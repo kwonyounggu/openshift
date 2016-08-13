@@ -294,6 +294,11 @@
 	<tr>
 		<td style='width: 270px; vertical-align: top'>
 			  <div class="input-group" >
+			  	   <div class="input-group-btn" >
+			           <button id="treeButton" class="btn btn-info" onclick="$('#manual_tree_div').jstree(true).clear_search();">
+			           		<span class="glyphicon glyphicon-tree-conifer"></span>
+			           </button>
+			       </div>
 			       <input id="searchInput" type="Search" placeholder="Model Number" class="form-control" data-provide="typeahead" data-toggle="tooltip" data-placement="auto" title="Search with a blank to reset." data-trigger="manual"/>
 			       <div class="input-group-btn">
 			           <button id="searchButton" class="btn btn-info">
