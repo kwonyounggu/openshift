@@ -55,6 +55,7 @@ public class UploadHvacManualsTask extends Task
 		HvacManualsDao hDao=new HvacManualsDao(_ds);
 		
 		List<HvacManualsScheduledBean> listToUpload=sDao.getRecordsToUpload("where is_uploaded=false and valid=true;");
+		log.info("number of files to upload: "+listToUpload.size());
 		for(HvacManualsScheduledBean sb : listToUpload)
 		{
 			try
@@ -91,6 +92,7 @@ public class UploadHvacManualsTask extends Task
 			}
 			catch (Exception e)
 			{
+				log.severe(e.getMessage());
 				e.printStackTrace();
 				try
 				{
@@ -116,7 +118,7 @@ public class UploadHvacManualsTask extends Task
             uc.addRequestProperty("User-Agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)");
             
         	        	
-        	log.info("uploadToDropboxFromURL is called ...");
+        	log.info("uploadToDropboxFromURL is called for "+hb.getFileUrl());
         	FileUploadedToDropboxBean fb=new FileUploadedToDropboxBean();
         	fb.setFileNameSubmitted(getFileName(hb.getFileUrl()));
         	String dropboxPath="/"+dropboxDir+"/"+renameFileName(fb.getFileNameSubmitted(), submitterName);//Submitter_File_name_2016_02_13_hh_mm_ss.ext
@@ -143,17 +145,17 @@ public class UploadHvacManualsTask extends Task
         } 
         catch (UploadErrorException e) 
         {
-        	log.severe(e.toString());
+        	log.severe(e.toString()+", from UploadErrorException");
             throw new Exception(e.getMessage());
         } 
         catch (DbxException e) 
         {
-        	log.severe(e.toString());
+        	log.severe(e.toString()+", from DbxException");
             throw new Exception(e.getMessage());
         } 
         catch (IOException e) 
         {
-        	log.severe(e.toString());
+        	log.severe(e.toString()+", from IOException");
             throw new Exception(e.getMessage());
         }
     }
