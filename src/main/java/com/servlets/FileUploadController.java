@@ -58,7 +58,7 @@ import com.service.MailService;
 public class FileUploadController extends HttpServlet 
 {
 	private static final long serialVersionUID = 1L;
-	private static final String ACCESS_TOKEN="b3c4WiWzNgAAAAAAAAAAB7OVomREroFuSCcV-xJWdvLJrJ8271YWPv3W7w8OLALb";
+	private static final String ACCESS_TOKEN="b3c4WiWzNgAAAAAAAAAAB7OVomREroFuSCcV-xJWdvLJrJ8271YWPv3W7w8OLALb";//dropbox in webmonster.ca@gmail.com
 	//private static String DROPBOX_PATH="";//it can be either /estimates/filename.pdf or /anything/filename.pdf
 	private DbxClientV2 _dbxClient=null;
 	private Logger log = Logger.getLogger(this.getClass().getName());   

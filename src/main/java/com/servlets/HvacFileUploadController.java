@@ -68,7 +68,7 @@ import com.service.MailService;
 public class HvacFileUploadController extends HttpServlet 
 {
 	private static final long serialVersionUID = 1L;
-	private static final String ACCESS_TOKEN="mey4fjRB1jAAAAAAAAAABz1DHDZLGWNoUvZRmtWTHKAEvf8OYuZ9Jj-1M5J10zMa";
+	private static final String ACCESS_TOKEN="mey4fjRB1jAAAAAAAAAABz1DHDZLGWNoUvZRmtWTHKAEvf8OYuZ9Jj-1M5J10zMa";//dropbox in myesl.education@gmail.com
 	//private static String DROPBOX_PATH="";//it can be either /system_manuals/filename.pdf or /anything/filename.pdf
 	private DbxClientV2 _dbxClient=null;
 	private Logger log = Logger.getLogger(this.getClass().getName());   

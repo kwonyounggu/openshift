@@ -36,15 +36,20 @@ import it.sauronsoftware.cron4j.TaskExecutionContext;
 public class UploadHvacManualsTask extends Task
 {
 	private static final long serialVersionUID = 1L;
-	private static final String ACCESS_TOKEN="mey4fjRB1jAAAAAAAAAABz1DHDZLGWNoUvZRmtWTHKAEvf8OYuZ9Jj-1M5J10zMa";
+	//private static final String ACCESS_TOKEN="mey4fjRB1jAAAAAAAAAABz1DHDZLGWNoUvZRmtWTHKAEvf8OYuZ9Jj-1M5J10zMa";//dropbox in myesl.education@gmail.com
+	private static final String ACCESS_TOKEN="b3c4WiWzNgAAAAAAAAAAB7OVomREroFuSCcV-xJWdvLJrJ8271YWPv3W7w8OLALb";//dropbox in webmonster.ca@gmail.com
 	//private static String DROPBOX_PATH="";//it can be either /system_manuals/filename.pdf or /anything/filename.pdf
+	
+	private static final String clientIdentifier="webmonster.ca->system_manuals";
+	private static final String dropboxDir="systemManuals";//for dropbox using myesl.education@gmail.com and webmonster.ca@gmail.com
+
 	private DbxClientV2 _dbxClient=null;
 	private Logger log = Logger.getLogger(this.getClass().getName()); 
 	private DataSource _ds=null;
 	
 	public UploadHvacManualsTask(DataSource ds)
 	{
-		_dbxClient = new DbxClientV2(new DbxRequestConfig("webmonster.ca->system_manuals", Locale.getDefault().toString()), ACCESS_TOKEN);
+		_dbxClient = new DbxClientV2(new DbxRequestConfig(clientIdentifier, Locale.getDefault().toString()), ACCESS_TOKEN);
 		_ds=ds;
 	}
 	@Override
@@ -62,7 +67,7 @@ public class UploadHvacManualsTask extends Task
 			{
 				// read the table hvac_manuals_scheduled
 				// upload, update tables file_uploaded_to_dropbox, hvac_manuals			
-				FileUploadedToDropboxBean fb=uploadToDropboxFromURL(_dbxClient, sb, "systemManuals", "Scheduled_admin_"+sb.getBrandName()+"_"+sb.getSystemType()+"_"+sb.getManualFor()+"_"+sb.getModelNumber());
+				FileUploadedToDropboxBean fb=uploadToDropboxFromURL(_dbxClient, sb, dropboxDir, "Scheduled_admin_"+sb.getBrandName()+"_"+sb.getSystemType()+"_"+sb.getManualFor()+"_"+sb.getModelNumber());
 				fb=fDao.create(fb);
 	        	
 	        	HvacManualsBean hb=new HvacManualsBean();
