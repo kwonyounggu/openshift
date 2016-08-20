@@ -118,7 +118,7 @@ public class MainContextListener implements ServletContextListener
 			uploadHvacManualsScheduler = new Scheduler();
 	    	//The following will be executed once a day at 0:00AM
 			//uploadHvacManualsScheduler.schedule("10 0 * * *", new UploadHvacManualsTask((DataSource)context.getAttribute("dataSource")));//"10 0 * * *" at 00:10am
-			uploadHvacManualsScheduler.schedule("32 20 * * *", new UploadHvacManualsTask((DataSource)context.getAttribute("dataSource")));//"10 0 * * *" at 00:10am
+			uploadHvacManualsScheduler.schedule("42 20 * * *", new UploadHvacManualsTask((DataSource)context.getAttribute("dataSource")));//"10 0 * * *" at 00:10am
 			//uploadHvacManualsScheduler.schedule("*/20 * * * *", new UploadHvacManualsTask((DataSource)context.getAttribute("dataSource")));//every 20 minute for testing.
 
 			uploadHvacManualsScheduler.start();
