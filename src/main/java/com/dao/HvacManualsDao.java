@@ -203,7 +203,7 @@ public class HvacManualsDao
 			while (rs.next())
 			{
 				FileUploadedToDropboxBean fb=fDao.getARecord(rs.getInt(1));
-				if(rs.getString(2)!=null && rs.getString(2).indexOf(":")!=-1)//existing of reusing dropbox file link
+				if(rs.getString(2)!=null && rs.getString(2).indexOf(":")!=-1)//existing of reusing dropbox file link from remote_place, eg: 'Toronto, Ontario:0'
 				{
 					map.put(fb.getDropboxFilePath().replaceFirst(".pdf", ".pdf_"+rs.getString(2).split(":")[1]), fb.getFileNameSubmitted());//to prevent the same unique link in the tree structure
 				}

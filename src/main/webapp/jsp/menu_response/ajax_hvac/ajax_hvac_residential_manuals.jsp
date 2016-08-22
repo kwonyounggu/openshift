@@ -124,7 +124,7 @@
 						if(pdfPath.indexOf(".pdf_") !=-1 )//for the same pdf link
 						{
 							log("pdfPath before replacement: "+pdfPath);
-							pdfPath=pdfPath.replace(new RegExp(".pdf_[0-9]",".pdf"));
+							pdfPath=pdfPath.replace(/\.pdf_[0-9]*/, "\.pdf");
 							log("pdfPath after replacement: "+pdfPath);
 						}
 						document.getElementById('pdfIfram').setAttribute('src', "http://docs.google.com/gview?url="+pdfPath+"&embedded=true");
@@ -162,7 +162,7 @@
 		
 		$('#manual_tree_div').on("load_node.jstree", function (e, data) 
 		{ 
-			log("load_node.jstree");
+			//log("load_node.jstree");
 			//log(data);
 			if(data.node.data && data.node.data.hint.indexOf(":go_next_level_to_open")!=-1)//means searching is implemented
 			{
@@ -172,7 +172,7 @@
 		//see http://stackoverflow.com/questions/4486032/open-branch-when-clicking-on-a-node
 		$('#manual_tree_div').on("select_node.jstree", function (e, data) 
 		{ 
-			log("select_node.jstree");
+			//log("select_node.jstree");
 			data.instance.toggle_node(data.node);
 		});
 		//it is called after search is returned with a true.
@@ -238,7 +238,7 @@
 		}
 		function searchTree(modelObj)//where modelObj is a selected item object
 		{
-			log("searchTree({id: "+modelObj.id+", name: "+modelObj.name+"}) is called");
+			//log("searchTree({id: "+modelObj.id+", name: "+modelObj.name+"}) is called");
 			var node;
 			for(var ids=modelObj.id.split(":"), i=ids.length-1; i>=0; i-- )
 			{
