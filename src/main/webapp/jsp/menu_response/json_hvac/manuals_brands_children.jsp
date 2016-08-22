@@ -150,7 +150,7 @@ file_seq_id
 					if(manualEntry.getValue()>0)
 					{	
 						out.print(",		\"children\": [");	
-						Map<String, String> fileMap=hvacManualsDao.getKeysValuesForFiles("select file_seq_id from hvac_manuals where brand_name='"+parentId+"' and system_type='"+sysType+"' and model_number='"+entry.getKey()+"' and manual_for='"+manualEntry.getKey()+"' and valid=true order by file_seq_id asc");
+						Map<String, String> fileMap=hvacManualsDao.getKeysValuesForFiles("select file_seq_id, remote_place from hvac_manuals where brand_name='"+parentId+"' and system_type='"+sysType+"' and model_number='"+entry.getKey()+"' and manual_for='"+manualEntry.getKey()+"' and valid=true order by file_seq_id asc");
 						Iterator<Map.Entry<String, String>> fileEntries = fileMap.entrySet().iterator();
 						
 						while(fileEntries.hasNext())

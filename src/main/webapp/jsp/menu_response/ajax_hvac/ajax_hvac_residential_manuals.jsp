@@ -120,10 +120,16 @@
 					//note: do not implement if the currently selected/displayed pdf is the same one as in the right hand side
 					if(g_nodePdfDisplayed==null || g_nodePdfDisplayed.id!=data.node.id)
 					{
-						log("It's a leaf with a parent ID="+data.node.parent+", node.id="+data.node.id);
 						var pdfPath=data.node.id.replace("dl=0", "raw=1");
+						if(pdfPath.indexOf(".pdf_") !=-1 )//for the same pdf link
+						{
+							log("pdfPath before replacement: "+pdfPath);
+							pdfPath=pdfPath.replace(new RegExp(".pdf_[0-9]",".pdf"));
+							log("pdfPath after replacement: "+pdfPath);
+						}
 						document.getElementById('pdfIfram').setAttribute('src', "http://docs.google.com/gview?url="+pdfPath+"&embedded=true");
 						
+						log("It's a leaf with a parent ID="+data.node.parent+", node.id="+data.node.id);
 						$("#tree_path_div").html(data.node.parent);
 						
 						g_nodePdfDisplayed=data.node;
