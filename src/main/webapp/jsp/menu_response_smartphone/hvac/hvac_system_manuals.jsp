@@ -131,6 +131,12 @@
 					{
 						log("It's a leaf with a parent ID="+data.node.parent+", node.id="+data.node.id);
 						var pdfPath=data.node.id.replace("dl=0", "raw=1");
+						if(pdfPath.indexOf(".pdf_") !=-1 )//for the same pdf link
+						{
+							log("pdfPath before replacement: "+pdfPath);
+							pdfPath=pdfPath.replace(/\.pdf_[0-9]*/, "\.pdf");
+							log("pdfPath after replacement: "+pdfPath);
+						}
 						document.getElementById('pdfIfram').setAttribute('src', "http://docs.google.com/gview?url="+pdfPath+"&embedded=true");
 						
 						$("#treePath").html(data.node.parent);
