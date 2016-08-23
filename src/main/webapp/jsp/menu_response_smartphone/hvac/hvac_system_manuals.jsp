@@ -336,12 +336,12 @@
 	<div  class="hvac_rectangle" >
 		<!-- http://stackoverflow.com/questions/25961012/filling-available-space-in-bootstrap -->
 <!-- 	    <a href="www.webmonster.ca" class="pull-left"><i class="glyphicon glyphicon-tree-conifer white-glyphicon" ></i></a> -->
-		<span id="treePath" style='padding-left: 10px; font-size: 70%' >GOODMAN:AIR_HANDLER:MBR:BROCHURE</span>
+		<span id="treePath" style='padding-left: 10px; font-size: 70%' >TRANE:FURNACE:S9V2B040D3:BROCHURE</span>
 	</div>
 			
 	<!-- see http://embedresponsively.com/ and select Generic iFrame and google to display pdf with hint from http://stackoverflow.com/questions/8262278/supplying-an-embedable-pdf  -->
 	<div class='embed-container'>
-		<iframe id='pdfIfram' src='http://docs.google.com/gview?url=https://www.dropbox.com/s/x2bux8g239pm0f9/Admin_goodman_airhandler_acnf_brochure_2016_07_23.pdf?raw=1&embedded=true' style='border:0'></iframe>
+		<iframe id='pdfIfram' src='http://docs.google.com/gview?url=https://www.dropbox.com/s/7nuompmridytmdc/Admin_72-1312-01_hr_s9v2_2016_08_22_16_00_05.pdf?raw=1&embedded=true' style='border:0'></iframe>
 	</div>	
 </div>
 <!-- COMMENT DISPLAY -->

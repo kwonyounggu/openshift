@@ -322,7 +322,7 @@
 			<div class="hvac_rectangle">
 				<div class="row">
 					<div id="tree_path_div" class="col-md-10">
-						GOODMAN:AIR_HANDLER:MBR:BROCHURE
+						TRANE:FURNACE:S9V2B040D3:BROCHURE
 					</div>
 					<!-- http://stackoverflow.com/questions/19758313/align-div-right-in-bootstrap-3 -->
 					<div class="col-md-2" style="padding-right: 5px;">
@@ -332,7 +332,7 @@
 			</div>
 			<!-- see http://embedresponsively.com/ and select Generic iFrame and google to display pdf with hint from http://stackoverflow.com/questions/8262278/supplying-an-embedable-pdf  -->
 			<div class='embed-container'>
-				<iframe id='pdfIfram' src='http://docs.google.com/gview?url=https://www.dropbox.com/s/x2bux8g239pm0f9/Admin_goodman_airhandler_acnf_brochure_2016_07_23.pdf?raw=1&embedded=true' style='border:0'></iframe>
+				<iframe id='pdfIfram' src='http://docs.google.com/gview?url=https://www.dropbox.com/s/7nuompmridytmdc/Admin_72-1312-01_hr_s9v2_2016_08_22_16_00_05.pdf?raw=1&embedded=true' style='border:0'></iframe>
 			</div>	
 
 			<div><br/><p style="padding-left: 10px;">You are welcome to <span class="label label-info">leave a comment/request</span> for more manuals, any change, etc, according to this page.</p></div>
