@@ -48,11 +48,13 @@ public class ActionController extends HttpServlet
 	    }
 	    */
 		
-		request.setCharacterEncoding("UTF-8");//put this otherwise UNI-Code characters will be broken.
-		
+		/*Jan 08-2017: four lines commented in just for checking anychange
+		request.setCharacterEncoding("UTF-8");//put this otherwise UNI-Code characters will be broken.		
 		response.setContentType("text/html; charset=UTF-8");
 		response.setHeader("Cache-Control","no-store,no-cache, must-revalidate, post-check=0, pre-check=0");
 		response.setHeader("Pragma", "no-cache");
+		*/
+		
 		HttpSession session = request.getSession(true);//if(session.isNew())
 		
 		String op=(String)request.getParameter("op");

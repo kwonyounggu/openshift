@@ -7,15 +7,56 @@
 <!doctype html>
 <html>
 <head>
+<!-- Order: meta, script, base, link, title -->
+<!-- validation: see http://validator.w3.org/ -->
+<!-- Google has explicitly told us they are not great ideas (such as redirects at the page level). -->
+
+<!-- <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW"> -->
+<!-- This means: “Do not Index this page. Do not follow the links on the page.” Your page will drop OUT of the search index AND your links to other pages 
+     will not be followed. This will break the link path on your site from this page to other pages.
+	 This tag is most often used when a site is in development. A developer will noindex/nofollow the pages of the site to keep them from being picked up 
+	 by the search engines, then forget to remove the tag. When launching your new website, do not trust it has been removed. DOUBLE CHECK! 
+-->
+
+<!-- <META NAME="ROBOTS" CONTENT="INDEX, NOFOLLOW"> -->
+<!-- This means: “Do Index this page. Do not follow the links on the page.” Your page WILL be in the index AND your links to other pages will not be followed. 
+     This will break the link path on your site from this page to other pages.
+-->
+
+<!-- <META NAME="ROBOTS" CONTENT="NOINDEX, FOLLOW"> -->
+<!-- This means: “Do not Index this page. Do follow the links on the page.” Your page will drop OUT of the index BUT your links to other pages will be followed. 
+     This will NOT break the link path on your site from this page to other pages.
+-->
+
+<!-- <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW"> -->
+<!-- This means: “Do Index this page. Do follow the links on the page.” This means your page WILL be in the index AND your links to other pages will be followed. 
+	 This will NOT break the link path on your site from this page to other pages.K! 
+-->
+
+<!-- Note: The robots tag may be ignored by less scrupulous spiders -->
 <title>${title}</title>
+
+<!-- Finally, all sites must validate charset. In the U.S., that is the UTF-8 tag. Just make sure this is on your page if you’re delivering HTML using English characters. -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<META name=author content="Younggu Kwon">
-<META name=email content="<%=AuthData.mycompany_email_address%>">
-<meta name="description" content="${description}">
-<meta name="keywords" content="${keywords}">
+<META name="author" content="Younggu Kwon">
+<META name="generator" content="<%=AuthData.mycompany_email_address%>">
 
-<link rel="SHORTCUT ICON" href="images/webmonster_logo.ico" />
+<!-- Description tells the search engine what your page or site is about -->
+<!-- It is a description below the web url after google search, see example in https://searchenginewatch.com/sew/how-to/2067564/how-to-use-html-meta-tags -->
+<!-- Use single quotes if needed -->
+<meta name="description" content="${description}"><!-- upto 155 characters (including spaces) -->
+
+<!-- Keywords -->
+<!-- The only search engine that looks at the keywords anymore is Microsoft’s Bing – and they use it to help detect spam. To avoid hurting your site,
+     your best option is to never add this tag. Or, if that’s too radical for you to stomach, at least make sure you haven’t stuffed 300 keywords in 
+     the hopes of higher search rankings. It won’t work. Sorry.
+	 If you already have keyword meta tags on your website, but they aren’t spammy, there’s no reason to spend the next week hurriedly taking them out. 
+	 It’s OK to leave them for now – just take them out as you’re able, to reduce page weight and load time 
+-->
+<meta name="keywords" content="${keywords}">
+<!-- base tag: see http://www.w3schools.com/tags/tryit.asp?filename=tryhtml_base_test -->
+<link rel="icon" href="images/webmonster_logo.ico" /><!-- 16x16 pixels -->
 
 <link rel="stylesheet" type="text/css" href="css/main.css" />
 <link rel="stylesheet" type="text/css" href="css/waitMe.css" />
