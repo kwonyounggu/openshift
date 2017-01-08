@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<meta charset="utf-8">
 <title>webmonster.ca redirect</title>
 <script src="//cdn.jsdelivr.net/mobile-detect.js/1.3.2/mobile-detect.min.js"></script>
 <script>
