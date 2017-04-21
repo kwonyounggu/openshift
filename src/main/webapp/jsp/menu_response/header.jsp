@@ -85,7 +85,7 @@ $(document).ready(function ()
       	<li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-th"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="<%= MenuLink.pc_menu_public_stockcharts %>" onfocus="this.blur()">Stock-Charts</a></li>
+            <li><a href="<%= MenuLink.pc_menu_public_stockcharts %>" onfocus="this.blur()">Stock-Music</a></li>
 			<li><a href="<%= MenuLink.pc_menu_public_hvac %>" onfocus="this.blur()">HVAC</a></li>
 			<li><a href="<%= MenuLink.pc_menu_public_saxophone %>" onfocus="this.blur()">Saxophone</a></li>
           </ul>
