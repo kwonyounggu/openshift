@@ -52,7 +52,7 @@
 	 				<li>Extensive experiences in Java (Servlets, Filters, Java Beans, JavaMail, etc), JSP (EL, JSTL, etc), Ajax/HTML/JavaScript/XML/JSON/CSS using MVC (Model 2) and C/C++.</li>
 	 				<li>Windows for over 10 years, UNIX family: HP/SUN/CentOS/Ubuntu for over 10 years.</li>
 	 				<li>MySQL/PostGreSQL/Oracle for 6 years,  MsSQL/MsAccess for 5 years,  DB2 for 2 year.</li>
-	 				<li>Good analytical/problem-solving capabilities, self-motivated and quick/steady learner.</li>
+	 				<li>Good analytical/problem-solving capabilities, self-motivated and steady learner.</li>
 	 			</ul>
 	 		</div>
 		 	<div>
