@@ -18,7 +18,7 @@
     <td style='background-color: #555762; color: #ffffff; width: 50%; vertical-align: top;'>
     	<ul style='font-size: 14px'><h3 style='color: #f9d548;'>Developement Technologies</h3>
     		<li>Java, C/C++</li>
-    		<li>Actionscript 3.0</li>
+    		<li>Actionscript 3.0 including Starling, Feathers UI</li>
     		<li>HTML/CSS/Javascript including JQuery, ReactJS</li>
     		<li>Oracle, PostgreSQL, MySql, Ms Access</li>
     		<li>Tomcat 5.x, 6.x, 7.x, 8.x and JBoss</li>
